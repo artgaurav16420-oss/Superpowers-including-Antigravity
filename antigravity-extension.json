@@ -1,13 +1,13 @@
 {
-  "name": "superpowers-antigravity",
-  "version": "5.0.7",
-  "description": "Software development methodology for Antigravity",
-  "publisher": "obra",
+  "name": "mega-superpowers",
+  "version": "5.0.7-mega",
+  "description": "The Ultimate Software Development Methodology: Superpowers + Anthropic & Composio Skill Libraries",
+  "publisher": "artgaurav16420-oss",
   "engines": {
     "antigravity": "^1.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/obra/superpowers.git"
+    "url": "https://github.com/artgaurav16420-oss/Superpowers-including-Antigravity.git"
   }
 }

@@ -1,6 +1,8 @@
-# Superpowers
+# Mega Superpowers
 
-Superpowers is a complete software development methodology for your coding agents, built on top of a set of composable skills and some initial instructions that make sure your agent uses them.
+**Mega Superpowers** is the ultimate software development methodology for coding agents. It combines the structured workflow of the original **Superpowers** system with the high-utility skill libraries from **Anthropic** and **Composio**.
+
+It is a complete software development methodology for your coding agents, built on top of a set of composable skills and some initial instructions that make sure your agent uses them.
 
 ## How it works
 
@@ -12,102 +14,17 @@ After you've signed off on the design, your agent puts together an implementatio
 
 Next up, once you say "go", it launches a *subagent-driven-development* process, having agents work through each engineering task, inspecting and reviewing their work, and continuing forward. It's not uncommon for Claude to be able to work autonomously for a couple hours at a time without deviating from the plan you put together.
 
-There's a bunch more to it, but that's the core of the system. And because the skills trigger automatically, you don't need to do anything special. Your coding agent just has Superpowers.
+There's a bunch more to it, but that's the core of the system. And because the skills trigger automatically, you don't need to do anything special. Your coding agent just has **Mega Superpowers**.
 
 ## Sponsorship
 
-If Superpowers has helped you do stuff that makes money and you are so inclined, I'd greatly appreciate it if you'd consider [sponsoring my opensource work](https://github.com/sponsors/obra).
-
-Thanks!
-
-- Jesse
+If Mega Superpowers has helped you do stuff that makes money and you are so inclined, I'd greatly appreciate it if you'd consider [sponsoring Jesse's original opensource work](https://github.com/sponsors/obra).
 
 ## Installation
 
 **Note:** Installation differs by platform.
 
-### Claude Code Official Marketplace
-
-Superpowers is available via the [official Claude plugin marketplace](https://claude.com/plugins/superpowers)
-
-Install the plugin from Anthropic's official marketplace:
-
-```bash
-/plugin install superpowers@claude-plugins-official
-```
-
-### Claude Code (Superpowers Marketplace)
-
-The Superpowers marketplace provides Superpowers and some other related plugins for Claude Code.
-
-In Claude Code, register the marketplace first:
-
-```bash
-/plugin marketplace add obra/superpowers-marketplace
-```
-
-Then install the plugin from this marketplace:
-
-```bash
-/plugin install superpowers@superpowers-marketplace
-```
-
-### OpenAI Codex CLI
-
-- Open plugin search interface
-
-```bash
-/plugins
-```
-
-Search for Superpowers
-
-```bash
-superpowers
-```
-
-Select `Install Plugin`
-
-### OpenAI Codex App
-
-- In the Codex app, click on Plugins in the sidebar.
-- You should see `Superpowers` in the Coding section.
-- Click the `+` next to Superpowers and follow the prompts.
-
-### Cursor (via Plugin Marketplace)
-
-In Cursor Agent chat, install from marketplace:
-
-```text
-/add-plugin superpowers
-```
-
-or search for "superpowers" in the plugin marketplace.
-
-### OpenCode
-
-Tell OpenCode:
-
-```bash
-Fetch and follow instructions from https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.opencode/INSTALL.md
-```
-
-**Detailed docs:** [docs/README.opencode.md](docs/README.opencode.md)
-
-### GitHub Copilot CLI
-
-```bash
-copilot plugin marketplace add obra/superpowers-marketplace
-copilot plugin install superpowers@superpowers-marketplace
-```
-
-### Gemini CLI
-
-```bash
-gemini extensions install https://github.com/obra/superpowers
-```
-
-### Antigravity
+### Antigravity (Native Support)
 
 ```bash
 antigravity extension install https://github.com/artgaurav16420-oss/Superpowers-including-Antigravity
@@ -115,16 +32,28 @@ antigravity extension install https://github.com/artgaurav16420-oss/Superpowers-
 
 To update:
 
-**Antigravity:**
-
 ```bash
-antigravity extension update superpowers-including-antigravity
+antigravity extension update mega-superpowers
 ```
 
-**Gemini CLI:**
+### Gemini CLI
 
 ```bash
-gemini extensions update superpowers
+gemini extensions install https://github.com/artgaurav16420-oss/Superpowers-including-Antigravity
+```
+
+To update:
+
+```bash
+gemini extensions update mega-superpowers
+```
+
+### Claude Code (Official / Marketplace)
+
+For the core Superpowers experience on Claude Code:
+
+```bash
+/plugin install superpowers@claude-plugins-official
 ```
 
 ## The Basic Workflow
@@ -141,33 +70,30 @@ gemini extensions update superpowers
 
 ## What's Inside
 
-### Skills Library
+Mega Superpowers includes three major skill libraries:
 
-#### Testing
+### 1. Superpowers Methodology (Core)
+The original software development lifecycle skills:
+- **test-driven-development**
+- **systematic-debugging**
+- **brainstorming**
+- **writing-plans**
+- **subagent-driven-development**
+- ... and more.
 
-- **test-driven-development** - RED-GREEN-REFACTOR cycle (includes testing anti-patterns reference)
+### 2. Anthropic Skills Library
+Essential tools for file manipulation and analysis:
+- **pdf**, **docx**, **xlsx**, **pptx** - Professional document handling
+- **frontend-design**, **canvas-design** - UI/UX and visual design
+- **claude-api** - Anthropic SDK optimization
+- **mcp-builder** - Tool creation assistant
 
-#### Debugging
-
-- **systematic-debugging** - 4-phase root cause process (includes root-cause-tracing, defense-in-depth, condition-based-waiting techniques)
-- **verification-before-completion** - Ensure it's actually fixed
-
-#### Collaboration
-
-- **brainstorming** - Socratic design refinement
-- **writing-plans** - Detailed implementation plans
-- **executing-plans** - Batch execution with checkpoints
-- **dispatching-parallel-agents** - Concurrent subagent workflows
-- **requesting-code-review** - Pre-review checklist
-- **receiving-code-review** - Responding to feedback
-- **using-git-worktrees** - Parallel development branches
-- **finishing-a-development-branch** - Merge/PR decision workflow
-- **subagent-driven-development** - Fast iteration with two-stage review (spec compliance, then code quality)
-
-#### Meta
-
-- **writing-skills** - Create new skills following best practices (includes testing methodology)
-- **using-superpowers** - Introduction to the skills system
+### 3. Composio "Awesome Claude" Skills
+Advanced automation and integration skills:
+- **connect** & **connect-apps** - Connect to 1000+ external services
+- **lead-research-assistant**, **content-research-writer** - Research automation
+- **youtube-downloader**, **twitter-algorithm-optimizer** - Social media tools
+- **file-organizer**, **invoice-organizer** - Productivity enhancements
 
 ## Philosophy
 
@@ -176,23 +102,13 @@ gemini extensions update superpowers
 - **Complexity reduction** - Simplicity as primary goal
 - **Evidence over claims** - Verify before declaring success
 
-Read [the original release announcement](https://blog.fsck.com/2025/10/09/superpowers/).
-
 ## Contributing
-
-The general contribution process for Superpowers is below. Keep in mind that we don't generally accept contributions of new skills and that any updates to skills must work across all of the coding agents we support.
 
 1. Fork the repository
 2. Switch to the 'dev' branch
 3. Create a branch for your work
 4. Follow the `writing-skills` skill for creating and testing new and modified skills
-5. Submit a PR, being sure to fill in the pull request template.
-
-See `skills/writing-skills/SKILL.md` for the complete guide.
-
-## Updating
-
-Superpowers updates are somewhat coding-agent dependent, but are often automatic.
+5. Submit a PR.
 
 ## License
 
@@ -200,8 +116,7 @@ MIT License - see LICENSE file for details
 
 ## Community
 
-Superpowers is built by [Jesse Vincent](https://blog.fsck.com) and the rest of the folks at [Prime Radiant](https://primeradiant.com).
+Mega Superpowers is based on the work of [Jesse Vincent](https://blog.fsck.com) and the [Prime Radiant](https://primeradiant.com) team, augmented with libraries from Anthropic and Composio.
 
-- **Discord**: [Join us](https://discord.gg/35wsABTejz) for community support, questions, and sharing what you're building with Superpowers
-- **Issues**: <https://github.com/obra/superpowers/issues>
-- **Release announcements**: [Sign up](https://primeradiant.com/superpowers/) to get notified about new versions
+- **Discord**: [Join us](https://discord.gg/35wsABTejz) for community support.
+- **Issues**: <https://github.com/artgaurav16420-oss/Superpowers-including-Antigravity/issues>
