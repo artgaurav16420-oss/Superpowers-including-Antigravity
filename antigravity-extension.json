@@ -1,0 +1,13 @@
+{
+  "name": "superpowers-antigravity",
+  "version": "5.0.7",
+  "description": "Software development methodology for Antigravity",
+  "publisher": "obra",
+  "engines": {
+    "antigravity": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/obra/superpowers.git"
+  }
+}
