@@ -113,7 +113,7 @@ gemini extensions install https://github.com/obra/superpowers
 ### Antigravity
 
 ```bash
-antigravity extension install https://github.com/obra/superpowers
+antigravity extension install https://github.com/artgaurav16420-oss/Superpowers-including-Antigravity
 ```
 
 To update:
