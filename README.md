@@ -26,16 +26,21 @@ Most AI agents fail because they lack a **methodology**. They guess, they halluc
 These are the most-used skills that are changing how developers interact with AI:
 
 ### 🦴 Caveman Mode (`caveman`)
+
 **The ultimate token-saver.** Caveman Mode forces the agent to communicate in ultra-compressed, technical-only language. It cuts token usage by ~75% while maintaining 100% technical accuracy.
+
 > "Why use many word when few word do trick?"
 
 ### 🧠 Sequential Thinking (`sequential-thinking`)
+
 A multi-step reasoning loop that forces agents to "think out loud" across multiple turns. It prevents premature coding by requiring the agent to explore hypotheses, verify assumptions, and map out edge cases before touching the editor.
 
 ### 🤖 Subagent Orchestration (`subagent-driven-development`)
+
 Dispatches specialized, short-lived subagents to handle complex sub-tasks. Each subagent is benchmarked for spec compliance and code quality, allowing the main agent to maintain high-level focus without getting lost in implementation details.
 
 ### 📊 Excel Mastery (`xlsx`)
+
 Not just simple CSV writing. Includes a full **LibreOffice-powered recalculation engine** that ensures formula integrity and reports #REF! or #DIV/0! errors before the agent claims success.
 
 ---
@@ -66,15 +71,19 @@ Mega-Skills is a zero-dependency plugin that works across the entire agentic eco
 Mega-Skills isn't a collection of scripts; it's a **Development OS**.
 
 ### 1. Socratic Brainstorming
+
 Before a plan is created, the agent must pass the `brainstorming` phase. It will ask you critical questions about architecture, trade-offs, and user experience. **If the spec isn't clear, the code won't be either.**
 
 ### 2. High-Fidelity Planning
+
 The `writing-plans` skill breaks work into atomic units. Each task includes specific file paths, code snippets, and verification commands. This eliminates "hallucinated progress."
 
 ### 3. Strict TDD (Red-Green-Refactor)
+
 Mega-Skills enforces **True TDD**. Agents must write a failing test, verify the failure, write the implementation, and verify the pass. This is the only way to guarantee 100% production-ready code.
 
 ### 4. Continuous State Management
+
 With `memory-management`, the agent tracks its current task, discovered issues, and architectural decisions in a persistent `.mega-skills/state.json`. **No more context drift in long sessions.**
 
 ---
@@ -82,15 +91,19 @@ With `memory-management`, the agent tracks its current task, discovered issues, 
 ## 📂 Skill Categories
 
 ### 🛠️ Core Engineering
+
 `brainstorming` • `writing-plans` • `test-driven-development` • `sequential-thinking` • `systematic-debugging` • `using-git-worktrees` • `memory-management`
 
 ### 🏗️ Developer Tools & DevOps
+
 `mcp-builder` • `browser-automation` • `webapp-testing` • `claude-api` • `web-artifacts-builder` • `langsmith-fetch` • `changelog-generator`
 
 ### 📄 Document & Enterprise
+
 `pdf` • `xlsx` • `docx` • `pptx` • `invoice-organizer` • `file-organizer` • `internal-comms`
 
 ### 🎨 Design & Content Art
+
 `frontend-design` • `canvas-design` • `slack-gif-creator` • `twitter-algorithm-optimizer` • `youtube-downloader` • `theme-factory` • `algorithmic-art`
 
 ---
