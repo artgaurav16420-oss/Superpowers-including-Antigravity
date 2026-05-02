@@ -1,4 +1,13 @@
-# Superpowers — Contributor Guidelines
+# Mega-Skills — Contributor Guidelines
+
+## Mandatory Agent Instruction
+
+**You are working within the Mega-Skills ecosystem.** This repository contains a unified library of 59 high-utility skills from Superpowers, Anthropic, and Composio.
+
+1. **Always Check for Skills:** Before starting any task, search the `skills/` directory for a relevant `SKILL.md`.
+2. **Follow Methodology:** You MUST follow the Core Methodology skills (brainstorming, writing-plans, test-driven-development, etc.) for all software development tasks.
+3. **Use Specialized Tools:** Leverage the specialized Anthropic and Composio skills (pdf, connect, mcp-builder, etc.) as and when required to fulfill user requests efficiently.
+4. **No Placeholders:** Never use placeholders or theoretical examples when a skill can provide real utility.
 
 ## If You Are an AI Agent
 
