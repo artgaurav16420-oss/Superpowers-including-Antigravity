@@ -12,7 +12,7 @@ Download YouTube videos with full control over quality and format settings.
 The simplest way to download a video:
 
 ```bash
-python scripts/download_video.py "https://www.youtube.com/watch?v=VIDEO_ID"
+python scripts/download_video.py "<https://www.youtube.com/watch?v=VIDEO_ID">
 ```
 
 This downloads the video in best available quality as MP4 to `/mnt/user-data/outputs/`.
@@ -78,19 +78,19 @@ python scripts/download_video.py "URL" -o /path/to/directory
 1. Download video in 1080p as MP4:
 
 ```bash
-python scripts/download_video.py "https://www.youtube.com/watch?v=dQw4w9WgXcQ" -q 1080p
+python scripts/download_video.py "<https://www.youtube.com/watch?v=dQw4w9WgXcQ"> -q 1080p
 ```
 
 1. Download audio only as MP3:
 
 ```bash
-python scripts/download_video.py "https://www.youtube.com/watch?v=dQw4w9WgXcQ" -a
+python scripts/download_video.py "<https://www.youtube.com/watch?v=dQw4w9WgXcQ"> -a
 ```
 
 1. Download in 720p as WebM to custom directory:
 
 ```bash
-python scripts/download_video.py "https://www.youtube.com/watch?v=dQw4w9WgXcQ" -q 720p -f webm -o /custom/path
+python scripts/download_video.py "<https://www.youtube.com/watch?v=dQw4w9WgXcQ"> -q 720p -f webm -o /custom/path
 ```
 
 ## How It Works

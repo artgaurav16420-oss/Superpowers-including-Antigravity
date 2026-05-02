@@ -23,7 +23,7 @@ Connect Claude to 1000+ apps. Actually send emails, create issues, post messages
 
 This will:
 
-- Ask for your free API key (get one at [platform.composio.dev](https://platform.composio.dev/?utm_source=Github&utm_content=AwesomeSkills))
+- Ask for your free API key (get one at [platform.composio.dev](<https://platform.composio.dev/?utm_source=Github&utm_content=AwesomeSkills))>
 
 - Configure Claude's connection to 1000+ apps
 
@@ -42,7 +42,7 @@ If it works, you're connected!
 ## What You Can Do
 
 | Ask Claude to... | What happens |
-|::::::---::::::---::::::---::::::---::::::---::::::---|::::::---::::::---::::::---::::::-----|
+|:::::::---:::::::---:::::::---:::::::---:::::::---:::::::---|:::::::---:::::::---:::::::---:::::::-----|
 | "Send email to sarah@acme.com about the launch" | Actually sends the email |
 | "Create GitHub issue: fix login bug" | Creates the issue |
 | "Post to Slack #general: deploy complete" | Posts the message |
@@ -82,7 +82,7 @@ If it works, you're connected!
 </p>
 
 <p align="center">
-  <a href="https://platform.composio.dev/?utm_source=Github&utm_content=AwesomeSkills">
-    <img src="https://img.shields.io/badge/Get_Started_Free-4F46E5?style=for-the-badge" alt="Get Started"/>
+  <a href="<https://platform.composio.dev/?utm_source=Github&utm_content=AwesomeSkills>">
+    <img src="<https://img.shields.io/badge/Get_Started_Free-4F46E5?style=for-the-badge"> alt="Get Started"/>
   </a>
 </p>

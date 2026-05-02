@@ -494,13 +494,13 @@ langsmith-fetch traces --limit 10 --include-metadata
 
 ## Resources
 
-- **LangSmith Fetch CLI:** https://github.com/langchain-ai/langsmith-fetch
+- **LangSmith Fetch CLI:** <https://github.com/langchain-ai/langsmith-fetch>
 
-- **LangSmith Studio:** https://smith.langchain.com/
+- **LangSmith Studio:** <https://smith.langchain.com/>
 
-- **LangChain Docs:** https://docs.langchain.com/
+- **LangChain Docs:** <https://docs.langchain.com/>
 
-- **This Skill Repo:** https://github.com/OthmanAdi/langsmith-fetch-skill
+- **This Skill Repo:** <https://github.com/OthmanAdi/langsmith-fetch-skill>
 
 ---
 
@@ -525,4 +525,4 @@ langsmith-fetch traces --limit 10 --include-metadata
 **Version:** 0.1.0
 **Author:** Ahmad Othman Ammar Adi
 **License:** MIT
-**Repository:** https://github.com/OthmanAdi/langsmith-fetch-skill
+**Repository:** <https://github.com/OthmanAdi/langsmith-fetch-skill>

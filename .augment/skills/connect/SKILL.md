@@ -22,7 +22,7 @@ Use this skill when you need Claude to:
 ## What Changes
 
 | Without Connect | With Connect |
-|::::::---::::::---::::::---::::::---::::::-----|::::::---::::::---::::::---::::::-----|
+|:::::::---:::::::---:::::::---:::::::---:::::::-----|:::::::---:::::::---:::::::---:::::::-----|
 | "Here's a draft email..." | Sends the email |
 | "You should create an issue..." | Creates the issue |
 | "Post this to Slack..." | Posts it |
@@ -52,7 +52,7 @@ Use this skill when you need Claude to:
 
 ### 1. Get API Key
 
-Get your free key at [platform.composio.dev](https://platform.composio.dev/?utm_source=Github&utm_content=AwesomeSkills)
+Get your free key at [platform.composio.dev](<https://platform.composio.dev/?utm_source=Github&utm_content=AwesomeSkills)>
 
 ### 2. Set Environment Variable
 
@@ -136,7 +136,7 @@ First time using an app:
 
 ```text
 To send emails, I need Gmail access.
-Authorize here: https://...
+Authorize here: <https://...>
 Say "connected" when done.
 ```
 
@@ -145,7 +145,7 @@ Connection persists after that.
 ## Framework Support
 
 | Framework | Install |
-|::::::---::::::---::::::-----|::::::---::::::---::::::---|
+|:::::::---:::::::---:::::::-----|:::::::---:::::::---:::::::---|
 | Claude Agent SDK | `pip install composio claude-agent-sdk` |
 
 | OpenAI Agents | `pip install composio openai-agents` |
@@ -171,7 +171,7 @@ Connection persists after that.
 </p>
 
 <p align="center">
-  <a href="https://platform.composio.dev/?utm_source=Github&utm_content=AwesomeSkills">
-    <img src="https://img.shields.io/badge/Get_Started_Free-4F46E5?style=for-the-badge" alt="Get Started"/>
+  <a href="<https://platform.composio.dev/?utm_source=Github&utm_content=AwesomeSkills>">
+    <img src="<https://img.shields.io/badge/Get_Started_Free-4F46E5?style=for-the-badge"> alt="Get Started"/>
   </a>
 </p>
