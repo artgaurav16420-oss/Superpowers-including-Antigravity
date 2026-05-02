@@ -2,7 +2,7 @@
 
 ![Mega-Skills Banner](https://raw.githubusercontent.com/artgaurav16420-oss/Mega-Skills/main/assets/mega_skills_banner.png)
 
-## Transform any LLM into an elite Software Engineer. 63+ executable skills for the agentic era.
+## Transform any LLM into an elite Software Engineer. 64+ executable skills for the agentic era.
 
 [![GitHub stars](https://img.shields.io/github/stars/artgaurav16420-oss/Mega-Skills?style=for-the-badge&color=yellow)](https://github.com/artgaurav16420-oss/Mega-Skills/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/artgaurav16420-oss/Mega-Skills?style=for-the-badge&color=blue)](https://github.com/artgaurav16420-oss/Mega-Skills/network/members)
@@ -36,12 +36,28 @@ npx mega-skills sync
 
 ## 💎 Why Mega-Skills
 
-Most AI agents fail because they lack a **methodology**. They guess, they hallucinate, and they ignore edge cases. **Mega-Skills** fixes this by injecting 63+ high-fidelity workflows directly into the agent's reasoning loop.
+Most AI agents fail because they lack a **methodology**. They guess, they hallucinate, and they ignore edge cases. **Mega-Skills** fixes this by injecting 64+ high-fidelity workflows directly into the agent's reasoning loop.
 
-1.  **🔥 63+ Specialized Skills**: From advanced Excel recalculation to autonomous subagent swarms.
+1.  **🔥 64+ Specialized Skills**: From cinematic presentations to autonomous subagent swarms.
 2.  **⚡ Lightning Fast**: Structured with native Git symlinks to reduce repository size by **99%** (from ~22,000 files to <600).
 3.  **🛠️ Universal Compatibility**: Natively supports **Cursor, Windsurf, Claude Code, Aider, Devin,** and more.
 4.  **🏗️ Industrial Grade**: Includes system-level shims for running complex tools in restricted environments.
+
+---
+
+## 🌟 Trending Skills Spotlight
+
+### 🦴 Caveman Mode (`caveman`)
+**The ultimate token-saver.** Forces agents to communicate in ultra-compressed language. Cuts token usage by ~75% while maintaining 100% precision.
+
+### 🛡️ Security Auditor (`security-auditor`)
+**Red-Team in your pocket.** Automatically performs static analysis to detect SQLi, XSS, and mobile-specific vulnerabilities.
+
+### 🧠 High-Fidelity PPTX (`high-fidelity-pptx`)
+**Cinematic slides on autopilot.** Uses Marp and PptxGenJS to transform markdown into professional, Kimi-style presentations with high-impact visuals.
+
+### 📊 Excel Mastery (`xlsx`)
+**Industrial spreadsheet engineering.** Includes a full LibreOffice-powered recalculation engine to ensure formula integrity.
 
 ---
 
@@ -53,7 +69,7 @@ Mega-Skills are designed to be **stacked**. Combine these skills to turn your ag
 | :--- | :--- | :--- |
 | **The "Fortress"** | `security-auditor` + `test-driven-development` | Zero-vulnerability code with 100% test coverage. |
 | **The "Scientist"** | `paper-to-code` + `advanced-rag-optimizer` | Implement state-of-the-art research with perfect retrieval grounding. |
-| **The "Architect"** | `brainstorming` + `writing-plans` + `subagent-driven-development` | Orchestrate a swarm of agents to build entire systems from one prompt. |
+| **The "Executive"** | `brainstorming` + `writing-plans` + `high-fidelity-pptx` | Turn a vague idea into a professional roadmap and a board-ready slide deck. |
 | **The "Ghost"** | `caveman` + `memory-management` + `sequential-thinking` | Run 100+ turn sessions with zero context drift and minimal token cost. |
 
 ---
@@ -76,18 +92,18 @@ All skills are high-fidelity, but some define the very nature of agentic enginee
 | `memory-management` | Persistent state tracking across long sessions | 10/10 |
 | `systematic-debugging` | Hypothesis-driven root cause analysis | 10/10 |
 
-### 🥈 Tier 2: Elite Engineering (Security & Advanced AI)
+### 🥈 Tier 2: Elite Engineering (Security, AI & Design)
 *Professional-grade capabilities for complex technical domains.*
 
 | Skill | Description | Value |
 | :--- | :--- | :--- |
 | `security-auditor` | Static analysis for SQLi, XSS, and Mobile threats | 9/10 |
+| `high-fidelity-pptx` | Cinematic, Kimi-style presentation generation | 9/10 |
 | `paper-to-code` | Mathematical implementation of academic research | 9/10 |
 | `advanced-rag-optimizer` | Production-grade RAG pipeline tuning | 9/10 |
 | `infrastructure-as-code` | Terraform and Cloud automation guardrails | 9/10 |
 | `claude-api` | Advanced Anthropic SDK patterns and prompt caching | 9/10 |
 | `mcp-builder` | Building and debugging Model Context Protocol servers | 9/10 |
-| `webapp-testing` | Playwright-based frontend automation | 9/10 |
 | `incident-postmortem` | Forensic SRE analysis of agentic failures | 9/10 |
 
 ### 🥉 Tier 3: Industrial Automation (Docs & Enterprise)
