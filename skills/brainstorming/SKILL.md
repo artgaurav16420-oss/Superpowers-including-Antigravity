@@ -31,7 +31,7 @@ You MUST create a task for each of these items and complete them in order:
 
 1. **Present design** — in sections scaled to their complexity, get user approval after each section
 
-1. **Write design doc** — save to `docs/mega-skills/specs/YYYY-MM-DD-`<topic>`-design.md` and commit
+1. **Write design doc** — save to `docs/mega-skills/specs/YYYY-MM-DD-<topic>-design.md` and commit
 
 1. **Spec self-review** — quick inline check for placeholders, contradictions, ambiguity, scope (see below)
 
@@ -132,7 +132,7 @@ digraph brainstorming {
 
 ### Documentation
 
-1. Write the validated design (spec) to `docs/mega-skills/specs/YYYY-MM-DD-`<topic>`-design.md`
+1. Write the validated design (spec) to `docs/mega-skills/specs/YYYY-MM-DD-<topic>-design.md`
 
 1. (User preferences for spec location override this default)
 
