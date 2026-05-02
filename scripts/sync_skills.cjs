@@ -2,7 +2,9 @@ const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 
-const rootDir = 'C:\\Users\\agaur\\OneDrive\\Desktop\\Superpowers';
+// Portability: Use process.cwd() or similar if possible, 
+// but for this repo it usually runs from root.
+const rootDir = process.cwd();
 const coreSkillsDir = path.join(rootDir, 'skills');
 
 // Harnesses to process (Standard + Specific Deep Paths)
@@ -19,43 +21,61 @@ const harnessPaths = [
     ".trae/skills", ".vibe/skills", ".windsurf/skills", ".zencoder/skills"
 ];
 
-function syncWithLinks(src, dest) {
-    if (!fs.existsSync(dest)) fs.mkdirSync(dest, { recursive: true });
+console.log(`Checking symlink health for ${harnessPaths.length} harnesses...`);
+
+harnessPaths.forEach(h => {
+    const symlinkPath = path.join(rootDir, h.replace(/\//g, path.sep));
+    const parentDir = path.dirname(symlinkPath);
     
-    const entries = fs.readdirSync(src, { withFileTypes: true });
-    for (let entry of entries) {
-        const srcPath = path.join(src, entry.name);
-        const destPath = path.join(dest, entry.name);
-        
-        if (entry.isDirectory()) {
-            syncWithLinks(srcPath, destPath);
+    // Relative target calculation
+    const depth = h.split('/').length - 1;
+    const target = '../'.repeat(depth) + 'skills';
+
+    if (!fs.existsSync(parentDir)) return; // Skip if harness base missing (e.g. .tabnine/agent if .tabnine missing)
+
+    process.stdout.write(`Checking ${h}... `);
+
+    let needsRepair = false;
+    try {
+        const stats = fs.lstatSync(symlinkPath);
+        if (stats.isSymbolicLink()) {
+            const currentTarget = fs.readlinkSync(symlinkPath);
+            if (currentTarget !== target && currentTarget !== target.replace(/\//g, '\\')) {
+                console.log(`target mismatch: ${currentTarget} != ${target}. Repairing.`);
+                needsRepair = true;
+            } else {
+                console.log('OK');
+            }
         } else {
+            console.log('not a symlink. Converting.');
+            needsRepair = true;
+        }
+    } catch (e) {
+        console.log('missing. Creating.');
+        needsRepair = true;
+    }
+
+    if (needsRepair) {
+        try {
+            if (fs.existsSync(symlinkPath) || fs.lstatSync(symlinkPath, { throwIfNoEntry: false })) {
+                fs.rmSync(symlinkPath, { recursive: true, force: true });
+            }
+            fs.symlinkSync(target, symlinkPath, 'dir');
+            console.log('Successfully created symlink.');
+        } catch (err) {
+            console.error(`Failed to create symlink for ${h}: ${err.message}`);
+            // Fallback for Windows if Developer Mode is off
             try {
-                if (fs.existsSync(destPath)) {
-                    // Skip if already hard linked (checked via stat)
-                    const srcStat = fs.statSync(srcPath);
-                    const destStat = fs.statSync(destPath);
-                    if (srcStat.ino === destStat.ino) continue; 
-                    
-                    fs.unlinkSync(destPath);
-                }
-                process.stdout.write(`.`);
-                execSync(`cmd /c mklink /H "${destPath}" "${srcPath}"`, { stdio: 'ignore' });
-            } catch (e) {
-                fs.copyFileSync(srcPath, destPath);
+                console.log('Attempting Windows mklink fallback...');
+                const winTarget = target.replace(/\//g, '\\');
+                const winPath = symlinkPath.replace(/\//g, '\\');
+                execSync(`cmd /c mklink /D "${winPath}" "${winTarget}"`, { stdio: 'ignore' });
+                console.log('Success via mklink.');
+            } catch (err2) {
+                console.error(`Windows fallback failed. Some agents may not find skills until Developer Mode is enabled or running as Admin.`);
             }
         }
     }
-}
-
-console.log(`Starting Mega-Sync for ${harnessPaths.length} harnesses...`);
-
-harnessPaths.forEach(h => {
-    const dest = path.join(rootDir, h.replace(/\//g, path.sep));
-    if (!fs.existsSync(path.dirname(dest))) return; // Skip if harness base missing
-    
-    console.log(`\nSyncing ${h}...`);
-    syncWithLinks(coreSkillsDir, dest);
 });
 
-console.log('\n\nMega-Sync complete. Repository physically optimized.');
+console.log('\nMega-Sync complete. Repository structurally optimized.');

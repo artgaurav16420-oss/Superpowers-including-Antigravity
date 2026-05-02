@@ -6,6 +6,7 @@
 
 [![GitHub stars](https://img.shields.io/github/stars/artgaurav16420-oss/Mega-Skills?style=for-the-badge&color=yellow)](https://github.com/artgaurav16420-oss/Mega-Skills/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/artgaurav16420-oss/Mega-Skills?style=for-the-badge&color=blue)](https://github.com/artgaurav16420-oss/Mega-Skills/network/members)
+[![CI](https://img.shields.io/github/actions/workflow/status/artgaurav16420-oss/Mega-Skills/ci.yml?style=for-the-badge&label=Build&logo=github)](https://github.com/artgaurav16420-oss/Mega-Skills/actions)
 [![License](https://img.shields.io/github/license/artgaurav16420-oss/Mega-Skills?style=for-the-badge&color=green)](https://github.com/artgaurav16420-oss/Mega-Skills/blob/main/LICENSE)
 [![Discord](https://img.shields.io/discord/123456789012345678?style=for-the-badge&label=Discord&logo=discord&color=7289DA)](https://discord.gg/35wsABTejz)
 
@@ -16,6 +17,7 @@
 Most AI agents fail because they lack a **methodology**. They guess, they hallucinate, and they ignore edge cases. **Mega-Skills** fixes this by injecting 62+ high-fidelity workflows directly into the agent's reasoning loop.
 
 1. **🔥 62+ Specialized Skills**: From advanced Excel recalculation to autonomous subagent swarms.
+1. **⚡ Lightning Fast**: Structured with native Git symlinks to reduce repository size by **99%** (from ~22,000 files to <600).
 1. **🛠️ Universal Compatibility**: Natively supports **Cursor, Windsurf, Claude Code, Aider, Devin,** and more.
 1. **🏗️ Industrial Grade**: Includes system-level shims for running complex tools in restricted environments.
 
@@ -49,13 +51,16 @@ Not just simple CSV writing. Includes a full **LibreOffice-powered recalculation
 
 Mega-Skills is a zero-dependency plugin that works across the entire agentic ecosystem.
 
+### One-Command Quick Start
+
+The fastest way to install Mega-Skills in any project is via NPM:
+
+```bash
+# Initialize Mega-Skills in your current project
+npx mega-skills sync
+```
+
 ### Supported Platforms
-
-1. **IDEs**: Cursor, Windsurf, Trae, VS Code (via Aider/OpenHands).
-1. **CLIs**: Claude Code, Gemini CLI, Aider, GitHub Copilot CLI.
-1. **Autonomous Agents**: Devin, OpenHands, Goose, Roo Code.
-
-### One-Command Install
 
 | Harness | Installation Command |
 | :::::--- | :::::--- |

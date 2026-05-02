@@ -1,7 +1,32 @@
 {
   "name": "mega-skills",
   "version": "5.0.7-mega",
+  "description": "The OS for AI Agents: 62+ executable skills for Cursor, Windsurf, Claude Code, and more.",
   "type": "module",
-  "main": ".opencode/plugins/mega-skills.js"
+  "main": ".opencode/plugins/mega-skills.js",
+  "bin": {
+    "mega-skills": "scripts/cli.js"
+  },
+  "keywords": [
+    "ai",
+    "agents",
+    "cursor",
+    "windsurf",
+    "claude-code",
+    "skills",
+    "tdd",
+    "llm",
+    "productivity"
+  ],
+  "author": "Gaurav <https://github.com/artgaurav16420-oss>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/artgaurav16420-oss/Mega-Skills.git"
+  },
+  "bugs": {
+    "url": "https://github.com/artgaurav16420-oss/Mega-Skills/issues"
+  },
+  "homepage": "https://github.com/artgaurav16420-oss/Mega-Skills#readme"
 }
 
