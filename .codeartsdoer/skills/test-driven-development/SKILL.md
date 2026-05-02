@@ -11,11 +11,11 @@ Write the test first. Watch it fail. Write minimal code to pass.
 
 **Core principle:** If you didn't watch the test fail, you don't know if it tests the right thing.
 
-**Violating the letter of the rules is violating the spirit of the rules.**
+#### Violating the letter of the rules is violating the spirit of the rules.
 
 ## When to Use
 
-**Always:**
+#### Always:
 
 - New features
 
@@ -25,7 +25,7 @@ Write the test first. Watch it fail. Write minimal code to pass.
 
 - Behavior changes
 
-**Exceptions (ask your human partner):**
+#### Exceptions (ask your human partner):
 
 - Throwaway prototypes
 
@@ -43,7 +43,7 @@ NO PRODUCTION CODE WITHOUT A FAILING TEST FIRST
 
 Write code before the test? Delete it. Start over.
 
-**No exceptions:**
+#### No exceptions:
 
 - Don't keep it as "reference"
 
@@ -117,7 +117,7 @@ test('retry works', async () => {
 Vague name, tests mock not code
 </Bad>
 
-**Requirements:**
+#### Requirements:
 
 - One behavior
 
@@ -127,7 +127,7 @@ Vague name, tests mock not code
 
 ### Verify RED - Watch It Fail
 
-**MANDATORY. Never skip.**
+#### MANDATORY. Never skip.
 
 ```bash
 npm test path/to/test.test.ts
@@ -189,7 +189,7 @@ Don't add features, refactor other code, or "improve" beyond the test.
 
 ### Verify GREEN - Watch It Pass
 
-**MANDATORY.**
+#### MANDATORY.
 
 ```bash
 npm test path/to/test.test.ts
@@ -226,7 +226,7 @@ Next failing test for next feature.
 ## Good Tests
 
 | Quality | Good | Bad |
-|:::::::::---:::::::::---:::::::::---|:::::::::---:::::::::---|:::::::::-----|
+|:::::::::::::---:::::::::::::---:::::::::::::---|:::::::::::::---:::::::::::::---|:::::::::::::-----|
 | **Minimal** | One thing. "and" in name? Split it. | `test('validates email and domain and whitespace')` |
 
 | **Clear** | Name describes behavior | `test('test1')` |
@@ -235,7 +235,7 @@ Next failing test for next feature.
 
 ## Why Order Matters
 
-**"I'll write tests after to verify it works"**
+#### "I'll write tests after to verify it works"
 
 Tests written after code pass immediately. Passing immediately proves nothing:
 
@@ -249,7 +249,7 @@ Tests written after code pass immediately. Passing immediately proves nothing:
 
 Test-first forces you to see the test fail, proving it actually tests something.
 
-**"I already manually tested all the edge cases"**
+#### "I already manually tested all the edge cases"
 
 Manual testing is ad-hoc. You think you tested everything but:
 
@@ -263,7 +263,7 @@ Manual testing is ad-hoc. You think you tested everything but:
 
 Automated tests are systematic. They run the same way every time.
 
-**"Deleting X hours of work is wasteful"**
+#### "Deleting X hours of work is wasteful"
 
 Sunk cost fallacy. The time is already gone. Your choice now:
 
@@ -273,7 +273,7 @@ Sunk cost fallacy. The time is already gone. Your choice now:
 
 The "waste" is keeping code you can't trust. Working code without real tests is technical debt.
 
-**"TDD is dogmatic, being pragmatic means adapting"**
+#### "TDD is dogmatic, being pragmatic means adapting"
 
 TDD IS pragmatic:
 
@@ -287,7 +287,7 @@ TDD IS pragmatic:
 
 "Pragmatic" shortcuts = debugging in production = slower.
 
-**"Tests after achieve the same goals - it's spirit not ritual"**
+#### "Tests after achieve the same goals - it's spirit not ritual"
 
 No. Tests-after answer "What does this do?" Tests-first answer "What should this do?"
 
@@ -300,7 +300,7 @@ Tests-first force edge case discovery before implementing. Tests-after verify yo
 ## Common Rationalizations
 
 | Excuse | Reality |
-|:::::::::---:::::::::-----|:::::::::---:::::::::---:::::::::---|
+|:::::::::::::---:::::::::::::-----|:::::::::::::---:::::::::::::---:::::::::::::---|
 | "Too simple to test" | Simple code breaks. Test takes 30 seconds. |
 | "I'll test after" | Tests passing immediately prove nothing. |
 | "Tests after achieve same goals" | Tests-after = "what does this do?" Tests-first = "what should this do?" |
@@ -341,13 +341,13 @@ Tests-first force edge case discovery before implementing. Tests-after verify yo
 
 - "This is different because..."
 
-**All of these mean: Delete code. Start over with TDD.**
+#### All of these mean: Delete code. Start over with TDD.
 
 ## Example: Bug Fix
 
 **Bug:** Empty email accepted
 
-**RED**
+#### RED
 
 ```typescript
 test('rejects empty email', async () => {
@@ -356,14 +356,14 @@ test('rejects empty email', async () => {
 });
 ```
 
-**Verify RED**
+#### Verify RED
 
 ```bash
 $ npm test
 FAIL: expected 'Email required', got undefined
 ```
 
-**GREEN**
+#### GREEN
 
 ```typescript
 function submitForm(data: FormData) {
@@ -374,14 +374,14 @@ function submitForm(data: FormData) {
 }
 ```
 
-**Verify GREEN**
+#### Verify GREEN
 
 ```bash
 $ npm test
 PASS
 ```
 
-**REFACTOR**
+#### REFACTOR
 Extract validation for multiple fields if needed.
 
 ## Verification Checklist
@@ -409,7 +409,7 @@ Can't check all boxes? You skipped TDD. Start over.
 ## When Stuck
 
 | Problem | Solution |
-|:::::::::---:::::::::---:::::::::---|:::::::::---:::::::::---:::::::::----|
+|:::::::::::::---:::::::::::::---:::::::::::::---|:::::::::::::---:::::::::::::---:::::::::::::----|
 | Don't know how to test | Write wished-for API. Write assertion first. Ask your human partner. |
 | Test too complicated | Design too complicated. Simplify interface. |
 | Must mock everything | Code too coupled. Use dependency injection. |

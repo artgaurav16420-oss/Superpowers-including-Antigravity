@@ -160,12 +160,16 @@ function fixMarkdown(filePath) {
 
     // MD036: No emphasis as heading remediation
     result = result.split('\n').map(line => {
-        // Find lines that are just **Text** (or __Text__) and not part of a list/table
-        // We exclude lines that look like list items or already have heading markers
-        if (line.trim().startsWith('-') || line.trim().startsWith('*') || line.trim().startsWith('#')) return line;
-        const boldHeadingMatch = line.match(/^(\s*)\*\*([^*]+)\*\*(\s*)$/);
+        const trimmed = line.trim();
+        // Skip list items, headings, and empty lines
+        if (trimmed === '' || trimmed.startsWith('-') || trimmed.startsWith('*') || trimmed.startsWith('#')) return line;
+        
+        // Match **Text** with optional spaces
+        const boldHeadingMatch = line.trim().match(/^\*\*([^*]+)\*\*$/);
         if (boldHeadingMatch) {
-            return `${boldHeadingMatch[1]}#### ${boldHeadingMatch[2]}`;
+            const indent = line.match(/^(\s*)/)[0];
+            console.log(`  Converting bold heading: ${line.trim()}`);
+            return `${indent}#### ${boldHeadingMatch[1]}`;
         }
         return line;
     }).join('\n');
