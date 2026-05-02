@@ -2,11 +2,11 @@
 
 ![Mega-Skills Banner](https://raw.githubusercontent.com/artgaurav16420-oss/Mega-Skills/main/assets/mega_skills_banner.png)
 
-## Transform any LLM into an elite Software Engineer. 64+ executable skills for the agentic era
+## Transform any LLM into an elite Software Engineer. 65+ executable skills for the agentic era.
 
 [![GitHub stars](https://img.shields.io/github/stars/artgaurav16420-oss/Mega-Skills?style=for-the-badge&color=yellow)](https://github.com/artgaurav16420-oss/Mega-Skills/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/artgaurav16420-oss/Mega-Skills?style=for-the-badge&color=blue)](https://github.com/artgaurav16420-oss/Mega-Skills/network/members)
-[![CI](https://github.com/artgaurav16420-oss/Mega-Skills/actions/workflows/ci.yml/badge.svg)](https://github.com/artgaurav16420-oss/Mega-Skills/actions/workflows/ci.yml)
+[![CI](https://github.com/artgaurav16420-oss/Mega-Skills/actions/workflows/ci.yml/badge.svg)](https://github.com/artgaurav16420-oss/Mega-Skills/actions)
 [![License](https://img.shields.io/github/license/artgaurav16420-oss/Mega-Skills?style=for-the-badge&color=green)](https://github.com/artgaurav16420-oss/Mega-Skills/blob/main/LICENSE)
 [![Discord](https://img.shields.io/discord/123456789012345678?style=for-the-badge&label=Discord&logo=discord&color=7289DA)](https://discord.gg/35wsABTejz)
 
@@ -17,11 +17,15 @@
 Mega-Skills is a zero-dependency plugin that works across the entire agentic ecosystem.
 
 ### One-Command Setup
-
-The fastest way to initialize Mega-Skills in any project:
-
+Initialize Mega-Skills in any project instantly:
 ```bash
 npx mega-skills sync
+```
+
+### System Health Check
+Ensure your environment is ready for "Beast Mode" skills:
+```bash
+npx mega-skills doctor
 ```
 
 ### Supported Platforms
@@ -38,31 +42,28 @@ npx mega-skills sync
 
 ## 💎 Why Mega-Skills
 
-Most AI agents fail because they lack a **methodology**. They guess, they hallucinate, and they ignore edge cases. **Mega-Skills** fixes this by injecting 64+ high-fidelity workflows directly into the agent's reasoning loop.
+Most AI agents fail because they lack a **methodology**. They guess, they hallucinate, and they ignore edge cases. **Mega-Skills** fixes this by injecting 65+ high-fidelity workflows directly into the agent's reasoning loop.
 
-1. **🔥 64+ Specialized Skills**: From cinematic presentations to autonomous subagent swarms.
-2. **⚡ Lightning Fast**: Structured with native Git symlinks to reduce repository size by **99%** (from ~22,000 files to <600).
-3. **🛠️ Universal Compatibility**: Natively supports **Cursor, Windsurf, Claude Code, Aider, Devin,** and more.
-4. **🏗️ Industrial Grade**: Includes system-level shims for running complex tools in restricted environments.
+1.  **🔥 65+ Specialized Skills**: From cinematic presentations to autonomous subagent swarms.
+2.  **⚡ Lightning Fast**: Native Git symlinks reduce repository size by **99%** (from ~22,000 files to <600).
+3.  **🛠️ Universal Compatibility**: Natively supports **Cursor, Windsurf, Claude Code, Aider, Devin,** and more.
+4.  **🏗️ Industrial Grade**: Includes system-level shims and **Self-Healing Diagnostics (`doctor`)**.
 
 ---
 
 ## 🌟 Trending Skills Spotlight
 
 ### 🦴 Caveman Mode (`caveman`)
-
-**The ultimate token-saver.** Forces agents to communicate in ultra-compressed language. Cuts token usage by ~75% while maintaining 100% precision.
+**The ultimate token-saver.** Forces agents to communicate in ultra-compressed, technical language. Cuts token usage by ~75% while maintaining 100% precision.
+> "Why use many word when few word do trick?"
 
 ### 🛡️ Security Auditor (`security-auditor`)
-
-**Red-Team in your pocket.** Automatically performs static analysis to detect SQLi, XSS, and mobile-specific vulnerabilities.
+**Red-Team in your pocket.** Automatically performs static analysis to detect SQLi, XSS, and mobile-specific vulnerabilities before they hit a branch.
 
 ### 🧠 High-Fidelity PPTX (`high-fidelity-pptx`)
-
 **Cinematic slides on autopilot.** Uses Marp and PptxGenJS to transform markdown into professional, Kimi-style presentations with high-impact visuals.
 
 ### 📊 Excel Mastery (`xlsx`)
-
 **Industrial spreadsheet engineering.** Includes a full LibreOffice-powered recalculation engine to ensure formula integrity.
 
 ---
@@ -82,10 +83,9 @@ Mega-Skills are designed to be **stacked**. Combine these skills to turn your ag
 
 ## 🏆 Master Skill Index (Tiered Value)
 
-All skills are high-fidelity, but some define the very nature of agentic engineering. Listed in descending order of architectural impact.
+All skills are high-fidelity, but some define the very nature of agentic engineering.
 
 ### 🥇 Tier 1: The Core OS (Methodology & Reasoning)
-
 *Fundamental skills that shape how the agent thinks and works.*
 
 | Skill | Description | Value |
@@ -100,7 +100,6 @@ All skills are high-fidelity, but some define the very nature of agentic enginee
 | `systematic-debugging` | Hypothesis-driven root cause analysis | 10/10 |
 
 ### 🥈 Tier 2: Elite Engineering (Security, AI & Design)
-
 *Professional-grade capabilities for complex technical domains.*
 
 | Skill | Description | Value |
@@ -115,7 +114,6 @@ All skills are high-fidelity, but some define the very nature of agentic enginee
 | `incident-postmortem` | Forensic SRE analysis of agentic failures | 9/10 |
 
 ### 🥉 Tier 3: Industrial Automation (Docs & Enterprise)
-
 *Heavy-duty tools for data, documents, and workflows.*
 
 | Skill | Description | Value |
@@ -129,24 +127,7 @@ All skills are high-fidelity, but some define the very nature of agentic enginee
 | `internal-comms` | Professional newsletter and FAQ generation | 8/10 |
 | `doc-coauthoring` | Structured workflow for technical documentation | 8/10 |
 
-### 🏅 Tier 4: Creative & Growth (Design, Art, Social)
-
-*High-utility skills for frontend, visuals, and audience engagement.*
-
-| Skill | Description | Value |
-| :--- | :--- | :--- |
-| `frontend-design` | Production-grade UI/UX with shadcn/ui | 7/10 |
-| `artifacts-builder` | Multi-component React/Tailwind artifacts | 7/10 |
-| `algorithmic-art` | Generative p5.js art and particle systems | 7/10 |
-| `slack-gif-creator` | Optimized animated assets for communication | 7/10 |
-| `twitter-algorithm-optimizer` | Audience engagement and viral hook engineering | 7/10 |
-| `theme-factory` | Visual styling and palette generation | 7/10 |
-| `youtube-downloader` | Programmatic media retrieval and conversion | 7/10 |
-| `image-enhancer` | Heuristic sharpening and resolution boosting | 7/10 |
-
-### 🏮 Extended Library
-
-(And 30+ more specialized skills inside the repo...)
+*(And 30+ more specialized skills inside the repo...)*
 
 ---
 
@@ -165,9 +146,10 @@ Mega-Skills isn't a collection of scripts; it's a **Development OS**.
 
 Mega-Skills is built for professional use-cases:
 
-1. **Socket Shims**: Includes a custom C-level `LD_PRELOAD` shim (`soffice.py`) to run LibreOffice in restricted Unix environments.
-2. **Isolated Macros**: Uses dedicated StarBasic namespaces (`MegaSkillsRecalc`) to prevent conflict with your existing Office configurations.
-3. **Dependency Checks**: Automatic pre-flight verification ensures your environment has `gcc`, `pandoc`, and `soffice` before attempting complex conversions.
+1.  **Self-Healing Diagnostics**: Use `npx mega-skills doctor` to find and fix missing system binaries.
+2.  **Adversarial Testing**: Every core skill is pressure-tested against naive prompts to ensure 100% methodology adherence.
+3.  **Socket Shims**: Includes a custom C-level `LD_PRELOAD` shim (`soffice.py`) to run LibreOffice in restricted Unix environments.
+4.  **Isolated Macros**: Uses dedicated StarBasic namespaces (`MegaSkillsRecalc`) to prevent configuration drift.
 
 ---
 
