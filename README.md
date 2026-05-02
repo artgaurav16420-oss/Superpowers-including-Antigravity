@@ -101,6 +101,55 @@ Advanced automation and integration skills:
 - **youtube-downloader**, **twitter-algorithm-optimizer** - Social media tools
 - **file-organizer**, **invoice-organizer** - Productivity enhancements
 
+### Complete Skills Index
+
+The full library contains 59 composable skills:
+
+- **algorithmic-art** - Create generative art with code
+- **artifacts-builder** - Build complex React/Tailwind artifacts
+- **brainstorming** - Socratic design and spec refinement
+- **brand-guidelines** - Apply professional brand styling
+- **canvas-design** - Visual design and poster creation
+- **cavecrew** - Subagent delegation and compression
+- **caveman** suite - Ultra-compressed agent communication
+- **changelog-generator** - Automated release notes from git
+- **claude-api** - Anthropic SDK and prompt optimization
+- **competitive-ads-extractor** - Competitor ad analysis
+- **connect** & **connect-apps** - Integration with 1000+ services
+- **content-research-writer** - Research-backed content creation
+- **developer-growth-analysis** - Personal coding growth reports
+- **dispatching-parallel-agents** - Multi-agent orchestration
+- **doc-coauthoring** - Structured documentation workflow
+- **docx**, **pdf**, **pptx**, **xlsx** - Professional document handling
+- **domain-name-brainstormer** - Creative naming and availability
+- **executing-plans** - Batch task execution
+- **file-organizer** & **invoice-organizer** - Asset management
+- **finishing-a-development-branch** - Merge and cleanup workflow
+- **frontend-design** - Production-grade web interfaces
+- **image-enhancer** - Resolution and clarity improvement
+- **internal-comms** - Professional company updates
+- **langsmith-fetch** - Debugging agent traces
+- **lead-research-assistant** - Sales and lead generation
+- **mcp-builder** - Model Context Protocol server creation
+- **meeting-insights-analyzer** - Communication pattern analysis
+- **raffle-winner-picker** - Fair random selection
+- **receiving-code-review** & **requesting-code-review** - PR workflow
+- **skill-creator** & **writing-skills** - Authoring new agent capabilities
+- **skill-share** - Team skill discovery
+- **slack-gif-creator** - Custom animations for Slack
+- **subagent-driven-development** - Autonomous task completion
+- **systematic-debugging** - 4-phase root cause analysis
+- **tailored-resume-generator** - Job-specific resume optimization
+- **test-driven-development** - RED-GREEN-REFACTOR cycle
+- **theme-factory** - Universal styling for artifacts
+- **twitter-algorithm-optimizer** - Reach and engagement optimization
+- **using-git-worktrees** - Isolated development environments
+- **verification-before-completion** - Final fix validation
+- **web-artifacts-builder** - Advanced shadcn/ui artifacts
+- **webapp-testing** - Playwright-based frontend testing
+- **writing-plans** - Detailed implementation planning
+- **youtube-downloader** - Video and audio acquisition
+
 ## Philosophy
 
 - **Test-Driven Development** - Write tests first, always
