@@ -1,21 +1,21 @@
 # Mega-Skills: The OS for AI Agents
 
-![Mega-Skills Banner]([https://raw.githubusercontent.com/artgaurav16420-oss/Mega-Skills/main/assets/mega_skills_banner.png)]([https://raw.githubusercontent.com/artgaurav16420-oss/Mega-Skills/main/assets/mega_skills_banner.png))]([https://raw.githubusercontent.com/artgaurav16420-oss/Mega-Skills/main/assets/mega_skills_banner.png)))]([https://raw.githubusercontent.com/artgaurav16420-oss/Mega-Skills/main/assets/mega_skills_banner.png))))](https://raw.githubusercontent.com/artgaurav16420-oss/Mega-Skills/main/assets/mega_skills_banner.png)))))
+![Mega-Skills Banner](https://raw.githubusercontent.com/artgaurav16420-oss/Mega-Skills/main/assets/mega_skills_banner.png)
 
-## Transform any LLM into an elite Software Engineer. 101+ executable skills for the agentic era
+## Transform any LLM into an elite Software Engineer. 62+ executable skills for the agentic era
 
-[![GitHub stars]([https://img.shields.io/github/stars/artgaurav16420-oss/Mega-Skills?style=for-the-badge&color=yellow]([https://img.shields.io/github/stars/artgaurav16420-oss/Mega-Skills?style=for-the-badge&color=yellow)]([https://img.shields.io/github/stars/artgaurav16420-oss/Mega-Skills?style=for-the-badge&color=yellow))]([https://img.shields.io/github/stars/artgaurav16420-oss/Mega-Skills?style=for-the-badge&color=yellow)))](https://img.shields.io/github/stars/artgaurav16420-oss/Mega-Skills?style=for-the-badge&color=yellow)))))]([https://github.com/artgaurav16420-oss/Mega-Skills/stargazers)]([https://github.com/artgaurav16420-oss/Mega-Skills/stargazers))]([https://github.com/artgaurav16420-oss/Mega-Skills/stargazers)))]([https://github.com/artgaurav16420-oss/Mega-Skills/stargazers))))](https://github.com/artgaurav16420-oss/Mega-Skills/stargazers)))))
-[![GitHub forks]([https://img.shields.io/github/forks/artgaurav16420-oss/Mega-Skills?style=for-the-badge&color=blue]([https://img.shields.io/github/forks/artgaurav16420-oss/Mega-Skills?style=for-the-badge&color=blue)]([https://img.shields.io/github/forks/artgaurav16420-oss/Mega-Skills?style=for-the-badge&color=blue))]([https://img.shields.io/github/forks/artgaurav16420-oss/Mega-Skills?style=for-the-badge&color=blue)))](https://img.shields.io/github/forks/artgaurav16420-oss/Mega-Skills?style=for-the-badge&color=blue)))))]([https://github.com/artgaurav16420-oss/Mega-Skills/network/members)]([https://github.com/artgaurav16420-oss/Mega-Skills/network/members))]([https://github.com/artgaurav16420-oss/Mega-Skills/network/members)))]([https://github.com/artgaurav16420-oss/Mega-Skills/network/members))))](https://github.com/artgaurav16420-oss/Mega-Skills/network/members)))))
-[![License]([https://img.shields.io/github/license/artgaurav16420-oss/Mega-Skills?style=for-the-badge&color=green]([https://img.shields.io/github/license/artgaurav16420-oss/Mega-Skills?style=for-the-badge&color=green)]([https://img.shields.io/github/license/artgaurav16420-oss/Mega-Skills?style=for-the-badge&color=green))]([https://img.shields.io/github/license/artgaurav16420-oss/Mega-Skills?style=for-the-badge&color=green)))](https://img.shields.io/github/license/artgaurav16420-oss/Mega-Skills?style=for-the-badge&color=green)))))]([https://github.com/artgaurav16420-oss/Mega-Skills/blob/main/LICENSE)]([https://github.com/artgaurav16420-oss/Mega-Skills/blob/main/LICENSE))]([https://github.com/artgaurav16420-oss/Mega-Skills/blob/main/LICENSE)))]([https://github.com/artgaurav16420-oss/Mega-Skills/blob/main/LICENSE))))](https://github.com/artgaurav16420-oss/Mega-Skills/blob/main/LICENSE)))))
-[![Discord]([https://img.shields.io/discord/123456789012345678?style=for-the-badge&label=Discord&logo=discord&color=7289DA]([https://img.shields.io/discord/123456789012345678?style=for-the-badge&label=Discord&logo=discord&color=7289DA)]([https://img.shields.io/discord/123456789012345678?style=for-the-badge&label=Discord&logo=discord&color=7289DA))]([https://img.shields.io/discord/123456789012345678?style=for-the-badge&label=Discord&logo=discord&color=7289DA)))](https://img.shields.io/discord/123456789012345678?style=for-the-badge&label=Discord&logo=discord&color=7289DA)))))]([https://discord.gg/35wsABTejz)]([https://discord.gg/35wsABTejz))]([https://discord.gg/35wsABTejz)))]([https://discord.gg/35wsABTejz))))](https://discord.gg/35wsABTejz)))))
+[![GitHub stars](https://img.shields.io/github/stars/artgaurav16420-oss/Mega-Skills?style=for-the-badge&color=yellow)](https://github.com/artgaurav16420-oss/Mega-Skills/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/artgaurav16420-oss/Mega-Skills?style=for-the-badge&color=blue)](https://github.com/artgaurav16420-oss/Mega-Skills/network/members)
+[![License](https://img.shields.io/github/license/artgaurav16420-oss/Mega-Skills?style=for-the-badge&color=green)](https://github.com/artgaurav16420-oss/Mega-Skills/blob/main/LICENSE)
+[![Discord](https://img.shields.io/discord/123456789012345678?style=for-the-badge&label=Discord&logo=discord&color=7289DA)](https://discord.gg/35wsABTejz)
 
 ---
 
 ## 💎 Why Mega-Skills
 
-Most AI agents fail because they lack a **methodology**. They guess, they hallucinate, and they ignore edge cases. **Mega-Skills** fixes this by injecting 101+ high-fidelity workflows directly into the agent's reasoning loop.
+Most AI agents fail because they lack a **methodology**. They guess, they hallucinate, and they ignore edge cases. **Mega-Skills** fixes this by injecting 62+ high-fidelity workflows directly into the agent's reasoning loop.
 
-1. **🔥 101+ Specialized Skills**: From advanced Excel recalculation to autonomous subagent swarms.
+1. **🔥 62+ Specialized Skills**: From advanced Excel recalculation to autonomous subagent swarms.
 1. **🛠️ Universal Compatibility**: Natively supports **Cursor, Windsurf, Claude Code, Aider, Devin,** and more.
 1. **🏗️ Industrial Grade**: Includes system-level shims for running complex tools in restricted environments.
 
