@@ -78,7 +78,7 @@ copilot plugin install mega-superpowers@https://github.com/artgaurav16420-oss/Me
 
 The full library contains 59 composable skills, ordered by utility:
 
-#### 🛠️ Core Methodology (The Superpowers)
+### 🛠️ Core Methodology (The Superpowers)
 
 - **test-driven-development** - RED-GREEN-REFACTOR cycle: write tests first
 - **writing-plans** - Detailed implementation planning and task breakdown
