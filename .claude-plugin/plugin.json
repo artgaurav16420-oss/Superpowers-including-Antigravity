@@ -6,8 +6,8 @@
     "name": "Jesse Vincent",
     "email": "jesse@fsck.com"
   },
-  "homepage": "https://github.com/obra/superpowers",
-  "repository": "https://github.com/obra/superpowers",
+  "homepage": "https://github.com/artgaurav16420-oss/Mega-Skills",
+  "repository": "https://github.com/artgaurav16420-oss/Mega-Skills",
   "license": "MIT",
   "keywords": [
     "skills",
@@ -18,3 +18,4 @@
     "workflows"
   ]
 }
+

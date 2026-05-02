@@ -198,11 +198,11 @@ Add before `module.exports`:
  */
 function resolveSkillPath(skillName, superpowersDir, personalDir) {
     // Strip superpowers: prefix if present
-    const forceSuperpowers = skillName.startsWith('superpowers:');
-    const actualSkillName = forceSuperpowers ? skillName.replace(/^superpowers:/, '') : skillName;
+    const forceMega-Skills = skillName.startsWith('superpowers:');
+    const actualSkillName = forceMega-Skills ? skillName.replace(/^superpowers:/, '') : skillName;
 
     // Try personal skills first (unless explicitly superpowers:)
-    if (!forceSuperpowers && personalDir) {
+    if (!forceMega-Skills && personalDir) {
         const personalPath = path.join(personalDir, actualSkillName);
         const personalSkillFile = path.join(personalPath, 'SKILL.md');
         if (fs.existsSync(personalSkillFile)) {
@@ -457,7 +457,7 @@ Run: `mkdir -p .opencode/plugin`
 #!/usr/bin/env node
 
 /**
- * Superpowers plugin for OpenCode.ai
+ * Mega-Skills plugin for OpenCode.ai
  *
  * Provides custom tools for loading and discovering skills,
  * with automatic bootstrap on session start.
@@ -475,7 +475,7 @@ const personalSkillsDir = path.join(homeDir, '.config/opencode/skills');
 /**
  * OpenCode plugin entry point
  */
-export const SuperpowersPlugin = async ({ project, client, $, directory, worktree }) => {
+export const Mega-SkillsPlugin = async ({ project, client, $, directory, worktree }) => {
   return {
     // Custom tools and hooks will go here
   };
@@ -506,7 +506,7 @@ git commit -m "feat: create opencode plugin scaffold"
 Replace the plugin return statement with:
 
 ```javascript
-export const SuperpowersPlugin = async ({ project, client, $, directory, worktree }) => {
+export const Mega-SkillsPlugin = async ({ project, client, $, directory, worktree }) => {
   // Import zod for schema validation
   const { z } = await import('zod');
 
@@ -664,15 +664,15 @@ After the tools array, add:
 ```javascript
     'session.started': async () => {
       // Read using-superpowers skill content
-      const usingSuperpowersPath = skillsCore.resolveSkillPath(
+      const usingMega-SkillsPath = skillsCore.resolveSkillPath(
         'using-superpowers',
         superpowersSkillsDir,
         personalSkillsDir
       );
 
-      let usingSuperpowersContent = '';
-      if (usingSuperpowersPath) {
-        const fullContent = fs.readFileSync(usingSuperpowersPath.skillFile, 'utf8');
+      let usingMega-SkillsContent = '';
+      if (usingMega-SkillsPath) {
+        const fullContent = fs.readFileSync(usingMega-SkillsPath.skillFile, 'utf8');
         // Strip frontmatter
         const lines = fullContent.split('\n');
         let inFrontmatter = false;
@@ -694,7 +694,7 @@ After the tools array, add:
           }
         }
 
-        usingSuperpowersContent = contentLines.join('\n').trim();
+        usingMega-SkillsContent = contentLines.join('\n').trim();
       }
 
       // Tool mapping instructions
@@ -712,7 +712,7 @@ When skills reference tools you don't have, substitute OpenCode equivalents:
 - Utilities and helpers specific to that skill
 
 **Skills naming:**
-- Superpowers skills: \`superpowers:skill-name\` (from ~/.config/opencode/superpowers/skills/)
+- Mega-Skills skills: \`superpowers:skill-name\` (from ~/.config/opencode/superpowers/skills/)
 - Personal skills: \`skill-name\` (from ~/.config/opencode/skills/)
 - Personal skills override superpowers skills when names match
 `;
@@ -733,7 +733,7 @@ You have superpowers.
 
 **Below is the full content of your 'superpowers:using-superpowers' skill - your introduction to using skills. For all other skills, use the 'use_skill' tool:**
 
-${usingSuperpowersContent}
+${usingMega-SkillsContent}
 
 ${toolMapping}${updateNotice}
 </EXTREMELY_IMPORTANT>`
@@ -765,7 +765,7 @@ git commit -m "feat: implement session.started hook for opencode"
 **Step 1: Create installation guide**
 
 ```markdown
-# Installing Superpowers for OpenCode
+# Installing Mega-Skills for OpenCode
 
 ## Prerequisites
 
@@ -775,12 +775,12 @@ git commit -m "feat: implement session.started hook for opencode"
 
 ## Installation Steps
 
-### 1. Install Superpowers Skills
+### 1. Install Mega-Skills Skills
 
 ```bash
 # Clone superpowers skills to OpenCode config directory
 mkdir -p ~/.config/opencode/superpowers
-git clone https://github.com/obra/superpowers.git ~/.config/opencode/superpowers
+git clone https://github.com/artgaurav16420-oss/Mega-Skills.git ~/.config/opencode/superpowers
 ```
 
 ### 2. Install the Plugin
@@ -878,8 +878,8 @@ When a skill references a Claude Code tool you don't have:
 
 ## Getting Help
 
-- Report issues: https://github.com/obra/superpowers/issues
-- Documentation: https://github.com/obra/superpowers
+- Report issues: https://github.com/artgaurav16420-oss/Mega-Skills/issues
+- Documentation: https://github.com/artgaurav16420-oss/Mega-Skills
 ```
 
 **Step 2: Verify file created**
@@ -908,7 +908,7 @@ Find the section about supported platforms (search for "Codex" in the file), and
 ```markdown
 ### OpenCode
 
-Superpowers works with [OpenCode.ai](https://opencode.ai) through a native JavaScript plugin.
+Mega-Skills works with [OpenCode.ai](https://opencode.ai) through a native JavaScript plugin.
 
 **Installation:** See [.opencode/INSTALL.md](.opencode/INSTALL.md)
 
@@ -1093,3 +1093,5 @@ These steps require OpenCode to be installed and are not part of the automated i
 - [ ] README and RELEASE-NOTES updated
 - [ ] All changes committed
 - [ ] Working tree clean
+
+

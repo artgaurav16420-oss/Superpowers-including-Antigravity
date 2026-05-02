@@ -1,6 +1,6 @@
 {
   "name": "superpowers-dev",
-  "description": "Development marketplace for Superpowers core skills library",
+  "description": "Development marketplace for Mega-Skills core skills library",
   "owner": {
     "name": "Jesse Vincent",
     "email": "jesse@fsck.com"
@@ -18,3 +18,4 @@
     }
   ]
 }
+

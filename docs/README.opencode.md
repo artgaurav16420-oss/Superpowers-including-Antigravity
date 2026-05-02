@@ -1,6 +1,6 @@
-# Superpowers for OpenCode
+# Mega-Skills for OpenCode
 
-Complete guide for using Superpowers with [OpenCode.ai](https://opencode.ai).
+Complete guide for using Mega-Skills with [OpenCode.ai](https://opencode.ai).
 
 ## Installation
 
@@ -8,7 +8,7 @@ Add superpowers to the `plugin` array in your `opencode.json` (global or project
 
 ```json
 {
-  "plugin": ["superpowers@git+https://github.com/obra/superpowers.git"]
+  "plugin": ["superpowers@git+https://github.com/artgaurav16420-oss/Mega-Skills.git"]
 }
 ```
 
@@ -74,17 +74,17 @@ description: Use when [condition] - [what it does]
 
 Create project-specific skills in `.opencode/skills/` within your project.
 
-**Skill Priority:** Project skills > Personal skills > Superpowers skills
+**Skill Priority:** Project skills > Personal skills > Mega-Skills skills
 
 ## Updating
 
-Superpowers updates automatically when you restart OpenCode. The plugin is re-installed from the git repository on each launch.
+Mega-Skills updates automatically when you restart OpenCode. The plugin is re-installed from the git repository on each launch.
 
 To pin a specific version, use a branch or tag:
 
 ```json
 {
-  "plugin": ["superpowers@git+https://github.com/obra/superpowers.git#v5.0.3"]
+  "plugin": ["superpowers@git+https://github.com/artgaurav16420-oss/Mega-Skills.git#v5.0.3"]
 }
 ```
 
@@ -125,6 +125,8 @@ Skills written for Claude Code are automatically adapted for OpenCode:
 
 ## Getting Help
 
-- Report issues: https://github.com/obra/superpowers/issues
-- Main documentation: https://github.com/obra/superpowers
+- Report issues: https://github.com/artgaurav16420-oss/Mega-Skills/issues
+- Main documentation: https://github.com/artgaurav16420-oss/Mega-Skills
 - OpenCode docs: https://opencode.ai/docs/
+
+

@@ -19,5 +19,6 @@ requested or discussed.
      integrations typically work with this tool. -->
 
 ## Have you tried manual installation?
-<!-- Many tools work with Superpowers through manual setup even without
+<!-- Many tools work with Mega-Skills through manual setup even without
      official support. Did you try? What happened? -->
+

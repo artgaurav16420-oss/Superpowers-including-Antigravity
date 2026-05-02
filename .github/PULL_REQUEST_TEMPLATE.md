@@ -16,7 +16,7 @@ of human involvement will be closed without review.
 <!-- 1-3 sentences. What, not why — the "why" belongs above. -->
 
 ## Is this change appropriate for the core library?
-<!-- Superpowers core contains general-purpose skills and infrastructure
+<!-- Mega-Skills core contains general-purpose skills and infrastructure
      that benefit all users. Ask yourself:
 
      - Would this be useful to someone working on a completely different
@@ -124,3 +124,4 @@ PRs will be closed without review if they:
 - Leave required sections blank or use placeholder text
 - Modify behavior-shaping content without eval evidence
 -->
+

@@ -156,18 +156,18 @@ const path = require('path');
 const fs = require('fs');
 const { z } = require('zod');
 
-export const SuperpowersPlugin = async ({ client, directory, $ }) => {
+export const Mega-SkillsPlugin = async ({ client, directory, $ }) => {
   const superpowersDir = path.join(process.env.HOME, '.config/opencode/superpowers');
   const personalDir = path.join(process.env.HOME, '.config/opencode/skills');
 
   return {
     'session.started': async () => {
-      const usingSuperpowers = await readSkill('using-superpowers');
+      const usingMega-Skills = await readSkill('using-superpowers');
       const skillsList = await findAllSkills();
       const toolMapping = getToolMappingInstructions();
 
       return {
-        context: `${usingSuperpowers}\n\n${skillsList}\n\n${toolMapping}`
+        context: `${usingMega-Skills}\n\n${skillsList}\n\n${toolMapping}`
       };
     },
 
@@ -292,3 +292,4 @@ superpowers/
 - **Extensibility**: Easy to add future platforms (Cursor, Windsurf, etc.)
 - **Native integration**: Uses OpenCode's plugin system properly
 - **Consistency**: Same skill experience across all platforms
+

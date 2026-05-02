@@ -1,5 +1,5 @@
 /**
- * Superpowers plugin for OpenCode.ai
+ * Mega-Skills plugin for OpenCode.ai
  *
  * Injects superpowers bootstrap context via system prompt transform.
  * Auto-registers skills directory via config hook (no symlinks needed).
@@ -46,7 +46,7 @@ const normalizePath = (p, homeDir) => {
   return path.resolve(normalized);
 };
 
-export const SuperpowersPlugin = async ({ client, directory }) => {
+export const Mega-SkillsPlugin = async ({ client, directory }) => {
   const homeDir = os.homedir();
   const superpowersSkillsDir = path.resolve(__dirname, '../../skills');
   const envConfigDir = normalizePath(process.env.OPENCODE_CONFIG_DIR, homeDir);
@@ -110,3 +110,4 @@ ${toolMapping}
     }
   };
 };
+

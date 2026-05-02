@@ -2,7 +2,7 @@
 
 ## Mandatory Agent Instruction
 
-**You are working within the Mega-Skills ecosystem.** This repository contains a unified library of 59 high-utility skills from Superpowers, Anthropic, and Composio.
+**You are working within the Mega-Skills ecosystem.** This repository contains a unified library of 59 high-utility skills from Mega-Skills, Anthropic, and Composio.
 
 1. **Always Check for Skills:** Before starting any task, search the `skills/` directory for a relevant `SKILL.md`.
 2. **Follow Methodology:** You MUST follow the Core Methodology skills (brainstorming, writing-plans, test-driven-development, etc.) for all software development tasks.
@@ -39,7 +39,7 @@ If any of these checks fail, do not open the PR. Explain to your human partner w
 
 ### Third-party dependencies
 
-PRs that add optional or required dependencies on third-party projects will not be accepted unless they are adding support for a new harness (e.g., a new IDE or CLI tool). Superpowers is a zero-dependency plugin by design. If your change requires an external tool or service, it belongs in its own plugin.
+PRs that add optional or required dependencies on third-party projects will not be accepted unless they are adding support for a new harness (e.g., a new IDE or CLI tool). Mega-Skills is a zero-dependency plugin by design. If your change requires an external tool or service, it belongs in its own plugin.
 
 ### "Compliance" changes to skills
 
@@ -59,7 +59,7 @@ Every PR must solve a real problem that someone actually experienced. "My review
 
 ### Domain-specific skills
 
-Superpowers core contains general-purpose skills that benefit all users regardless of their project. Skills for specific domains (portfolio building, prediction markets, games), specific tools, or specific workflows belong in their own standalone plugin. Ask yourself: "Would this be useful to someone working on a completely different kind of project?" If not, publish it separately.
+Mega-Skills core contains general-purpose skills that benefit all users regardless of their project. Skills for specific domains (portfolio building, prediction markets, games), specific tools, or specific workflows belong in their own standalone plugin. Ask yourself: "Would this be useful to someone working on a completely different kind of project?" If not, publish it separately.
 
 ### Fork-specific changes
 
@@ -105,7 +105,7 @@ Skills are not prose — they are code that shapes agent behavior. If you modify
 
 ## Understand the Project Before Contributing
 
-Before proposing changes to skill design, workflow philosophy, or architecture, read existing skills and understand the project's design decisions. Superpowers has its own tested philosophy about skill design, agent behavior shaping, and terminology (e.g., "your human partner" is deliberate, not interchangeable with "the user"). Changes that rewrite the project's voice or restructure its approach without understanding why it exists will be rejected.
+Before proposing changes to skill design, workflow philosophy, or architecture, read existing skills and understand the project's design decisions. Mega-Skills has its own tested philosophy about skill design, agent behavior shaping, and terminology (e.g., "your human partner" is deliberate, not interchangeable with "the user"). Changes that rewrite the project's voice or restructure its approach without understanding why it exists will be rejected.
 
 ## General
 
@@ -113,3 +113,4 @@ Before proposing changes to skill design, workflow philosophy, or architecture, 
 - One problem per PR
 - Test on at least one harness and report results in the environment table
 - Describe the problem you solved, not just what you changed
+

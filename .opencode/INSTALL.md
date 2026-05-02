@@ -1,4 +1,4 @@
-# Installing Superpowers for OpenCode
+# Installing Mega-Skills for OpenCode
 
 ## Prerequisites
 
@@ -6,17 +6,17 @@
 
 ## Installation
 
-Add superpowers to the `plugin` array in your `opencode.json` (global or project-level):
+Add Mega-Skills to the `plugin` array in your `opencode.json` (global or project-level):
 
 ```json
 {
-  "plugin": ["superpowers@git+https://github.com/obra/superpowers.git"]
+  "plugin": ["mega-skills@git+https://github.com/artgaurav16420-oss/Mega-Skills.git"]
 }
 ```
 
 Restart OpenCode. That's it — the plugin auto-installs and registers all skills.
 
-Verify by asking: "Tell me about your superpowers"
+Verify by asking: "Tell me about your mega-skills"
 
 ## Migrating from the old symlink-based install
 
@@ -29,8 +29,6 @@ rm -rf ~/.config/opencode/skills/superpowers
 
 # Optionally remove the cloned repo
 rm -rf ~/.config/opencode/superpowers
-
-# Remove skills.paths from opencode.json if you added one for superpowers
 ```
 
 Then follow the installation steps above.
@@ -41,18 +39,18 @@ Use OpenCode's native `skill` tool:
 
 ```
 use skill tool to list skills
-use skill tool to load superpowers/brainstorming
+use skill tool to load mega-skills/brainstorming
 ```
 
 ## Updating
 
-Superpowers updates automatically when you restart OpenCode.
+Mega-Skills updates automatically when you restart OpenCode.
 
 To pin a specific version:
 
 ```json
 {
-  "plugin": ["superpowers@git+https://github.com/obra/superpowers.git#v5.0.3"]
+  "plugin": ["mega-skills@git+https://github.com/artgaurav16420-oss/Mega-Skills.git#v5.0.7-mega"]
 }
 ```
 
@@ -60,7 +58,7 @@ To pin a specific version:
 
 ### Plugin not loading
 
-1. Check logs: `opencode run --print-logs "hello" 2>&1 | grep -i superpowers`
+1. Check logs: `opencode run --print-logs "hello" 2>&1 | grep -i mega-skills`
 2. Verify the plugin line in your `opencode.json`
 3. Make sure you're running a recent version of OpenCode
 
@@ -79,5 +77,5 @@ When skills reference Claude Code tools:
 
 ## Getting Help
 
-- Report issues: https://github.com/obra/superpowers/issues
-- Full documentation: https://github.com/obra/superpowers/blob/main/docs/README.opencode.md
+- Report issues: https://github.com/artgaurav16420-oss/Mega-Skills/issues
+- Full documentation: https://github.com/artgaurav16420-oss/Mega-Skills/blob/main/README.md

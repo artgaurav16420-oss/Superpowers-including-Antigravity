@@ -1,6 +1,6 @@
-# Mega Superpowers
+# Mega-Skills
 
-**Mega Superpowers** is the ultimate software development methodology for coding agents. It combines the structured workflow of the original **Superpowers** system with the high-utility skill libraries from **Anthropic** and **Composio**.
+**Mega-Skills** is the ultimate software development methodology for coding agents. It combines the structured workflow of the original **Mega-Skills** system with the high-utility skill libraries from **Anthropic** and **Composio**.
 
 It is a complete software development methodology for your coding agents, built on top of a set of composable skills and some initial instructions that make sure your agent uses them.
 
@@ -14,11 +14,11 @@ After you've signed off on the design, your agent puts together an implementatio
 
 Next up, once you say "go", it launches a *subagent-driven-development* process, having agents work through each engineering task, inspecting and reviewing their work, and continuing forward. It's not uncommon for Claude to be able to work autonomously for a couple hours at a time without deviating from the plan you put together.
 
-There's a bunch more to it, but that's the core of the system. And because the skills trigger automatically, you don't need to do anything special. Your coding agent just has **Mega Superpowers**.
+There's a bunch more to it, but that's the core of the system. And because the skills trigger automatically, you don't need to do anything special. Your coding agent just has **Mega-Skills**.
 
 ## Sponsorship
 
-If Mega Superpowers has helped you do stuff that makes money and you are so inclined, I'd greatly appreciate it if you'd consider [sponsoring Gaurav's work](https://github.com/artgaurav16420-oss).
+If Mega-Skills has helped you do stuff that makes money and you are so inclined, I'd greatly appreciate it if you'd consider [sponsoring Gaurav's work](https://github.com/artgaurav16420-oss).
 
 ## Installation
 
@@ -80,7 +80,7 @@ copilot plugin install mega-superpowers@https://github.com/artgaurav16420-oss/Me
 
 The full library contains 62 composable skills, ordered by utility:
 
-### 🛠️ Core Methodology (The Superpowers)
+### 🛠️ Core Methodology (The Mega-Skills)
 
 - **test-driven-development** - RED-GREEN-REFACTOR cycle: write tests first
 - **writing-plans** - Detailed implementation planning and task breakdown
@@ -162,7 +162,9 @@ MIT License - see LICENSE file for details
 
 ## Community
 
-Mega Superpowers is maintained by [Gaurav](https://github.com/artgaurav16420-oss), based on the methodology by Jesse Vincent and the Prime Radiant team, augmented with libraries from Anthropic and Composio.
+Mega-Skills is maintained by [Gaurav](https://github.com/artgaurav16420-oss), based on the methodology by Jesse Vincent and the Prime Radiant team, augmented with libraries from Anthropic and Composio.
 
 - **Discord**: [Join us](https://discord.gg/35wsABTejz) for community support.
 - **Issues**: <https://github.com/artgaurav16420-oss/Mega-Skills/issues>
+
+

@@ -1,14 +1,14 @@
 {
   "name": "superpowers",
-  "displayName": "Superpowers",
+  "displayName": "Mega-Skills",
   "description": "Core skills library: TDD, debugging, collaboration patterns, and proven techniques",
   "version": "5.0.7",
   "author": {
     "name": "Jesse Vincent",
     "email": "jesse@fsck.com"
   },
-  "homepage": "https://github.com/obra/superpowers",
-  "repository": "https://github.com/obra/superpowers",
+  "homepage": "https://github.com/artgaurav16420-oss/Mega-Skills",
+  "repository": "https://github.com/artgaurav16420-oss/Mega-Skills",
   "license": "MIT",
   "keywords": [
     "skills",
@@ -23,3 +23,5 @@
   "commands": "./commands/",
   "hooks": "./hooks/hooks-cursor.json"
 }
+
+

@@ -1,4 +1,4 @@
-# Superpowers Release Notes
+# Mega-Skills Release Notes
 
 ## v5.0.7 (2026-03-31)
 
@@ -214,7 +214,7 @@ Dramatically reduces token usage and speeds up spec and plan reviews by eliminat
 
 **Subagent-driven development mandatory on capable harnesses**
 
-Writing-plans no longer offers a choice between subagent-driven and executing-plans. On harnesses with subagent support (Claude Code, Codex), subagent-driven-development is required. Executing-plans is reserved for harnesses without subagent capability, and now tells the user that Superpowers works better on a subagent-capable platform.
+Writing-plans no longer offers a choice between subagent-driven and executing-plans. On harnesses with subagent support (Claude Code, Codex), subagent-driven-development is required. Executing-plans is reserved for harnesses without subagent capability, and now tells the user that Mega-Skills works better on a subagent-capable platform.
 
 **Executing-plans no longer batches**
 
@@ -230,7 +230,7 @@ Removed the "execute 3 tasks then stop for review" pattern. Plans now execute co
 
 Optional browser-based companion for brainstorming sessions. When a topic would benefit from visuals, the brainstorming skill offers to show mockups, diagrams, comparisons, and other content in a browser window alongside terminal conversation.
 
-- `lib/brainstorm-server/` — WebSocket server with browser helper library, session management scripts, and dark/light themed frame template ("Superpowers Brainstorming" with GitHub link)
+- `lib/brainstorm-server/` — WebSocket server with browser helper library, session management scripts, and dark/light themed frame template ("Mega-Skills Brainstorming" with GitHub link)
 - `skills/brainstorming/visual-companion.md` — Progressive disclosure guide for server workflow, screen authoring, and feedback collection
 - Brainstorming skill adds a visual companion decision point to its process flow: after exploring project context, the skill evaluates whether upcoming questions involve visual content and offers the companion in its own message
 - Per-question decision: even after accepting, each question is evaluated for whether browser or terminal is more appropriate
@@ -271,7 +271,7 @@ Design-for-isolation and file-size-awareness guidance added to brainstorming, wr
 Added explicit priority ordering to using-superpowers:
 
 1. User's explicit instructions (CLAUDE.md, AGENTS.md, direct requests) — highest priority
-2. Superpowers skills — override default system behavior
+2. Mega-Skills skills — override default system behavior
 3. Default system prompt — lowest priority
 
 If CLAUDE.md or AGENTS.md says "don't use TDD" and a skill says "always use TDD," the user's instructions win.
@@ -300,7 +300,7 @@ Added `<SUBAGENT-STOP>` block to using-superpowers. Subagents dispatched for spe
 
 **Cursor support**
 
-Superpowers now works with Cursor's plugin system. Includes a `.cursor-plugin/plugin.json` manifest and Cursor-specific installation instructions in the README. The SessionStart hook output now includes an `additional_context` field alongside the existing `hookSpecificOutput.additionalContext` for Cursor hook compatibility.
+Mega-Skills now works with Cursor's plugin system. Includes a `.cursor-plugin/plugin.json` manifest and Cursor-specific installation instructions in the README. The SessionStart hook output now includes an `additional_context` field alongside the existing `hookSpecificOutput.additionalContext` for Cursor hook compatibility.
 
 ### Fixed
 
@@ -434,7 +434,7 @@ Changes:
 
 **OpenCode: Switched to native skills system**
 
-Superpowers for OpenCode now uses OpenCode's native `skill` tool instead of custom `use_skill`/`find_skills` tools. This is a cleaner integration that works with OpenCode's built-in skill discovery.
+Mega-Skills for OpenCode now uses OpenCode's native `skill` tool instead of custom `use_skill`/`find_skills` tools. This is a cleaner integration that works with OpenCode's built-in skill discovery.
 
 **Migration required:** Skills must be symlinked to `~/.config/opencode/skills/superpowers/` (see updated installation docs).
 
@@ -687,7 +687,7 @@ Description changed to imperative: "You MUST use this before any creative work�
 - Single unified script instead of separate tools
 - Tool substitution system for Codex-specific equivalents
 - Simplified subagent handling (manual work instead of delegation)
-- Updated terminology: "Superpowers skills" instead of "Core skills"
+- Updated terminology: "Mega-Skills skills" instead of "Core skills"
 
 ### Files Added
 - `.codex/INSTALL.md` - Installation guide for Codex users
@@ -863,13 +863,13 @@ We now use Anthropic's first-party skills system!
 
 ---
 
-# Superpowers v2.0.0 Release Notes
+# Mega-Skills v2.0.0 Release Notes
 
 ## Overview
 
-Superpowers v2.0 makes skills more accessible, maintainable, and community-driven through a major architectural shift.
+Mega-Skills v2.0 makes skills more accessible, maintainable, and community-driven through a major architectural shift.
 
-The headline change is **skills repository separation**: all skills, scripts, and documentation have moved from the plugin into a dedicated repository ([obra/superpowers-skills](https://github.com/obra/superpowers-skills)). This transforms superpowers from a monolithic plugin into a lightweight shim that manages a local clone of the skills repository. Skills auto-update on session start. Users fork and contribute improvements via standard git workflows. The skills library versions independently from the plugin.
+The headline change is **skills repository separation**: all skills, scripts, and documentation have moved from the plugin into a dedicated repository ([obra/superpowers-skills](https://github.com/artgaurav16420-oss/Mega-Skills-skills)). This transforms superpowers from a monolithic plugin into a lightweight shim that manages a local clone of the skills repository. Skills auto-update on session start. Users fork and contribute improvements via standard git workflows. The skills library versions independently from the plugin.
 
 Beyond infrastructure, this release adds nine new skills focused on problem-solving, research, and architecture. We rewrote the core **using-skills** documentation with imperative tone and clearer structure, making it easier for Claude to understand when and how to use skills. **find-skills** now outputs paths you can paste directly into the Read tool, eliminating friction in the skills discovery workflow.
 
@@ -879,7 +879,7 @@ Users experience seamless operation: the plugin handles cloning, forking, and up
 
 ### Skills Repository Separation
 
-**The biggest change:** Skills no longer live in the plugin. They've been moved to a separate repository at [obra/superpowers-skills](https://github.com/obra/superpowers-skills).
+**The biggest change:** Skills no longer live in the plugin. They've been moved to a separate repository at [obra/superpowers-skills](https://github.com/artgaurav16420-oss/Mega-Skills-skills).
 
 **What this means for you:**
 
@@ -1075,7 +1075,7 @@ The plugin handles everything automatically.
 
 ### For Contributors
 
-- Skills repository is now at https://github.com/obra/superpowers-skills
+- Skills repository is now at https://github.com/artgaurav16420-oss/Mega-Skills-skills
 - Fork → Branch → PR workflow
 - See skills/meta/writing-skills/SKILL.md for TDD approach to documentation
 
@@ -1091,6 +1091,8 @@ None at this time.
 
 ---
 
-**Full Changelog:** https://github.com/obra/superpowers/compare/dd013f6...main
-**Skills Repository:** https://github.com/obra/superpowers-skills
-**Issues:** https://github.com/obra/superpowers/issues
+**Full Changelog:** https://github.com/artgaurav16420-oss/Mega-Skills/compare/dd013f6...main
+**Skills Repository:** https://github.com/artgaurav16420-oss/Mega-Skills-skills
+**Issues:** https://github.com/artgaurav16420-oss/Mega-Skills/issues
+
+

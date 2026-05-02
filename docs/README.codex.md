@@ -1,6 +1,6 @@
-# Superpowers for Codex
+# Mega-Skills for Codex
 
-Guide for using Superpowers with OpenAI Codex via native skill discovery.
+Guide for using Mega-Skills with OpenAI Codex via native skill discovery.
 
 ## Quick Install
 
@@ -21,7 +21,7 @@ Fetch and follow instructions from https://raw.githubusercontent.com/obra/superp
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/obra/superpowers.git ~/.codex/superpowers
+   git clone https://github.com/artgaurav16420-oss/Mega-Skills.git ~/.codex/superpowers
    ```
 
 2. Create the skills symlink:
@@ -49,7 +49,7 @@ cmd /c mklink /J "$env:USERPROFILE\.agents\skills\superpowers" "$env:USERPROFILE
 
 ## How It Works
 
-Codex has native skill discovery — it scans `~/.agents/skills/` at startup, parses SKILL.md frontmatter, and loads skills on demand. Superpowers skills are made visible through a single symlink:
+Codex has native skill discovery — it scans `~/.agents/skills/` at startup, parses SKILL.md frontmatter, and loads skills on demand. Mega-Skills skills are made visible through a single symlink:
 
 ```
 ~/.agents/skills/superpowers/ → ~/.codex/superpowers/skills/
@@ -122,5 +122,7 @@ Junctions normally work without special permissions. If creation fails, try runn
 
 ## Getting Help
 
-- Report issues: https://github.com/obra/superpowers/issues
-- Main documentation: https://github.com/obra/superpowers
+- Report issues: https://github.com/artgaurav16420-oss/Mega-Skills/issues
+- Main documentation: https://github.com/artgaurav16420-oss/Mega-Skills
+
+

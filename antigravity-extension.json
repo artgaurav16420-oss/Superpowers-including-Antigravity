@@ -1,7 +1,7 @@
 {
-  "name": "mega-superpowers",
+  "name": "mega-skills",
   "version": "5.0.7-mega",
-  "description": "The Ultimate Software Development Methodology: Superpowers + Anthropic & Composio Skill Libraries",
+  "description": "The Ultimate Software Development Methodology: Mega-Skills + Anthropic & Composio Skill Libraries",
   "publisher": "artgaurav16420-oss",
   "engines": {
     "antigravity": "^1.0.0"
@@ -11,3 +11,4 @@
     "url": "https://github.com/artgaurav16420-oss/Mega-Skills.git"
   }
 }
+

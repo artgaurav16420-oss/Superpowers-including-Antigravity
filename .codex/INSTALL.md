@@ -1,4 +1,4 @@
-# Installing Superpowers for Codex
+# Installing Mega-Skills for Codex
 
 Enable superpowers skills in Codex via native skill discovery. Just clone and symlink.
 
@@ -10,7 +10,7 @@ Enable superpowers skills in Codex via native skill discovery. Just clone and sy
 
 1. **Clone the superpowers repository:**
    ```bash
-   git clone https://github.com/obra/superpowers.git ~/.codex/superpowers
+   git clone https://github.com/artgaurav16420-oss/Mega-Skills.git ~/.codex/superpowers
    ```
 
 2. **Create the skills symlink:**
@@ -65,3 +65,5 @@ rm ~/.agents/skills/superpowers
 ```
 
 Optionally delete the clone: `rm -rf ~/.codex/superpowers`.
+
+

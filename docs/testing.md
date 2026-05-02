@@ -1,6 +1,6 @@
-# Testing Superpowers Skills
+# Testing Mega-Skills Skills
 
-This document describes how to test Superpowers skills, particularly the integration tests for complex skills like `subagent-driven-development`.
+This document describes how to test Mega-Skills skills, particularly the integration tests for complex skills like `subagent-driven-development`.
 
 ## Overview
 
@@ -301,3 +301,4 @@ Session transcripts are JSONL (JSON Lines) files where each line is a JSON objec
 ```
 
 The `agentId` field links to subagent sessions, and the `usage` field contains token usage for that specific subagent invocation.
+

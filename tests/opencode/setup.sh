@@ -67,7 +67,7 @@ EOF
 
 echo "Setup complete: $TEST_HOME"
 echo "OPENCODE_CONFIG_DIR:  $OPENCODE_CONFIG_DIR"
-echo "Superpowers dir:      $SUPERPOWERS_DIR"
+echo "Mega-Skills dir:      $SUPERPOWERS_DIR"
 echo "Skills dir:           $SUPERPOWERS_SKILLS_DIR"
 echo "Plugin file:          $SUPERPOWERS_PLUGIN_FILE"
 echo "Plugin registered at: $OPENCODE_CONFIG_DIR/plugins/superpowers.js"
@@ -86,3 +86,4 @@ export REPO_ROOT
 export SUPERPOWERS_DIR
 export SUPERPOWERS_SKILLS_DIR
 export SUPERPOWERS_PLUGIN_FILE
+
