@@ -1,0 +1,929 @@
+<?xml version="1.0" encoding="utf-8"?>
+<p:sld xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
+  <p:cSld name="Slide 10">
+    <p:bg>
+      <p:bgPr>
+        <a:solidFill>
+          <a:srgbClr val="F8F6F2"/>
+        </a:solidFill>
+      </p:bgPr>
+    </p:bg>
+    <p:spTree>
+      <p:nvGrpSpPr>
+        <p:cNvPr id="1" name=""/>
+        <p:cNvGrpSpPr/>
+        <p:nvPr/>
+      </p:nvGrpSpPr>
+      <p:grpSpPr>
+        <a:xfrm>
+          <a:off x="0" y="0"/>
+          <a:ext cx="0" cy="0"/>
+          <a:chOff x="0" y="0"/>
+          <a:chExt cx="0" cy="0"/>
+        </a:xfrm>
+      </p:grpSpPr>
+      <p:pic>
+          
+        <p:nvPicPr>
+          <p:cNvPr id="2" name="Image 0" descr="https://kimi-web-img.moonshot.cn/img/static0.backyardbossimages.com/c23991f5e274628ae411eb45e4977cbf24797c2d.jpg">    </p:cNvPr>
+              
+          <p:cNvPicPr>
+            <a:picLocks noChangeAspect="1"/>
+          </p:cNvPicPr>
+              
+          <p:nvPr/>
+            
+        </p:nvPicPr>
+        <p:blipFill>
+          <a:blip r:embed="rId1"/>
+          <a:srcRect l="0" r="0" t="12993" b="12993"/>
+          <a:stretch/>
+        </p:blipFill>
+        <p:spPr>
+           
+          <a:xfrm>
+              
+            <a:off x="0" y="0"/>
+              
+            <a:ext cx="12192000" cy="6858000"/>
+             
+          </a:xfrm>
+          <a:prstGeom prst="roundRect">
+            <a:avLst>
+              <a:gd name="adj" fmla="val 0"/>
+            </a:avLst>
+          </a:prstGeom>
+        </p:spPr>
+      </p:pic>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="3" name="Shape 0"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="0" y="0"/>
+            <a:ext cx="12192000" cy="6858000"/>
+          </a:xfrm>
+          <a:custGeom>
+            <a:avLst/>
+            <a:gdLst/>
+            <a:ahLst/>
+            <a:cxnLst/>
+            <a:rect l="l" t="t" r="r" b="b"/>
+            <a:pathLst>
+              <a:path w="12192000" h="6858000">
+                <a:moveTo>
+                  <a:pt x="0" y="0"/>
+                </a:moveTo>
+                <a:lnTo>
+                  <a:pt x="12192000" y="0"/>
+                </a:lnTo>
+                <a:lnTo>
+                  <a:pt x="12192000" y="6858000"/>
+                </a:lnTo>
+                <a:lnTo>
+                  <a:pt x="0" y="6858000"/>
+                </a:lnTo>
+                <a:lnTo>
+                  <a:pt x="0" y="0"/>
+                </a:lnTo>
+                <a:close/>
+              </a:path>
+            </a:pathLst>
+          </a:custGeom>
+          <a:gradFill rotWithShape="1" flip="none">
+            <a:gsLst>
+              <a:gs pos="0">
+                <a:srgbClr val="4A5D52">
+                  <a:alpha val="90000"/>
+                </a:srgbClr>
+              </a:gs>
+              <a:gs pos="50000">
+                <a:srgbClr val="4A5D52">
+                  <a:alpha val="70000"/>
+                </a:srgbClr>
+              </a:gs>
+              <a:gs pos="100000">
+                <a:srgbClr val="4A5D52">
+                  <a:alpha val="50000"/>
+                </a:srgbClr>
+              </a:gs>
+            </a:gsLst>
+            <a:lin ang="16200000" scaled="1"/>
+          </a:gradFill>
+          <a:ln/>
+        </p:spPr>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="4" name="Shape 1"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="5638658" y="381712"/>
+            <a:ext cx="914400" cy="914400"/>
+          </a:xfrm>
+          <a:custGeom>
+            <a:avLst/>
+            <a:gdLst/>
+            <a:ahLst/>
+            <a:cxnLst/>
+            <a:rect l="l" t="t" r="r" b="b"/>
+            <a:pathLst>
+              <a:path w="914400" h="914400">
+                <a:moveTo>
+                  <a:pt x="457200" y="0"/>
+                </a:moveTo>
+                <a:lnTo>
+                  <a:pt x="457200" y="0"/>
+                </a:lnTo>
+                <a:cubicBezTo>
+                  
+                                        
+                  <a:pt x="709536" y="0"/>
+                  
+                                        
+                  <a:pt x="914400" y="204864"/>
+                  
+                                        
+                  <a:pt x="914400" y="457200"/>
+                  
+                                        
+                </a:cubicBezTo>
+                <a:lnTo>
+                  <a:pt x="914400" y="457200"/>
+                </a:lnTo>
+                <a:cubicBezTo>
+                  
+                                        
+                  <a:pt x="914400" y="709536"/>
+                  
+                                        
+                  <a:pt x="709536" y="914400"/>
+                  
+                                        
+                  <a:pt x="457200" y="914400"/>
+                  
+                                        
+                </a:cubicBezTo>
+                <a:lnTo>
+                  <a:pt x="457200" y="914400"/>
+                </a:lnTo>
+                <a:cubicBezTo>
+                  
+                                        
+                  <a:pt x="204864" y="914400"/>
+                  
+                                        
+                  <a:pt x="0" y="709536"/>
+                  
+                                        
+                  <a:pt x="0" y="457200"/>
+                  
+                                        
+                </a:cubicBezTo>
+                <a:lnTo>
+                  <a:pt x="0" y="457200"/>
+                </a:lnTo>
+                <a:cubicBezTo>
+                  
+                                        
+                  <a:pt x="0" y="204864"/>
+                  
+                                        
+                  <a:pt x="204864" y="0"/>
+                  
+                                        
+                  <a:pt x="457200" y="0"/>
+                  
+                                        
+                </a:cubicBezTo>
+                <a:close/>
+              </a:path>
+            </a:pathLst>
+          </a:custGeom>
+          <a:solidFill>
+            <a:srgbClr val="D8A050"/>
+          </a:solidFill>
+          <a:ln/>
+        </p:spPr>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="5" name="Shape 2"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="5867258" y="610312"/>
+            <a:ext cx="457200" cy="457200"/>
+          </a:xfrm>
+          <a:custGeom>
+            <a:avLst/>
+            <a:gdLst/>
+            <a:ahLst/>
+            <a:cxnLst/>
+            <a:rect l="l" t="t" r="r" b="b"/>
+            <a:pathLst>
+              <a:path w="457200" h="457200">
+                <a:moveTo>
+                  <a:pt x="228600" y="457200"/>
+                </a:moveTo>
+                <a:cubicBezTo>
+                  
+                                        
+                  <a:pt x="354768" y="457200"/>
+                  
+                                        
+                  <a:pt x="457200" y="354768"/>
+                  
+                                        
+                  <a:pt x="457200" y="228600"/>
+                  
+                                        
+                </a:cubicBezTo>
+                <a:cubicBezTo>
+                  
+                                        
+                  <a:pt x="457200" y="102432"/>
+                  
+                                        
+                  <a:pt x="354768" y="0"/>
+                  
+                                        
+                  <a:pt x="228600" y="0"/>
+                  
+                                        
+                </a:cubicBezTo>
+                <a:cubicBezTo>
+                  
+                                        
+                  <a:pt x="102432" y="0"/>
+                  
+                                        
+                  <a:pt x="0" y="102432"/>
+                  
+                                        
+                  <a:pt x="0" y="228600"/>
+                  
+                                        
+                </a:cubicBezTo>
+                <a:cubicBezTo>
+                  
+                                        
+                  <a:pt x="0" y="354768"/>
+                  
+                                        
+                  <a:pt x="102432" y="457200"/>
+                  
+                                        
+                  <a:pt x="228600" y="457200"/>
+                  
+                                        
+                </a:cubicBezTo>
+                <a:close/>
+                <a:moveTo>
+                  <a:pt x="303967" y="189934"/>
+                </a:moveTo>
+                <a:lnTo>
+                  <a:pt x="232529" y="304234"/>
+                </a:lnTo>
+                <a:cubicBezTo>
+                  
+                                        
+                  <a:pt x="228779" y="310217"/>
+                  
+                                        
+                  <a:pt x="222349" y="313968"/>
+                  
+                                        
+                  <a:pt x="215295" y="314325"/>
+                  
+                                        
+                </a:cubicBezTo>
+                <a:cubicBezTo>
+                  
+                                        
+                  <a:pt x="208240" y="314682"/>
+                  
+                                        
+                  <a:pt x="201454" y="311468"/>
+                  
+                                        
+                  <a:pt x="197257" y="305753"/>
+                  
+                                        
+                </a:cubicBezTo>
+                <a:lnTo>
+                  <a:pt x="154394" y="248602"/>
+                </a:lnTo>
+                <a:cubicBezTo>
+                  
+                                        
+                  <a:pt x="147251" y="239137"/>
+                  
+                                        
+                  <a:pt x="149215" y="225743"/>
+                  
+                                        
+                  <a:pt x="158681" y="218599"/>
+                  
+                                        
+                </a:cubicBezTo>
+                <a:cubicBezTo>
+                  
+                                        
+                  <a:pt x="168146" y="211455"/>
+                  
+                                        
+                  <a:pt x="181541" y="213420"/>
+                  
+                                        
+                  <a:pt x="188684" y="222885"/>
+                  
+                                        
+                </a:cubicBezTo>
+                <a:lnTo>
+                  <a:pt x="212794" y="255032"/>
+                </a:lnTo>
+                <a:lnTo>
+                  <a:pt x="267623" y="167253"/>
+                </a:lnTo>
+                <a:cubicBezTo>
+                  
+                                        
+                  <a:pt x="273874" y="157252"/>
+                  
+                                        
+                  <a:pt x="287089" y="154126"/>
+                  
+                                        
+                  <a:pt x="297180" y="160466"/>
+                  
+                                        
+                </a:cubicBezTo>
+                <a:cubicBezTo>
+                  
+                                        
+                  <a:pt x="307271" y="166807"/>
+                  
+                                        
+                  <a:pt x="310307" y="179933"/>
+                  
+                                        
+                  <a:pt x="303967" y="190024"/>
+                  
+                                        
+                </a:cubicBezTo>
+                <a:close/>
+              </a:path>
+            </a:pathLst>
+          </a:custGeom>
+          <a:solidFill>
+            <a:srgbClr val="F8F6F2"/>
+          </a:solidFill>
+          <a:ln/>
+        </p:spPr>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="6" name="Text 3"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="5087026" y="1524712"/>
+            <a:ext cx="2019300" cy="523875"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="3300" b="1" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="F8F6F2"/>
+                </a:solidFill>
+                <a:latin typeface="Oranienbaum" pitchFamily="34" charset="0"/>
+                <a:ea typeface="Oranienbaum" pitchFamily="34" charset="-122"/>
+                <a:cs typeface="Oranienbaum" pitchFamily="34" charset="-120"/>
+              </a:rPr>
+              <a:t>Conclusion</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="1600" dirty="0"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="7" name="Text 4"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="5106076" y="2200917"/>
+            <a:ext cx="1981200" cy="428625"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr">
+              <a:lnSpc>
+                <a:spcPct val="100000"/>
+              </a:lnSpc>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="2700" b="1" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="D8A050"/>
+                </a:solidFill>
+                <a:latin typeface="Oranienbaum" pitchFamily="34" charset="0"/>
+                <a:ea typeface="Oranienbaum" pitchFamily="34" charset="-122"/>
+                <a:cs typeface="Oranienbaum" pitchFamily="34" charset="-120"/>
+              </a:rPr>
+              <a:t>निष्कर्ष</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="1600" dirty="0"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="8" name="Shape 5"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="1809714" y="2934272"/>
+            <a:ext cx="8572500" cy="2057400"/>
+          </a:xfrm>
+          <a:custGeom>
+            <a:avLst/>
+            <a:gdLst/>
+            <a:ahLst/>
+            <a:cxnLst/>
+            <a:rect l="l" t="t" r="r" b="b"/>
+            <a:pathLst>
+              <a:path w="8572500" h="2057400">
+                <a:moveTo>
+                  <a:pt x="152392" y="0"/>
+                </a:moveTo>
+                <a:lnTo>
+                  <a:pt x="8420108" y="0"/>
+                </a:lnTo>
+                <a:cubicBezTo>
+                  
+                                        
+                  <a:pt x="8504272" y="0"/>
+                  
+                                        
+                  <a:pt x="8572500" y="68228"/>
+                  
+                                        
+                  <a:pt x="8572500" y="152392"/>
+                  
+                                        
+                </a:cubicBezTo>
+                <a:lnTo>
+                  <a:pt x="8572500" y="1905008"/>
+                </a:lnTo>
+                <a:cubicBezTo>
+                  
+                                        
+                  <a:pt x="8572500" y="1989172"/>
+                  
+                                        
+                  <a:pt x="8504272" y="2057400"/>
+                  
+                                        
+                  <a:pt x="8420108" y="2057400"/>
+                  
+                                        
+                </a:cubicBezTo>
+                <a:lnTo>
+                  <a:pt x="152392" y="2057400"/>
+                </a:lnTo>
+                <a:cubicBezTo>
+                  
+                                        
+                  <a:pt x="68228" y="2057400"/>
+                  
+                                        
+                  <a:pt x="0" y="1989172"/>
+                  
+                                        
+                  <a:pt x="0" y="1905008"/>
+                  
+                                        
+                </a:cubicBezTo>
+                <a:lnTo>
+                  <a:pt x="0" y="152392"/>
+                </a:lnTo>
+                <a:cubicBezTo>
+                  
+                                        
+                  <a:pt x="0" y="68284"/>
+                  
+                                        
+                  <a:pt x="68284" y="0"/>
+                  
+                                        
+                  <a:pt x="152392" y="0"/>
+                  
+                                        
+                </a:cubicBezTo>
+                <a:close/>
+              </a:path>
+            </a:pathLst>
+          </a:custGeom>
+          <a:solidFill>
+            <a:srgbClr val="F8F6F2">
+              <a:alpha val="94902"/>
+            </a:srgbClr>
+          </a:solidFill>
+          <a:ln/>
+          <a:effectLst>
+             
+            <a:outerShdw sx="100000" sy="100000" kx="0" ky="0" algn="bl" rotWithShape="0" blurRad="476250" dist="238125" dir="5400000">
+               
+              <a:srgbClr val="000000">
+                 
+                <a:alpha val="25098"/>
+              </a:srgbClr>
+               
+            </a:outerShdw>
+          </a:effectLst>
+        </p:spPr>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="9" name="Text 6"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="2062056" y="3238998"/>
+            <a:ext cx="8067675" cy="676275"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr">
+              <a:lnSpc>
+                <a:spcPct val="140000"/>
+              </a:lnSpc>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1650" b="1" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="3C3C3B"/>
+                </a:solidFill>
+                <a:latin typeface="Quattrocento Sans" pitchFamily="34" charset="0"/>
+                <a:ea typeface="Quattrocento Sans" pitchFamily="34" charset="-122"/>
+                <a:cs typeface="Quattrocento Sans" pitchFamily="34" charset="-120"/>
+              </a:rPr>
+              <a:t>English:</a:t>
+            </a:r>
+            <a:pPr algn="ctr">
+              <a:lnSpc>
+                <a:spcPct val="140000"/>
+              </a:lnSpc>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1650" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="3C3C3B"/>
+                </a:solidFill>
+                <a:latin typeface="Quattrocento Sans" pitchFamily="34" charset="0"/>
+                <a:ea typeface="Quattrocento Sans" pitchFamily="34" charset="-122"/>
+                <a:cs typeface="Quattrocento Sans" pitchFamily="34" charset="-120"/>
+              </a:rPr>
+              <a:t> Ornamental horticulture and landscaping are vital for </a:t>
+            </a:r>
+            <a:pPr algn="ctr">
+              <a:lnSpc>
+                <a:spcPct val="140000"/>
+              </a:lnSpc>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1650" b="1" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="4A5D52"/>
+                </a:solidFill>
+                <a:latin typeface="Quattrocento Sans" pitchFamily="34" charset="0"/>
+                <a:ea typeface="Quattrocento Sans" pitchFamily="34" charset="-122"/>
+                <a:cs typeface="Quattrocento Sans" pitchFamily="34" charset="-120"/>
+              </a:rPr>
+              <a:t>environmental sustainability</a:t>
+            </a:r>
+            <a:pPr algn="ctr">
+              <a:lnSpc>
+                <a:spcPct val="140000"/>
+              </a:lnSpc>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1650" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="3C3C3B"/>
+                </a:solidFill>
+                <a:latin typeface="Quattrocento Sans" pitchFamily="34" charset="0"/>
+                <a:ea typeface="Quattrocento Sans" pitchFamily="34" charset="-122"/>
+                <a:cs typeface="Quattrocento Sans" pitchFamily="34" charset="-120"/>
+              </a:rPr>
+              <a:t>, </a:t>
+            </a:r>
+            <a:pPr algn="ctr">
+              <a:lnSpc>
+                <a:spcPct val="140000"/>
+              </a:lnSpc>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1650" b="1" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="A97D50"/>
+                </a:solidFill>
+                <a:latin typeface="Quattrocento Sans" pitchFamily="34" charset="0"/>
+                <a:ea typeface="Quattrocento Sans" pitchFamily="34" charset="-122"/>
+                <a:cs typeface="Quattrocento Sans" pitchFamily="34" charset="-120"/>
+              </a:rPr>
+              <a:t>human well-being</a:t>
+            </a:r>
+            <a:pPr algn="ctr">
+              <a:lnSpc>
+                <a:spcPct val="140000"/>
+              </a:lnSpc>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1650" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="3C3C3B"/>
+                </a:solidFill>
+                <a:latin typeface="Quattrocento Sans" pitchFamily="34" charset="0"/>
+                <a:ea typeface="Quattrocento Sans" pitchFamily="34" charset="-122"/>
+                <a:cs typeface="Quattrocento Sans" pitchFamily="34" charset="-120"/>
+              </a:rPr>
+              <a:t>, and </a:t>
+            </a:r>
+            <a:pPr algn="ctr">
+              <a:lnSpc>
+                <a:spcPct val="140000"/>
+              </a:lnSpc>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1650" b="1" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="D8A050"/>
+                </a:solidFill>
+                <a:latin typeface="Quattrocento Sans" pitchFamily="34" charset="0"/>
+                <a:ea typeface="Quattrocento Sans" pitchFamily="34" charset="-122"/>
+                <a:cs typeface="Quattrocento Sans" pitchFamily="34" charset="-120"/>
+              </a:rPr>
+              <a:t>commercial agriculture</a:t>
+            </a:r>
+            <a:pPr algn="ctr">
+              <a:lnSpc>
+                <a:spcPct val="140000"/>
+              </a:lnSpc>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1650" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="3C3C3B"/>
+                </a:solidFill>
+                <a:latin typeface="Quattrocento Sans" pitchFamily="34" charset="0"/>
+                <a:ea typeface="Quattrocento Sans" pitchFamily="34" charset="-122"/>
+                <a:cs typeface="Quattrocento Sans" pitchFamily="34" charset="-120"/>
+              </a:rPr>
+              <a:t>.</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="1600" dirty="0"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="10" name="Text 7"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="2066818" y="4072258"/>
+            <a:ext cx="8058150" cy="619125"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr">
+              <a:lnSpc>
+                <a:spcPct val="140000"/>
+              </a:lnSpc>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1500" b="1" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="3C3C3B"/>
+                </a:solidFill>
+                <a:latin typeface="Quattrocento Sans" pitchFamily="34" charset="0"/>
+                <a:ea typeface="Quattrocento Sans" pitchFamily="34" charset="-122"/>
+                <a:cs typeface="Quattrocento Sans" pitchFamily="34" charset="-120"/>
+              </a:rPr>
+              <a:t>हिंदी:</a:t>
+            </a:r>
+            <a:pPr algn="ctr">
+              <a:lnSpc>
+                <a:spcPct val="140000"/>
+              </a:lnSpc>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="1500" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="3C3C3B"/>
+                </a:solidFill>
+                <a:latin typeface="Quattrocento Sans" pitchFamily="34" charset="0"/>
+                <a:ea typeface="Quattrocento Sans" pitchFamily="34" charset="-122"/>
+                <a:cs typeface="Quattrocento Sans" pitchFamily="34" charset="-120"/>
+              </a:rPr>
+              <a:t> पर्यावरण स्थिरता, मानव भलाई और व्यावसायिक कृषि के लिए सजावटी बागवानी और लैंडस्केपिंग अत्यंत महत्वपूर्ण हैं।</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="1600" dirty="0"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="11" name="Shape 8"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="4678303" y="5307593"/>
+            <a:ext cx="2838450" cy="13648"/>
+          </a:xfrm>
+          <a:custGeom>
+            <a:avLst/>
+            <a:gdLst/>
+            <a:ahLst/>
+            <a:cxnLst/>
+            <a:rect l="l" t="t" r="r" b="b"/>
+            <a:pathLst>
+              <a:path w="2838450" h="13648">
+                <a:moveTo>
+                  <a:pt x="0" y="0"/>
+                </a:moveTo>
+                <a:lnTo>
+                  <a:pt x="2838450" y="0"/>
+                </a:lnTo>
+                <a:lnTo>
+                  <a:pt x="2838450" y="13648"/>
+                </a:lnTo>
+                <a:lnTo>
+                  <a:pt x="0" y="13648"/>
+                </a:lnTo>
+                <a:lnTo>
+                  <a:pt x="0" y="0"/>
+                </a:lnTo>
+                <a:close/>
+              </a:path>
+            </a:pathLst>
+          </a:custGeom>
+          <a:solidFill>
+            <a:srgbClr val="D8A050"/>
+          </a:solidFill>
+          <a:ln/>
+        </p:spPr>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="12" name="Text 9"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="4602103" y="5543020"/>
+            <a:ext cx="2990850" cy="457200"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr">
+              <a:lnSpc>
+                <a:spcPct val="130000"/>
+              </a:lnSpc>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="2400" b="1" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="F8F6F2"/>
+                </a:solidFill>
+                <a:latin typeface="Quattrocento Sans" pitchFamily="34" charset="0"/>
+                <a:ea typeface="Quattrocento Sans" pitchFamily="34" charset="-122"/>
+                <a:cs typeface="Quattrocento Sans" pitchFamily="34" charset="-120"/>
+              </a:rPr>
+              <a:t>Questions &amp; Answers</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="1600" dirty="0"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+      <p:sp>
+        <p:nvSpPr>
+          <p:cNvPr id="13" name="Text 10"/>
+          <p:cNvSpPr/>
+          <p:nvPr/>
+        </p:nvSpPr>
+        <p:spPr>
+          <a:xfrm>
+            <a:off x="4611628" y="6076345"/>
+            <a:ext cx="2971800" cy="400050"/>
+          </a:xfrm>
+          <a:prstGeom prst="rect">
+            <a:avLst/>
+          </a:prstGeom>
+          <a:noFill/>
+          <a:ln/>
+        </p:spPr>
+        <p:txBody>
+          <a:bodyPr wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" rtlCol="0" anchor="ctr"/>
+          <a:lstStyle/>
+          <a:p>
+            <a:pPr algn="ctr">
+              <a:lnSpc>
+                <a:spcPct val="130000"/>
+              </a:lnSpc>
+            </a:pPr>
+            <a:r>
+              <a:rPr lang="en-US" sz="2100" b="1" dirty="0">
+                <a:solidFill>
+                  <a:srgbClr val="D8A050"/>
+                </a:solidFill>
+                <a:latin typeface="Quattrocento Sans" pitchFamily="34" charset="0"/>
+                <a:ea typeface="Quattrocento Sans" pitchFamily="34" charset="-122"/>
+                <a:cs typeface="Quattrocento Sans" pitchFamily="34" charset="-120"/>
+              </a:rPr>
+              <a:t>प्रश्न और उत्तर</a:t>
+            </a:r>
+            <a:endParaRPr lang="en-US" sz="1600" dirty="0"/>
+          </a:p>
+        </p:txBody>
+      </p:sp>
+    </p:spTree>
+  </p:cSld>
+  <p:clrMapOvr>
+    <a:masterClrMapping/>
+  </p:clrMapOvr>
+  <p:transition>
+    <p:fade/>
+    <p:spd val="med"/>
+  </p:transition>
+</p:sld>

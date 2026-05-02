@@ -27,6 +27,8 @@
   "bugs": {
     "url": "https://github.com/artgaurav16420-oss/Mega-Skills/issues"
   },
-  "homepage": "https://github.com/artgaurav16420-oss/Mega-Skills#readme"
+  "homepage": "https://github.com/artgaurav16420-oss/Mega-Skills#readme",
+  "dependencies": {
+    "pptxgenjs": "^4.0.1"
+  }
 }
-
