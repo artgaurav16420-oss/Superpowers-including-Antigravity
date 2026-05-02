@@ -9,6 +9,7 @@ This document provides Node/TypeScript-specific best practices and examples for 
 ## Quick Reference
 
 ### Key Imports
+
 ```typescript
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
@@ -17,6 +18,7 @@ import axios, { AxiosError } from "axios";
 ```
 
 ### Server Initialization
+
 ```typescript
 const server = new McpServer({
   name: "service-mcp-server",
@@ -25,6 +27,7 @@ const server = new McpServer({
 ```
 
 ### Tool Registration Pattern
+
 ```typescript
 server.registerTool("tool_name", {...config}, async (params) => {
   // Implementation
@@ -59,7 +62,7 @@ The name should be:
 
 Create the following structure for Node/TypeScript MCP servers:
 
-```
+```text
 {service}-mcp-server/
 ├── package.json
 ├── tsconfig.json
@@ -478,12 +481,12 @@ function fetchData(resourceId: string): Promise<ResourceData> {
 ## TypeScript Best Practices
 
 1. **Use Strict TypeScript**: Enable strict mode in tsconfig.json
-2. **Define Interfaces**: Create clear interface definitions for all data structures
-3. **Avoid `any`**: Use proper types or `unknown` instead of `any`
-4. **Zod for Runtime Validation**: Use Zod schemas to validate external data
-5. **Type Guards**: Create type guard functions for complex type checking
-6. **Error Handling**: Always use try-catch with proper error type checking
-7. **Null Safety**: Use optional chaining (`?.`) and nullish coalescing (`??`)
+1. **Define Interfaces**: Create clear interface definitions for all data structures
+1. **Avoid `any`**: Use proper types or `unknown` instead of `any`
+1. **Zod for Runtime Validation**: Use Zod schemas to validate external data
+1. **Type Guards**: Create type guard functions for complex type checking
+1. **Error Handling**: Always use try-catch with proper error type checking
+1. **Null Safety**: Use optional chaining (`?.`) and nullish coalescing (`??`)
 
 ```typescript
 // Good: Type-safe with Zod and interfaces
@@ -591,7 +594,7 @@ import { z } from "zod";
 import axios, { AxiosError } from "axios";
 
 // Constants
-const API_BASE_URL = "https://api.example.com/v1";
+const API_BASE_URL = "[https://api.example.com/v1";](https://api.example.com/v1";)
 const CHARACTER_LIMIT = 25000;
 
 // Enums
@@ -771,7 +774,8 @@ server.registerResourceList(async () => {
 });
 ```
 
-**When to use Resources vs Tools:**
+#### When to use Resources vs Tools
+
 - **Resources**: For data access with simple URI-based parameters
 - **Tools**: For complex operations requiring validation and business logic
 - **Resources**: When data is relatively static or template-based
@@ -797,7 +801,8 @@ await server.connect(sseTransport);
 // Configure based on your HTTP framework integration
 ```
 
-**Transport selection guide:**
+#### Transport selection guide
+
 - **Stdio**: Command-line tools, subprocess integration, local development
 - **HTTP**: Web services, remote access, multiple simultaneous clients
 - **SSE**: Real-time updates, server-push notifications, web dashboards
@@ -835,7 +840,7 @@ Your implementation MUST prioritize composability and code reuse:
    - Extract business logic into dedicated functions that can be composed
    - Extract shared markdown or JSON field selection & formatting functionality
 
-2. **Avoid Duplication**:
+1. **Avoid Duplication**:
    - NEVER copy-paste similar code between tools
    - If you find yourself writing similar logic twice, extract it into a function
    - Common operations like pagination, filtering, field selection, and formatting should be shared
@@ -846,13 +851,13 @@ Your implementation MUST prioritize composability and code reuse:
 Always build your TypeScript code before running:
 
 ```bash
-# Build the project
+## Build the project
 npm run build
 
-# Run the server
+## Run the server
 npm start
 
-# Development with auto-reload
+## Development with auto-reload
 npm run dev
 ```
 
@@ -863,6 +868,7 @@ Always ensure `npm run build` completes successfully before considering the impl
 Before finalizing your Node/TypeScript MCP server implementation, ensure:
 
 ### Strategic Design
+
 - [ ] Tools enable complete workflows, not just API endpoint wrappers
 - [ ] Tool names reflect natural task subdivisions
 - [ ] Response formats optimize for agent context efficiency
@@ -870,6 +876,7 @@ Before finalizing your Node/TypeScript MCP server implementation, ensure:
 - [ ] Error messages guide agents toward correct usage
 
 ### Implementation Quality
+
 - [ ] FOCUSED IMPLEMENTATION: Most important and valuable tools implemented
 - [ ] All tools registered using `registerTool` with complete configuration
 - [ ] All tools include `title`, `description`, `inputSchema`, and `annotations`
@@ -881,6 +888,7 @@ Before finalizing your Node/TypeScript MCP server implementation, ensure:
 - [ ] Error messages are clear, actionable, and educational
 
 ### TypeScript Quality
+
 - [ ] TypeScript interfaces are defined for all data structures
 - [ ] Strict TypeScript is enabled in tsconfig.json
 - [ ] No use of `any` type - use `unknown` or proper types instead
@@ -888,12 +896,14 @@ Before finalizing your Node/TypeScript MCP server implementation, ensure:
 - [ ] Error handling uses proper type guards (e.g., `axios.isAxiosError`, `z.ZodError`)
 
 ### Advanced Features (where applicable)
+
 - [ ] Resources registered for appropriate data endpoints
 - [ ] Appropriate transport configured (stdio, HTTP, SSE)
 - [ ] Notifications implemented for dynamic server capabilities
 - [ ] Type-safe with SDK interfaces
 
 ### Project Configuration
+
 - [ ] Package.json includes all necessary dependencies
 - [ ] Build script produces working JavaScript in dist/ directory
 - [ ] Main entry point is properly configured as dist/index.js
@@ -901,6 +911,7 @@ Before finalizing your Node/TypeScript MCP server implementation, ensure:
 - [ ] tsconfig.json properly configured with strict mode
 
 ### Code Quality
+
 - [ ] Pagination is properly implemented where applicable
 - [ ] Large responses check CHARACTER_LIMIT constant and truncate with clear messages
 - [ ] Filtering options are provided for potentially large result sets
@@ -909,6 +920,7 @@ Before finalizing your Node/TypeScript MCP server implementation, ensure:
 - [ ] Return types are consistent across similar operations
 
 ### Testing and Build
+
 - [ ] `npm run build` completes successfully without errors
 - [ ] dist/index.js created and executable
 - [ ] Server runs: `node dist/index.js --help`

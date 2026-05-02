@@ -1,7 +1,7 @@
 # Managed Agents — Go
 
 > **Bindings not shown here:** This README covers the most common managed-agents flows for Go. If you need a class, method, namespace, field, or behavior that isn't shown, WebFetch the Go SDK repo **or the relevant docs page** from `shared/live-sources.md` rather than guess. Do not extrapolate from cURL shapes or another language's SDK.
-
+>
 > **Agents are persistent — create once, reference by ID.** Store the agent ID returned by `agents.New` and pass it to every subsequent `sessions.New`; do not call `agents.New` in the request path. The Anthropic CLI is one convenient way to create agents and environments from version-controlled YAML — its URL is in `shared/live-sources.md`. The examples below show in-code creation for completeness; in production the create call belongs in setup, not in the request path.
 
 ## Installation
@@ -386,7 +386,7 @@ agent, err := client.Beta.Agents.New(ctx, anthropic.BetaAgentNewParams{
     MCPServers: []anthropic.BetaManagedAgentsUrlmcpServerParams{{
         Type: anthropic.BetaManagedAgentsUrlmcpServerParamsTypeURL,
         Name: "github",
-        URL:  "https://api.githubcopilot.com/mcp/",
+        URL:  "[https://api.githubcopilot.com/mcp/",](https://api.githubcopilot.com/mcp/",)
     }},
     Tools: []anthropic.BetaAgentNewParamsToolUnion{
         {
@@ -445,11 +445,11 @@ credential, err := client.Beta.Vaults.Credentials.New(ctx, vault.ID, anthropic.B
     Auth: anthropic.BetaVaultCredentialNewParamsAuthUnion{
         OfMCPOAuth: &anthropic.BetaManagedAgentsMCPOAuthCreateParams{
             Type:         anthropic.BetaManagedAgentsMCPOAuthCreateParamsTypeMCPOAuth,
-            MCPServerURL: "https://mcp.slack.com/mcp",
+            MCPServerURL: "[https://mcp.slack.com/mcp",](https://mcp.slack.com/mcp",)
             AccessToken:  "xoxp-...",
             ExpiresAt:    anthropic.Time(time.Date(2026, time.April, 15, 0, 0, 0, 0, time.UTC)),
             Refresh: anthropic.BetaManagedAgentsMCPOAuthRefreshParams{
-                TokenEndpoint: "https://slack.com/api/oauth.v2.access",
+                TokenEndpoint: "[https://slack.com/api/oauth.v2.access",](https://slack.com/api/oauth.v2.access",)
                 ClientID:      "1234567890.0987654321",
                 Scope:         anthropic.String("channels:read chat:write"),
                 RefreshToken:  "xoxe-1-...",
@@ -507,7 +507,7 @@ session, err := client.Beta.Sessions.New(ctx, anthropic.BetaSessionNewParams{
         {
             OfGitHubRepository: &anthropic.BetaManagedAgentsGitHubRepositoryResourceParams{
                 Type:               anthropic.BetaManagedAgentsGitHubRepositoryResourceParamsTypeGitHubRepository,
-                URL:                "https://github.com/org/repo",
+                URL:                "[https://github.com/org/repo",](https://github.com/org/repo",)
                 MountPath:          anthropic.String("/workspace/repo"),
                 AuthorizationToken: "ghp_your_github_token",
             },
@@ -526,7 +526,7 @@ resources := []anthropic.BetaSessionNewParamsResourceUnion{
     {
         OfGitHubRepository: &anthropic.BetaManagedAgentsGitHubRepositoryResourceParams{
             Type:               anthropic.BetaManagedAgentsGitHubRepositoryResourceParamsTypeGitHubRepository,
-            URL:                "https://github.com/org/frontend",
+            URL:                "[https://github.com/org/frontend",](https://github.com/org/frontend",)
             MountPath:          anthropic.String("/workspace/frontend"),
             AuthorizationToken: "ghp_your_github_token",
         },
@@ -534,7 +534,7 @@ resources := []anthropic.BetaSessionNewParamsResourceUnion{
     {
         OfGitHubRepository: &anthropic.BetaManagedAgentsGitHubRepositoryResourceParams{
             Type:               anthropic.BetaManagedAgentsGitHubRepositoryResourceParamsTypeGitHubRepository,
-            URL:                "https://github.com/org/backend",
+            URL:                "[https://github.com/org/backend",](https://github.com/org/backend",)
             MountPath:          anthropic.String("/workspace/backend"),
             AuthorizationToken: "ghp_your_github_token",
         },

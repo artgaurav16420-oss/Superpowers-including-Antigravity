@@ -9,6 +9,7 @@ This document provides Python-specific best practices and examples for implement
 ## Quick Reference
 
 ### Key Imports
+
 ```python
 from mcp.server.fastmcp import FastMCP
 from pydantic import BaseModel, Field, field_validator, ConfigDict
@@ -18,11 +19,13 @@ import httpx
 ```
 
 ### Server Initialization
+
 ```python
 mcp = FastMCP("service_mcp")
 ```
 
 ### Tool Registration Pattern
+
 ```python
 @mcp.tool(name="tool_name", annotations={...})
 async def tool_function(params: InputModel) -> str:
@@ -39,7 +42,8 @@ The official MCP Python SDK provides FastMCP, a high-level framework for buildin
 - Pydantic model integration for input validation
 - Decorator-based tool registration with `@mcp.tool`
 
-**For complete SDK documentation, use WebFetch to load:**
+#### For complete SDK documentation, use WebFetch to load
+
 `https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/main/README.md`
 
 ## Server Naming Convention
@@ -73,10 +77,10 @@ Tools are defined using the `@mcp.tool` decorator with Pydantic models for input
 from pydantic import BaseModel, Field, ConfigDict
 from mcp.server.fastmcp import FastMCP
 
-# Initialize the MCP server
+## Initialize the MCP server
 mcp = FastMCP("example_mcp")
 
-# Define Pydantic model for input validation
+## Define Pydantic model for input validation
 class ServiceToolInput(BaseModel):
     '''Input model for service tool operation.'''
     model_config = ConfigDict(
@@ -209,7 +213,7 @@ async def list_items(params: ListInput) -> str:
 Add a CHARACTER_LIMIT constant to prevent overwhelming responses:
 
 ```python
-# At module level
+## At module level
 CHARACTER_LIMIT = 25000  # Maximum response size in characters
 
 async def search_tool(params: SearchInput) -> str:
@@ -255,7 +259,7 @@ def _handle_api_error(e: Exception) -> str:
 Extract common functionality into reusable functions:
 
 ```python
-# Shared API request function
+## Shared API request function
 async def _make_api_request(endpoint: str, method: str = "GET", **kwargs) -> dict:
     '''Reusable function for all API calls.'''
     async with httpx.AsyncClient() as client:
@@ -274,14 +278,14 @@ async def _make_api_request(endpoint: str, method: str = "GET", **kwargs) -> dic
 Always use async/await for network requests and I/O operations:
 
 ```python
-# Good: Async network request
+## Good: Async network request
 async def fetch_data(resource_id: str) -> dict:
     async with httpx.AsyncClient() as client:
         response = await client.get(f"{API_URL}/resource/{resource_id}")
         response.raise_for_status()
         return response.json()
 
-# Bad: Synchronous request
+## Bad: Synchronous request
 def fetch_data(resource_id: str) -> dict:
     response = requests.get(f"{API_URL}/resource/{resource_id}")  # Blocks
     return response.json()
@@ -372,20 +376,20 @@ import httpx
 from pydantic import BaseModel, Field, field_validator, ConfigDict
 from mcp.server.fastmcp import FastMCP
 
-# Initialize the MCP server
+## Initialize the MCP server
 mcp = FastMCP("example_mcp")
 
-# Constants
-API_BASE_URL = "https://api.example.com/v1"
+## Constants
+API_BASE_URL = "[https://api.example.com/v1"](https://api.example.com/v1")
 CHARACTER_LIMIT = 25000  # Maximum response size in characters
 
-# Enums
+## Enums
 class ResponseFormat(str, Enum):
     '''Output format for tool responses.'''
     MARKDOWN = "markdown"
     JSON = "json"
 
-# Pydantic Models for Input Validation
+## Pydantic Models for Input Validation
 class UserSearchInput(BaseModel):
     '''Input model for user search operations.'''
     model_config = ConfigDict(
@@ -405,7 +409,7 @@ class UserSearchInput(BaseModel):
             raise ValueError("Query cannot be empty or whitespace only")
         return v.strip()
 
-# Shared utility functions
+## Shared utility functions
 async def _make_api_request(endpoint: str, method: str = "GET", **kwargs) -> dict:
     '''Reusable function for all API calls.'''
     async with httpx.AsyncClient() as client:
@@ -432,7 +436,7 @@ def _handle_api_error(e: Exception) -> str:
         return "Error: Request timed out. Please try again."
     return f"Error: Unexpected error occurred: {type(e).__name__}"
 
-# Tool definitions
+## Tool definitions
 @mcp.tool(
     name="example_search_users",
     annotations={
@@ -544,7 +548,8 @@ async def interactive_tool(resource_id: str, ctx: Context) -> str:
     return await api_call(resource_id, api_key)
 ```
 
-**Context capabilities:**
+#### Context capabilities
+
 - `ctx.report_progress(progress, message)` - Report progress for long operations
 - `ctx.log_info(message, data)` / `ctx.log_error()` / `ctx.log_debug()` - Logging
 - `ctx.elicit(prompt, input_type)` - Request input from users
@@ -574,7 +579,8 @@ async def get_setting(key: str, ctx: Context) -> str:
     return json.dumps(settings.get(key, {}))
 ```
 
-**When to use Resources vs Tools:**
+#### When to use Resources vs Tools
+
 - **Resources**: For data access with simple parameters (URI templates)
 - **Tools**: For complex operations with validation and business logic
 
@@ -587,7 +593,7 @@ from typing import TypedDict
 from dataclasses import dataclass
 from pydantic import BaseModel
 
-# TypedDict for structured returns
+## TypedDict for structured returns
 class UserData(TypedDict):
     id: str
     name: str
@@ -598,7 +604,7 @@ async def get_user_typed(user_id: str) -> UserData:
     '''Returns structured data - FastMCP handles serialization.'''
     return {"id": user_id, "name": "John Doe", "email": "john@example.com"}
 
-# Pydantic models for complex validation
+## Pydantic models for complex validation
 class DetailedUser(BaseModel):
     id: str
     name: str
@@ -623,7 +629,7 @@ from contextlib import asynccontextmanager
 @asynccontextmanager
 async def app_lifespan():
     '''Manage resources that live for the server's lifetime.'''
-    # Initialize connections, load config, etc.
+    # Initialize connections, load config, etc
     db = await connect_to_database()
     config = load_configuration()
 
@@ -648,20 +654,21 @@ async def query_data(query: str, ctx: Context) -> str:
 FastMCP supports different transport mechanisms:
 
 ```python
-# Default: Stdio transport (for CLI tools)
+## Default: Stdio transport (for CLI tools)
 if __name__ == "__main__":
     mcp.run()
 
-# HTTP transport (for web services)
+## HTTP transport (for web services)
 if __name__ == "__main__":
     mcp.run(transport="streamable_http", port=8000)
 
-# SSE transport (for real-time updates)
+## SSE transport (for real-time updates)
 if __name__ == "__main__":
     mcp.run(transport="sse", port=8000)
 ```
 
-**Transport selection:**
+#### Transport selection
+
 - **Stdio**: Command-line tools, subprocess integration
 - **HTTP**: Web services, remote access, multiple clients
 - **SSE**: Real-time updates, push notifications
@@ -681,7 +688,7 @@ Your implementation MUST prioritize composability and code reuse:
    - Extract business logic into dedicated functions that can be composed
    - Extract shared markdown or JSON field selection & formatting functionality
 
-2. **Avoid Duplication**:
+1. **Avoid Duplication**:
    - NEVER copy-paste similar code between tools
    - If you find yourself writing similar logic twice, extract it into a function
    - Common operations like pagination, filtering, field selection, and formatting should be shared
@@ -690,18 +697,19 @@ Your implementation MUST prioritize composability and code reuse:
 ### Python-Specific Best Practices
 
 1. **Use Type Hints**: Always include type annotations for function parameters and return values
-2. **Pydantic Models**: Define clear Pydantic models for all input validation
-3. **Avoid Manual Validation**: Let Pydantic handle input validation with constraints
-4. **Proper Imports**: Group imports (standard library, third-party, local)
-5. **Error Handling**: Use specific exception types (httpx.HTTPStatusError, not generic Exception)
-6. **Async Context Managers**: Use `async with` for resources that need cleanup
-7. **Constants**: Define module-level constants in UPPER_CASE
+1. **Pydantic Models**: Define clear Pydantic models for all input validation
+1. **Avoid Manual Validation**: Let Pydantic handle input validation with constraints
+1. **Proper Imports**: Group imports (standard library, third-party, local)
+1. **Error Handling**: Use specific exception types (httpx.HTTPStatusError, not generic Exception)
+1. **Async Context Managers**: Use `async with` for resources that need cleanup
+1. **Constants**: Define module-level constants in UPPER_CASE
 
 ## Quality Checklist
 
 Before finalizing your Python MCP server implementation, ensure:
 
 ### Strategic Design
+
 - [ ] Tools enable complete workflows, not just API endpoint wrappers
 - [ ] Tool names reflect natural task subdivisions
 - [ ] Response formats optimize for agent context efficiency
@@ -709,6 +717,7 @@ Before finalizing your Python MCP server implementation, ensure:
 - [ ] Error messages guide agents toward correct usage
 
 ### Implementation Quality
+
 - [ ] FOCUSED IMPLEMENTATION: Most important and valuable tools implemented
 - [ ] All tools have descriptive names and documentation
 - [ ] Return types are consistent across similar operations
@@ -720,6 +729,7 @@ Before finalizing your Python MCP server implementation, ensure:
 - [ ] Outputs are properly validated and formatted
 
 ### Tool Configuration
+
 - [ ] All tools implement 'name' and 'annotations' in the decorator
 - [ ] Annotations correctly set (readOnlyHint, destructiveHint, idempotentHint, openWorldHint)
 - [ ] All tools use Pydantic BaseModel for input validation with Field() definitions
@@ -729,6 +739,7 @@ Before finalizing your Python MCP server implementation, ensure:
 - [ ] Pydantic models handle input validation (no manual validation needed)
 
 ### Advanced Features (where applicable)
+
 - [ ] Context injection used for logging, progress, or elicitation
 - [ ] Resources registered for appropriate data endpoints
 - [ ] Lifespan management implemented for persistent connections
@@ -736,6 +747,7 @@ Before finalizing your Python MCP server implementation, ensure:
 - [ ] Appropriate transport configured (stdio, HTTP, SSE)
 
 ### Code Quality
+
 - [ ] File includes proper imports including Pydantic imports
 - [ ] Pagination is properly implemented where applicable
 - [ ] Large responses check CHARACTER_LIMIT and truncate with clear messages
@@ -746,6 +758,7 @@ Before finalizing your Python MCP server implementation, ensure:
 - [ ] Constants are defined at module level in UPPER_CASE
 
 ### Testing
+
 - [ ] Server runs successfully: `python your_server.py --help`
 - [ ] All imports resolve correctly
 - [ ] Sample tool calls work as expected

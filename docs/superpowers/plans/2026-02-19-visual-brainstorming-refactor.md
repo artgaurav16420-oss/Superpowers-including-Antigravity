@@ -15,7 +15,7 @@
 ## File Map
 
 | File | Action | Responsibility |
-|------|--------|---------------|
+|:---:---|:---:-----|:---:---:---:---:---|
 | `lib/brainstorm-server/index.js` | Modify | Server: add `.events` file writing, clear on new screen, replace `wrapInFrame` |
 | `lib/brainstorm-server/frame-template.html` | Modify | Template: remove feedback footer, add content placeholder + selection indicator |
 | `lib/brainstorm-server/helper.js` | Modify | Client JS: remove send/feedback functions, narrow to click capture + indicator updates |
@@ -29,7 +29,8 @@
 
 ### Task 1: Update `frame-template.html`
 
-**Files:**
+#### Files
+
 - Modify: `lib/brainstorm-server/frame-template.html`
 
 - [ ] **Step 1: Remove the feedback footer HTML**
@@ -77,9 +78,11 @@ Add indicator bar CSS:
 - [ ] **Step 3: Verify template renders**
 
 Run the test suite to check the template still loads:
+
 ```bash
 cd /Users/drewritter/prime-rad/superpowers && node tests/brainstorm-server/server.test.js
 ```
+
 Expected: Tests 1-5 should still pass. Tests 6-8 may fail (expected — they assert old structure).
 
 - [ ] **Step 4: Commit**
@@ -93,7 +96,8 @@ git commit -m "Replace feedback footer with selection indicator bar in brainstor
 
 ### Task 2: Update `index.js` — content injection and `.events` file
 
-**Files:**
+#### Files
+
 - Modify: `lib/brainstorm-server/index.js`
 
 - [ ] **Step 1: Write failing test for `.events` file writing**
@@ -124,6 +128,7 @@ Add to `tests/brainstorm-server/server.test.js` after Test 4 area — a new test
 ```bash
 cd /Users/drewritter/prime-rad/superpowers && node tests/brainstorm-server/server.test.js
 ```
+
 Expected: New test FAILS — `.events` file doesn't exist yet.
 
 - [ ] **Step 3: Write failing test for `.events` file clearing on new screen**
@@ -146,6 +151,7 @@ Add another test:
 ```bash
 cd /Users/drewritter/prime-rad/superpowers && node tests/brainstorm-server/server.test.js
 ```
+
 Expected: New test FAILS — `.events` not cleared on screen push.
 
 - [ ] **Step 5: Implement `.events` file writing in `index.js`**
@@ -188,6 +194,7 @@ function wrapInFrame(content) {
 ```bash
 cd /Users/drewritter/prime-rad/superpowers && node tests/brainstorm-server/server.test.js
 ```
+
 Expected: New `.events` tests PASS. Existing tests may still have failures from old assertions (fixed in Task 4).
 
 - [ ] **Step 8: Commit**
@@ -201,7 +208,8 @@ git commit -m "Add .events file writing and comment-based content injection to b
 
 ### Task 3: Simplify `helper.js`
 
-**Files:**
+#### Files
+
 - Modify: `lib/brainstorm-server/helper.js`
 
 - [ ] **Step 1: Remove `sendToClaude` function**
@@ -280,7 +288,8 @@ git commit -m "Simplify helper.js: remove feedback functions, narrow to choice c
 
 ### Task 4: Update tests for new structure
 
-**Files:**
+#### Files
+
 - Modify: `tests/brainstorm-server/server.test.js`
 
 **Note:** Line references below are from the _original_ file. Task 2 inserted new tests earlier in the file, so actual line numbers will be shifted. Find tests by their `console.log` labels (e.g., "Test 5:", "Test 6:").
@@ -340,6 +349,7 @@ Replace Test 8 (lines 145-149) — `sendToClaude` no longer exists. Test the ind
 ```bash
 cd /Users/drewritter/prime-rad/superpowers && node tests/brainstorm-server/server.test.js
 ```
+
 Expected: ALL tests PASS.
 
 - [ ] **Step 6: Commit**
@@ -353,12 +363,14 @@ git commit -m "Update brainstorm server tests for new template structure and hel
 
 ### Task 5: Delete `wait-for-feedback.sh`
 
-**Files:**
+#### Files
+
 - Delete: `lib/brainstorm-server/wait-for-feedback.sh`
 
 - [ ] **Step 1: Verify no other files import or reference `wait-for-feedback.sh`**
 
 Search the codebase:
+
 ```bash
 grep -r "wait-for-feedback" /Users/drewritter/prime-rad/superpowers/ --include="*.js" --include="*.md" --include="*.sh" --include="*.json"
 ```
@@ -376,6 +388,7 @@ rm lib/brainstorm-server/wait-for-feedback.sh
 ```bash
 cd /Users/drewritter/prime-rad/superpowers && node tests/brainstorm-server/server.test.js
 ```
+
 Expected: All tests PASS (no test referenced this file).
 
 - [ ] **Step 4: Commit**
@@ -389,7 +402,8 @@ git commit -m "Delete wait-for-feedback.sh: replaced by .events file"
 
 ### Task 6: Rewrite `visual-companion.md`
 
-**Files:**
+#### Files
+
 - Modify: `skills/brainstorming/visual-companion.md`
 
 - [ ] **Step 1: Update "How It Works" description (line 18)**
@@ -445,11 +459,13 @@ Replace with:
 
 When the user clicks options in the browser, their interactions are recorded to `$SCREEN_DIR/.events` (one JSON object per line). The file is cleared automatically when you push a new screen.
 
-```jsonl
+```
+
 {"type":"click","choice":"a","text":"Option A - Simple Layout","timestamp":1706000101}
 {"type":"click","choice":"c","text":"Option C - Complex Grid","timestamp":1706000108}
 {"type":"click","choice":"b","text":"Option B - Hybrid","timestamp":1706000115}
-```
+
+```text
 
 The full event stream shows the user's exploration path — they may click multiple options before settling. The last `choice` event is typically the final selection, but the pattern of clicks can reveal hesitation or preferences worth asking about.
 
@@ -491,6 +507,7 @@ git commit -m "Rewrite visual-companion.md for non-blocking browser-displays-ter
 ```bash
 cd /Users/drewritter/prime-rad/superpowers && node tests/brainstorm-server/server.test.js
 ```
+
 Expected: ALL tests PASS.
 
 - [ ] **Step 2: Manual smoke test**
@@ -519,6 +536,5 @@ Expected: No hits outside of release notes and the spec/plan docs (which are his
 
 ```bash
 git status
-# Review untracked/modified files, stage specific files as needed, commit if clean
+## Review untracked/modified files, stage specific files as needed, commit if clean
 ```
-

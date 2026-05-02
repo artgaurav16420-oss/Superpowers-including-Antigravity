@@ -127,13 +127,13 @@ import anthropic
 
 client = anthropic.Anthropic()
 
-# 1. Upload once
+## 1. Upload once
 uploaded = client.beta.files.upload(
     file=("contract.pdf", open("contract.pdf", "rb"), "application/pdf"),
 )
 print(f"Uploaded: {uploaded.id}")
 
-# 2. Ask multiple questions using the same file_id
+## 2. Ask multiple questions using the same file_id
 questions = [
     "What are the key terms and conditions?",
     "What is the termination clause?",
@@ -160,6 +160,6 @@ for question in questions:
     text = next((b.text for b in response.content if b.type == "text"), "")
     print(f"A: {text[:200]}")
 
-# 3. Clean up when done
+## 3. Clean up when done
 client.beta.files.delete(uploaded.id)
 ```

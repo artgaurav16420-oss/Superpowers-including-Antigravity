@@ -1,7 +1,7 @@
 # Managed Agents — Ruby
 
 > **Bindings not shown here:** This README covers the most common managed-agents flows for Ruby. If you need a class, method, namespace, field, or behavior that isn't shown, WebFetch the Ruby SDK repo **or the relevant docs page** from `shared/live-sources.md` rather than guess. Do not extrapolate from cURL shapes or another language's SDK.
-
+>
 > **Agents are persistent — create once, reference by ID.** Store the agent ID returned by `client.beta.agents.create` and pass it to every subsequent `client.beta.sessions.create`; do not call `agents.create` in the request path. The Anthropic CLI is one convenient way to create agents and environments from version-controlled YAML — its URL is in `shared/live-sources.md`. The examples below show in-code creation for completeness; in production the create call belongs in setup, not in the request path.
 
 ## Installation
@@ -15,10 +15,10 @@ gem install anthropic
 ```ruby
 require "anthropic"
 
-# Default (uses ANTHROPIC_API_KEY env var)
+## Default (uses ANTHROPIC_API_KEY env var)
 client = Anthropic::Client.new
 
-# Explicit API key
+## Explicit API key
 client = Anthropic::Client.new(api_key: "your-api-key")
 ```
 
@@ -48,7 +48,7 @@ puts "Environment ID: #{environment.id}" # env_...
 ### Minimal
 
 ```ruby
-# 1. Create the agent (reusable, versioned)
+## 1. Create the agent (reusable, versioned)
 agent = client.beta.agents.create(
   name: "Coding Assistant",
   model: :"claude-opus-4-7",
@@ -56,7 +56,7 @@ agent = client.beta.agents.create(
   tools: [{type: "agent_toolset_20260401"}]
 )
 
-# 2. Start a session
+## 2. Start a session
 session = client.beta.sessions.create(
   agent: {type: "agent", id: agent.id, version: agent.version},
   environment_id: environment.id,
@@ -77,12 +77,12 @@ updated_agent = client.beta.agents.update(
 )
 puts "New version: #{updated_agent.version}"
 
-# List all versions
+## List all versions
 client.beta.agents.versions.list(agent.id).auto_paging_each do |version|
   puts "Version #{version.version}: #{version.updated_at.iso8601}"
 end
 
-# Archive the agent
+## Archive the agent
 archived = client.beta.agents.archive(agent.id)
 puts "Archived at: #{archived.archived_at.iso8601}"
 ```
@@ -108,7 +108,7 @@ client.beta.sessions.events.send_(
 ## Stream Events (SSE)
 
 ```ruby
-# Open the stream first, then send the user message
+## Open the stream first, then send the user message
 stream = client.beta.sessions.events.stream_events(session.id)
 
 client.beta.sessions.events.send_(
@@ -147,11 +147,11 @@ require "set"
 
 stream = client.beta.sessions.events.stream_events(session.id)
 
-# Stream is open and buffering. List history before tailing live.
+## Stream is open and buffering. List history before tailing live
 seen_event_ids = Set.new
 client.beta.sessions.events.list(session.id).auto_paging_each { |past| seen_event_ids << past.id }
 
-# Tail live events, skipping anything already seen
+## Tail live events, skipping anything already seen
 stream.each do |event|
   next if seen_event_ids.include?(event.id)
   seen_event_ids << event.id
@@ -192,7 +192,7 @@ require "pathname"
 file = client.beta.files.upload(file: Pathname("data.csv"))
 puts "File ID: #{file.id}"
 
-# Mount in a session
+## Mount in a session
 session = client.beta.sessions.create(
   agent: agent.id,
   environment_id: environment.id,
@@ -209,7 +209,7 @@ session = client.beta.sessions.create(
 ### Add and Manage Resources on an Existing Session
 
 ```ruby
-# Attach an additional file to an open session
+## Attach an additional file to an open session
 resource = client.beta.sessions.resources.add(
   session.id,
   type: "file",
@@ -217,11 +217,11 @@ resource = client.beta.sessions.resources.add(
 )
 puts resource.id # "sesrsc_01ABC..."
 
-# List resources on the session
+## List resources on the session
 listed = client.beta.sessions.resources.list(session.id)
 listed.data.each { |entry| puts "#{entry.id} #{entry.type}" }
 
-# Detach a resource
+## Detach a resource
 client.beta.sessions.resources.delete(resource.id, session_id: session.id)
 ```
 
@@ -236,19 +236,19 @@ client.beta.sessions.resources.delete(resource.id, session_id: session.id)
 ## Session Management
 
 ```ruby
-# List environments
+## List environments
 environments = client.beta.environments.list
 
-# Retrieve a specific environment
+## Retrieve a specific environment
 env = client.beta.environments.retrieve(environment.id)
 
-# Archive an environment (read-only, existing sessions continue)
+## Archive an environment (read-only, existing sessions continue)
 client.beta.environments.archive(environment.id)
 
-# Delete an environment (only if no sessions reference it)
+## Delete an environment (only if no sessions reference it)
 client.beta.environments.delete(environment.id)
 
-# Delete a session
+## Delete a session
 client.beta.sessions.delete(session.id)
 ```
 
@@ -257,7 +257,7 @@ client.beta.sessions.delete(session.id)
 ## MCP Server Integration
 
 ```ruby
-# Agent declares MCP server (no auth here — auth goes in a vault)
+## Agent declares MCP server (no auth here — auth goes in a vault)
 agent = client.beta.agents.create(
   name: "GitHub Assistant",
   model: :"claude-opus-4-7",
@@ -265,7 +265,7 @@ agent = client.beta.agents.create(
     {
       type: "url",
       name: "github",
-      url: "https://api.githubcopilot.com/mcp/"
+      url: "[https://api.githubcopilot.com/mcp/"](https://api.githubcopilot.com/mcp/")
     }
   ],
   tools: [
@@ -274,7 +274,7 @@ agent = client.beta.agents.create(
   ]
 )
 
-# Session attaches vault(s) containing credentials for those MCP server URLs
+## Session attaches vault(s) containing credentials for those MCP server URLs
 session = client.beta.sessions.create(
   agent: {type: "agent", id: agent.id, version: agent.version},
   environment_id: environment.id,
@@ -289,24 +289,24 @@ See `shared/managed-agents-tools.md` §Vaults for creating vaults and adding cre
 ## Vaults
 
 ```ruby
-# Create a vault
+## Create a vault
 vault = client.beta.vaults.create(
   display_name: "Alice",
   metadata: {external_user_id: "usr_abc123"}
 )
 puts vault.id # "vlt_01ABC..."
 
-# Add an OAuth credential
+## Add an OAuth credential
 credential = client.beta.vaults.credentials.create(
   vault.id,
   display_name: "Alice's Slack",
   auth: {
     type: "mcp_oauth",
-    mcp_server_url: "https://mcp.slack.com/mcp",
+    mcp_server_url: "[https://mcp.slack.com/mcp",](https://mcp.slack.com/mcp",)
     access_token: "xoxp-...",
     expires_at: "2026-04-15T00:00:00Z",
     refresh: {
-      token_endpoint: "https://slack.com/api/oauth.v2.access",
+      token_endpoint: "[https://slack.com/api/oauth.v2.access",](https://slack.com/api/oauth.v2.access",)
       client_id: "1234567890.0987654321",
       scope: "channels:read chat:write",
       refresh_token: "xoxe-1-...",
@@ -318,7 +318,7 @@ credential = client.beta.vaults.credentials.create(
   }
 )
 
-# Rotate the credential (e.g., after a token refresh)
+## Rotate the credential (e.g., after a token refresh)
 client.beta.vaults.credentials.update(
   credential.id,
   vault_id: vault.id,
@@ -330,7 +330,7 @@ client.beta.vaults.credentials.update(
   }
 )
 
-# Archive a vault
+## Archive a vault
 client.beta.vaults.archive(vault.id)
 ```
 
@@ -348,7 +348,7 @@ session = client.beta.sessions.create(
   resources: [
     {
       type: "github_repository",
-      url: "https://github.com/org/repo",
+      url: "[https://github.com/org/repo",](https://github.com/org/repo",)
       mount_path: "/workspace/repo",
       authorization_token: "ghp_your_github_token"
     }
@@ -362,13 +362,13 @@ Multiple repositories on the same session:
 resources = [
   {
     type: "github_repository",
-    url: "https://github.com/org/frontend",
+    url: "[https://github.com/org/frontend",](https://github.com/org/frontend",)
     mount_path: "/workspace/frontend",
     authorization_token: "ghp_your_github_token"
   },
   {
     type: "github_repository",
-    url: "https://github.com/org/backend",
+    url: "[https://github.com/org/backend",](https://github.com/org/backend",)
     mount_path: "/workspace/backend",
     authorization_token: "ghp_your_github_token"
   }

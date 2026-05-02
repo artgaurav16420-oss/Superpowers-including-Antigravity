@@ -1,7 +1,7 @@
 # Managed Agents — PHP
 
 > **Bindings not shown here:** This README covers the most common managed-agents flows for PHP. If you need a class, method, namespace, field, or behavior that isn't shown, WebFetch the PHP SDK repo **or the relevant docs page** from `shared/live-sources.md` rather than guess. Do not extrapolate from cURL shapes or another language's SDK.
-
+>
 > **Agents are persistent — create once, reference by ID.** Store the agent ID returned by `$client->beta->agents->create` and pass it to every subsequent `->sessions->create`; do not call `agents->create` in the request path. The Anthropic CLI is one convenient way to create agents and environments from version-controlled YAML — its URL is in `shared/live-sources.md`. The examples below show in-code creation for completeness; in production the create call belongs in setup, not in the request path.
 
 ## Installation
@@ -210,7 +210,7 @@ use Anthropic\Beta\Sessions\BetaManagedAgentsFileResourceParams;
 
 // Raw cURL upload (canonical example from the apps source)
 $csvPath = 'data.csv';
-$ch = curl_init('https://api.anthropic.com/v1/files');
+$ch = curl_init('[https://api.anthropic.com/v1/files');](https://api.anthropic.com/v1/files');)
 curl_setopt_array($ch, [
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_POST => true,
@@ -304,7 +304,7 @@ $agent = $client->beta->agents->create(
         BetaManagedAgentsUrlmcpServerParams::with(
             type: 'url',
             name: 'github',
-            url: 'https://api.githubcopilot.com/mcp/',
+            url: '[https://api.githubcopilot.com/mcp/',](https://api.githubcopilot.com/mcp/',)
         ),
     ],
     tools: [
@@ -348,11 +348,11 @@ $credential = $client->beta->vaults->credentials->create(
     displayName: "Alice's Slack",
     auth: [
         'type' => 'mcp_oauth',
-        'mcp_server_url' => 'https://mcp.slack.com/mcp',
+        'mcp_server_url' => '[https://mcp.slack.com/mcp',](https://mcp.slack.com/mcp',)
         'access_token' => 'xoxp-...',
         'expires_at' => '2026-04-15T00:00:00Z',
         'refresh' => [
-            'token_endpoint' => 'https://slack.com/api/oauth.v2.access',
+            'token_endpoint' => '[https://slack.com/api/oauth.v2.access',](https://slack.com/api/oauth.v2.access',)
             'client_id' => '1234567890.0987654321',
             'scope' => 'channels:read chat:write',
             'refresh_token' => 'xoxe-1-...',
@@ -394,7 +394,7 @@ $session = $client->beta->sessions->create(
     resources: [
         [
             'type' => 'github_repository',
-            'url' => 'https://github.com/org/repo',
+            'url' => '[https://github.com/org/repo',](https://github.com/org/repo',)
             'mountPath' => '/workspace/repo',
             'authorizationToken' => 'ghp_your_github_token',
         ],
@@ -408,13 +408,13 @@ Multiple repositories on the same session:
 $resources = [
     [
         'type' => 'github_repository',
-        'url' => 'https://github.com/org/frontend',
+        'url' => '[https://github.com/org/frontend',](https://github.com/org/frontend',)
         'mountPath' => '/workspace/frontend',
         'authorizationToken' => 'ghp_your_github_token',
     ],
     [
         'type' => 'github_repository',
-        'url' => 'https://github.com/org/backend',
+        'url' => '[https://github.com/org/backend',](https://github.com/org/backend',)
         'mountPath' => '/workspace/backend',
         'authorizationToken' => 'ghp_your_github_token',
     ],

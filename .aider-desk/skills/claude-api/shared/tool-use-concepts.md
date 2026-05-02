@@ -32,7 +32,7 @@ Each tool requires a name, description, and JSON Schema for its inputs:
 }
 ```
 
-**Best practices for tool definitions:**
+#### Best practices for tool definitions
 
 - Use clear, descriptive names (e.g., `get_weather`, `search_database`, `send_email`)
 - Write detailed descriptions — Claude uses these to decide when to use the tool
@@ -47,7 +47,7 @@ Each tool requires a name, description, and JSON Schema for its inputs:
 Control when Claude uses tools:
 
 | Value                             | Behavior                                      |
-| --------------------------------- | --------------------------------------------- |
+| :---:---:---:---:---:---:---:---:---:---:--- | :---:---:---:---:---:---:---:---:---:---:---:---:---:---:--- |
 | `{"type": "auto"}`                | Claude decides whether to use tools (default) |
 | `{"type": "any"}`                 | Claude must use at least one tool             |
 | `{"type": "tool", "name": "..."}` | Claude must use the specified tool            |
@@ -66,7 +66,7 @@ Any `tool_choice` value can also include `"disable_parallel_tool_use": true` to 
 **Stop reasons for server-side tools:** When using server-side tools (code execution, web search, etc.), the API runs a server-side sampling loop. If this loop reaches its default limit of 10 iterations, the response will have `stop_reason: "pause_turn"`. To continue, re-send the user message and assistant response and make another API request — the server will resume where it left off. Do NOT add an extra user message like "Continue." — the API detects the trailing `server_tool_use` block and knows to resume automatically.
 
 ```python
-# Handle pause_turn in your agentic loop
+## Handle pause_turn in your agentic loop
 if response.stop_reason == "pause_turn":
     messages = [
         {"role": "user", "content": user_query},
@@ -89,8 +89,8 @@ Set a `max_continuations` limit (e.g., 5) to prevent infinite loops. For the ful
 When Claude uses a tool, the response contains a `tool_use` block. You must:
 
 1. Execute the tool with the provided input
-2. Send the result back in a `tool_result` message
-3. Continue the conversation
+1. Send the result back in a `tool_result` message
+1. Continue the conversation
 
 **Error handling in tool results:** When a tool execution fails, set `"is_error": true` and provide an informative error message. Claude will typically acknowledge the error and either try a different approach or ask for clarification.
 
@@ -136,7 +136,7 @@ Additional packages can be installed at runtime via `pip install`.
 ### Supported File Types for Upload
 
 | Type   | Extensions                         |
-| ------ | ---------------------------------- |
+| :---:--- | :---:---:---:---:---:---:---:---:---:---:---- |
 | Data   | CSV, Excel (.xlsx/.xls), JSON, XML |
 | Images | JPEG, PNG, GIF, WebP               |
 | Text   | .txt, .md, .py, .js, etc.          |
@@ -286,14 +286,14 @@ Two features are available:
 
 ### JSON Schema Limitations
 
-**Supported:**
+#### Supported
 
 - Basic types: object, array, string, integer, number, boolean, null
 - `enum`, `const`, `anyOf`, `allOf`, `$ref`/`$def`
 - String formats: `date-time`, `time`, `date`, `duration`, `email`, `hostname`, `uri`, `ipv4`, `ipv6`, `uuid`
 - `additionalProperties: false` (required for all objects)
 
-**Not supported:**
+#### Not supported
 
 - Recursive schemas
 - Numerical constraints (`minimum`, `maximum`, `multipleOf`)
@@ -316,11 +316,11 @@ The Python and TypeScript SDKs automatically handle unsupported constraints by r
 ## Tips for Effective Tool Use
 
 1. **Provide detailed descriptions**: Claude relies heavily on descriptions to understand when and how to use tools
-2. **Use specific tool names**: `get_current_weather` is better than `weather`
-3. **Validate inputs**: Always validate tool inputs before execution
-4. **Handle errors gracefully**: Return informative error messages so Claude can adapt
-5. **Limit tool count**: Too many tools can confuse the model — keep the set focused
-6. **Test tool interactions**: Verify Claude uses tools correctly in various scenarios
+1. **Use specific tool names**: `get_current_weather` is better than `weather`
+1. **Validate inputs**: Always validate tool inputs before execution
+1. **Handle errors gracefully**: Return informative error messages so Claude can adapt
+1. **Limit tool count**: Too many tools can confuse the model — keep the set focused
+1. **Test tool interactions**: Verify Claude uses tools correctly in various scenarios
 
 For detailed tool use documentation, use WebFetch:
 

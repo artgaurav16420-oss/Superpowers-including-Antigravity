@@ -7,7 +7,7 @@
 Send events to a session via `POST /v1/sessions/{id}/events`.
 
 | Event Type                | When to Send                                        |
-| ------------------------- | --------------------------------------------------- |
+| :---:---:---:---:---:---:---:---- | :---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:--- |
 | `user.message`            | Send a user message |
 | `user.interrupt`          | Interrupt the agent while it's running |
 | `user.tool_confirmation`  | Approve/deny a tool call (when `always_ask` policy) |
@@ -18,7 +18,7 @@ Send events to a session via `POST /v1/sessions/{id}/events`.
 Two methods:
 
 1. **Streaming (SSE)**: `GET /v1/sessions/{id}/events/stream` — real-time Server-Sent Events. **Long-lived** — the server sends periodic heartbeats to keep the connection alive.
-2. **Polling**: `GET /v1/sessions/{id}/events` — paginated event list (query params: `limit` default 1000, `page`). **Returns immediately** — this is a plain paginated GET, not a long-poll.
+1. **Polling**: `GET /v1/sessions/{id}/events` — paginated event list (query params: `limit` default 1000, `page`). **Returns immediately** — this is a plain paginated GET, not a long-poll.
 
 All received events carry `id`, `type`, and `processed_at` (ISO 8601; `null` if not yet processed by the agent).
 
@@ -31,7 +31,7 @@ All received events carry `id`, `type`, and `processed_at` (ISO 8601; `null` if 
 Event types use dot notation, grouped by namespace:
 
 | Event Type | Description |
-| --- | --- |
+| :--- | :--- |
 | `agent.message` | Agent text output |
 | `agent.thinking` | Extended thinking blocks |
 | `agent.tool_use` | Agent used a built-in tool (`agent_toolset_20260401`) |
@@ -134,6 +134,7 @@ The agent stops mid-task. It does not see the interrupt as a message — it just
 some events carry useful metadata beyond the status change itself:
 
 `session.status_idle` — includes a `stop_reason` field which elaborates on why the session stopped and what type of further action is required by the user.
+
 ```json
 {
   "id": "sevt_456",
@@ -185,5 +186,3 @@ await client.beta.sessions.archive(sessionId);
 ```
 
 > Archiving a **session** is routine cleanup — sessions are per-run and disposable. **Do not generalize this to agents or environments**: those are persistent, reusable resources, and archiving them is permanent (no unarchive; new sessions cannot reference them). See `shared/managed-agents-overview.md` → Common Pitfalls.
-
-

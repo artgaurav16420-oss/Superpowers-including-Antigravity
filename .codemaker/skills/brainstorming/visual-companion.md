@@ -33,12 +33,12 @@ The server watches a directory for HTML files and serves the newest one to the b
 ## Starting a Session
 
 ```bash
-# Start server with persistence (mockups saved to project)
+## Start server with persistence (mockups saved to project)
 scripts/start-server.sh --project-dir /path/to/project
 
-# Returns: {"type":"server-started","port":52341,"url":"http://localhost:52341",
-#           "screen_dir":"/path/to/project/.mega-skills/brainstorm/12345-1706000000/content",
-#           "state_dir":"/path/to/project/.mega-skills/brainstorm/12345-1706000000/state"}
+## Returns: {"type":"server-started","port":52341,"url":"[http://localhost:52341",](http://localhost:52341",)
+##           "screen_dir":"/path/to/project/.mega-skills/brainstorm/12345-1706000000/content",
+##           "state_dir":"/path/to/project/.mega-skills/brainstorm/12345-1706000000/state"}
 ```
 
 Save `screen_dir` and `state_dir` from the response. Tell user to open the URL.
@@ -47,39 +47,39 @@ Save `screen_dir` and `state_dir` from the response. Tell user to open the URL.
 
 **Note:** Pass the project root as `--project-dir` so mockups persist in `.mega-skills/brainstorm/` and survive server restarts. Without it, files go to `/tmp` and get cleaned up. Remind the user to add `.mega-skills/` to `.gitignore` if it's not already there.
 
-**Launching the server by platform:**
+#### Launching the server by platform
 
-**Claude Code (macOS / Linux):**
+#### Claude Code (macOS / Linux)
 
 ```bash
-# Default mode works — the script backgrounds the server itself
+## Default mode works — the script backgrounds the server itself
 scripts/start-server.sh --project-dir /path/to/project
 ```
 
-**Claude Code (Windows):**
+#### Claude Code (Windows)
 
 ```bash
-# Windows auto-detects and uses foreground mode, which blocks the tool call.
-# Use run_in_background: true on the Bash tool call so the server survives
-# across conversation turns.
+## Windows auto-detects and uses foreground mode, which blocks the tool call
+## Use run_in_background: true on the Bash tool call so the server survives
+## across conversation turns
 scripts/start-server.sh --project-dir /path/to/project
 ```
 
 When calling this via the Bash tool, set `run_in_background: true`. Then read `$STATE_DIR/server-info` on the next turn to get the URL and port.
 
-**Codex:**
+#### Codex
 
 ```bash
-# Codex reaps background processes. The script auto-detects CODEX_CI and
-# switches to foreground mode. Run it normally — no extra flags needed.
+## Codex reaps background processes. The script auto-detects CODEX_CI and
+## switches to foreground mode. Run it normally — no extra flags needed
 scripts/start-server.sh --project-dir /path/to/project
 ```
 
-**Gemini CLI:**
+#### Gemini CLI
 
 ```bash
-# Use --foreground and set is_background: true on your shell tool call
-# so the process survives across turns
+## Use --foreground and set is_background: true on your shell tool call
+## so the process survives across turns
 scripts/start-server.sh --project-dir /path/to/project --foreground
 ```
 
@@ -105,19 +105,19 @@ Use `--url-host` to control what hostname is printed in the returned URL JSON.
    - Use Write tool — **never use cat/heredoc** (dumps noise into terminal)
    - Server automatically serves the newest file
 
-2. **Tell user what to expect and end your turn:**
+1. **Tell user what to expect and end your turn:**
    - Remind them of the URL (every step, not just first)
    - Give a brief text summary of what's on screen (e.g., "Showing 3 layout options for the homepage")
    - Ask them to respond in the terminal: "Take a look and let me know what you think. Click to select an option if you'd like."
 
-3. **On your next turn** — after the user responds in the terminal:
+1. **On your next turn** — after the user responds in the terminal:
    - Read `$STATE_DIR/events` if it exists — this contains the user's browser interactions (clicks, selections) as JSON lines
    - Merge with the user's terminal text to get the full picture
    - The terminal message is the primary feedback; `state_dir/events` provides structured interaction data
 
-4. **Iterate or advance** — if feedback changes current screen, write a new file (e.g., `layout-v2.html`). Only move to the next question when the current step is validated.
+1. **Iterate or advance** — if feedback changes current screen, write a new file (e.g., `layout-v2.html`). Only move to the next question when the current step is validated.
 
-5. **Unload when returning to terminal** — when the next step doesn't need the browser (e.g., a clarifying question, a tradeoff discussion), push a waiting screen to clear the stale content:
+1. **Unload when returning to terminal** — when the next step doesn't need the browser (e.g., a clarifying question, a tradeoff discussion), push a waiting screen to clear the stale content:
 
    ```html
    <!-- filename: waiting.html (or waiting-2.html, etc.) -->
@@ -128,13 +128,13 @@ Use `--url-host` to control what hostname is printed in the returned URL JSON.
 
    This prevents the user from staring at a resolved choice while the conversation has moved on. When the next visual question comes up, push a new content file as usual.
 
-6. Repeat until done.
+1. Repeat until done.
 
 ## Writing Content Fragments
 
 Write just the content that goes inside the page. The server wraps it in the frame template automatically (header, theme CSS, selection indicator, and all interactive infrastructure).
 
-**Minimal example:**
+#### Minimal example
 
 ```html
 <h2>Which layout works better?</h2>

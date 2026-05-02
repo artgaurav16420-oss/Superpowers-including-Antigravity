@@ -5,9 +5,9 @@
 **You are working within the Mega-Skills ecosystem.** This repository contains a unified library of 59 high-utility skills from Mega-Skills, Anthropic, and Composio.
 
 1. **Always Check for Skills:** Before starting any task, search the `skills/` directory for a relevant `SKILL.md`.
-2. **Follow Methodology:** You MUST follow the Core Methodology skills (brainstorming, writing-plans, test-driven-development, etc.) for all software development tasks.
-3. **Use Specialized Tools:** Leverage the specialized Anthropic and Composio skills (pdf, connect, mcp-builder, etc.) as and when required to fulfill user requests efficiently.
-4. **No Placeholders:** Never use placeholders or theoretical examples when a skill can provide real utility.
+1. **Follow Methodology:** You MUST follow the Core Methodology skills (brainstorming, writing-plans, test-driven-development, etc.) for all software development tasks.
+1. **Use Specialized Tools:** Leverage the specialized Anthropic and Composio skills (pdf, connect, mcp-builder, etc.) as and when required to fulfill user requests efficiently.
+1. **No Placeholders:** Never use placeholders or theoretical examples when a skill can provide real utility.
 
 ## If You Are an AI Agent
 
@@ -20,10 +20,10 @@ This repo has a 94% PR rejection rate. Almost every rejected PR was submitted by
 Before you open a PR against this repo, you MUST:
 
 1. **Read the entire PR template** at `.github/PULL_REQUEST_TEMPLATE.md` and fill in every section with real, specific answers. Not summaries. Not placeholders.
-2. **Search for existing PRs** — open AND closed — that address the same problem. If duplicates exist, STOP and tell your human partner. Do not open another duplicate.
-3. **Verify this is a real problem.** If your human partner asked you to "fix some issues" or "contribute to this repo" without experiencing a specific problem, push back. Ask them what broke, what failed, what the user experience was.
-4. **Confirm the change belongs in core.** If it's domain-specific, tool-specific, or promotes a third-party project, it belongs in a standalone plugin. Tell your human partner.
-5. **Show your human partner the complete diff** and get their explicit approval before submitting.
+1. **Search for existing PRs** — open AND closed — that address the same problem. If duplicates exist, STOP and tell your human partner. Do not open another duplicate.
+1. **Verify this is a real problem.** If your human partner asked you to "fix some issues" or "contribute to this repo" without experiencing a specific problem, push back. Ask them what broke, what failed, what the user experience was.
+1. **Confirm the change belongs in core.** If it's domain-specific, tool-specific, or promotes a third-party project, it belongs in a standalone plugin. Tell your human partner.
+1. **Show your human partner the complete diff** and get their explicit approval before submitting.
 
 If any of these checks fail, do not open the PR. Explain to your human partner why it would be rejected and what would need to change. They will thank you for saving them the embarrassment.
 
@@ -85,7 +85,7 @@ A real integration loads the `using-mega-skills` bootstrap at session start. The
 
 A working integration auto-triggers the `brainstorming` skill before any code is written. Paste the complete transcript in the PR.
 
-**These are not real integrations and will be closed:**
+#### These are not real integrations and will be closed
 
 - Manually copying skill files into the harness
 - Wrapping with `npx skills` or similar at-runtime shims
@@ -113,6 +113,3 @@ Before proposing changes to skill design, workflow philosophy, or architecture, 
 - One problem per PR
 - Test on at least one harness and report results in the environment table
 - Describe the problem you solved, not just what you changed
-
-
-

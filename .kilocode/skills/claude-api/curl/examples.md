@@ -13,7 +13,7 @@ export ANTHROPIC_API_KEY="your-api-key"
 ## Basic Message Request
 
 ```bash
-curl https://api.anthropic.com/v1/messages \
+curl [https://api.anthropic.com/v1/messages](https://api.anthropic.com/v1/messages) \
   -H "Content-Type: application/json" \
   -H "x-api-key: $ANTHROPIC_API_KEY" \
   -H "anthropic-version: 2023-06-01" \
@@ -33,34 +33,33 @@ JSON strings can contain any character and regex parsing will break on quotes,
 escapes, or multi-line content.
 
 ```bash
-# Capture the response, then extract fields
-response=$(curl -s https://api.anthropic.com/v1/messages \
+## Capture the response, then extract fields
+response=$(curl -s [https://api.anthropic.com/v1/messages](https://api.anthropic.com/v1/messages) \
   -H "Content-Type: application/json" \
   -H "x-api-key: $ANTHROPIC_API_KEY" \
   -H "anthropic-version: 2023-06-01" \
   -d '{"model":"claude-opus-4-7","max_tokens":16000,"messages":[{"role":"user","content":"Hello"}]}')
 
-# Print the first text block (-r strips the JSON quotes)
+## Print the first text block (-r strips the JSON quotes)
 echo "$response" | jq -r '.content[0].text'
 
-# Read usage fields
+## Read usage fields
 input_tokens=$(echo "$response" | jq -r '.usage.input_tokens')
 output_tokens=$(echo "$response" | jq -r '.usage.output_tokens')
 
-# Read stop reason (for tool-use loops)
+## Read stop reason (for tool-use loops)
 stop_reason=$(echo "$response" | jq -r '.stop_reason')
 
-# Extract all text blocks (content is an array; filter to type=="text")
+## Extract all text blocks (content is an array; filter to type=="text")
 echo "$response" | jq -r '.content[] | select(.type == "text") | .text'
 ```
-
 
 ---
 
 ## Streaming (SSE)
 
 ```bash
-curl https://api.anthropic.com/v1/messages \
+curl [https://api.anthropic.com/v1/messages](https://api.anthropic.com/v1/messages) \
   -H "Content-Type: application/json" \
   -H "x-api-key: $ANTHROPIC_API_KEY" \
   -H "anthropic-version: 2023-06-01" \
@@ -74,7 +73,7 @@ curl https://api.anthropic.com/v1/messages \
 
 The response is a stream of Server-Sent Events:
 
-```
+```text
 event: message_start
 data: {"type":"message_start","message":{"id":"msg_...","type":"message",...}}
 
@@ -99,7 +98,7 @@ data: {"type":"message_stop"}
 ## Tool Use
 
 ```bash
-curl https://api.anthropic.com/v1/messages \
+curl [https://api.anthropic.com/v1/messages](https://api.anthropic.com/v1/messages) \
   -H "Content-Type: application/json" \
   -H "x-api-key: $ANTHROPIC_API_KEY" \
   -H "anthropic-version: 2023-06-01" \
@@ -124,7 +123,7 @@ curl https://api.anthropic.com/v1/messages \
 When Claude responds with a `tool_use` block, send the result back:
 
 ```bash
-curl https://api.anthropic.com/v1/messages \
+curl [https://api.anthropic.com/v1/messages](https://api.anthropic.com/v1/messages) \
   -H "Content-Type: application/json" \
   -H "x-api-key: $ANTHROPIC_API_KEY" \
   -H "anthropic-version: 2023-06-01" \
@@ -162,7 +161,7 @@ curl https://api.anthropic.com/v1/messages \
 Put `cache_control` on the last block of the stable prefix. See `shared/prompt-caching.md` for placement patterns and the silent-invalidator audit checklist.
 
 ```bash
-curl https://api.anthropic.com/v1/messages \
+curl [https://api.anthropic.com/v1/messages](https://api.anthropic.com/v1/messages) \
   -H "Content-Type: application/json" \
   -H "x-api-key: $ANTHROPIC_API_KEY" \
   -H "anthropic-version: 2023-06-01" \
@@ -186,8 +185,8 @@ For 1-hour TTL: `"cache_control": {"type": "ephemeral", "ttl": "1h"}`. Top-level
 > **Older models:** Use `"type": "enabled"` with `"budget_tokens": N` (must be < `max_tokens`, min 1024).
 
 ```bash
-# Opus 4.7 / 4.6: adaptive thinking (recommended)
-curl https://api.anthropic.com/v1/messages \
+## Opus 4.7 / 4.6: adaptive thinking (recommended)
+curl [https://api.anthropic.com/v1/messages](https://api.anthropic.com/v1/messages) \
   -H "Content-Type: application/json" \
   -H "x-api-key: $ANTHROPIC_API_KEY" \
   -H "anthropic-version: 2023-06-01" \
@@ -209,7 +208,7 @@ curl https://api.anthropic.com/v1/messages \
 ## Required Headers
 
 | Header              | Value              | Description                |
-| ------------------- | ------------------ | -------------------------- |
+| :---:---:---:---:---:---- | :---:---:---:---:---:--- | :---:---:---:---:---:---:---:----- |
 | `Content-Type`      | `application/json` | Required                   |
 | `x-api-key`         | Your API key       | Authentication             |
 | `anthropic-version` | `2023-06-01`       | API version                |

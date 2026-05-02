@@ -11,7 +11,7 @@ function walk(dir) {
             if (file !== 'node_modules' && file !== '.git') {
                 results = results.concat(walk(filePath));
             }
-        } else if (file === 'SKILL.md') {
+        } else if (file.toLowerCase().endsWith('.md')) {
             results.push(filePath);
         }
     });

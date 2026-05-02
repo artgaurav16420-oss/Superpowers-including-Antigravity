@@ -8,7 +8,7 @@ Testing skills that involve subagents, workflows, and complex interactions requi
 
 ## Test Structure
 
-```
+```text
 tests/
 ├── claude-code/
 │   ├── test-helpers.sh                    # Shared test utilities
@@ -24,7 +24,7 @@ tests/
 Integration tests execute real Claude Code sessions with actual skills:
 
 ```bash
-# Run the subagent-driven-development integration test
+## Run the subagent-driven-development integration test
 cd tests/claude-code
 ./test-subagent-driven-development-integration.sh
 ```
@@ -44,28 +44,28 @@ cd tests/claude-code
 The integration test verifies the `subagent-driven-development` skill correctly:
 
 1. **Plan Loading**: Reads the plan once at the beginning
-2. **Full Task Text**: Provides complete task descriptions to subagents (doesn't make them read files)
-3. **Self-Review**: Ensures subagents perform self-review before reporting
-4. **Review Order**: Runs spec compliance review before code quality review
-5. **Review Loops**: Uses review loops when issues are found
-6. **Independent Verification**: Spec reviewer reads code independently, doesn't trust implementer reports
+1. **Full Task Text**: Provides complete task descriptions to subagents (doesn't make them read files)
+1. **Self-Review**: Ensures subagents perform self-review before reporting
+1. **Review Order**: Runs spec compliance review before code quality review
+1. **Review Loops**: Uses review loops when issues are found
+1. **Independent Verification**: Spec reviewer reads code independently, doesn't trust implementer reports
 
 ### How It Works
 
 1. **Setup**: Creates a temporary Node.js project with a minimal implementation plan
-2. **Execution**: Runs Claude Code in headless mode with the skill
-3. **Verification**: Parses the session transcript (`.jsonl` file) to verify:
+1. **Execution**: Runs Claude Code in headless mode with the skill
+1. **Verification**: Parses the session transcript (`.jsonl` file) to verify:
    - Skill tool was invoked
    - Subagents were dispatched (Task tool)
    - TodoWrite was used for tracking
    - Implementation files were created
    - Tests pass
    - Git commits show proper workflow
-4. **Token Analysis**: Shows token usage breakdown by subagent
+1. **Token Analysis**: Shows token usage breakdown by subagent
 
 ### Test Output
 
-```
+```text
 ========================================
  Integration Test: subagent-driven-development
 ========================================
@@ -149,10 +149,10 @@ python3 tests/claude-code/analyze-token-usage.py ~/.claude/projects/<project-dir
 Session transcripts are stored in `~/.claude/projects/` with the working directory path encoded:
 
 ```bash
-# Example for /Users/jesse/Documents/GitHub/superpowers/superpowers
+## Example for /Users/jesse/Documents/GitHub/superpowers/superpowers
 SESSION_DIR="$HOME/.claude/projects/-Users-jesse-Documents-GitHub-superpowers-superpowers"
 
-# Find recent sessions
+## Find recent sessions
 ls -lt "$SESSION_DIR"/*.jsonl | head -5
 ```
 
@@ -183,8 +183,8 @@ ls -lt "$SESSION_DIR"/*.jsonl | head -5
 
 **Solutions**:
 1. Ensure you're running FROM the superpowers directory: `cd /path/to/superpowers && tests/...`
-2. Check `~/.claude/settings.json` has `"superpowers@superpowers-dev": true` in `enabledPlugins`
-3. Verify skill exists in `skills/` directory
+1. Check `~/.claude/settings.json` has `"superpowers@superpowers-dev": true` in `enabledPlugins`
+1. Verify skill exists in `skills/` directory
 
 ### Permission Errors
 
@@ -192,8 +192,8 @@ ls -lt "$SESSION_DIR"/*.jsonl | head -5
 
 **Solutions**:
 1. Use `--permission-mode bypassPermissions` flag
-2. Use `--add-dir /path/to/temp/dir` to grant access to test directories
-3. Check file permissions on test directories
+1. Use `--add-dir /path/to/temp/dir` to grant access to test directories
+1. Check file permissions on test directories
 
 ### Test Timeouts
 
@@ -201,8 +201,8 @@ ls -lt "$SESSION_DIR"/*.jsonl | head -5
 
 **Solutions**:
 1. Increase timeout: `timeout 1800 claude ...` (30 minutes)
-2. Check for infinite loops in skill logic
-3. Review subagent task complexity
+1. Check for infinite loops in skill logic
+1. Review subagent task complexity
 
 ### Session File Not Found
 
@@ -210,8 +210,8 @@ ls -lt "$SESSION_DIR"/*.jsonl | head -5
 
 **Solutions**:
 1. Check the correct project directory in `~/.claude/projects/`
-2. Use `find ~/.claude/projects -name "*.jsonl" -mmin -60` to find recent sessions
-3. Verify test actually ran (check for errors in test output)
+1. Use `find ~/.claude/projects -name "*.jsonl" -mmin -60` to find recent sessions
+1. Verify test actually ran (check for errors in test output)
 
 ## Writing New Integration Tests
 
@@ -224,14 +224,14 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 source "$SCRIPT_DIR/test-helpers.sh"
 
-# Create test project
+## Create test project
 TEST_PROJECT=$(create_test_project)
 trap "cleanup_test_project $TEST_PROJECT" EXIT
 
-# Set up test files...
+## Set up test files
 cd "$TEST_PROJECT"
 
-# Run Claude with skill
+## Run Claude with skill
 PROMPT="Your test prompt here"
 cd "$SCRIPT_DIR/../.." && timeout 1800 claude -p "$PROMPT" \
   --allowed-tools=all \
@@ -239,28 +239,28 @@ cd "$SCRIPT_DIR/../.." && timeout 1800 claude -p "$PROMPT" \
   --permission-mode bypassPermissions \
   2>&1 | tee output.txt
 
-# Find and analyze session
+## Find and analyze session
 WORKING_DIR_ESCAPED=$(echo "$SCRIPT_DIR/../.." | sed 's/\\//-/g' | sed 's/^-//')
 SESSION_DIR="$HOME/.claude/projects/$WORKING_DIR_ESCAPED"
 SESSION_FILE=$(find "$SESSION_DIR" -name "*.jsonl" -type f -mmin -60 | sort -r | head -1)
 
-# Verify behavior by parsing session transcript
+## Verify behavior by parsing session transcript
 if grep -q '"name":"Skill".*"skill":"your-skill-name"' "$SESSION_FILE"; then
     echo "[PASS] Skill was invoked"
 fi
 
-# Show token analysis
+## Show token analysis
 python3 "$SCRIPT_DIR/analyze-token-usage.py" "$SESSION_FILE"
 ```
 
 ### Best Practices
 
 1. **Always cleanup**: Use trap to cleanup temp directories
-2. **Parse transcripts**: Don't grep user-facing output - parse the `.jsonl` session file
-3. **Grant permissions**: Use `--permission-mode bypassPermissions` and `--add-dir`
-4. **Run from plugin dir**: Skills only load when running from the superpowers directory
-5. **Show token usage**: Always include token analysis for cost visibility
-6. **Test real behavior**: Verify actual files created, tests passing, commits made
+1. **Parse transcripts**: Don't grep user-facing output - parse the `.jsonl` session file
+1. **Grant permissions**: Use `--permission-mode bypassPermissions` and `--add-dir`
+1. **Run from plugin dir**: Skills only load when running from the superpowers directory
+1. **Show token usage**: Always include token analysis for cost visibility
+1. **Test real behavior**: Verify actual files created, tests passing, commits made
 
 ## Session Transcript Format
 
@@ -301,4 +301,3 @@ Session transcripts are JSONL (JSON Lines) files where each line is a JSON objec
 ```
 
 The `agentId` field links to subagent sessions, and the `usage` field contains token usage for that specific subagent invocation.
-

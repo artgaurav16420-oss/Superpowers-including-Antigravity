@@ -9,7 +9,7 @@ Creating a session requires an `environment_id`. Environments are **reusable con
 ### Networking
 
 | Network Policy                  | Description                                                   |
-| ------------------------------- | ------------------------------------------------------------- |
+| :---:---:---:---:---:---:---:---:---:---- | :---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---- |
 | `unrestricted`                  | Full egress (except legal blocklist)                          |
 | `package_managers_and_custom`   | Package managers + custom `allowed_hosts`                      |
 
@@ -41,7 +41,7 @@ const env = await client.beta.environments.create({
 ### Environment CRUD
 
 | Operation        | Method   | Path                                       | Notes |
-| ---------------- | -------- | ------------------------------------------ | ----- |
+| :---:---:---:---:---- | :---:----- | :---:---:---:---:---:---:---:---:---:---:---:---:---:--- | :----- |
 | Create           | `POST`   | `/v1/environments`                         | |
 | List             | `GET`    | `/v1/environments`                         | Paginated (`limit`, `after_id`, `before_id`) |
 | Get              | `GET`    | `/v1/environments/{id}`                    | |
@@ -94,7 +94,8 @@ for await (const f of client.beta.files.list({
 }
 ```
 
-**Requirements:**
+#### Requirements
+
 - The `write` tool (or `bash`) must be enabled for the agent to create output files.
 - Session-scoped `files.list` / `files.download` captures outputs written to `/mnt/session/outputs/`.
 - The filter parameter is **`scope_id`** (REST query param `?scope_id=<session_id>`). The SDK's files resource auto-adds only the `files-api-2025-04-14` header, so pass `betas: ["managed-agents-2026-04-01"]` explicitly (or both headers on raw HTTP) — without it the API may reject `scope_id` as an unknown field. Requires `@anthropic-ai/sdk` ≥ 0.88.0 / `anthropic` (Python) ≥ 0.92.0 — older versions don't type `scope_id`. The `ant` CLI does **not** expose this flag yet; use the SDK or curl.
@@ -111,10 +112,10 @@ Clones a GitHub repository into the session container during initialization, bef
 
 Repositories are attached for the lifetime of the session — to change which repositories are mounted, create a new session. You **can** rotate a repository's `authorization_token` on a running session via `client.beta.sessions.resources.update(resource_id, {session_id, authorization_token})`; the resource `id` is returned at session creation and by `resources.list()`.
 
-**Fields:**
+#### Fields
 
 | Field | Required | Notes |
-|---|---|---|
+|:---|:---|:---|
 | `type` | ✅ | `"github_repository"` |
 | `url` | ✅ | The GitHub repository URL |
 | `authorization_token` | ✅ | GitHub Personal Access Token with repository access. **Never echoed in API responses.** |
@@ -129,7 +130,7 @@ Repositories are attached for the lifetime of the session — to change which re
 
 > ‼️ **To generate pull requests** you also need GitHub **MCP server** access — the `github_repository` resource gives filesystem + git access only. See `shared/managed-agents-tools.md` → MCP Servers. The PR workflow is: edit files in the mounted repo → push branch via `bash` (authenticated via the git proxy using `authorization_token`) → create PR via the MCP `create_pull_request` tool (authenticated via the vault).
 
-**TypeScript:**
+#### TypeScript
 
 ```ts
 // 1. Create the agent — declare GitHub MCP (no auth here)
@@ -138,7 +139,7 @@ const agent = await client.beta.agents.create(
     name: 'GitHub Agent',
     model: 'claude-opus-4-7',
     mcp_servers: [
-      { type: 'url', name: 'github', url: 'https://api.githubcopilot.com/mcp/' },
+      { type: 'url', name: 'github', url: '[https://api.githubcopilot.com/mcp/'](https://api.githubcopilot.com/mcp/') },
     ],
     tools: [
       { type: 'agent_toolset_20260401', default_config: { enabled: true } },
@@ -155,7 +156,7 @@ const session = await client.beta.sessions.create({
   resources: [
     {
       type: 'github_repository',
-      url: 'https://github.com/owner/repo',
+      url: '[https://github.com/owner/repo',](https://github.com/owner/repo',)
       authorization_token: process.env.GITHUB_TOKEN,  // repo clone token (≠ MCP auth)
       checkout: { type: 'branch', name: 'main' },
     },
@@ -163,7 +164,7 @@ const session = await client.beta.sessions.create({
 });
 ```
 
-**Python:**
+#### Python
 
 ```python
 import os
@@ -174,7 +175,7 @@ agent = client.beta.agents.create(
     mcp_servers=[{
         "type": "url",
         "name": "github",
-        "url": "https://api.githubcopilot.com/mcp/",
+        "url": "[https://api.githubcopilot.com/mcp/",](https://api.githubcopilot.com/mcp/",)
     }],
     tools=[
         {"type": "agent_toolset_20260401", "default_config": {"enabled": True}},
@@ -188,7 +189,7 @@ session = client.beta.sessions.create(
     vault_ids=[vault_id],  # vault contains the GitHub MCP OAuth credential
     resources=[{
         "type": "github_repository",
-        "url": "https://github.com/owner/repo",
+        "url": "[https://github.com/owner/repo",](https://github.com/owner/repo",)
         "authorization_token": os.environ["GITHUB_TOKEN"],  # repo clone token (≠ MCP auth)
         "checkout": {"type": "branch", "name": "main"},
     }],
@@ -202,7 +203,7 @@ session = client.beta.sessions.create(
 Upload and manage files for use as session resources, and download files the agent wrote to `/mnt/session/outputs/`.
 
 | Operation        | Method   | Path                                  | SDK |
-| ---------------- | -------- | ------------------------------------- | --- |
+| :---:---:---:---:---- | :---:----- | :---:---:---:---:---:---:---:---:---:---:---:---- | :--- |
 | Upload           | `POST`   | `/v1/files`                           | `client.beta.files.upload({ file })` |
 | List             | `GET`    | `/v1/files?scope_id=...`              | `client.beta.files.list({ scope_id, betas: ["managed-agents-2026-04-01"] })` |
 | Get Metadata     | `GET`    | `/v1/files/{id}`                      | `client.beta.files.retrieveMetadata(id)` |

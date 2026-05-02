@@ -39,8 +39,8 @@ XOR-unmask payload using 4-byte mask key. Return `{ opcode, payload, bytesConsum
 Three routes:
 
 1. **`GET /`** — Serve newest `.html` from screen directory by mtime. Detect full documents vs fragments, wrap fragments in frame template, inject helper.js. Return `text/html`. When no `.html` files exist, serve a hardcoded waiting page ("Waiting for Claude to push a screen...") with helper.js injected.
-2. **`GET /files/*`** — Serve static files from screen directory with MIME type lookup from a hardcoded extension map (html, css, js, png, jpg, gif, svg, json). Return 404 if not found.
-3. **Everything else** — 404.
+1. **`GET /files/*`** — Serve static files from screen directory with MIME type lookup from a hardcoded extension map (html, css, js, png, jpg, gif, svg, json). Return 404 if not found.
+1. **Everything else** — 404.
 
 WebSocket upgrade handled via the `'upgrade'` event on the HTTP server, separate from the request handler.
 
@@ -56,19 +56,19 @@ Environment variables (all optional):
 ### Startup Sequence
 
 1. Create `SCREEN_DIR` if it doesn't exist (`mkdirSync` recursive)
-2. Load frame template and helper.js from `__dirname`
-3. Start HTTP server on configured host/port
-4. Start `fs.watch` on `SCREEN_DIR`
-5. On successful listen, log `server-started` JSON to stdout: `{ type, port, host, url_host, url, screen_dir }`
-6. Write the same JSON to `SCREEN_DIR/.server-info` so agents can find connection details when stdout is hidden (background execution)
+1. Load frame template and helper.js from `__dirname`
+1. Start HTTP server on configured host/port
+1. Start `fs.watch` on `SCREEN_DIR`
+1. On successful listen, log `server-started` JSON to stdout: `{ type, port, host, url_host, url, screen_dir }`
+1. Write the same JSON to `SCREEN_DIR/.server-info` so agents can find connection details when stdout is hidden (background execution)
 
 ### Application-Level WebSocket Messages
 
 When a TEXT frame arrives from a client:
 
 1. Parse as JSON. If parsing fails, log to stderr and continue.
-2. Log to stdout as `{ source: 'user-event', ...event }`.
-3. If the event contains a `choice` property, append the JSON to `SCREEN_DIR/.events` (one line per event).
+1. Log to stdout as `{ source: 'user-event', ...event }`.
+1. If the event contains a `choice` property, append the JSON to `SCREEN_DIR/.events` (one line per event).
 
 ### File Watching
 
@@ -91,7 +91,7 @@ Debounce per-filename with ~100ms timeout to prevent duplicate events (common on
 ## What Changes
 
 | Before | After |
-|---|---|
+|:---|:---|
 | `index.js` + `package.json` + `package-lock.json` + 714 `node_modules` files | `server.js` (single file) |
 | express, ws, chokidar dependencies | none |
 | No static file serving | `/files/*` serves from screen directory |

@@ -5,7 +5,7 @@
 Add two new review stages to the superpowers workflow:
 
 1. **Spec Document Review** - After brainstorming, before writing-plans
-2. **Plan Document Review** - After writing-plans, before implementation
+1. **Plan Document Review** - After writing-plans, before implementation
 
 Both follow the iterative loop pattern used by implementation reviews.
 
@@ -15,18 +15,19 @@ Both follow the iterative loop pattern used by implementation reviews.
 
 **Location:** `skills/brainstorming/spec-document-reviewer-prompt.md`
 
-**What it checks for:**
+#### What it checks for
 
 | Category | What to Look For |
-|----------|------------------|
+|:---:---:----|:---:---:---:---:---:---|
 | Completeness | TODOs, placeholders, "TBD", incomplete sections |
 | Coverage | Missing error handling, edge cases, integration points |
 | Consistency | Internal contradictions, conflicting requirements |
 | Clarity | Ambiguous requirements |
 | YAGNI | Unrequested features, over-engineering |
 
-**Output format:**
-```
+#### Output format
+
+```text
 ## Spec Review
 
 **Status:** Approved | Issues Found
@@ -48,10 +49,10 @@ Both follow the iterative loop pattern used by implementation reviews.
 
 **Location:** `skills/writing-plans/plan-document-reviewer-prompt.md`
 
-**What it checks for:**
+#### What it checks for
 
 | Category | What to Look For |
-|----------|------------------|
+|:---:---:----|:---:---:---:---:---:---|
 | Completeness | TODOs, placeholders, incomplete tasks |
 | Spec Alignment | Plan covers spec requirements, no scope creep |
 | Task Decomposition | Tasks atomic, clear boundaries |
@@ -62,39 +63,42 @@ Both follow the iterative loop pattern used by implementation reviews.
 
 **Spec alignment verification:** The reviewer receives both:
 1. The plan document (or current chunk)
-2. The path to the spec document for reference
+1. The path to the spec document for reference
 
 The reviewer reads both and compares requirements coverage.
 
 **Output format:** Same as spec reviewer, but scoped to the current chunk.
 
-**Review process (chunk-by-chunk):**
+#### Review process (chunk-by-chunk)
+
 1. Writing-plans creates chunk N
-2. Controller dispatches plan-document-reviewer with chunk N content and spec path
-3. Reviewer reads chunk and spec, returns verdict
-4. If issues: writing-plans agent fixes chunk N, goto step 2
-5. If approved: proceed to chunk N+1
-6. Repeat until all chunks approved
+1. Controller dispatches plan-document-reviewer with chunk N content and spec path
+1. Reviewer reads chunk and spec, returns verdict
+1. If issues: writing-plans agent fixes chunk N, goto step 2
+1. If approved: proceed to chunk N+1
+1. Repeat until all chunks approved
 
 **Dispatch mechanism:** Same as spec reviewer - Task tool with `subagent_type: general-purpose`.
 
 ## Updated Workflow
 
-```
+```text
 brainstorming -> spec -> SPEC REVIEW LOOP -> writing-plans -> plan -> PLAN REVIEW LOOP -> implementation
 ```
 
-**Spec Review Loop:**
-1. Spec complete
-2. Dispatch reviewer
-3. If issues: fix -> goto 2
-4. If approved: proceed
+#### Spec Review Loop
 
-**Plan Review Loop:**
+1. Spec complete
+1. Dispatch reviewer
+1. If issues: fix -> goto 2
+1. If approved: proceed
+
+#### Plan Review Loop
+
 1. Chunk N complete
-2. Dispatch reviewer for chunk N
-3. If issues: fix -> goto 2
-4. If approved: next chunk or implementation
+1. Dispatch reviewer for chunk N
+1. If issues: fix -> goto 2
+1. If approved: next chunk or implementation
 
 ## Markdown Task Syntax
 
@@ -110,27 +114,32 @@ Tasks and steps use checkbox syntax:
 
 ## Error Handling
 
-**Review loop termination:**
+#### Review loop termination
+
 - No hard iteration limit - loops continue until reviewer approves
 - If loop exceeds 5 iterations, the controller should surface this to the human for guidance
 - The human can choose to: continue iterating, approve with known issues, or abort
 
-**Disagreement handling:**
+#### Disagreement handling
+
 - Reviewers are advisory - they flag issues but don't block
 - If the agent believes reviewer feedback is incorrect, it should explain why in its fix
 - If disagreement persists after 3 iterations on the same issue, surface to human
 
-**Malformed reviewer output:**
+#### Malformed reviewer output
+
 - Controller should validate reviewer output has required fields (Status, Issues if applicable)
 - If malformed, re-dispatch reviewer with a note about expected format
 - After 2 malformed responses, surface to human
 
 ## Files to Change
 
-**New files:**
+#### New files
+
 - `skills/brainstorming/spec-document-reviewer-prompt.md`
 - `skills/writing-plans/plan-document-reviewer-prompt.md`
 
-**Modified files:**
+#### Modified files
+
 - `skills/brainstorming/SKILL.md` - add review loop after spec written
 - `skills/writing-plans/SKILL.md` - add chunk-by-chunk review loop, update task syntax examples

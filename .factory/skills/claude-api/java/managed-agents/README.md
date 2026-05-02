@@ -1,7 +1,7 @@
 # Managed Agents — Java
 
 > **Bindings not shown here:** This README covers the most common managed-agents flows for Java. If you need a class, method, namespace, field, or behavior that isn't shown, WebFetch the Java SDK repo **or the relevant docs page** from `shared/live-sources.md` rather than guess. Do not extrapolate from cURL shapes or another language's SDK.
-
+>
 > **Agents are persistent — create once, reference by ID.** Store the agent ID returned by `client.beta().agents().create` and pass it to every subsequent `client.beta().sessions().create`; do not call `agents().create` in the request path. The Anthropic CLI is one convenient way to create agents and environments from version-controlled YAML — its URL is in `shared/live-sources.md`. The examples below show in-code creation for completeness; in production the create call belongs in setup, not in the request path.
 
 ## Installation
@@ -299,7 +299,7 @@ var agent = client.beta().agents().create(AgentCreateParams.builder()
     .addMcpServer(BetaManagedAgentsUrlmcpServerParams.builder()
         .type(BetaManagedAgentsUrlmcpServerParams.Type.URL)
         .name("github")
-        .url("https://api.githubcopilot.com/mcp/")
+        .url("[https://api.githubcopilot.com/mcp/")](https://api.githubcopilot.com/mcp/"))
         .build())
     .addTool(BetaManagedAgentsAgentToolset20260401Params.builder()
         .type(BetaManagedAgentsAgentToolset20260401Params.Type.AGENT_TOOLSET_20260401)
@@ -354,11 +354,11 @@ var credential = client.beta().vaults().credentials().create(vault.id(),
         .displayName("Alice's Slack")
         .auth(BetaManagedAgentsMcpOAuthCreateParams.builder()
             .type(BetaManagedAgentsMcpOAuthCreateParams.Type.MCP_OAUTH)
-            .mcpServerUrl("https://mcp.slack.com/mcp")
+            .mcpServerUrl("[https://mcp.slack.com/mcp")](https://mcp.slack.com/mcp"))
             .accessToken("xoxp-...")
             .expiresAt(OffsetDateTime.parse("2026-04-15T00:00:00Z"))
             .refresh(BetaManagedAgentsMcpOAuthRefreshParams.builder()
-                .tokenEndpoint("https://slack.com/api/oauth.v2.access")
+                .tokenEndpoint("[https://slack.com/api/oauth.v2.access")](https://slack.com/api/oauth.v2.access"))
                 .clientId("1234567890.0987654321")
                 .scope("channels:read chat:write")
                 .refreshToken("xoxe-1-...")
@@ -400,7 +400,7 @@ var session = client.beta().sessions().create(SessionCreateParams.builder()
     .addVaultId(vault.id())
     .addResource(BetaManagedAgentsGitHubRepositoryResourceParams.builder()
         .type(BetaManagedAgentsGitHubRepositoryResourceParams.Type.GITHUB_REPOSITORY)
-        .url("https://github.com/org/repo")
+        .url("[https://github.com/org/repo")](https://github.com/org/repo"))
         .mountPath("/workspace/repo")
         .authorizationToken("ghp_your_github_token")
         .build())
@@ -415,13 +415,13 @@ import java.util.List;
 var resources = List.of(
     BetaManagedAgentsGitHubRepositoryResourceParams.builder()
         .type(BetaManagedAgentsGitHubRepositoryResourceParams.Type.GITHUB_REPOSITORY)
-        .url("https://github.com/org/frontend")
+        .url("[https://github.com/org/frontend")](https://github.com/org/frontend"))
         .mountPath("/workspace/frontend")
         .authorizationToken("ghp_your_github_token")
         .build(),
     BetaManagedAgentsGitHubRepositoryResourceParams.builder()
         .type(BetaManagedAgentsGitHubRepositoryResourceParams.Type.GITHUB_REPOSITORY)
-        .url("https://github.com/org/backend")
+        .url("[https://github.com/org/backend")](https://github.com/org/backend"))
         .mountPath("/workspace/backend")
         .authorizationToken("ghp_your_github_token")
         .build());

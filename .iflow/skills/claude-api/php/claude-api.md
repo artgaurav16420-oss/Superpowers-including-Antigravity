@@ -46,7 +46,7 @@ use Anthropic\Foundry;
 // Constructor is private. baseUrl or resource is required.
 $client = Foundry\Client::withCredentials(
     authToken: getenv('ANTHROPIC_FOUNDRY_AUTH_TOKEN'),
-    baseUrl: 'https://<resource>.services.ai.azure.com/anthropic',
+    baseUrl: '[https://<resourc](https://<resourc)e>.services.ai.azure.com/anthropic',
 );
 ```
 
@@ -222,7 +222,6 @@ foreach ($response->content as $block) {
 
 `$block->type === 'tool_use'` also works; `instanceof ToolUseBlock` narrows for PHPStan.
 
-
 ---
 
 ## Extended Thinking
@@ -364,7 +363,7 @@ $response = $client->beta->messages->create(
     mcpServers: [
         BetaRequestMCPServerURLDefinition::with(
             name: 'my-server',
-            url: 'https://example.com/mcp',
+            url: '[https://example.com/mcp',](https://example.com/mcp',)
         ),
     ],
     betas: ['mcp-client-2025-11-20'],  // only valid on ->beta->messages

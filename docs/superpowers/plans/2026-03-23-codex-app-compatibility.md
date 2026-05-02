@@ -15,7 +15,7 @@
 ## File Structure
 
 | File | Responsibility | Action |
-|---|---|---|
+|:---|:---|:---|
 | `skills/using-git-worktrees/SKILL.md` | Worktree creation + isolation | Add Step 0 detection + sandbox fallback |
 | `skills/finishing-a-development-branch/SKILL.md` | Branch finishing workflow | Add Step 1.5 detection + cleanup guard |
 | `skills/subagent-driven-development/SKILL.md` | Plan execution with subagents | Update Integration description |
@@ -26,7 +26,8 @@
 
 ### Task 1: Add Step 0 to `using-git-worktrees`
 
-**Files:**
+#### Files
+
 - Modify: `skills/using-git-worktrees/SKILL.md:14-15` (insert after Overview, before Directory Selection Process)
 
 - [ ] **Step 1: Read the current skill file**
@@ -42,11 +43,13 @@ Insert the following between the Overview section and "## Directory Selection Pr
 
 Before creating a worktree, check if one already exists:
 
-```bash
+```
+
 GIT_DIR=$(cd "$(git rev-parse --git-dir)" 2>/dev/null && pwd -P)
 GIT_COMMON=$(cd "$(git rev-parse --git-common-dir)" 2>/dev/null && pwd -P)
 BRANCH=$(git branch --show-current)
-```
+
+```text
 
 **If `GIT_DIR` differs from `GIT_COMMON`:** You are already inside a linked worktree (created by the Codex App, Claude Code's Agent tool, a previous skill run, or the user). Do NOT create another worktree. Instead:
 
@@ -84,7 +87,8 @@ sandbox fallback for permission errors on git worktree add."
 
 ### Task 2: Update `using-git-worktrees` Integration section
 
-**Files:**
+#### Files
+
 - Modify: `skills/using-git-worktrees/SKILL.md:211-215` (Integration > Called by)
 
 - [ ] **Step 1: Update the three "Called by" entries**
@@ -122,7 +126,8 @@ Clarify that skill ensures a workspace exists, not that it always creates one."
 
 ### Task 3: Add Step 1.5 to `finishing-a-development-branch`
 
-**Files:**
+#### Files
+
 - Modify: `skills/finishing-a-development-branch/SKILL.md:38` (insert after Step 1, before Step 2)
 
 - [ ] **Step 1: Read the current skill file**
@@ -136,11 +141,13 @@ Insert the following between Step 1 and Step 2:
 ```markdown
 ### Step 1.5: Detect Environment
 
-```bash
+```
+
 GIT_DIR=$(cd "$(git rev-parse --git-dir)" 2>/dev/null && pwd -P)
 GIT_COMMON=$(cd "$(git rev-parse --git-common-dir)" 2>/dev/null && pwd -P)
 BRANCH=$(git branch --show-current)
-```
+
+```text
 
 **Path A — `GIT_DIR` differs from `GIT_COMMON` AND `BRANCH` is empty (externally managed worktree, detached HEAD):**
 
@@ -149,6 +156,7 @@ First, ensure all work is staged and committed (`git add` + `git commit`).
 Then present this to the user (do NOT present the 4-option menu):
 
 ```
+
 Implementation complete. All tests passing.
 Current HEAD: <full-commit-sha>
 
@@ -164,7 +172,8 @@ If your host application provides these controls:
 
 Suggested branch name: <ticket-id/short-description>
 Suggested commit message: <summary-of-work>
-```
+
+```text
 
 Branch name: use ticket ID if available (e.g., `pri-823/codex-compat`), otherwise slugify the first 5 words of the plan title, otherwise omit. Avoid sensitive content in branch names.
 
@@ -201,7 +210,8 @@ payload instead of 4-option menu. Includes commit SHA and data loss warning."
 
 ### Task 4: Add Step 5 cleanup guard to `finishing-a-development-branch`
 
-**Files:**
+#### Files
+
 - Modify: `skills/finishing-a-development-branch/SKILL.md` (Step 5: Cleanup Worktree — find by section heading, line numbers will have shifted after Task 3)
 
 - [ ] **Step 1: Read the current Step 5 section**
@@ -214,14 +224,18 @@ Find the "### Step 5: Cleanup Worktree" section in `skills/finishing-a-developme
 **For Options 1, 2, 4:**
 
 Check if in worktree:
-```bash
-git worktree list | grep $(git branch --show-current)
 ```
 
+git worktree list | grep $(git branch --show-current)
+
+```text
+
 If yes:
-```bash
-git worktree remove <worktree-path>
 ```
+
+git worktree remove <worktree-path>
+
+```text
 
 **For Option 3:** Keep worktree.
 ```
@@ -235,24 +249,30 @@ Replace the Step 5 section with:
 
 **First, check if worktree is externally managed:**
 
-```bash
+```
+
 GIT_DIR=$(cd "$(git rev-parse --git-dir)" 2>/dev/null && pwd -P)
 GIT_COMMON=$(cd "$(git rev-parse --git-common-dir)" 2>/dev/null && pwd -P)
-```
+
+```text
 
 If `GIT_DIR` differs from `GIT_COMMON`: skip worktree removal — the host environment owns this workspace.
 
 **Otherwise, for Options 1 and 4:**
 
 Check if in worktree:
-```bash
-git worktree list | grep $(git branch --show-current)
 ```
 
+git worktree list | grep $(git branch --show-current)
+
+```text
+
 If yes:
-```bash
-git worktree remove <worktree-path>
 ```
+
+git worktree remove <worktree-path>
+
+```text
 
 **For Option 3:** Keep worktree.
 ```
@@ -281,29 +301,36 @@ Options 1 and 4 only, matching Quick Reference and Common Mistakes."
 
 ### Task 5: Update Integration lines in `subagent-driven-development` and `executing-plans`
 
-**Files:**
+#### Files
+
 - Modify: `skills/subagent-driven-development/SKILL.md:268`
 - Modify: `skills/executing-plans/SKILL.md:68`
 
 - [ ] **Step 1: Update `subagent-driven-development`**
 
 Change line 268 from:
-```
+
+```text
 - **mega-skills:using-git-worktrees** - REQUIRED: Set up isolated workspace before starting
 ```
+
 To:
-```
+
+```text
 - **mega-skills:using-git-worktrees** - REQUIRED: Ensures isolated workspace (creates one or verifies existing)
 ```
 
 - [ ] **Step 2: Update `executing-plans`**
 
 Change line 68 from:
-```
+
+```text
 - **mega-skills:using-git-worktrees** - REQUIRED: Set up isolated workspace before starting
 ```
+
 To:
-```
+
+```text
 - **mega-skills:using-git-worktrees** - REQUIRED: Ensures isolated workspace (creates one or verifies existing)
 ```
 
@@ -325,7 +352,8 @@ always creating one."
 
 ### Task 6: Add environment detection docs to `codex-tools.md`
 
-**Files:**
+#### Files
+
 - Modify: `skills/using-mega-skills/references/codex-tools.md:25` (append at end)
 
 - [ ] **Step 1: Read the current file**
@@ -343,11 +371,13 @@ Add at the end of the file:
 Skills that create worktrees or finish branches should detect their
 environment with read-only git commands before proceeding:
 
-```bash
+```
+
 GIT_DIR=$(cd "$(git rev-parse --git-dir)" 2>/dev/null && pwd -P)
 GIT_COMMON=$(cd "$(git rev-parse --git-common-dir)" 2>/dev/null && pwd -P)
 BRANCH=$(git branch --show-current)
-```
+
+```text
 
 - `GIT_DIR != GIT_COMMON` → already in a linked worktree (skip creation)
 - `BRANCH` empty → detached HEAD (cannot branch/push/PR from sandbox)
@@ -389,7 +419,8 @@ App's native finishing flow for skills that need to adapt."
 
 ### Task 7: Automated test — environment detection
 
-**Files:**
+#### Files
+
 - Create: `tests/codex-app-compat/test-environment-detection.sh`
 
 - [ ] **Step 1: Create test directory**
@@ -406,9 +437,9 @@ Create `tests/codex-app-compat/test-environment-detection.sh`:
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Test environment detection logic from PRI-823
-# Tests the git-dir vs git-common-dir comparison used by
-# using-git-worktrees Step 0 and finishing-a-development-branch Step 1.5
+## Test environment detection logic from PRI-823
+## Tests the git-dir vs git-common-dir comparison used by
+## using-git-worktrees Step 0 and finishing-a-development-branch Step 1.5
 
 PASS=0
 FAIL=0
@@ -418,7 +449,7 @@ trap "rm -rf $TEMP_DIR" EXIT
 log_pass() { echo "  PASS: $1"; PASS=$((PASS + 1)); }
 log_fail() { echo "  FAIL: $1"; FAIL=$((FAIL + 1)); }
 
-# Helper: run detection and return "linked" or "normal"
+## Helper: run detection and return "linked" or "normal"
 detect_worktree() {
   local git_dir git_common
   git_dir=$(cd "$(git rev-parse --git-dir)" 2>/dev/null && pwd -P)
@@ -488,7 +519,7 @@ else
   log_fail "Cleanup guard: expected 'normal', got '$result'"
 fi
 
-# Cleanup worktree before temp dir removal
+## Cleanup worktree before temp dir removal
 cd "$TEMP_DIR/test-repo"
 git worktree remove "$TEMP_DIR/test-wt" > /dev/null 2>&1 || true
 
@@ -522,7 +553,8 @@ worktree, detached HEAD, and cleanup guard scenarios."
 
 ### Task 8: Final verification
 
-**Files:**
+#### Files
+
 - Read: all 5 modified skill files
 
 - [ ] **Step 1: Run the automated detection tests**
@@ -553,14 +585,13 @@ Should show exactly 6 files changed (5 skill files + 1 test file). No other file
 - [ ] **Step 4: Run existing test suite**
 
 If test runner exists:
+
 ```bash
-# Run skill-triggering tests
+## Run skill-triggering tests
 ./tests/skill-triggering/run-all.sh 2>/dev/null || echo "Skill triggering tests not available in this environment"
 
-# Run SDD integration test
+## Run SDD integration test
 ./tests/claude-code/test-subagent-driven-development-integration.sh 2>/dev/null || echo "SDD integration test not available in this environment"
 ```
 
 Note: these tests require Claude Code with `--dangerously-skip-permissions`. If not available, document that regression tests should be run manually.
-
-

@@ -6,7 +6,7 @@ Use this template when dispatching a plan document reviewer subagent.
 
 **Dispatch after:** The complete plan is written.
 
-```
+```text
 Task tool (general-purpose):
   description: "Review plan document"
   prompt: |
@@ -18,7 +18,7 @@ Task tool (general-purpose):
     ## What to Check
 
     | Category | What to Look For |
-    |----------|------------------|
+    |:---:---:----|:---:---:---:---:---:---|
     | Completeness | TODOs, placeholders, incomplete tasks, missing steps |
     | Spec Alignment | Plan covers spec requirements, no major scope creep |
     | Task Decomposition | Tasks have clear boundaries, steps are actionable |

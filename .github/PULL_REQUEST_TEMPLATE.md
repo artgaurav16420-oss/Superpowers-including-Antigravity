@@ -1,10 +1,13 @@
+# 
+
 <!--
 BEFORE SUBMITTING: Read every word of this template. PRs that leave
 sections blank, contain multiple unrelated changes, or show no evidence
 of human involvement will be closed without review.
 -->
 
-## What problem are you trying to solve?
+## What problem are you trying to solve
+
 <!-- Describe the specific problem you encountered. If this was a session
      issue, include: what you were doing, what went wrong, the model's
      exact failure mode, and ideally a transcript or session log.
@@ -12,10 +15,12 @@ of human involvement will be closed without review.
      "Improving" something is not a problem statement. What broke? What
      failed? What was the user experience that motivated this? -->
 
-## What does this PR change?
+## What does this PR change
+
 <!-- 1-3 sentences. What, not why — the "why" belongs above. -->
 
-## Is this change appropriate for the core library?
+## Is this change appropriate for the core library
+
 <!-- Mega-Skills core contains general-purpose skills and infrastructure
      that benefit all users. Ask yourself:
 
@@ -28,16 +33,19 @@ of human involvement will be closed without review.
      or third-party integration, it belongs in its own plugin — not here.
      See the plugin development docs for how to publish it separately. -->
 
-## What alternatives did you consider?
+## What alternatives did you consider
+
 <!-- What other approaches did you try or evaluate before landing on this
      one? Why were they worse? If you didn't consider alternatives, say so
      — but know that's a red flag. -->
 
-## Does this PR contain multiple unrelated changes?
+## Does this PR contain multiple unrelated changes
+
 <!-- If yes: stop. Split it into separate PRs. Bundled PRs will be closed.
      If you believe the changes are related, explain the dependency. -->
 
 ## Existing PRs
+
 - [ ] I have reviewed all open AND closed PRs for duplicates or prior art
 - Related PRs: <!-- #number, #number, or "none found" -->
 
@@ -47,7 +55,7 @@ of human involvement will be closed without review.
 ## Environment tested
 
 | Harness (e.g. Claude Code, Cursor) | Harness version | Model | Model version/ID |
-|-------------------------------------|-----------------|-------|------------------|
+|:---:---:---:---:---:---:---:---:---:---:---:----|:---:---:---:---:-----|:---:----|:---:---:---:---:---:---|
 |                                     |                 |       |                  |
 
 ## New harness support (required if this PR adds a new harness)
@@ -83,13 +91,14 @@ of human involvement will be closed without review.
 <details>
 <summary>Clean-session transcript for "Let's make a react todo list"</summary>
 
-```
+```text
 paste the complete transcript here
 ```
 
 </details>
 
 ## Evaluation
+
 - What was the initial prompt you (or your human partner) used to start
   the session that led to this change?
 - How many eval sessions did you run AFTER making the change?
@@ -111,6 +120,7 @@ paste the complete transcript here
      eval methodology and results. These are not prose — they are code. -->
 
 ## Human review
+
 - [ ] A human has reviewed the COMPLETE proposed diff before submission
 
 <!--
@@ -124,6 +134,3 @@ PRs will be closed without review if they:
 - Leave required sections blank or use placeholder text
 - Modify behavior-shaping content without eval evidence
 -->
-
-
-

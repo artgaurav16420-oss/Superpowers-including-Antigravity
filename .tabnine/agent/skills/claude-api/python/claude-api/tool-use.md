@@ -25,7 +25,7 @@ def get_weather(location: str, unit: str = "celsius") -> str:
     # Your implementation here
     return f"72°F and sunny in {location}"
 
-# The tool runner handles the agentic loop automatically
+## The tool runner handles the agentic loop automatically
 runner = client.beta.messages.tool_runner(
     model="claude-opus-4-7",
     max_tokens=16000,
@@ -33,14 +33,14 @@ runner = client.beta.messages.tool_runner(
     messages=[{"role": "user", "content": "What's the weather in Paris?"}],
 )
 
-# Each iteration yields a BetaMessage; iteration stops when Claude is done
+## Each iteration yields a BetaMessage; iteration stops when Claude is done
 for message in runner:
     print(message)
 ```
 
 For async usage, use `@beta_async_tool` with `async def` functions.
 
-**Key benefits of the tool runner:**
+#### Key benefits of the tool runner
 
 - No manual loop — the SDK handles calling tools and feeding results back
 - Type-safe tool inputs via decorators
@@ -139,7 +139,7 @@ client = anthropic.Anthropic()
 tools = [...]  # Your tool definitions
 messages = [{"role": "user", "content": user_input}]
 
-# Agentic loop: keep going until Claude stops calling tools
+## Agentic loop: keep going until Claude stops calling tools
 while True:
     response = client.messages.create(
         model="claude-opus-4-7",
@@ -179,7 +179,7 @@ while True:
     # Append tool results as a user message
     messages.append({"role": "user", "content": tool_results})
 
-# Final response text
+## Final response text
 final_text = next(b.text for b in response.content if b.type == "text")
 ```
 
@@ -238,7 +238,7 @@ for block in response.content:
             "content": result
         })
 
-# Send all results back at once
+## Send all results back at once
 if tool_results:
     followup = client.messages.create(
         model="claude-opus-4-7",
@@ -313,11 +313,11 @@ for block in response.content:
 ### Upload Files for Analysis
 
 ```python
-# 1. Upload a file
+## 1. Upload a file
 uploaded = client.beta.files.upload(file=open("sales_data.csv", "rb"))
 
-# 2. Pass to code execution via container_upload block
-# Code execution is GA; Files API is still beta (pass via extra_headers)
+## 2. Pass to code execution via container_upload block
+## Code execution is GA; Files API is still beta (pass via extra_headers)
 response = client.messages.create(
     model="claude-opus-4-7",
     max_tokens=16000,
@@ -362,7 +362,7 @@ for block in response.content:
 ### Container Reuse
 
 ```python
-# First request: set up environment
+## First request: set up environment
 response1 = client.messages.create(
     model="claude-opus-4-7",
     max_tokens=16000,
@@ -370,10 +370,10 @@ response1 = client.messages.create(
     tools=[{"type": "code_execution_20260120", "name": "code_execution"}]
 )
 
-# Get container ID from response
+## Get container ID from response
 container_id = response1.container.id
 
-# Second request: reuse the same container
+## Second request: reuse the same container
 response2 = client.messages.create(
     container=container_id,
     model="claude-opus-4-7",
@@ -440,7 +440,7 @@ class MyMemoryTool(BetaAbstractMemoryTool):
 
 memory = MyMemoryTool()
 
-# Use with tool runner
+## Use with tool runner
 runner = client.beta.messages.tool_runner(
     model="claude-opus-4-7",
     max_tokens=16000,
@@ -486,7 +486,7 @@ response = client.messages.parse(
     output_format=ContactInfo,
 )
 
-# response.parsed_output is a validated ContactInfo instance
+## response.parsed_output is a validated ContactInfo instance
 contact = response.parsed_output
 print(contact.name)           # "Jane Doe"
 print(contact.interests)      # ["API", "SDKs"]
@@ -521,7 +521,7 @@ response = client.messages.create(
 )
 
 import json
-# output_config.format guarantees the first block is text with valid JSON
+## output_config.format guarantees the first block is text with valid JSON
 text = next(b.text for b in response.content if b.type == "text")
 data = json.loads(text)
 ```

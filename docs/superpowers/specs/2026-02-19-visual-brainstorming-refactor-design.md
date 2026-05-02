@@ -21,11 +21,11 @@ Claude Code's execution model is turn-based. There is no way for Claude to liste
 ### The Loop
 
 1. Claude writes an HTML file to the session directory
-2. Server detects it via chokidar, pushes WebSocket reload to the browser (unchanged)
-3. Claude ends its turn — tells the user to check the browser and respond in the terminal
-4. User looks at browser, optionally clicks to select an option, then types feedback in the terminal
-5. On the next turn, Claude reads `$SCREEN_DIR/.events` for the browser interaction stream (clicks, selections), merges with the terminal text
-6. Iterate or advance
+1. Server detects it via chokidar, pushes WebSocket reload to the browser (unchanged)
+1. Claude ends its turn — tells the user to check the browser and respond in the terminal
+1. User looks at browser, optionally clicks to select an option, then types feedback in the terminal
+1. On the next turn, Claude reads `$SCREEN_DIR/.events` for the browser interaction stream (clicks, selections), merges with the terminal text
+1. Iterate or advance
 
 No background tasks. No `TaskOutput` blocking. No polling scripts.
 
@@ -55,32 +55,35 @@ Example contents after a user explores options:
 
 ### `index.js` (server)
 
-**A. Write user events to `.events` file.**
+#### A. Write user events to `.events` file
 
 In the WebSocket `message` handler, after logging the event to stdout: append the event as a JSON line to `$SCREEN_DIR/.events` via `fs.appendFileSync`. Only write user interaction events (those with `source: 'user-event'`), not server lifecycle events.
 
-**B. Clear `.events` on new screen.**
+#### B. Clear `.events` on new screen
 
 In the chokidar `add` handler (new `.html` file detected), delete `$SCREEN_DIR/.events` if it exists. This is the definitive "new screen" signal — better than clearing on GET `/` which fires on every reload.
 
-**C. Replace `wrapInFrame` content injection.**
+#### C. Replace `wrapInFrame` content injection
 
 The current regex anchors on `<div class="feedback-footer">`, which is being removed. Replace with a comment placeholder: remove the existing default content inside `#claude-content` (the `<h2>Visual Brainstorming</h2>` and subtitle paragraph) and replace with a single `<!-- CONTENT -->` marker. Content injection becomes `frameTemplate.replace('<!-- CONTENT -->', content)`. Simpler and won't break if template formatting changes.
 
 ### `frame-template.html` (UI frame)
 
-**Remove:**
+#### Remove
+
 - The `feedback-footer` div (textarea, Send button, label, `.feedback-row`)
 - Associated CSS (`.feedback-footer`, `.feedback-footer label`, `.feedback-row`, textarea and button styles within it)
 
-**Add:**
+#### Add
+
 - `<!-- CONTENT -->` placeholder inside `#claude-content`, replacing the default text
 - A selection indicator bar where the footer was, with two states:
   - Default: "Click an option above, then return to the terminal"
   - After selection: "Option B selected — return to terminal to continue"
 - CSS for the indicator bar (subtle, similar visual weight to the existing header)
 
-**Keep unchanged:**
+#### Keep unchanged
+
 - Header bar with "Brainstorm Companion" title and connection status
 - `.main` wrapper and `#claude-content` container
 - All component CSS (`.options`, `.cards`, `.mockup`, `.split`, `.pros-cons`, placeholders, mock elements)
@@ -88,27 +91,32 @@ The current regex anchors on `<div class="feedback-footer">`, which is being rem
 
 ### `helper.js` (client-side script)
 
-**Remove:**
+#### Remove
+
 - `sendToClaude()` function and the "Sent to Claude" page takeover
 - `window.send()` function (was tied to the removed Send button)
 - Form submission handler — no purpose without the feedback textarea, adds log noise
 - Input change handler — same reason
 - `pageshow` event listener (was added to fix textarea persistence — no textarea anymore)
 
-**Keep:**
+#### Keep
+
 - WebSocket connection, reconnect logic, event queue
 - Reload handler (`window.location.reload()` on server push)
 - `window.toggleSelect()` for selection highlighting
 - `window.selectedChoice` tracking
 - `window.brainstorm.send()` and `window.brainstorm.choice()` — these are distinct from the removed `window.send()`. They call `sendEvent` which logs to the server via WebSocket. Useful for custom full-document pages.
 
-**Narrow:**
+#### Narrow
+
 - Click handler: capture only `[data-choice]` clicks, not all buttons/links. The broad capture was needed when the browser was a feedback channel; now it's just for selection tracking.
 
-**Add:**
+#### Add
+
 - On `data-choice` click, update the selection indicator bar text to show which option was selected.
 
-**Remove from `window.brainstorm` API:**
+#### Remove from `window.brainstorm` API
+
 - `brainstorm.sendToClaude` — no longer exists
 
 ### `visual-companion.md` (skill instructions)
@@ -119,12 +127,14 @@ The current regex anchors on `<div class="feedback-footer">`, which is being rem
 - Timeout/retry logic (600s timeout, 30-minute cap)
 - "User Feedback Format" section describing `send-to-claude` JSON
 
-**Replace with:**
+#### Replace with
+
 - The new loop (write HTML → end turn → user responds in terminal → read `.events` → iterate)
 - `.events` file format documentation
 - Guidance that the terminal message is the primary feedback; `.events` provides the full browser interaction stream for additional context
 
-**Keep:**
+#### Keep
+
 - Server startup/shutdown instructions
 - Content fragment vs full document guidance
 - CSS class reference and available components
@@ -132,7 +142,7 @@ The current regex anchors on `<div class="feedback-footer">`, which is being rem
 
 ### `wait-for-feedback.sh`
 
-**Deleted entirely.**
+#### Deleted entirely
 
 ### `tests/brainstorm-server/server.test.js`
 

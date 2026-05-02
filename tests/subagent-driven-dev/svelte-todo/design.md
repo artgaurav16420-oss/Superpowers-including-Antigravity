@@ -16,7 +16,7 @@ A simple todo list application built with Svelte. Supports creating, completing,
 
 ## User Interface
 
-```
+```text
 ┌─────────────────────────────────────────┐
 │  Svelte Todos                           │
 ├─────────────────────────────────────────┤
@@ -33,7 +33,7 @@ A simple todo list application built with Svelte. Supports creating, completing,
 
 ## Components
 
-```
+```text
 src/
   App.svelte           # Main app, state management
   lib/
@@ -60,11 +60,11 @@ type Filter = 'all' | 'active' | 'completed';
 ## Acceptance Criteria
 
 1. Can add a todo by typing and pressing Enter or clicking Add
-2. Can toggle todo completion by clicking checkbox
-3. Can delete a todo by clicking X button
-4. Filter buttons show correct subset of todos
-5. "X items left" shows count of incomplete todos
-6. "Clear completed" removes all completed todos
-7. Todos persist across page refresh (localStorage)
-8. Empty state shows helpful message
-9. All tests pass
+1. Can toggle todo completion by clicking checkbox
+1. Can delete a todo by clicking X button
+1. Filter buttons show correct subset of todos
+1. "X items left" shows count of incomplete todos
+1. "Clear completed" removes all completed todos
+1. Todos persist across page refresh (localStorage)
+1. Empty state shows helpful message
+1. All tests pass

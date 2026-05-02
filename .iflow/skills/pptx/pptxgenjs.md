@@ -120,7 +120,7 @@ slide.addShape(pres.shapes.RECTANGLE, {
 Shadow options:
 
 | Property | Type | Range | Notes |
-|----------|------|-------|-------|
+|:---:---:----|:---:---|:---:----|:---:----|
 | `type` | string | `"outer"`, `"inner"` | |
 | `color` | string | 6-char hex (e.g. `"000000"`) | No `#` prefix, no 8-char hex — see Common Pitfalls |
 | `blur` | number | 0-100 pt | |
@@ -143,7 +143,7 @@ To cast a shadow upward (e.g. on a footer bar), use `angle: 270` with a positive
 slide.addImage({ path: "images/chart.png", x: 1, y: 1, w: 5, h: 3 });
 
 // From URL
-slide.addImage({ path: "https://example.com/image.jpg", x: 1, y: 1, w: 5, h: 3 });
+slide.addImage({ path: "[https://example.com/image.jpg",](https://example.com/image.jpg",) x: 1, y: 1, w: 5, h: 3 });
 
 // From base64 (faster, no file I/O)
 slide.addImage({ data: "image/png;base64,iVBORw0KGgo...", x: 1, y: 1, w: 5, h: 3 });
@@ -161,7 +161,7 @@ slide.addImage({
   flipH: true,             // Horizontal flip
   flipV: false,            // Vertical flip
   altText: "Description",  // Accessibility
-  hyperlink: { url: "https://example.com" }
+  hyperlink: { url: "[https://example.com"](https://example.com") }
 });
 ```
 
@@ -255,7 +255,7 @@ slide.background = { color: "F1F1F1" };
 slide.background = { color: "FF3399", transparency: 50 };
 
 // Image from URL
-slide.background = { path: "https://example.com/bg.jpg" };
+slide.background = { path: "[https://example.com/bg.jpg"](https://example.com/bg.jpg") };
 
 // Image from base64
 slide.background = { data: "image/png;base64,iVBORw0KGgo..." };
@@ -338,7 +338,8 @@ slide.addChart(pres.charts.BAR, chartData, {
 });
 ```
 
-**Key styling options:**
+#### Key styling options
+
 - `chartColors: [...]` - hex colors for series/segments
 - `chartArea: { fill, border, roundedCorners }` - chart background
 - `catGridLine/valGridLine: { color, style, size }` - grid lines (`style: "none"` to hide)
@@ -368,26 +369,29 @@ titleSlide.addText("My Title", { placeholder: "title" });
 ⚠️ These issues cause file corruption, visual bugs, or broken output. Avoid them.
 
 1. **NEVER use "#" with hex colors** - causes file corruption
+
    ```javascript
    color: "FF0000"      // ✅ CORRECT
    color: "#FF0000"     // ❌ WRONG
    ```
 
-2. **NEVER encode opacity in hex color strings** - 8-char colors (e.g., `"00000020"`) corrupt the file. Use the `opacity` property instead.
+1. **NEVER encode opacity in hex color strings** - 8-char colors (e.g., `"00000020"`) corrupt the file. Use the `opacity` property instead.
+
    ```javascript
    shadow: { type: "outer", blur: 6, offset: 2, color: "00000020" }          // ❌ CORRUPTS FILE
    shadow: { type: "outer", blur: 6, offset: 2, color: "000000", opacity: 0.12 }  // ✅ CORRECT
    ```
 
-3. **Use `bullet: true`** - NEVER unicode symbols like "•" (creates double bullets)
+1. **Use `bullet: true`** - NEVER unicode symbols like "•" (creates double bullets)
 
-4. **Use `breakLine: true`** between array items or text runs together
+1. **Use `breakLine: true`** between array items or text runs together
 
-5. **Avoid `lineSpacing` with bullets** - causes excessive gaps; use `paraSpaceAfter` instead
+1. **Avoid `lineSpacing` with bullets** - causes excessive gaps; use `paraSpaceAfter` instead
 
-6. **Each presentation needs fresh instance** - don't reuse `pptxgen()` objects
+1. **Each presentation needs fresh instance** - don't reuse `pptxgen()` objects
 
-7. **NEVER reuse option objects across calls** - PptxGenJS mutates objects in-place (e.g. converting shadow values to EMU). Sharing one object between multiple calls corrupts the second shape.
+1. **NEVER reuse option objects across calls** - PptxGenJS mutates objects in-place (e.g. converting shadow values to EMU). Sharing one object between multiple calls corrupts the second shape.
+
    ```javascript
    const shadow = { type: "outer", blur: 6, offset: 2, color: "000000", opacity: 0.15 };
    slide.addShape(pres.shapes.RECTANGLE, { shadow, ... });  // ❌ second call gets already-converted values
@@ -398,7 +402,8 @@ titleSlide.addText("My Title", { placeholder: "title" });
    slide.addShape(pres.shapes.RECTANGLE, { shadow: makeShadow(), ... });
    ```
 
-8. **Don't use `ROUNDED_RECTANGLE` with accent borders** - rectangular overlay bars won't cover rounded corners. Use `RECTANGLE` instead.
+1. **Don't use `ROUNDED_RECTANGLE` with accent borders** - rectangular overlay bars won't cover rounded corners. Use `RECTANGLE` instead.
+
    ```javascript
    // ❌ WRONG: Accent bar doesn't cover rounded corners
    slide.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: 1, y: 1, w: 3, h: 1.5, fill: { color: "FFFFFF" } });

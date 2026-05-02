@@ -7,16 +7,16 @@ A command-line tool that generates ASCII art fractals. Supports two fractal type
 ## Usage
 
 ```bash
-# Sierpinski triangle
+## Sierpinski triangle
 fractals sierpinski --size 32 --depth 5
 
-# Mandelbrot set
+## Mandelbrot set
 fractals mandelbrot --width 80 --height 24 --iterations 100
 
-# Custom character
+## Custom character
 fractals sierpinski --size 16 --char '#'
 
-# Help
+## Help
 fractals --help
 fractals sierpinski --help
 ```
@@ -48,7 +48,7 @@ Output: Rectangle printed to stdout.
 
 ## Architecture
 
-```
+```text
 cmd/
   fractals/
     main.go           # Entry point, CLI setup
@@ -73,9 +73,9 @@ internal/
 ## Acceptance Criteria
 
 1. `fractals --help` shows usage
-2. `fractals sierpinski` outputs a recognizable triangle
-3. `fractals mandelbrot` outputs a recognizable Mandelbrot set
-4. `--size`, `--width`, `--height`, `--depth`, `--iterations` flags work
-5. `--char` customizes output character
-6. Invalid inputs produce clear error messages
-7. All tests pass
+1. `fractals sierpinski` outputs a recognizable triangle
+1. `fractals mandelbrot` outputs a recognizable Mandelbrot set
+1. `--size`, `--width`, `--height`, `--depth`, `--iterations` flags work
+1. `--char` customizes output character
+1. Invalid inputs produce clear error messages
+1. All tests pass

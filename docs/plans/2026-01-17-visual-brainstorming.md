@@ -12,11 +12,12 @@
 
 ## Task 1: Create the Server Foundation
 
-**Files:**
+#### Files
+
 - Create: `lib/brainstorm-server/index.js`
 - Create: `lib/brainstorm-server/package.json`
 
-**Step 1: Create package.json**
+#### Step 1: Create package.json
 
 ```json
 {
@@ -32,7 +33,7 @@
 }
 ```
 
-**Step 2: Create minimal server that starts**
+#### Step 2: Create minimal server that starts
 
 ```javascript
 const express = require('express');
@@ -121,17 +122,17 @@ server.listen(PORT, '127.0.0.1', () => {
 });
 ```
 
-**Step 3: Run npm install**
+#### Step 3: Run npm install
 
 Run: `cd lib/brainstorm-server && npm install`
 Expected: Dependencies installed
 
-**Step 4: Test server starts**
+#### Step 4: Test server starts
 
 Run: `cd lib/brainstorm-server && timeout 3 node index.js || true`
 Expected: See JSON with `server-started` and port info
 
-**Step 5: Commit**
+#### Step 5: Commit
 
 ```bash
 git add lib/brainstorm-server/
@@ -142,10 +143,11 @@ git commit -m "feat: add brainstorm server foundation"
 
 ## Task 2: Create the Helper Library
 
-**Files:**
+#### Files
+
 - Create: `lib/brainstorm-server/helper.js`
 
-**Step 1: Create helper.js with event auto-capture**
+#### Step 1: Create helper.js with event auto-capture
 
 ```javascript
 (function() {
@@ -247,12 +249,12 @@ git commit -m "feat: add brainstorm server foundation"
 })();
 ```
 
-**Step 2: Verify helper.js is syntactically valid**
+#### Step 2: Verify helper.js is syntactically valid
 
 Run: `node -c lib/brainstorm-server/helper.js`
 Expected: No syntax errors
 
-**Step 3: Commit**
+#### Step 3: Commit
 
 ```bash
 git add lib/brainstorm-server/helper.js
@@ -263,11 +265,12 @@ git commit -m "feat: add browser helper library for event capture"
 
 ## Task 3: Write Tests for the Server
 
-**Files:**
+#### Files
+
 - Create: `tests/brainstorm-server/server.test.js`
 - Create: `tests/brainstorm-server/package.json`
 
-**Step 1: Create test package.json**
+#### Step 1: Create test package.json
 
 ```json
 {
@@ -279,7 +282,7 @@ git commit -m "feat: add browser helper library for event capture"
 }
 ```
 
-**Step 2: Write server tests**
+#### Step 2: Write server tests
 
 ```javascript
 const { spawn } = require('child_process');
@@ -390,12 +393,12 @@ runTests().catch(err => {
 });
 ```
 
-**Step 3: Run tests**
+#### Step 3: Run tests
 
 Run: `cd tests/brainstorm-server && npm install ws && node server.test.js`
 Expected: All tests pass
 
-**Step 4: Commit**
+#### Step 4: Commit
 
 ```bash
 git add tests/brainstorm-server/
@@ -406,26 +409,29 @@ git commit -m "test: add brainstorm server integration tests"
 
 ## Task 4: Add Visual Companion to Brainstorming Skill
 
-**Files:**
+#### Files
+
 - Modify: `skills/brainstorming/SKILL.md`
 - Create: `skills/brainstorming/visual-companion.md` (supporting doc)
 
-**Step 1: Create the supporting documentation**
+#### Step 1: Create the supporting documentation
 
 Create `skills/brainstorming/visual-companion.md`:
 
 ```markdown
-# Visual Companion Reference
+## Visual Companion Reference
 
 ## Starting the Server
 
 Run as a background job:
 
-```bash
-node ${PLUGIN_ROOT}/lib/brainstorm-server/index.js
 ```
 
-Tell the user: "I've started a visual companion at http://localhost:3333 - open it in a browser."
+node ${PLUGIN_ROOT}/lib/brainstorm-server/index.js
+
+```text
+
+Tell the user: "I've started a visual companion at [http://localhost:3333](http://localhost:3333) - open it in a browser."
 
 ## Pushing Screens
 
@@ -435,10 +441,12 @@ Write HTML to `/tmp/brainstorm/screen.html`. The server watches this file and au
 
 Check the background task output for JSON events:
 
-```json
+```
+
 {"type":"user-event","type":"click","text":"Option A","choice":"optionA","timestamp":1234567890}
 {"type":"user-event","type":"submit","data":{"notes":"My feedback"},"timestamp":1234567891}
-```
+
+```text
 
 Event types:
 - **click**: User clicked button or `data-choice` element
@@ -449,7 +457,8 @@ Event types:
 
 ### Choice Cards
 
-```html
+```
+
 <div class="options">
   <button data-choice="optionA">
     <h3>Option A</h3>
@@ -460,36 +469,43 @@ Event types:
     <p>Description</p>
   </button>
 </div>
-```
+
+```text
 
 ### Interactive Mockup
 
-```html
+```
+
 <div class="mockup">
   <header data-choice="header">App Header</header>
   <nav data-choice="nav">Navigation</nav>
   <main data-choice="main">Content</main>
 </div>
-```
+
+```text
 
 ### Form with Notes
 
-```html
+```
+
 <form>
   <label>Priority: <input type="range" name="priority" min="1" max="5"></label>
   <textarea name="notes" placeholder="Additional thoughts..."></textarea>
   <button type="submit">Submit</button>
 </form>
-```
+
+```text
 
 ### Explicit JavaScript
 
-```html
-<button onclick="brainstorm.choice('custom', {extra: 'data'})">Custom</button>
-```
 ```
 
-**Step 2: Add visual companion section to brainstorming skill**
+<button onclick="brainstorm.choice('custom', {extra: 'data'})">Custom</button>
+
+```text
+```
+
+#### Step 2: Add visual companion section to brainstorming skill
 
 Add after "Key Principles" in `skills/brainstorming/SKILL.md`:
 
@@ -507,7 +523,7 @@ When brainstorming involves visual elements - UI mockups, wireframes, interactiv
 
 **How it works:**
 1. Start the server as a background job
-2. Tell user to open http://localhost:3333
+2. Tell user to open [http://localhost:3333](http://localhost:3333)
 3. Write HTML to `/tmp/brainstorm/screen.html` (auto-refreshes)
 4. Check background task output for user interactions
 
@@ -516,12 +532,12 @@ The terminal remains the primary conversation interface. The browser is a visual
 **Reference:** See `visual-companion.md` in this skill directory for HTML patterns and API details.
 ```
 
-**Step 3: Verify the edits**
+#### Step 3: Verify the edits
 
 Run: `grep -A5 "Visual Companion" skills/brainstorming/SKILL.md`
 Expected: Shows the new section
 
-**Step 4: Commit**
+#### Step 4: Commit
 
 ```bash
 git add skills/brainstorming/
@@ -532,21 +548,23 @@ git commit -m "feat: add visual companion to brainstorming skill"
 
 ## Task 5: Add Server to Plugin Ignore (Optional Cleanup)
 
-**Files:**
+#### Files
+
 - Check if `.gitignore` needs node_modules exclusion for lib/brainstorm-server
 
-**Step 1: Check current gitignore**
+#### Step 1: Check current gitignore
 
 Run: `cat .gitignore 2>/dev/null || echo "No .gitignore"`
 
-**Step 2: Add node_modules if needed**
+#### Step 2: Add node_modules if needed
 
 If not already present, add:
-```
+
+```text
 lib/brainstorm-server/node_modules/
 ```
 
-**Step 3: Commit if changed**
+#### Step 3: Commit if changed
 
 ```bash
 git add .gitignore
@@ -560,13 +578,13 @@ git commit -m "chore: ignore brainstorm-server node_modules"
 After completing all tasks:
 
 1. **Server** at `lib/brainstorm-server/` - Node.js server that watches HTML file and relays events
-2. **Helper library** auto-injected - captures clicks, forms, inputs
-3. **Tests** at `tests/brainstorm-server/` - verifies server behavior
-4. **Brainstorming skill** updated with visual companion section and `visual-companion.md` reference doc
+1. **Helper library** auto-injected - captures clicks, forms, inputs
+1. **Tests** at `tests/brainstorm-server/` - verifies server behavior
+1. **Brainstorming skill** updated with visual companion section and `visual-companion.md` reference doc
 
-**To use:**
+#### To use
+
 1. Start server as background job: `node lib/brainstorm-server/index.js &`
-2. Tell user to open `http://localhost:3333`
-3. Write HTML to `/tmp/brainstorm/screen.html`
-4. Check task output for user events
-
+1. Tell user to open `http://localhost:3333`
+1. Write HTML to `/tmp/brainstorm/screen.html`
+1. Check task output for user events

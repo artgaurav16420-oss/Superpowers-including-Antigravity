@@ -88,7 +88,6 @@ if err := stream.Err(); err != nil { log.Fatal(err) }
 // message.Content now has the complete response
 ```
 
-
 ---
 
 ## Tool Use
@@ -160,7 +159,7 @@ for _, block := range message.Content {
 }
 ```
 
-**Key features of the Go tool runner:**
+#### Key features of the Go tool runner
 
 - Automatic schema generation from Go structs via `jsonschema` tags
 - `RunToCompletion()` for simple one-shot usage
@@ -258,10 +257,10 @@ func main() {
 }
 ```
 
-**Key API surface:**
+#### Key API surface
 
 | Symbol | Purpose |
-|---|---|
+|:---|:---|
 | `resp.ToParam()` | Convert `Message` response → `MessageParam` for history |
 | `block.AsAny().(type)` | Type-switch on `ContentBlockUnion` variants |
 | `variant.JSON.Input.Raw()` | Raw JSON string of tool input (for `json.Unmarshal`) |

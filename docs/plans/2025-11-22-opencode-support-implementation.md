@@ -14,11 +14,12 @@
 
 ### Task 1: Extract Frontmatter Parsing
 
-**Files:**
+#### Files
+
 - Create: `lib/skills-core.js`
 - Reference: `.codex/superpowers-codex` (lines 40-74)
 
-**Step 1: Create lib/skills-core.js with extractFrontmatter function**
+#### Step 1: Create lib/skills-core.js with extractFrontmatter function
 
 ```javascript
 #!/usr/bin/env node
@@ -80,12 +81,12 @@ module.exports = {
 };
 ```
 
-**Step 2: Verify file was created**
+#### Step 2: Verify file was created
 
 Run: `ls -l lib/skills-core.js`
 Expected: File exists
 
-**Step 3: Commit**
+#### Step 3: Commit
 
 ```bash
 git add lib/skills-core.js
@@ -96,11 +97,12 @@ git commit -m "feat: create shared skills core module with frontmatter parser"
 
 ### Task 2: Extract Skill Discovery Logic
 
-**Files:**
+#### Files
+
 - Modify: `lib/skills-core.js`
 - Reference: `.codex/superpowers-codex` (lines 97-136)
 
-**Step 1: Add findSkillsInDir function to skills-core.js**
+#### Step 1: Add findSkillsInDir function to skills-core.js
 
 Add before `module.exports`:
 
@@ -151,7 +153,7 @@ function findSkillsInDir(dir, sourceType, maxDepth = 3) {
 }
 ```
 
-**Step 2: Update module.exports**
+#### Step 2: Update module.exports
 
 Replace the exports line with:
 
@@ -162,12 +164,12 @@ module.exports = {
 };
 ```
 
-**Step 3: Verify syntax**
+#### Step 3: Verify syntax
 
 Run: `node -c lib/skills-core.js`
 Expected: No output (success)
 
-**Step 4: Commit**
+#### Step 4: Commit
 
 ```bash
 git add lib/skills-core.js
@@ -178,11 +180,12 @@ git commit -m "feat: add skill discovery function to core module"
 
 ### Task 3: Extract Skill Resolution Logic
 
-**Files:**
+#### Files
+
 - Modify: `lib/skills-core.js`
 - Reference: `.codex/superpowers-codex` (lines 212-280)
 
-**Step 1: Add resolveSkillPath function**
+#### Step 1: Add resolveSkillPath function
 
 Add before `module.exports`:
 
@@ -231,7 +234,7 @@ function resolveSkillPath(skillName, superpowersDir, personalDir) {
 }
 ```
 
-**Step 2: Update module.exports**
+#### Step 2: Update module.exports
 
 ```javascript
 module.exports = {
@@ -241,12 +244,12 @@ module.exports = {
 };
 ```
 
-**Step 3: Verify syntax**
+#### Step 3: Verify syntax
 
 Run: `node -c lib/skills-core.js`
 Expected: No output
 
-**Step 4: Commit**
+#### Step 4: Commit
 
 ```bash
 git add lib/skills-core.js
@@ -257,11 +260,12 @@ git commit -m "feat: add skill path resolution with shadowing support"
 
 ### Task 4: Extract Update Check Logic
 
-**Files:**
+#### Files
+
 - Modify: `lib/skills-core.js`
 - Reference: `.codex/superpowers-codex` (lines 16-38)
 
-**Step 1: Add checkForUpdates function**
+#### Step 1: Add checkForUpdates function
 
 Add at top after requires:
 
@@ -303,7 +307,7 @@ function checkForUpdates(repoDir) {
 }
 ```
 
-**Step 2: Update module.exports**
+#### Step 2: Update module.exports
 
 ```javascript
 module.exports = {
@@ -314,12 +318,12 @@ module.exports = {
 };
 ```
 
-**Step 3: Verify syntax**
+#### Step 3: Verify syntax
 
 Run: `node -c lib/skills-core.js`
 Expected: No output
 
-**Step 4: Commit**
+#### Step 4: Commit
 
 ```bash
 git add lib/skills-core.js
@@ -332,10 +336,11 @@ git commit -m "feat: add git update checking to core module"
 
 ### Task 5: Update Codex to Import Shared Core
 
-**Files:**
+#### Files
+
 - Modify: `.codex/superpowers-codex` (add import at top)
 
-**Step 1: Add import statement**
+#### Step 1: Add import statement
 
 After the existing requires at top of file (around line 6), add:
 
@@ -343,12 +348,12 @@ After the existing requires at top of file (around line 6), add:
 const skillsCore = require('../lib/skills-core');
 ```
 
-**Step 2: Verify syntax**
+#### Step 2: Verify syntax
 
 Run: `node -c .codex/superpowers-codex`
 Expected: No output
 
-**Step 3: Commit**
+#### Step 3: Commit
 
 ```bash
 git add .codex/superpowers-codex
@@ -359,25 +364,26 @@ git commit -m "refactor: import shared skills core in codex"
 
 ### Task 6: Replace extractFrontmatter with Core Version
 
-**Files:**
+#### Files
+
 - Modify: `.codex/superpowers-codex` (lines 40-74)
 
-**Step 1: Remove local extractFrontmatter function**
+#### Step 1: Remove local extractFrontmatter function
 
 Delete lines 40-74 (the entire extractFrontmatter function definition).
 
-**Step 2: Update all extractFrontmatter calls**
+#### Step 2: Update all extractFrontmatter calls
 
 Find and replace all calls from `extractFrontmatter(` to `skillsCore.extractFrontmatter(`
 
 Affected lines approximately: 90, 310
 
-**Step 3: Verify script still works**
+#### Step 3: Verify script still works
 
 Run: `.codex/superpowers-codex find-skills | head -20`
 Expected: Shows list of skills
 
-**Step 4: Commit**
+#### Step 4: Commit
 
 ```bash
 git add .codex/superpowers-codex
@@ -388,23 +394,24 @@ git commit -m "refactor: use shared extractFrontmatter in codex"
 
 ### Task 7: Replace findSkillsInDir with Core Version
 
-**Files:**
+#### Files
+
 - Modify: `.codex/superpowers-codex` (lines 97-136, approximately)
 
-**Step 1: Remove local findSkillsInDir function**
+#### Step 1: Remove local findSkillsInDir function
 
 Delete the entire `findSkillsInDir` function definition (approximately lines 97-136).
 
-**Step 2: Update all findSkillsInDir calls**
+#### Step 2: Update all findSkillsInDir calls
 
 Replace calls from `findSkillsInDir(` to `skillsCore.findSkillsInDir(`
 
-**Step 3: Verify script still works**
+#### Step 3: Verify script still works
 
 Run: `.codex/superpowers-codex find-skills | head -20`
 Expected: Shows list of skills
 
-**Step 4: Commit**
+#### Step 4: Commit
 
 ```bash
 git add .codex/superpowers-codex
@@ -415,23 +422,24 @@ git commit -m "refactor: use shared findSkillsInDir in codex"
 
 ### Task 8: Replace checkForUpdates with Core Version
 
-**Files:**
+#### Files
+
 - Modify: `.codex/superpowers-codex` (lines 16-38, approximately)
 
-**Step 1: Remove local checkForUpdates function**
+#### Step 1: Remove local checkForUpdates function
 
 Delete the entire `checkForUpdates` function definition.
 
-**Step 2: Update all checkForUpdates calls**
+#### Step 2: Update all checkForUpdates calls
 
 Replace calls from `checkForUpdates(` to `skillsCore.checkForUpdates(`
 
-**Step 3: Verify script still works**
+#### Step 3: Verify script still works
 
 Run: `.codex/superpowers-codex bootstrap | head -50`
 Expected: Shows bootstrap content
 
-**Step 4: Commit**
+#### Step 4: Commit
 
 ```bash
 git add .codex/superpowers-codex
@@ -444,14 +452,15 @@ git commit -m "refactor: use shared checkForUpdates in codex"
 
 ### Task 9: Create OpenCode Plugin Directory Structure
 
-**Files:**
+#### Files
+
 - Create: `.opencode/plugin/superpowers.js`
 
-**Step 1: Create directory**
+#### Step 1: Create directory
 
 Run: `mkdir -p .opencode/plugin`
 
-**Step 2: Create basic plugin file**
+#### Step 2: Create basic plugin file
 
 ```javascript
 #!/usr/bin/env node
@@ -482,12 +491,12 @@ export const Mega-SkillsPlugin = async ({ project, client, $, directory, worktre
 };
 ```
 
-**Step 3: Verify file was created**
+#### Step 3: Verify file was created
 
 Run: `ls -l .opencode/plugin/superpowers.js`
 Expected: File exists
 
-**Step 4: Commit**
+#### Step 4: Commit
 
 ```bash
 git add .opencode/plugin/superpowers.js
@@ -498,10 +507,11 @@ git commit -m "feat: create opencode plugin scaffold"
 
 ### Task 10: Implement use_skill Tool
 
-**Files:**
+#### Files
+
 - Modify: `.opencode/plugin/superpowers.js`
 
-**Step 1: Add use_skill tool implementation**
+#### Step 1: Add use_skill tool implementation
 
 Replace the plugin return statement with:
 
@@ -560,9 +570,9 @@ export const Mega-SkillsPlugin = async ({ project, client, $, directory, worktre
 
           // Format output similar to Claude Code's Skill tool
           return `# ${name || skill_name}
-# ${description || ''}
-# Supporting tools and docs are in ${skillDirectory}
-# ============================================
+## ${description || ''}
+## Supporting tools and docs are in ${skillDirectory}
+## ============================================
 
 ${content}`;
         }
@@ -572,12 +582,12 @@ ${content}`;
 };
 ```
 
-**Step 2: Verify syntax**
+#### Step 2: Verify syntax
 
 Run: `node -c .opencode/plugin/superpowers.js`
 Expected: No output
 
-**Step 3: Commit**
+#### Step 3: Commit
 
 ```bash
 git add .opencode/plugin/superpowers.js
@@ -588,10 +598,11 @@ git commit -m "feat: implement use_skill tool for opencode"
 
 ### Task 11: Implement find_skills Tool
 
-**Files:**
+#### Files
+
 - Modify: `.opencode/plugin/superpowers.js`
 
-**Step 1: Add find_skills tool to tools array**
+#### Step 1: Add find_skills tool to tools array
 
 Add after the use_skill tool definition, before closing the tools array:
 
@@ -638,12 +649,12 @@ Add after the use_skill tool definition, before closing the tools array:
       }
 ```
 
-**Step 2: Verify syntax**
+#### Step 2: Verify syntax
 
 Run: `node -c .opencode/plugin/superpowers.js`
 Expected: No output
 
-**Step 3: Commit**
+#### Step 3: Commit
 
 ```bash
 git add .opencode/plugin/superpowers.js
@@ -654,10 +665,11 @@ git commit -m "feat: implement find_skills tool for opencode"
 
 ### Task 12: Implement Session Start Hook
 
-**Files:**
+#### Files
+
 - Modify: `.opencode/plugin/superpowers.js`
 
-**Step 1: Add session.started hook**
+#### Step 1: Add session.started hook
 
 After the tools array, add:
 
@@ -741,12 +753,12 @@ ${toolMapping}${updateNotice}
     }
 ```
 
-**Step 2: Verify syntax**
+#### Step 2: Verify syntax
 
 Run: `node -c .opencode/plugin/superpowers.js`
 Expected: No output
 
-**Step 3: Commit**
+#### Step 3: Commit
 
 ```bash
 git add .opencode/plugin/superpowers.js
@@ -759,17 +771,18 @@ git commit -m "feat: implement session.started hook for opencode"
 
 ### Task 13: Create OpenCode Installation Guide
 
-**Files:**
+#### Files
+
 - Create: `.opencode/INSTALL.md`
 
-**Step 1: Create installation guide**
+#### Step 1: Create installation guide
 
 ```markdown
-# Installing Mega-Skills for OpenCode
+## Installing Mega-Skills for OpenCode
 
 ## Prerequisites
 
-- [OpenCode.ai](https://opencode.ai) installed
+- [OpenCode.ai]([https://opencode.ai)](https://opencode.ai)) installed
 - Node.js installed
 - Git installed
 
@@ -777,11 +790,14 @@ git commit -m "feat: implement session.started hook for opencode"
 
 ### 1. Install Mega-Skills Skills
 
-```bash
-# Clone superpowers skills to OpenCode config directory
-mkdir -p ~/.config/opencode/superpowers
-git clone https://github.com/artgaurav16420-oss/Mega-Skills.git ~/.config/opencode/superpowers
 ```
+
+## Clone superpowers skills to OpenCode config directory
+
+mkdir -p ~/.config/opencode/superpowers
+git clone [https://github.com/artgaurav16420-oss/Mega-Skills.git](https://github.com/artgaurav16420-oss/Mega-Skills.git) ~/.config/opencode/superpowers
+
+```text
 
 ### 2. Install the Plugin
 
@@ -792,19 +808,24 @@ OpenCode will automatically discover it from:
 
 Or you can link it to the project-local plugin directory:
 
-```bash
-# In your OpenCode project
+```
+
+## In your OpenCode project
+
 mkdir -p .opencode/plugin
 ln -s ~/.config/opencode/superpowers/.opencode/plugin/superpowers.js .opencode/plugin/superpowers.js
-```
+
+```text
 
 ### 3. Restart OpenCode
 
 Restart OpenCode to load the plugin. On the next session, you should see:
 
 ```
+
 You have superpowers.
-```
+
+```text
 
 ## Usage
 
@@ -813,46 +834,56 @@ You have superpowers.
 Use the `find_skills` tool to list all available skills:
 
 ```
+
 use find_skills tool
-```
+
+```text
 
 ### Loading a Skill
 
 Use the `use_skill` tool to load a specific skill:
 
 ```
+
 use use_skill tool with skill_name: "mega-skills:brainstorming"
-```
+
+```text
 
 ### Personal Skills
 
 Create your own skills in `~/.config/opencode/skills/`:
 
-```bash
-mkdir -p ~/.config/opencode/skills/my-skill
 ```
+
+mkdir -p ~/.config/opencode/skills/my-skill
+
+```text
 
 Create `~/.config/opencode/skills/my-skill/SKILL.md`:
 
-```markdown
+```
+
 ---
 name: my-skill
 description: Use when [condition] - [what it does]
 ---
 
-# My Skill
+## My Skill
 
 [Your skill content here]
-```
+
+```text
 
 Personal skills override superpowers skills with the same name.
 
 ## Updating
 
-```bash
+```
+
 cd ~/.config/opencode/superpowers
 git pull
-```
+
+```text
 
 ## Troubleshooting
 
@@ -878,16 +909,16 @@ When a skill references a Claude Code tool you don't have:
 
 ## Getting Help
 
-- Report issues: https://github.com/artgaurav16420-oss/Mega-Skills/issues
-- Documentation: https://github.com/artgaurav16420-oss/Mega-Skills
+- Report issues: [https://github.com/artgaurav16420-oss/Mega-Skills/issues](https://github.com/artgaurav16420-oss/Mega-Skills/issues)
+- Documentation: [https://github.com/artgaurav16420-oss/Mega-Skills](https://github.com/artgaurav16420-oss/Mega-Skills)
 ```
 
-**Step 2: Verify file created**
+#### Step 2: Verify file created
 
 Run: `ls -l .opencode/INSTALL.md`
 Expected: File exists
 
-**Step 3: Commit**
+#### Step 3: Commit
 
 ```bash
 git add .opencode/INSTALL.md
@@ -898,17 +929,18 @@ git commit -m "docs: add opencode installation guide"
 
 ### Task 14: Update Main README
 
-**Files:**
+#### Files
+
 - Modify: `README.md`
 
-**Step 1: Add OpenCode section**
+#### Step 1: Add OpenCode section
 
 Find the section about supported platforms (search for "Codex" in the file), and add after it:
 
 ```markdown
 ### OpenCode
 
-Mega-Skills works with [OpenCode.ai](https://opencode.ai) through a native JavaScript plugin.
+Mega-Skills works with [OpenCode.ai]([https://opencode.ai)](https://opencode.ai)) through a native JavaScript plugin.
 
 **Installation:** See [.opencode/INSTALL.md](.opencode/INSTALL.md)
 
@@ -919,12 +951,12 @@ Mega-Skills works with [OpenCode.ai](https://opencode.ai) through a native JavaS
 - Supporting files and scripts access
 ```
 
-**Step 2: Verify formatting**
+#### Step 2: Verify formatting
 
 Run: `grep -A 10 "### OpenCode" README.md`
 Expected: Shows the section you added
 
-**Step 3: Commit**
+#### Step 3: Commit
 
 ```bash
 git add README.md
@@ -935,10 +967,11 @@ git commit -m "docs: add opencode support to readme"
 
 ### Task 15: Update Release Notes
 
-**Files:**
+#### Files
+
 - Modify: `RELEASE-NOTES.md`
 
-**Step 1: Add entry for OpenCode support**
+#### Step 1: Add entry for OpenCode support
 
 At the top of the file (after the header), add:
 
@@ -963,12 +996,12 @@ At the top of the file (after the header), add:
 
 ```
 
-**Step 2: Verify formatting**
+#### Step 2: Verify formatting
 
 Run: `head -30 RELEASE-NOTES.md`
 Expected: Shows your new section
 
-**Step 3: Commit**
+#### Step 3: Commit
 
 ```bash
 git add RELEASE-NOTES.md
@@ -981,25 +1014,26 @@ git commit -m "docs: add opencode support to release notes"
 
 ### Task 16: Test Codex Still Works
 
-**Files:**
+#### Files
+
 - Test: `.codex/superpowers-codex`
 
-**Step 1: Test find-skills command**
+#### Step 1: Test find-skills command
 
 Run: `.codex/superpowers-codex find-skills | head -20`
 Expected: Shows list of skills with names and descriptions
 
-**Step 2: Test use-skill command**
+#### Step 2: Test use-skill command
 
 Run: `.codex/superpowers-codex use-skill mega-skills:brainstorming | head -20`
 Expected: Shows brainstorming skill content
 
-**Step 3: Test bootstrap command**
+#### Step 3: Test bootstrap command
 
 Run: `.codex/superpowers-codex bootstrap | head -30`
 Expected: Shows bootstrap content with instructions
 
-**Step 4: If all tests pass, record success**
+#### Step 4: If all tests pass, record success
 
 No commit needed - this is verification only.
 
@@ -1007,12 +1041,14 @@ No commit needed - this is verification only.
 
 ### Task 17: Verify File Structure
 
-**Files:**
+#### Files
+
 - Check: All new files exist
 
-**Step 1: Verify all files created**
+#### Step 1: Verify all files created
 
 Run:
+
 ```bash
 ls -l lib/skills-core.js
 ls -l .opencode/plugin/superpowers.js
@@ -1021,18 +1057,19 @@ ls -l .opencode/INSTALL.md
 
 Expected: All files exist
 
-**Step 2: Verify directory structure**
+#### Step 2: Verify directory structure
 
 Run: `tree -L 2 .opencode/` (or `find .opencode -type f` if tree not available)
 Expected:
-```
+
+```text
 .opencode/
 ├── INSTALL.md
 └── plugin/
     └── superpowers.js
 ```
 
-**Step 3: If structure correct, proceed**
+#### Step 3: If structure correct, proceed
 
 No commit needed - this is verification only.
 
@@ -1040,20 +1077,21 @@ No commit needed - this is verification only.
 
 ### Task 18: Final Commit and Summary
 
-**Files:**
+#### Files
+
 - Check: `git status`
 
-**Step 1: Check git status**
+#### Step 1: Check git status
 
 Run: `git status`
 Expected: Working tree clean, all changes committed
 
-**Step 2: Review commit log**
+#### Step 2: Review commit log
 
 Run: `git log --oneline -20`
 Expected: Shows all commits from this implementation
 
-**Step 3: Create summary document**
+#### Step 3: Create summary document
 
 Create a completion summary showing:
 - Total commits made
@@ -1062,12 +1100,12 @@ Create a completion summary showing:
 - Testing performed: Codex commands verified
 - Ready for: Testing with actual OpenCode installation
 
-**Step 4: Report completion**
+#### Step 4: Report completion
 
 Present summary to user and offer to:
 1. Push to remote
-2. Create pull request
-3. Test with real OpenCode installation (requires OpenCode installed)
+1. Create pull request
+1. Test with real OpenCode installation (requires OpenCode installed)
 
 ---
 
@@ -1076,12 +1114,12 @@ Present summary to user and offer to:
 These steps require OpenCode to be installed and are not part of the automated implementation:
 
 1. **Install skills**: Follow `.opencode/INSTALL.md`
-2. **Start OpenCode session**: Verify bootstrap appears
-3. **Test find_skills**: Should list all available skills
-4. **Test use_skill**: Load a skill and verify content appears
-5. **Test supporting files**: Verify skill directory paths are accessible
-6. **Test personal skills**: Create a personal skill and verify it shadows core
-7. **Test tool mapping**: Verify TodoWrite → update_plan mapping works
+1. **Start OpenCode session**: Verify bootstrap appears
+1. **Test find_skills**: Should list all available skills
+1. **Test use_skill**: Load a skill and verify content appears
+1. **Test supporting files**: Verify skill directory paths are accessible
+1. **Test personal skills**: Create a personal skill and verify it shadows core
+1. **Test tool mapping**: Verify TodoWrite → update_plan mapping works
 
 ## Success Criteria
 
@@ -1093,7 +1131,3 @@ These steps require OpenCode to be installed and are not part of the automated i
 - [ ] README and RELEASE-NOTES updated
 - [ ] All changes committed
 - [ ] Working tree clean
-
-
-
-

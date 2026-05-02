@@ -39,7 +39,7 @@ const finalMessage = await client.beta.messages.toolRunner({
 console.log(finalMessage.content);
 ```
 
-**Key benefits of the tool runner:**
+#### Key benefits of the tool runner
 
 - No manual loop — the SDK handles calling tools and feeding results back
 - Type-safe tool inputs via Zod schemas
@@ -152,9 +152,9 @@ while (true) {
 ```
 
 > **Important:** Don't wrap `.on()` events in `new Promise()` to collect the final message — use `stream.finalMessage()` instead. The SDK handles all error/abort/completion states internally.
-
+>
 > **Error handling in the loop:** Use the SDK's typed exceptions (e.g., `Anthropic.RateLimitError`, `Anthropic.APIError`) — see [Error Handling](./README.md#error-handling) for examples. Don't check error messages with string matching.
-
+>
 > **SDK types:** Use `Anthropic.MessageParam`, `Anthropic.Tool`, `Anthropic.ToolUseBlock`, `Anthropic.ToolResultBlockParam`, `Anthropic.Message`, etc. for all API-related data structures. Don't redefine equivalent interfaces.
 
 ---
@@ -233,7 +233,7 @@ const response = await client.messages.create({
 ```
 
 | Interface | `name` | `type` |
-|---|---|---|
+|:---|:---|:---|
 | `ToolTextEditor20250124` | `str_replace_editor` | `text_editor_20250124` |
 | `ToolTextEditor20250429` | `str_replace_based_edit_tool` | `text_editor_20250429` |
 | `ToolTextEditor20250728` | `str_replace_based_edit_tool` | `text_editor_20250728` |
@@ -245,7 +245,6 @@ const response = await client.messages.create({
 **Don't mix beta and non-beta types**: if you call `client.beta.messages.create()`, the response `content` is `BetaContentBlock[]` — you cannot pass that to a non-beta `ContentBlockParam[]` without narrowing each element.
 
 ---
-
 
 ## Code Execution
 

@@ -1,7 +1,7 @@
 # Managed Agents — Python
 
 > **Bindings not shown here:** This README covers the most common managed-agents flows for Python. If you need a class, method, namespace, field, or behavior that isn't shown, WebFetch the Python SDK repo **or the relevant docs page** from `shared/live-sources.md` rather than guess. Do not extrapolate from cURL shapes or another language's SDK.
-
+>
 > **Agents are persistent — create once, reference by ID.** Store the agent ID returned by `agents.create` and pass it to every subsequent `sessions.create`; do not call `agents.create` in the request path. The Anthropic CLI is one convenient way to create agents and environments from version-controlled YAML — its URL is in `shared/live-sources.md`. The examples below show in-code creation for completeness; in production the create call belongs in setup, not in the request path.
 
 ## Installation
@@ -15,10 +15,10 @@ pip install anthropic
 ```python
 import anthropic
 
-# Default (uses ANTHROPIC_API_KEY env var)
+## Default (uses ANTHROPIC_API_KEY env var)
 client = anthropic.Anthropic()
 
-# Explicit API key
+## Explicit API key
 client = anthropic.Anthropic(api_key="your-api-key")
 ```
 
@@ -46,14 +46,14 @@ print(environment.id)  # env_...
 ### Minimal
 
 ```python
-# 1. Create the agent (reusable, versioned)
+## 1. Create the agent (reusable, versioned)
 agent = client.beta.agents.create(
     name="Coding Assistant",
     model="claude-opus-4-7",
     tools=[{"type": "agent_toolset_20260401", "default_config": {"enabled": True}}],
 )
 
-# 2. Start a session
+## 2. Start a session
 session = client.beta.sessions.create(
     agent={"type": "agent", "id": agent.id, "version": agent.version},
     environment_id=environment.id,
@@ -94,7 +94,7 @@ session = client.beta.sessions.create(
     resources=[
         {
             "type": "github_repository",
-            "url": "https://github.com/owner/repo",
+            "url": "[https://github.com/owner/repo",](https://github.com/owner/repo",)
             "mount_path": "/workspace/repo",
             "authorization_token": os.environ["GITHUB_TOKEN"],
             "branch": "main",
@@ -128,7 +128,7 @@ client.beta.sessions.events.send(
 ```python
 import json
 
-# Stream-first: open stream, then send while stream is live
+## Stream-first: open stream, then send while stream is live
 with client.beta.sessions.stream(
     session_id=session.id,
 ) as stream:
@@ -139,7 +139,7 @@ with client.beta.sessions.stream(
     for event in stream:
         ...  # process events
 
-# Standalone stream iteration:
+## Standalone stream iteration
 with client.beta.sessions.stream(
     session_id=session.id,
 ) as stream:
@@ -198,14 +198,12 @@ for event in events.data:
 ```python
 import json
 
-
 def run_custom_tool(tool_name: str, tool_input: dict) -> str:
     """Execute a custom tool and return the result."""
     if tool_name == "run_tests":
         # Your tool implementation here
         return "All tests passed."
     return f"Unknown tool: {tool_name}"
-
 
 def run_session(client, session_id: str):
     """Stream events and handle custom tool calls."""
@@ -255,7 +253,7 @@ with open("data.csv", "rb") as f:
         file=f,
     )
 
-# Use in a session
+## Use in a session
 session = client.beta.sessions.create(
     agent={"type": "agent", "id": agent.id, "version": agent.version},
     environment_id=environment.id,
@@ -270,7 +268,7 @@ session = client.beta.sessions.create(
 List files the agent wrote to `/mnt/session/outputs/` during a session, then download them.
 
 ```python
-# List files associated with a session
+## List files associated with a session
 files = client.beta.files.list(
     scope_id=session.id,
     betas=["managed-agents-2026-04-01"],
@@ -289,17 +287,17 @@ for f in files.data:
 ## Session Management
 
 ```python
-# Get session details
+## Get session details
 session = client.beta.sessions.retrieve(session_id="sesn_011CZxAbc123Def456")
 print(session.status, session.usage)
 
-# List sessions
+## List sessions
 sessions = client.beta.sessions.list()
 
-# Delete a session
+## Delete a session
 client.beta.sessions.delete(session_id="sesn_011CZxAbc123Def456")
 
-# Archive a session
+## Archive a session
 client.beta.sessions.archive(session_id="sesn_011CZxAbc123Def456")
 ```
 
@@ -308,12 +306,12 @@ client.beta.sessions.archive(session_id="sesn_011CZxAbc123Def456")
 ## MCP Server Integration
 
 ```python
-# Agent declares MCP server (no auth here — auth goes in a vault)
+## Agent declares MCP server (no auth here — auth goes in a vault)
 agent = client.beta.agents.create(
     name="MCP Agent",
     model="claude-opus-4-7",
     mcp_servers=[
-        {"type": "url", "name": "my-tools", "url": "https://my-mcp-server.example.com/sse"},
+        {"type": "url", "name": "my-tools", "url": "[https://my-mcp-server.example.com/sse"},](https://my-mcp-server.example.com/sse"},)
     ],
     tools=[
         {"type": "agent_toolset_20260401", "default_config": {"enabled": True}},
@@ -321,7 +319,7 @@ agent = client.beta.agents.create(
     ],
 )
 
-# Session attaches vault(s) containing credentials for those MCP server URLs
+## Session attaches vault(s) containing credentials for those MCP server URLs
 session = client.beta.sessions.create(
     agent=agent.id,
     environment_id=environment.id,

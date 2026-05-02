@@ -5,7 +5,7 @@ This file documents HTTP error codes returned by the Claude API, their common ca
 ## Error Code Summary
 
 | Code | Error Type              | Retryable | Common Cause                         |
-| ---- | ----------------------- | --------- | ------------------------------------ |
+| :---- | :---:---:---:---:---:---:----- | :---:---:--- | :---:---:---:---:---:---:---:---:---:---:---:--- |
 | 400  | `invalid_request_error` | No        | Invalid request format or parameters |
 | 401  | `authentication_error`  | No        | Invalid or missing API key           |
 | 403  | `permission_error`      | No        | API key lacks permission             |
@@ -19,7 +19,7 @@ This file documents HTTP error codes returned by the Claude API, their common ca
 
 ### 400 Bad Request
 
-**Causes:**
+#### Causes
 
 - Malformed JSON in request body
 - Missing required parameters (`model`, `max_tokens`, `messages`)
@@ -27,7 +27,7 @@ This file documents HTTP error codes returned by the Claude API, their common ca
 - Empty messages array
 - Messages not alternating user/assistant
 
-**Example error:**
+#### Example error
 
 ```json
 {
@@ -50,7 +50,7 @@ This file documents HTTP error codes returned by the Claude API, their common ca
 
 ### 401 Unauthorized
 
-**Causes:**
+#### Causes
 
 - Missing `x-api-key` header or `Authorization` header
 - Invalid API key format
@@ -62,7 +62,7 @@ This file documents HTTP error codes returned by the Claude API, their common ca
 
 ### 403 Forbidden
 
-**Causes:**
+#### Causes
 
 - API key doesn't have access to the requested model
 - Organization-level restrictions
@@ -74,7 +74,7 @@ This file documents HTTP error codes returned by the Claude API, their common ca
 
 ### 404 Not Found
 
-**Causes:**
+#### Causes
 
 - Typo in model ID (e.g., `claude-sonnet-4.6` instead of `claude-sonnet-4-6`)
 - Using deprecated model ID
@@ -86,7 +86,7 @@ This file documents HTTP error codes returned by the Claude API, their common ca
 
 ### 413 Request Too Large
 
-**Causes:**
+#### Causes
 
 - Request body exceeds maximum size
 - Too many tokens in input
@@ -105,18 +105,18 @@ Some 400 errors are specifically related to parameter validation:
 - `budget_tokens` >= `max_tokens` in extended thinking
 - Invalid tool definition schema
 
-**Model-specific 400s on Opus 4.7:**
+#### Model-specific 400s on Opus 4.7
 
 - `temperature`, `top_p`, `top_k` are removed — sending any of them returns 400. Delete the parameter; see `shared/model-migration.md` → Per-SDK Syntax Reference.
 - `thinking: {type: "enabled", budget_tokens: N}` is removed — sending it returns 400. Use `thinking: {type: "adaptive"}` instead.
 
-**Common mistake with extended thinking on older models (Opus 4.6 and earlier):**
+#### Common mistake with extended thinking on older models (Opus 4.6 and earlier)
 
-```
-# Wrong: budget_tokens must be < max_tokens
+```text
+## Wrong: budget_tokens must be < max_tokens
 thinking: budget_tokens=10000, max_tokens=1000  → Error!
 
-# Correct
+## Correct
 thinking: budget_tokens=10000, max_tokens=16000
 ```
 
@@ -124,13 +124,13 @@ thinking: budget_tokens=10000, max_tokens=16000
 
 ### 429 Rate Limited
 
-**Causes:**
+#### Causes
 
 - Exceeded requests per minute (RPM)
 - Exceeded tokens per minute (TPM)
 - Exceeded tokens per day (TPD)
 
-**Headers to check:**
+#### Headers to check
 
 - `retry-after`: Seconds to wait before retrying
 - `x-ratelimit-limit-*`: Your limits
@@ -142,18 +142,18 @@ thinking: budget_tokens=10000, max_tokens=16000
 
 ### 500 Internal Server Error
 
-**Causes:**
+#### Causes
 
 - Temporary Anthropic service issue
 - Bug in API processing
 
-**Fix:** Retry with exponential backoff. If persistent, check [status.anthropic.com](https://status.anthropic.com).
+**Fix:** Retry with exponential backoff. If persistent, check [status.anthropic.com]([https://status.anthropic.com).](https://status.anthropic.com).)
 
 ---
 
 ### 529 Overloaded
 
-**Causes:**
+#### Causes
 
 - High API demand
 - Service capacity reached
@@ -165,7 +165,7 @@ thinking: budget_tokens=10000, max_tokens=16000
 ## Common Mistakes and Fixes
 
 | Mistake                         | Error            | Fix                                                     |
-| ------------------------------- | ---------------- | ------------------------------------------------------- |
+| :---:---:---:---:---:---:---:---:---:---- | :---:---:---:---:---- | :---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---- |
 | `temperature`/`top_p`/`top_k` on Opus 4.7 | 400    | Remove the parameter (see `shared/model-migration.md`)  |
 | `budget_tokens` on Opus 4.7     | 400              | Use `thinking: {type: "adaptive"}`                      |
 | `budget_tokens` >= `max_tokens` (older models) | 400 | Ensure `budget_tokens` < `max_tokens`                  |
@@ -180,7 +180,7 @@ thinking: budget_tokens=10000, max_tokens=16000
 **Always use the SDK's typed exception classes** instead of checking error messages with string matching. Each HTTP error code maps to a specific exception class:
 
 | HTTP Code | TypeScript Class                  | Python Class                      |
-| --------- | --------------------------------- | --------------------------------- |
+| :---:---:--- | :---:---:---:---:---:---:---:---:---:---:--- | :---:---:---:---:---:---:---:---:---:---:--- |
 | 400       | `Anthropic.BadRequestError`       | `anthropic.BadRequestError`       |
 | 401       | `Anthropic.AuthenticationError`   | `anthropic.AuthenticationError`   |
 | 403       | `Anthropic.PermissionDeniedError` | `anthropic.PermissionDeniedError` |

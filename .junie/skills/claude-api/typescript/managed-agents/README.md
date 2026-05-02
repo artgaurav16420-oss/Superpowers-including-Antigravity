@@ -1,7 +1,7 @@
 # Managed Agents — TypeScript
 
 > **Bindings not shown here:** This README covers the most common managed-agents flows for TypeScript. If you need a class, method, namespace, field, or behavior that isn't shown, WebFetch the TypeScript SDK repo **or the relevant docs page** from `shared/live-sources.md` rather than guess. Do not extrapolate from cURL shapes or another language's SDK.
-
+>
 > **Agents are persistent — create once, reference by ID.** Store the agent ID returned by `agents.create` and pass it to every subsequent `sessions.create`; do not call `agents.create` in the request path. The Anthropic CLI is one convenient way to create agents and environments from version-controlled YAML — its URL is in `shared/live-sources.md`. The examples below show in-code creation for completeness; in production the create call belongs in setup, not in the request path.
 
 ## Installation
@@ -101,7 +101,7 @@ const session = await client.beta.sessions.create(
     resources: [
       {
         type: "github_repository",
-        url: "https://github.com/owner/repo",
+        url: "[https://github.com/owner/repo",](https://github.com/owner/repo",)
         mount_path: "/workspace/repo",
         authorization_token: process.env.GITHUB_TOKEN,
         branch: "main",
@@ -341,7 +341,7 @@ const agent = await client.beta.agents.create({
   name: "MCP Agent",
   model: "claude-opus-4-7",
   mcp_servers: [
-    { type: "url", name: "my-tools", url: "https://my-mcp-server.example.com/sse" },
+    { type: "url", name: "my-tools", url: "[https://my-mcp-server.example.com/sse"](https://my-mcp-server.example.com/sse") },
   ],
   tools: [
     { type: "agent_toolset_20260401", default_config: { enabled: true } },

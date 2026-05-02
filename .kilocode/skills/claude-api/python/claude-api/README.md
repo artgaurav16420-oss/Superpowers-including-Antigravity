@@ -11,13 +11,13 @@ pip install anthropic
 ```python
 import anthropic
 
-# Default (uses ANTHROPIC_API_KEY env var)
+## Default (uses ANTHROPIC_API_KEY env var)
 client = anthropic.Anthropic()
 
-# Explicit API key
+## Explicit API key
 client = anthropic.Anthropic(api_key="your-api-key")
 
-# Async client
+## Async client
 async_client = anthropic.AsyncAnthropic()
 ```
 
@@ -33,8 +33,8 @@ response = client.messages.create(
         {"role": "user", "content": "What is the capital of France?"}
     ]
 )
-# response.content is a list of content block objects (TextBlock, ThinkingBlock,
-# ToolUseBlock, ...). Check .type before accessing .text.
+## response.content is a list of content block objects (TextBlock, ThinkingBlock,
+## ToolUseBlock, ...). Check .type before accessing .text
 for block in response.content:
     if block.type == "text":
         print(block.text)
@@ -98,7 +98,7 @@ response = client.messages.create(
                 "type": "image",
                 "source": {
                     "type": "url",
-                    "url": "https://example.com/image.png"
+                    "url": "[https://example.com/image.png"](https://example.com/image.png")
                 }
             },
             {"type": "text", "text": "Describe this image"}
@@ -143,7 +143,7 @@ response = client.messages.create(
     messages=[{"role": "user", "content": "Summarize the key points"}]
 )
 
-# With explicit TTL (time-to-live)
+## With explicit TTL (time-to-live)
 response = client.messages.create(
     model="claude-opus-4-7",
     max_tokens=16000,
@@ -174,7 +174,7 @@ If `cache_read_input_tokens` is zero across repeated identical-prefix requests, 
 > **Older models:** Use `thinking: {type: "enabled", budget_tokens: N}` (must be < `max_tokens`, min 1024).
 
 ```python
-# Opus 4.7 / 4.6: adaptive thinking (recommended)
+## Opus 4.7 / 4.6: adaptive thinking (recommended)
 response = client.messages.create(
     model="claude-opus-4-7",
     max_tokens=16000,
@@ -183,7 +183,7 @@ response = client.messages.create(
     messages=[{"role": "user", "content": "Solve this step by step..."}]
 )
 
-# Access thinking and response
+## Access thinking and response
 for block in response.content:
     if block.type == "thinking":
         print(f"Thinking: {block.thinking}")
@@ -255,7 +255,7 @@ class ConversationManager:
 
         return assistant_message
 
-# Usage
+## Usage
 conversation = ConversationManager(
     client=anthropic.Anthropic(),
     model="claude-opus-4-7",
@@ -266,7 +266,7 @@ response1 = conversation.send("My name is Alice.")
 response2 = conversation.send("What's my name?")  # Claude remembers "Alice"
 ```
 
-**Rules:**
+#### Rules
 
 - Messages must alternate between `user` and `assistant`
 - First message must be `user`
@@ -301,7 +301,7 @@ def chat(user_message: str) -> str:
 
     return next(block.text for block in response.content if block.type == "text")
 
-# Compaction triggers automatically when context grows large
+## Compaction triggers automatically when context grows large
 print(chat("Help me build a Python web scraper"))
 print(chat("Add support for JavaScript-rendered pages"))
 print(chat("Now add rate limiting and error handling"))
@@ -314,7 +314,7 @@ print(chat("Now add rate limiting and error handling"))
 The `stop_reason` field in the response indicates why the model stopped generating:
 
 | Value | Meaning |
-|-------|---------|
+|:---:----|:---:---:---|
 | `end_turn` | Claude finished its response naturally |
 | `max_tokens` | Hit the `max_tokens` limit — increase it or use streaming |
 | `stop_sequence` | Hit a custom stop sequence |
@@ -329,7 +329,7 @@ The `stop_reason` field in the response indicates why the model stopped generati
 ### 1. Use Prompt Caching for Repeated Context
 
 ```python
-# Automatic caching (simplest — caches the last cacheable block)
+## Automatic caching (simplest — caches the last cacheable block)
 response = client.messages.create(
     model="claude-opus-4-7",
     max_tokens=16000,
@@ -338,28 +338,28 @@ response = client.messages.create(
     messages=[{"role": "user", "content": "Summarize the key points"}]
 )
 
-# First request: full cost
-# Subsequent requests: ~90% cheaper for cached portion
+## First request: full cost
+## Subsequent requests: ~90% cheaper for cached portion
 ```
 
 ### 2. Choose the Right Model
 
 ```python
-# Default to Opus for most tasks
+## Default to Opus for most tasks
 response = client.messages.create(
     model="claude-opus-4-7",  # $5.00/$25.00 per 1M tokens
     max_tokens=16000,
     messages=[{"role": "user", "content": "Explain quantum computing"}]
 )
 
-# Use Sonnet for high-volume production workloads
+## Use Sonnet for high-volume production workloads
 standard_response = client.messages.create(
     model="claude-sonnet-4-6",  # $3.00/$15.00 per 1M tokens
     max_tokens=16000,
     messages=[{"role": "user", "content": "Summarize this document"}]
 )
 
-# Use Haiku only for simple, speed-critical tasks
+## Use Haiku only for simple, speed-critical tasks
 simple_response = client.messages.create(
     model="claude-haiku-4-5",  # $1.00/$5.00 per 1M tokens
     max_tokens=256,

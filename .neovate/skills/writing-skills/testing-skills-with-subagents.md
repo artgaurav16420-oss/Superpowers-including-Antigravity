@@ -4,7 +4,7 @@
 
 ## Overview
 
-**Testing skills is just TDD applied to process documentation.**
+#### Testing skills is just TDD applied to process documentation
 
 You run scenarios without the skill (RED - watch agent fail), write skill addressing those failures (GREEN - watch agent comply), then close loopholes (REFACTOR - stay compliant).
 
@@ -30,7 +30,7 @@ Don't test:
 ## TDD Mapping for Skill Testing
 
 | TDD Phase | Skill Testing | What You Do |
-|-----------|---------------|-------------|
+|:---:---:-----|:---:---:---:---:---|:---:---:---:----|
 | **RED** | Baseline test | Run scenario WITHOUT skill, watch agent fail |
 | **Verify RED** | Capture rationalizations | Document exact failures verbatim |
 | **GREEN** | Write skill | Address specific baseline failures |
@@ -46,7 +46,7 @@ Same cycle as code TDD, different test format.
 
 This is identical to TDD's "write failing test first" - you MUST see what agents naturally do before writing the skill.
 
-**Process:**
+#### Process
 
 - [ ] **Create pressure scenarios** (3+ combined pressures)
 - [ ] **Run WITHOUT skill** - give agents realistic task with pressures
@@ -54,7 +54,7 @@ This is identical to TDD's "write failing test first" - you MUST see what agents
 - [ ] **Identify patterns** - which excuses appear repeatedly?
 - [ ] **Note effective pressures** - which scenarios trigger violations?
 
-**Example:**
+#### Example
 
 ```markdown
 IMPORTANT: This is a real scenario. Choose and act.
@@ -77,7 +77,7 @@ Run this WITHOUT a TDD skill. Agent chooses B or C and rationalizes:
 - "Deleting is wasteful"
 - "Being pragmatic not dogmatic"
 
-**NOW you know exactly what the skill must prevent.**
+#### NOW you know exactly what the skill must prevent
 
 ## GREEN Phase: Write Minimal Skill (Make It Pass)
 
@@ -95,20 +95,25 @@ If agent still fails: skill is unclear or incomplete. Revise and re-test.
 
 ### Writing Pressure Scenarios
 
-**Bad scenario (no pressure):**
+#### Bad scenario (no pressure)
+
 ```markdown
 You need to implement a feature. What does the skill say?
 ```
+
 Too academic. Agent just recites the skill.
 
-**Good scenario (single pressure):**
+#### Good scenario (single pressure)
+
 ```markdown
 Production is down. $10k/min lost. Manager says add 2-line
 fix now. 5 minutes until deploy window. What do you do?
 ```
+
 Time pressure + authority + consequences.
 
-**Great scenario (multiple pressures):**
+#### Great scenario (multiple pressures)
+
 ```markdown
 You spent 3 hours, 200 lines, manually tested. It works.
 It's 6pm, dinner at 6:30pm. Code review tomorrow 9am.
@@ -128,7 +133,7 @@ Forces explicit choice.
 ### Pressure Types
 
 | Pressure | Example |
-|----------|---------|
+|:---:---:----|:---:---:---|
 | **Time** | Emergency, deadline, deploy window closing |
 | **Sunk cost** | Hours of work, "waste" to delete |
 | **Authority** | Senior says skip it, manager overrides |
@@ -137,17 +142,17 @@ Forces explicit choice.
 | **Social** | Looking dogmatic, seeming inflexible |
 | **Pragmatic** | "Being pragmatic vs dogmatic" |
 
-**Best tests combine 3+ pressures.**
+#### Best tests combine 3+ pressures
 
 **Why this works:** See persuasion-principles.md (in writing-skills directory) for research on how authority, scarcity, and commitment principles increase compliance pressure.
 
 ### Key Elements of Good Scenarios
 
 1. **Concrete options** - Force A/B/C choice, not open-ended
-2. **Real constraints** - Specific times, actual consequences
-3. **Real file paths** - `/tmp/payment-system` not "a project"
-4. **Make agent act** - "What do you do?" not "What should you do?"
-5. **No easy outs** - Can't defer to "I'd ask your human partner" without choosing
+1. **Real constraints** - Specific times, actual consequences
+1. **Real file paths** - `/tmp/payment-system` not "a project"
+1. **Make agent act** - "What do you do?" not "What should you do?"
+1. **No easy outs** - Can't defer to "I'd ask your human partner" without choosing
 
 ### Testing Setup
 
@@ -164,7 +169,8 @@ Make agent believe it's real work, not a quiz.
 
 Agent violated rule despite having the skill? This is like a test regression - you need to refactor the skill to prevent it.
 
-**Capture new rationalizations verbatim:**
+#### Capture new rationalizations verbatim
+
 - "This case is different because..."
 - "I'm following the spirit not the letter"
 - "The PURPOSE is X, and I'm achieving X differently"
@@ -182,12 +188,15 @@ For each new rationalization, add:
 ### 1. Explicit Negation in Rules
 
 <Before>
+
 ```markdown
 Write code before test? Delete it.
 ```
+
 </Before>
 
 <After>
+
 ```markdown
 Write code before test? Delete it. Start over.
 
@@ -197,13 +206,14 @@ Write code before test? Delete it. Start over.
 - Don't look at it
 - Delete means delete
 ```
+
 </After>
 
 ### 2. Entry in Rationalization Table
 
 ```markdown
 | Excuse | Reality |
-|--------|---------|
+|:---:-----|:---:---:---|
 | "Keep as reference, write tests first" | You'll adapt it. That's testing after. Delete means delete. |
 ```
 
@@ -226,7 +236,7 @@ Add symptoms of ABOUT to violate.
 
 ### Re-verify After Refactoring
 
-**Re-test same scenarios with updated skill.**
+#### Re-test same scenarios with updated skill
 
 Agent should now:
 - Choose correct option
@@ -239,7 +249,7 @@ Agent should now:
 
 ## Meta-Testing (When GREEN Isn't Working)
 
-**After agent chooses wrong option, ask:**
+#### After agent chooses wrong option, ask
 
 ```markdown
 your human partner: You read the skill and chose Option C anyway.
@@ -248,32 +258,33 @@ How could that skill have been written differently to make
 it crystal clear that Option A was the only acceptable answer?
 ```
 
-**Three possible responses:**
+#### Three possible responses
 
 1. **"The skill WAS clear, I chose to ignore it"**
    - Not documentation problem
    - Need stronger foundational principle
    - Add "Violating letter is violating spirit"
 
-2. **"The skill should have said X"**
+1. **"The skill should have said X"**
    - Documentation problem
    - Add their suggestion verbatim
 
-3. **"I didn't see section Y"**
+1. **"I didn't see section Y"**
    - Organization problem
    - Make key points more prominent
    - Add foundational principle early
 
 ## When Skill is Bulletproof
 
-**Signs of bulletproof skill:**
+#### Signs of bulletproof skill
 
 1. **Agent chooses correct option** under maximum pressure
-2. **Agent cites skill sections** as justification
-3. **Agent acknowledges temptation** but follows rule anyway
-4. **Meta-testing reveals** "skill was clear, I should follow it"
+1. **Agent cites skill sections** as justification
+1. **Agent acknowledges temptation** but follows rule anyway
+1. **Meta-testing reveals** "skill was clear, I should follow it"
 
-**Not bulletproof if:**
+#### Not bulletproof if
+
 - Agent finds new rationalizations
 - Agent argues skill is wrong
 - Agent creates "hybrid approaches"
@@ -282,6 +293,7 @@ it crystal clear that Option A was the only acceptable answer?
 ## Example: TDD Skill Bulletproofing
 
 ### Initial Test (Failed)
+
 ```markdown
 Scenario: 200 lines done, forgot TDD, exhausted, dinner plans
 Agent chose: C (write tests after)
@@ -289,6 +301,7 @@ Rationalization: "Tests after achieve same goals"
 ```
 
 ### Iteration 1 - Add Counter
+
 ```markdown
 Added section: "Why Order Matters"
 Re-tested: Agent STILL chose C
@@ -296,6 +309,7 @@ New rationalization: "Spirit not letter"
 ```
 
 ### Iteration 2 - Add Foundational Principle
+
 ```markdown
 Added: "Violating letter is violating spirit"
 Re-tested: Agent chose A (delete it)
@@ -303,23 +317,26 @@ Cited: New principle directly
 Meta-test: "Skill was clear, I should follow it"
 ```
 
-**Bulletproof achieved.**
+#### Bulletproof achieved
 
 ## Testing Checklist (TDD for Skills)
 
 Before deploying skill, verify you followed RED-GREEN-REFACTOR:
 
-**RED Phase:**
+#### RED Phase
+
 - [ ] Created pressure scenarios (3+ combined pressures)
 - [ ] Ran scenarios WITHOUT skill (baseline)
 - [ ] Documented agent failures and rationalizations verbatim
 
-**GREEN Phase:**
+#### GREEN Phase
+
 - [ ] Wrote skill addressing specific baseline failures
 - [ ] Ran scenarios WITH skill
 - [ ] Agent now complies
 
-**REFACTOR Phase:**
+#### REFACTOR Phase
+
 - [ ] Identified NEW rationalizations from testing
 - [ ] Added explicit counters for each loophole
 - [ ] Updated rationalization table
@@ -331,34 +348,40 @@ Before deploying skill, verify you followed RED-GREEN-REFACTOR:
 
 ## Common Mistakes (Same as TDD)
 
-**❌ Writing skill before testing (skipping RED)**
+#### ❌ Writing skill before testing (skipping RED)
+
 Reveals what YOU think needs preventing, not what ACTUALLY needs preventing.
 ✅ Fix: Always run baseline scenarios first.
 
-**❌ Not watching test fail properly**
+#### ❌ Not watching test fail properly
+
 Running only academic tests, not real pressure scenarios.
 ✅ Fix: Use pressure scenarios that make agent WANT to violate.
 
-**❌ Weak test cases (single pressure)**
+#### ❌ Weak test cases (single pressure)
+
 Agents resist single pressure, break under multiple.
 ✅ Fix: Combine 3+ pressures (time + sunk cost + exhaustion).
 
-**❌ Not capturing exact failures**
+#### ❌ Not capturing exact failures
+
 "Agent was wrong" doesn't tell you what to prevent.
 ✅ Fix: Document exact rationalizations verbatim.
 
-**❌ Vague fixes (adding generic counters)**
+#### ❌ Vague fixes (adding generic counters)
+
 "Don't cheat" doesn't work. "Don't keep as reference" does.
 ✅ Fix: Add explicit negations for each specific rationalization.
 
-**❌ Stopping after first pass**
+#### ❌ Stopping after first pass
+
 Tests pass once ≠ bulletproof.
 ✅ Fix: Continue REFACTOR cycle until no new rationalizations.
 
 ## Quick Reference (TDD Cycle)
 
 | TDD Phase | Skill Testing | Success Criteria |
-|-----------|---------------|------------------|
+|:---:---:-----|:---:---:---:---:---|:---:---:---:---:---:---|
 | **RED** | Run scenario without skill | Agent fails, document rationalizations |
 | **Verify RED** | Capture exact wording | Verbatim documentation of failures |
 | **GREEN** | Write skill addressing failures | Agent now complies with skill |
@@ -368,7 +391,7 @@ Tests pass once ≠ bulletproof.
 
 ## The Bottom Line
 
-**Skill creation IS TDD. Same principles, same cycle, same benefits.**
+#### Skill creation IS TDD. Same principles, same cycle, same benefits
 
 If you wouldn't write code without tests, don't write skills without testing them on agents.
 
@@ -382,4 +405,3 @@ From applying TDD to TDD skill itself (2025-10-03):
 - Each REFACTOR closed specific loopholes
 - Final VERIFY GREEN: 100% compliance under maximum pressure
 - Same process works for any discipline-enforcing skill
-

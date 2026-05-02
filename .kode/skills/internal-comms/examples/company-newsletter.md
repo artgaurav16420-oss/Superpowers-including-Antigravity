@@ -1,4 +1,7 @@
+# 
+
 ## Instructions
+
 You are being asked to write a company-wide newsletter update. You are meant to summarize the past week/month of a company in the form of a newsletter that the entire company will read. It should be maybe ~20-25 bullet points long. It will be sent via Slack and email, so make it consumable for that.
 
 Ideally it includes the following attributes:
@@ -7,6 +10,7 @@ Ideally it includes the following attributes:
 - Use the "we" tense, as you are part of the company. Many of the bullets should say "we did this" or "we did that"
 
 ## Tools to use
+
 If you have access to the following tools, please try to use them. If not, you can also let the user know directly that their responses would be better if they gave them access.
 
 - Slack: look for messages in channels with lots of people, with lots of reactions or lots of responses within the thread
@@ -18,9 +22,11 @@ If you have access to the following tools, please try to use them. If not, you c
 If you don't have access to any of these things, you can ask the user for things they want to cover. In this case, you'll mostly just be polishing up and fitting to this format more directly.
 
 ## Sections
+
 The company is pretty big: 1000+ people. There are a variety of different teams and initiatives going on across the company. To make sure the update works well, try breaking it into sections of similar things. You might break into clusters like {product development, go to market, finance} or {recruiting, execution, vision}, or {external news, internal news} etc. Try to make sure the different areas of the company are highlighted well.
 
 ## Prioritization
+
 Focus on:
 - Company-wide impact (not team-specific details)
 - Announcements from leadership

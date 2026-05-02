@@ -15,7 +15,7 @@ The Codex CLI (open source terminal tool) does NOT have this conflict — it has
 Tested in the Codex App on 2026-03-23:
 
 | Operation | workspace-write sandbox | Full access sandbox |
-|---|---|---|
+|:---|:---|:---|
 | `git add` | Works | Works |
 | `git commit` | Works | Works |
 | `git checkout -b` | **Blocked** (can't write `.git/refs/heads/`) | Works |
@@ -53,7 +53,7 @@ Why `git-dir != git-common-dir` instead of checking `show-toplevel`:
 ### Decision Matrix
 
 | Linked Worktree? | Detached HEAD? | Environment | Action |
-|---|---|---|---|
+|:---|:---|:---|:---|
 | No | No | Claude Code / Codex CLI / normal git | Full skill behavior (unchanged) |
 | Yes | Yes | Codex App worktree (workspace-write) | Skip worktree creation; handoff payload at finish |
 | Yes | No | Codex App (Full access) or manual worktree | Skip worktree creation; full finishing flow |
@@ -65,12 +65,12 @@ Why `git-dir != git-common-dir` instead of checking `show-toplevel`:
 
 New section between "Overview" and "Directory Selection Process":
 
-**Step 0: Check if Already in an Isolated Workspace**
+#### Step 0: Check if Already in an Isolated Workspace
 
 Run the detection commands. If `GIT_DIR != GIT_COMMON`, skip worktree creation entirely. Instead:
 1. Skip to "Run Project Setup" subsection under Creation Steps — `npm install` etc. is idempotent, worth running for safety
-2. Then "Verify Clean Baseline" — run tests
-3. Report with branch state:
+1. Then "Verify Clean Baseline" — run tests
+1. Report with branch state:
    - On a branch: "Already in an isolated workspace at `<path>` on branch `<name>`. Tests passing. Ready to implement."
    - Detached HEAD: "Already in an isolated workspace at `<path>` (detached HEAD, externally managed). Tests passing. Note: branch creation needed at finish time. Ready to implement."
 
@@ -101,7 +101,7 @@ First, ensure all work is staged and committed (`git add` + `git commit`). The C
 
 Then present this to the user (do NOT present the 4-option menu):
 
-```
+```text
 Implementation complete. All tests passing.
 Current HEAD: <full-commit-sha>
 
@@ -131,7 +131,7 @@ Present the 4-option menu as normal. (The Step 5 cleanup guard will re-detect th
 
 Present the 4-option menu as today (unchanged).
 
-**Step 5 cleanup guard:**
+#### Step 5 cleanup guard
 
 Re-run the `GIT_DIR` vs `GIT_COMMON` detection at cleanup time (do not rely on earlier skill output — the finishing skill may run in a different session). If `GIT_DIR != GIT_COMMON`, skip `git worktree remove` — the host environment owns this workspace.
 
@@ -142,11 +142,14 @@ Otherwise, check and remove as today. Note: the existing Step 5 text says "For O
 ### 3. `subagent-driven-development/SKILL.md` and `executing-plans/SKILL.md` — 1 line edit each
 
 Both skills have an identical Integration section line. Change from:
-```
+
+```text
 - mega-skills:using-git-worktrees - REQUIRED: Set up isolated workspace before starting
 ```
+
 To:
-```
+
+```text
 - mega-skills:using-git-worktrees - REQUIRED: Ensures isolated workspace (creates one or verifies existing)
 ```
 
@@ -156,7 +159,7 @@ To:
 
 Two new sections at the end:
 
-**Environment Detection:**
+#### Environment Detection
 
 ```markdown
 ## Environment Detection
@@ -177,7 +180,7 @@ See `using-git-worktrees` Step 0 and `finishing-a-development-branch`
 Step 1.5 for how each skill uses these signals.
 ```
 
-**Codex App Finishing:**
+#### Codex App Finishing
 
 ```markdown
 ## Codex App Finishing
@@ -206,7 +209,7 @@ names, commit messages, and PR descriptions for the user to copy.
 ## Scope Summary
 
 | File | Change |
-|---|---|
+|:---|:---|
 | `skills/using-git-worktrees/SKILL.md` | +12 lines (Step 0) |
 | `skills/finishing-a-development-branch/SKILL.md` | +20 lines (Step 1.5 + cleanup guard) |
 | `skills/subagent-driven-development/SKILL.md` | 1 line edit |
@@ -224,23 +227,21 @@ If a third skill needs the same detection pattern, extract it into a shared `ref
 ### Automated (run in Claude Code after implementation)
 
 1. Normal repo detection — assert IN_LINKED_WORKTREE=false
-2. Linked worktree detection — `git worktree add` test worktree, assert IN_LINKED_WORKTREE=true
-3. Detached HEAD detection — `git checkout --detach`, assert ON_DETACHED_HEAD=true
-4. Finishing skill handoff output — verify handoff message (not 4-option menu) in restricted environment
-5. **Step 5 cleanup guard** — create a linked worktree (`git worktree add /tmp/test-cleanup -b test-cleanup`), `cd` into it, run the Step 5 cleanup detection (`GIT_DIR` vs `GIT_COMMON`), assert it would NOT call `git worktree remove`. Then `cd` back to main repo, run the same detection, assert it WOULD call `git worktree remove`. Clean up test worktree afterward.
+1. Linked worktree detection — `git worktree add` test worktree, assert IN_LINKED_WORKTREE=true
+1. Detached HEAD detection — `git checkout --detach`, assert ON_DETACHED_HEAD=true
+1. Finishing skill handoff output — verify handoff message (not 4-option menu) in restricted environment
+1. **Step 5 cleanup guard** — create a linked worktree (`git worktree add /tmp/test-cleanup -b test-cleanup`), `cd` into it, run the Step 5 cleanup detection (`GIT_DIR` vs `GIT_COMMON`), assert it would NOT call `git worktree remove`. Then `cd` back to main repo, run the same detection, assert it WOULD call `git worktree remove`. Clean up test worktree afterward.
 
 ### Manual Codex App Tests (5 tests)
 
 1. Detection in Worktree thread (workspace-write) — verify GIT_DIR != GIT_COMMON, empty branch
-2. Detection in Worktree thread (Full access) — same detection, different sandbox behavior
-3. Finishing skill handoff format — verify agent emits handoff payload, not 4-option menu
-4. Full lifecycle — detection → commit → finishing detection → correct behavior → cleanup
-5. **Sandbox fallback in Local thread** — Start a Codex App **Local thread** (workspace-write sandbox). Prompt: "Use the superpowers skill `using-git-worktrees` to set up an isolated workspace for implementing a small change." Pre-check: `git checkout -b test-sandbox-check` should fail with `Operation not permitted`. Expected: the skill detects `GIT_DIR == GIT_COMMON` (normal repo), attempts `git worktree add -b`, hits Seatbelt denial, falls back to Step 0 "already in workspace" behavior — runs setup, baseline tests, reports ready from current directory. Pass: agent recovers gracefully without cryptic error messages. Fail: agent prints raw Seatbelt error, retries, or gives up with confusing output.
+1. Detection in Worktree thread (Full access) — same detection, different sandbox behavior
+1. Finishing skill handoff format — verify agent emits handoff payload, not 4-option menu
+1. Full lifecycle — detection → commit → finishing detection → correct behavior → cleanup
+1. **Sandbox fallback in Local thread** — Start a Codex App **Local thread** (workspace-write sandbox). Prompt: "Use the superpowers skill `using-git-worktrees` to set up an isolated workspace for implementing a small change." Pre-check: `git checkout -b test-sandbox-check` should fail with `Operation not permitted`. Expected: the skill detects `GIT_DIR == GIT_COMMON` (normal repo), attempts `git worktree add -b`, hits Seatbelt denial, falls back to Step 0 "already in workspace" behavior — runs setup, baseline tests, reports ready from current directory. Pass: agent recovers gracefully without cryptic error messages. Fail: agent prints raw Seatbelt error, retries, or gives up with confusing output.
 
 ### Regression
 
 - Existing Claude Code skill-triggering tests still pass
 - Existing subagent-driven-development integration tests still pass
 - Normal Claude Code session: full worktree creation + 4-option finishing still works
-
-

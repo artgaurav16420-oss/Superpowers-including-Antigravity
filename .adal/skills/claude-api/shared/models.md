@@ -13,7 +13,7 @@ m.display_name       # "Claude Opus 4.7"
 m.max_input_tokens   # context window (int)
 m.max_tokens         # max output tokens (int)
 
-# capabilities is an untyped nested dict — bracket access, check ["supported"] at the leaf
+## capabilities is an untyped nested dict — bracket access, check ["supported"] at the leaf
 caps = m.capabilities
 caps["image_input"]["supported"]                       # vision
 caps["thinking"]["types"]["adaptive"]["supported"]     # adaptive thinking
@@ -21,7 +21,7 @@ caps["effort"]["max"]["supported"]                     # effort: max (also low/m
 caps["structured_outputs"]["supported"]
 caps["context_management"]["compact_20260112"]["supported"]
 
-# filter across all models — iterate the page object directly (auto-paginates); do NOT use .data
+## filter across all models — iterate the page object directly (auto-paginates); do NOT use .data
 [m for m in client.models.list()
  if m.capabilities["thinking"]["types"]["adaptive"]["supported"]
  and m.max_input_tokens >= 200_000]
@@ -32,7 +32,7 @@ Top-level fields (`id`, `display_name`, `max_input_tokens`, `max_tokens`) are ty
 ### Raw HTTP
 
 ```bash
-curl https://api.anthropic.com/v1/models/claude-opus-4-7 \
+curl [https://api.anthropic.com/v1/models/claude-opus-4-7](https://api.anthropic.com/v1/models/claude-opus-4-7) \
   -H "x-api-key: $ANTHROPIC_API_KEY" \
   -H "anthropic-version: 2023-06-01"
 ```
@@ -56,13 +56,14 @@ curl https://api.anthropic.com/v1/models/claude-opus-4-7 \
 ## Current Models (recommended)
 
 | Friendly Name     | Alias (use this)    | Full ID                       | Context        | Max Output | Status |
-|-------------------|---------------------|-------------------------------|----------------|------------|--------|
+|:---:---:---:---:---:----|:---:---:---:---:---:---:---|:---:---:---:---:---:---:---:---:---:----|:---:---:---:---:----|:---:---:---:---|:---:-----|
 | Claude Opus 4.7   | `claude-opus-4-7`   | —                             | 1M             | 128K       | Active |
 | Claude Opus 4.6   | `claude-opus-4-6`   | —                             | 1M             | 128K       | Active |
 | Claude Sonnet 4.6 | `claude-sonnet-4-6` | -                             | 1M             | 64K        | Active |
 | Claude Haiku 4.5  | `claude-haiku-4-5`  | `claude-haiku-4-5-20251001`   | 200K           | 64K        | Active |
 
 ### Model Descriptions
+
 - **Claude Opus 4.7** — The most capable Claude model to date — highly autonomous, strong on long-horizon agentic work, knowledge work, vision, and memory. Adaptive thinking only; sampling parameters and `budget_tokens` are removed. 1M context window at standard API pricing (no long-context premium) — see `shared/model-migration.md` → Migrating to Opus 4.7 for breaking changes.
 - **Claude Opus 4.6** — Previous-generation Opus. Supports adaptive thinking (recommended), 128K max output tokens (requires streaming for large outputs). 1M context window.
 - **Claude Sonnet 4.6** — Our best combination of speed and intelligence. Supports adaptive thinking (recommended). 1M context window. 64K max output tokens.
@@ -71,7 +72,7 @@ curl https://api.anthropic.com/v1/models/claude-opus-4-7 \
 ## Legacy Models (still active)
 
 | Friendly Name     | Alias (use this)    | Full ID                       | Status |
-|-------------------|---------------------|-------------------------------|--------|
+|:---:---:---:---:---:----|:---:---:---:---:---:---:---|:---:---:---:---:---:---:---:---:---:----|:---:-----|
 | Claude Opus 4.5   | `claude-opus-4-5`   | `claude-opus-4-5-20251101`    | Active |
 | Claude Opus 4.1   | `claude-opus-4-1`   | `claude-opus-4-1-20250805`    | Active |
 | Claude Sonnet 4.5 | `claude-sonnet-4-5` | `claude-sonnet-4-5-20250929`  | Active |
@@ -81,13 +82,13 @@ curl https://api.anthropic.com/v1/models/claude-opus-4-7 \
 ## Deprecated Models (retiring soon)
 
 | Friendly Name     | Alias (use this)    | Full ID                       | Status     | Retires      |
-|-------------------|---------------------|-------------------------------|------------|--------------|
+|:---:---:---:---:---:----|:---:---:---:---:---:---:---|:---:---:---:---:---:---:---:---:---:----|:---:---:---:---|:---:---:---:-----|
 | Claude Haiku 3    | —                   | `claude-3-haiku-20240307`     | Deprecated | Apr 19, 2026 |
 
 ## Retired Models (no longer available)
 
 | Friendly Name     | Full ID                       | Retired     |
-|-------------------|-------------------------------|-------------|
+|:---:---:---:---:---:----|:---:---:---:---:---:---:---:---:---:----|:---:---:---:----|
 | Claude Sonnet 3.7 | `claude-3-7-sonnet-20250219`  | Feb 19, 2026 |
 | Claude Haiku 3.5  | `claude-3-5-haiku-20241022`   | Feb 19, 2026 |
 | Claude Opus 3     | `claude-3-opus-20240229`      | Jan 5, 2026 |
@@ -102,7 +103,7 @@ curl https://api.anthropic.com/v1/models/claude-opus-4-7 \
 When a user asks for a model by name, use this table to find the correct model ID:
 
 | User says...                              | Use this model ID              |
-|-------------------------------------------|--------------------------------|
+|:---:---:---:---:---:---:---:---:---:---:---:---:---:----|:---:---:---:---:---:---:---:---:---:-----|
 | "opus", "most powerful"                   | `claude-opus-4-7`              |
 | "opus 4.7"                                | `claude-opus-4-7`              |
 | "opus 4.6"                                | `claude-opus-4-6`              |

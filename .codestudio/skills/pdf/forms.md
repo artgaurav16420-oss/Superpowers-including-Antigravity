@@ -1,12 +1,16 @@
-**CRITICAL: You MUST complete these steps in order. Do not skip ahead to writing code.**
+# 
+
+#### CRITICAL: You MUST complete these steps in order. Do not skip ahead to writing code
 
 If you need to fill out a PDF form, first check to see if the PDF has fillable form fields. Run this script from this file's directory:
  `python scripts/check_fillable_fields <file.pdf>`, and depending on the result go to either the "Fillable fields" or "Non-fillable fields" and follow those instructions.
 
-# Fillable fields
+## Fillable fields
+
 If the PDF has fillable form fields:
 - Run this script from this file's directory: `python scripts/extract_form_field_info.py <input.pdf> <field_info.json>`. It will create a JSON file with a list of fields in this format:
-```
+
+```text
 [
   {
     "field_id": (unique ID for the field),
@@ -50,11 +54,13 @@ If the PDF has fillable form fields:
   }
 ]
 ```
+
 - Convert the PDF to PNGs (one image for each page) with this script (run from this file's directory):
 `python scripts/convert_pdf_to_images.py <file.pdf> <output_directory>`
 Then analyze the images to determine the purpose of each form field (make sure to convert the bounding box PDF coordinates to image coordinates).
 - Create a `field_values.json` file in this format with the values to be entered for each field:
-```
+
+```text
 [
   {
     "field_id": "last_name", // Must match the field_id from `extract_form_field_info.py`
@@ -71,11 +77,13 @@ Then analyze the images to determine the purpose of each form field (make sure t
   // more fields
 ]
 ```
+
 - Run the `fill_fillable_fields.py` script from this file's directory to create a filled-in PDF:
 `python scripts/fill_fillable_fields.py <input pdf> <field_values.json> <output pdf>`
 This script will verify that the field IDs and values you provide are valid; if it prints error messages, correct the appropriate fields and try again.
 
-# Non-fillable fields
+## Non-fillable fields
+
 If the PDF doesn't have fillable form fields, you'll add text annotations. First try to extract coordinates from the PDF structure (more accurate), then fall back to visual estimation if needed.
 
 ## Step 1: Try Structure Extraction First
@@ -102,9 +110,9 @@ Use this when `extract_form_structure.py` found text labels in the PDF.
 Read form_structure.json and identify:
 
 1. **Label groups**: Adjacent text elements that form a single label (e.g., "Last" + "Name")
-2. **Row structure**: Labels with similar `top` values are in the same row
-3. **Field columns**: Entry areas start after label ends (x0 = label.x1 + gap)
-4. **Checkboxes**: Use the checkbox coordinates directly from the structure
+1. **Row structure**: Labels with similar `top` values are in the same row
+1. **Field columns**: Entry areas start after label ends (x0 = label.x1 + gap)
+1. **Checkboxes**: Use the checkbox coordinates directly from the structure
 
 **Coordinate system**: PDF coordinates where y=0 is at TOP of page, y increases downward.
 
@@ -121,17 +129,20 @@ If you see form fields in the PDF images that aren't in form_structure.json, you
 
 For each field, calculate entry coordinates from the extracted structure:
 
-**Text fields:**
+#### Text fields
+
 - entry x0 = label x1 + 5 (small gap after label)
 - entry x1 = next label's x0, or row boundary
 - entry top = same as label top
 - entry bottom = row boundary line below, or label bottom + row_height
 
-**Checkboxes:**
+#### Checkboxes
+
 - Use the checkbox rectangle coordinates directly from form_structure.json
 - entry_bounding_box = [checkbox.x0, checkbox.top, checkbox.x1, checkbox.bottom]
 
 Create fields.json using `pdf_width` and `pdf_height` (signals PDF coordinates):
+
 ```json
 {
   "pages": [
@@ -190,7 +201,8 @@ For each field, note approximate pixel coordinates (they don't need to be precis
 
 For each field, crop a region around the estimated position to refine coordinates precisely.
 
-**Create a zoomed crop using ImageMagick:**
+#### Create a zoomed crop using ImageMagick
+
 ```bash
 magick <page_image> -crop <width>x<height>+<x>+<y> +repage <crop_output.png>
 ```
@@ -200,6 +212,7 @@ Where:
 - `<width>, <height>` = size of crop region (field area plus ~50px padding on each side)
 
 **Example:** To refine a "Name" field estimated around (100, 150):
+
 ```bash
 magick images_dir/page_1.png -crop 300x80+50+120 +repage crops/name_field.png
 ```
@@ -208,10 +221,11 @@ magick images_dir/page_1.png -crop 300x80+50+120 +repage crops/name_field.png
 
 **Examine the cropped image** to determine precise coordinates:
 1. Identify the exact pixel where the entry area begins (after the label)
-2. Identify where the entry area ends (before next field or edge)
-3. Identify the top and bottom of the entry line/box
+1. Identify where the entry area ends (before next field or edge)
+1. Identify the top and bottom of the entry line/box
 
-**Convert crop coordinates back to full image coordinates:**
+#### Convert crop coordinates back to full image coordinates
+
 - full_x = crop_x + crop_offset_x
 - full_y = crop_y + crop_offset_y
 
@@ -224,6 +238,7 @@ Example: If the crop started at (50, 120) and the entry box starts at (52, 18) w
 ### B.4: Create fields.json with Refined Coordinates
 
 Create fields.json using `image_width` and `image_height` (signals image coordinates):
+
 ```json
 {
   "pages": [
@@ -258,18 +273,19 @@ This checks for intersecting bounding boxes and entry boxes that are too small f
 Use this when structure extraction works for most fields but misses some elements (e.g., circular checkboxes, unusual form controls).
 
 1. **Use Approach A** for fields that were detected in form_structure.json
-2. **Convert PDF to images** for visual analysis of missing fields
-3. **Use zoom refinement** (from Approach B) for the missing fields
-4. **Combine coordinates**: For fields from structure extraction, use `pdf_width`/`pdf_height`. For visually-estimated fields, you must convert image coordinates to PDF coordinates:
+1. **Convert PDF to images** for visual analysis of missing fields
+1. **Use zoom refinement** (from Approach B) for the missing fields
+1. **Combine coordinates**: For fields from structure extraction, use `pdf_width`/`pdf_height`. For visually-estimated fields, you must convert image coordinates to PDF coordinates:
    - pdf_x = image_x * (pdf_width / image_width)
    - pdf_y = image_y * (pdf_height / image_height)
-5. **Use a single coordinate system** in fields.json - convert all to PDF coordinates with `pdf_width`/`pdf_height`
+1. **Use a single coordinate system** in fields.json - convert all to PDF coordinates with `pdf_width`/`pdf_height`
 
 ---
 
 ## Step 2: Validate Before Filling
 
-**Always validate bounding boxes before filling:**
+#### Always validate bounding boxes before filling
+
 `python scripts/check_bounding_boxes.py fields.json`
 
 This checks for:

@@ -31,7 +31,8 @@
 
 ### Task 1: Implement WebSocket protocol exports
 
-**Files:**
+#### Files
+
 - Create: `skills/brainstorming/scripts/server.js`
 - Test: `tests/brainstorm-server/ws-protocol.test.js` (already exists)
 
@@ -147,7 +148,8 @@ git commit -m "Add WebSocket protocol layer for zero-dep brainstorm server"
 
 ### Task 2: Add HTTP server, file watching, and WebSocket connection handling
 
-**Files:**
+#### Files
+
 - Modify: `skills/brainstorming/scripts/server.js`
 - Test: `tests/brainstorm-server/server.test.js` (already exists)
 
@@ -371,7 +373,7 @@ function startServer() {
   server.listen(PORT, HOST, () => {
     const info = JSON.stringify({
       type: 'server-started', port: Number(PORT), host: HOST,
-      url_host: URL_HOST, url: 'http://' + URL_HOST + ':' + PORT,
+      url_host: URL_HOST, url: '[http://'](http://') + URL_HOST + ':' + PORT,
       screen_dir: SCREEN_DIR
     });
     console.log(info);
@@ -404,7 +406,8 @@ git commit -m "Add HTTP server, WebSocket handling, and file watching to server.
 
 ### Task 3: Update start-server.sh and remove old files
 
-**Files:**
+#### Files
+
 - Modify: `skills/brainstorming/scripts/start-server.sh:94,100`
 - Modify: `.gitignore:6`
 - Delete: `skills/brainstorming/scripts/index.js`
@@ -456,7 +459,7 @@ BRAINSTORM_DIR=/tmp/brainstorm-smoke BRAINSTORM_PORT=9876 node server.js
 
 Expected: `server-started` JSON printed with port 9876
 
-- [ ] **Step 2: Open browser to http://localhost:9876**
+- [ ] **Step 2: Open browser to [http://localhost:9876**](http://localhost:9876**)
 
 Expected: Waiting page with "Waiting for Claude to push a screen..."
 
@@ -477,4 +480,3 @@ Open browser dev tools. The WebSocket connection should show as connected (no er
 ```bash
 rm -rf /tmp/brainstorm-smoke
 ```
-

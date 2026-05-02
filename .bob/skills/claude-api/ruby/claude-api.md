@@ -13,10 +13,10 @@ gem install anthropic
 ```ruby
 require "anthropic"
 
-# Default (uses ANTHROPIC_API_KEY env var)
+## Default (uses ANTHROPIC_API_KEY env var)
 client = Anthropic::Client.new
 
-# Explicit API key
+## Explicit API key
 client = Anthropic::Client.new(api_key: "your-api-key")
 ```
 
@@ -32,9 +32,9 @@ message = client.messages.create(
     { role: "user", content: "What is the capital of France?" }
   ]
 )
-# content is an array of polymorphic block objects (TextBlock, ThinkingBlock,
-# ToolUseBlock, ...). .type is a Symbol — compare with :text, not "text".
-# .text raises NoMethodError on non-TextBlock entries.
+## content is an array of polymorphic block objects (TextBlock, ThinkingBlock,
+## ToolUseBlock, ...). .type is a Symbol — compare with :text, not "text"
+## .text raises NoMethodError on non-TextBlock entries
 message.content.each do |block|
   puts block.text if block.type == :text
 end

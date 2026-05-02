@@ -9,25 +9,30 @@ This document compiles essential best practices and guidelines for building Mode
 ## Quick Reference
 
 ### Server Naming
+
 - **Python**: `{service}_mcp` (e.g., `slack_mcp`)
 - **Node/TypeScript**: `{service}-mcp-server` (e.g., `slack-mcp-server`)
 
 ### Tool Naming
+
 - Use snake_case with service prefix
 - Format: `{service}_{action}_{resource}`
 - Example: `slack_send_message`, `github_create_issue`
 
 ### Response Formats
+
 - Support both JSON and Markdown formats
 - JSON for programmatic processing
 - Markdown for human readability
 
 ### Pagination
+
 - Always respect `limit` parameter
 - Return `has_more`, `next_offset`, `total_count`
 - Default to 20-50 items
 
 ### Character Limits
+
 - Set CHARACTER_LIMIT constant (typically 25,000)
 - Truncate gracefully with clear messages
 - Provide guidance on filtering
@@ -35,20 +40,21 @@ This document compiles essential best practices and guidelines for building Mode
 ---
 
 ## Table of Contents
+
 1. Server Naming Conventions
-2. Tool Naming and Design
-3. Response Format Guidelines
-4. Pagination Best Practices
-5. Character Limits and Truncation
-6. Tool Development Best Practices
-7. Transport Best Practices
-8. Testing Requirements
-9. OAuth and Security Best Practices
-10. Resource Management Best Practices
-11. Prompt Management Best Practices
-12. Error Handling Standards
-13. Documentation Requirements
-14. Compliance and Monitoring
+1. Tool Naming and Design
+1. Response Format Guidelines
+1. Pagination Best Practices
+1. Character Limits and Truncation
+1. Tool Development Best Practices
+1. Transport Best Practices
+1. Testing Requirements
+1. OAuth and Security Best Practices
+1. Resource Management Best Practices
+1. Prompt Management Best Practices
+1. Error Handling Standards
+1. Documentation Requirements
+1. Compliance and Monitoring
 
 ---
 
@@ -75,13 +81,13 @@ The name should be:
 ### Tool Naming Best Practices
 
 1. **Use snake_case**: `search_users`, `create_project`, `get_channel_info`
-2. **Include service prefix**: Anticipate that your MCP server may be used alongside other MCP servers
+1. **Include service prefix**: Anticipate that your MCP server may be used alongside other MCP servers
    - Use `slack_send_message` instead of just `send_message`
    - Use `github_create_issue` instead of just `create_issue`
    - Use `asana_list_tasks` instead of just `list_tasks`
-3. **Be action-oriented**: Start with verbs (get, list, search, create, etc.)
-4. **Be specific**: Avoid generic names that could conflict with other servers
-5. **Maintain consistency**: Use consistent naming patterns within your server
+1. **Be action-oriented**: Start with verbs (get, list, search, create, etc.)
+1. **Be specific**: Avoid generic names that could conflict with other servers
+1. **Maintain consistency**: Use consistent naming patterns within your server
 
 ### Tool Design Guidelines
 
@@ -98,6 +104,7 @@ The name should be:
 All tools that return data should support multiple formats for flexibility:
 
 ### JSON Format (`response_format="json"`)
+
 - Machine-readable structured data
 - Include all available fields and metadata
 - Consistent field names and types
@@ -105,6 +112,7 @@ All tools that return data should support multiple formats for flexibility:
 - Use for when LLMs need to process data further
 
 ### Markdown Format (`response_format="markdown"`, typically default)
+
 - Human-readable formatted text
 - Use headers, lists, and formatting for clarity
 - Convert timestamps to human-readable format (e.g., "2024-01-15 10:30:00 UTC" instead of epoch)
@@ -127,6 +135,7 @@ For tools that list resources:
 - **Include clear pagination info in responses**: Make it easy for LLMs to request more data
 
 Example pagination response structure:
+
 ```json
 {
   "total": 150,
@@ -151,6 +160,7 @@ To prevent overwhelming responses with too much data:
 - **Include truncation metadata**: Show what was truncated and how to get more
 
 Example truncation handling:
+
 ```python
 CHARACTER_LIMIT = 25000
 
@@ -220,7 +230,7 @@ MCP servers support multiple transport mechanisms for different deployment scena
 ### Transport Selection Criteria
 
 | Criterion | Stdio | HTTP | SSE |
-|-----------|-------|------|-----|
+|:---:---:-----|:---:----|:---:---|:-----|
 | **Deployment** | Local | Remote | Remote |
 | **Clients** | Single | Multiple | Multiple |
 | **Communication** | Bidirectional | Request-Response | Server-Push |
@@ -232,20 +242,22 @@ MCP servers support multiple transport mechanisms for different deployment scena
 ## 7. Tool Development Best Practices
 
 ### General Guidelines
+
 1. Tool names should be descriptive and action-oriented
-2. Use parameter validation with detailed JSON schemas
-3. Include examples in tool descriptions
-4. Implement proper error handling and validation
-5. Use progress reporting for long operations
-6. Keep tool operations focused and atomic
-7. Document expected return value structures
-8. Implement proper timeouts
-9. Consider rate limiting for resource-intensive operations
-10. Log tool usage for debugging and monitoring
+1. Use parameter validation with detailed JSON schemas
+1. Include examples in tool descriptions
+1. Implement proper error handling and validation
+1. Use progress reporting for long operations
+1. Keep tool operations focused and atomic
+1. Document expected return value structures
+1. Implement proper timeouts
+1. Consider rate limiting for resource-intensive operations
+1. Log tool usage for debugging and monitoring
 
 ### Security Considerations for Tools
 
 #### Input Validation
+
 - Validate all parameters against schema
 - Sanitize file paths and system commands
 - Validate URLs and external identifiers
@@ -253,6 +265,7 @@ MCP servers support multiple transport mechanisms for different deployment scena
 - Prevent command injection
 
 #### Access Control
+
 - Implement authentication where needed
 - Use appropriate authorization checks
 - Audit tool usage
@@ -260,6 +273,7 @@ MCP servers support multiple transport mechanisms for different deployment scena
 - Monitor for abuse
 
 #### Error Handling
+
 - Don't expose internal errors to clients
 - Log security-relevant errors
 - Handle timeouts appropriately
@@ -267,6 +281,7 @@ MCP servers support multiple transport mechanisms for different deployment scena
 - Validate return values
 
 ### Tool Annotations
+
 - Provide readOnlyHint and destructiveHint annotations
 - Remember annotations are hints, not security guarantees
 - Clients should not make security-critical decisions based solely on annotations
@@ -276,19 +291,22 @@ MCP servers support multiple transport mechanisms for different deployment scena
 ## 8. Transport Best Practices
 
 ### General Transport Guidelines
+
 1. Handle connection lifecycle properly
-2. Implement proper error handling
-3. Use appropriate timeout values
-4. Implement connection state management
-5. Clean up resources on disconnection
+1. Implement proper error handling
+1. Use appropriate timeout values
+1. Implement connection state management
+1. Clean up resources on disconnection
 
 ### Security Best Practices for Transport
+
 - Follow security considerations for DNS rebinding attacks
 - Implement proper authentication mechanisms
 - Validate message formats
 - Handle malformed messages gracefully
 
 ### Stdio Transport Specific
+
 - Local MCP servers should NOT log to stdout (interferes with protocol)
 - Use stderr for logging messages
 - Handle standard I/O streams properly
@@ -300,18 +318,23 @@ MCP servers support multiple transport mechanisms for different deployment scena
 A comprehensive testing strategy should cover:
 
 ### Functional Testing
+
 - Verify correct execution with valid/invalid inputs
 
 ### Integration Testing
+
 - Test interaction with external systems
 
 ### Security Testing
+
 - Validate auth, input sanitization, rate limiting
 
 ### Performance Testing
+
 - Check behavior under load, timeouts
 
 ### Error Handling
+
 - Ensure proper error reporting and cleanup
 
 ---
@@ -322,14 +345,16 @@ A comprehensive testing strategy should cover:
 
 MCP servers that connect to external services should implement proper authentication:
 
-**OAuth 2.1 Implementation:**
+#### OAuth 2.1 Implementation
+
 - Use secure OAuth 2.1 with certificates from recognized authorities
 - Validate access tokens before processing requests
 - Only accept tokens specifically intended for your server
 - Reject tokens without proper audience claims
 - Never pass through tokens received from MCP clients
 
-**API Key Management:**
+#### API Key Management
+
 - Store API keys in environment variables, never in code
 - Validate keys on server startup
 - Provide clear error messages when authentication fails
@@ -337,14 +362,16 @@ MCP servers that connect to external services should implement proper authentica
 
 ### Input Validation and Security
 
-**Always validate inputs:**
+#### Always validate inputs
+
 - Sanitize file paths to prevent directory traversal
 - Validate URLs and external identifiers
 - Check parameter sizes and ranges
 - Prevent command injection in system calls
 - Use schema validation (Pydantic/Zod) for all inputs
 
-**Error handling security:**
+#### Error handling security
+
 - Don't expose internal errors to clients
 - Log security-relevant errors server-side
 - Provide helpful but not revealing error messages
@@ -352,13 +379,15 @@ MCP servers that connect to external services should implement proper authentica
 
 ### Privacy and Data Protection
 
-**Data collection principles:**
+#### Data collection principles
+
 - Only collect data strictly necessary for functionality
 - Don't collect extraneous conversation data
 - Don't collect PII unless explicitly required for the tool's purpose
 - Provide clear information about what data is accessed
 
-**Data transmission:**
+#### Data transmission
+
 - Don't send data to servers outside your organization without disclosure
 - Use secure transmission (HTTPS) for all network communication
 - Validate certificates for external services
@@ -368,10 +397,10 @@ MCP servers that connect to external services should implement proper authentica
 ## 11. Resource Management Best Practices
 
 1. Only suggest necessary resources
-2. Use clear, descriptive names for roots
-3. Handle resource boundaries properly
-4. Respect client control over resources
-5. Use model-controlled primitives (tools) for automatic data exposure
+1. Use clear, descriptive names for roots
+1. Handle resource boundaries properly
+1. Respect client control over resources
+1. Use model-controlled primitives (tools) for automatic data exposure
 
 ---
 
@@ -419,11 +448,9 @@ MCP servers that connect to external services should implement proper authentica
 
 These best practices represent the comprehensive guidelines for building secure, efficient, and compliant MCP servers that work well within the ecosystem. Developers should follow these guidelines to ensure their MCP servers meet the standards for inclusion in the MCP directory and provide a safe, reliable experience for users.
 
-
 ----------
 
-
-# Tools
+## Tools
 
 > Enable LLMs to perform actions through your server
 
@@ -471,6 +498,7 @@ Here's an example of implementing a basic tool in an MCP server:
 
 <Tabs>
   <Tab title="TypeScript">
+
     ```typescript
     const server = new Server({
       name: "example-server",
@@ -515,9 +543,11 @@ Here's an example of implementing a basic tool in an MCP server:
       throw new Error("Tool not found");
     });
     ```
+
   </Tab>
 
   <Tab title="Python">
+
     ```python
     app = Server("example-server")
 
@@ -550,6 +580,7 @@ Here's an example of implementing a basic tool in an MCP server:
             return [types.TextContent(type="text", text=str(result))]
         raise ValueError(f"Tool not found: {name}")
     ```
+
   </Tab>
 </Tabs>
 
@@ -622,15 +653,15 @@ Tools that transform or analyze data:
 When implementing tools:
 
 1. Provide clear, descriptive names and descriptions
-2. Use detailed JSON Schema definitions for parameters
-3. Include examples in tool descriptions to demonstrate how the model should use them
-4. Implement proper error handling and validation
-5. Use progress reporting for long operations
-6. Keep tool operations focused and atomic
-7. Document expected return value structures
-8. Implement proper timeouts
-9. Consider rate limiting for resource-intensive operations
-10. Log tool usage for debugging and monitoring
+1. Use detailed JSON Schema definitions for parameters
+1. Include examples in tool descriptions to demonstrate how the model should use them
+1. Implement proper error handling and validation
+1. Use progress reporting for long operations
+1. Keep tool operations focused and atomic
+1. Document expected return value structures
+1. Implement proper timeouts
+1. Consider rate limiting for resource-intensive operations
+1. Log tool usage for debugging and monitoring
 
 ### Tool name conflicts
 
@@ -677,21 +708,22 @@ When exposing tools:
 MCP supports dynamic tool discovery:
 
 1. Clients can list available tools at any time
-2. Servers can notify clients when tools change using `notifications/tools/list_changed`
-3. Tools can be added or removed during runtime
-4. Tool definitions can be updated (though this should be done carefully)
+1. Servers can notify clients when tools change using `notifications/tools/list_changed`
+1. Tools can be added or removed during runtime
+1. Tool definitions can be updated (though this should be done carefully)
 
 ## Error handling
 
 Tool errors should be reported within the result object, not as MCP protocol-level errors. This allows the LLM to see and potentially handle the error. When a tool encounters an error:
 
 1. Set `isError` to `true` in the result
-2. Include error details in the `content` array
+1. Include error details in the `content` array
 
 Here's an example of proper error handling for tools:
 
 <Tabs>
   <Tab title="TypeScript">
+
     ```typescript
     try {
       // Tool operation
@@ -716,9 +748,11 @@ Here's an example of proper error handling for tools:
       };
     }
     ```
+
   </Tab>
 
   <Tab title="Python">
+
     ```python
     try:
         # Tool operation
@@ -742,6 +776,7 @@ Here's an example of proper error handling for tools:
             ]
         )
     ```
+
   </Tab>
 </Tabs>
 
@@ -756,16 +791,16 @@ Tool annotations provide additional metadata about a tool's behavior, helping cl
 Tool annotations serve several key purposes:
 
 1. Provide UX-specific information without affecting model context
-2. Help clients categorize and present tools appropriately
-3. Convey information about a tool's potential side effects
-4. Assist in developing intuitive interfaces for tool approval
+1. Help clients categorize and present tools appropriately
+1. Convey information about a tool's potential side effects
+1. Assist in developing intuitive interfaces for tool approval
 
 ### Available tool annotations
 
 The MCP specification defines the following annotations for tools:
 
 | Annotation        | Type    | Default | Description                                                                                                                          |
-| ----------------- | ------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| :---:---:---:---:----- | :---:---- | :---:---- | :---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:--- |
 | `title`           | string  | -       | A human-readable title for the tool, useful for UI display                                                                           |
 | `readOnlyHint`    | boolean | false   | If true, indicates the tool does not modify its environment                                                                          |
 | `destructiveHint` | boolean | true    | If true, the tool may perform destructive updates (only meaningful when `readOnlyHint` is false)                                     |
@@ -841,6 +876,7 @@ Here's how to define tools with annotations for different scenarios:
 
 <Tabs>
   <Tab title="TypeScript">
+
     ```typescript
     server.setRequestHandler(ListToolsRequestSchema, async () => {
       return {
@@ -864,9 +900,11 @@ Here's how to define tools with annotations for different scenarios:
       };
     });
     ```
+
   </Tab>
 
   <Tab title="Python">
+
     ```python
     from mcp.server.fastmcp import FastMCP
 
@@ -889,6 +927,7 @@ Here's how to define tools with annotations for different scenarios:
         result = a + b
         return str(result)
     ```
+
   </Tab>
 </Tabs>
 
@@ -896,13 +935,13 @@ Here's how to define tools with annotations for different scenarios:
 
 1. **Be accurate about side effects**: Clearly indicate whether a tool modifies its environment and whether those modifications are destructive.
 
-2. **Use descriptive titles**: Provide human-friendly titles that clearly describe the tool's purpose.
+1. **Use descriptive titles**: Provide human-friendly titles that clearly describe the tool's purpose.
 
-3. **Indicate idempotency properly**: Mark tools as idempotent only if repeated calls with the same arguments truly have no additional effect.
+1. **Indicate idempotency properly**: Mark tools as idempotent only if repeated calls with the same arguments truly have no additional effect.
 
-4. **Set appropriate open/closed world hints**: Indicate whether a tool interacts with a closed system (like a database) or an open system (like the web).
+1. **Set appropriate open/closed world hints**: Indicate whether a tool interacts with a closed system (like a database) or an open system (like the web).
 
-5. **Remember annotations are hints**: All properties in ToolAnnotations are hints and not guaranteed to provide a faithful description of tool behavior. Clients should never make security-critical decisions based solely on annotations.
+1. **Remember annotations are hints**: All properties in ToolAnnotations are hints and not guaranteed to provide a faithful description of tool behavior. Clients should never make security-critical decisions based solely on annotations.
 
 ## Testing tools
 

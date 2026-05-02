@@ -6,8 +6,8 @@ Guide for using Mega-Skills with OpenAI Codex via native skill discovery.
 
 Tell Codex:
 
-```
-Fetch and follow instructions from https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.codex/INSTALL.md
+```text
+Fetch and follow instructions from [https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.codex/INSTALL.md](https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.codex/INSTALL.md)
 ```
 
 ## Manual Installation
@@ -20,19 +20,22 @@ Fetch and follow instructions from https://raw.githubusercontent.com/obra/superp
 ### Steps
 
 1. Clone the repo:
+
    ```bash
-   git clone https://github.com/artgaurav16420-oss/Mega-Skills.git ~/.codex/superpowers
+   git clone [https://github.com/artgaurav16420-oss/Mega-Skills.git](https://github.com/artgaurav16420-oss/Mega-Skills.git) ~/.codex/superpowers
    ```
 
-2. Create the skills symlink:
+1. Create the skills symlink:
+
    ```bash
    mkdir -p ~/.agents/skills
    ln -s ~/.codex/superpowers/skills ~/.agents/skills/superpowers
    ```
 
-3. Restart Codex.
+1. Restart Codex.
 
-4. **For subagent skills** (optional): Skills like `dispatching-parallel-agents` and `subagent-driven-development` require Codex's multi-agent feature. Add to your Codex config:
+1. **For subagent skills** (optional): Skills like `dispatching-parallel-agents` and `subagent-driven-development` require Codex's multi-agent feature. Add to your Codex config:
+
    ```toml
    [features]
    multi_agent = true
@@ -51,7 +54,7 @@ cmd /c mklink /J "$env:USERPROFILE\.agents\skills\superpowers" "$env:USERPROFILE
 
 Codex has native skill discovery — it scans `~/.agents/skills/` at startup, parses SKILL.md frontmatter, and loads skills on demand. Mega-Skills skills are made visible through a single symlink:
 
-```
+```text
 ~/.agents/skills/superpowers/ → ~/.codex/superpowers/skills/
 ```
 
@@ -80,7 +83,7 @@ name: my-skill
 description: Use when [condition] - [what it does]
 ---
 
-# My Skill
+## My Skill
 
 [Your skill content here]
 ```
@@ -101,7 +104,8 @@ Skills update instantly through the symlink.
 rm ~/.agents/skills/superpowers
 ```
 
-**Windows (PowerShell):**
+#### Windows (PowerShell)
+
 ```powershell
 Remove-Item "$env:USERPROFILE\.agents\skills\superpowers"
 ```
@@ -113,8 +117,8 @@ Optionally delete the clone: `rm -rf ~/.codex/superpowers` (Windows: `Remove-Ite
 ### Skills not showing up
 
 1. Verify the symlink: `ls -la ~/.agents/skills/superpowers`
-2. Check skills exist: `ls ~/.codex/superpowers/skills`
-3. Restart Codex — skills are discovered at startup
+1. Check skills exist: `ls ~/.codex/superpowers/skills`
+1. Restart Codex — skills are discovered at startup
 
 ### Windows junction issues
 
@@ -122,8 +126,5 @@ Junctions normally work without special permissions. If creation fails, try runn
 
 ## Getting Help
 
-- Report issues: https://github.com/artgaurav16420-oss/Mega-Skills/issues
-- Main documentation: https://github.com/artgaurav16420-oss/Mega-Skills
-
-
-
+- Report issues: [https://github.com/artgaurav16420-oss/Mega-Skills/issues](https://github.com/artgaurav16420-oss/Mega-Skills/issues)
+- Main documentation: [https://github.com/artgaurav16420-oss/Mega-Skills](https://github.com/artgaurav16420-oss/Mega-Skills)

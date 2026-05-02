@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- [OpenCode.ai](https://opencode.ai) installed
+- [OpenCode.ai]([https://opencode.ai)](https://opencode.ai)) installed
 
 ## Installation
 
@@ -10,7 +10,7 @@ Add Mega-Skills to the `plugin` array in your `opencode.json` (global or project
 
 ```json
 {
-  "plugin": ["mega-skills@git+https://github.com/artgaurav16420-oss/Mega-Skills.git"]
+  "plugin": ["mega-skills@git+[https://github.com/artgaurav16420-oss/Mega-Skills.git](https://github.com/artgaurav16420-oss/Mega-Skills.git)"]
 }
 ```
 
@@ -23,11 +23,11 @@ Verify by asking: "Tell me about your mega-skills"
 If you previously installed superpowers using `git clone` and symlinks, remove the old setup:
 
 ```bash
-# Remove old symlinks
+## Remove old symlinks
 rm -f ~/.config/opencode/plugins/superpowers.js
 rm -rf ~/.config/opencode/skills/superpowers
 
-# Optionally remove the cloned repo
+## Optionally remove the cloned repo
 rm -rf ~/.config/opencode/superpowers
 ```
 
@@ -50,7 +50,7 @@ To pin a specific version:
 
 ```json
 {
-  "plugin": ["mega-skills@git+https://github.com/artgaurav16420-oss/Mega-Skills.git#v5.0.7-mega"]
+  "plugin": ["mega-skills@git+[https://github.com/artgaurav16420-oss/Mega-Skills.git#v5.0.7-mega](https://github.com/artgaurav16420-oss/Mega-Skills.git#v5.0.7-mega)"]
 }
 ```
 
@@ -59,13 +59,13 @@ To pin a specific version:
 ### Plugin not loading
 
 1. Check logs: `opencode run --print-logs "hello" 2>&1 | grep -i mega-skills`
-2. Verify the plugin line in your `opencode.json`
-3. Make sure you're running a recent version of OpenCode
+1. Verify the plugin line in your `opencode.json`
+1. Make sure you're running a recent version of OpenCode
 
 ### Skills not found
 
 1. Use `skill` tool to list what's discovered
-2. Check that the plugin is loading (see above)
+1. Check that the plugin is loading (see above)
 
 ### Tool mapping
 
@@ -78,5 +78,5 @@ When skills reference Claude Code tools:
 
 ## Getting Help
 
-- Report issues: [Mega-Skills Issues](https://github.com/artgaurav16420-oss/Mega-Skills/issues)
-- Full documentation: [Mega-Skills README](https://github.com/artgaurav16420-oss/Mega-Skills/blob/main/README.md)
+- Report issues: [Mega-Skills Issues]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)](https://github.com/artgaurav16420-oss/Mega-Skills/issues))
+- Full documentation: [Mega-Skills README]([https://github.com/artgaurav16420-oss/Mega-Skills/blob/main/README.md)](https://github.com/artgaurav16420-oss/Mega-Skills/blob/main/README.md))
