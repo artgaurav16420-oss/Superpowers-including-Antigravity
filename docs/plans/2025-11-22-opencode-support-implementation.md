@@ -782,7 +782,7 @@ git commit -m "feat: implement session.started hook for opencode"
 
 ## Prerequisites
 
-- [OpenCode.ai]([https://opencode.ai)]([https://opencode.ai))]([https://opencode.ai)))]([https://opencode.ai))))]([https://opencode.ai)))))](https://opencode.ai)))))) installed
+- [OpenCode.ai]([https://opencode.ai)]([https://opencode.ai))]([https://opencode.ai)))]([https://opencode.ai))))]([https://opencode.ai)))))]([https://opencode.ai))))))]([https://opencode.ai)))))))](https://opencode.ai)))))))) installed
 - Node.js installed
 - Git installed
 
@@ -795,7 +795,7 @@ git commit -m "feat: implement session.started hook for opencode"
 ## Clone superpowers skills to OpenCode config directory
 
 mkdir -p ~/.config/opencode/superpowers
-git clone [https://github.com/artgaurav16420-oss/Mega-Skills.git]([https://github.com/artgaurav16420-oss/Mega-Skills.git)]([https://github.com/artgaurav16420-oss/Mega-Skills.git))]([https://github.com/artgaurav16420-oss/Mega-Skills.git)))]([https://github.com/artgaurav16420-oss/Mega-Skills.git))))](https://github.com/artgaurav16420-oss/Mega-Skills.git))))) ~/.config/opencode/superpowers
+git clone [https://github.com/artgaurav16420-oss/Mega-Skills.git]([https://github.com/artgaurav16420-oss/Mega-Skills.git)]([https://github.com/artgaurav16420-oss/Mega-Skills.git))]([https://github.com/artgaurav16420-oss/Mega-Skills.git)))]([https://github.com/artgaurav16420-oss/Mega-Skills.git))))]([https://github.com/artgaurav16420-oss/Mega-Skills.git)))))]([https://github.com/artgaurav16420-oss/Mega-Skills.git))))))](https://github.com/artgaurav16420-oss/Mega-Skills.git))))))) ~/.config/opencode/superpowers
 
 ```text
 
@@ -909,8 +909,8 @@ When a skill references a Claude Code tool you don't have:
 
 ## Getting Help
 
-- Report issues: [https://github.com/artgaurav16420-oss/Mega-Skills/issues]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))))](https://github.com/artgaurav16420-oss/Mega-Skills/issues)))))
-- Documentation: [https://github.com/artgaurav16420-oss/Mega-Skills]([https://github.com/artgaurav16420-oss/Mega-Skills)]([https://github.com/artgaurav16420-oss/Mega-Skills))]([https://github.com/artgaurav16420-oss/Mega-Skills)))]([https://github.com/artgaurav16420-oss/Mega-Skills))))](https://github.com/artgaurav16420-oss/Mega-Skills)))))
+- Report issues: [https://github.com/artgaurav16420-oss/Mega-Skills/issues]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))))))](https://github.com/artgaurav16420-oss/Mega-Skills/issues)))))))
+- Documentation: [https://github.com/artgaurav16420-oss/Mega-Skills]([https://github.com/artgaurav16420-oss/Mega-Skills)]([https://github.com/artgaurav16420-oss/Mega-Skills))]([https://github.com/artgaurav16420-oss/Mega-Skills)))]([https://github.com/artgaurav16420-oss/Mega-Skills))))]([https://github.com/artgaurav16420-oss/Mega-Skills)))))]([https://github.com/artgaurav16420-oss/Mega-Skills))))))](https://github.com/artgaurav16420-oss/Mega-Skills)))))))
 ```
 
 ### Step 2: Verify file created
@@ -940,7 +940,7 @@ Find the section about supported platforms (search for "Codex" in the file), and
 ```markdown
 ### OpenCode
 
-Mega-Skills works with [OpenCode.ai]([https://opencode.ai)]([https://opencode.ai))]([https://opencode.ai)))]([https://opencode.ai))))]([https://opencode.ai)))))](https://opencode.ai)))))) through a native JavaScript plugin.
+Mega-Skills works with [OpenCode.ai]([https://opencode.ai)]([https://opencode.ai))]([https://opencode.ai)))]([https://opencode.ai))))]([https://opencode.ai)))))]([https://opencode.ai))))))]([https://opencode.ai)))))))](https://opencode.ai)))))))) through a native JavaScript plugin.
 
 **Installation:** See [.opencode/INSTALL.md](.opencode/INSTALL.md)
 

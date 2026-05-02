@@ -45,15 +45,17 @@ function fixMarkdown(filePath) {
         }
     }
 
-    // MD041: Check for H1 after frontmatter
-    let firstContentLineIndex = frontmatterEnd + 1;
-    while (firstContentLineIndex < lines.length && lines[firstContentLineIndex].trim() === '') {
-        firstContentLineIndex++;
-    }
+    // MD041: Check for H1 after frontmatter (Only for SKILL.md)
+    if (path.basename(filePath) === 'SKILL.md') {
+        let firstContentLineIndex = frontmatterEnd + 1;
+        while (firstContentLineIndex < lines.length && lines[firstContentLineIndex].trim() === '') {
+            firstContentLineIndex++;
+        }
 
-    if (firstContentLineIndex < lines.length && !lines[firstContentLineIndex].startsWith('# ')) {
-        const h1 = `# ${skillName.split('-').map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(' ')}`;
-        lines.splice(firstContentLineIndex, 0, h1, '');
+        if (firstContentLineIndex < lines.length && !lines[firstContentLineIndex].startsWith('# ')) {
+            const h1 = `# ${skillName.split('-').map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(' ')}`;
+            lines.splice(firstContentLineIndex, 0, h1, '');
+        }
     }
 
     for (let i = 0; i < lines.length; i++) {
@@ -201,16 +203,20 @@ function fixMarkdown(filePath) {
     // MD025: Multiple H1s
     let h1Found = false;
     result = result.split('\n').map(line => {
-        if (line.startsWith('# ')) {
+        if (line.match(/^#(\s+|$)/)) {
             if (!h1Found) {
                 h1Found = true;
+                // If it's an empty H1 (#), we should probably give it a title if it's a SKILL.md
+                // but for now just keep it or trim it.
                 return line;
             } else {
+                // Remove duplicate empty H1s or downgrade them
+                if (line.trim() === '#') return ''; 
                 return '## ' + line.substring(2);
             }
         }
         return line;
-    }).join('\n');
+    }).filter(line => line !== null).join('\n');
 
     // MD060
     result = result.split('\n').map(line => {

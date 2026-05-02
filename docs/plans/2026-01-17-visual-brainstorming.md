@@ -431,7 +431,7 @@ node ${PLUGIN_ROOT}/lib/brainstorm-server/index.js
 
 ```text
 
-Tell the user: "I've started a visual companion at [http://localhost:3333]([http://localhost:3333)]([http://localhost:3333))]([http://localhost:3333)))]([http://localhost:3333))))](http://localhost:3333))))) - open it in a browser."
+Tell the user: "I've started a visual companion at [http://localhost:3333]([http://localhost:3333)]([http://localhost:3333))]([http://localhost:3333)))]([http://localhost:3333))))]([http://localhost:3333)))))]([http://localhost:3333))))))](http://localhost:3333))))))) - open it in a browser."
 
 ## Pushing Screens
 
@@ -523,7 +523,7 @@ When brainstorming involves visual elements - UI mockups, wireframes, interactiv
 
 **How it works:**
 1. Start the server as a background job
-2. Tell user to open [http://localhost:3333]([http://localhost:3333)]([http://localhost:3333))]([http://localhost:3333)))]([http://localhost:3333))))](http://localhost:3333)))))
+2. Tell user to open [http://localhost:3333]([http://localhost:3333)]([http://localhost:3333))]([http://localhost:3333)))]([http://localhost:3333))))]([http://localhost:3333)))))]([http://localhost:3333))))))](http://localhost:3333)))))))
 3. Write HTML to `/tmp/brainstorm/screen.html` (auto-refreshes)
 4. Check background task output for user interactions
 

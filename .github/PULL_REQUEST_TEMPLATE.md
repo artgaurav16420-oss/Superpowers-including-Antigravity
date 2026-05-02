@@ -1,7 +1,5 @@
 #
 
-#
-
 <!--
 BEFORE SUBMITTING: Read every word of this template. PRs that leave
 sections blank, contain multiple unrelated changes, or show no evidence
@@ -57,7 +55,7 @@ of human involvement will be closed without review.
 ## Environment tested
 
 | Harness (e.g. Claude Code, Cursor) | Harness version | Model | Model version/ID |
-|:::::---:::::---:::::---:::::---:::::---:::::---:::::---:::::---:::::---:::::---:::::---:::::----|:::::---:::::---:::::---:::::---:::::-----|:::::---:::::----|:::::---:::::---:::::---:::::---:::::---:::::---|
+|:::::::---:::::::---:::::::---:::::::---:::::::---:::::::---:::::::---:::::::---:::::::---:::::::---:::::::---:::::::----|:::::::---:::::::---:::::::---:::::::---:::::::-----|:::::::---:::::::----|:::::::---:::::::---:::::::---:::::::---:::::::---:::::::---|
 |                                     |                 |       |                  |
 
 ## New harness support (required if this PR adds a new harness)
