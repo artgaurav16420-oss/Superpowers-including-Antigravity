@@ -18,7 +18,7 @@ There's a bunch more to it, but that's the core of the system. And because the s
 
 ## Sponsorship
 
-If Mega Superpowers has helped you do stuff that makes money and you are so inclined, I'd greatly appreciate it if you'd consider [sponsoring Jesse's original opensource work](https://github.com/sponsors/obra).
+If Mega Superpowers has helped you do stuff that makes money and you are so inclined, I'd greatly appreciate it if you'd consider [sponsoring Gaurav's work](https://github.com/artgaurav16420-oss).
 
 ## Installation
 
@@ -122,7 +122,7 @@ MIT License - see LICENSE file for details
 
 ## Community
 
-Mega Superpowers is based on the work of [Jesse Vincent](https://blog.fsck.com) and the [Prime Radiant](https://primeradiant.com) team, augmented with libraries from Anthropic and Composio.
+Mega Superpowers is maintained by [Gaurav](https://github.com/artgaurav16420-oss), based on the methodology by Jesse Vincent and the Prime Radiant team, augmented with libraries from Anthropic and Composio.
 
 - **Discord**: [Join us](https://discord.gg/35wsABTejz) for community support.
 - **Issues**: <https://github.com/artgaurav16420-oss/Superpowers-including-Antigravity/issues>
