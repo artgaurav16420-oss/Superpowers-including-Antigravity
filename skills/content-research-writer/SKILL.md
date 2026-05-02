@@ -10,36 +10,51 @@ This skill acts as your writing partner, helping you research, outline, draft, a
 ## When to Use This Skill
 
 - Writing blog posts, articles, or newsletters
+
 - Creating educational content or tutorials
+
 - Drafting thought leadership pieces
+
 - Researching and writing case studies
+
 - Producing technical documentation with sources
+
 - Writing with proper citations and references
+
 - Improving hooks and introductions
+
 - Getting section-by-section feedback while writing
 
 ## What This Skill Does
 
 1. **Collaborative Outlining**: Helps you structure ideas into coherent outlines
-2. **Research Assistance**: Finds relevant information and adds citations
-3. **Hook Improvement**: Strengthens your opening to capture attention
-4. **Section Feedback**: Reviews each section as you write
-5. **Voice Preservation**: Maintains your writing style and tone
-6. **Citation Management**: Adds and formats references properly
-7. **Iterative Refinement**: Helps you improve through multiple drafts
+
+1. **Research Assistance**: Finds relevant information and adds citations
+
+1. **Hook Improvement**: Strengthens your opening to capture attention
+
+1. **Section Feedback**: Reviews each section as you write
+
+1. **Voice Preservation**: Maintains your writing style and tone
+
+1. **Citation Management**: Adds and formats references properly
+
+1. **Iterative Refinement**: Helps you improve through multiple drafts
 
 ## How to Use
 
 ### Setup Your Writing Environment
 
 Create a dedicated folder for your article:
-```
+
+```text
 mkdir ~/writing/my-article-title
 cd ~/writing/my-article-title
 ```
 
 Create your draft file:
-```
+
+```text
 touch article-draft.md
 ```
 
@@ -48,27 +63,32 @@ Open Claude Code from this directory and start writing.
 ### Basic Workflow
 
 1. **Start with an outline**:
-```
+
+```text
 Help me create an outline for an article about [topic]
 ```
 
-2. **Research and add citations**:
-```
+1. **Research and add citations**:
+
+```text
 Research [specific topic] and add citations to my outline
 ```
 
-3. **Improve the hook**:
-```
+1. **Improve the hook**:
+
+```text
 Here's my introduction. Help me make the hook more compelling.
 ```
 
-4. **Get section feedback**:
-```
+1. **Get section feedback**:
+
+```text
 I just finished the "Why This Matters" section. Review it and give feedback.
 ```
 
-5. **Refine and polish**:
-```
+1. **Refine and polish**:
+
+```text
 Review the full draft for flow, clarity, and consistency.
 ```
 
@@ -77,8 +97,9 @@ Review the full draft for flow, clarity, and consistency.
 When a user requests writing assistance:
 
 1. **Understand the Writing Project**
-   
+
    Ask clarifying questions:
+
    - What's the topic and main argument?
    - Who's the target audience?
    - What's the desired length/format?
@@ -86,264 +107,281 @@ When a user requests writing assistance:
    - Any existing research or sources to include?
    - What's your writing style? (formal, conversational, technical)
 
-2. **Collaborative Outlining**
-   
+1. **Collaborative Outlining**
+
    Help structure the content:
-   
+
    ```markdown
    # Article Outline: [Title]
-   
    ## Hook
+
    - [Opening line/story/statistic]
    - [Why reader should care]
-   
+
    ## Introduction
+
    - Context and background
    - Problem statement
    - What this article covers
-   
+
    ## Main Sections
-   
    ### Section 1: [Title]
+
    - Key point A
    - Key point B
    - Example/evidence
    - [Research needed: specific topic]
-   
+
    ### Section 2: [Title]
+
    - Key point C
    - Key point D
    - Data/citation needed
-   
+
    ### Section 3: [Title]
+
    - Key point E
    - Counter-arguments
    - Resolution
-   
+
    ## Conclusion
+
    - Summary of main points
    - Call to action
    - Final thought
-   
+
    ## Research To-Do
+
    - [ ] Find data on [topic]
    - [ ] Get examples of [concept]
    - [ ] Source citation for [claim]
+
    ```
-   
+
    **Iterate on outline**:
+
    - Adjust based on feedback
    - Ensure logical flow
    - Identify research gaps
    - Mark sections for deep dives
 
-3. **Conduct Research**
-   
+1. **Conduct Research**
+
    When user requests research on a topic:
-   
+
    - Search for relevant information
    - Find credible sources
    - Extract key facts, quotes, and data
    - Add citations in requested format
-   
+
    Example output:
+
    ```markdown
    ## Research: AI Impact on Productivity
-   
    Key Findings:
-   
-   1. **Productivity Gains**: Studies show 40% time savings for 
+
+   1. **Productivity Gains**: Studies show 40% time savings for
+
       content creation tasks [1]
-   
-   2. **Adoption Rates**: 67% of knowledge workers use AI tools 
+
+   1. **Adoption Rates**: 67% of knowledge workers use AI tools
+
       weekly [2]
-   
-   3. **Expert Quote**: "AI augments rather than replaces human 
+
+   1. **Expert Quote**: "AI augments rather than replaces human
+
       creativity" - Dr. Jane Smith, MIT [3]
-   
    Citations:
-   [1] McKinsey Global Institute. (2024). "The Economic Potential 
+   [1] McKinsey Global Institute. (2024). "The Economic Potential
        of Generative AI"
    [2] Stack Overflow Developer Survey (2024)
    [3] Smith, J. (2024). MIT Technology Review interview
-   
    Added to outline under Section 2.
    ```
 
-4. **Improve Hooks**
-   
+1. **Improve Hooks**
+
    When user shares an introduction, analyze and strengthen:
-   
+
    **Current Hook Analysis**:
+
    - What works: [positive elements]
    - What could be stronger: [areas for improvement]
    - Emotional impact: [current vs. potential]
-   
+
    **Suggested Alternatives**:
-   
+
    Option 1: [Bold statement]
    > [Example]
    *Why it works: [explanation]*
-   
+
    Option 2: [Personal story]
    > [Example]
    *Why it works: [explanation]*
-   
+
    Option 3: [Surprising data]
    > [Example]
    *Why it works: [explanation]*
-   
+
    **Questions to hook**:
+
    - Does it create curiosity?
    - Does it promise value?
    - Is it specific enough?
    - Does it match the audience?
 
-5. **Provide Section-by-Section Feedback**
-   
+1. **Provide Section-by-Section Feedback**
+
    As user writes each section, review for:
-   
+
    ```markdown
    # Feedback: [Section Name]
-   
    ## What Works Well ✓
+
    - [Strength 1]
    - [Strength 2]
    - [Strength 3]
-   
+
    ## Suggestions for Improvement
-   
    ### Clarity
+
    - [Specific issue] → [Suggested fix]
    - [Complex sentence] → [Simpler alternative]
-   
+
    ### Flow
+
    - [Transition issue] → [Better connection]
    - [Paragraph order] → [Suggested reordering]
-   
+
    ### Evidence
+
    - [Claim needing support] → [Add citation or example]
    - [Generic statement] → [Make more specific]
-   
+
    ### Style
+
    - [Tone inconsistency] → [Match your voice better]
    - [Word choice] → [Stronger alternative]
-   
+
    ## Specific Line Edits
-   
    Original:
    > [Exact quote from draft]
-   
    Suggested:
    > [Improved version]
-   
    Why: [Explanation]
-   
    ## Questions to Consider
+
    - [Thought-provoking question 1]
    - [Thought-provoking question 2]
-   
+
    Ready to move to next section!
    ```
 
-6. **Preserve Writer's Voice**
-   
+1. **Preserve Writer's Voice**
+
    Important principles:
-   
+
    - **Learn their style**: Read existing writing samples
    - **Suggest, don't replace**: Offer options, not directives
    - **Match tone**: Formal, casual, technical, friendly
    - **Respect choices**: If they prefer their version, support it
    - **Enhance, don't override**: Make their writing better, not different
-   
+
    Ask periodically:
+
    - "Does this sound like you?"
    - "Is this the right tone?"
    - "Should I be more/less [formal/casual/technical]?"
 
-7. **Citation Management**
-   
+1. **Citation Management**
+
    Handle references based on user preference:
-   
+
    **Inline Citations**:
+
    ```markdown
    Studies show 40% productivity improvement (McKinsey, 2024).
    ```
-   
+
    **Numbered References**:
+
    ```markdown
    Studies show 40% productivity improvement [1].
-   
    [1] McKinsey Global Institute. (2024)...
    ```
-   
+
    **Footnote Style**:
+
    ```markdown
    Studies show 40% productivity improvement^1
-   
    ^1: McKinsey Global Institute. (2024)...
    ```
-   
+
    Maintain a running citations list:
+
    ```markdown
    ## References
-   
+
    1. Author. (Year). "Title". Publication.
-   2. Author. (Year). "Title". Publication.
+   1. Author. (Year). "Title". Publication.
+
    ...
    ```
 
-8. **Final Review and Polish**
-   
+1. **Final Review and Polish**
+
    When draft is complete, provide comprehensive feedback:
-   
+
    ```markdown
    # Full Draft Review
-   
    ## Overall Assessment
-   
    **Strengths**:
+
    - [Major strength 1]
    - [Major strength 2]
    - [Major strength 3]
-   
+
    **Impact**: [Overall effectiveness assessment]
-   
    ## Structure & Flow
+
    - [Comments on organization]
    - [Transition quality]
    - [Pacing assessment]
-   
+
    ## Content Quality
+
    - [Argument strength]
    - [Evidence sufficiency]
    - [Example effectiveness]
-   
+
    ## Technical Quality
+
    - Grammar and mechanics: [assessment]
    - Consistency: [assessment]
    - Citations: [completeness check]
-   
+
    ## Readability
+
    - Clarity score: [evaluation]
    - Sentence variety: [evaluation]
    - Paragraph length: [evaluation]
-   
+
    ## Final Polish Suggestions
-   
+
    1. **Introduction**: [Specific improvements]
-   2. **Body**: [Specific improvements]
-   3. **Conclusion**: [Specific improvements]
-   4. **Title**: [Options if needed]
-   
+   1. **Body**: [Specific improvements]
+   1. **Conclusion**: [Specific improvements]
+   1. **Title**: [Options if needed]
+
    ## Pre-Publish Checklist
+
    - [ ] All claims sourced
    - [ ] Citations formatted
    - [ ] Examples clear
    - [ ] Transitions smooth
    - [ ] Call to action present
    - [ ] Proofread for typos
-   
+
    Ready to publish! 🚀
    ```
 
@@ -354,15 +392,24 @@ When a user requests writing assistance:
 **User**: "I'm writing an article about continuous discovery. Help me create an outline."
 
 **Process**:
+
 1. Collaborates on outline structure
-2. Identifies research needs
-3. User starts writing introduction
-4. Reviews and improves the hook
-5. User writes each section
-6. Provides feedback after each section
-7. Conducts research and adds citations
-8. Final review of complete draft
-9. Polish and prep for publishing
+
+1. Identifies research needs
+
+1. User starts writing introduction
+
+1. Reviews and improves the hook
+
+1. User writes each section
+
+1. Provides feedback after each section
+
+1. Conducts research and adds citations
+
+1. Final review of complete draft
+
+1. Polish and prep for publishing
 
 **Result**: Well-researched, properly cited article written in Teresa's voice with strong structure and flow.
 
@@ -371,31 +418,23 @@ When a user requests writing assistance:
 **User**: "I'm writing about AI's impact on product management. Help me find current data and examples."
 
 **Output**:
+
 ```markdown
-
 ## Research Compiled
-
 ### Recent Data
-
 - Gartner: 80% of PMs will use AI tools by 2025 [1]
 - Survey: 45% report faster feature shipping [2]
 - Case study: Airbnb's AI-assisted prioritization [3]
-
 ### Expert Quotes
-
 - "AI amplifies PM judgment, not replaces it" - Marty Cagan
 - [Additional quotes with citations]
-
 ### Real Examples
-
 1. **Company A**: Used AI for user research synthesis
    - Result: 60% time savings
    - Source: [citation]
-
 2. **Company B**: AI-powered roadmap analysis
    - Result: Better stakeholder alignment
    - Source: [citation]
-
 All added to your outline with proper citations.
 ```
 
@@ -420,38 +459,26 @@ All added to your outline with proper citations.
 **User**: "Just finished my 'Common Mistakes' section. Thoughts?"
 
 **Response**:
+
 ```markdown
-
-# Feedback: Common Mistakes Section
-
+## Feedback: Common Mistakes Section
 ## What Works Well ✓
-
 - Strong examples (the Slack notification story)
 - Clear structure (3 mistakes, clean layout)
 - Practical advice for each mistake
-
 ## Suggestions
-
 ### Make It More Specific
-
 Your second point says "Bad prioritization" but could be stronger:
-
 Current:
 > "Many teams prioritize badly by focusing on features instead of outcomes."
-
 Suggested:
 > "I've watched teams ship 14 features in a quarter yet move none of their key metrics. They prioritized activity over progress."
-
 ### Add Data
-
 The third mistake would benefit from evidence:
 > "[Add citation]: Studies show teams without regular user contact are 3x more likely to build unused features [needs source]"
-
 ### Flow Improvement
-
 Consider reordering: Mistake 3 → Mistake 2 → Mistake 1
 This builds from small to big impact.
-
 Ready for the next section!
 ```
 
@@ -460,53 +487,78 @@ Ready for the next section!
 ### Blog Post Workflow
 
 1. Outline together
-2. Research key points
-3. Write introduction → get feedback
-4. Write body sections → feedback each
-5. Write conclusion → final review
-6. Polish and edit
+
+1. Research key points
+
+1. Write introduction → get feedback
+
+1. Write body sections → feedback each
+
+1. Write conclusion → final review
+
+1. Polish and edit
 
 ### Newsletter Workflow
 
 1. Discuss hook ideas
-2. Quick outline (shorter format)
-3. Draft in one session
-4. Review for clarity and links
-5. Quick polish
+
+1. Quick outline (shorter format)
+
+1. Draft in one session
+
+1. Review for clarity and links
+
+1. Quick polish
 
 ### Technical Tutorial Workflow
 
 1. Outline steps
-2. Write code examples
-3. Add explanations
-4. Test instructions
-5. Add troubleshooting section
-6. Final review for accuracy
+
+1. Write code examples
+
+1. Add explanations
+
+1. Test instructions
+
+1. Add troubleshooting section
+
+1. Final review for accuracy
 
 ### Thought Leadership Workflow
 
 1. Brainstorm unique angle
-2. Research existing perspectives
-3. Develop your thesis
-4. Write with strong POV
-5. Add supporting evidence
-6. Craft compelling conclusion
+
+1. Research existing perspectives
+
+1. Develop your thesis
+
+1. Write with strong POV
+
+1. Add supporting evidence
+
+1. Craft compelling conclusion
 
 ## Pro Tips
 
 1. **Work in VS Code**: Better than web Claude for long-form writing
-2. **One section at a time**: Get feedback incrementally
-3. **Save research separately**: Keep a research.md file
-4. **Version your drafts**: article-v1.md, article-v2.md, etc.
-5. **Read aloud**: Use feedback to identify clunky sentences
-6. **Set deadlines**: "I want to finish the draft today"
-7. **Take breaks**: Write, get feedback, pause, revise
+
+1. **One section at a time**: Get feedback incrementally
+
+1. **Save research separately**: Keep a research.md file
+
+1. **Version your drafts**: article-v1.md, article-v2.md, etc.
+
+1. **Read aloud**: Use feedback to identify clunky sentences
+
+1. **Set deadlines**: "I want to finish the draft today"
+
+1. **Take breaks**: Write, get feedback, pause, revise
 
 ## File Organization
 
 Recommended structure for writing projects:
 
-```
+```text
 ~/writing/article-name/
 ├── outline.md          # Your outline
 ├── research.md         # All research and citations
@@ -524,32 +576,45 @@ Recommended structure for writing projects:
 ### For Research
 
 - Verify sources before citing
+
 - Use recent data when possible
+
 - Balance different perspectives
+
 - Link to original sources
 
 ### For Feedback
 
 - Be specific about what you want: "Is this too technical?"
+
 - Share your concerns: "I'm worried this section drags"
+
 - Ask questions: "Does this flow logically?"
+
 - Request alternatives: "What's another way to explain this?"
 
 ### For Voice
 
 - Share examples of your writing
+
 - Specify tone preferences
+
 - Point out good matches: "That sounds like me!"
+
 - Flag mismatches: "Too formal for my style"
 
 ## Related Use Cases
 
 - Creating social media posts from articles
+
 - Adapting content for different audiences
+
 - Writing email newsletters
+
 - Drafting technical documentation
+
 - Creating presentation content
+
 - Writing case studies
+
 - Developing course outlines
-
-

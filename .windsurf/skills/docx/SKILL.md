@@ -13,9 +13,11 @@ A .docx file is a ZIP archive containing XML files.
 ## Quick Reference
 
 | Task | Approach |
-|------|----------|
+|::::::::::::::::::::::::::::::::::::::::---::::::::::::::::::::::::::::::::::::::::---|::::::::::::::::::::::::::::::::::::::::---::::::::::::::::::::::::::::::::::::::::---::::::::::::::::::::::::::::::::::::::::----|
 | Read/analyze content | `pandoc` or unpack for raw XML |
+
 | Create new document | Use `docx-js` - see Creating New Documents below |
+
 | Edit existing document | Unpack → edit XML → repack - see Editing Existing Documents below |
 
 ### Converting .doc to .docx
@@ -29,10 +31,9 @@ python scripts/office/soffice.py --headless --convert-to docx document.doc
 ### Reading Content
 
 ```bash
-# Text extraction with tracked changes
+## Text extraction with tracked changes
 pandoc --track-changes=all document.docx -o output.md
-
-# Raw XML access
+## Raw XML access
 python scripts/office/unpack.py document.docx unpacked/
 ```
 
@@ -58,6 +59,7 @@ python scripts/accept_changes.py input.docx output.docx
 Generate .docx files with JavaScript, then validate. Install: `npm install -g docx`
 
 ### Setup
+
 ```javascript
 const { Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell, ImageRun,
         Header, Footer, AlignmentType, PageOrientation, LevelFormat, ExternalHyperlink,
@@ -66,13 +68,14 @@ const { Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell, ImageR
         TabStopType, TabStopPosition, Column, SectionType,
         TableOfContents, HeadingLevel, BorderStyle, WidthType, ShadingType,
         VerticalAlign, PageNumber, PageBreak } = require('docx');
-
 const doc = new Document({ sections: [{ children: [/* content */] }] });
 Packer.toBuffer(doc).then(buffer => fs.writeFileSync("doc.docx", buffer));
 ```
 
 ### Validation
+
 After creating the file, validate it. If validation fails, unpack, fix the XML, and repack.
+
 ```bash
 python scripts/office/validate.py doc.docx
 ```
@@ -99,11 +102,12 @@ sections: [{
 **Common page sizes (DXA units, 1440 DXA = 1 inch):**
 
 | Paper | Width | Height | Content Width (1" margins) |
-|-------|-------|--------|---------------------------|
+|::::::::::::::::::::::::::::::::::::::::---::::::::::::::::::::::::::::::::::::::::----|::::::::::::::::::::::::::::::::::::::::---::::::::::::::::::::::::::::::::::::::::----|::::::::::::::::::::::::::::::::::::::::---::::::::::::::::::::::::::::::::::::::::-----|::::::::::::::::::::::::::::::::::::::::---::::::::::::::::::::::::::::::::::::::::---::::::::::::::::::::::::::::::::::::::::---::::::::::::::::::::::::::::::::::::::::---::::::::::::::::::::::::::::::::::::::::---::::::::::::::::::::::::::::::::::::::::---::::::::::::::::::::::::::::::::::::::::---::::::::::::::::::::::::::::::::::::::::---::::::::::::::::::::::::::::::::::::::::---|
 | US Letter | 12,240 | 15,840 | 9,360 |
 | A4 (default) | 11,906 | 16,838 | 9,026 |
 
 **Landscape orientation:** docx-js swaps width/height internally, so pass portrait dimensions and let it handle the swap:
+
 ```javascript
 size: {
   width: 12240,   // Pass SHORT edge as width
@@ -145,7 +149,6 @@ const doc = new Document({
 // ❌ WRONG - never manually insert bullet characters
 new Paragraph({ children: [new TextRun("• Item")] })  // BAD
 new Paragraph({ children: [new TextRun("\u2022 Item")] })  // BAD
-
 // ✅ CORRECT - use numbering config with LevelFormat.BULLET
 const doc = new Document({
   numbering: {
@@ -167,7 +170,6 @@ const doc = new Document({
     ]
   }]
 });
-
 // ⚠️ Each reference creates INDEPENDENT numbering
 // Same reference = continues (1,2,3 then 4,5,6)
 // Different reference = restarts (1,2,3 then 1,2,3)
@@ -182,7 +184,6 @@ const doc = new Document({
 // CRITICAL: Use ShadingType.CLEAR (not SOLID) to prevent black backgrounds
 const border = { style: BorderStyle.SINGLE, size: 1, color: "CCCCCC" };
 const borders = { top: border, bottom: border, left: border, right: border };
-
 new Table({
   width: { size: 9360, type: WidthType.DXA }, // Always use DXA (percentages break in Google Docs)
   columnWidths: [4680, 4680], // Must sum to table width (DXA: 1440 = 1 inch)
@@ -214,10 +215,15 @@ columnWidths: [7000, 2360]  // Must sum to table width
 ```
 
 **Width rules:**
+
 - **Always use `WidthType.DXA`** — never `WidthType.PERCENTAGE` (incompatible with Google Docs)
+
 - Table width must equal the sum of `columnWidths`
+
 - Cell `width` must match corresponding `columnWidth`
+
 - Cell `margins` are internal padding - they reduce content area, not add to cell width
+
 - For full-width tables: use content width (page width minus left and right margins)
 
 ### Images
@@ -239,7 +245,6 @@ new Paragraph({
 ```javascript
 // CRITICAL: PageBreak must be inside a Paragraph
 new Paragraph({ children: [new PageBreak()] })
-
 // Or use pageBreakBefore
 new Paragraph({ pageBreakBefore: true, children: [new TextRun("New page")] })
 ```
@@ -254,7 +259,6 @@ new Paragraph({
     link: "https://example.com",
   })]
 })
-
 // Internal link (bookmark + reference)
 // 1. Create bookmark at destination
 new Paragraph({ heading: HeadingLevel.HEADING_1, children: [
@@ -299,7 +303,6 @@ new Paragraph({
   ],
   tabStops: [{ type: TabStopType.RIGHT, position: TabStopPosition.MAX }],
 })
-
 // Dot leader (e.g., TOC-style)
 new Paragraph({
   children: [
@@ -331,7 +334,6 @@ sections: [{
   },
   children: [/* content flows naturally across columns */]
 }]
-
 // Custom-width columns (equalWidth must be false)
 sections: [{
   properties: {
@@ -378,19 +380,33 @@ sections: [{
 ### Critical Rules for docx-js
 
 - **Set page size explicitly** - docx-js defaults to A4; use US Letter (12240 x 15840 DXA) for US documents
+
 - **Landscape: pass portrait dimensions** - docx-js swaps width/height internally; pass short edge as `width`, long edge as `height`, and set `orientation: PageOrientation.LANDSCAPE`
+
 - **Never use `\n`** - use separate Paragraph elements
+
 - **Never use unicode bullets** - use `LevelFormat.BULLET` with numbering config
+
 - **PageBreak must be in Paragraph** - standalone creates invalid XML
+
 - **ImageRun requires `type`** - always specify png/jpg/etc
+
 - **Always set table `width` with DXA** - never use `WidthType.PERCENTAGE` (breaks in Google Docs)
+
 - **Tables need dual widths** - `columnWidths` array AND cell `width`, both must match
+
 - **Table width = sum of columnWidths** - for DXA, ensure they add up exactly
+
 - **Always add cell margins** - use `margins: { top: 80, bottom: 80, left: 120, right: 120 }` for readable padding
+
 - **Use `ShadingType.CLEAR`** - never SOLID for table shading
+
 - **Never use tables as dividers/rules** - cells have minimum height and render as empty boxes (including in headers/footers); use `border: { bottom: { style: BorderStyle.SINGLE, size: 6, color: "2E75B6", space: 1 } }` on a Paragraph instead. For two-column footers, use tab stops (see Tab Stops section), not tables
+
 - **TOC requires HeadingLevel only** - no custom styles on heading paragraphs
+
 - **Override built-in styles** - use exact IDs: "Heading1", "Heading2", etc.
+
 - **Include `outlineLevel`** - required for TOC (0 for H1, 1 for H2, etc.)
 
 ---
@@ -400,9 +416,11 @@ sections: [{
 **Follow all 3 steps in order.**
 
 ### Step 1: Unpack
+
 ```bash
 python scripts/office/unpack.py document.docx unpacked/
 ```
+
 Extracts XML, pretty-prints, merges adjacent runs, and converts smart quotes to XML entities (`&#x201C;` etc.) so they survive editing. Use `--merge-runs false` to skip run merging.
 
 ### Step 2: Edit XML
@@ -414,41 +432,54 @@ Edit files in `unpacked/word/`. See XML Reference below for patterns.
 **Use the Edit tool directly for string replacement. Do not write Python scripts.** Scripts introduce unnecessary complexity. The Edit tool shows exactly what is being replaced.
 
 **CRITICAL: Use smart quotes for new content.** When adding text with apostrophes or quotes, use XML entities to produce smart quotes:
+
 ```xml
 <!-- Use these entities for professional typography -->
 <w:t>Here&#x2019;s a quote: &#x201C;Hello&#x201D;</w:t>
 ```
+
 | Entity | Character |
-|--------|-----------|
+|::::::::::::::::::::::::::::::::::::::::---::::::::::::::::::::::::::::::::::::::::-----|::::::::::::::::::::::::::::::::::::::::---::::::::::::::::::::::::::::::::::::::::---::::::::::::::::::::::::::::::::::::::::-----|
 | `&#x2018;` | ‘ (left single) |
+
 | `&#x2019;` | ’ (right single / apostrophe) |
+
 | `&#x201C;` | “ (left double) |
+
 | `&#x201D;` | ” (right double) |
 
 **Adding comments:** Use `comment.py` to handle boilerplate across multiple XML files (text must be pre-escaped XML):
+
 ```bash
 python scripts/comment.py unpacked/ 0 "Comment text with &amp; and &#x2019;"
 python scripts/comment.py unpacked/ 1 "Reply text" --parent 0  # reply to comment 0
 python scripts/comment.py unpacked/ 0 "Text" --author "Custom Author"  # custom author name
 ```
+
 Then add markers to document.xml (see Comments in XML Reference).
 
 ### Step 3: Pack
+
 ```bash
 python scripts/office/pack.py unpacked/ output.docx --original document.docx
 ```
+
 Validates with auto-repair, condenses XML, and creates DOCX. Use `--validate false` to skip.
 
 **Auto-repair will fix:**
+
 - `durableId` >= 0x7FFFFFFF (regenerates valid ID)
+
 - Missing `xml:space="preserve"` on `<w:t>` with whitespace
 
 **Auto-repair won't fix:**
+
 - Malformed XML, invalid element nesting, missing relationships, schema violations
 
 ### Common Pitfalls
 
 - **Replace entire `<w:r>` elements**: When adding tracked changes, replace the whole `<w:r>...</w:r>` block with `<w:del>...<w:ins>...` as siblings. Don't inject tracked change tags inside a run.
+
 - **Preserve `<w:rPr>` formatting**: Copy the original run's `<w:rPr>` block into your tracked change runs to maintain bold, font size, etc.
 
 ---
@@ -458,12 +489,15 @@ Validates with auto-repair, condenses XML, and creates DOCX. Use `--validate fal
 ### Schema Compliance
 
 - **Element order in `<w:pPr>`**: `<w:pStyle>`, `<w:numPr>`, `<w:spacing>`, `<w:ind>`, `<w:jc>`, `<w:rPr>` last
+
 - **Whitespace**: Add `xml:space="preserve"` to `<w:t>` with leading/trailing spaces
+
 - **RSIDs**: Must be 8-digit hex (e.g., `00AB1234`)
 
 ### Tracked Changes
 
 **Insertion:**
+
 ```xml
 <w:ins w:id="1" w:author="Claude" w:date="2025-01-01T00:00:00Z">
   <w:r><w:t>inserted text</w:t></w:r>
@@ -471,6 +505,7 @@ Validates with auto-repair, condenses XML, and creates DOCX. Use `--validate fal
 ```
 
 **Deletion:**
+
 ```xml
 <w:del w:id="2" w:author="Claude" w:date="2025-01-01T00:00:00Z">
   <w:r><w:delText>deleted text</w:delText></w:r>
@@ -480,6 +515,7 @@ Validates with auto-repair, condenses XML, and creates DOCX. Use `--validate fal
 **Inside `<w:del>`**: Use `<w:delText>` instead of `<w:t>`, and `<w:delInstrText>` instead of `<w:instrText>`.
 
 **Minimal edits** - only mark what changes:
+
 ```xml
 <!-- Change "30 days" to "60 days" -->
 <w:r><w:t>The term is </w:t></w:r>
@@ -493,6 +529,7 @@ Validates with auto-repair, condenses XML, and creates DOCX. Use `--validate fal
 ```
 
 **Deleting entire paragraphs/list items** - when removing ALL content from a paragraph, also mark the paragraph mark as deleted so it merges with the next paragraph. Add `<w:del/>` inside `<w:pPr><w:rPr>`:
+
 ```xml
 <w:p>
   <w:pPr>
@@ -506,9 +543,11 @@ Validates with auto-repair, condenses XML, and creates DOCX. Use `--validate fal
   </w:del>
 </w:p>
 ```
+
 Without the `<w:del/>` in `<w:pPr><w:rPr>`, accepting changes leaves an empty paragraph/list item.
 
 **Rejecting another author's insertion** - nest deletion inside their insertion:
+
 ```xml
 <w:ins w:author="Jane" w:id="5">
   <w:del w:author="Claude" w:id="10">
@@ -518,6 +557,7 @@ Without the `<w:del/>` in `<w:pPr><w:rPr>`, accepting changes leaves an empty pa
 ```
 
 **Restoring another author's deletion** - add insertion after (don't modify their deletion):
+
 ```xml
 <w:del w:author="Jane" w:id="5">
   <w:r><w:delText>deleted text</w:delText></w:r>
@@ -542,7 +582,6 @@ After running `comment.py` (see Step 2), add markers to document.xml. For replie
 <w:r><w:t> more text</w:t></w:r>
 <w:commentRangeEnd w:id="0"/>
 <w:r><w:rPr><w:rStyle w:val="CommentReference"/></w:rPr><w:commentReference w:id="0"/></w:r>
-
 <!-- Comment 0 with reply 1 nested inside -->
 <w:commentRangeStart w:id="0"/>
   <w:commentRangeStart w:id="1"/>
@@ -556,15 +595,21 @@ After running `comment.py` (see Step 2), add markers to document.xml. For replie
 ### Images
 
 1. Add image file to `word/media/`
-2. Add relationship to `word/_rels/document.xml.rels`:
+
+1. Add relationship to `word/_rels/document.xml.rels`:
+
 ```xml
 <Relationship Id="rId5" Type=".../image" Target="media/image1.png"/>
 ```
-3. Add content type to `[Content_Types].xml`:
+
+1. Add content type to `[Content_Types].xml`:
+
 ```xml
 <Default Extension="png" ContentType="image/png"/>
 ```
-4. Reference in document.xml:
+
+1. Reference in document.xml:
+
 ```xml
 <w:drawing>
   <wp:inline>
@@ -585,6 +630,9 @@ After running `comment.py` (see Step 2), add markers to document.xml. For replie
 ## Dependencies
 
 - **pandoc**: Text extraction
+
 - **docx**: `npm install -g docx` (new documents)
+
 - **LibreOffice**: PDF conversion (auto-configured for sandboxed environments via `scripts/office/soffice.py`)
+
 - **Poppler**: `pdftoppm` for images

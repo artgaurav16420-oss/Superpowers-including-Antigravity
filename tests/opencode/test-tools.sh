@@ -37,7 +37,7 @@ output=$(timeout 60s opencode run --print-logs "Use the find_skills tool to list
 
 # Check for expected patterns in output
 if echo "$output" | grep -qi "mega-skills:brainstorming\|mega-skills:using-mega-skills\|Available skills"; then
-    echo "  [PASS] find_skills tool discovered superpowers skills"
+    echo "  [PASS] find_skills tool discovered mega-skills skills"
 else
     echo "  [FAIL] find_skills did not return expected skills"
     echo "  Output was:"
@@ -102,5 +102,6 @@ fi
 
 echo ""
 echo "=== All tools tests passed ==="
+
 
 

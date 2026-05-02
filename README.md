@@ -33,7 +33,7 @@ antigravity extension install https://github.com/artgaurav16420-oss/Mega-Skills
 To update:
 
 ```bash
-antigravity extension update mega-superpowers
+antigravity extension update mega-mega-skills
 ```
 
 ### Gemini CLI
@@ -45,7 +45,7 @@ gemini extensions install https://github.com/artgaurav16420-oss/Mega-Skills
 ### Claude Code
 
 ```bash
-/plugin install mega-superpowers@https://github.com/artgaurav16420-oss/Mega-Skills
+/plugin install mega-mega-skills@https://github.com/artgaurav16420-oss/Mega-Skills
 ```
 
 ### OpenCode
@@ -59,7 +59,7 @@ Fetch and follow instructions from https://raw.githubusercontent.com/artgaurav16
 ### GitHub Copilot CLI
 
 ```bash
-copilot plugin install mega-superpowers@https://github.com/artgaurav16420-oss/Mega-Skills
+copilot plugin install mega-mega-skills@https://github.com/artgaurav16420-oss/Mega-Skills
 ```
 
 ## The Basic Workflow
@@ -166,5 +166,3 @@ Mega-Skills is maintained by [Gaurav](https://github.com/artgaurav16420-oss), ba
 
 - **Discord**: [Join us](https://discord.gg/35wsABTejz) for community support.
 - **Issues**: <https://github.com/artgaurav16420-oss/Mega-Skills/issues>
-
-

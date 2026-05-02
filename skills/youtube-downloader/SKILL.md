@@ -24,13 +24,19 @@ This downloads the video in best available quality as MP4 to `/mnt/user-data/out
 Use `-q` or `--quality` to specify video quality:
 
 - `best` (default): Highest quality available
+
 - `1080p`: Full HD
+
 - `720p`: HD
+
 - `480p`: Standard definition
+
 - `360p`: Lower quality
+
 - `worst`: Lowest quality available
 
 Example:
+
 ```bash
 python scripts/download_video.py "URL" -q 720p
 ```
@@ -40,10 +46,13 @@ python scripts/download_video.py "URL" -q 720p
 Use `-f` or `--format` to specify output format (video downloads only):
 
 - `mp4` (default): Most compatible
+
 - `webm`: Modern format
+
 - `mkv`: Matroska container
 
 Example:
+
 ```bash
 python scripts/download_video.py "URL" -f webm
 ```
@@ -67,16 +76,19 @@ python scripts/download_video.py "URL" -o /path/to/directory
 ## Complete Examples
 
 1. Download video in 1080p as MP4:
+
 ```bash
 python scripts/download_video.py "https://www.youtube.com/watch?v=dQw4w9WgXcQ" -q 1080p
 ```
 
-2. Download audio only as MP3:
+1. Download audio only as MP3:
+
 ```bash
 python scripts/download_video.py "https://www.youtube.com/watch?v=dQw4w9WgXcQ" -a
 ```
 
-3. Download in 720p as WebM to custom directory:
+1. Download in 720p as WebM to custom directory:
+
 ```bash
 python scripts/download_video.py "https://www.youtube.com/watch?v=dQw4w9WgXcQ" -q 720p -f webm -o /custom/path
 ```
@@ -86,17 +98,23 @@ python scripts/download_video.py "https://www.youtube.com/watch?v=dQw4w9WgXcQ" -
 The skill uses `yt-dlp`, a robust YouTube downloader that:
 
 - Automatically installs itself if not present
+
 - Fetches video information before downloading
+
 - Selects the best available streams matching your criteria
+
 - Merges video and audio streams when needed
+
 - Supports a wide range of YouTube video formats
 
 ## Important Notes
 
 - Downloads are saved to `/mnt/user-data/outputs/` by default
+
 - Video filename is automatically generated from the video title
+
 - The script handles installation of yt-dlp automatically
+
 - Only single videos are downloaded (playlists are skipped by default)
+
 - Higher quality videos may take longer to download and use more disk space
-
-

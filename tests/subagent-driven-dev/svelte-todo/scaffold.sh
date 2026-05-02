@@ -43,5 +43,6 @@ git commit -m "Initial project setup with design and plan"
 echo "Scaffolded Svelte Todo project at: $TARGET_DIR"
 echo ""
 echo "To run the test:"
-echo "  claude -p \"Execute this plan using mega-skills:subagent-driven-development. Plan: $TARGET_DIR/plan.md\" --plugin-dir /path/to/superpowers"
+echo "  claude -p \"Execute this plan using mega-skills:subagent-driven-development. Plan: $TARGET_DIR/plan.md\" --plugin-dir /path/to/mega-skills"
+
 

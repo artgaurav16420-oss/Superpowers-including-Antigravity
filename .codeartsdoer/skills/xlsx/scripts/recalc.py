@@ -16,11 +16,11 @@ from openpyxl import load_workbook
 
 MACRO_DIR_MACOS = "~/Library/Application Support/LibreOffice/4/user/basic/Standard"
 MACRO_DIR_LINUX = "~/.config/libreoffice/4/user/basic/Standard"
-MACRO_FILENAME = "Module1.xba"
+MACRO_FILENAME = "MegaSkillsRecalc.xba"
 
 RECALCULATE_MACRO = """<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">
-<script:module xmlns:script="http://openoffice.org/2000/script" script:name="Module1" script:language="StarBasic">
+<script:module xmlns:script="http://openoffice.org/2000/script" script:name="MegaSkillsRecalc" script:language="StarBasic">
     Sub RecalculateAndSave()
       ThisComponent.calculateAll()
       ThisComponent.store()
@@ -52,13 +52,14 @@ def setup_libreoffice_macro():
         return True
 
     if not os.path.exists(macro_dir):
+        os.makedirs(macro_dir, exist_ok=True)
+        # Force init libreoffice to create default profile if missing
         subprocess.run(
             ["soffice", "--headless", "--terminate_after_init"],
             capture_output=True,
             timeout=10,
             env=get_soffice_env(),
         )
-        os.makedirs(macro_dir, exist_ok=True)
 
     try:
         Path(macro_file).write_text(RECALCULATE_MACRO)
@@ -80,7 +81,7 @@ def recalc(filename, timeout=30):
         "soffice",
         "--headless",
         "--norestore",
-        "vnd.sun.star.script:Standard.Module1.RecalculateAndSave?language=Basic&location=application",
+        "vnd.sun.star.script:Standard.MegaSkillsRecalc.RecalculateAndSave?language=Basic&location=application",
         abs_path,
     ]
 

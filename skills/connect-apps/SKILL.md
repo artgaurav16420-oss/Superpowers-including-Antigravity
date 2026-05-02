@@ -11,27 +11,29 @@ Connect Claude to 1000+ apps. Actually send emails, create issues, post messages
 
 ### Step 1: Install the Plugin
 
-```
+```text
 /plugin install composio-toolrouter
 ```
 
 ### Step 2: Run Setup
 
-```
+```text
 /composio-toolrouter:setup
 ```
 
 This will:
 
 - Ask for your free API key (get one at [platform.composio.dev](https://platform.composio.dev/?utm_source=Github&utm_content=AwesomeSkills))
+
 - Configure Claude's connection to 1000+ apps
+
 - Take about 60 seconds
 
 ### Step 3: Try It!
 
 After setup, restart Claude Code and try:
 
-```
+```text
 Send me a test email at YOUR_EMAIL@example.com
 ```
 
@@ -40,7 +42,7 @@ If it works, you're connected!
 ## What You Can Do
 
 | Ask Claude to... | What happens |
-|------------------|--------------|
+|::::::---::::::---::::::---::::::---::::::---::::::---|::::::---::::::---::::::---::::::-----|
 | "Send email to sarah@acme.com about the launch" | Actually sends the email |
 | "Create GitHub issue: fix login bug" | Creates the issue |
 | "Post to Slack #general: deploy complete" | Posts the message |
@@ -58,14 +60,19 @@ If it works, you're connected!
 ## How It Works
 
 1. You ask Claude to do something
-2. Composio Tool Router finds the right tool
-3. First time? You'll authorize via OAuth (one-time)
-4. Action executes and returns result
+
+1. Composio Tool Router finds the right tool
+
+1. First time? You'll authorize via OAuth (one-time)
+
+1. Action executes and returns result
 
 ## Troubleshooting
 
 - **"Plugin not found"** → Make sure you ran `/plugin install composio-toolrouter`
+
 - **"Need to authorize"** → Click the OAuth link Claude provides, then say "done"
+
 - **Action failed** → Check you have permissions in the target app
 
 ---
@@ -79,5 +86,3 @@ If it works, you're connected!
     <img src="https://img.shields.io/badge/Get_Started_Free-4F46E5?style=for-the-badge" alt="Get Started"/>
   </a>
 </p>
-
-

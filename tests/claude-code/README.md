@@ -1,6 +1,6 @@
 # Claude Code Skills Tests
 
-Automated tests for superpowers skills using Claude Code CLI.
+Automated tests for mega-skills skills using Claude Code CLI.
 
 ## Overview
 
@@ -9,7 +9,7 @@ This test suite verifies that skills are loaded correctly and Claude follows the
 ## Requirements
 
 - Claude Code CLI installed and in PATH (`claude --version` should work)
-- Local superpowers plugin installed (see main README for installation)
+- Local mega-skills plugin installed (see main README for installation)
 
 ## Running Tests
 
@@ -156,3 +156,4 @@ To run in CI:
 - Focus on verifying key skill requirements
 - Tests should be deterministic
 - Avoid testing implementation details
+
