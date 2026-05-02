@@ -14,7 +14,16 @@
       "node_modules",
       ".git",
       ".version-bump.json",
-      "scripts/bump-version.sh"
+      "scripts/bump-version.sh",
+      ".agents",
+      ".windsurf",
+      ".zencoder",
+      ".adal",
+      ".aider-desk",
+      ".codex",
+      ".cursor",
+      ".claude",
+      ".trae"
     ]
   }
 }
