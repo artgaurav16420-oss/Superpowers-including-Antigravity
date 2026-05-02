@@ -1,8 +1,8 @@
-# Mega-Skills: Give Your AI Superpowers
+# Mega-Skills: The OS for AI Agents
 
 ![Mega-Skills Banner](https://raw.githubusercontent.com/artgaurav16420-oss/Mega-Skills/main/assets/mega_skills_banner.png)
 
-**The ultimate software development methodology and skill library for autonomous AI agents.**
+**Transform any LLM into an elite Software Engineer. 101+ executable skills for the agentic era.**
 
 [![GitHub stars](https://img.shields.io/github/stars/artgaurav16420-oss/Mega-Skills?style=for-the-badge&color=yellow)](https://github.com/artgaurav16420-oss/Mega-Skills/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/artgaurav16420-oss/Mega-Skills?style=for-the-badge&color=blue)](https://github.com/artgaurav16420-oss/Mega-Skills/network/members)
@@ -13,20 +13,46 @@
 
 ## 💎 Why Mega-Skills?
 
-**Mega-Skills** isn't just a library—it's a **proven software engineering methodology** compressed into executable agent instructions. It transforms standard LLMs into elite software engineers by enforcing rigorous workflows, TDD, and systematic problem-solving.
+Most AI agents fail because they lack a **methodology**. They guess, they hallucinate, and they ignore edge cases. **Mega-Skills** fixes this by injecting 101+ high-fidelity workflows directly into the agent's reasoning loop.
 
-- **🔥 101+ Specialized Skills**: From PDF manipulation to autonomous subagent orchestration.
-- **🛠️ Zero-Dependency Architecture**: Runs natively in any agent harness (Cursor, Claude Code, Windsurf, etc.).
-- **⚡ Auto-Triggering Logic**: Skills activate only when needed, keeping your agent's context clean and focused.
-- **🏗️ Battle-Tested Methodology**: Built on TDD, YAGNI, and DRY principles.
+- **🔥 101+ Specialized Skills**: From advanced Excel recalculation to autonomous subagent swarms.
+- **🛠️ Universal Compatibility**: Natively supports **Cursor, Windsurf, Claude Code, Aider, Devin,** and more.
+- **🏗️ Industrial Grade**: Includes system-level shims for running complex tools in restricted environments.
 
 ---
 
-## 🚀 Quick Start
+## 🌟 Trending Skills Spotlight
 
-Install Mega-Skills in your favorite agent harness with a single command.
+These are the most-used skills that are changing how developers interact with AI:
 
-| Harness | Command |
+### 🦴 Caveman Mode (`caveman`)
+**The ultimate token-saver.** Caveman Mode forces the agent to communicate in ultra-compressed, technical-only language. It cuts token usage by ~75% while maintaining 100% technical accuracy.
+> "Why use many word when few word do trick?"
+
+### 🧠 Sequential Thinking (`sequential-thinking`)
+A multi-step reasoning loop that forces agents to "think out loud" across multiple turns. It prevents premature coding by requiring the agent to explore hypotheses, verify assumptions, and map out edge cases before touching the editor.
+
+### 🤖 Subagent Orchestration (`subagent-driven-development`)
+Dispatches specialized, short-lived subagents to handle complex sub-tasks. Each subagent is benchmarked for spec compliance and code quality, allowing the main agent to maintain high-level focus without getting lost in implementation details.
+
+### 📊 Excel Mastery (`xlsx`)
+Not just simple CSV writing. Includes a full **LibreOffice-powered recalculation engine** that ensures formula integrity and reports #REF! or #DIV/0! errors before the agent claims success.
+
+---
+
+## 🚀 Installation & Harnesses
+
+Mega-Skills is a zero-dependency plugin that works across the entire agentic ecosystem.
+
+### Supported Platforms
+
+- **IDEs**: Cursor, Windsurf, Trae, VS Code (via Aider/OpenHands).
+- **CLIs**: Claude Code, Gemini CLI, Aider, GitHub Copilot CLI.
+- **Autonomous Agents**: Devin, OpenHands, Goose, Roo Code.
+
+### One-Command Install
+
+| Harness | Installation Command |
 | :--- | :--- |
 | **Antigravity** | `antigravity extension install https://github.com/artgaurav16420-oss/Mega-Skills` |
 | **Claude Code** | `/plugin install https://github.com/artgaurav16420-oss/Mega-Skills` |
@@ -35,45 +61,55 @@ Install Mega-Skills in your favorite agent harness with a single command.
 
 ---
 
-## 🧠 The "Golden Path" Workflow
+## 🏗️ The Methodology: "The Golden Path"
 
-Mega-Skills enforces a high-fidelity development cycle that ensures quality at every step:
+Mega-Skills isn't a collection of scripts; it's a **Development OS**.
 
-1. **🔍 Brainstorming**: Forces deep spec exploration and alternative analysis before a single line of code is written.
-2. **📋 Writing-Plans**: Breaks complex tasks into bite-sized, verifiable implementation units.
-3. **🧪 Test-Driven Development**: Enforces the RED-GREEN-REFACTOR cycle for 100% reliable output.
-4. **🤖 Subagent-Driven-Development**: Dispatches autonomous subagents to parallelize work and maintain focus.
-5. **🏁 Verification**: Final-stage validation and clean merge workflows.
+### 1. Socratic Brainstorming
+Before a plan is created, the agent must pass the `brainstorming` phase. It will ask you critical questions about architecture, trade-offs, and user experience. **If the spec isn't clear, the code won't be either.**
+
+### 2. High-Fidelity Planning
+The `writing-plans` skill breaks work into atomic units. Each task includes specific file paths, code snippets, and verification commands. This eliminates "hallucinated progress."
+
+### 3. Strict TDD (Red-Green-Refactor)
+Mega-Skills enforces **True TDD**. Agents must write a failing test, verify the failure, write the implementation, and verify the pass. This is the only way to guarantee 100% production-ready code.
+
+### 4. Continuous State Management
+With `memory-management`, the agent tracks its current task, discovered issues, and architectural decisions in a persistent `.mega-skills/state.json`. **No more context drift in long sessions.**
 
 ---
 
-## 📚 Skill Categories
-
-Explore the vast ecosystem of capabilities:
+## 📂 Skill Categories
 
 ### 🛠️ Core Engineering
-
 `brainstorming` • `writing-plans` • `test-driven-development` • `sequential-thinking` • `systematic-debugging` • `using-git-worktrees` • `memory-management`
 
-### 🏗️ Advanced Developer Tools
+### 🏗️ Developer Tools & DevOps
+`mcp-builder` • `browser-automation` • `webapp-testing` • `claude-api` • `web-artifacts-builder` • `langsmith-fetch` • `changelog-generator`
 
-`mcp-builder` • `browser-automation` • `webapp-testing` • `claude-api` • `web-artifacts-builder` • `langsmith-fetch` • `skill-creator`
+### 📄 Document & Enterprise
+`pdf` • `xlsx` • `docx` • `pptx` • `invoice-organizer` • `file-organizer` • `internal-comms`
 
-### 📄 Document & Data Mastery
+### 🎨 Design & Content Art
+`frontend-design` • `canvas-design` • `slack-gif-creator` • `twitter-algorithm-optimizer` • `youtube-downloader` • `theme-factory` • `algorithmic-art`
 
-`pdf` • `xlsx` • `docx` • `pptx` • `invoice-organizer` • `file-organizer`
+---
 
-### 🎨 Design & Content
+## 🔒 Security & Reliability
 
-`frontend-design` • `canvas-design` • `slack-gif-creator` • `twitter-algorithm-optimizer` • `youtube-downloader` • `theme-factory`
+Mega-Skills is built for professional use-cases:
+
+- **Socket Shims**: Includes a custom C-level LD_PRELOAD shim (`soffice.py`) to run LibreOffice in restricted Unix environments.
+- **Isolated Macros**: Uses dedicated StarBasic namespaces (`MegaSkillsRecalc`) to prevent conflict with your existing Office configurations.
+- **Dependency Checks**: Automatic pre-flight verification ensures your environment has `gcc`, `pandoc`, and `soffice` before attempting complex conversions.
 
 ---
 
 ## 🤝 Community & Support
 
 - **Discord**: [Join the Mega-Skills Community](https://discord.gg/35wsABTejz)
-- **Sponsorship**: Help us build the future of agentic coding by [sponsoring Gaurav's work](https://github.com/artgaurav16420-oss).
-- **Contributing**: Please read [CLAUDE.md](CLAUDE.md) before submitting a PR. We have a 94% rejection rate for AI-generated slop—quality is our only metric.
+- **Sponsorship**: Help us scale the library by [sponsoring Gaurav's work](https://github.com/artgaurav16420-oss).
+- **Contributing**: Read [CLAUDE.md](CLAUDE.md). We maintain a 94% rejection rate to ensure only the highest fidelity skills enter the core library.
 
 ---
 
