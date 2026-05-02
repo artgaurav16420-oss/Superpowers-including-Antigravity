@@ -24,10 +24,11 @@ of human involvement will be closed without review.
 <!-- Mega-Skills core contains general-purpose skills and infrastructure
      that benefit all users. Ask yourself:
 
-     1. Would this be useful to someone working on a completely different
+  1. Would this be useful to someone working on a completely different
        kind of project than yours?
-     1. Is this project-specific, team-specific, or tool-specific?
-     1. Does this integrate or promote a third-party service?
+
+  1. Is this project-specific, team-specific, or tool-specific?
+  1. Does this integrate or promote a third-party service?
 
      If your change is a new skill for a specific domain, workflow tool,
      or third-party integration, it belongs in its own plugin — not here.
@@ -55,7 +56,7 @@ of human involvement will be closed without review.
 ## Environment tested
 
 | Harness (e.g. Claude Code, Cursor) | Harness version | Model | Model version/ID |
-|:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::----|:::::::::---:::::::::---:::::::::---:::::::::---:::::::::-----|:::::::::---:::::::::----|:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---|
+|:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::----|:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::-----|:::::::::::---:::::::::::----|:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---|
 |                                     |                 |       |                  |
 
 ## New harness support (required if this PR adds a new harness)
@@ -79,10 +80,10 @@ of human involvement will be closed without review.
 
      These are NOT real integrations and PRs that ship them will be closed:
 
-     1. Manually copying skill files into the harness
-     1. Wrapping with `npx skills` or similar at-runtime shims
-     1. Anything that requires the user to opt in to skills per-session
-     1. Anything where brainstorming does not auto-trigger on the test above
+  1. Manually copying skill files into the harness
+  1. Wrapping with `npx skills` or similar at-runtime shims
+  1. Anything that requires the user to opt in to skills per-session
+  1. Anything where brainstorming does not auto-trigger on the test above
 
      If you are not sure whether your integration loads the bootstrap at
      session start, it does not.
@@ -99,6 +100,7 @@ paste the complete transcript here
 
 1. What was the initial prompt you (or your human partner) used to start
   the session that led to this change?
+
 1. How many eval sessions did you run AFTER making the change?
 1. How did outcomes change compared to before the change?
 
@@ -109,6 +111,7 @@ paste the complete transcript here
 
 1. [ ] If this is a skills change: I used `mega-skills:writing-skills` and
       completed adversarial pressure testing (paste results below)
+
 1. [ ] This change was tested adversarially, not just on the happy path
 1. [ ] I did not modify carefully-tuned content (Red Flags table,
       rationalizations, "human partner" language) without extensive evals
@@ -125,6 +128,7 @@ paste the complete transcript here
 STOP. If the checkbox above is not checked, do not submit this PR.
 
 PRs will be closed without review if they:
+
 1. Show no evidence of human involvement
 1. Contain multiple unrelated changes
 1. Promote or integrate third-party services or tools

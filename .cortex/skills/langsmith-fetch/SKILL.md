@@ -240,22 +240,22 @@ Error Breakdown:
 
 1. Check if traces exist:
 
-   ```bash
+```bash
    langsmith-fetch traces --last-n-minutes 5 --limit 5
-   ```
+```
 
 1. **If NO traces found:**
-   1. Tracing might be disabled
-   1. Check: `LANGCHAIN_TRACING_V2=true` in environment
+1. Tracing might be disabled
+1. Check: `LANGCHAIN_TRACING_V2=true` in environment
 
-   1. Check: `LANGCHAIN_API_KEY` is set
+1. Check: `LANGCHAIN_API_KEY` is set
 
-   1. Verify agent actually ran
+1. Verify agent actually ran
 
 1. **If traces found:**
-   1. Review for errors
-   1. Check execution time (hanging?)
-   1. Verify tool calls completed
+1. Review for errors
+1. Check execution time (hanging?)
+1. Verify tool calls completed
 
 ---
 
@@ -285,15 +285,15 @@ Error Breakdown:
 
 1. Search for memory operations:
 
-   ```bash
+```bash
    langsmith-fetch traces --last-n-minutes 10 --limit 20 --format raw | grep -i "memory\|recall\|store"
-   ```
+```
 
 1. Check:
-   1. Were memory tools called?
-   1. Did recall return results?
-   1. Were memories actually stored?
-   1. Are retrieved memories being used?
+1. Were memory tools called?
+1. Did recall return results?
+1. Were memories actually stored?
+1. Are retrieved memories being used?
 
 ---
 
@@ -305,16 +305,16 @@ Error Breakdown:
 
 1. Export with metadata:
 
-   ```bash
+```bash
    langsmith-fetch traces ./perf-analysis --last-n-minutes 30 --limit 50 --include-metadata
-   ```
+```
 
 1. Analyze:
-   1. Execution time per trace
-   1. Tool call latencies
-   1. Token usage (context size)
-   1. Number of iterations
-   1. Slowest operations
+1. Execution time per trace
+1. Tool call latencies
+1. Token usage (context size)
+1. Number of iterations
+1. Slowest operations
 
 1. Identify bottlenecks and suggest optimizations
 

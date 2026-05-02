@@ -102,12 +102,12 @@ Inform them clarifying questions will be asked once they've done their initial d
 #### During context gathering
 
 1. If user mentions team channels or shared documents:
-  1. If integrations available: Inform them the content will be read now, then use the appropriate integration
-  1. If integrations not available: Explain lack of access. Suggest they enable connectors in Claude settings, or paste the relevant content directly.
+1. If integrations available: Inform them the content will be read now, then use the appropriate integration
+1. If integrations not available: Explain lack of access. Suggest they enable connectors in Claude settings, or paste the relevant content directly.
 
 1. If user mentions entities/projects that are unknown:
-  1. Ask if connected tools should be searched to learn more
-  1. Wait for user confirmation before searching
+1. Ask if connected tools should be searched to learn more
+1. Wait for user confirmation before searching
 
 1. As user provides context, track what's being learned and what's still unclear
 

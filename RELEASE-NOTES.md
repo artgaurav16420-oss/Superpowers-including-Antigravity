@@ -416,6 +416,7 @@ Improved documentation of how Codex tools map to Claude Code equivalents for sub
 OpenCode's official documentation uses `~/.config/opencode/plugins/` (plural). Our docs previously used `plugin/` (singular). While OpenCode accepts both forms, we've standardized on the official convention to avoid confusion.
 
 Changes:
+
 1. Renamed `.opencode/plugin/` to `.opencode/plugins/` in repo structure
 1. Updated all installation docs (INSTALL.md, README.opencode.md) across all platforms
 1. Updated test scripts to match
@@ -467,6 +468,7 @@ Fix: hooks.json now calls session-start.sh directly. Claude Code 2.1.x handles t
 Addressed a failure mode where Claude would skip invoking a skill even when the user explicitly requested it by name (e.g., "subagent-driven-development, please"). Claude would think "I know what that means" and start working directly instead of loading the skill.
 
 Changes:
+
 1. Updated "The Rule" to say "Invoke relevant or requested skills" instead of "Check for skills" - emphasizing active invocation over passive checking
 1. Added "BEFORE any response or action" - the original wording only mentioned "response" but Claude would sometimes take action without responding first
 1. Added reassurance that invoking a wrong skill is okay - reduces hesitation
@@ -521,12 +523,14 @@ Subagent workflows now use two separate review stages after each task:
 This catches the common failure mode where code is well-written but doesn't match what was requested. Reviews are loops, not one-shot: if reviewer finds issues, implementer fixes them, then reviewer checks again.
 
 Other subagent workflow improvements:
+
 1. Controller provides full task text to workers (not file references)
 1. Workers can ask clarifying questions before AND during work
 1. Self-review checklist before reporting completion
 1. Plan read once at start, extracted to TodoWrite
 
 New prompt templates in `skills/subagent-driven-development/`:
+
 1. `implementer-prompt.md` - Includes self-review checklist, encourages questions
 1. `spec-reviewer-prompt.md` - Skeptical verification against requirements
 1. `code-quality-reviewer-prompt.md` - Standard code review
@@ -534,6 +538,7 @@ New prompt templates in `skills/subagent-driven-development/`:
 #### Debugging techniques consolidated with tools
 
 `systematic-debugging` now bundles supporting techniques and tools:
+
 1. `root-cause-tracing.md` - Trace bugs backward through call stack
 1. `defense-in-depth.md` - Add validation at multiple layers
 1. `condition-based-waiting.md` - Replace arbitrary timeouts with condition polling
@@ -543,6 +548,7 @@ New prompt templates in `skills/subagent-driven-development/`:
 #### Testing anti-patterns reference
 
 `test-driven-development` now includes `testing-anti-patterns.md` covering:
+
 1. Testing mock behavior instead of real behavior
 1. Adding test-only methods to production classes
 1. Mocking without understanding dependencies
@@ -557,6 +563,7 @@ Three new test frameworks for validating skill behavior:
 `tests/claude-code/` - Integration tests using `claude -p` for headless testing. Verifies skill usage via session transcript (JSONL) analysis. Includes `analyze-token-usage.py` for cost tracking.
 
 `tests/subagent-driven-dev/` - End-to-end workflow validation with two complete test projects:
+
 1. `go-fractals/` - CLI tool with Sierpinski/Mandelbrot (10 tasks)
 1. `svelte-todo/` - CRUD app with localStorage and Playwright (12 tasks)
 
@@ -579,6 +586,7 @@ Description changed to imperative: "You MUST use this before any creative work�
 ### Breaking Changes (4)
 
 **Skill consolidation** - Six standalone skills merged:
+
 1. `root-cause-tracing`, `defense-in-depth`, `condition-based-waiting` → bundled in `systematic-debugging/`
 1. `testing-skills-with-subagents` → bundled in `writing-skills/`
 1. `testing-anti-patterns` → bundled in `test-driven-development/`
@@ -597,9 +605,9 @@ Description changed to imperative: "You MUST use this before any creative work�
 ### Fixed (3)
 
 1. **Linux Compatibility**: Fixed polyglot hook wrapper (`run-hook.cmd`) to use POSIX-compliant syntax
-  1. Replaced bash-specific `${BASH_SOURCE[0]:-$0}` with standard `$0` on line 16
-  1. Resolves "Bad substitution" error on Ubuntu/Debian systems where `/bin/sh` is dash
-  1. Fixes #141
+1. Replaced bash-specific `${BASH_SOURCE[0]:-$0}` with standard `$0` on line 16
+1. Resolves "Bad substitution" error on Ubuntu/Debian systems where `/bin/sh` is dash
+1. Fixes #141
 
 ---
 
@@ -608,10 +616,10 @@ Description changed to imperative: "You MUST use this before any creative work�
 ### Changed (3)
 
 1. **OpenCode Bootstrap Refactor**: Switched from `chat.message` hook to `session.created` event for bootstrap injection
-  1. Bootstrap now injects at session creation via `session.prompt()` with `noReply: true`
-  1. Explicitly tells the model that using-mega-skills is already loaded to prevent redundant skill loading
-  1. Consolidated bootstrap content generation into shared `getBootstrapContent()` helper
-  1. Cleaner single-implementation approach (removed fallback pattern)
+1. Bootstrap now injects at session creation via `session.prompt()` with `noReply: true`
+1. Explicitly tells the model that using-mega-skills is already loaded to prevent redundant skill loading
+1. Consolidated bootstrap content generation into shared `getBootstrapContent()` helper
+1. Cleaner single-implementation approach (removed fallback pattern)
 
 ---
 
@@ -620,28 +628,28 @@ Description changed to imperative: "You MUST use this before any creative work�
 ### Added (2)
 
 1. **OpenCode Support**: Native JavaScript plugin for OpenCode.ai
-  1. Custom tools: `use_skill` and `find_skills`
-  1. Message insertion pattern for skill persistence across context compaction
-  1. Automatic context injection via chat.message hook
-  1. Auto re-injection on session.compacted events
-  1. Three-tier skill priority: project > personal > superpowers
-  1. Project-local skills support (`.opencode/skills/`)
-  1. Shared core module (`lib/skills-core.js`) for code reuse with Codex
-  1. Automated test suite with proper isolation (`tests/opencode/`)
-  1. Platform-specific documentation (`docs/README.opencode.md`, `docs/README.codex.md`)
+1. Custom tools: `use_skill` and `find_skills`
+1. Message insertion pattern for skill persistence across context compaction
+1. Automatic context injection via chat.message hook
+1. Auto re-injection on session.compacted events
+1. Three-tier skill priority: project > personal > superpowers
+1. Project-local skills support (`.opencode/skills/`)
+1. Shared core module (`lib/skills-core.js`) for code reuse with Codex
+1. Automated test suite with proper isolation (`tests/opencode/`)
+1. Platform-specific documentation (`docs/README.opencode.md`, `docs/README.codex.md`)
 
 ### Changed (4)
 
 1. **Refactored Codex Implementation**: Now uses shared `lib/skills-core.js` ES module
-  1. Eliminates code duplication between Codex and OpenCode
-  1. Single source of truth for skill discovery and parsing
-  1. Codex successfully loads ES modules via Node.js interop
+1. Eliminates code duplication between Codex and OpenCode
+1. Single source of truth for skill discovery and parsing
+1. Codex successfully loads ES modules via Node.js interop
 
 1. **Improved Documentation**: Rewrote README to explain problem/solution clearly
-  1. Removed duplicate sections and conflicting information
-  1. Added complete workflow description (brainstorm → plan → execute → finish)
-  1. Simplified platform installation instructions
-  1. Emphasized skill-checking protocol over automatic activation claims
+1. Removed duplicate sections and conflicting information
+1. Added complete workflow description (brainstorm → plan → execute → finish)
+1. Simplified platform installation instructions
+1. Emphasized skill-checking protocol over automatic activation claims
 
 ---
 
@@ -723,16 +731,16 @@ The Skill tool is the proper mechanism for invoking skills in Claude Code. This 
 #### Strengthened using-mega-skills skill against agent rationalization
 
 1. Added EXTREMELY-IMPORTANT block with absolute language about mandatory skill checking
-  1. "If even 1% chance a skill applies, you MUST read it"
-  1. "You do not have a choice. You cannot rationalize your way out."
+1. "If even 1% chance a skill applies, you MUST read it"
+1. "You do not have a choice. You cannot rationalize your way out."
 1. Added MANDATORY FIRST RESPONSE PROTOCOL checklist
-  1. 5-step process agents must complete before any response
-  1. Explicit "responding without this = failure" consequence
+1. 5-step process agents must complete before any response
+1. Explicit "responding without this = failure" consequence
 1. Added Common Rationalizations section with 8 specific evasion patterns
-  1. "This is just a simple question" → WRONG
-  1. "I can check files quickly" → WRONG
-  1. "Let me gather information first" → WRONG
-  1. Plus 5 more common patterns observed in agent behavior
+1. "This is just a simple question" → WRONG
+1. "I can check files quickly" → WRONG
+1. "Let me gather information first" → WRONG
+1. Plus 5 more common patterns observed in agent behavior
 
 These changes address observed agent behavior where they rationalize around skill usage despite clear instructions. The forceful language and pre-emptive counter-arguments aim to make non-compliance harder.
 
@@ -827,9 +835,9 @@ These changes address observed agent behavior where they rationalize around skil
 #### Skill cross-reference clarity
 
 1. All skill references now use explicit requirement markers:
-  1. `**REQUIRED BACKGROUND:**` - Prerequisites you must understand
-  1. `**REQUIRED SUB-SKILL:**` - Skills that must be used in workflow
-  1. `**Complementary skills:**` - Optional but helpful related skills
+1. `**REQUIRED BACKGROUND:**` - Prerequisites you must understand
+1. `**REQUIRED SUB-SKILL:**` - Skills that must be used in workflow
+1. `**Complementary skills:**` - Optional but helpful related skills
 1. Removed old path format (`skills/collaboration/X` → just `X`)
 1. Updated Integration sections with categorized relationships (Required vs Complementary)
 1. Updated cross-reference documentation with best practices
@@ -876,8 +884,8 @@ We now use Anthropic's first-party skills system!
 ### Bug Fixes (10)
 
 1. **Fixed session-start hook execution in plugin context** (#8, PR #9) - The hook was failing silently with "Plugin hook error" preventing skills context from loading. Fixed by:
-  1. Using `${BASH_SOURCE[0]:-$0}` fallback when BASH_SOURCE is unbound in Claude Code's execution context
-  1. Adding `|| true` to handle empty grep results gracefully when filtering status flags
+1. Using `${BASH_SOURCE[0]:-$0}` fallback when BASH_SOURCE is unbound in Claude Code's execution context
+1. Adding `|| true` to handle empty grep results gracefully when filtering status flags
 
 ---
 
@@ -887,7 +895,7 @@ We now use Anthropic's first-party skills system!
 
 Mega-Skills v2.0 makes skills more accessible, maintainable, and community-driven through a major architectural shift.
 
-The headline change is **skills repository separation**: all skills, scripts, and documentation have moved from the plugin into a dedicated repository ([obra/superpowers-skills]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).)]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).)))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).)))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).)))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).))))))))](https://github.com/artgaurav16420-oss/Mega-Skills-skills)).))))))))) This transforms superpowers from a monolithic plugin into a lightweight shim that manages a local clone of the skills repository. Skills auto-update on session start. Users fork and contribute improvements via standard git workflows. The skills library versions independently from the plugin.
+The headline change is **skills repository separation**: all skills, scripts, and documentation have moved from the plugin into a dedicated repository ([obra/superpowers-skills]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).)]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).)))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).)))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).)))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).)))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).))))))))))](https://github.com/artgaurav16420-oss/Mega-Skills-skills)).))))))))))) This transforms superpowers from a monolithic plugin into a lightweight shim that manages a local clone of the skills repository. Skills auto-update on session start. Users fork and contribute improvements via standard git workflows. The skills library versions independently from the plugin.
 
 Beyond infrastructure, this release adds nine new skills focused on problem-solving, research, and architecture. We rewrote the core **using-skills** documentation with imperative tone and clearer structure, making it easier for Claude to understand when and how to use skills. **find-skills** now outputs paths you can paste directly into the Read tool, eliminating friction in the skills discovery workflow.
 
@@ -897,7 +905,7 @@ Users experience seamless operation: the plugin handles cloning, forking, and up
 
 ### Skills Repository Separation
 
-**The biggest change:** Skills no longer live in the plugin. They've been moved to a separate repository at [obra/superpowers-skills]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).)]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).)))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).)))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).)))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).))))))))](https://github.com/artgaurav16420-oss/Mega-Skills-skills).)))))))))
+**The biggest change:** Skills no longer live in the plugin. They've been moved to a separate repository at [obra/superpowers-skills]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).)]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).)))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).)))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).)))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).)))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).))))))))))](https://github.com/artgaurav16420-oss/Mega-Skills-skills).)))))))))))
 
 #### What this means for you
 
@@ -910,6 +918,7 @@ Users experience seamless operation: the plugin handles cloning, forking, and up
 #### Migration
 
 If you have an existing installation:
+
 1. Your old `~/.config/superpowers/.git` will be backed up to `~/.config/superpowers/.git.bak`
 1. Old skills will be backed up to `~/.config/superpowers/skills.bak`
 1. Fresh clone of obra/superpowers-skills will be created at `~/.config/superpowers/skills/`
@@ -924,6 +933,7 @@ If you have an existing installation:
 ### Skills Repository Infrastructure
 
 **Automatic Clone & Setup** (`lib/initialize-skills.sh`)
+
 1. Clones obra/superpowers-skills on first run
 1. Offers fork creation if GitHub CLI is installed
 1. Sets up upstream/origin remotes correctly
@@ -939,6 +949,7 @@ If you have an existing installation:
 ### New Skills
 
 **Problem-Solving Skills** (`skills/problem-solving/`)
+
 1. **collision-zone-thinking** - Force unrelated concepts together for emergent insights
 1. **inversion-exercise** - Flip assumptions to reveal hidden constraints
 1. **meta-pattern-recognition** - Spot universal principles across domains
@@ -947,9 +958,11 @@ If you have an existing installation:
 1. **when-stuck** - Dispatch to right problem-solving technique
 
 **Research Skills** (`skills/research/`)
+
 1. **tracing-knowledge-lineages** - Understand how ideas evolved over time
 
 **Architecture Skills** (`skills/architecture/`)
+
 1. **preserving-productive-tensions** - Keep multiple valid approaches instead of forcing premature resolution
 
 ### Skills Improvements
@@ -975,6 +988,7 @@ If you have an existing installation:
 1. Removed personal/core split references
 
 **pulling-updates-from-skills-repository** (new)
+
 1. Complete workflow for syncing with upstream
 1. Replaces old "updating-skills" skill
 
@@ -1056,6 +1070,7 @@ If you have an existing installation:
 ### Commit History
 
 This release includes:
+
 1. 20+ commits for skills repository separation
 1. PR #1: Amplifier-inspired problem-solving and research skills
 1. PR #2: Personal superpowers overlay system (later replaced)
@@ -1077,26 +1092,26 @@ The plugin handles everything automatically.
 
 1. **Backup your personal skills** (if you have any):
 
-   ```bash
+```bash
    cp -r ~/.config/superpowers/skills ~/superpowers-skills-backup
-   ```
+```
 
 1. **Update the plugin:**
 
-   ```bash
+```bash
    /plugin update superpowers
-   ```
+```
 
 1. **On next session start:**
-   1. Old installation will be backed up automatically
-   1. Fresh skills repo will be cloned
-   1. If you have GitHub CLI, you'll be offered the option to fork
+1. Old installation will be backed up automatically
+1. Fresh skills repo will be cloned
+1. If you have GitHub CLI, you'll be offered the option to fork
 
 1. **Migrate personal skills** (if you had any):
-   1. Create a branch in your local skills repo
-   1. Copy your personal skills from backup
-   1. Commit and push to your fork
-   1. Consider contributing back via PR
+1. Create a branch in your local skills repo
+1. Copy your personal skills from backup
+1. Commit and push to your fork
+1. Consider contributing back via PR
 
 ## What's Next
 
@@ -1108,7 +1123,7 @@ The plugin handles everything automatically.
 
 ### For Contributors
 
-1. Skills repository is now at [https://github.com/artgaurav16420-oss/Mega-Skills-skills]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)]([https://github.com/artgaurav16420-oss/Mega-Skills-skills))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills))))))))](https://github.com/artgaurav16420-oss/Mega-Skills-skills)))))))))
+1. Skills repository is now at [https://github.com/artgaurav16420-oss/Mega-Skills-skills]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)]([https://github.com/artgaurav16420-oss/Mega-Skills-skills))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills))))))))))](https://github.com/artgaurav16420-oss/Mega-Skills-skills)))))))))))
 1. Fork → Branch → PR workflow
 1. See skills/meta/writing-skills/SKILL.md for TDD approach to documentation
 
@@ -1124,6 +1139,6 @@ None at this time.
 
 ---
 
-**Full Changelog:** [https://github.com/artgaurav16420-oss/Mega-Skills/compare/dd013f6...main]([https://github.com/artgaurav16420-oss/Mega-Skills/compare/dd013f6...main)]([https://github.com/artgaurav16420-oss/Mega-Skills/compare/dd013f6...main))]([https://github.com/artgaurav16420-oss/Mega-Skills/compare/dd013f6...main)))]([https://github.com/artgaurav16420-oss/Mega-Skills/compare/dd013f6...main))))]([https://github.com/artgaurav16420-oss/Mega-Skills/compare/dd013f6...main)))))]([https://github.com/artgaurav16420-oss/Mega-Skills/compare/dd013f6...main))))))]([https://github.com/artgaurav16420-oss/Mega-Skills/compare/dd013f6...main)))))))]([https://github.com/artgaurav16420-oss/Mega-Skills/compare/dd013f6...main))))))))](https://github.com/artgaurav16420-oss/Mega-Skills/compare/dd013f6...main)))))))))
-**Skills Repository:** [https://github.com/artgaurav16420-oss/Mega-Skills-skills]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)]([https://github.com/artgaurav16420-oss/Mega-Skills-skills))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills))))))))](https://github.com/artgaurav16420-oss/Mega-Skills-skills)))))))))
-**Issues:** [https://github.com/artgaurav16420-oss/Mega-Skills/issues]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)))))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))))))))](https://github.com/artgaurav16420-oss/Mega-Skills/issues)))))))))
+**Full Changelog:** [https://github.com/artgaurav16420-oss/Mega-Skills/compare/dd013f6...main]([https://github.com/artgaurav16420-oss/Mega-Skills/compare/dd013f6...main)]([https://github.com/artgaurav16420-oss/Mega-Skills/compare/dd013f6...main))]([https://github.com/artgaurav16420-oss/Mega-Skills/compare/dd013f6...main)))]([https://github.com/artgaurav16420-oss/Mega-Skills/compare/dd013f6...main))))]([https://github.com/artgaurav16420-oss/Mega-Skills/compare/dd013f6...main)))))]([https://github.com/artgaurav16420-oss/Mega-Skills/compare/dd013f6...main))))))]([https://github.com/artgaurav16420-oss/Mega-Skills/compare/dd013f6...main)))))))]([https://github.com/artgaurav16420-oss/Mega-Skills/compare/dd013f6...main))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills/compare/dd013f6...main)))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills/compare/dd013f6...main))))))))))](https://github.com/artgaurav16420-oss/Mega-Skills/compare/dd013f6...main)))))))))))
+**Skills Repository:** [https://github.com/artgaurav16420-oss/Mega-Skills-skills]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)]([https://github.com/artgaurav16420-oss/Mega-Skills-skills))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills))))))))))](https://github.com/artgaurav16420-oss/Mega-Skills-skills)))))))))))
+**Issues:** [https://github.com/artgaurav16420-oss/Mega-Skills/issues]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)))))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))))))))))](https://github.com/artgaurav16420-oss/Mega-Skills/issues)))))))))))

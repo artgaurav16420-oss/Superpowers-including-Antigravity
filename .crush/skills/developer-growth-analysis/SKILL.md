@@ -75,13 +75,13 @@ When a user requests analysis of their developer growth or coding patterns from 
 
    Read the chat history from `~/.claude/history.jsonl`. This file is a JSONL format where each line contains:
 
-   1. `display`: The user's message/request
+1. `display`: The user's message/request
 
-   1. `project`: The project being worked on
+1. `project`: The project being worked on
 
-   1. `timestamp`: Unix timestamp (in milliseconds)
+1. `timestamp`: Unix timestamp (in milliseconds)
 
-   1. `pastedContents`: Any code or content pasted
+1. `pastedContents`: Any code or content pasted
 
    Filter for entries from the past 24-48 hours based on the current timestamp.
 
@@ -89,37 +89,37 @@ When a user requests analysis of their developer growth or coding patterns from 
 
    Extract and analyze the following from the filtered chats:
 
-   1. **Projects and Domains**: What types of projects was the user working on? (e.g., backend, frontend, DevOps, data, etc.)
-   1. **Technologies Used**: What languages, frameworks, and tools appear in the conversations?
-   1. **Problem Types**: What categories of problems are being solved? (e.g., performance optimization, debugging, feature implementation, refactoring, setup/configuration)
-   1. **Challenges Encountered**: What problems did the user struggle with? Look for:
-     1. Repeated questions about similar topics
-     1. Problems that took multiple attempts to solve
-     1. Questions indicating knowledge gaps
-     1. Complex architectural decisions
-   1. **Approach Patterns**: How does the user solve problems? (e.g., methodical, exploratory, experimental)
+1. **Projects and Domains**: What types of projects was the user working on? (e.g., backend, frontend, DevOps, data, etc.)
+1. **Technologies Used**: What languages, frameworks, and tools appear in the conversations?
+1. **Problem Types**: What categories of problems are being solved? (e.g., performance optimization, debugging, feature implementation, refactoring, setup/configuration)
+1. **Challenges Encountered**: What problems did the user struggle with? Look for:
+  1. Repeated questions about similar topics
+  1. Problems that took multiple attempts to solve
+  1. Questions indicating knowledge gaps
+  1. Complex architectural decisions
+1. **Approach Patterns**: How does the user solve problems? (e.g., methodical, exploratory, experimental)
 
 1. **Identify Improvement Areas**
 
    Based on the analysis, identify 3-5 specific areas where the user could improve. These should be:
 
-   1. **Specific** (not vague like "improve coding skills")
-   1. **Evidence-based** (grounded in actual chat history)
-   1. **Actionable** (practical improvements that can be made)
-   1. **Prioritized** (most impactful first)
+1. **Specific** (not vague like "improve coding skills")
+1. **Evidence-based** (grounded in actual chat history)
+1. **Actionable** (practical improvements that can be made)
+1. **Prioritized** (most impactful first)
 
    Examples of good improvement areas:
 
-   1. "Advanced TypeScript patterns (generics, utility types, type guards) - you struggled with type safety in [specific project]"
-   1. "Error handling and validation - I noticed you patched several bugs related to missing null checks"
-   1. "Async/await patterns - your recent work shows some race conditions and timing issues"
-   1. "Database query optimization - you rewrote the same query multiple times"
+1. "Advanced TypeScript patterns (generics, utility types, type guards) - you struggled with type safety in [specific project]"
+1. "Error handling and validation - I noticed you patched several bugs related to missing null checks"
+1. "Async/await patterns - your recent work shows some race conditions and timing issues"
+1. "Database query optimization - you rewrote the same query multiple times"
 
 1. **Generate Report**
 
    Create a comprehensive report with this structure:
 
-   ```markdown
+```markdown
 ## Your Developer Growth Report
    **Report Period**: [Yesterday / Today / [Custom Date Range]]
    **Last Updated**: [Current Date and Time]
@@ -146,27 +146,27 @@ When a user requests analysis of their developer growth or coding patterns from 
 
 ## Learning Resources
    [Will be populated in next step]
-   ```
+```
 
 1. **Search for Learning Resources**
 
    Use Rube MCP to search HackerNews for articles related to each improvement area:
 
-   1. For each improvement area, construct a search query targeting high-quality resources
-   1. Search HackerNews using RUBE_SEARCH_TOOLS with queries like:
-     1. "Learn [Technology/Pattern] best practices"
-     1. "[Technology] advanced patterns and techniques"
-     1. "Debugging [specific problem type] in [language]"
-   1. Prioritize posts with high engagement (comments, upvotes)
-   1. For each area, include 2-3 most relevant articles with:
-     1. Article title
-     1. Publication date
-     1. Brief description of why it's relevant
-     1. Link to the article
+1. For each improvement area, construct a search query targeting high-quality resources
+1. Search HackerNews using RUBE_SEARCH_TOOLS with queries like:
+  1. "Learn [Technology/Pattern] best practices"
+  1. "[Technology] advanced patterns and techniques"
+  1. "Debugging [specific problem type] in [language]"
+1. Prioritize posts with high engagement (comments, upvotes)
+1. For each area, include 2-3 most relevant articles with:
+  1. Article title
+  1. Publication date
+  1. Brief description of why it's relevant
+  1. Link to the article
 
    Add this section to the report:
 
-   ```markdown
+```markdown
 ## Curated Learning Resources
 ### For: [Improvement Area]
 
@@ -180,29 +180,29 @@ When a user requests analysis of their developer growth or coding patterns from 
       [Description]
       [Link]
    [Repeat for other improvement areas]
-   ```
+```
 
 1. **Present the Complete Report**
 
    Deliver the report in a clean, readable format that the user can:
 
-   1. Quickly scan for key takeaways
-   1. Use for focused learning planning
-   1. Reference over the next week as they work on improvements
-   1. Share with mentors if they want external feedback
+1. Quickly scan for key takeaways
+1. Use for focused learning planning
+1. Reference over the next week as they work on improvements
+1. Share with mentors if they want external feedback
 
 1. **Send Report to Slack DMs**
 
    Use Rube MCP to send the complete report to the user's own Slack DMs:
 
-   1. Check if Slack connection is active via RUBE_SEARCH_TOOLS
-   1. If not connected, use RUBE_MANAGE_CONNECTIONS to initiate Slack auth
-   1. Use RUBE_MULTI_EXECUTE_TOOL to send the report as a formatted message:
-     1. Send the report title and period as the first message
-     1. Break the report into logical sections (Summary, Improvements, Strengths, Actions, Resources)
-     1. Format each section as a well-structured Slack message with proper markdown
-     1. Include clickable links for the learning resources
-   1. Confirm delivery in the CLI output
+1. Check if Slack connection is active via RUBE_SEARCH_TOOLS
+1. If not connected, use RUBE_MANAGE_CONNECTIONS to initiate Slack auth
+1. Use RUBE_MULTI_EXECUTE_TOOL to send the report as a formatted message:
+  1. Send the report title and period as the first message
+  1. Break the report into logical sections (Summary, Improvements, Strengths, Actions, Resources)
+  1. Format each section as a well-structured Slack message with proper markdown
+  1. Include clickable links for the learning resources
+1. Confirm delivery in the CLI output
 
    This ensures the user has the report in a place they check regularly and can reference it throughout the week.
 

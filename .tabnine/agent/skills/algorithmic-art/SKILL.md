@@ -295,14 +295,14 @@ The `templates/viewer.html` file is the foundation. It contains the exact struct
 1. Anthropic branding (UI colors, fonts, gradients)
 
 1. Seed section in sidebar:
-  1. Seed display
-  1. Previous/Next buttons
-  1. Random button
-  1. Jump to seed input + Go button
+1. Seed display
+1. Previous/Next buttons
+1. Random button
+1. Jump to seed input + Go button
 
 1. Actions section in sidebar:
-  1. Regenerate button
-  1. Reset button
+1. Regenerate button
+1. Reset button
 
 #### VARIABLE (customize for each artwork)
 
@@ -311,16 +311,16 @@ The `templates/viewer.html` file is the foundation. It contains the exact struct
 1. The parameters object (define what the art needs)
 
 1. The Parameters section in sidebar:
-  1. Number of parameter controls
-  1. Parameter names
-  1. Min/max/step values for sliders
-  1. Control types (sliders, inputs, etc.)
+1. Number of parameter controls
+1. Parameter names
+1. Min/max/step values for sliders
+1. Control types (sliders, inputs, etc.)
 
 1. Colors section (optional):
-  1. Some art needs color pickers
-  1. Some art might use fixed colors
-  1. Some art might be monochrome (no color controls needed)
-  1. Decide based on the art's needs
+1. Some art needs color pickers
+1. Some art might use fixed colors
+1. Some art might be monochrome (no color controls needed)
+1. Decide based on the art's needs
 
 **Every artwork should have unique parameters and algorithm!** The fixed parts provide consistent UX - everything else expresses the unique vision.
 
@@ -496,15 +496,15 @@ To achieve the best results, trust creativity and let the philosophy guide the i
 This skill includes helpful templates and documentation:
 
 1. **templates/viewer.html**: REQUIRED STARTING POINT for all HTML artifacts.
-  1. This is the foundation - contains the exact structure and Anthropic branding
-  1. **Keep unchanged**: Layout structure, sidebar organization, Anthropic colors/fonts, seed controls, action buttons
-  1. **Replace**: The p5.js algorithm, parameter definitions, and UI controls in Parameters section
-  1. The extensive comments in the file mark exactly what to keep vs replace
+1. This is the foundation - contains the exact structure and Anthropic branding
+1. **Keep unchanged**: Layout structure, sidebar organization, Anthropic colors/fonts, seed controls, action buttons
+1. **Replace**: The p5.js algorithm, parameter definitions, and UI controls in Parameters section
+1. The extensive comments in the file mark exactly what to keep vs replace
 
 1. **templates/generator_template.js**: Reference for p5.js best practices and code structure principles.
-  1. Shows how to organize parameters, use seeded randomness, structure classes
-  1. NOT a pattern menu - use these principles to build unique algorithms
-  1. Embed algorithms inline in the HTML artifact (don't create separate .js files)
+1. Shows how to organize parameters, use seeded randomness, structure classes
+1. NOT a pattern menu - use these principles to build unique algorithms
+1. Embed algorithms inline in the HTML artifact (don't create separate .js files)
 
 **Critical reminder**:
 

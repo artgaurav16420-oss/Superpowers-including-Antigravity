@@ -18,7 +18,7 @@ Both follow the iterative loop pattern used by implementation reviews.
 ### What it checks for
 
 | Category | What to Look For |
-|:::::::::---:::::::::---:::::::::----|:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---|
+|:::::::::::---:::::::::::---:::::::::::----|:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---|
 | Completeness | TODOs, placeholders, "TBD", incomplete sections |
 | Coverage | Missing error handling, edge cases, integration points |
 | Consistency | Internal contradictions, conflicting requirements |
@@ -52,7 +52,7 @@ Both follow the iterative loop pattern used by implementation reviews.
 ### What it checks for (2)
 
 | Category | What to Look For |
-|:::::::::---:::::::::---:::::::::----|:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---|
+|:::::::::::---:::::::::::---:::::::::::----|:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---|
 | Completeness | TODOs, placeholders, incomplete tasks |
 | Spec Alignment | Plan covers spec requirements, no scope creep |
 | Task Decomposition | Tasks atomic, clear boundaries |
@@ -62,6 +62,7 @@ Both follow the iterative loop pattern used by implementation reviews.
 **Chunk definition:** A chunk is a logical grouping of tasks within the plan document, delimited by `## Chunk N: <name>` headings. The writing-plans skill creates these boundaries based on logical phases (e.g., "Foundation", "Core Features", "Integration"). Each chunk should be self-contained enough to review independently.
 
 **Spec alignment verification:** The reviewer receives both:
+
 1. The plan document (or current chunk)
 1. The path to the spec document for reference
 

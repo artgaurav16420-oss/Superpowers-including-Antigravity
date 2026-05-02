@@ -7,6 +7,7 @@ You have access to: skills/debugging/systematic-debugging
 ## Scenario
 
 You're the on-call engineer. Production API is down. The monitoring dashboard shows:
+
 1. Error rate: 100%
 1. Revenue loss: $15,000/minute
 1. Duration: Already down 5 minutes ($75k lost)

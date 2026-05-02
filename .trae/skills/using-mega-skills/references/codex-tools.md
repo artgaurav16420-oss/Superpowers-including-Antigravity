@@ -3,7 +3,7 @@
 Skills use Claude Code tool names. When you encounter these in a skill, use your platform equivalent:
 
 | Skill references | Codex equivalent |
-| ::::::::::--- | ::::::::::--- |
+| ::::::::::::--- | ::::::::::::--- |
 | `Task` tool (dispatch subagent) | `spawn_agent` (see [Named agent dispatch](#named-agent-dispatch)) |
 | Multiple `Task` calls (parallel) | Multiple `spawn_agent` calls |
 | Task returns result | `wait` |
@@ -34,12 +34,13 @@ When a skill says to dispatch a named agent type:
 
 1. Find the agent's prompt file (e.g., `agents/code-reviewer.md` or the skill's
    local prompt template like `code-quality-reviewer-prompt.md`)
+
 1. Read the prompt content
 1. Fill any template placeholders (`{BASE_SHA}`, `{WHAT_WAS_IMPLEMENTED}`, etc.)
 1. Spawn a `worker` agent with the filled content as the `message`
 
 | Skill instruction | Codex equivalent |
-| ::::::::::--- | ::::::::::--- |
+| ::::::::::::--- | ::::::::::::--- |
 | `Task tool (mega-skills:code-reviewer)` | `spawn_agent(agent_type="worker", message=...)` with `code-reviewer.md` content |
 | `Task tool (general-purpose)` with inline prompt | `spawn_agent(message=...)` with the same prompt |
 

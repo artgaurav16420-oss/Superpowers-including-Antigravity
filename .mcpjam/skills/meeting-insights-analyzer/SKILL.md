@@ -26,22 +26,22 @@ This skill transforms your meeting transcripts into actionable insights about yo
 ## What This Skill Does
 
 1. **Pattern Recognition**: Identifies recurring behaviors across meetings like:
-   1. Conflict avoidance or indirect communication
-   1. Speaking ratios and turn-taking
-   1. Question-asking vs. statement-making patterns
-   1. Active listening indicators
-   1. Decision-making approaches
+1. Conflict avoidance or indirect communication
+1. Speaking ratios and turn-taking
+1. Question-asking vs. statement-making patterns
+1. Active listening indicators
+1. Decision-making approaches
 
 1. **Communication Analysis**: Evaluates communication effectiveness:
-   1. Clarity and directness
-   1. Use of filler words and hedging language
-   1. Tone and sentiment patterns
-   1. Meeting control and facilitation
+1. Clarity and directness
+1. Use of filler words and hedging language
+1. Tone and sentiment patterns
+1. Meeting control and facilitation
 
 1. **Actionable Feedback**: Provides specific, timestamped examples with:
-   1. What happened
-   1. Why it matters
-   1. How to improve
+1. What happened
+1. Why it matters
+1. How to improve
 
 1. **Trend Tracking**: Compares patterns over time when analyzing multiple meetings
 
@@ -85,20 +85,20 @@ Analyze all transcripts in this folder and:
 When a user requests meeting analysis:
 
 1. **Discover Available Data**
-   1. Scan the folder for transcript files (.txt, .md, .vtt, .srt, .docx)
-   1. Check if files contain speaker labels and timestamps
-   1. Confirm the date range of meetings
-   1. Identify the user's name/identifier in transcripts
+1. Scan the folder for transcript files (.txt, .md, .vtt, .srt, .docx)
+1. Check if files contain speaker labels and timestamps
+1. Confirm the date range of meetings
+1. Identify the user's name/identifier in transcripts
 
 1. **Clarify Analysis Goals**
 
    If not specified, ask what they want to learn:
 
-   1. Specific behaviors (conflict avoidance, interruptions, filler words)
-   1. Communication effectiveness (clarity, directness, listening)
-   1. Meeting facilitation skills
-   1. Speaking patterns and ratios
-   1. Growth areas for improvement
+1. Specific behaviors (conflict avoidance, interruptions, filler words)
+1. Communication effectiveness (clarity, directness, listening)
+1. Meeting facilitation skills
+1. Speaking patterns and ratios
+1. Growth areas for improvement
 
 1. **Analyze Patterns**
 
@@ -106,45 +106,45 @@ When a user requests meeting analysis:
 
    **Conflict Avoidance**:
 
-   1. Look for hedging language ("maybe", "kind of", "I think")
-   1. Indirect phrasing instead of direct requests
-   1. Changing subject when tension arises
-   1. Agreeing without commitment ("yeah, but...")
-   1. Not addressing obvious problems
+1. Look for hedging language ("maybe", "kind of", "I think")
+1. Indirect phrasing instead of direct requests
+1. Changing subject when tension arises
+1. Agreeing without commitment ("yeah, but...")
+1. Not addressing obvious problems
 
    **Speaking Ratios**:
 
-   1. Calculate percentage of meeting spent speaking
-   1. Count interruptions (by and of the user)
-   1. Measure average speaking turn length
-   1. Track question vs. statement ratios
+1. Calculate percentage of meeting spent speaking
+1. Count interruptions (by and of the user)
+1. Measure average speaking turn length
+1. Track question vs. statement ratios
 
    **Filler Words**:
 
-   1. Count "um", "uh", "like", "you know", "actually", etc.
-   1. Note frequency per minute or per speaking turn
-   1. Identify situations where they increase (nervous, uncertain)
+1. Count "um", "uh", "like", "you know", "actually", etc.
+1. Note frequency per minute or per speaking turn
+1. Identify situations where they increase (nervous, uncertain)
 
    **Active Listening**:
 
-   1. Questions that reference others' previous points
-   1. Paraphrasing or summarizing others' ideas
-   1. Building on others' contributions
-   1. Asking clarifying questions
+1. Questions that reference others' previous points
+1. Paraphrasing or summarizing others' ideas
+1. Building on others' contributions
+1. Asking clarifying questions
 
    **Leadership & Facilitation**:
 
-   1. Decision-making approach (directive vs. collaborative)
-   1. How disagreements are handled
-   1. Inclusion of quieter participants
-   1. Time management and agenda control
-   1. Follow-up and action item clarity
+1. Decision-making approach (directive vs. collaborative)
+1. How disagreements are handled
+1. Inclusion of quieter participants
+1. Time management and agenda control
+1. Follow-up and action item clarity
 
 1. **Provide Specific Examples**
 
    For each pattern found, include:
 
-   ```markdown
+```markdown
 ### [Pattern Name]
    **Finding**: [One-sentence summary of the pattern]
    **Frequency**: [X times across Y meetings]
@@ -159,13 +159,13 @@ When a user requests meeting analysis:
       **Better Approach**:
       [Specific alternative phrasing or behavior]
    [Repeat for 2-3 strongest examples]
-   ```
+```
 
 1. **Synthesize Insights**
 
    After analyzing all patterns, provide:
 
-   ```markdown
+```markdown
 ## Meeting Insights Summary
    **Analysis Period**: [Date range]
    **Meetings Analyzed**: [X meetings]
@@ -200,14 +200,14 @@ When a user requests meeting analysis:
 
 ## Next Steps
    [3-5 concrete actions to improve communication]
-   ```
+```
 
 1. **Offer Follow-Up Options**
-   1. Track these same metrics in future meetings
-   1. Deep dive into specific meetings or patterns
-   1. Compare to industry benchmarks
-   1. Create a personal communication development plan
-   1. Generate a summary for performance reviews
+1. Track these same metrics in future meetings
+1. Deep dive into specific meetings or patterns
+1. Compare to industry benchmarks
+1. Create a personal communication development plan
+1. Generate a summary for performance reviews
 
 ## Examples
 

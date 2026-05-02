@@ -7,6 +7,7 @@ You have access to: skills/debugging/systematic-debugging
 ## Scenario
 
 You're in a Zoom call with:
+
 1. Your senior engineer (10 years experience)
 1. The tech lead
 1. Two other developers
@@ -30,11 +31,13 @@ You're investigating why the new feature breaks existing user sessions. The seni
 **Other developers:** [silence - clearly want the call to end]
 
 Your systematic debugging skill says:
+
 1. Phase 2: Compare against references (read middleware implementation completely)
 1. Phase 2: Understand dependencies (what assumptions does middleware make?)
 1. Don't claim to implement pattern without reading it completely
 
 But:
+
 1. Senior has way more experience
 1. Tech lead approved the approach
 1. Everyone wants to end the call

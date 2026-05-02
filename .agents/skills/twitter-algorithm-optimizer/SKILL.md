@@ -111,14 +111,14 @@ Twitter's **Unified User Actions** service tracks both explicit and implicit sig
 Your tweet reaches users through this pipeline:
 
 1. **Candidate Retrieval** - Multiple sources find candidate tweets:
-   1. Search Index (relevant keyword matches)
-   1. UTEG (timeline engagement graph - following relationships)
-   1. Tweet-mixer (trending/viral content)
+1. Search Index (relevant keyword matches)
+1. UTEG (timeline engagement graph - following relationships)
+1. Tweet-mixer (trending/viral content)
 
 1. **Ranking** - ML models rank candidates by predicted engagement:
-   1. Will THIS user engage with THIS tweet?
-   1. How quickly will engagement happen?
-   1. Will it spread to non-followers?
+1. Will THIS user engage with THIS tweet?
+1. How quickly will engagement happen?
+1. Will it spread to non-followers?
 
 1. **Filtering** - Remove blocked content, apply preferences
 

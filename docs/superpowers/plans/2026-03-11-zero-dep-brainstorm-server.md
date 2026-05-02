@@ -52,6 +52,7 @@ function computeAcceptKey(clientKey) {
 1. [ ] **Step 2: Implement encodeFrame**
 
 Server frames are never masked. Three length encodings:
+
 1. payload < 126: 2-byte header (FIN+opcode, length)
 1. 126-65535: 4-byte header (FIN+opcode, 126, 16-bit length)
 1. &gt; 65535: 10-byte header (FIN+opcode, 127, 64-bit length)
@@ -459,7 +460,7 @@ BRAINSTORM_DIR=/tmp/brainstorm-smoke BRAINSTORM_PORT=9876 node server.js
 
 Expected: `server-started` JSON printed with port 9876
 
-1. [ ] **Step 2: Open browser to [http://localhost:9876**]([http://localhost:9876**)]([http://localhost:9876**))]([http://localhost:9876**)))]([http://localhost:9876**))))]([http://localhost:9876**)))))]([http://localhost:9876**))))))]([http://localhost:9876**)))))))]([http://localhost:9876**))))))))](http://localhost:9876**)))))))))
+1. [ ] **Step 2: Open browser to [http://localhost:9876**]([http://localhost:9876**)]([http://localhost:9876**))]([http://localhost:9876**)))]([http://localhost:9876**))))]([http://localhost:9876**)))))]([http://localhost:9876**))))))]([http://localhost:9876**)))))))]([http://localhost:9876**))))))))]([http://localhost:9876**)))))))))]([http://localhost:9876**))))))))))](http://localhost:9876**)))))))))))
 
 Expected: Waiting page with "Waiting for Claude to push a screen..."
 

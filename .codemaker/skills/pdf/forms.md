@@ -8,6 +8,7 @@ If you need to fill out a PDF form, first check to see if the PDF has fillable f
 ## Fillable fields
 
 If the PDF has fillable form fields:
+
 1. Run this script from this file's directory: `python scripts/extract_form_field_info.py <input.pdf> <field_info.json>`. It will create a JSON file with a list of fields in this format:
 
 ```text
@@ -58,6 +59,7 @@ If the PDF has fillable form fields:
 1. Convert the PDF to PNGs (one image for each page) with this script (run from this file's directory):
 `python scripts/convert_pdf_to_images.py <file.pdf> <output_directory>`
 Then analyze the images to determine the purpose of each form field (make sure to convert the bounding box PDF coordinates to image coordinates).
+
 1. Create a `field_values.json` file in this format with the values to be entered for each field:
 
 ```text
@@ -92,6 +94,7 @@ Run this script to extract text labels, lines, and checkboxes with their exact P
 `python scripts/extract_form_structure.py <input.pdf> form_structure.json`
 
 This creates a JSON file containing:
+
 1. **labels**: Every text element with exact coordinates (x0, top, x1, bottom in PDF points)
 1. **lines**: Horizontal lines that define row boundaries
 1. **checkboxes**: Small square rectangles that are checkboxes (with center coordinates)
@@ -119,6 +122,7 @@ Read form_structure.json and identify:
 ### A.2: Check for Missing Elements
 
 The structure extraction may not detect all form elements. Common cases:
+
 1. **Circular checkboxes**: Only square rectangles are detected as checkboxes
 1. **Complex graphics**: Decorative elements or non-standard form controls
 1. **Faded or light-colored elements**: May not be extracted
@@ -191,6 +195,7 @@ Use this when the PDF is scanned/image-based and structure extraction found no u
 ### B.2: Initial Field Identification
 
 Examine each page image to identify form sections and get **rough estimates** of field locations:
+
 1. Form field labels and their approximate positions
 1. Entry areas (lines, boxes, or blank spaces for text input)
 1. Checkboxes and their approximate locations
@@ -208,6 +213,7 @@ magick <page_image> -crop <width>x<height>+<x>+<y> +repage <crop_output.png>
 ```
 
 Where:
+
 1. `<x>, <y>` = top-left corner of crop region (use your rough estimate minus padding)
 1. `<width>, <height>` = size of crop region (field area plus ~50px padding on each side)
 
@@ -220,6 +226,7 @@ magick images_dir/page_1.png -crop 300x80+50+120 +repage crops/name_field.png
 (Note: if the `magick` command isn't available, try `convert` with the same arguments).
 
 **Examine the cropped image** to determine precise coordinates:
+
 1. Identify the exact pixel where the entry area begins (after the label)
 1. Identify where the entry area ends (before next field or edge)
 1. Identify the top and bottom of the entry line/box
@@ -230,6 +237,7 @@ magick images_dir/page_1.png -crop 300x80+50+120 +repage crops/name_field.png
 1. full_y = crop_y + crop_offset_y
 
 Example: If the crop started at (50, 120) and the entry box starts at (52, 18) within the crop:
+
 1. entry_x0 = 52 + 50 = 102
 1. entry_top = 18 + 120 = 138
 
@@ -276,8 +284,8 @@ Use this when structure extraction works for most fields but misses some element
 1. **Convert PDF to images** for visual analysis of missing fields
 1. **Use zoom refinement** (from Approach B) for the missing fields
 1. **Combine coordinates**: For fields from structure extraction, use `pdf_width`/`pdf_height`. For visually-estimated fields, you must convert image coordinates to PDF coordinates:
-   1. pdf_x = image_x * (pdf_width / image_width)
-   1. pdf_y = image_y * (pdf_height / image_height)
+1. pdf_x = image_x * (pdf_width / image_width)
+1. pdf_y = image_y * (pdf_height / image_height)
 1. **Use a single coordinate system** in fields.json - convert all to PDF coordinates with `pdf_width`/`pdf_height`
 
 ---
@@ -289,6 +297,7 @@ Use this when structure extraction works for most fields but misses some element
 `python scripts/check_bounding_boxes.py fields.json`
 
 This checks for:
+
 1. Intersecting bounding boxes (which would cause overlapping text)
 1. Entry boxes that are too small for the specified font size
 
@@ -305,6 +314,7 @@ Convert the filled PDF to images and verify text placement:
 `python scripts/convert_pdf_to_images.py <output.pdf> <verify_images/>`
 
 If text is mispositioned:
+
 1. **Approach A**: Check that you're using PDF coordinates from form_structure.json with `pdf_width`/`pdf_height`
 1. **Approach B**: Check that image dimensions match and coordinates are accurate pixels
 1. **Hybrid**: Ensure coordinate conversions are correct for visually-estimated fields

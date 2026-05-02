@@ -100,18 +100,18 @@ When a user requests writing assistance:
 
    Ask clarifying questions:
 
-   1. What's the topic and main argument?
-   1. Who's the target audience?
-   1. What's the desired length/format?
-   1. What's your goal? (educate, persuade, entertain, explain)
-   1. Any existing research or sources to include?
-   1. What's your writing style? (formal, conversational, technical)
+1. What's the topic and main argument?
+1. Who's the target audience?
+1. What's the desired length/format?
+1. What's your goal? (educate, persuade, entertain, explain)
+1. Any existing research or sources to include?
+1. What's your writing style? (formal, conversational, technical)
 
 1. **Collaborative Outlining**
 
    Help structure the content:
 
-   ```markdown
+```markdown
 ## Article Outline: [Title]
 ## Hook
 
@@ -156,27 +156,27 @@ When a user requests writing assistance:
    - [ ] Get examples of [concept]
    - [ ] Source citation for [claim]
 
-   ```
+```
 
    **Iterate on outline**:
 
-   1. Adjust based on feedback
-   1. Ensure logical flow
-   1. Identify research gaps
-   1. Mark sections for deep dives
+1. Adjust based on feedback
+1. Ensure logical flow
+1. Identify research gaps
+1. Mark sections for deep dives
 
 1. **Conduct Research**
 
    When user requests research on a topic:
 
-   1. Search for relevant information
-   1. Find credible sources
-   1. Extract key facts, quotes, and data
-   1. Add citations in requested format
+1. Search for relevant information
+1. Find credible sources
+1. Extract key facts, quotes, and data
+1. Add citations in requested format
 
    Example output:
 
-   ```markdown
+```markdown
 ## Research: AI Impact on Productivity
    Key Findings:
 
@@ -197,7 +197,7 @@ When a user requests writing assistance:
    [2] Stack Overflow Developer Survey (2024)
    [3] Smith, J. (2024). MIT Technology Review interview
    Added to outline under Section 2.
-   ```
+```
 
 1. **Improve Hooks**
 
@@ -205,9 +205,9 @@ When a user requests writing assistance:
 
    **Current Hook Analysis**:
 
-   1. What works: [positive elements]
-   1. What could be stronger: [areas for improvement]
-   1. Emotional impact: [current vs. potential]
+1. What works: [positive elements]
+1. What could be stronger: [areas for improvement]
+1. Emotional impact: [current vs. potential]
 
    **Suggested Alternatives**:
 
@@ -225,16 +225,16 @@ When a user requests writing assistance:
 
    **Questions to hook**:
 
-   1. Does it create curiosity?
-   1. Does it promise value?
-   1. Is it specific enough?
-   1. Does it match the audience?
+1. Does it create curiosity?
+1. Does it promise value?
+1. Is it specific enough?
+1. Does it match the audience?
 
 1. **Provide Section-by-Section Feedback**
 
    As user writes each section, review for:
 
-   ```markdown
+```markdown
 ## Feedback: [Section Name]
 ## What Works Well ✓
 
@@ -275,23 +275,23 @@ When a user requests writing assistance:
    - [Thought-provoking question 2]
 
    Ready to move to next section!
-   ```
+```
 
 1. **Preserve Writer's Voice**
 
    Important principles:
 
-   1. **Learn their style**: Read existing writing samples
-   1. **Suggest, don't replace**: Offer options, not directives
-   1. **Match tone**: Formal, casual, technical, friendly
-   1. **Respect choices**: If they prefer their version, support it
-   1. **Enhance, don't override**: Make their writing better, not different
+1. **Learn their style**: Read existing writing samples
+1. **Suggest, don't replace**: Offer options, not directives
+1. **Match tone**: Formal, casual, technical, friendly
+1. **Respect choices**: If they prefer their version, support it
+1. **Enhance, don't override**: Make their writing better, not different
 
    Ask periodically:
 
-   1. "Does this sound like you?"
-   1. "Is this the right tone?"
-   1. "Should I be more/less [formal/casual/technical]?"
+1. "Does this sound like you?"
+1. "Is this the right tone?"
+1. "Should I be more/less [formal/casual/technical]?"
 
 1. **Citation Management**
 
@@ -299,40 +299,40 @@ When a user requests writing assistance:
 
    **Inline Citations**:
 
-   ```markdown
+```markdown
    Studies show 40% productivity improvement (McKinsey, 2024).
-   ```
+```
 
    **Numbered References**:
 
-   ```markdown
+```markdown
    Studies show 40% productivity improvement [1].
    [1] McKinsey Global Institute. (2024)...
-   ```
+```
 
    **Footnote Style**:
 
-   ```markdown
+```markdown
    Studies show 40% productivity improvement^1
    ^1: McKinsey Global Institute. (2024)...
-   ```
+```
 
    Maintain a running citations list:
 
-   ```markdown
+```markdown
 ## References
 
    1. Author. (Year). "Title". Publication.
    1. Author. (Year). "Title". Publication.
 
    ...
-   ```
+```
 
 1. **Final Review and Polish**
 
    When draft is complete, provide comprehensive feedback:
 
-   ```markdown
+```markdown
 ## Full Draft Review
 ## Overall Assessment
    **Strengths**:
@@ -383,7 +383,7 @@ When a user requests writing assistance:
    - [ ] Proofread for typos
 
    Ready to publish! 🚀
-   ```
+```
 
 ## Examples
 

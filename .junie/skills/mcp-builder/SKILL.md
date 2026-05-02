@@ -411,12 +411,12 @@ Load these resources as needed during development:
 1. **MCP Protocol**: Fetch from `https://modelcontextprotocol.io/llms-full.txt` - Complete MCP specification
 
 1. [📋 MCP Best Practices](./reference/mcp_best_practices.md) - Universal MCP guidelines including:
-  1. Server and tool naming conventions
-  1. Response format guidelines (JSON vs Markdown)
-  1. Pagination best practices
-  1. Character limits and truncation strategies
-  1. Tool development guidelines
-  1. Security and error handling standards
+1. Server and tool naming conventions
+1. Response format guidelines (JSON vs Markdown)
+1. Pagination best practices
+1. Character limits and truncation strategies
+1. Tool development guidelines
+1. Security and error handling standards
 
 ### SDK Documentation (Load During Phase 1/2)
 
@@ -427,26 +427,26 @@ Load these resources as needed during development:
 ### Language-Specific Implementation Guides (Load During Phase 2)
 
 1. [🐍 Python Implementation Guide](./reference/python_mcp_server.md) - Complete Python/FastMCP guide with:
-  1. Server initialization patterns
-  1. Pydantic model examples
-  1. Tool registration with `@mcp.tool`
+1. Server initialization patterns
+1. Pydantic model examples
+1. Tool registration with `@mcp.tool`
 
-  1. Complete working examples
-  1. Quality checklist
+1. Complete working examples
+1. Quality checklist
 
 1. [⚡ TypeScript Implementation Guide](./reference/node_mcp_server.md) - Complete TypeScript guide with:
-  1. Project structure
-  1. Zod schema patterns
-  1. Tool registration with `server.registerTool`
+1. Project structure
+1. Zod schema patterns
+1. Tool registration with `server.registerTool`
 
-  1. Complete working examples
-  1. Quality checklist
+1. Complete working examples
+1. Quality checklist
 
 ### Evaluation Guide (Load During Phase 4)
 
 1. [✅ Evaluation Guide](./reference/evaluation.md) - Complete evaluation creation guide with:
-  1. Question creation guidelines
-  1. Answer verification strategies
-  1. XML format specifications
-  1. Example questions and answers
-  1. Running an evaluation with the provided scripts
+1. Question creation guidelines
+1. Answer verification strategies
+1. XML format specifications
+1. Example questions and answers
+1. Running an evaluation with the provided scripts

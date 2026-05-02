@@ -134,7 +134,7 @@ digraph brainstorming {
 
 1. Write the validated design (spec) to `docs/mega-skills/specs/YYYY-MM-DD-<topic>-design.md`
 
-  1. (User preferences for spec location override this default)
+1. (User preferences for spec location override this default)
 
 1. Use elements-of-style:writing-clearly-and-concisely skill if available
 

@@ -38,6 +38,7 @@ async def tool_function(params: InputModel) -> str:
 ## MCP Python SDK and FastMCP
 
 The official MCP Python SDK provides FastMCP, a high-level framework for building MCP servers. It provides:
+
 1. Automatic description and inputSchema generation from function signatures and docstrings
 1. Pydantic model integration for input validation
 1. Decorator-based tool registration with `@mcp.tool`
@@ -49,10 +50,12 @@ The official MCP Python SDK provides FastMCP, a high-level framework for buildin
 ## Server Naming Convention
 
 Python MCP servers must follow this naming pattern:
+
 1. **Format**: `{service}_mcp` (lowercase with underscores)
 1. **Examples**: `github_mcp`, `jira_mcp`, `stripe_mcp`
 
 The name should be:
+
 1. General (not tied to specific features)
 1. Descriptive of the service/API being integrated
 1. Easy to infer from the task description
@@ -65,6 +68,7 @@ The name should be:
 Use snake_case for tool names (e.g., "search_users", "create_project", "get_channel_info") with clear, action-oriented names.
 
 **Avoid Naming Conflicts**: Include the service context to prevent overlaps:
+
 1. Use "slack_send_message" instead of just "send_message"
 1. Use "github_create_issue" instead of just "create_issue"
 1. Use "asana_list_tasks" instead of just "list_tasks"
@@ -172,6 +176,7 @@ class UserSearchInput(BaseModel):
 ```
 
 **Markdown format**:
+
 1. Use headers, lists, and formatting for clarity
 1. Convert timestamps to human-readable format (e.g., "2024-01-15 10:30:00 UTC" instead of epoch)
 1. Show display names with IDs in parentheses (e.g., "@john.doe (U123456)")
@@ -179,6 +184,7 @@ class UserSearchInput(BaseModel):
 1. Group related information logically
 
 **JSON format**:
+
 1. Return complete, structured data suitable for programmatic processing
 1. Include all available fields and metadata
 1. Use consistent field names and types
@@ -682,17 +688,17 @@ if __name__ == "__main__":
 Your implementation MUST prioritize composability and code reuse:
 
 1. **Extract Common Functionality**:
-   1. Create reusable helper functions for operations used across multiple tools
-   1. Build shared API clients for HTTP requests instead of duplicating code
-   1. Centralize error handling logic in utility functions
-   1. Extract business logic into dedicated functions that can be composed
-   1. Extract shared markdown or JSON field selection & formatting functionality
+1. Create reusable helper functions for operations used across multiple tools
+1. Build shared API clients for HTTP requests instead of duplicating code
+1. Centralize error handling logic in utility functions
+1. Extract business logic into dedicated functions that can be composed
+1. Extract shared markdown or JSON field selection & formatting functionality
 
 1. **Avoid Duplication**:
-   1. NEVER copy-paste similar code between tools
-   1. If you find yourself writing similar logic twice, extract it into a function
-   1. Common operations like pagination, filtering, field selection, and formatting should be shared
-   1. Authentication/authorization logic should be centralized
+1. NEVER copy-paste similar code between tools
+1. If you find yourself writing similar logic twice, extract it into a function
+1. Common operations like pagination, filtering, field selection, and formatting should be shared
+1. Authentication/authorization logic should be centralized
 
 ### Python-Specific Best Practices
 

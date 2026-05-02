@@ -55,12 +55,12 @@ The integration test verifies the `subagent-driven-development` skill correctly:
 1. **Setup**: Creates a temporary Node.js project with a minimal implementation plan
 1. **Execution**: Runs Claude Code in headless mode with the skill
 1. **Verification**: Parses the session transcript (`.jsonl` file) to verify:
-   1. Skill tool was invoked
-   1. Subagents were dispatched (Task tool)
-   1. TodoWrite was used for tracking
-   1. Implementation files were created
-   1. Tests pass
-   1. Git commits show proper workflow
+1. Skill tool was invoked
+1. Subagents were dispatched (Task tool)
+1. TodoWrite was used for tracking
+1. Implementation files were created
+1. Tests pass
+1. Git commits show proper workflow
 1. **Token Analysis**: Shows token usage breakdown by subagent
 
 ### Test Output
@@ -160,12 +160,12 @@ ls -lt "$SESSION_DIR"/*.jsonl | head -5
 
 1. **Main session usage**: Token usage by the coordinator (you or main Claude instance)
 1. **Per-subagent breakdown**: Each Task invocation with:
-  1. Agent ID
-  1. Description (extracted from prompt)
-  1. Message count
-  1. Input/output tokens
-  1. Cache usage
-  1. Estimated cost
+1. Agent ID
+1. Description (extracted from prompt)
+1. Message count
+1. Input/output tokens
+1. Cache usage
+1. Estimated cost
 1. **Totals**: Overall token usage and cost estimate
 
 ### Understanding the Output
@@ -182,6 +182,7 @@ ls -lt "$SESSION_DIR"/*.jsonl | head -5
 **Problem**: Skill not found when running headless tests
 
 **Solutions**:
+
 1. Ensure you're running FROM the superpowers directory: `cd /path/to/superpowers && tests/...`
 1. Check `~/.claude/settings.json` has `"superpowers@superpowers-dev": true` in `enabledPlugins`
 1. Verify skill exists in `skills/` directory
@@ -191,6 +192,7 @@ ls -lt "$SESSION_DIR"/*.jsonl | head -5
 **Problem**: Claude blocked from writing files or accessing directories
 
 **Solutions**:
+
 1. Use `--permission-mode bypassPermissions` flag
 1. Use `--add-dir /path/to/temp/dir` to grant access to test directories
 1. Check file permissions on test directories
@@ -200,6 +202,7 @@ ls -lt "$SESSION_DIR"/*.jsonl | head -5
 **Problem**: Test takes too long and times out
 
 **Solutions**:
+
 1. Increase timeout: `timeout 1800 claude ...` (30 minutes)
 1. Check for infinite loops in skill logic
 1. Review subagent task complexity
@@ -209,6 +212,7 @@ ls -lt "$SESSION_DIR"/*.jsonl | head -5
 **Problem**: Can't find session transcript after test run
 
 **Solutions**:
+
 1. Check the correct project directory in `~/.claude/projects/`
 1. Use `find ~/.claude/projects -name "*.jsonl" -mmin -60` to find recent sessions
 1. Verify test actually ran (check for errors in test output)

@@ -6,23 +6,24 @@ When using an existing presentation as a template:
 
 1. **Analyze existing slides**:
 
-   ```bash
+```bash
    python scripts/thumbnail.py template.pptx
    python -m markitdown template.pptx
-   ```
+```
 
    Review `thumbnails.jpg` to see layouts, and markitdown output to see placeholder text.
 
 1. **Plan slide mapping**: For each content section, choose a template slide.
 
    ⚠️ **USE VARIED LAYOUTS** — monotonous presentations are a common failure mode. Don't default to basic title + bullet slides. Actively seek out:
-   1. Multi-column layouts (2-column, 3-column)
-   1. Image + text combinations
-   1. Full-bleed images with text overlay
-   1. Quote or callout slides
-   1. Section dividers
-   1. Stat/number callouts
-   1. Icon grids or icon + text rows
+
+1. Multi-column layouts (2-column, 3-column)
+1. Image + text combinations
+1. Full-bleed images with text overlay
+1. Quote or callout slides
+1. Section dividers
+1. Stat/number callouts
+1. Icon grids or icon + text rows
 
    **Avoid:** Repeating the same text-heavy layout for every slide.
 
@@ -31,10 +32,10 @@ When using an existing presentation as a template:
 1. **Unpack**: `python scripts/office/unpack.py template.pptx unpacked/`
 
 1. **Build presentation** (do this yourself, not with subagents):
-   1. Delete unwanted slides (remove from `<p:sldIdLst>`)
-   1. Duplicate slides you want to reuse (`add_slide.py`)
-   1. Reorder slides in `<p:sldIdLst>`
-   1. **Complete all structural changes before step 5**
+1. Delete unwanted slides (remove from `<p:sldIdLst>`)
+1. Duplicate slides you want to reuse (`add_slide.py`)
+1. Reorder slides in `<p:sldIdLst>`
+1. **Complete all structural changes before step 5**
 
 1. **Edit content**: Update text in each `slide{N}.xml`.
    **Use subagents here if available** — slides are separate XML files, so subagents can edit in parallel.
@@ -48,7 +49,7 @@ When using an existing presentation as a template:
 ## Scripts
 
 | Script | Purpose |
-|:::::::::---:::::::::-----|:::::::::---:::::::::---:::::::::---|
+|:::::::::::---:::::::::::-----|:::::::::::---:::::::::::---:::::::::::---|
 | `unpack.py` | Extract and pretty-print PPTX |
 | `add_slide.py` | Duplicate slide or create from layout |
 | `clean.py` | Remove orphaned files |
@@ -115,11 +116,13 @@ Slide order is in `ppt/presentation.xml` → `<p:sldIdLst>`.
 ## Editing Content
 
 **Subagents:** If available, use them here (after completing step 4). Each slide is a separate XML file, so subagents can edit in parallel. In your prompt to subagents, include:
+
 1. The slide file path(s) to edit
 1. **"Use the Edit tool for all changes"**
 1. The formatting rules and common pitfalls below
 
 For each slide:
+
 1. Read the slide's XML
 1. Identify ALL placeholder content—text, images, charts, icons, captions
 1. Replace each placeholder with final content
@@ -129,9 +132,9 @@ For each slide:
 ### Formatting Rules
 
 1. **Bold all headers, subheadings, and inline labels**: Use `b="1"` on `<a:rPr>`. This includes:
-  1. Slide titles
-  1. Section headers within a slide
-  1. Inline labels like (e.g.: "Status:", "Description:") at the start of a line
+1. Slide titles
+1. Section headers within a slide
+1. Inline labels like (e.g.: "Status:", "Description:") at the start of a line
 1. **Never use unicode bullets (•)**: Use proper list formatting with `<a:buChar>` or `<a:buAutoNum>`
 1. **Bullet consistency**: Let bullets inherit from the layout. Only specify `<a:buChar>` or `<a:buNone>`.
 
@@ -142,11 +145,13 @@ For each slide:
 ### Template Adaptation
 
 When source content has fewer items than the template:
+
 1. **Remove excess elements entirely** (images, shapes, text boxes), don't just clear text
 1. Check for orphaned visuals after clearing text content
 1. Run visual QA to catch mismatched counts
 
 When replacing text with different length content:
+
 1. **Shorter replacements**: Usually safe
 1. **Longer replacements**: May overflow or wrap unexpectedly
 1. Test with visual QA after text changes
@@ -197,7 +202,7 @@ Handled automatically by unpack/pack. But the Edit tool converts smart quotes to
 ```
 
 | Character | Name | Unicode | XML Entity |
-|:::::::::---:::::::::---:::::::::-----|:::::::::---:::::::::---|:::::::::---:::::::::---:::::::::---|:::::::::---:::::::::---:::::::::---:::::::::---|
+|:::::::::::---:::::::::::---:::::::::::-----|:::::::::::---:::::::::::---|:::::::::::---:::::::::::---:::::::::::---|:::::::::::---:::::::::::---:::::::::::---:::::::::::---|
 | `“` | Left double quote | U+201C | `&#x201C;` |
 | `”` | Right double quote | U+201D | `&#x201D;` |
 | `‘` | Left single quote | U+2018 | `&#x2018;` |

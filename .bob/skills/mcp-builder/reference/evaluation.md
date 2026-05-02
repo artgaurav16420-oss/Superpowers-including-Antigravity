@@ -36,6 +36,7 @@ The measure of quality of an MCP server is NOT how well or comprehensively the s
 ## Evaluation Overview
 
 Create 10 human-readable questions requiring ONLY READ-ONLY, INDEPENDENT, NON-DESTRUCTIVE, and IDEMPOTENT operations to answer. Each question should be:
+
 1. Realistic
 1. Clear and concise
 1. Unambiguous
@@ -47,137 +48,138 @@ Create 10 human-readable questions requiring ONLY READ-ONLY, INDEPENDENT, NON-DE
 ### Core Requirements
 
 1. **Questions MUST be independent**
-   1. Each question should NOT depend on the answer to any other question
-   1. Should not assume prior write operations from processing another question
+1. Each question should NOT depend on the answer to any other question
+1. Should not assume prior write operations from processing another question
 
 1. **Questions MUST require ONLY NON-DESTRUCTIVE AND IDEMPOTENT tool use**
-   1. Should not instruct or require modifying state to arrive at the correct answer
+1. Should not instruct or require modifying state to arrive at the correct answer
 
 1. **Questions must be REALISTIC, CLEAR, CONCISE, and COMPLEX**
-   1. Must require another LLM to use multiple (potentially dozens of) tools or steps to answer
+1. Must require another LLM to use multiple (potentially dozens of) tools or steps to answer
 
 ### Complexity and Depth
 
 1. **Questions must require deep exploration**
-   1. Consider multi-hop questions requiring multiple sub-questions and sequential tool calls
-   1. Each step should benefit from information found in previous questions
+1. Consider multi-hop questions requiring multiple sub-questions and sequential tool calls
+1. Each step should benefit from information found in previous questions
 
 1. **Questions may require extensive paging**
-   1. May need paging through multiple pages of results
-   1. May require querying old data (1-2 years out-of-date) to find niche information
-   1. The questions must be DIFFICULT
+1. May need paging through multiple pages of results
+1. May require querying old data (1-2 years out-of-date) to find niche information
+1. The questions must be DIFFICULT
 
 1. **Questions must require deep understanding**
-   1. Rather than surface-level knowledge
-   1. May pose complex ideas as True/False questions requiring evidence
-   1. May use multiple-choice format where LLM must search different hypotheses
+1. Rather than surface-level knowledge
+1. May pose complex ideas as True/False questions requiring evidence
+1. May use multiple-choice format where LLM must search different hypotheses
 
 1. **Questions must not be solvable with straightforward keyword search**
-   1. Do not include specific keywords from the target content
-   1. Use synonyms, related concepts, or paraphrases
-   1. Require multiple searches, analyzing multiple related items, extracting context, then deriving the answer
+1. Do not include specific keywords from the target content
+1. Use synonyms, related concepts, or paraphrases
+1. Require multiple searches, analyzing multiple related items, extracting context, then deriving the answer
 
 ### Tool Testing
 
 1. **Questions should stress-test tool return values**
-   1. May elicit tools returning large JSON objects or lists, overwhelming the LLM
-   1. Should require understanding multiple modalities of data:
-     1. IDs and names
-     1. Timestamps and datetimes (months, days, years, seconds)
-     1. File IDs, names, extensions, and mimetypes
-     1. URLs, GIDs, etc.
-   1. Should probe the tool's ability to return all useful forms of data
+1. May elicit tools returning large JSON objects or lists, overwhelming the LLM
+1. Should require understanding multiple modalities of data:
+  1. IDs and names
+  1. Timestamps and datetimes (months, days, years, seconds)
+  1. File IDs, names, extensions, and mimetypes
+  1. URLs, GIDs, etc.
+1. Should probe the tool's ability to return all useful forms of data
 
 1. **Questions should MOSTLY reflect real human use cases**
-   1. The kinds of information retrieval tasks that HUMANS assisted by an LLM would care about
+1. The kinds of information retrieval tasks that HUMANS assisted by an LLM would care about
 
 1. **Questions may require dozens of tool calls**
-    1. This challenges LLMs with limited context
-    1. Encourages MCP server tools to reduce information returned
+  1. This challenges LLMs with limited context
+  1. Encourages MCP server tools to reduce information returned
 
 1. **Include ambiguous questions**
-    1. May be ambiguous OR require difficult decisions on which tools to call
-    1. Force the LLM to potentially make mistakes or misinterpret
-    1. Ensure that despite AMBIGUITY, there is STILL A SINGLE VERIFIABLE ANSWER
+  1. May be ambiguous OR require difficult decisions on which tools to call
+  1. Force the LLM to potentially make mistakes or misinterpret
+  1. Ensure that despite AMBIGUITY, there is STILL A SINGLE VERIFIABLE ANSWER
 
 ### Stability
 
 1. **Questions must be designed so the answer DOES NOT CHANGE**
-    1. Do not ask questions that rely on "current state" which is dynamic
-    1. For example, do not count:
-      1. Number of reactions to a post
-      1. Number of replies to a thread
-      1. Number of members in a channel
+  1. Do not ask questions that rely on "current state" which is dynamic
+  1. For example, do not count:
+  1. Number of reactions to a post
+  1. Number of replies to a thread
+  1. Number of members in a channel
 
 1. **DO NOT let the MCP server RESTRICT the kinds of questions you create**
-    1. Create challenging and complex questions
-    1. Some may not be solvable with the available MCP server tools
-    1. Questions may require specific output formats (datetime vs. epoch time, JSON vs. MARKDOWN)
-    1. Questions may require dozens of tool calls to complete
+  1. Create challenging and complex questions
+  1. Some may not be solvable with the available MCP server tools
+  1. Questions may require specific output formats (datetime vs. epoch time, JSON vs. MARKDOWN)
+  1. Questions may require dozens of tool calls to complete
 
 ## Answer Guidelines
 
 ### Verification
 
 1. **Answers must be VERIFIABLE via direct string comparison**
-   1. If the answer can be re-written in many formats, clearly specify the output format in the QUESTION
-   1. Examples: "Use YYYY/MM/DD.", "Respond True or False.", "Answer A, B, C, or D and nothing else."
-   1. Answer should be a single VERIFIABLE value such as:
-     1. User ID, user name, display name, first name, last name
-     1. Channel ID, channel name
-     1. Message ID, string
-     1. URL, title
-     1. Numerical quantity
-     1. Timestamp, datetime
-     1. Boolean (for True/False questions)
-     1. Email address, phone number
-     1. File ID, file name, file extension
-     1. Multiple choice answer
-   1. Answers must not require special formatting or complex, structured output
-   1. Answer will be verified using DIRECT STRING COMPARISON
+1. If the answer can be re-written in many formats, clearly specify the output format in the QUESTION
+1. Examples: "Use YYYY/MM/DD.", "Respond True or False.", "Answer A, B, C, or D and nothing else."
+1. Answer should be a single VERIFIABLE value such as:
+  1. User ID, user name, display name, first name, last name
+  1. Channel ID, channel name
+  1. Message ID, string
+  1. URL, title
+  1. Numerical quantity
+  1. Timestamp, datetime
+  1. Boolean (for True/False questions)
+  1. Email address, phone number
+  1. File ID, file name, file extension
+  1. Multiple choice answer
+1. Answers must not require special formatting or complex, structured output
+1. Answer will be verified using DIRECT STRING COMPARISON
 
 ### Readability
 
 1. **Answers should generally prefer HUMAN-READABLE formats**
-   1. Examples: names, first name, last name, datetime, file name, message string, URL, yes/no, true/false, a/b/c/d
-   1. Rather than opaque IDs (though IDs are acceptable)
-   1. The VAST MAJORITY of answers should be human-readable
+1. Examples: names, first name, last name, datetime, file name, message string, URL, yes/no, true/false, a/b/c/d
+1. Rather than opaque IDs (though IDs are acceptable)
+1. The VAST MAJORITY of answers should be human-readable
 
 ### Stability (2)
 
 1. **Answers must be STABLE/STATIONARY**
-   1. Look at old content (e.g., conversations that have ended, projects that have launched, questions answered)
-   1. Create QUESTIONS based on "closed" concepts that will always return the same answer
-   1. Questions may ask to consider a fixed time window to insulate from non-stationary answers
-   1. Rely on context UNLIKELY to change
-   1. Example: if finding a paper name, be SPECIFIC enough so answer is not confused with papers published later
+1. Look at old content (e.g., conversations that have ended, projects that have launched, questions answered)
+1. Create QUESTIONS based on "closed" concepts that will always return the same answer
+1. Questions may ask to consider a fixed time window to insulate from non-stationary answers
+1. Rely on context UNLIKELY to change
+1. Example: if finding a paper name, be SPECIFIC enough so answer is not confused with papers published later
 
 1. **Answers must be CLEAR and UNAMBIGUOUS**
-   1. Questions must be designed so there is a single, clear answer
-   1. Answer can be derived from using the MCP server tools
+1. Questions must be designed so there is a single, clear answer
+1. Answer can be derived from using the MCP server tools
 
 ### Diversity
 
 1. **Answers must be DIVERSE**
-   1. Answer should be a single VERIFIABLE value in diverse modalities and formats
-   1. User concept: user ID, user name, display name, first name, last name, email address, phone number
-   1. Channel concept: channel ID, channel name, channel topic
-   1. Message concept: message ID, message string, timestamp, month, day, year
+1. Answer should be a single VERIFIABLE value in diverse modalities and formats
+1. User concept: user ID, user name, display name, first name, last name, email address, phone number
+1. Channel concept: channel ID, channel name, channel topic
+1. Message concept: message ID, message string, timestamp, month, day, year
 
 1. **Answers must NOT be complex structures**
-   1. Not a list of values
-   1. Not a complex object
-   1. Not a list of IDs or strings
-   1. Not natural language text
-   1. UNLESS the answer can be straightforwardly verified using DIRECT STRING COMPARISON
-   1. And can be realistically reproduced
-   1. It should be unlikely that an LLM would return the same list in any other order or format
+1. Not a list of values
+1. Not a complex object
+1. Not a list of IDs or strings
+1. Not natural language text
+1. UNLESS the answer can be straightforwardly verified using DIRECT STRING COMPARISON
+1. And can be realistically reproduced
+1. It should be unlikely that an LLM would return the same list in any other order or format
 
 ## Evaluation Process
 
 ### Step 1: Documentation Inspection
 
 Read the documentation of the target API to understand:
+
 1. Available endpoints and functionality
 1. If ambiguity exists, fetch additional information from the web
 1. Parallelize this step AS MUCH AS POSSIBLE
@@ -186,6 +188,7 @@ Read the documentation of the target API to understand:
 ### Step 2: Tool Inspection
 
 List the tools available in the MCP server:
+
 1. Inspect the MCP server directly
 1. Understand input/output schemas, docstrings, and descriptions
 1. WITHOUT calling the tools themselves at this stage
@@ -193,6 +196,7 @@ List the tools available in the MCP server:
 ### Step 3: Developing Understanding
 
 Repeat steps 1 & 2 until you have a good understanding:
+
 1. Iterate multiple times
 1. Think about the kinds of tasks you want to create
 1. Refine your understanding
@@ -202,6 +206,7 @@ Repeat steps 1 & 2 until you have a good understanding:
 ### Step 4: Read-Only Content Inspection
 
 After understanding the API and tools, USE the MCP server tools:
+
 1. Inspect content using READ-ONLY and NON-DESTRUCTIVE operations ONLY
 1. Goal: identify specific content (e.g., users, channels, messages, projects, tasks) for creating realistic questions
 1. Should NOT call any tools that modify state
@@ -216,6 +221,7 @@ After understanding the API and tools, USE the MCP server tools:
 ### Step 5: Task Generation
 
 After inspecting the content, create 10 human-readable questions:
+
 1. An LLM should be able to answer these with the MCP server
 1. Follow all question and answer guidelines above
 
@@ -258,6 +264,7 @@ Each QA pair consists of a question and an answer. The output should be an XML f
 ```
 
 This question is good because:
+
 1. Requires multiple searches to find archived repositories
 1. Needs to identify which had the most forks before archival
 1. Requires examining repository details for the language
@@ -274,6 +281,7 @@ This question is good because:
 ```
 
 This question is good because:
+
 1. Doesn't use specific project name ("initiative focused on improving customer onboarding")
 1. Requires finding completed projects from specific timeframe
 1. Needs to identify the project lead and their role
@@ -291,6 +299,7 @@ This question is good because:
 ```
 
 This question is good because:
+
 1. Requires filtering bugs by date, priority, and status
 1. Needs to group by assignee and calculate resolution rates
 1. Requires understanding timestamps to determine 48-hour windows
@@ -308,6 +317,7 @@ This question is good because:
 ```
 
 This question is good because:
+
 1. Requires understanding subscription tier changes
 1. Needs to identify upgrade events in specific timeframe
 1. Requires comparing contract values
@@ -327,6 +337,7 @@ This question is good because:
 ```
 
 This question is poor because:
+
 1. The answer will change as issues are created, closed, or reassigned
 1. Not based on stable/stationary data
 1. Relies on "current state" which is dynamic
@@ -341,6 +352,7 @@ This question is poor because:
 ```
 
 This question is poor because:
+
 1. Can be solved with a straightforward keyword search for exact title
 1. Doesn't require deep exploration or understanding
 1. No synthesis or analysis needed
@@ -355,6 +367,7 @@ This question is poor because:
 ```
 
 This question is poor because:
+
 1. Answer is a list that could be returned in any order
 1. Difficult to verify with direct string comparison
 1. LLM might format differently (JSON array, comma-separated, newline-separated)
@@ -392,21 +405,21 @@ After creating your evaluation file, you can use the provided evaluation harness
 
 1. **Install Dependencies**
 
-   ```bash
+```bash
    pip install -r scripts/requirements.txt
-   ```
+```
 
    Or install manually:
 
-   ```bash
+```bash
    pip install anthropic mcp
-   ```
+```
 
 1. **Set API Key**
 
-   ```bash
+```bash
    export ANTHROPIC_API_KEY=your_api_key_here
-   ```
+```
 
 ## Evaluation File Format
 
@@ -515,18 +528,18 @@ sse/http options:
 The evaluation script generates a detailed report including:
 
 1. **Summary Statistics**:
-  1. Accuracy (correct/total)
-  1. Average task duration
-  1. Average tool calls per task
-  1. Total tool calls
+1. Accuracy (correct/total)
+1. Average task duration
+1. Average tool calls per task
+1. Total tool calls
 
 1. **Per-Task Results**:
-  1. Prompt and expected response
-  1. Actual response from the agent
-  1. Whether the answer was correct (✅/❌)
-  1. Duration and tool call details
-  1. Agent's summary of its approach
-  1. Agent's feedback on the tools
+1. Prompt and expected response
+1. Actual response from the agent
+1. Whether the answer was correct (✅/❌)
+1. Duration and tool call details
+1. Agent's summary of its approach
+1. Agent's feedback on the tools
 
 ### Save Report to File
 
@@ -582,16 +595,17 @@ python scripts/evaluation.py \
 ```
 
 1. **Review the report** in `github_eval_report.md` to:
-   1. See which questions passed/failed
-   1. Read the agent's feedback on your tools
-   1. Identify areas for improvement
-   1. Iterate on your MCP server design
+1. See which questions passed/failed
+1. Read the agent's feedback on your tools
+1. Identify areas for improvement
+1. Iterate on your MCP server design
 
 ## Troubleshooting
 
 ### Connection Errors
 
 If you get connection errors:
+
 1. **STDIO**: Verify the command and arguments are correct
 1. **SSE/HTTP**: Check the URL is accessible and headers are correct
 1. Ensure any required API keys are set in environment variables or headers
@@ -599,6 +613,7 @@ If you get connection errors:
 ### Low Accuracy
 
 If many evaluations fail:
+
 1. Review the agent's feedback for each task
 1. Check if tool descriptions are clear and comprehensive
 1. Verify input parameters are well-documented
@@ -608,6 +623,7 @@ If many evaluations fail:
 ### Timeout Issues
 
 If tasks are timing out:
+
 1. Use a more capable model (e.g., `claude-3-7-sonnet-20250219`)
 1. Check if tools are returning too much data
 1. Verify pagination is working correctly

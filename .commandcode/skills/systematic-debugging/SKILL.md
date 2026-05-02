@@ -66,22 +66,22 @@ You MUST complete each phase before proceeding to the next.
 #### BEFORE attempting ANY fix
 
 1. **Read Error Messages Carefully**
-   1. Don't skip past errors or warnings
-   1. They often contain the exact solution
-   1. Read stack traces completely
-   1. Note line numbers, file paths, error codes
+1. Don't skip past errors or warnings
+1. They often contain the exact solution
+1. Read stack traces completely
+1. Note line numbers, file paths, error codes
 
 1. **Reproduce Consistently**
-   1. Can you trigger it reliably?
-   1. What are the exact steps?
-   1. Does it happen every time?
-   1. If not reproducible → gather more data, don't guess
+1. Can you trigger it reliably?
+1. What are the exact steps?
+1. Does it happen every time?
+1. If not reproducible → gather more data, don't guess
 
 1. **Check Recent Changes**
-   1. What changed that could cause this?
-   1. Git diff, recent commits
-   1. New dependencies, config changes
-   1. Environmental differences
+1. What changed that could cause this?
+1. Git diff, recent commits
+1. New dependencies, config changes
+1. Environmental differences
 
 1. **Gather Evidence in Multi-Component Systems**
 
@@ -89,7 +89,7 @@ You MUST complete each phase before proceeding to the next.
 
 #### BEFORE proposing fixes, add diagnostic instrumentation
 
-   ```text
+```text
    For EACH component boundary:
 
      - Log what data enters component
@@ -100,11 +100,11 @@ You MUST complete each phase before proceeding to the next.
    Run once to gather evidence showing WHERE it breaks
    THEN analyze evidence to identify failing component
    THEN investigate that specific component
-   ```
+```
 
 #### Example (multi-layer system)
 
-   ```bash
+```bash
 ## Layer 1: Workflow
    echo "=== Secrets available in workflow: ==="
    echo "IDENTITY: ${IDENTITY:+SET}${IDENTITY:-UNSET}"
@@ -117,7 +117,7 @@ You MUST complete each phase before proceeding to the next.
    security find-identity -v
 ## Layer 4: Actual signing
    codesign --sign "$IDENTITY" --verbose=4 "$APP"
-   ```
+```
 
    **This reveals:** Which layer fails (secrets → workflow ✓, workflow → build ✗)
 
@@ -129,101 +129,101 @@ You MUST complete each phase before proceeding to the next.
 
 ### Quick version
 
-   1. Where does bad value originate?
-   1. What called this with bad value?
-   1. Keep tracing up until you find the source
-   1. Fix at source, not at symptom
+1. Where does bad value originate?
+1. What called this with bad value?
+1. Keep tracing up until you find the source
+1. Fix at source, not at symptom
 
 ### Phase 2: Pattern Analysis
 
 #### Find the pattern before fixing
 
 1. **Find Working Examples**
-   1. Locate similar working code in same codebase
-   1. What works that's similar to what's broken?
+1. Locate similar working code in same codebase
+1. What works that's similar to what's broken?
 
 1. **Compare Against References**
-   1. If implementing pattern, read reference implementation COMPLETELY
-   1. Don't skim - read every line
-   1. Understand the pattern fully before applying
+1. If implementing pattern, read reference implementation COMPLETELY
+1. Don't skim - read every line
+1. Understand the pattern fully before applying
 
 1. **Identify Differences**
-   1. What's different between working and broken?
-   1. List every difference, however small
-   1. Don't assume "that can't matter"
+1. What's different between working and broken?
+1. List every difference, however small
+1. Don't assume "that can't matter"
 
 1. **Understand Dependencies**
-   1. What other components does this need?
-   1. What settings, config, environment?
-   1. What assumptions does it make?
+1. What other components does this need?
+1. What settings, config, environment?
+1. What assumptions does it make?
 
 ### Phase 3: Hypothesis and Testing
 
 #### Scientific method
 
 1. **Form Single Hypothesis**
-   1. State clearly: "I think X is the root cause because Y"
-   1. Write it down
-   1. Be specific, not vague
+1. State clearly: "I think X is the root cause because Y"
+1. Write it down
+1. Be specific, not vague
 
 1. **Test Minimally**
-   1. Make the SMALLEST possible change to test hypothesis
-   1. One variable at a time
-   1. Don't fix multiple things at once
+1. Make the SMALLEST possible change to test hypothesis
+1. One variable at a time
+1. Don't fix multiple things at once
 
 1. **Verify Before Continuing**
-   1. Did it work? Yes → Phase 4
-   1. Didn't work? Form NEW hypothesis
-   1. DON'T add more fixes on top
+1. Did it work? Yes → Phase 4
+1. Didn't work? Form NEW hypothesis
+1. DON'T add more fixes on top
 
 1. **When You Don't Know**
-   1. Say "I don't understand X"
-   1. Don't pretend to know
-   1. Ask for help
-   1. Research more
+1. Say "I don't understand X"
+1. Don't pretend to know
+1. Ask for help
+1. Research more
 
 ### Phase 4: Implementation
 
 #### Fix the root cause, not the symptom
 
 1. **Create Failing Test Case**
-   1. Simplest possible reproduction
-   1. Automated test if possible
-   1. One-off test script if no framework
-   1. MUST have before fixing
-   1. Use the `mega-skills:test-driven-development` skill for writing proper failing tests
+1. Simplest possible reproduction
+1. Automated test if possible
+1. One-off test script if no framework
+1. MUST have before fixing
+1. Use the `mega-skills:test-driven-development` skill for writing proper failing tests
 
 1. **Implement Single Fix**
-   1. Address the root cause identified
-   1. ONE change at a time
-   1. No "while I'm here" improvements
-   1. No bundled refactoring
+1. Address the root cause identified
+1. ONE change at a time
+1. No "while I'm here" improvements
+1. No bundled refactoring
 
 1. **Verify Fix**
-   1. Test passes now?
-   1. No other tests broken?
-   1. Issue actually resolved?
+1. Test passes now?
+1. No other tests broken?
+1. Issue actually resolved?
 
 1. **If Fix Doesn't Work**
-   1. STOP
-   1. Count: How many fixes have you tried?
-   1. If < 3: Return to Phase 1, re-analyze with new information
-   1. **If ≥ 3: STOP and question the architecture (step 5 below)**
-   1. DON'T attempt Fix #4 without architectural discussion
+1. STOP
+1. Count: How many fixes have you tried?
+1. If < 3: Return to Phase 1, re-analyze with new information
+1. **If ≥ 3: STOP and question the architecture (step 5 below)**
+1. DON'T attempt Fix #4 without architectural discussion
 
 1. **If 3+ Fixes Failed: Question Architecture**
 
 #### Pattern indicating architectural problem
 
-   1. Each fix reveals new shared state/coupling/problem in different place
-   1. Fixes require "massive refactoring" to implement
-   1. Each fix creates new symptoms elsewhere
+1. Each fix reveals new shared state/coupling/problem in different place
+1. Fixes require "massive refactoring" to implement
+1. Each fix creates new symptoms elsewhere
 
 #### STOP and question fundamentals
 
-   1. Is this pattern fundamentally sound?
-   1. Are we "sticking with it through sheer inertia"?
-   1. Should we refactor architecture vs. continue fixing symptoms?
+1. Is this pattern fundamentally sound?
+1. Are we "sticking with it through sheer inertia"?
+1. Should we refactor architecture vs. continue fixing symptoms?
 
 #### Discuss with your human partner before attempting more fixes
 
@@ -278,7 +278,7 @@ If you catch yourself thinking:
 ## Common Rationalizations
 
 | Excuse | Reality |
-|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::-----|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---|
+|:::::::::::::::::::::::::::::---:::::::::::::::::::::::::::::-----|:::::::::::::::::::::::::::::---:::::::::::::::::::::::::::::---:::::::::::::::::::::::::::::---|
 | "Issue is simple, don't need process" | Simple issues have root causes too. Process is fast for simple bugs. |
 | "Emergency, no time for process" | Systematic debugging is FASTER than guess-and-check thrashing. |
 | "Just try this first, then investigate" | First fix sets the pattern. Do it right from the start. |
@@ -291,7 +291,7 @@ If you catch yourself thinking:
 ## Quick Reference
 
 | Phase | Key Activities | Success Criteria |
-|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::----|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---|
+|:::::::::::::::::::::::::::::---:::::::::::::::::::::::::::::----|:::::::::::::::::::::::::::::---:::::::::::::::::::::::::::::---:::::::::::::::::::::::::::::---:::::::::::::::::::::::::::::---:::::::::::::::::::::::::::::---|:::::::::::::::::::::::::::::---:::::::::::::::::::::::::::::---:::::::::::::::::::::::::::::---:::::::::::::::::::::::::::::---:::::::::::::::::::::::::::::---:::::::::::::::::::::::::::::---|
 | **1. Root Cause** | Read errors, reproduce, check changes, gather evidence | Understand WHAT and WHY |
 | **2. Pattern** | Find working examples, compare | Identify differences |
 | **3. Hypothesis** | Form theory, test minimally | Confirmed or new hypothesis |

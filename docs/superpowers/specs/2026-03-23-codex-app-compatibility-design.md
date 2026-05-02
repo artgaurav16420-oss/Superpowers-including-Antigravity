@@ -15,7 +15,7 @@ The Codex CLI (open source terminal tool) does NOT have this conflict — it has
 Tested in the Codex App on 2026-03-23:
 
 | Operation | workspace-write sandbox | Full access sandbox |
-|:::::::::---|:::::::::---|:::::::::---|
+|:::::::::::---|:::::::::::---|:::::::::::---|
 | `git add` | Works | Works |
 | `git commit` | Works | Works |
 | `git checkout -b` | **Blocked** (can't write `.git/refs/heads/`) | Works |
@@ -24,6 +24,7 @@ Tested in the Codex App on 2026-03-23:
 | `git status/diff/log` | Works | Works |
 
 Additional findings:
+
 1. `spawn_agent` subagents **share** the parent thread's filesystem (confirmed via marker file test)
 1. "Create branch" button appears in the App header regardless of which branch the worktree was started from
 1. The App's native finishing flow: Create branch → Commit modal → Commit and push / Commit and create PR
@@ -45,6 +46,7 @@ Two signals derived:
 1. **ON_DETACHED_HEAD:** `BRANCH` is empty — no named branch exists
 
 Why `git-dir != git-common-dir` instead of checking `show-toplevel`:
+
 1. In a normal repo, both resolve to the same `.git` directory
 1. In a linked worktree, `git-dir` is `.git/worktrees/<name>` while `git-common-dir` is `.git`
 1. In a submodule, both are equal — avoiding a false positive that `show-toplevel` would produce
@@ -53,7 +55,7 @@ Why `git-dir != git-common-dir` instead of checking `show-toplevel`:
 ### Decision Matrix
 
 | Linked Worktree? | Detached HEAD? | Environment | Action |
-|:::::::::---|:::::::::---|:::::::::---|:::::::::---|
+|:::::::::::---|:::::::::::---|:::::::::::---|:::::::::::---|
 | No | No | Claude Code / Codex CLI / normal git | Full skill behavior (unchanged) |
 | Yes | Yes | Codex App worktree (workspace-write) | Skip worktree creation; handoff payload at finish |
 | Yes | No | Codex App (Full access) or manual worktree | Skip worktree creation; full finishing flow |
@@ -68,11 +70,12 @@ New section between "Overview" and "Directory Selection Process":
 #### Step 0: Check if Already in an Isolated Workspace
 
 Run the detection commands. If `GIT_DIR != GIT_COMMON`, skip worktree creation entirely. Instead:
+
 1. Skip to "Run Project Setup" subsection under Creation Steps — `npm install` etc. is idempotent, worth running for safety
 1. Then "Verify Clean Baseline" — run tests
 1. Report with branch state:
-   1. On a branch: "Already in an isolated workspace at `<path>` on branch `<name>`. Tests passing. Ready to implement."
-   1. Detached HEAD: "Already in an isolated workspace at `<path>` (detached HEAD, externally managed). Tests passing. Note: branch creation needed at finish time. Ready to implement."
+1. On a branch: "Already in an isolated workspace at `<path>` on branch `<name>`. Tests passing. Ready to implement."
+1. Detached HEAD: "Already in an isolated workspace at `<path>` (detached HEAD, externally managed). Tests passing. Note: branch creation needed at finish time. Ready to implement."
 
 If `GIT_DIR == GIT_COMMON`, proceed with the full worktree creation flow (unchanged).
 
@@ -209,7 +212,7 @@ names, commit messages, and PR descriptions for the user to copy.
 ## Scope Summary
 
 | File | Change |
-|:::::::::---|:::::::::---|
+|:::::::::::---|:::::::::::---|
 | `skills/using-git-worktrees/SKILL.md` | +12 lines (Step 0) |
 | `skills/finishing-a-development-branch/SKILL.md` | +20 lines (Step 1.5 + cleanup guard) |
 | `skills/subagent-driven-development/SKILL.md` | 1 line edit |

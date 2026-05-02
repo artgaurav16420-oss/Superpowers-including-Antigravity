@@ -222,7 +222,7 @@ Operation succeeds because *some* valid config exists, but it's not the config y
 ### Examples
 
 | Change | Insufficient | Required |
-|:::::::::---:::::::::-----|:::::::::---:::::::::---:::::::::---:::::::::----|:::::::::---:::::::::---:::::::::----|
+|:::::::::::---:::::::::::-----|:::::::::::---:::::::::::---:::::::::::---:::::::::::----|:::::::::::---:::::::::::---:::::::::::----|
 | Switch LLM provider | Status 200 | Response contains expected model name |
 | Enable feature flag | No errors | Feature behavior actually active |
 | Change environment | Deploy succeeds | Logs/vars reference new environment |
@@ -236,17 +236,18 @@ BEFORE claiming configuration change works:
 
 1. IDENTIFY: What should be DIFFERENT after this change?
 1. LOCATE: Where is that difference observable?
-   1. Response field (model name, user ID)
-   1. Log line (environment, provider)
-   1. Behavior (feature active/inactive)
+1. Response field (model name, user ID)
+1. Log line (environment, provider)
+1. Behavior (feature active/inactive)
 1. RUN: Command that shows the observable difference
 1. VERIFY: Output contains expected difference
 1. ONLY THEN: Claim configuration change works
 
 Red flags:
-  1. "Request succeeded" without checking content
-  1. Checking status code but not response body
-  1. Verifying no errors but not positive confirmation
+
+1. "Request succeeded" without checking content
+1. Checking status code but not response body
+1. Verifying no errors but not positive confirmation
 
 ```text
 
@@ -402,6 +403,7 @@ When done, BEFORE reporting back:
 Take a step back and review your work with fresh eyes.
 
 Ask yourself:
+
 1. Does this actually solve the task as specified?
 1. Are there edge cases I didn't consider?
 1. Did I follow the pattern correctly?
@@ -411,6 +413,7 @@ Ask yourself:
 If you identify issues during this reflection, fix them now.
 
 Then report:
+
 1. What you implemented
 1. Self-reflection findings (if any)
 1. Test results
@@ -444,6 +447,7 @@ BEFORE analyzing, read these files:
 Use Read tool to load each file.
 
 If you cannot find a file:
+
 1. Check exact path from diff
 1. Try alternate locations
 1. Report: "Cannot locate [path] - please verify file exists"
@@ -534,6 +538,7 @@ BEFORE writing any mock:
 #### Detection
 
 When you see runtime error "X is not a function" and tests pass:
+
 1. Check if X is mocked
 1. Compare mock methods to interface methods
 1. Look for method name mismatches
@@ -557,9 +562,9 @@ BEFORE writing any tests:
    Use Skill tool: mega-skills:testing-anti-patterns
 
 1. Apply gate functions from that skill when:
-   1. Writing mocks
-   1. Adding methods to production classes
-   1. Mocking dependencies
+1. Writing mocks
+1. Adding methods to production classes
+1. Mocking dependencies
 
 This is NOT optional. Tests that violate anti-patterns will be rejected in review.
 
@@ -590,14 +595,16 @@ Subagent reports back with summary of work.
 Subagent performs self-reflection, then:
 
 IF self-reflection identifies fixable issues:
-  1. Fix the issues
-  1. Re-run verification
-  1. Report: "Initial implementation + self-reflection fix"
+
+1. Fix the issues
+1. Re-run verification
+1. Report: "Initial implementation + self-reflection fix"
 
 ELSE:
   Report: "Implementation complete"
 
 Include in report:
+
 1. Self-reflection findings
 1. Whether fixes were applied
 1. Final verification results

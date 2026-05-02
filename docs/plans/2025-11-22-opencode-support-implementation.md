@@ -795,7 +795,7 @@ git commit -m "feat: implement session.started hook for opencode"
 ## Clone superpowers skills to OpenCode config directory
 
 mkdir -p ~/.config/opencode/superpowers
-git clone [https://github.com/artgaurav16420-oss/Mega-Skills.git]([https://github.com/artgaurav16420-oss/Mega-Skills.git)]([https://github.com/artgaurav16420-oss/Mega-Skills.git))]([https://github.com/artgaurav16420-oss/Mega-Skills.git)))]([https://github.com/artgaurav16420-oss/Mega-Skills.git))))]([https://github.com/artgaurav16420-oss/Mega-Skills.git)))))]([https://github.com/artgaurav16420-oss/Mega-Skills.git))))))]([https://github.com/artgaurav16420-oss/Mega-Skills.git)))))))]([https://github.com/artgaurav16420-oss/Mega-Skills.git))))))))](https://github.com/artgaurav16420-oss/Mega-Skills.git))))))))) ~/.config/opencode/superpowers
+git clone [https://github.com/artgaurav16420-oss/Mega-Skills.git]([https://github.com/artgaurav16420-oss/Mega-Skills.git)]([https://github.com/artgaurav16420-oss/Mega-Skills.git))]([https://github.com/artgaurav16420-oss/Mega-Skills.git)))]([https://github.com/artgaurav16420-oss/Mega-Skills.git))))]([https://github.com/artgaurav16420-oss/Mega-Skills.git)))))]([https://github.com/artgaurav16420-oss/Mega-Skills.git))))))]([https://github.com/artgaurav16420-oss/Mega-Skills.git)))))))]([https://github.com/artgaurav16420-oss/Mega-Skills.git))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills.git)))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills.git))))))))))](https://github.com/artgaurav16420-oss/Mega-Skills.git))))))))))) ~/.config/opencode/superpowers
 
 ```text
 
@@ -1094,6 +1094,7 @@ Expected: Shows all commits from this implementation
 #### Step 3: Create summary document
 
 Create a completion summary showing:
+
 1. Total commits made
 1. Files created: `lib/skills-core.js`, `.opencode/plugin/superpowers.js`, `.opencode/INSTALL.md`
 1. Files modified: `.codex/superpowers-codex`, `README.md`, `RELEASE-NOTES.md`
@@ -1103,6 +1104,7 @@ Create a completion summary showing:
 #### Step 4: Report completion
 
 Present summary to user and offer to:
+
 1. Push to remote
 1. Create pull request
 1. Test with real OpenCode installation (requires OpenCode installed)

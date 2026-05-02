@@ -53,9 +53,9 @@ Implement the Sierpinski triangle generation algorithm.
 1. Implement `Generate(size, depth int, char rune) []string` that returns lines of the triangle
 1. Use recursive midpoint subdivision algorithm
 1. Create `internal/sierpinski/sierpinski_test.go` with tests:
-  1. Small triangle (size=4, depth=2) matches expected output
-  1. Size=1 returns single character
-  1. Depth=0 returns filled triangle
+1. Small triangle (size=4, depth=2) matches expected output
+1. Size=1 returns single character
+1. Depth=0 returns filled triangle
 
 #### Verify (3)
 
@@ -92,9 +92,9 @@ Implement the Mandelbrot set ASCII renderer.
 1. Map complex plane region (-2.5 to 1.0 real, -1.0 to 1.0 imaginary) to output dimensions
 1. Map iteration count to character gradient " .:-=+*#%@" (or single char if provided)
 1. Create `internal/mandelbrot/mandelbrot_test.go` with tests:
-  1. Output dimensions match requested width/height
-  1. Known point inside set (0,0) maps to max-iteration character
-  1. Known point outside set (2,0) maps to low-iteration character
+1. Output dimensions match requested width/height
+1. Known point inside set (0,0) maps to max-iteration character
+1. Known point outside set (2,0) maps to low-iteration character
 
 #### Verify (5)
 
@@ -181,10 +181,10 @@ Document usage and examples.
 #### Do (10)
 
 1. Create `README.md` with:
-  1. Project description
-  1. Installation: `go install ./cmd/fractals`
-  1. Usage examples for both commands
-  1. Example output (small samples)
+1. Project description
+1. Installation: `go install ./cmd/fractals`
+1. Usage examples for both commands
+1. Example output (small samples)
 
 #### Verify (10)
 

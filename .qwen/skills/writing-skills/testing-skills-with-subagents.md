@@ -17,12 +17,14 @@ You run scenarios without the skill (RED - watch agent fail), write skill addres
 ## When to Use
 
 Test skills that:
+
 1. Enforce discipline (TDD, testing requirements)
 1. Have compliance costs (time, effort, rework)
 1. Could be rationalized away ("just this once")
 1. Contradict immediate goals (speed over quality)
 
 Don't test:
+
 1. Pure reference skills (API docs, syntax guides)
 1. Skills without rules to violate
 1. Skills agents have no incentive to bypass
@@ -30,7 +32,7 @@ Don't test:
 ## TDD Mapping for Skill Testing
 
 | TDD Phase | Skill Testing | What You Do |
-|:::::::::---:::::::::---:::::::::-----|:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---|:::::::::---:::::::::---:::::::::---:::::::::----|
+|:::::::::::---:::::::::::---:::::::::::-----|:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---|:::::::::::---:::::::::::---:::::::::::---:::::::::::----|
 | **RED** | Baseline test | Run scenario WITHOUT skill, watch agent fail |
 | **Verify RED** | Capture rationalizations | Document exact failures verbatim |
 | **GREEN** | Write skill | Address specific baseline failures |
@@ -72,6 +74,7 @@ Choose A, B, or C.
 ```
 
 Run this WITHOUT a TDD skill. Agent chooses B or C and rationalizes:
+
 1. "I already manually tested it"
 1. "Tests after achieve same goals"
 1. "Deleting is wasteful"
@@ -133,7 +136,7 @@ Forces explicit choice.
 ### Pressure Types
 
 | Pressure | Example |
-|:::::::::---:::::::::---:::::::::----|:::::::::---:::::::::---:::::::::---|
+|:::::::::::---:::::::::::---:::::::::::----|:::::::::::---:::::::::::---:::::::::::---|
 | **Time** | Emergency, deadline, deploy window closing |
 | **Sunk cost** | Hours of work, "waste" to delete |
 | **Authority** | Senior says skip it, manager overrides |
@@ -213,7 +216,7 @@ Write code before test? Delete it. Start over.
 
 ```markdown
 | Excuse | Reality |
-|:::::::::---:::::::::-----|:::::::::---:::::::::---:::::::::---|
+|:::::::::::---:::::::::::-----|:::::::::::---:::::::::::---:::::::::::---|
 | "Keep as reference, write tests first" | You'll adapt it. That's testing after. Delete means delete. |
 ```
 
@@ -239,6 +242,7 @@ Add symptoms of ABOUT to violate.
 #### Re-test same scenarios with updated skill
 
 Agent should now:
+
 1. Choose correct option
 1. Cite new sections
 1. Acknowledge their previous rationalization was addressed
@@ -261,18 +265,18 @@ it crystal clear that Option A was the only acceptable answer?
 #### Three possible responses
 
 1. **"The skill WAS clear, I chose to ignore it"**
-   1. Not documentation problem
-   1. Need stronger foundational principle
-   1. Add "Violating letter is violating spirit"
+1. Not documentation problem
+1. Need stronger foundational principle
+1. Add "Violating letter is violating spirit"
 
 1. **"The skill should have said X"**
-   1. Documentation problem
-   1. Add their suggestion verbatim
+1. Documentation problem
+1. Add their suggestion verbatim
 
 1. **"I didn't see section Y"**
-   1. Organization problem
-   1. Make key points more prominent
-   1. Add foundational principle early
+1. Organization problem
+1. Make key points more prominent
+1. Add foundational principle early
 
 ## When Skill is Bulletproof
 
@@ -381,7 +385,7 @@ Tests pass once ≠ bulletproof.
 ## Quick Reference (TDD Cycle)
 
 | TDD Phase | Skill Testing | Success Criteria |
-|:::::::::---:::::::::---:::::::::-----|:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---|:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---|
+|:::::::::::---:::::::::::---:::::::::::-----|:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---|:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---|
 | **RED** | Run scenario without skill | Agent fails, document rationalizations |
 | **Verify RED** | Capture exact wording | Verbatim documentation of failures |
 | **GREEN** | Write skill addressing failures | Agent now complies with skill |
@@ -400,6 +404,7 @@ RED-GREEN-REFACTOR for documentation works exactly like RED-GREEN-REFACTOR for c
 ## Real-World Impact
 
 From applying TDD to TDD skill itself (2025-10-03):
+
 1. 6 RED-GREEN-REFACTOR iterations to bulletproof
 1. Baseline testing revealed 10+ unique rationalizations
 1. Each REFACTOR closed specific loopholes

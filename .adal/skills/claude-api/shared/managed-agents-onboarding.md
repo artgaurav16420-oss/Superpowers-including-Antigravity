@@ -30,9 +30,9 @@ Ask the user:
 Four shapes, same runtime code path (`sessions.create()` → `sessions.events.send()` → stream). Only the trigger and sink differ.
 
 | Pattern | Trigger | Example |
-|:::::::::---|:::::::::---|:::::::::---|
-| Event-triggered | Webhook | GitHub PR push → CMA (GitHub tool) → Slack | # <:::::::::---:::::::::--- MC maybe delete?
-| Scheduled | Cron | Daily brief: browser + GitHub + Jira → CMA → Slack | # <:::::::::---:::::::::--- MC maybe delete?
+|:::::::::::---|:::::::::::---|:::::::::::---|
+| Event-triggered | Webhook | GitHub PR push → CMA (GitHub tool) → Slack | # <:::::::::::---:::::::::::--- MC maybe delete?
+| Scheduled | Cron | Daily brief: browser + GitHub + Jira → CMA → Slack | # <:::::::::::---:::::::::::--- MC maybe delete?
 | Fire-and-forget PR | Human | Slack slash-command → CMA (GitHub tool) → PR passing CI |
 | Research + dashboard | Human | Topic → CMA (web search + `frontend-design` skill) → HTML dashboard |
 
@@ -45,7 +45,7 @@ Three rounds. Batch the questions in each round; don't ask them one at a time.
 **Round A — Tools.** Start here; it's the most concrete part. Three types; ask which the user wants (any combination):
 
 | Type | What it is | How to guide |
-|:::::::::---|:::::::::---|:::::::::---|
+|:::::::::::---|:::::::::::---|:::::::::::---|
 | **Prebuilt Claude Agent tools** (`agent_toolset_20260401`) | Ready-to-use: `bash`, `read`, `write`, `edit`, `glob`, `grep`, `web_fetch`, `web_search`. Enable all at once, or individually via `enabled: true/false`. | Recommend enabling the full toolset. List the 8 tools so the user knows what they're getting. Full detail: `shared/managed-agents-tools.md` → Agent Toolset. |
 | **MCP tools** | Third-party integrations (GitHub, Linear, Asana, etc.) via `mcp_toolset`. Credentials live in a vault, not inline. | Ask which services. For each, walk through MCP server URL + vault credentials. Full detail: `shared/managed-agents-tools.md` → MCP Servers + Vaults. |
 | **Custom tools** | The user's own app handles these tool calls — agent fires `agent.custom_tool_use`, the app sends a result message back. | Ask for each tool: name, description, input schema. The app code that handles the event is *their* code — don't generate it. Full detail: `shared/managed-agents-tools.md` → Custom Tools. |
@@ -53,10 +53,12 @@ Three rounds. Batch the questions in each round; don't ask them one at a time.
 **Round B — Skills, files, and repos.** What the agent has on hand when it starts.
 
 *Skills* — two types; both work the same way — Claude auto-uses them when relevant. Max 64 per agent.
+
 1. [ ] **Pre-built Agent Skills**: `xlsx`, `docx`, `pptx`, `pdf`. Reference by name.
 1. [ ] **Custom Skills**: skills uploaded to the user's org via the Skills API. Reference by `skill_id` + optional `version`. If the skill doesn't exist yet, walk the user through `POST /v1/skills` + `POST /v1/skills/{id}/versions` (beta header `skills-2025-10-02`). Full detail: `shared/managed-agents-tools.md` → Skills + Skills API.
 
 *GitHub repositories* — any repos the agent needs on-disk? For each:
+
 1. [ ] Repo URL (`https://github.com/org/repo`)
 1. [ ] `authorization_token` (PAT or GitHub App token scoped to the repo)
 1. [ ] Optional `mount_path` (defaults to `/workspace/<repo-name>`) and `checkout` (branch or SHA)
@@ -66,6 +68,7 @@ Emit as `resources: [{type: "github_repository", url, authorization_token, ...}]
 > ‼️ **PR creation needs the GitHub MCP server too.** `github_repository` gives filesystem access only — to open PRs, also attach the GitHub MCP server in Round A and credential it via a vault. The workflow is: edit files in the mounted repo → push branch via `bash` → create PR via the MCP `create_pull_request` tool.
 
 *Files* — any local files to seed the session with? For each:
+
 1. [ ] Upload via the Files API → persist `file_id`
 1. [ ] Choose a `mount_path` — absolute, e.g. `/workspace/data.csv` (parents auto-created; files mount read-only)
 
@@ -85,6 +88,7 @@ Emit as `resources: [{type: "file", file_id, mount_path}]`. Max 999 file resourc
 Per-run. Points at the agent + environment, attaches credentials, kicks off.
 
 **Vault credentials** (if the agent declared MCP servers):
+
 1. [ ] Existing vault, or create one? (`client.beta.vaults.create()` + `vaults.credentials.create()`)
 
 Credentials are write-only, matched to MCP servers by URL, auto-refreshed. See `shared/managed-agents-tools.md` → Vaults.

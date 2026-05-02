@@ -26,30 +26,30 @@ This skill transforms chaotic folders of invoices, receipts, and financial docum
 ## What This Skill Does
 
 1. **Reads Invoice Content**: Extracts information from PDFs, images, and documents:
-   1. Vendor/company name
-   1. Invoice number
-   1. Date
-   1. Amount
-   1. Product or service description
-   1. Payment method
+1. Vendor/company name
+1. Invoice number
+1. Date
+1. Amount
+1. Product or service description
+1. Payment method
 
 1. **Renames Files Consistently**: Creates standardized filenames:
-   1. Format: `YYYY-MM-DD Vendor - Invoice - ProductOrService.pdf`
+1. Format: `YYYY-MM-DD Vendor - Invoice - ProductOrService.pdf`
 
-   1. Examples: `2024-03-15 Adobe - Invoice - Creative Cloud.pdf`
+1. Examples: `2024-03-15 Adobe - Invoice - Creative Cloud.pdf`
 
 1. **Organizes by Category**: Sorts into logical folders:
-   1. By vendor
-   1. By expense category (software, office, travel, etc.)
-   1. By time period (year, quarter, month)
-   1. By tax category (deductible, personal, etc.)
+1. By vendor
+1. By expense category (software, office, travel, etc.)
+1. By time period (year, quarter, month)
+1. By tax category (deductible, personal, etc.)
 
 1. **Handles Multiple Formats**: Works with:
-   1. PDF invoices
-   1. Scanned receipts (JPG, PNG)
-   1. Email attachments
-   1. Screenshots
-   1. Bank statements
+1. PDF invoices
+1. Scanned receipts (JPG, PNG)
+1. Email attachments
+1. Screenshots
+1. Bank statements
 
 1. **Maintains Originals**: Preserves original files while organizing copies
 
@@ -95,17 +95,17 @@ When a user requests invoice organization:
 
    Identify all invoice files:
 
-   ```bash
+```bash
 ## Find all invoice-related files
    find . -type f \( -name "*.pdf" -o -name "*.jpg" -o -name "*.png" \) -print
-   ```
+```
 
    Report findings:
 
-   1. Total number of files
-   1. File types
-   1. Date range (if discernible from names)
-   1. Current organization (or lack thereof)
+1. Total number of files
+1. File types
+1. Date range (if discernible from names)
+1. Current organization (or lack thereof)
 
 1. **Extract Information from Each File**
 
@@ -113,32 +113,32 @@ When a user requests invoice organization:
 
    **From PDF invoices**:
 
-   1. Use text extraction to read invoice content
-   1. Look for common patterns:
-     1. "Invoice Date:", "Date:", "Issued:"
-     1. "Invoice #:", "Invoice Number:"
-     1. Company name (usually at top)
-     1. "Amount Due:", "Total:", "Amount:"
-     1. "Description:", "Service:", "Product:"
+1. Use text extraction to read invoice content
+1. Look for common patterns:
+  1. "Invoice Date:", "Date:", "Issued:"
+  1. "Invoice #:", "Invoice Number:"
+  1. Company name (usually at top)
+  1. "Amount Due:", "Total:", "Amount:"
+  1. "Description:", "Service:", "Product:"
 
    **From image receipts**:
 
-   1. Read visible text from images
-   1. Identify vendor name (often at top)
-   1. Look for date (common formats)
-   1. Find total amount
+1. Read visible text from images
+1. Identify vendor name (often at top)
+1. Look for date (common formats)
+1. Find total amount
 
    **Fallback for unclear files**:
 
-   1. Use filename clues
-   1. Check file creation/modification date
-   1. Flag for manual review if critical info missing
+1. Use filename clues
+1. Check file creation/modification date
+1. Flag for manual review if critical info missing
 
 1. **Determine Organization Strategy**
 
    Ask user preference if not specified:
 
-   ```markdown
+```markdown
    I found [X] invoices from [date range].
    How would you like them organized?
 
@@ -149,40 +149,40 @@ When a user requests invoice organization:
    1. **Custom** (describe your structure)
 
    Or I can use a default structure: Year/Category/Vendor
-   ```
+```
 
 1. **Create Standardized Filename**
 
    For each invoice, create a filename following this pattern:
 
-   ```text
+```text
    YYYY-MM-DD Vendor - Invoice - Description.ext
-   ```
+```
 
    Examples:
 
-   1. `2024-03-15 Adobe - Invoice - Creative Cloud.pdf`
+1. `2024-03-15 Adobe - Invoice - Creative Cloud.pdf`
 
-   1. `2024-01-10 Amazon - Receipt - Office Supplies.pdf`
+1. `2024-01-10 Amazon - Receipt - Office Supplies.pdf`
 
-   1. `2023-12-01 Stripe - Invoice - Monthly Payment Processing.pdf`
+1. `2023-12-01 Stripe - Invoice - Monthly Payment Processing.pdf`
 
    **Filename Best Practices**:
 
-   1. Remove special characters except hyphens
-   1. Capitalize vendor names properly
-   1. Keep descriptions concise but meaningful
-   1. Use consistent date format (YYYY-MM-DD) for sorting
-   1. Preserve original file extension
+1. Remove special characters except hyphens
+1. Capitalize vendor names properly
+1. Keep descriptions concise but meaningful
+1. Use consistent date format (YYYY-MM-DD) for sorting
+1. Preserve original file extension
 
 1. **Execute Organization**
 
    Before moving files, show the plan:
 
-   ```markdown
+```markdown
 ## Organization Plan
 ## Proposed Structure
-   ```
+```
 
    Invoices/
    ├── 2023/
@@ -196,7 +196,7 @@ When a user requests invoice organization:
        ├── Services/
        └── Office/
 
-   ```text
+```text
 ## Sample Changes
    Before: `invoice_adobe_march.pdf`
    After: `2024-03-15 Adobe - Invoice - Creative Cloud.pdf`
@@ -205,40 +205,40 @@ When a user requests invoice organization:
    After: `2024-02-10 Staples - Receipt - Office Supplies.jpg`
    Location: `Invoices/2024/Office/Staples/`
    Process [X] files? (yes/no)
-   ```
+```
 
    After approval:
 
-   ```bash
+```bash
 ## Create folder structure
    mkdir -p "Invoices/2024/Software/Adobe"
 ## Copy (don't move) to preserve originals
    cp "original.pdf" "Invoices/2024/Software/Adobe/2024-03-15 Adobe - Invoice - Creative Cloud.pdf"
 ## Or move if user prefers
    mv "original.pdf" "new/path/standardized-name.pdf"
-   ```
+```
 
 1. **Generate Summary Report**
 
    Create a CSV file with all invoice details:
 
-   ```csv
+```csv
    Date,Vendor,Invoice Number,Description,Amount,Category,File Path
    2024-03-15,Adobe,INV-12345,Creative Cloud,52.99,Software,Invoices/2024/Software/Adobe/2024-03-15 Adobe - Invoice - Creative Cloud.pdf
    2024-03-10,Amazon,123-4567890-1234567,Office Supplies,127.45,Office,Invoices/2024/Office/Amazon/2024-03-10 Amazon - Receipt - Office Supplies.pdf
    ...
-   ```
+```
 
    This CSV is useful for:
 
-   1. Importing into accounting software
-   1. Sharing with accountants
-   1. Expense tracking and reporting
-   1. Tax preparation
+1. Importing into accounting software
+1. Sharing with accountants
+1. Expense tracking and reporting
+1. Tax preparation
 
 1. **Provide Completion Summary**
 
-   ```markdown
+```markdown
 ## Organization Complete! 📊
 ## Summary
 
@@ -248,7 +248,7 @@ When a user requests invoice organization:
    - **Vendors**: [Y] unique vendors
 
 ## New Structure
-   ```
+```
 
    Invoices/
    ├── 2024/ (45 files)
@@ -257,7 +257,7 @@ When a user requests invoice organization:
    │   └── Office/ (10 files)
    └── 2023/ (12 files)
 
-   ```text
+```text
 ## Files Created
 
    - `/Invoices/` - Organized invoices
@@ -274,7 +274,7 @@ When a user requests invoice organization:
    1. Set up auto-organization for future invoices
 
    Ready for tax season! 🎉
-   ```
+```
 
 ## Examples
 
@@ -287,10 +287,10 @@ When a user requests invoice organization:
 1. Scans folder: finds 147 PDFs and images
 
 1. Reads each invoice to extract:
-   1. Date
-   1. Vendor name
-   1. Invoice number
-   1. Product/service description
+1. Date
+1. Vendor name
+1. Invoice number
+1. Product/service description
 
 1. Renames all files: `YYYY-MM-DD Vendor - Invoice - Product.pdf`
 

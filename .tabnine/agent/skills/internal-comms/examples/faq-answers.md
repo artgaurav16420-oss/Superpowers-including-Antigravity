@@ -12,6 +12,7 @@ Some examples of areas that may be interesting to folks: recent corporate events
 ## Tools Available
 
 You should use the company's available tools, where communication and work happens. For most companies, it looks something like this:
+
 1. Slack: questions being asked across the company - it could be questions in response to posts with lots of responses, questions being asked with lots of reactions or thumbs up to show support, or anything else to show that a large number of employees want to ask the same things
 1. Email: emails with FAQs written directly in them can be a good source as well
 1. Documents: docs in places like Google Drive, linked on calendar events, etc. can also be a good source of FAQs, either directly added or inferred based on the contents of the doc

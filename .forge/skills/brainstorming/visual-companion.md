@@ -99,32 +99,32 @@ Use `--url-host` to control what hostname is printed in the returned URL JSON.
 ## The Loop
 
 1. **Check server is alive**, then **write HTML** to a new file in `screen_dir`:
-   1. Before each write, check that `$STATE_DIR/server-info` exists. If it doesn't (or `$STATE_DIR/server-stopped` exists), the server has shut down — restart it with `start-server.sh` before continuing. The server auto-exits after 30 minutes of inactivity.
-   1. Use semantic filenames: `platform.html`, `visual-style.html`, `layout.html`
-   1. **Never reuse filenames** — each screen gets a fresh file
-   1. Use Write tool — **never use cat/heredoc** (dumps noise into terminal)
-   1. Server automatically serves the newest file
+1. Before each write, check that `$STATE_DIR/server-info` exists. If it doesn't (or `$STATE_DIR/server-stopped` exists), the server has shut down — restart it with `start-server.sh` before continuing. The server auto-exits after 30 minutes of inactivity.
+1. Use semantic filenames: `platform.html`, `visual-style.html`, `layout.html`
+1. **Never reuse filenames** — each screen gets a fresh file
+1. Use Write tool — **never use cat/heredoc** (dumps noise into terminal)
+1. Server automatically serves the newest file
 
 1. **Tell user what to expect and end your turn:**
-   1. Remind them of the URL (every step, not just first)
-   1. Give a brief text summary of what's on screen (e.g., "Showing 3 layout options for the homepage")
-   1. Ask them to respond in the terminal: "Take a look and let me know what you think. Click to select an option if you'd like."
+1. Remind them of the URL (every step, not just first)
+1. Give a brief text summary of what's on screen (e.g., "Showing 3 layout options for the homepage")
+1. Ask them to respond in the terminal: "Take a look and let me know what you think. Click to select an option if you'd like."
 
 1. **On your next turn** — after the user responds in the terminal:
-   1. Read `$STATE_DIR/events` if it exists — this contains the user's browser interactions (clicks, selections) as JSON lines
-   1. Merge with the user's terminal text to get the full picture
-   1. The terminal message is the primary feedback; `state_dir/events` provides structured interaction data
+1. Read `$STATE_DIR/events` if it exists — this contains the user's browser interactions (clicks, selections) as JSON lines
+1. Merge with the user's terminal text to get the full picture
+1. The terminal message is the primary feedback; `state_dir/events` provides structured interaction data
 
 1. **Iterate or advance** — if feedback changes current screen, write a new file (e.g., `layout-v2.html`). Only move to the next question when the current step is validated.
 
 1. **Unload when returning to terminal** — when the next step doesn't need the browser (e.g., a clarifying question, a tradeoff discussion), push a waiting screen to clear the stale content:
 
-   ```html
+```html
    <!-- filename: waiting.html (or waiting-2.html, etc.) -->
    <div style="display:flex;align-items:center;justify-content:center;min-height:60vh">
      <p class="subtitle">Continuing in terminal...</p>
    </div>
-   ```
+```
 
    This prevents the user from staring at a resolved choice while the conversation has moved on. When the next visual question comes up, push a new content file as usual.
 

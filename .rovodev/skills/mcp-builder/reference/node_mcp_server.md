@@ -39,6 +39,7 @@ server.registerTool("tool_name", {...config}, async (params) => {
 ## MCP TypeScript SDK
 
 The official MCP TypeScript SDK provides:
+
 1. `McpServer` class for server initialization
 1. `registerTool` method for tool registration
 1. Zod schema integration for runtime input validation
@@ -49,10 +50,12 @@ See the MCP SDK documentation in the references for complete details.
 ## Server Naming Convention
 
 Node/TypeScript MCP servers must follow this naming pattern:
+
 1. **Format**: `{service}-mcp-server` (lowercase with hyphens)
 1. **Examples**: `github-mcp-server`, `jira-mcp-server`, `stripe-mcp-server`
 
 The name should be:
+
 1. General (not tied to specific features)
 1. Descriptive of the service/API being integrated
 1. Easy to infer from the task description
@@ -84,6 +87,7 @@ Create the following structure for Node/TypeScript MCP servers:
 Use snake_case for tool names (e.g., "search_users", "create_project", "get_channel_info") with clear, action-oriented names.
 
 **Avoid Naming Conflicts**: Include the service context to prevent overlaps:
+
 1. Use "slack_send_message" instead of just "send_message"
 1. Use "github_create_issue" instead of just "create_issue"
 1. Use "asana_list_tasks" instead of just "list_tasks"
@@ -91,6 +95,7 @@ Use snake_case for tool names (e.g., "search_users", "create_project", "get_chan
 ### Tool Structure
 
 Tools are registered using the `registerTool` method with the following requirements:
+
 1. Use Zod schemas for runtime input validation and type safety
 1. The `description` field must be explicitly provided - JSDoc comments are NOT automatically extracted
 1. Explicitly provide `title`, `description`, `inputSchema`, and `annotations`
@@ -336,6 +341,7 @@ const inputSchema = z.object({
 ```
 
 **Markdown format**:
+
 1. Use headers, lists, and formatting for clarity
 1. Convert timestamps to human-readable format
 1. Show display names with IDs in parentheses
@@ -343,6 +349,7 @@ const inputSchema = z.object({
 1. Group related information logically
 
 **JSON format**:
+
 1. Return complete, structured data suitable for programmatic processing
 1. Include all available fields and metadata
 1. Use consistent field names and types
@@ -834,17 +841,17 @@ Use notifications sparingly - only when server capabilities genuinely change.
 Your implementation MUST prioritize composability and code reuse:
 
 1. **Extract Common Functionality**:
-   1. Create reusable helper functions for operations used across multiple tools
-   1. Build shared API clients for HTTP requests instead of duplicating code
-   1. Centralize error handling logic in utility functions
-   1. Extract business logic into dedicated functions that can be composed
-   1. Extract shared markdown or JSON field selection & formatting functionality
+1. Create reusable helper functions for operations used across multiple tools
+1. Build shared API clients for HTTP requests instead of duplicating code
+1. Centralize error handling logic in utility functions
+1. Extract business logic into dedicated functions that can be composed
+1. Extract shared markdown or JSON field selection & formatting functionality
 
 1. **Avoid Duplication**:
-   1. NEVER copy-paste similar code between tools
-   1. If you find yourself writing similar logic twice, extract it into a function
-   1. Common operations like pagination, filtering, field selection, and formatting should be shared
-   1. Authentication/authorization logic should be centralized
+1. NEVER copy-paste similar code between tools
+1. If you find yourself writing similar logic twice, extract it into a function
+1. Common operations like pagination, filtering, field selection, and formatting should be shared
+1. Authentication/authorization logic should be centralized
 
 ## Building and Running
 

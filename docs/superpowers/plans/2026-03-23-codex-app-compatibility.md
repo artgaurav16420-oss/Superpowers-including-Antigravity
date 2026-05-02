@@ -15,7 +15,7 @@
 ## File Structure
 
 | File | Responsibility | Action |
-|:::::::::---|:::::::::---|:::::::::---|
+|:::::::::::---|:::::::::::---|:::::::::::---|
 | `skills/using-git-worktrees/SKILL.md` | Worktree creation + isolation | Add Step 0 detection + sandbox fallback |
 | `skills/finishing-a-development-branch/SKILL.md` | Branch finishing workflow | Add Step 1.5 detection + cleanup guard |
 | `skills/subagent-driven-development/SKILL.md` | Plan execution with subagents | Update Integration description |
@@ -69,6 +69,7 @@ After reporting, STOP. Do not continue to Directory Selection or Creation Steps.
 1. [ ] **Step 3: Verify the insertion**
 
 Read the file again. Confirm:
+
 1. Step 0 appears between Overview and Directory Selection Process
 1. The rest of the file (Directory Selection, Safety Verification, Creation Steps, etc.) is unchanged
 1. No duplicate sections or broken markdown
@@ -167,6 +168,7 @@ I cannot create branches, push, or open PRs from here.
 they may be lost when this workspace is cleaned up.
 
 If your host application provides these controls:
+
 1. "Create branch" — to name a branch, then commit/push/PR
 1. "Hand off to local" — to move changes to your local checkout
 
@@ -191,6 +193,7 @@ Proceed to Step 2 and present the 4-option menu as normal.
 1. [ ] **Step 3: Verify the insertion**
 
 Read the file again. Confirm:
+
 1. Step 1.5 appears between Step 1 and Step 2
 1. Steps 2-5 are unchanged
 1. Path A handoff includes commit SHA and data loss warning
@@ -282,6 +285,7 @@ Note: the original text said "For Options 1, 2, 4" but the Quick Reference table
 1. [ ] **Step 3: Verify the replacement**
 
 Read Step 5. Confirm:
+
 1. Cleanup guard (re-detection) appears first
 1. Existing removal logic preserved for non-externally-managed worktrees
 1. "Options 1 and 4" (not "1, 2, 4") matches Quick Reference and Common Mistakes
@@ -401,6 +405,7 @@ names, commit messages, and PR descriptions for the user to copy.
 1. [ ] **Step 3: Verify the additions**
 
 Read the full file. Confirm:
+
 1. Two new sections appear after the existing content
 1. Bash code block renders correctly (not escaped)
 1. Cross-references to Step 0 and Step 1.5 are present
@@ -568,6 +573,7 @@ Expected: 6 passed, 0 failed.
 1. [ ] **Step 2: Read each modified file and verify changes**
 
 Read each file end-to-end:
+
 1. `skills/using-git-worktrees/SKILL.md` — Step 0 present, rest unchanged
 1. `skills/finishing-a-development-branch/SKILL.md` — Step 1.5 present, cleanup guard present, rest unchanged
 1. `skills/subagent-driven-development/SKILL.md` — line 268 updated

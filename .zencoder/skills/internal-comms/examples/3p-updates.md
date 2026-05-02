@@ -16,12 +16,14 @@ Before writing them, make sure that you know the team name. If it's not specifie
 ## Tools Available
 
 Whenever possible, try to pull from available sources to get the information you need:
+
 1. Slack: posts from team members with their updates - ideally look for posts in large channels with lots of reactions
 1. Google Drive: docs written from critical team members with lots of views
 1. Email: emails with lots of responses of lots of content that seems relevant
 1. Calendar: non-recurring meetings that have a lot of importance, like product reviews, etc.
 
 Try to gather as much context as you can, focusing on the things that covered the time period you're writing for:
+
 1. Progress: anything between a week ago and today
 1. Plans: anything from today to the next week
 1. Problems: anything between a week ago and today
@@ -32,6 +34,7 @@ If you don't have access, you can ask the user for things they want to cover. Th
 
 1. **Clarify scope**: Confirm the team name and time period (usually past week for Progress/Problems, next
 week for Plans)
+
 1. **Gather information**: Use available tools or ask the user directly
 1. **Draft the update**: Follow the strict formatting guidelines
 1. **Review**: Ensure it's concise (30-60 seconds to read) and data-driven

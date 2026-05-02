@@ -48,6 +48,7 @@ This test suite verifies that skills are loaded correctly and Claude follows the
 ### test-helpers.sh
 
 Common functions for skills testing:
+
 1. `run_claude "prompt" [timeout]` - Run Claude with prompt
 1. `assert_contains output pattern name` - Verify pattern exists
 1. `assert_not_contains output pattern name` - Verify pattern absent
@@ -59,6 +60,7 @@ Common functions for skills testing:
 ### Test Files
 
 Each test file:
+
 1. Sources `test-helpers.sh`
 1. Runs Claude Code with specific prompts
 1. Verifies expected behavior using assertions
@@ -91,6 +93,7 @@ echo "=== All tests passed ==="
 #### test-subagent-driven-development.sh
 
 Tests skill content and requirements (~2 minutes):
+
 1. Skill loading and accessibility
 1. Workflow ordering (spec compliance before code quality)
 1. Self-review requirements documented
@@ -104,18 +107,19 @@ Tests skill content and requirements (~2 minutes):
 #### test-subagent-driven-development-integration.sh
 
 Full workflow execution test (~10-30 minutes):
+
 1. Creates real test project with Node.js setup
 1. Creates implementation plan with 2 tasks
 1. Executes plan using subagent-driven-development
 1. Verifies actual behaviors:
-  1. Plan read once at start (not per task)
-  1. Full task text provided in subagent prompts
-  1. Subagents perform self-review before reporting
-  1. Spec compliance review happens before code quality
-  1. Spec reviewer reads code independently
-  1. Working implementation is produced
-  1. Tests pass
-  1. Proper git commits created
+1. Plan read once at start (not per task)
+1. Full task text provided in subagent prompts
+1. Subagents perform self-review before reporting
+1. Spec compliance review happens before code quality
+1. Spec reviewer reads code independently
+1. Working implementation is produced
+1. Tests pass
+1. Proper git commits created
 
 #### What it tests
 

@@ -78,8 +78,8 @@ The current regex anchors on `<div class="feedback-footer">`, which is being rem
 
 1. `<!-- CONTENT -->` placeholder inside `#claude-content`, replacing the default text
 1. A selection indicator bar where the footer was, with two states:
-  1. Default: "Click an option above, then return to the terminal"
-  1. After selection: "Option B selected — return to terminal to continue"
+1. Default: "Click an option above, then return to the terminal"
+1. After selection: "Option B selected — return to terminal to continue"
 1. CSS for the indicator bar (subtle, similar visual weight to the existing header)
 
 #### Keep unchanged
@@ -122,6 +122,7 @@ The current regex anchors on `<div class="feedback-footer">`, which is being rem
 ### `visual-companion.md` (skill instructions)
 
 **Rewrite "The Loop" section** to the non-blocking flow described above. Remove all references to:
+
 1. `wait-for-feedback.sh`
 1. `TaskOutput` blocking
 1. Timeout/retry logic (600s timeout, 30-minute cap)
@@ -147,6 +148,7 @@ The current regex anchors on `<div class="feedback-footer">`, which is being rem
 ### `tests/brainstorm-server/server.test.js`
 
 Tests that need updating:
+
 1. Test asserting `feedback-footer` presence in fragment responses — update to assert the selection indicator bar or `<!-- CONTENT -->` replacement
 1. Test asserting `helper.js` contains `send` — update to reflect narrowed API
 1. Test asserting `sendToClaude` CSS variable usage — remove (function no longer exists)

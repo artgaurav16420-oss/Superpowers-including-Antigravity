@@ -214,12 +214,12 @@ Add Playwright tests for full user flows.
 1. Install Playwright: `npm init playwright@latest`
 1. Create `tests/todo.spec.ts`
 1. Test flows:
-  1. Add a todo
-  1. Complete a todo
-  1. Delete a todo
-  1. Filter todos
-  1. Clear completed
-  1. Persistence (add, reload, verify)
+1. Add a todo
+1. Complete a todo
+1. Delete a todo
+1. Filter todos
+1. Clear completed
+1. Persistence (add, reload, verify)
 
 #### Verify (11)
 
@@ -234,11 +234,11 @@ Document the project.
 #### Do (12)
 
 1. Create `README.md` with:
-  1. Project description
-  1. Setup: `npm install`
-  1. Development: `npm run dev`
-  1. Testing: `npm test` and `npx playwright test`
-  1. Build: `npm run build`
+1. Project description
+1. Setup: `npm install`
+1. Development: `npm run dev`
+1. Testing: `npm test` and `npx playwright test`
+1. Build: `npm run build`
 
 #### Verify (12)
 

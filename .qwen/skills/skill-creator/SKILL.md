@@ -217,10 +217,10 @@ scripts/package_skill.py <path/to/skill-folder> ./dist
 The packaging script will:
 
 1. **Validate** the skill automatically, checking:
-   1. YAML frontmatter format and required fields
-   1. Skill naming conventions and directory structure
-   1. Description completeness and quality
-   1. File organization and resource references
+1. YAML frontmatter format and required fields
+1. Skill naming conventions and directory structure
+1. Description completeness and quality
+1. File organization and resource references
 
 1. **Package** the skill if validation passes, creating a zip file named after the skill (e.g., `my-skill.zip`) that includes all files and maintains the proper directory structure for distribution.
 

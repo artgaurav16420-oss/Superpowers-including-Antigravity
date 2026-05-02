@@ -10,23 +10,23 @@ Enable superpowers skills in Codex via native skill discovery. Just clone and sy
 
 1. **Clone the superpowers repository:**
 
-   ```bash
+```bash
    git clone [https://github.com/artgaurav16420-oss/Mega-Skills.git]([https://github.com/artgaurav16420-oss/Mega-Skills.git)]([https://github.com/artgaurav16420-oss/Mega-Skills.git))]([https://github.com/artgaurav16420-oss/Mega-Skills.git)))]([https://github.com/artgaurav16420-oss/Mega-Skills.git))))]([https://github.com/artgaurav16420-oss/Mega-Skills.git)))))]([https://github.com/artgaurav16420-oss/Mega-Skills.git))))))]([https://github.com/artgaurav16420-oss/Mega-Skills.git)))))))](https://github.com/artgaurav16420-oss/Mega-Skills.git)))))))) ~/.codex/superpowers
-   ```
+```
 
 1. **Create the skills symlink:**
 
-   ```bash
+```bash
    mkdir -p ~/.agents/skills
    ln -s ~/.codex/superpowers/skills ~/.agents/skills/superpowers
-   ```
+```
 
 ### Windows (PowerShell)
 
-   ```powershell
+```powershell
    New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.agents\skills"
    cmd /c mklink /J "$env:USERPROFILE\.agents\skills\superpowers" "$env:USERPROFILE\.codex\superpowers\skills"
-   ```
+```
 
 1. **Restart Codex** (quit and relaunch the CLI) to discover the skills.
 
@@ -36,9 +36,9 @@ If you installed superpowers before native skill discovery, you need to:
 
 1. **Update the repo:**
 
-   ```bash
+```bash
    cd ~/.codex/superpowers && git pull
-   ```
+```
 
 1. **Create the skills symlink** (step 2 above) — this is the new discovery mechanism.
 

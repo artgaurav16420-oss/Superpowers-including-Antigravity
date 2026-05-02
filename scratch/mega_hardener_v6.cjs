@@ -20,40 +20,28 @@ function walk(dir) {
 
 function fixMarkdown(filePath) {
     let content = fs.readFileSync(filePath, 'utf8');
-    let lines = content.split('\n');
+    let lines = content.split(/\r?\n/);
     let newLines = [];
     let inFence = false;
     let fencePrefix = '';
-    let inBlockquote = false;
     let frontmatterEnd = -1;
     let skillName = '';
     
-    // MD001/MD024 Tracking
     let lastLevel = 0;
     const headingCounts = new Map();
     let h1Found = false;
 
-    // Parse frontmatter
     if (lines[0] === '---') {
         for (let j = 1; j < lines.length; j++) {
-            if (lines[j].startsWith('name:')) {
-                skillName = lines[j].replace('name:', '').trim();
-            }
-            if (lines[j] === '---') {
-                frontmatterEnd = j;
-                break;
-            }
+            if (lines[j].startsWith('name:')) skillName = lines[j].replace('name:', '').trim();
+            if (lines[j] === '---') { frontmatterEnd = j; break; }
         }
     }
 
-    // MD041: Check for H1 after frontmatter (Only for SKILL.md)
     if (path.basename(filePath) === 'SKILL.md') {
         let firstContentLineIndex = frontmatterEnd + 1;
-        while (firstContentLineIndex < lines.length && lines[firstContentLineIndex].trim() === '') {
-            firstContentLineIndex++;
-        }
-
-        if (firstContentLineIndex < lines.length && !lines[firstContentLineIndex].startsWith('# ')) {
+        while (firstContentLineIndex < lines.length && lines[firstContentLineIndex].trim() === '') firstContentLineIndex++;
+        if (firstContentLineIndex < lines.length && !lines[firstContentLineIndex].trim().startsWith('# ')) {
             const h1 = `# ${skillName.split('-').map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(' ')}`;
             lines.splice(firstContentLineIndex, 0, h1, '');
         }
@@ -66,70 +54,45 @@ function fixMarkdown(filePath) {
         // MD031/MD040: Fences
         const fenceMatch = line.match(/^(\s*|>+\s*)```(.*)/);
         if (fenceMatch) {
-            const prefix = fenceMatch[1];
             const tag = fenceMatch[2].trim();
             if (!inFence) {
-                fencePrefix = prefix.includes('>') ? '>' : '';
-                if (newLines.length > 0 && newLines[newLines.length - 1].trim() !== '') {
-                    newLines.push(fencePrefix);
-                }
-                newLines.push(`${prefix}\`\`\`${tag || 'text'}`);
+                // MD031: Blank line before
+                if (newLines.length > 0 && newLines[newLines.length - 1].trim() !== '') newLines.push('');
+                newLines.push(`\`\`\`${tag || 'text'}`);
                 inFence = true;
             } else {
-                newLines.push(`${prefix}\`\`\``);
-                if (i + 1 < lines.length && lines[i + 1].trim() !== '') {
-                    newLines.push(fencePrefix);
-                }
+                newLines.push('```');
+                // MD031: Blank line after
+                if (i + 1 < lines.length && lines[i + 1].trim() !== '') newLines.push('');
                 inFence = false;
-                fencePrefix = '';
             }
             continue;
         }
 
         if (inFence) {
-            if (fencePrefix && !line.startsWith(fencePrefix)) {
-                newLines.push(`${fencePrefix} ${line}`);
-            } else {
-                newLines.push(line);
-            }
+            newLines.push(line);
             continue;
         }
 
         // --- OUTSIDE FENCE ---
-
-        // MD009: Trailing spaces
         line = line.trimEnd();
 
-        // Heading Processing (MD001, MD024, MD025, MD026)
-        if (line.trim().startsWith('#')) {
-            let processedLine = line.trim();
+        // MD022: Heading padding
+        if (stripped.startsWith('#')) {
+            if (newLines.length > 0 && newLines[newLines.length - 1].trim() !== '') newLines.push('');
             
-            // MD026: Strip trailing punctuation
-            processedLine = processedLine.replace(/[:.!?;]+$/, '');
-
+            let processedLine = stripped.replace(/[:.!?;]+$/, '');
             const headingMatch = processedLine.match(/^(#+)(\s+|$)/);
             if (headingMatch) {
                 let level = headingMatch[1].length;
                 let contentText = processedLine.substring(headingMatch[1].length).trim();
 
-                // MD025: Single H1
-                if (level === 1) {
-                    if (h1Found) {
-                        level = 2; // Downgrade duplicate H1
-                    } else {
-                        h1Found = true;
-                    }
-                }
-
-                // MD001: Heading increment
-                if (level > lastLevel + 1 && lastLevel !== 0) {
-                    level = lastLevel + 1;
-                }
+                if (level === 1) { if (h1Found) level = 2; else h1Found = true; }
+                if (level > lastLevel + 1 && lastLevel !== 0) level = lastLevel + 1;
                 lastLevel = level;
 
-                // MD024: Unique headings
                 const count = headingCounts.get(contentText) || 0;
-                if (count > 0 && level > 1) { // Only suffix sub-headings
+                if (count > 0 && level > 1) {
                     headingCounts.set(contentText, count + 1);
                     contentText = `${contentText} (${count + 1})`;
                 } else {
@@ -137,14 +100,13 @@ function fixMarkdown(filePath) {
                 }
 
                 newLines.push(`${'#'.repeat(level)} ${contentText}`);
+                if (i + 1 < lines.length && lines[i + 1].trim() !== '' && !lines[i + 1].trim().startsWith('#')) newLines.push('');
                 continue;
             }
         }
 
-        // MD034: Bare URLs (only if not in backticks)
-        if (!line.includes('`')) {
-            line = line.replace(/(?<![<\[])(https?:\/\/[^\s>\]]+)(?![>\]])/g, '[$1]($1)');
-        }
+        // MD034: Bare URLs
+        if (!line.includes('`')) line = line.replace(/(?<![<\[])(https?:\/\/[^\s>\]]+)(?![>\]])/g, '[$1]($1)');
 
         // MD033: details/summary
         if (line.includes('<details>') && line.includes('<summary>')) {
@@ -152,21 +114,21 @@ function fixMarkdown(filePath) {
         }
         line = line.replace(/<\/details>/g, '');
 
-        // MD028: Blockquote gaps
-        if (line.trim() === '>' && newLines.length > 0 && newLines[newLines.length - 1].trim() === '>') {
-            continue;
-        }
+        // MD007/MD060: List Normalization
+        const listMatch = line.match(/^(\s*)([-*+]|\d+\.)\s+(.*)/);
+        if (listMatch) {
+            let indent = listMatch[1];
+            const listContent = listMatch[3];
+            
+            // Force flat list structure for top level unless clearly nested
+            if (indent.length > 0 && indent.length < 4) indent = ''; 
+            else if (indent.length >= 4) indent = '  ';
 
-        // MD060: Ordered list normalization
-        const orderedMatch = line.match(/^(\s*)(\d+)\.\s+(.*)/);
-        if (orderedMatch) {
-            newLines.push(`${orderedMatch[1]}1. ${orderedMatch[3]}`);
-            continue;
-        }
+            if (newLines.length > 0 && newLines[newLines.length - 1].trim() !== '' && !newLines[newLines.length - 1].trim().match(/^([-*+]|\d+\.)\s+/)) {
+                newLines.push('');
+            }
 
-        // MD060: Bullet list normalization
-        if (line.match(/^(\s*)([-*+])\s+/)) {
-            newLines.push(line.replace(/^(\s*)([-*+])\s+/, '$11. '));
+            newLines.push(`${indent}1. ${listContent}`);
             continue;
         }
 
@@ -174,12 +136,8 @@ function fixMarkdown(filePath) {
     }
 
     let finalResult = newLines.join('\n');
-    
-    // Table alignment (MD060-ish)
     finalResult = finalResult.split('\n').map(line => {
-        if (line.includes('|') && line.includes('---')) {
-            return line.replace(/---/g, ':---');
-        }
+        if (line.includes('|') && line.includes('---')) return line.replace(/---/g, ':---');
         return line;
     }).join('\n');
 
@@ -190,4 +148,4 @@ function fixMarkdown(filePath) {
 const rootDir = 'C:\\Users\\agaur\\OneDrive\\Desktop\\Superpowers';
 const skills = walk(rootDir);
 skills.forEach(fixMarkdown);
-console.log(`Successfully mega-hardened v6 ${skills.length} files.`);
+console.log(`Successfully mega-hardened v6 (v8 Ultra-Clean) ${skills.length} files.`);

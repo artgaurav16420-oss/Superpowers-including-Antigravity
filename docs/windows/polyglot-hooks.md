@@ -5,6 +5,7 @@ Claude Code plugins need hooks that work on Windows, macOS, and Linux. This docu
 ## The Problem
 
 Claude Code runs hook commands through the system's default shell:
+
 1. **Windows**: CMD.exe
 1. **macOS/Linux**: bash or sh
 
@@ -37,8 +38,8 @@ CMDBLOCK
 1. `: << 'CMDBLOCK'` - CMD sees `:` as a label (like `:label`) and ignores `<< 'CMDBLOCK'`
 1. `@echo off` - Suppresses command echoing
 1. The bash.exe command runs with:
-   1. `-l` (login shell) to get proper PATH with Unix utilities
-   1. `cygpath -u` converts Windows path to Unix format (`C:\foo` → `/c/foo`)
+1. `-l` (login shell) to get proper PATH with Unix utilities
+1. `cygpath -u` converts Windows path to Unix format (`C:\foo` → `/c/foo`)
 1. `exit /b` - Exits the batch script, stopping CMD here
 1. Everything after `CMDBLOCK` is never reached by CMD
 
@@ -221,6 +222,6 @@ cmd /c "C:\path\to\plugin\hooks\session-start.cmd"
 
 ## Related Issues
 
-1. [anthropics/claude-code#9758]([https://github.com/anthropics/claude-code/issues/9758)]([https://github.com/anthropics/claude-code/issues/9758))]([https://github.com/anthropics/claude-code/issues/9758)))]([https://github.com/anthropics/claude-code/issues/9758))))]([https://github.com/anthropics/claude-code/issues/9758)))))]([https://github.com/anthropics/claude-code/issues/9758))))))]([https://github.com/anthropics/claude-code/issues/9758)))))))]([https://github.com/anthropics/claude-code/issues/9758))))))))]([https://github.com/anthropics/claude-code/issues/9758)))))))))](https://github.com/anthropics/claude-code/issues/9758)))))))))) - .sh scripts open in editor on Windows
-1. [anthropics/claude-code#3417]([https://github.com/anthropics/claude-code/issues/3417)]([https://github.com/anthropics/claude-code/issues/3417))]([https://github.com/anthropics/claude-code/issues/3417)))]([https://github.com/anthropics/claude-code/issues/3417))))]([https://github.com/anthropics/claude-code/issues/3417)))))]([https://github.com/anthropics/claude-code/issues/3417))))))]([https://github.com/anthropics/claude-code/issues/3417)))))))]([https://github.com/anthropics/claude-code/issues/3417))))))))]([https://github.com/anthropics/claude-code/issues/3417)))))))))](https://github.com/anthropics/claude-code/issues/3417)))))))))) - Hooks don't work on Windows
-1. [anthropics/claude-code#6023]([https://github.com/anthropics/claude-code/issues/6023)]([https://github.com/anthropics/claude-code/issues/6023))]([https://github.com/anthropics/claude-code/issues/6023)))]([https://github.com/anthropics/claude-code/issues/6023))))]([https://github.com/anthropics/claude-code/issues/6023)))))]([https://github.com/anthropics/claude-code/issues/6023))))))]([https://github.com/anthropics/claude-code/issues/6023)))))))]([https://github.com/anthropics/claude-code/issues/6023))))))))]([https://github.com/anthropics/claude-code/issues/6023)))))))))](https://github.com/anthropics/claude-code/issues/6023)))))))))) - CLAUDE_PROJECT_DIR not found
+1. [anthropics/claude-code#9758]([https://github.com/anthropics/claude-code/issues/9758)]([https://github.com/anthropics/claude-code/issues/9758))]([https://github.com/anthropics/claude-code/issues/9758)))]([https://github.com/anthropics/claude-code/issues/9758))))]([https://github.com/anthropics/claude-code/issues/9758)))))]([https://github.com/anthropics/claude-code/issues/9758))))))]([https://github.com/anthropics/claude-code/issues/9758)))))))]([https://github.com/anthropics/claude-code/issues/9758))))))))]([https://github.com/anthropics/claude-code/issues/9758)))))))))]([https://github.com/anthropics/claude-code/issues/9758))))))))))]([https://github.com/anthropics/claude-code/issues/9758)))))))))))](https://github.com/anthropics/claude-code/issues/9758)))))))))))) - .sh scripts open in editor on Windows
+1. [anthropics/claude-code#3417]([https://github.com/anthropics/claude-code/issues/3417)]([https://github.com/anthropics/claude-code/issues/3417))]([https://github.com/anthropics/claude-code/issues/3417)))]([https://github.com/anthropics/claude-code/issues/3417))))]([https://github.com/anthropics/claude-code/issues/3417)))))]([https://github.com/anthropics/claude-code/issues/3417))))))]([https://github.com/anthropics/claude-code/issues/3417)))))))]([https://github.com/anthropics/claude-code/issues/3417))))))))]([https://github.com/anthropics/claude-code/issues/3417)))))))))]([https://github.com/anthropics/claude-code/issues/3417))))))))))]([https://github.com/anthropics/claude-code/issues/3417)))))))))))](https://github.com/anthropics/claude-code/issues/3417)))))))))))) - Hooks don't work on Windows
+1. [anthropics/claude-code#6023]([https://github.com/anthropics/claude-code/issues/6023)]([https://github.com/anthropics/claude-code/issues/6023))]([https://github.com/anthropics/claude-code/issues/6023)))]([https://github.com/anthropics/claude-code/issues/6023))))]([https://github.com/anthropics/claude-code/issues/6023)))))]([https://github.com/anthropics/claude-code/issues/6023))))))]([https://github.com/anthropics/claude-code/issues/6023)))))))]([https://github.com/anthropics/claude-code/issues/6023))))))))]([https://github.com/anthropics/claude-code/issues/6023)))))))))]([https://github.com/anthropics/claude-code/issues/6023))))))))))]([https://github.com/anthropics/claude-code/issues/6023)))))))))))](https://github.com/anthropics/claude-code/issues/6023)))))))))))) - CLAUDE_PROJECT_DIR not found

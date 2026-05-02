@@ -12,6 +12,7 @@ Single validation: "We fixed the bug"
 Multiple layers: "We made the bug impossible"
 
 Different layers catch different cases:
+
 1. Entry validation catches most bugs
 1. Business logic catches edge cases
 1. Environment guards prevent context-specific dangers
@@ -120,6 +121,7 @@ Bug: Empty `projectDir` caused `git init` in source code
 ## Key Insight
 
 All four layers were necessary. During testing, each layer caught bugs the others missed:
+
 1. Different code paths bypassed entry validation
 1. Mocks bypassed business logic checks
 1. Edge cases on different platforms needed environment guards

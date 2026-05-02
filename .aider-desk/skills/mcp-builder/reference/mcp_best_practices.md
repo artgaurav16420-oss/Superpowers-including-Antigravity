@@ -63,12 +63,15 @@ This document compiles essential best practices and guidelines for building Mode
 Follow these standardized naming patterns for MCP servers:
 
 **Python**: Use format `{service}_mcp` (lowercase with underscores)
+
 1. Examples: `slack_mcp`, `github_mcp`, `jira_mcp`, `stripe_mcp`
 
 **Node/TypeScript**: Use format `{service}-mcp-server` (lowercase with hyphens)
+
 1. Examples: `slack-mcp-server`, `github-mcp-server`, `jira-mcp-server`
 
 The name should be:
+
 1. General (not tied to specific features)
 1. Descriptive of the service/API being integrated
 1. Easy to infer from the task description
@@ -82,9 +85,9 @@ The name should be:
 
 1. **Use snake_case**: `search_users`, `create_project`, `get_channel_info`
 1. **Include service prefix**: Anticipate that your MCP server may be used alongside other MCP servers
-   1. Use `slack_send_message` instead of just `send_message`
-   1. Use `github_create_issue` instead of just `create_issue`
-   1. Use `asana_list_tasks` instead of just `list_tasks`
+1. Use `slack_send_message` instead of just `send_message`
+1. Use `github_create_issue` instead of just `create_issue`
+1. Use `asana_list_tasks` instead of just `list_tasks`
 1. **Be action-oriented**: Start with verbs (get, list, search, create, etc.)
 1. **Be specific**: Avoid generic names that could conflict with other servers
 1. **Maintain consistency**: Use consistent naming patterns within your server
@@ -184,12 +187,14 @@ MCP servers support multiple transport mechanisms for different deployment scena
 **Best for**: Command-line tools, local integrations, subprocess execution
 
 **Characteristics**:
+
 1. Standard input/output stream communication
 1. Simple setup, no network configuration needed
 1. Runs as a subprocess of the client
 1. Ideal for desktop applications and CLI tools
 
 **Use when**:
+
 1. Building tools for local development environments
 1. Integrating with desktop applications (e.g., Claude Desktop)
 1. Creating command-line utilities
@@ -200,12 +205,14 @@ MCP servers support multiple transport mechanisms for different deployment scena
 **Best for**: Web services, remote access, multi-client scenarios
 
 **Characteristics**:
+
 1. Request-response pattern over HTTP
 1. Supports multiple simultaneous clients
 1. Can be deployed as a web service
 1. Requires network configuration and security considerations
 
 **Use when**:
+
 1. Serving multiple clients simultaneously
 1. Deploying as a cloud service
 1. Integration with web applications
@@ -216,12 +223,14 @@ MCP servers support multiple transport mechanisms for different deployment scena
 **Best for**: Real-time updates, push notifications, streaming data
 
 **Characteristics**:
+
 1. One-way server-to-client streaming over HTTP
 1. Enables real-time updates without polling
 1. Long-lived connections for continuous data flow
 1. Built on standard HTTP infrastructure
 
 **Use when**:
+
 1. Clients need real-time data updates
 1. Implementing push notifications
 1. Streaming logs or monitoring data
@@ -230,7 +239,7 @@ MCP servers support multiple transport mechanisms for different deployment scena
 ### Transport Selection Criteria
 
 | Criterion | Stdio | HTTP | SSE |
-|:::::::::---:::::::::---:::::::::-----|:::::::::---:::::::::----|:::::::::---:::::::::---|:::::::::-----|
+|:::::::::::---:::::::::::---:::::::::::-----|:::::::::::---:::::::::::----|:::::::::::---:::::::::::---|:::::::::::-----|
 | **Deployment** | Local | Remote | Remote |
 | **Clients** | Single | Multiple | Multiple |
 | **Communication** | Bidirectional | Request-Response | Server-Push |
@@ -499,7 +508,7 @@ Here's an example of implementing a basic tool in an MCP server:
 <Tabs>
   <Tab title="TypeScript">
 
-    ```typescript
+```typescript
     const server = new Server({
       name: "example-server",
       version: "1.0.0"
@@ -542,13 +551,13 @@ Here's an example of implementing a basic tool in an MCP server:
       }
       throw new Error("Tool not found");
     });
-    ```
+```
 
   </Tab>
 
   <Tab title="Python">
 
-    ```python
+```python
     app = Server("example-server")
 
     @app.list_tools()
@@ -579,7 +588,7 @@ Here's an example of implementing a basic tool in an MCP server:
             result = a + b
             return [types.TextContent(type="text", text=str(result))]
         raise ValueError(f"Tool not found: {name}")
-    ```
+```
 
   </Tab>
 </Tabs>
@@ -724,7 +733,7 @@ Here's an example of proper error handling for tools:
 <Tabs>
   <Tab title="TypeScript">
 
-    ```typescript
+```typescript
     try {
       // Tool operation
       const result = performOperation();
@@ -747,13 +756,13 @@ Here's an example of proper error handling for tools:
         ]
       };
     }
-    ```
+```
 
   </Tab>
 
   <Tab title="Python">
 
-    ```python
+```python
     try:
 ## Tool operation
         result = perform_operation()
@@ -775,7 +784,7 @@ Here's an example of proper error handling for tools:
                 )
             ]
         )
-    ```
+```
 
   </Tab>
 </Tabs>
@@ -800,7 +809,7 @@ Tool annotations serve several key purposes:
 The MCP specification defines the following annotations for tools:
 
 | Annotation        | Type    | Default | Description                                                                                                                          |
-| :::::::::---:::::::::---:::::::::---:::::::::---:::::::::----- | :::::::::---:::::::::---- | :::::::::---:::::::::---- | :::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::--- |
+| :::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::----- | :::::::::::---:::::::::::---- | :::::::::::---:::::::::::---- | :::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::--- |
 | `title`           | string  | -       | A human-readable title for the tool, useful for UI display                                                                           |
 | `readOnlyHint`    | boolean | false   | If true, indicates the tool does not modify its environment                                                                          |
 | `destructiveHint` | boolean | true    | If true, the tool may perform destructive updates (only meaningful when `readOnlyHint` is false)                                     |
@@ -877,7 +886,7 @@ Here's how to define tools with annotations for different scenarios:
 <Tabs>
   <Tab title="TypeScript">
 
-    ```typescript
+```typescript
     server.setRequestHandler(ListToolsRequestSchema, async () => {
       return {
         tools: [{
@@ -899,13 +908,13 @@ Here's how to define tools with annotations for different scenarios:
         }]
       };
     });
-    ```
+```
 
   </Tab>
 
   <Tab title="Python">
 
-    ```python
+```python
     from mcp.server.fastmcp import FastMCP
 
     mcp = FastMCP("example-server")
@@ -926,7 +935,7 @@ Here's how to define tools with annotations for different scenarios:
         """
         result = a + b
         return str(result)
-    ```
+```
 
   </Tab>
 </Tabs>

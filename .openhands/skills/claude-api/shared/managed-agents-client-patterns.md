@@ -97,6 +97,7 @@ for await (const event of stream) {
 ```
 
 Key points:
+
 1. `tool_use_id` is `event.id` (typically `sevt_...`), **not** a `toolu_...` ID.
 1. `result` is `'allow' | 'deny'`. Use `deny_message` to tell the model *why* you denied — it gets surfaced back to the agent.
 1. Multiple pending tools: respond once per `agent.tool_use` event with `evaluated_permission === 'ask'`.
@@ -121,6 +122,7 @@ for await (const event of stream) {
 ```
 
 `stop_reason.type` values on `session.status_idle`:
+
 1. `requires_action` — agent is waiting on a client-side event (tool confirmation, custom tool result). Handle it, don't break.
 1. `retries_exhausted` — terminal failure. Break, then check `sessions.retrieve()` for the error state.
 1. `end_turn` — normal completion.

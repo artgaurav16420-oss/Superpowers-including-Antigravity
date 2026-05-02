@@ -85,16 +85,16 @@ When a user requests file organization help:
 
    Ask clarifying questions:
 
-   1. Which directory needs organization? (Downloads, Documents, entire home folder?)
-   1. What's the main problem? (Can't find things, duplicates, too messy, no structure?)
-   1. Any files or folders to avoid? (Current projects, sensitive data?)
-   1. How aggressively to organize? (Conservative vs. comprehensive cleanup)
+1. Which directory needs organization? (Downloads, Documents, entire home folder?)
+1. What's the main problem? (Can't find things, duplicates, too messy, no structure?)
+1. Any files or folders to avoid? (Current projects, sensitive data?)
+1. How aggressively to organize? (Conservative vs. comprehensive cleanup)
 
 1. **Analyze Current State**
 
    Review the target directory:
 
-   ```bash
+```bash
 ## Get overview of current structure
    ls -la [target_directory]
 ## Check file types and sizes
@@ -103,15 +103,15 @@ When a user requests file organization help:
    du -sh [target_directory]/* | sort -rh | head -20
 ## Count file types
    find [target_directory] -type f | sed 's/.*\.//' | sort | uniq -c | sort -rn
-   ```
+```
 
    Summarize findings:
 
-   1. Total files and folders
-   1. File type breakdown
-   1. Size distribution
-   1. Date ranges
-   1. Obvious organization issues
+1. Total files and folders
+1. File type breakdown
+1. Size distribution
+1. Date ranges
+1. Obvious organization issues
 
 1. **Identify Organization Patterns**
 
@@ -119,53 +119,53 @@ When a user requests file organization help:
 
    **By Type**:
 
-   1. Documents (PDFs, DOCX, TXT)
-   1. Images (JPG, PNG, SVG)
-   1. Videos (MP4, MOV)
-   1. Archives (ZIP, TAR, DMG)
-   1. Code/Projects (directories with code)
-   1. Spreadsheets (XLSX, CSV)
-   1. Presentations (PPTX, KEY)
+1. Documents (PDFs, DOCX, TXT)
+1. Images (JPG, PNG, SVG)
+1. Videos (MP4, MOV)
+1. Archives (ZIP, TAR, DMG)
+1. Code/Projects (directories with code)
+1. Spreadsheets (XLSX, CSV)
+1. Presentations (PPTX, KEY)
 
    **By Purpose**:
 
-   1. Work vs. Personal
-   1. Active vs. Archive
-   1. Project-specific
-   1. Reference materials
-   1. Temporary/scratch files
+1. Work vs. Personal
+1. Active vs. Archive
+1. Project-specific
+1. Reference materials
+1. Temporary/scratch files
 
    **By Date**:
 
-   1. Current year/month
-   1. Previous years
-   1. Very old (archive candidates)
+1. Current year/month
+1. Previous years
+1. Very old (archive candidates)
 
 1. **Find Duplicates**
 
    When requested, search for duplicates:
 
-   ```bash
+```bash
 ## Find exact duplicates by hash
    find [directory] -type f -exec md5 {} \; | sort | uniq -d
 ## Find files with same name
    find [directory] -type f -printf '%f\n' | sort | uniq -d
 ## Find similar-sized files
    find [directory] -type f -printf '%s %p\n' | sort -n
-   ```
+```
 
    For each set of duplicates:
 
-   1. Show all file paths
-   1. Display sizes and modification dates
-   1. Recommend which to keep (usually newest or best-named)
-   1. **Important**: Always ask for confirmation before deleting
+1. Show all file paths
+1. Display sizes and modification dates
+1. Recommend which to keep (usually newest or best-named)
+1. **Important**: Always ask for confirmation before deleting
 
 1. **Propose Organization Plan**
 
    Present a clear plan before making changes:
 
-   ```markdown
+```markdown
 ## Organization Plan for [Directory]
 ## Current State
 
@@ -175,7 +175,7 @@ When a user requests file organization help:
    - Issues: [list problems]
 
 ## Proposed Structure
-   ```
+```
 
    [Directory]/
    ├── Work/
@@ -190,7 +190,7 @@ When a user requests file organization help:
        ├── To-Sort/
        └── Archive/
 
-   ```text
+```text
 ## Changes I'll Make
 
    1. **Create new folders**: [list]
@@ -206,34 +206,34 @@ When a user requests file organization help:
    - [List any files you're unsure about]
 
    Ready to proceed? (yes/no/modify)
-   ```
+```
 
 1. **Execute Organization**
 
    After approval, organize systematically:
 
-   ```bash
+```bash
 ## Create folder structure
    mkdir -p "path/to/new/folders"
 ## Move files with clear logging
    mv "old/path/file.pdf" "new/path/file.pdf"
 ## Rename files with consistent patterns
 ## Example: "YYYY-MM-DD - Description.ext"
-   ```
+```
 
    **Important Rules**:
 
-   1. Always confirm before deleting anything
-   1. Log all moves for potential undo
-   1. Preserve original modification dates
-   1. Handle filename conflicts gracefully
-   1. Stop and ask if you encounter unexpected situations
+1. Always confirm before deleting anything
+1. Log all moves for potential undo
+1. Preserve original modification dates
+1. Handle filename conflicts gracefully
+1. Stop and ask if you encounter unexpected situations
 
 1. **Provide Summary and Maintenance Tips**
 
    After organizing:
 
-   ```markdown
+```markdown
 ## Organization Complete! ✨
 ## What Changed
 
@@ -253,7 +253,7 @@ When a user requests file organization help:
    1. **Yearly**: Archive old files
 
 ## Quick Commands for You
-   ```
+```
 
 ## Find files modified this week
 
@@ -267,9 +267,9 @@ When a user requests file organization help:
 
    [custom command]
 
-   ```text
+```text
    Want to organize another folder?
-   ```
+```
 
 ## Examples
 
@@ -284,12 +284,12 @@ When a user requests file organization help:
 1. Finds patterns: work docs, personal photos, installers, random PDFs
 
 1. Proposes structure:
-   1. Downloads/
-     1. Work/
-     1. Personal/
-     1. Installers/ (DMG, PKG files)
-     1. Archive/
-     1. ToSort/ (things needing decisions)
+1. Downloads/
+  1. Work/
+  1. Personal/
+  1. Installers/ (DMG, PKG files)
+  1. Archive/
+  1. ToSort/ (things needing decisions)
 
 1. Asks for confirmation
 

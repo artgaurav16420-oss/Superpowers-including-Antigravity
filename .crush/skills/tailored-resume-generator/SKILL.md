@@ -167,12 +167,12 @@ When a user requests resume tailoring:
 1. If user provides existing resume, use it as the foundation
 
 1. If not, request:
-  1. Work history (job titles, companies, dates, responsibilities)
-  1. Education background
-  1. Key skills and technical proficiencies
-  1. Notable achievements and metrics
-  1. Certifications or awards
-  1. Any other relevant information
+1. Work history (job titles, companies, dates, responsibilities)
+1. Education background
+1. Key skills and technical proficiencies
+1. Notable achievements and metrics
+1. Certifications or awards
+1. Any other relevant information
 
 ### 2. Analyze Job Requirements
 

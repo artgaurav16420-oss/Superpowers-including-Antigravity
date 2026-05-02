@@ -69,11 +69,11 @@ with sync_playwright() as p:
 
 1. **Inspect rendered DOM**:
 
-   ```python
+```python
    page.screenshot(path='/tmp/inspect.png', full_page=True)
    content = page.content()
    page.locator('button').all()
-   ```
+```
 
 1. **Identify selectors** from inspection results
 
@@ -100,8 +100,8 @@ with sync_playwright() as p:
 ## Reference Files
 
 1. **examples/** - Examples showing common patterns:
-  1. `element_discovery.py` - Discovering buttons, links, and inputs on a page
+1. `element_discovery.py` - Discovering buttons, links, and inputs on a page
 
-  1. `static_html_automation.py` - Using file:// URLs for local HTML
+1. `static_html_automation.py` - Using file:// URLs for local HTML
 
-  1. `console_logging.py` - Capturing console logs during automation
+1. `console_logging.py` - Capturing console logs during automation

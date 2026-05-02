@@ -85,10 +85,10 @@ Unless otherwise stated by the user or existing template
 1. Comment or in cells beside (if end of table). Format: "Source: [System/Document], [Date], [Specific Reference], [URL if applicable]"
 
 1. Examples:
-  1. "Source: Company 10-K, FY2024, Page 45, Revenue Note, [SEC EDGAR URL]"
-  1. "Source: Company 10-Q, Q2 2025, Exhibit 99.1, [SEC EDGAR URL]"
-  1. "Source: Bloomberg Terminal, 8/15/2025, AAPL US Equity"
-  1. "Source: FactSet, 8/20/2025, Consensus Estimates Screen"
+1. "Source: Company 10-K, FY2024, Page 45, Revenue Note, [SEC EDGAR URL]"
+1. "Source: Company 10-Q, Q2 2025, Exhibit 99.1, [SEC EDGAR URL]"
+1. "Source: Bloomberg Terminal, 8/15/2025, AAPL US Equity"
+1. "Source: FactSet, 8/20/2025, Consensus Estimates Screen"
 
 ## XLSX creation, editing, and analysis
 
@@ -164,23 +164,23 @@ This applies to ALL calculations - totals, percentages, ratios, differences, etc
 
 1. **Recalculate formulas (MANDATORY IF USING FORMULAS)**: Use the scripts/recalc.py script
 
-   ```bash
+```bash
    python scripts/recalc.py output.xlsx
-   ```
+```
 
 1. **Verify and fix any errors**:
-   1. The script returns JSON with error details
-   1. If `status` is `errors_found`, check `error_summary` for specific error types and locations
+1. The script returns JSON with error details
+1. If `status` is `errors_found`, check `error_summary` for specific error types and locations
 
-   1. Fix the identified errors and recalculate again
-   1. Common errors to fix:
-     1. `#REF!`: Invalid cell references
+1. Fix the identified errors and recalculate again
+1. Common errors to fix:
+  1. `#REF!`: Invalid cell references
 
-     1. `#DIV/0!`: Division by zero
+  1. `#DIV/0!`: Division by zero
 
-     1. `#VALUE!`: Wrong data type in formula
+  1. `#VALUE!`: Wrong data type in formula
 
-     1. `#NAME?`: Unrecognized formula name
+  1. `#NAME?`: Unrecognized formula name
 
 ### Creating new Excel files
 

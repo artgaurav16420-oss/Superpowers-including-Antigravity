@@ -19,6 +19,7 @@ pres.writeFile({ fileName: "Presentation.pptx" });
 ## Layout Dimensions
 
 Slide dimensions (coordinates in inches):
+
 1. `LAYOUT_16x9`: 10" × 5.625" (default)
 1. `LAYOUT_16x10`: 10" × 6.25"
 1. `LAYOUT_4x3`: 10" × 7.5"
@@ -120,7 +121,7 @@ slide.addShape(pres.shapes.RECTANGLE, {
 Shadow options:
 
 | Property | Type | Range | Notes |
-|:::::::::---:::::::::---:::::::::----|:::::::::---:::::::::---|:::::::::---:::::::::----|:::::::::---:::::::::----|
+|:::::::::::---:::::::::::---:::::::::::----|:::::::::::---:::::::::::---|:::::::::::---:::::::::::----|:::::::::::---:::::::::::----|
 | `type` | string | `"outer"`, `"inner"` | |
 | `color` | string | 6-char hex (e.g. `"000000"`) | No `#` prefix, no 8-char hex — see Common Pitfalls |
 | `blur` | number | 0-100 pt | |
@@ -238,6 +239,7 @@ slide.addImage({
 Install: `npm install -g react-icons react react-dom sharp`
 
 Popular icon sets in react-icons:
+
 1. `react-icons/fa` - Font Awesome
 1. `react-icons/md` - Material Design
 1. `react-icons/hi` - Heroicons
@@ -370,17 +372,17 @@ titleSlide.addText("My Title", { placeholder: "title" });
 
 1. **NEVER use "#" with hex colors** - causes file corruption
 
-   ```javascript
+```javascript
    color: "FF0000"      // ✅ CORRECT
    color: "#FF0000"     // ❌ WRONG
-   ```
+```
 
 1. **NEVER encode opacity in hex color strings** - 8-char colors (e.g., `"00000020"`) corrupt the file. Use the `opacity` property instead.
 
-   ```javascript
+```javascript
    shadow: { type: "outer", blur: 6, offset: 2, color: "00000020" }          // ❌ CORRUPTS FILE
    shadow: { type: "outer", blur: 6, offset: 2, color: "000000", opacity: 0.12 }  // ✅ CORRECT
-   ```
+```
 
 1. **Use `bullet: true`** - NEVER unicode symbols like "•" (creates double bullets)
 
@@ -392,7 +394,7 @@ titleSlide.addText("My Title", { placeholder: "title" });
 
 1. **NEVER reuse option objects across calls** - PptxGenJS mutates objects in-place (e.g. converting shadow values to EMU). Sharing one object between multiple calls corrupts the second shape.
 
-   ```javascript
+```javascript
    const shadow = { type: "outer", blur: 6, offset: 2, color: "000000", opacity: 0.15 };
    slide.addShape(pres.shapes.RECTANGLE, { shadow, ... });  // ❌ second call gets already-converted values
    slide.addShape(pres.shapes.RECTANGLE, { shadow, ... });
@@ -400,11 +402,11 @@ titleSlide.addText("My Title", { placeholder: "title" });
    const makeShadow = () => ({ type: "outer", blur: 6, offset: 2, color: "000000", opacity: 0.15 });
    slide.addShape(pres.shapes.RECTANGLE, { shadow: makeShadow(), ... });  // ✅ fresh object each time
    slide.addShape(pres.shapes.RECTANGLE, { shadow: makeShadow(), ... });
-   ```
+```
 
 1. **Don't use `ROUNDED_RECTANGLE` with accent borders** - rectangular overlay bars won't cover rounded corners. Use `RECTANGLE` instead.
 
-   ```javascript
+```javascript
    // ❌ WRONG: Accent bar doesn't cover rounded corners
    slide.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: 1, y: 1, w: 3, h: 1.5, fill: { color: "FFFFFF" } });
    slide.addShape(pres.shapes.RECTANGLE, { x: 1, y: 1, w: 0.08, h: 1.5, fill: { color: "0891B2" } });
@@ -412,7 +414,7 @@ titleSlide.addText("My Title", { placeholder: "title" });
    // ✅ CORRECT: Use RECTANGLE for clean alignment
    slide.addShape(pres.shapes.RECTANGLE, { x: 1, y: 1, w: 3, h: 1.5, fill: { color: "FFFFFF" } });
    slide.addShape(pres.shapes.RECTANGLE, { x: 1, y: 1, w: 0.08, h: 1.5, fill: { color: "0891B2" } });
-   ```
+```
 
 ---
 

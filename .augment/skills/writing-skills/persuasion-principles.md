@@ -152,7 +152,7 @@ LLMs respond to the same persuasion principles as humans. Understanding this psy
 ## Principle Combinations by Skill Type
 
 | Skill Type | Use | Avoid |
-|:::::::::---:::::::::---:::::::::---:::::::::---|:::::::::-----|:::::::::---:::::::::----|
+|:::::::::::---:::::::::::---:::::::::::---:::::::::::---|:::::::::::-----|:::::::::::---:::::::::::----|
 | Discipline-enforcing | Authority + Commitment + Social Proof | Liking, Reciprocity |
 | Guidance/technique | Moderate Authority + Unity | Heavy authority |
 | Collaborative | Unity + Commitment | Authority, Liking |
@@ -198,10 +198,12 @@ LLMs respond to the same persuasion principles as humans. Understanding this psy
 ## Research Citations
 
 **Cialdini, R. B. (2021).** *Influence: The Psychology of Persuasion (New and Expanded).* Harper Business.
+
 1. Seven principles of persuasion
 1. Empirical foundation for influence research
 
 **Meincke, L., Shapiro, D., Duckworth, A. L., Mollick, E., Mollick, L., & Cialdini, R. (2025).** Call Me A Jerk: Persuading AI to Comply with Objectionable Requests. University of Pennsylvania.
+
 1. Tested 7 principles with N=28,000 LLM conversations
 1. Compliance increased 33% → 72% with persuasion techniques
 1. Authority, commitment, scarcity most effective

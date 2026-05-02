@@ -28,6 +28,7 @@ fractals sierpinski --help
 Generates a Sierpinski triangle using recursive subdivision.
 
 Flags:
+
 1. `--size` (default: 32) - Width of the triangle base in characters
 1. `--depth` (default: 5) - Recursion depth
 1. `--char` (default: '*') - Character to use for filled points
@@ -39,6 +40,7 @@ Output: Triangle printed to stdout, one line per row.
 Renders the Mandelbrot set as ASCII art. Maps iteration count to characters.
 
 Flags:
+
 1. `--width` (default: 80) - Output width in characters
 1. `--height` (default: 24) - Output height in characters
 1. `--iterations` (default: 100) - Maximum iterations for escape calculation

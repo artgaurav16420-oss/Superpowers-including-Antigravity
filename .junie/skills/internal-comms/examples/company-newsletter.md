@@ -5,6 +5,7 @@
 You are being asked to write a company-wide newsletter update. You are meant to summarize the past week/month of a company in the form of a newsletter that the entire company will read. It should be maybe ~20-25 bullet points long. It will be sent via Slack and email, so make it consumable for that.
 
 Ideally it includes the following attributes:
+
 1. Lots of links: pulling documents from Google Drive that are very relevant, linking to prominent Slack messages in announce channels and from executives, perhgaps referencing emails that went company-wide, highlighting significant things that have happened in the company.
 1. Short and to-the-point: each bullet should probably be no longer than ~1-2 sentences
 1. Use the "we" tense, as you are part of the company. Many of the bullets should say "we did this" or "we did that"
@@ -28,6 +29,7 @@ The company is pretty big: 1000+ people. There are a variety of different teams 
 ## Prioritization
 
 Focus on:
+
 1. Company-wide impact (not team-specific details)
 1. Announcements from leadership
 1. Major milestones and achievements
@@ -35,6 +37,7 @@ Focus on:
 1. External recognition or press
 
 Avoid:
+
 1. Overly granular team updates (save those for 3Ps)
 1. Information only relevant to small groups
 1. Duplicate information already communicated
@@ -42,30 +45,34 @@ Avoid:
 ## Example Formats
 
 :megaphone: Company Announcements
+
 1. Announcement 1
 1. Announcement 2
 1. Announcement 3
 
 :dart: Progress on Priorities
+
 1. Area 1
-    1. Sub-area 1
-    1. Sub-area 2
-    1. Sub-area 3
+  1. Sub-area 1
+  1. Sub-area 2
+  1. Sub-area 3
 1. Area 2
-    1. Sub-area 1
-    1. Sub-area 2
-    1. Sub-area 3
+  1. Sub-area 1
+  1. Sub-area 2
+  1. Sub-area 3
 1. Area 3
-    1. Sub-area 1
-    1. Sub-area 2
-    1. Sub-area 3
+  1. Sub-area 1
+  1. Sub-area 2
+  1. Sub-area 3
 
 :pillar: Leadership Updates
+
 1. Post 1
 1. Post 2
 1. Post 3
 
 :thread: Social Updates
+
 1. Update 1
 1. Update 2
 1. Update 3
