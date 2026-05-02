@@ -63,6 +63,7 @@ Mega-Skills is a zero-dependency plugin that works across the entire agentic eco
 | **Claude Code** | `/plugin install https://github.com/artgaurav16420-oss/Mega-Skills` |
 | **GitHub Copilot** | `copilot plugin install https://github.com/artgaurav16420-oss/Mega-Skills` |
 | **Gemini CLI** | `gemini extensions install https://github.com/artgaurav16420-oss/Mega-Skills` |
+| **Other / Generic** | `git clone https://github.com/artgaurav16420-oss/Mega-Skills` |
 
 ---
 
