@@ -12,9 +12,9 @@ Community of 3 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| get_tracked_change_authors | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\helpers\simplify_redlines.py | 126-146 |
-| _get_authors_from_docx | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\helpers\simplify_redlines.py | 149-169 |
-| infer_author | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\helpers\simplify_redlines.py | 172-197 |
+| get_tracked_change_authors | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\helpers\simplify_redlines.py | 126-146 |
+| _get_authors_from_docx | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\helpers\simplify_redlines.py | 149-169 |
+| infer_author | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\helpers\simplify_redlines.py | 172-197 |
 
 ## Execution Flows
 
@@ -40,4 +40,4 @@ Community of 3 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\helpers\simplify_redlines.py` (3 edge(s))
+- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\helpers\simplify_redlines.py` (3 edge(s))

@@ -12,8 +12,8 @@ Community of 2 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| path_has_directory_exclude | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\scripts\sync-to-codex-plugin.sh | 84-97 |
-| append_git_ignored_file_excludes | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\scripts\sync-to-codex-plugin.sh | 120-127 |
+| path_has_directory_exclude | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\scripts\sync-to-codex-plugin.sh | 84-97 |
+| append_git_ignored_file_excludes | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\scripts\sync-to-codex-plugin.sh | 120-127 |
 
 ## Execution Flows
 
@@ -30,4 +30,4 @@ Community of 2 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Superpowers\scripts\sync-to-codex-plugin.sh` (2 edge(s))
+- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\scripts\sync-to-codex-plugin.sh` (2 edge(s))

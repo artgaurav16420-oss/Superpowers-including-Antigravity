@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const root = 'C:\\Users\\agaur\\OneDrive\\Desktop\\Superpowers\\skills';
+const root = 'C:\\Users\\agaur\\OneDrive\\Desktop\\Mega-Skills\\skills';
 
 function walk(dir) {
     let results = [];

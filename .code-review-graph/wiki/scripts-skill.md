@@ -12,9 +12,9 @@ Community of 3 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| title_case_skill_name | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\skill-creator\scripts\init_skill.py | 189-191 |
-| init_skill | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\skill-creator\scripts\init_skill.py | 194-270 |
-| main | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\skill-creator\scripts\init_skill.py | 273-299 |
+| title_case_skill_name | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\skill-creator\scripts\init_skill.py | 189-191 |
+| init_skill | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\skill-creator\scripts\init_skill.py | 194-270 |
+| main | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\skill-creator\scripts\init_skill.py | 273-299 |
 
 ## Execution Flows
 
@@ -40,4 +40,4 @@ Community of 3 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\skill-creator\scripts\init_skill.py` (3 edge(s))
+- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\skill-creator\scripts\init_skill.py` (3 edge(s))

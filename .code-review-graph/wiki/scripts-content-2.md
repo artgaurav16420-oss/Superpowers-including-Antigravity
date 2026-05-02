@@ -12,11 +12,11 @@ Community of 5 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| _is_code_line | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\compress\scripts\detect.py | 32-34 |
-| _is_json_content | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\compress\scripts\detect.py | 37-43 |
-| _is_yaml_content | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\compress\scripts\detect.py | 46-59 |
-| detect_file_type | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\compress\scripts\detect.py | 62-97 |
-| should_compress | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\compress\scripts\detect.py | 100-107 |
+| _is_code_line | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\compress\scripts\detect.py | 32-34 |
+| _is_json_content | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\compress\scripts\detect.py | 37-43 |
+| _is_yaml_content | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\compress\scripts\detect.py | 46-59 |
+| detect_file_type | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\compress\scripts\detect.py | 62-97 |
+| should_compress | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\compress\scripts\detect.py | 100-107 |
 
 ## Execution Flows
 
@@ -40,4 +40,4 @@ Community of 5 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\compress\scripts\detect.py` (5 edge(s))
+- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\compress\scripts\detect.py` (5 edge(s))

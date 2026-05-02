@@ -12,12 +12,12 @@ Community of 6 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| get_next_slide_number | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\add_slide.py | 27-30 |
-| create_slide_from_layout | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\add_slide.py | 33-87 |
-| duplicate_slide | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\add_slide.py | 90-127 |
-| _add_to_content_types | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\add_slide.py | 130-138 |
-| _add_to_presentation_rels | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\add_slide.py | 141-155 |
-| _get_next_slide_id | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\add_slide.py | 158-162 |
+| get_next_slide_number | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\add_slide.py | 27-30 |
+| create_slide_from_layout | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\add_slide.py | 33-87 |
+| duplicate_slide | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\add_slide.py | 90-127 |
+| _add_to_content_types | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\add_slide.py | 130-138 |
+| _add_to_presentation_rels | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\add_slide.py | 141-155 |
+| _get_next_slide_id | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\add_slide.py | 158-162 |
 
 ## Execution Flows
 
@@ -46,4 +46,4 @@ Community of 6 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\add_slide.py` (6 edge(s))
+- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\add_slide.py` (6 edge(s))

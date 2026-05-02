@@ -12,14 +12,14 @@ Community of 8 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| get_soffice_env | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\office\soffice.py | 24-32 |
-| run_soffice | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\office\soffice.py | 35-37 |
-| _needs_shim | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\office\soffice.py | 44-50 |
-| _ensure_shim | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\office\soffice.py | 53-65 |
-| has_gtimeout | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\recalc.py | 32-39 |
-| setup_libreoffice_macro | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\recalc.py | 42-68 |
-| recalc | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\recalc.py | 71-162 |
-| main | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\recalc.py | 165-181 |
+| get_soffice_env | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\office\soffice.py | 24-32 |
+| run_soffice | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\office\soffice.py | 35-37 |
+| _needs_shim | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\office\soffice.py | 44-50 |
+| _ensure_shim | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\office\soffice.py | 53-65 |
+| has_gtimeout | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\recalc.py | 32-39 |
+| setup_libreoffice_macro | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\recalc.py | 42-68 |
+| recalc | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\recalc.py | 71-162 |
+| main | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\recalc.py | 165-181 |
 
 ## Execution Flows
 
@@ -48,5 +48,5 @@ Community of 8 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\office\soffice.py` (4 edge(s))
-- `C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\recalc.py` (4 edge(s))
+- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\office\soffice.py` (4 edge(s))
+- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\recalc.py` (4 edge(s))

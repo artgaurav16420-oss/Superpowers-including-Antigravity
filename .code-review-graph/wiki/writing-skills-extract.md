@@ -12,11 +12,11 @@ Community of 5 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| extractDotBlocks | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\writing-skills\render-graphs.js | 20-36 |
-| extractGraphBody | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\writing-skills\render-graphs.js | 38-49 |
-| combineGraphs | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\writing-skills\render-graphs.js | 51-68 |
-| renderToSvg | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\writing-skills\render-graphs.js | 70-82 |
-| main | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\writing-skills\render-graphs.js | 84-166 |
+| extractDotBlocks | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\writing-skills\render-graphs.js | 20-36 |
+| extractGraphBody | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\writing-skills\render-graphs.js | 38-49 |
+| combineGraphs | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\writing-skills\render-graphs.js | 51-68 |
+| renderToSvg | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\writing-skills\render-graphs.js | 70-82 |
+| main | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\writing-skills\render-graphs.js | 84-166 |
 
 ## Execution Flows
 
@@ -44,4 +44,4 @@ Community of 5 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\writing-skills\render-graphs.js` (5 edge(s))
+- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\writing-skills\render-graphs.js` (5 edge(s))

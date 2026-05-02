@@ -12,10 +12,10 @@ Community of 4 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| waitForEvent | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\systematic-debugging\condition-based-waiting-example.ts | 20-44 |
-| check | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\systematic-debugging\condition-based-waiting-example.ts | 121-132 |
-| waitForEventCount | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\systematic-debugging\condition-based-waiting-example.ts | 60-89 |
-| waitForEventMatch | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\systematic-debugging\condition-based-waiting-example.ts | 111-136 |
+| waitForEvent | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\systematic-debugging\condition-based-waiting-example.ts | 20-44 |
+| check | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\systematic-debugging\condition-based-waiting-example.ts | 121-132 |
+| waitForEventCount | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\systematic-debugging\condition-based-waiting-example.ts | 60-89 |
+| waitForEventMatch | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\systematic-debugging\condition-based-waiting-example.ts | 111-136 |
 
 ## Execution Flows
 
@@ -37,4 +37,4 @@ Community of 4 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\systematic-debugging\condition-based-waiting-example.ts` (6 edge(s))
+- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\systematic-debugging\condition-based-waiting-example.ts` (6 edge(s))

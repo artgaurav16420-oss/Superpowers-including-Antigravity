@@ -12,13 +12,13 @@ Community of 7 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| get_font | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\slack-gif-creator\core\typography.py | 25-55 |
-| draw_text_with_outline | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\slack-gif-creator\core\typography.py | 58-111 |
-| draw_text_with_shadow | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\slack-gif-creator\core\typography.py | 114-161 |
-| draw_text_with_glow | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\slack-gif-creator\core\typography.py | 164-215 |
-| draw_text_in_box | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\slack-gif-creator\core\typography.py | 218-291 |
-| get_text_size | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\slack-gif-creator\core\typography.py | 294-313 |
-| get_optimal_font_size | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\slack-gif-creator\core\typography.py | 316-336 |
+| get_font | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\typography.py | 25-55 |
+| draw_text_with_outline | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\typography.py | 58-111 |
+| draw_text_with_shadow | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\typography.py | 114-161 |
+| draw_text_with_glow | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\typography.py | 164-215 |
+| draw_text_in_box | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\typography.py | 218-291 |
+| get_text_size | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\typography.py | 294-313 |
+| get_optimal_font_size | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\typography.py | 316-336 |
 
 ## Execution Flows
 
@@ -46,4 +46,4 @@ Community of 7 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\slack-gif-creator\core\typography.py` (7 edge(s))
+- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\typography.py` (7 edge(s))

@@ -33,9 +33,9 @@ cd tests/claude-code
 
 ### Requirements
 
-1. Must run from the **superpowers plugin directory** (not from temp directories)
+1. Must run from the **mega-skills plugin directory** (not from temp directories)
 1. Claude Code must be installed and available as `claude` command
-1. Local dev marketplace must be enabled: `"superpowers@superpowers-dev": true` in `~/.claude/settings.json`
+1. Local dev marketplace must be enabled: `"mega-skills@mega-skills-dev": true` in `~/.claude/settings.json`
 
 ## Integration Test: subagent-driven-development
 
@@ -149,8 +149,8 @@ python3 tests/claude-code/analyze-token-usage.py ~/.claude/projects/<project-dir
 Session transcripts are stored in `~/.claude/projects/` with the working directory path encoded:
 
 ```bash
-## Example for /Users/jesse/Documents/GitHub/superpowers/superpowers
-SESSION_DIR="$HOME/.claude/projects/-Users-jesse-Documents-GitHub-superpowers-superpowers"
+## Example for /Users/jesse/Documents/GitHub/mega-skills/mega-skills
+SESSION_DIR="$HOME/.claude/projects/-Users-jesse-Documents-GitHub-mega-skills-mega-skills"
 
 ## Find recent sessions
 ls -lt "$SESSION_DIR"/*.jsonl | head -5
@@ -183,8 +183,8 @@ ls -lt "$SESSION_DIR"/*.jsonl | head -5
 
 **Solutions**:
 
-1. Ensure you're running FROM the superpowers directory: `cd /path/to/superpowers && tests/...`
-1. Check `~/.claude/settings.json` has `"superpowers@superpowers-dev": true` in `enabledPlugins`
+1. Ensure you're running FROM the mega-skills directory: `cd /path/to/mega-skills && tests/...`
+1. Check `~/.claude/settings.json` has `"mega-skills@mega-skills-dev": true` in `enabledPlugins`
 1. Verify skill exists in `skills/` directory
 
 ### Permission Errors
@@ -262,7 +262,7 @@ python3 "$SCRIPT_DIR/analyze-token-usage.py" "$SESSION_FILE"
 1. **Always cleanup**: Use trap to cleanup temp directories
 1. **Parse transcripts**: Don't grep user-facing output - parse the `.jsonl` session file
 1. **Grant permissions**: Use `--permission-mode bypassPermissions` and `--add-dir`
-1. **Run from plugin dir**: Skills only load when running from the superpowers directory
+1. **Run from plugin dir**: Skills only load when running from the mega-skills directory
 1. **Show token usage**: Always include token analysis for cost visibility
 1. **Test real behavior**: Verify actual files created, tests passing, commits made
 

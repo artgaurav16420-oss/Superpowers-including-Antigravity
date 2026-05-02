@@ -12,15 +12,15 @@ Community of 9 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| get_slides_in_sldidlst | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\clean.py | 27-46 |
-| remove_orphaned_slides | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\clean.py | 49-88 |
-| remove_trash_directory | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\clean.py | 91-103 |
-| get_slide_referenced_files | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\clean.py | 106-125 |
-| remove_orphaned_rels_files | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\clean.py | 128-150 |
-| get_referenced_files | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\clean.py | 153-168 |
-| remove_orphaned_files | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\clean.py | 171-218 |
-| update_content_types | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\clean.py | 221-238 |
-| clean_unused_files | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\clean.py | 241-264 |
+| get_slides_in_sldidlst | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\clean.py | 27-46 |
+| remove_orphaned_slides | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\clean.py | 49-88 |
+| remove_trash_directory | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\clean.py | 91-103 |
+| get_slide_referenced_files | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\clean.py | 106-125 |
+| remove_orphaned_rels_files | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\clean.py | 128-150 |
+| get_referenced_files | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\clean.py | 153-168 |
+| remove_orphaned_files | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\clean.py | 171-218 |
+| update_content_types | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\clean.py | 221-238 |
+| clean_unused_files | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\clean.py | 241-264 |
 
 ## Execution Flows
 
@@ -48,4 +48,4 @@ Community of 9 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\clean.py` (9 edge(s))
+- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\clean.py` (9 edge(s))

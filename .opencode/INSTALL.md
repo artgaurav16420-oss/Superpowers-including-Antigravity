@@ -20,15 +20,15 @@ Verify by asking: "Tell me about your mega-skills"
 
 ## Migrating from the old symlink-based install
 
-If you previously installed superpowers using `git clone` and symlinks, remove the old setup:
+If you previously installed mega-skills using `git clone` and symlinks, remove the old setup:
 
 ```bash
 ## Remove old symlinks
-rm -f ~/.config/opencode/plugins/superpowers.js
-rm -rf ~/.config/opencode/skills/superpowers
+rm -f ~/.config/opencode/plugins/mega-skills.js
+rm -rf ~/.config/opencode/skills/mega-skills
 
 ## Optionally remove the cloned repo
-rm -rf ~/.config/opencode/superpowers
+rm -rf ~/.config/opencode/mega-skills
 ```
 
 Then follow the installation steps above.

@@ -12,9 +12,9 @@ Community of 3 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| unpack | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\unpack.py | 34-79 |
-| _pretty_print_xml | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\unpack.py | 82-88 |
-| _escape_smart_quotes | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\unpack.py | 91-98 |
+| unpack | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\unpack.py | 34-79 |
+| _pretty_print_xml | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\unpack.py | 82-88 |
+| _escape_smart_quotes | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\unpack.py | 91-98 |
 
 ## Execution Flows
 
@@ -42,4 +42,4 @@ Community of 3 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\unpack.py` (3 edge(s))
+- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\unpack.py` (3 edge(s))

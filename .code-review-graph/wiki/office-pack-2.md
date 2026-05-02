@@ -12,9 +12,9 @@ Community of 3 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| pack | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\office\pack.py | 24-66 |
-| _run_validation | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\office\pack.py | 69-105 |
-| _condense_xml | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\office\pack.py | 108-128 |
+| pack | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\office\pack.py | 24-66 |
+| _run_validation | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\office\pack.py | 69-105 |
+| _condense_xml | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\office\pack.py | 108-128 |
 
 ## Execution Flows
 
@@ -38,8 +38,8 @@ Community of 3 nodes
 - `write_bytes` (1 edge(s))
 - `toxml` (1 edge(s))
 - `infer_author_func` (1 edge(s))
-- `C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\office\validators\__init__.py::DOCXSchemaValidator` (1 edge(s))
+- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\office\validators\__init__.py::DOCXSchemaValidator` (1 edge(s))
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\office\pack.py` (3 edge(s))
+- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\office\pack.py` (3 edge(s))

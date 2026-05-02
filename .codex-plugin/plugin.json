@@ -1,5 +1,5 @@
 {
-  "name": "superpowers",
+  "name": "mega-skills",
   "version": "5.0.7",
   "description": "An agentic skills framework & software development methodology that works: planning, TDD, debugging, and collaboration workflows.",
   "author": {
@@ -37,7 +37,7 @@
       "Let's add a feature to this project."
     ],
     "brandColor": "#F59E0B",
-    "composerIcon": "./assets/superpowers-small.svg",
+    "composerIcon": "./assets/mega-skills-small.svg",
     "logo": "./assets/app-icon.png",
     "screenshots": []
   }

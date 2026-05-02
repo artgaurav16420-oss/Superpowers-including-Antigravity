@@ -8,7 +8,7 @@
 
 **Tech Stack:** Node.js (Express, ws, chokidar), vanilla HTML/CSS/JS
 
-**Spec:** `docs/superpowers/specs/2026-02-19-visual-brainstorming-refactor-design.md`
+**Spec:** `docs/mega-skills/specs/2026-02-19-visual-brainstorming-refactor-design.md`
 
 ---
 
@@ -80,7 +80,7 @@ Add indicator bar CSS:
 Run the test suite to check the template still loads:
 
 ```bash
-cd /Users/drewritter/prime-rad/superpowers && node tests/brainstorm-server/server.test.js
+cd /Users/drewritter/prime-rad/mega-skills && node tests/brainstorm-server/server.test.js
 ```
 
 Expected: Tests 1-5 should still pass. Tests 6-8 may fail (expected — they assert old structure).
@@ -126,7 +126,7 @@ Add to `tests/brainstorm-server/server.test.js` after Test 4 area — a new test
 1. [ ] **Step 2: Run test to verify it fails**
 
 ```bash
-cd /Users/drewritter/prime-rad/superpowers && node tests/brainstorm-server/server.test.js
+cd /Users/drewritter/prime-rad/mega-skills && node tests/brainstorm-server/server.test.js
 ```
 
 Expected: New test FAILS — `.events` file doesn't exist yet.
@@ -149,7 +149,7 @@ Add another test:
 1. [ ] **Step 4: Run test to verify it fails**
 
 ```bash
-cd /Users/drewritter/prime-rad/superpowers && node tests/brainstorm-server/server.test.js
+cd /Users/drewritter/prime-rad/mega-skills && node tests/brainstorm-server/server.test.js
 ```
 
 Expected: New test FAILS — `.events` not cleared on screen push.
@@ -192,7 +192,7 @@ function wrapInFrame(content) {
 1. [ ] **Step 7: Run all tests**
 
 ```bash
-cd /Users/drewritter/prime-rad/superpowers && node tests/brainstorm-server/server.test.js
+cd /Users/drewritter/prime-rad/mega-skills && node tests/brainstorm-server/server.test.js
 ```
 
 Expected: New `.events` tests PASS. Existing tests may still have failures from old assertions (fixed in Task 4).
@@ -274,7 +274,7 @@ Update the `window.brainstorm` object (lines 132-136) to remove `sendToClaude`:
 1. [ ] **Step 8: Run tests**
 
 ```bash
-cd /Users/drewritter/prime-rad/superpowers && node tests/brainstorm-server/server.test.js
+cd /Users/drewritter/prime-rad/mega-skills && node tests/brainstorm-server/server.test.js
 ```
 
 1. [ ] **Step 9: Commit**
@@ -347,7 +347,7 @@ Replace Test 8 (lines 145-149) — `sendToClaude` no longer exists. Test the ind
 1. [ ] **Step 5: Run full test suite**
 
 ```bash
-cd /Users/drewritter/prime-rad/superpowers && node tests/brainstorm-server/server.test.js
+cd /Users/drewritter/prime-rad/mega-skills && node tests/brainstorm-server/server.test.js
 ```
 
 Expected: ALL tests PASS.
@@ -372,7 +372,7 @@ git commit -m "Update brainstorm server tests for new template structure and hel
 Search the codebase:
 
 ```bash
-grep -r "wait-for-feedback" /Users/drewritter/prime-rad/superpowers/ --include="*.js" --include="*.md" --include="*.sh" --include="*.json"
+grep -r "wait-for-feedback" /Users/drewritter/prime-rad/mega-skills/ --include="*.js" --include="*.md" --include="*.sh" --include="*.json"
 ```
 
 Expected references: only `visual-companion.md` (rewritten in Task 6) and possibly release notes (historical, leave as-is).
@@ -386,7 +386,7 @@ rm lib/brainstorm-server/wait-for-feedback.sh
 1. [ ] **Step 3: Run tests to confirm nothing breaks**
 
 ```bash
-cd /Users/drewritter/prime-rad/superpowers && node tests/brainstorm-server/server.test.js
+cd /Users/drewritter/prime-rad/mega-skills && node tests/brainstorm-server/server.test.js
 ```
 
 Expected: All tests PASS (no test referenced this file).
@@ -505,7 +505,7 @@ git commit -m "Rewrite visual-companion.md for non-blocking browser-displays-ter
 1. [ ] **Step 1: Run full test suite**
 
 ```bash
-cd /Users/drewritter/prime-rad/superpowers && node tests/brainstorm-server/server.test.js
+cd /Users/drewritter/prime-rad/mega-skills && node tests/brainstorm-server/server.test.js
 ```
 
 Expected: ALL tests PASS.
@@ -515,7 +515,7 @@ Expected: ALL tests PASS.
 Start the server manually and verify the flow works end-to-end:
 
 ```bash
-cd /Users/drewritter/prime-rad/superpowers && lib/brainstorm-server/start-server.sh --project-dir /tmp/brainstorm-smoke-test
+cd /Users/drewritter/prime-rad/mega-skills && lib/brainstorm-server/start-server.sh --project-dir /tmp/brainstorm-smoke-test
 ```
 
 Write a test fragment, open in browser, click an option, verify `.events` file is written, verify indicator bar updates. Then stop the server:
@@ -527,7 +527,7 @@ lib/brainstorm-server/stop-server.sh <screen_dir from start output>
 1. [ ] **Step 3: Verify no stale references remain**
 
 ```bash
-grep -r "wait-for-feedback\|sendToClaude\|feedback-footer\|send-to-claude\|TaskOutput.*block.*true" /Users/drewritter/prime-rad/superpowers/ --include="*.js" --include="*.md" --include="*.sh" --include="*.html" | grep -v node_modules | grep -v RELEASE-NOTES | grep -v "\.md:.*spec\|plan"
+grep -r "wait-for-feedback\|sendToClaude\|feedback-footer\|send-to-claude\|TaskOutput.*block.*true" /Users/drewritter/prime-rad/mega-skills/ --include="*.js" --include="*.md" --include="*.sh" --include="*.html" | grep -v node_modules | grep -v RELEASE-NOTES | grep -v "\.md:.*spec\|plan"
 ```
 
 Expected: No hits outside of release notes and the spec/plan docs (which are historical).

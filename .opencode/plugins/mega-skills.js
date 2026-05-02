@@ -1,7 +1,7 @@
 /**
  * Mega-Skills plugin for OpenCode.ai
  *
- * Injects superpowers bootstrap context via system prompt transform.
+ * Injects mega-skills bootstrap context via system prompt transform.
  * Auto-registers skills directory via config hook (no symlinks needed).
  */
 

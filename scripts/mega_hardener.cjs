@@ -149,7 +149,7 @@ function fixMarkdown(filePath) {
     fs.writeFileSync(filePath, finalResult);
 }
 
-const rootDir = 'C:\\Users\\agaur\\OneDrive\\Desktop\\Superpowers';
+const rootDir = 'C:\\Users\\agaur\\OneDrive\\Desktop\\Mega-Skills';
 const skills = walk(rootDir);
 skills.forEach(fixMarkdown);
 console.log(`Successfully mega-hardened v6 (v8 Ultra-Clean) ${skills.length} files.`);

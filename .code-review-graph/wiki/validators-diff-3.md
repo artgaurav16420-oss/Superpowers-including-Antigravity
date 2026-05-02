@@ -12,14 +12,14 @@ Community of 8 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| RedliningValidator | Class | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\office\validators\redlining.py | 11-243 |
-| __init__ | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\office\validators\redlining.py | 13-20 |
-| repair | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\office\validators\redlining.py | 22-23 |
-| validate | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\office\validators\redlining.py | 25-102 |
-| _generate_detailed_diff | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\office\validators\redlining.py | 104-125 |
-| _get_git_word_diff | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\office\validators\redlining.py | 127-196 |
-| _remove_author_tracked_changes | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\office\validators\redlining.py | 198-227 |
-| _extract_text_content | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\office\validators\redlining.py | 229-243 |
+| RedliningValidator | Class | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\office\validators\redlining.py | 11-243 |
+| __init__ | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\office\validators\redlining.py | 13-20 |
+| repair | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\office\validators\redlining.py | 22-23 |
+| validate | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\office\validators\redlining.py | 25-102 |
+| _generate_detailed_diff | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\office\validators\redlining.py | 104-125 |
+| _get_git_word_diff | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\office\validators\redlining.py | 127-196 |
+| _remove_author_tracked_changes | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\office\validators\redlining.py | 198-227 |
+| _extract_text_content | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\office\validators\redlining.py | 229-243 |
 
 ## Execution Flows
 
@@ -47,4 +47,4 @@ Community of 8 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\office\validators\redlining.py` (1 edge(s))
+- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\office\validators\redlining.py` (1 edge(s))

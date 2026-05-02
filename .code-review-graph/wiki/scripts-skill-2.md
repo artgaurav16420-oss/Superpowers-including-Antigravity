@@ -12,9 +12,9 @@ Community of 3 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| package_skill | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\skill-creator\scripts\package_skill.py | 19-82 |
-| main | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\skill-creator\scripts\package_skill.py | 85-106 |
-| validate_skill | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\skill-creator\scripts\quick_validate.py | 11-56 |
+| package_skill | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\skill-creator\scripts\package_skill.py | 19-82 |
+| main | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\skill-creator\scripts\package_skill.py | 85-106 |
+| validate_skill | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\skill-creator\scripts\quick_validate.py | 11-56 |
 
 ## Execution Flows
 
@@ -42,5 +42,5 @@ Community of 3 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\skill-creator\scripts\package_skill.py` (2 edge(s))
-- `C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\skill-creator\scripts\quick_validate.py` (1 edge(s))
+- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\skill-creator\scripts\package_skill.py` (2 edge(s))
+- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\skill-creator\scripts\quick_validate.py` (1 edge(s))

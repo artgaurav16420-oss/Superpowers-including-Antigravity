@@ -12,13 +12,13 @@ Community of 7 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| read_json_field | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\scripts\bump-version.sh | 26-32 |
-| write_json_field | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\scripts\bump-version.sh | 35-41 |
-| declared_files | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\scripts\bump-version.sh | 45-47 |
-| audit_excludes | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\scripts\bump-version.sh | 50-52 |
-| cmd_check | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\scripts\bump-version.sh | 56-92 |
-| cmd_audit | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\scripts\bump-version.sh | 94-164 |
-| cmd_bump | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\scripts\bump-version.sh | 166-194 |
+| read_json_field | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\scripts\bump-version.sh | 26-32 |
+| write_json_field | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\scripts\bump-version.sh | 35-41 |
+| declared_files | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\scripts\bump-version.sh | 45-47 |
+| audit_excludes | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\scripts\bump-version.sh | 50-52 |
+| cmd_check | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\scripts\bump-version.sh | 56-92 |
+| cmd_audit | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\scripts\bump-version.sh | 94-164 |
+| cmd_bump | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\scripts\bump-version.sh | 166-194 |
 
 ## Execution Flows
 
@@ -46,4 +46,4 @@ Community of 7 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Superpowers\scripts\bump-version.sh` (7 edge(s))
+- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\scripts\bump-version.sh` (7 edge(s))

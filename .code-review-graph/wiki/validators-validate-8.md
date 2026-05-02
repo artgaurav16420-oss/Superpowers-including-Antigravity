@@ -12,13 +12,13 @@ Community of 7 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| PPTXSchemaValidator | Class | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\office\validators\pptx.py | 10-271 |
-| validate | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\office\validators\pptx.py | 25-60 |
-| validate_uuid_ids | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\office\validators\pptx.py | 62-98 |
-| _looks_like_uuid | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\office\validators\pptx.py | 100-102 |
-| validate_slide_layout_ids | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\office\validators\pptx.py | 104-170 |
-| validate_no_duplicate_slide_layouts | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\office\validators\pptx.py | 172-208 |
-| validate_notes_slide_references | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\office\validators\pptx.py | 210-271 |
+| PPTXSchemaValidator | Class | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\office\validators\pptx.py | 10-271 |
+| validate | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\office\validators\pptx.py | 25-60 |
+| validate_uuid_ids | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\office\validators\pptx.py | 62-98 |
+| _looks_like_uuid | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\office\validators\pptx.py | 100-102 |
+| validate_slide_layout_ids | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\office\validators\pptx.py | 104-170 |
+| validate_no_duplicate_slide_layouts | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\office\validators\pptx.py | 172-208 |
+| validate_notes_slide_references | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\office\validators\pptx.py | 210-271 |
 
 ## Execution Flows
 
@@ -46,4 +46,4 @@ Community of 7 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\office\validators\pptx.py` (1 edge(s))
+- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\office\validators\pptx.py` (1 edge(s))

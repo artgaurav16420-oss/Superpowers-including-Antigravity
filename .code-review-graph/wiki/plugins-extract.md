@@ -12,10 +12,10 @@ Community of 4 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| extractAndStripFrontmatter | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\.opencode\plugins\superpowers.js | 16-34 |
-| normalizePath | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\.opencode\plugins\superpowers.js | 37-47 |
-| MegaSkillsPlugin | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\.opencode\plugins\superpowers.js | 49-112 |
-| getBootstrapContent | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\.opencode\plugins\superpowers.js | 56-82 |
+| extractAndStripFrontmatter | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\.opencode\plugins\mega-skills.js | 16-34 |
+| normalizePath | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\.opencode\plugins\mega-skills.js | 37-47 |
+| MegaSkillsPlugin | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\.opencode\plugins\mega-skills.js | 49-112 |
+| getBootstrapContent | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\.opencode\plugins\mega-skills.js | 56-82 |
 
 ## Execution Flows
 
@@ -43,4 +43,4 @@ Community of 4 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Superpowers\.opencode\plugins\superpowers.js` (4 edge(s))
+- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\.opencode\plugins\mega-skills.js` (4 edge(s))

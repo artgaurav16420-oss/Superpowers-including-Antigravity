@@ -12,12 +12,12 @@ Community of 6 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| is_sensitive_path | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\caveman-compress\scripts\compress.py | 46-56 |
-| strip_llm_wrapper | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\caveman-compress\scripts\compress.py | 59-64 |
-| call_claude | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\caveman-compress\scripts\compress.py | 75-101 |
-| build_compress_prompt | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\caveman-compress\scripts\compress.py | 104-120 |
-| build_fix_prompt | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\caveman-compress\scripts\compress.py | 123-149 |
-| compress_file | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\caveman-compress\scripts\compress.py | 155-254 |
+| is_sensitive_path | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\caveman-compress\scripts\compress.py | 46-56 |
+| strip_llm_wrapper | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\caveman-compress\scripts\compress.py | 59-64 |
+| call_claude | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\caveman-compress\scripts\compress.py | 75-101 |
+| build_compress_prompt | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\caveman-compress\scripts\compress.py | 104-120 |
+| build_fix_prompt | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\caveman-compress\scripts\compress.py | 123-149 |
+| compress_file | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\caveman-compress\scripts\compress.py | 155-254 |
 
 ## Execution Flows
 
@@ -45,4 +45,4 @@ Community of 6 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\caveman-compress\scripts\compress.py` (6 edge(s))
+- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\caveman-compress\scripts\compress.py` (6 edge(s))

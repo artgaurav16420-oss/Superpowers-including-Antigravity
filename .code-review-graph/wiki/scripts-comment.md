@@ -12,16 +12,16 @@ Community of 10 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| _generate_hex_id | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\comment.py | 68-69 |
-| _encode_smart_quotes | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\comment.py | 80-83 |
-| _append_xml | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\comment.py | 86-95 |
-| _find_para_id | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\comment.py | 98-105 |
-| _get_next_rid | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\comment.py | 108-118 |
-| _has_relationship | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\comment.py | 121-126 |
-| _has_content_type | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\comment.py | 129-134 |
-| _ensure_comment_relationships | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\comment.py | 137-176 |
-| _ensure_comment_content_types | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\comment.py | 179-215 |
-| add_comment | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\comment.py | 218-290 |
+| _generate_hex_id | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\comment.py | 68-69 |
+| _encode_smart_quotes | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\comment.py | 80-83 |
+| _append_xml | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\comment.py | 86-95 |
+| _find_para_id | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\comment.py | 98-105 |
+| _get_next_rid | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\comment.py | 108-118 |
+| _has_relationship | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\comment.py | 121-126 |
+| _has_content_type | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\comment.py | 129-134 |
+| _ensure_comment_relationships | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\comment.py | 137-176 |
+| _ensure_comment_content_types | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\comment.py | 179-215 |
+| add_comment | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\comment.py | 218-290 |
 
 ## Execution Flows
 
@@ -49,4 +49,4 @@ Community of 10 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\comment.py` (10 edge(s))
+- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\comment.py` (10 edge(s))

@@ -12,21 +12,21 @@ Community of 15 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| Particle | Class | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\slack-gif-creator\core\visual_effects.py | 16-103 |
-| __init__ | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\slack-gif-creator\core\visual_effects.py | 19-43 |
-| update | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\slack-gif-creator\core\visual_effects.py | 45-57 |
-| is_alive | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\slack-gif-creator\core\visual_effects.py | 59-61 |
-| get_alpha | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\slack-gif-creator\core\visual_effects.py | 63-65 |
-| render | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\slack-gif-creator\core\visual_effects.py | 67-103 |
-| ParticleSystem | Class | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\slack-gif-creator\core\visual_effects.py | 106-210 |
-| __init__ | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\slack-gif-creator\core\visual_effects.py | 109-111 |
-| emit | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\slack-gif-creator\core\visual_effects.py | 113-141 |
-| emit_confetti | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\slack-gif-creator\core\visual_effects.py | 143-169 |
-| emit_sparkles | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\slack-gif-creator\core\visual_effects.py | 171-192 |
-| update | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\slack-gif-creator\core\visual_effects.py | 194-201 |
-| render | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\slack-gif-creator\core\visual_effects.py | 203-206 |
-| get_particle_count | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\slack-gif-creator\core\visual_effects.py | 208-210 |
-| create_particle_burst | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\slack-gif-creator\templates\explode.py | 240-293 |
+| Particle | Class | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\visual_effects.py | 16-103 |
+| __init__ | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\visual_effects.py | 19-43 |
+| update | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\visual_effects.py | 45-57 |
+| is_alive | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\visual_effects.py | 59-61 |
+| get_alpha | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\visual_effects.py | 63-65 |
+| render | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\visual_effects.py | 67-103 |
+| ParticleSystem | Class | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\visual_effects.py | 106-210 |
+| __init__ | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\visual_effects.py | 109-111 |
+| emit | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\visual_effects.py | 113-141 |
+| emit_confetti | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\visual_effects.py | 143-169 |
+| emit_sparkles | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\visual_effects.py | 171-192 |
+| update | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\visual_effects.py | 194-201 |
+| render | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\visual_effects.py | 203-206 |
+| get_particle_count | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\visual_effects.py | 208-210 |
+| create_particle_burst | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\templates\explode.py | 240-293 |
 
 ## Execution Flows
 
@@ -60,5 +60,5 @@ Community of 15 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\slack-gif-creator\core\visual_effects.py` (2 edge(s))
-- `C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\slack-gif-creator\templates\explode.py` (1 edge(s))
+- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\visual_effects.py` (2 edge(s))
+- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\templates\explode.py` (1 edge(s))

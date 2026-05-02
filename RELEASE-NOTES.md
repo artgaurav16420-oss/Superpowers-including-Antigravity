@@ -4,13 +4,13 @@
 
 ### GitHub Copilot CLI Support
 
-1. **SessionStart context injection** — Copilot CLI v1.0.11 added support for `additionalContext` in sessionStart hook output. The session-start hook now detects the `COPILOT_CLI` environment variable and emits the SDK-standard `{ "additionalContext": "..." }` format, giving Copilot CLI users the full superpowers bootstrap at session start. (Original fix by @culinablaz in PR #910)
+1. **SessionStart context injection** — Copilot CLI v1.0.11 added support for `additionalContext` in sessionStart hook output. The session-start hook now detects the `COPILOT_CLI` environment variable and emits the SDK-standard `{ "additionalContext": "..." }` format, giving Copilot CLI users the full mega-skills bootstrap at session start. (Original fix by @culinablaz in PR #910)
 1. **Tool mapping** — added `references/copilot-tools.md` with the full Claude Code to Copilot CLI tool equivalence table
 1. **Skill and README updates** — added Copilot CLI to the `using-mega-skills` skill's platform instructions and README installation section
 
 ### OpenCode Fixes
 
-1. **Skills path consistency** — the bootstrap text no longer advertises a misleading `configDir/skills/superpowers/` path that didn't match the runtime path. The agent should use the native `skill` tool, not navigate to files by path. Tests now use consistent paths derived from a single source of truth. (#847, #916)
+1. **Skills path consistency** — the bootstrap text no longer advertises a misleading `configDir/skills/mega-skills/` path that didn't match the runtime path. The agent should use the native `skill` tool, not navigate to files by path. Tests now use consistent paths derived from a single source of truth. (#847, #916)
 1. **Bootstrap as user message** — moved bootstrap injection from `experimental.chat.system.transform` to `experimental.chat.messages.transform`, prepending to the first user message instead of adding a system message. Avoids token bloat from system messages repeated every turn (#750) and fixes compatibility with Qwen and other models that break on multiple system messages (#894).
 
 ## v5.0.6 (2026-03-24)
@@ -65,7 +65,7 @@ Dramatically reduces token usage and speeds up spec and plan reviews by eliminat
 ### OpenCode
 
 1. **One-line plugin install** — OpenCode plugin now auto-registers the skills directory via a `config` hook. No symlinks or `skills.paths` config needed. Install is just adding one line to `opencode.json`. (PR #753)
-1. **Added `package.json`** so OpenCode can install superpowers as an npm package from git.
+1. **Added `package.json`** so OpenCode can install mega-skills as an npm package from git.
 
 ### Bug Fixes (3)
 
@@ -206,8 +206,8 @@ Dramatically reduces token usage and speeds up spec and plan reviews by eliminat
 
 #### Specs and plans directory restructured
 
-1. Specs (brainstorming output) now save to `docs/superpowers/specs/YYYY-MM-DD-`<topic>`-design.md`
-1. Plans (writing-plans output) now save to `docs/superpowers/plans/YYYY-MM-DD-`<feature-name>`.md`
+1. Specs (brainstorming output) now save to `docs/mega-skills/specs/YYYY-MM-DD-`<topic>`-design.md`
+1. Plans (writing-plans output) now save to `docs/mega-skills/plans/YYYY-MM-DD-`<feature-name>`.md`
 1. User preferences for spec/plan locations override these defaults
 1. All internal skill references, test files, and example paths updated to match
 1. Migration: move existing files from `docs/plans/` to new locations if desired
@@ -246,7 +246,7 @@ Automated review loops for spec and plan documents using subagent dispatch:
 1. Writing-plans includes chunk-based plan review loop after each section
 1. Review loops repeat until approved or escalate after 5 iterations
 1. End-to-end tests in `tests/claude-code/test-document-review-system.sh`
-1. Design spec and implementation plan in `docs/superpowers/`
+1. Design spec and implementation plan in `docs/mega-skills/`
 
 #### Architecture guidance across the skill pipeline
 
@@ -318,7 +318,7 @@ This fixes SessionStart failures on Windows with spaces in paths, missing WSL, `
 
 ## v4.3.0 (2026-02-12)
 
-This fix should dramatically improve superpowers skills compliance and should reduce the chances of Claude entering its native plan mode unintentionally.
+This fix should dramatically improve mega-skills skills compliance and should reduce the chances of Claude entering its native plan mode unintentionally.
 
 ### Changed (2)
 
@@ -332,7 +332,7 @@ Models were skipping the design phase and jumping straight to implementation ski
 1. Anti-pattern callout for "this is too simple to need a design" — the exact rationalization models use to skip the process
 1. Design section sizing based on section complexity, not project complexity
 
-#### Using-superpowers workflow graph intercepts EnterPlanMode
+#### Using-mega-skills workflow graph intercepts EnterPlanMode
 
 Added an `EnterPlanMode` intercept to the skill flow graph. When the model is about to enter Claude's native plan mode, it checks whether brainstorming has happened and routes through the brainstorming skill instead. Plan mode is never entered.
 
@@ -348,7 +348,7 @@ Changed `async: true` to `async: false` in hooks.json. When async, the hook coul
 
 #### Codex: Replaced bootstrap CLI with native skill discovery
 
-The `superpowers-codex` bootstrap CLI, Windows `.cmd` wrapper, and related bootstrap content file have been removed. Codex now uses native skill discovery via `~/.agents/skills/superpowers/` symlink, so the old `use_skill`/`find_skills` CLI tools are no longer needed.
+The `mega-skills-codex` bootstrap CLI, Windows `.cmd` wrapper, and related bootstrap content file have been removed. Codex now uses native skill discovery via `~/.agents/skills/mega-skills/` symlink, so the old `use_skill`/`find_skills` CLI tools are no longer needed.
 
 Installation is now just clone + symlink (documented in INSTALL.md). No Node.js dependency required. The old `~/.codex/skills/` path is deprecated.
 
@@ -362,7 +362,7 @@ Fix: hooks.json now calls session-start.sh directly. Claude Code 2.1.x handles t
 
 #### Windows: SessionStart hook runs async to prevent terminal freeze (#404, #413, #414, #419)
 
-The synchronous SessionStart hook blocked the TUI from entering raw mode on Windows, freezing all keyboard input. Running the hook async prevents the freeze while still injecting superpowers context.
+The synchronous SessionStart hook blocked the TUI from entering raw mode on Windows, freezing all keyboard input. Running the hook async prevents the freeze while still injecting mega-skills context.
 
 #### Windows: Fixed O(n^2) `escape_for_json` performance
 
@@ -370,7 +370,7 @@ The character-by-character loop using `${input:$i:1}` was O(n^2) in bash due to 
 
 #### Codex: Fixed Windows/PowerShell invocation (#285, #243)
 
-1. Windows doesn't respect shebangs, so directly invoking the extensionless `superpowers-codex` script triggered an "Open with" dialog. All invocations now prefixed with `node`.
+1. Windows doesn't respect shebangs, so directly invoking the extensionless `mega-skills-codex` script triggered an "Open with" dialog. All invocations now prefixed with `node`.
 1. Fixed `~/` path expansion on Windows — PowerShell doesn't expand `~` when passed as an argument to `node`. Changed to `$HOME` which expands correctly in both bash and PowerShell.
 
 #### Codex: Fixed path resolution in installer
@@ -437,7 +437,7 @@ Changes:
 
 Mega-Skills for OpenCode now uses OpenCode's native `skill` tool instead of custom `use_skill`/`find_skills` tools. This is a cleaner integration that works with OpenCode's built-in skill discovery.
 
-**Migration required:** Skills must be symlinked to `~/.config/opencode/skills/superpowers/` (see updated installation docs).
+**Migration required:** Skills must be symlinked to `~/.config/opencode/skills/mega-skills/` (see updated installation docs).
 
 ### Fixes (3)
 
@@ -632,7 +632,7 @@ Description changed to imperative: "You MUST use this before any creative work�
 1. Message insertion pattern for skill persistence across context compaction
 1. Automatic context injection via chat.message hook
 1. Auto re-injection on session.compacted events
-1. Three-tier skill priority: project > personal > superpowers
+1. Three-tier skill priority: project > personal > mega-skills
 1. Project-local skills support (`.opencode/skills/`)
 1. Shared core module (`lib/skills-core.js`) for code reuse with Codex
 1. Automated test suite with proper isolation (`tests/opencode/`)
@@ -657,7 +657,7 @@ Description changed to imperative: "You MUST use this before any creative work�
 
 ### Improvements (5)
 
-1. Optimized superpowers bootstrap to eliminate redundant skill execution. The `using-mega-skills` skill content is now provided directly in session context, with clear guidance to use the Skill tool only for other skills. This reduces overhead and prevents the confusing loop where agents would execute `using-mega-skills` manually despite already having the content from session start.
+1. Optimized mega-skills bootstrap to eliminate redundant skill execution. The `using-mega-skills` skill content is now provided directly in session context, with clear guidance to use the Skill tool only for other skills. This reduces overhead and prevents the confusing loop where agents would execute `using-mega-skills` manually despite already having the content from session start.
 
 ## v3.4.0 (2025-10-30)
 
@@ -682,10 +682,10 @@ Description changed to imperative: "You MUST use this before any creative work�
 
 #### Experimental Codex Support
 
-1. Added unified `superpowers-codex` script with bootstrap/use-skill/find-skills commands
+1. Added unified `mega-skills-codex` script with bootstrap/use-skill/find-skills commands
 1. Cross-platform Node.js implementation (works on Windows, macOS, Linux)
-1. Namespaced skills: `mega-skills:skill-name` for superpowers skills, `skill-name` for personal
-1. Personal skills override superpowers skills when names match
+1. Namespaced skills: `mega-skills:skill-name` for mega-skills skills, `skill-name` for personal
+1. Personal skills override mega-skills skills when names match
 1. Clean skill display: shows name/description without raw frontmatter
 1. Helpful context: shows supporting files directory for each skill
 1. Tool mapping for Codex: TodoWrite→update_plan, subagents→manual fallback, etc.
@@ -702,10 +702,10 @@ Description changed to imperative: "You MUST use this before any creative work�
 ### Files Added
 
 1. `.codex/INSTALL.md` - Installation guide for Codex users
-1. `.codex/superpowers-bootstrap.md` - Bootstrap instructions with Codex adaptations
-1. `.codex/superpowers-codex` - Unified Node.js executable with all functionality
+1. `.codex/mega-skills-bootstrap.md` - Bootstrap instructions with Codex adaptations
+1. `.codex/mega-skills-codex` - Unified Node.js executable with all functionality
 
-**Note:** Codex support is experimental. The integration provides core superpowers functionality but may require refinement based on user feedback.
+**Note:** Codex support is experimental. The integration provides core mega-skills functionality but may require refinement based on user feedback.
 
 ## v3.2.3 (2025-10-23)
 
@@ -895,7 +895,7 @@ We now use Anthropic's first-party skills system!
 
 Mega-Skills v2.0 makes skills more accessible, maintainable, and community-driven through a major architectural shift.
 
-The headline change is **skills repository separation**: all skills, scripts, and documentation have moved from the plugin into a dedicated repository ([obra/superpowers-skills]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).)]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).)))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).)))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).)))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).)))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).))))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).)))))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).))))))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).)))))))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).))))))))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).)))))))))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).))))))))))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).)))))))))))))))))](https://github.com/artgaurav16420-oss/Mega-Skills-skills)).)))))))))))))))))) This transforms superpowers from a monolithic plugin into a lightweight shim that manages a local clone of the skills repository. Skills auto-update on session start. Users fork and contribute improvements via standard git workflows. The skills library versions independently from the plugin.
+The headline change is **skills repository separation**: all skills, scripts, and documentation have moved from the plugin into a dedicated repository ([obra/mega-skills-skills]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).)]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).)))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).)))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).)))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).)))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).))))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).)))))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).))))))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).)))))))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).))))))))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).)))))))))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).))))))))))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).)))))))))))))))))](https://github.com/artgaurav16420-oss/Mega-Skills-skills)).)))))))))))))))))) This transforms mega-skills from a monolithic plugin into a lightweight shim that manages a local clone of the skills repository. Skills auto-update on session start. Users fork and contribute improvements via standard git workflows. The skills library versions independently from the plugin.
 
 Beyond infrastructure, this release adds nine new skills focused on problem-solving, research, and architecture. We rewrote the core **using-skills** documentation with imperative tone and clearer structure, making it easier for Claude to understand when and how to use skills. **find-skills** now outputs paths you can paste directly into the Read tool, eliminating friction in the skills discovery workflow.
 
@@ -905,11 +905,11 @@ Users experience seamless operation: the plugin handles cloning, forking, and up
 
 ### Skills Repository Separation
 
-**The biggest change:** Skills no longer live in the plugin. They've been moved to a separate repository at [obra/superpowers-skills]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).)]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).)))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).)))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).)))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).)))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).))))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).)))))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).))))))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).)))))))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).))))))))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).)))))))))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).))))))))))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).)))))))))))))))))](https://github.com/artgaurav16420-oss/Mega-Skills-skills).))))))))))))))))))
+**The biggest change:** Skills no longer live in the plugin. They've been moved to a separate repository at [obra/mega-skills-skills]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).)]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).)))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).)))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).)))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).)))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).))))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).)))))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).))))))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).)))))))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).))))))))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).)))))))))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).))))))))))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).)))))))))))))))))](https://github.com/artgaurav16420-oss/Mega-Skills-skills).))))))))))))))))))
 
 #### What this means for you
 
-1. **First install:** Plugin automatically clones skills to `~/.config/superpowers/skills/`
+1. **First install:** Plugin automatically clones skills to `~/.config/mega-skills/skills/`
 1. **Forking:** During setup, you'll be offered the option to fork the skills repo (if `gh` is installed)
 1. **Updates:** Skills auto-update on session start (fast-forward when possible)
 1. **Contributing:** Work on branches, commit locally, submit PRs to upstream
@@ -919,14 +919,14 @@ Users experience seamless operation: the plugin handles cloning, forking, and up
 
 If you have an existing installation:
 
-1. Your old `~/.config/superpowers/.git` will be backed up to `~/.config/superpowers/.git.bak`
-1. Old skills will be backed up to `~/.config/superpowers/skills.bak`
-1. Fresh clone of obra/superpowers-skills will be created at `~/.config/superpowers/skills/`
+1. Your old `~/.config/mega-skills/.git` will be backed up to `~/.config/mega-skills/.git.bak`
+1. Old skills will be backed up to `~/.config/mega-skills/skills.bak`
+1. Fresh clone of obra/mega-skills-skills will be created at `~/.config/mega-skills/skills/`
 
 ### Removed Features
 
-1. **Personal superpowers overlay system** - Replaced with git branch workflow
-1. **setup-personal-superpowers hook** - Replaced by initialize-skills.sh
+1. **Personal mega-skills overlay system** - Replaced with git branch workflow
+1. **setup-personal-mega-skills hook** - Replaced by initialize-skills.sh
 
 ## New Features (8)
 
@@ -934,7 +934,7 @@ If you have an existing installation:
 
 **Automatic Clone & Setup** (`lib/initialize-skills.sh`)
 
-1. Clones obra/superpowers-skills on first run
+1. Clones obra/mega-skills-skills on first run
 1. Offers fork creation if GitHub CLI is installed
 1. Sets up upstream/origin remotes correctly
 1. Handles migration from old installation
@@ -1017,14 +1017,14 @@ If you have an existing installation:
 
 #### Environment Variables
 
-1. `SUPERPOWERS_SKILLS_ROOT` set to `~/.config/superpowers/skills`
+1. `SUPERPOWERS_SKILLS_ROOT` set to `~/.config/mega-skills/skills`
 1. Used consistently throughout all paths
 
 ## Bug Fixes (11)
 
 1. Fixed duplicate upstream remote addition when forking
 1. Fixed find-skills double "skills/" prefix in output
-1. Removed obsolete setup-personal-superpowers call from session-start
+1. Removed obsolete setup-personal-mega-skills call from session-start
 1. Fixed path references throughout hooks and commands
 
 ## Documentation (2)
@@ -1032,7 +1032,7 @@ If you have an existing installation:
 ### README
 
 1. Updated for new skills repository architecture
-1. Prominent link to superpowers-skills repo
+1. Prominent link to mega-skills-skills repo
 1. Updated auto-update description
 1. Fixed skill names and references
 1. Updated Meta skills list
@@ -1055,13 +1055,13 @@ If you have an existing installation:
 
 #### Removed
 
-1. `skills/` directory (82 files) - Now in obra/superpowers-skills
-1. `scripts/` directory - Now in obra/superpowers-skills/skills/using-skills/
-1. `hooks/setup-personal-superpowers.sh` - Obsolete
+1. `skills/` directory (82 files) - Now in obra/mega-skills-skills
+1. `scripts/` directory - Now in obra/mega-skills-skills/skills/using-skills/
+1. `hooks/setup-personal-mega-skills.sh` - Obsolete
 
 #### Modified
 
-1. `hooks/session-start.sh` - Use skills from ~/.config/superpowers/skills
+1. `hooks/session-start.sh` - Use skills from ~/.config/mega-skills/skills
 1. `commands/brainstorm.md` - Updated paths to SUPERPOWERS_SKILLS_ROOT
 1. `commands/write-plan.md` - Updated paths to SUPERPOWERS_SKILLS_ROOT
 1. `commands/execute-plan.md` - Updated paths to SUPERPOWERS_SKILLS_ROOT
@@ -1073,7 +1073,7 @@ This release includes:
 
 1. 20+ commits for skills repository separation
 1. PR #1: Amplifier-inspired problem-solving and research skills
-1. PR #2: Personal superpowers overlay system (later replaced)
+1. PR #2: Personal mega-skills overlay system (later replaced)
 1. Multiple skill refinements and documentation improvements
 
 ## Upgrade Instructions
@@ -1082,8 +1082,8 @@ This release includes:
 
 ```bash
 ## In Claude Code
-/plugin marketplace add obra/superpowers-marketplace
-/plugin install superpowers@superpowers-marketplace
+/plugin marketplace add obra/mega-skills-marketplace
+/plugin install mega-skills@mega-skills-marketplace
 ```
 
 The plugin handles everything automatically.
@@ -1093,13 +1093,13 @@ The plugin handles everything automatically.
 1. **Backup your personal skills** (if you have any):
 
 ```bash
-   cp -r ~/.config/superpowers/skills ~/superpowers-skills-backup
+   cp -r ~/.config/mega-skills/skills ~/mega-skills-skills-backup
 ```
 
 1. **Update the plugin:**
 
 ```bash
-   /plugin update superpowers
+   /plugin update mega-skills
 ```
 
 1. **On next session start:**

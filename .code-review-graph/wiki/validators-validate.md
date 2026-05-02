@@ -12,28 +12,28 @@ Community of 22 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| BaseSchemaValidator | Class | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\validators\base.py | 12-843 |
-| __init__ | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\validators\base.py | 94-107 |
-| validate | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\validators\base.py | 109-110 |
-| repair | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\validators\base.py | 112-113 |
-| repair_whitespace_preservation | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\validators\base.py | 115-141 |
-| validate_xml | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\validators\base.py | 143-168 |
-| validate_namespaces | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\validators\base.py | 170-197 |
-| validate_unique_ids | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\validators\base.py | 199-287 |
-| validate_file_references | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\validators\base.py | 289-383 |
-| validate_all_relationship_ids | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\validators\base.py | 385-467 |
-| _get_expected_relationship_type | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\validators\base.py | 469-490 |
-| validate_content_types | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\validators\base.py | 492-596 |
-| validate_file_against_xsd | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\validators\base.py | 598-634 |
-| validate_against_xsd | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\validators\base.py | 636-683 |
-| _get_schema_path | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\validators\base.py | 685-701 |
-| _clean_ignorable_namespaces | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\validators\base.py | 703-721 |
-| _remove_ignorable_elements | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\validators\base.py | 723-740 |
-| _preprocess_for_mc_ignorable | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\validators\base.py | 742-748 |
-| _validate_single_file_xsd | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\validators\base.py | 750-785 |
-| _get_original_file_errors | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\validators\base.py | 787-812 |
-| _remove_template_tags_from_text_nodes | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\validators\base.py | 814-843 |
-| process_text_content | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\validators\base.py | 821-831 |
+| BaseSchemaValidator | Class | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\validators\base.py | 12-843 |
+| __init__ | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\validators\base.py | 94-107 |
+| validate | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\validators\base.py | 109-110 |
+| repair | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\validators\base.py | 112-113 |
+| repair_whitespace_preservation | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\validators\base.py | 115-141 |
+| validate_xml | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\validators\base.py | 143-168 |
+| validate_namespaces | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\validators\base.py | 170-197 |
+| validate_unique_ids | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\validators\base.py | 199-287 |
+| validate_file_references | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\validators\base.py | 289-383 |
+| validate_all_relationship_ids | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\validators\base.py | 385-467 |
+| _get_expected_relationship_type | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\validators\base.py | 469-490 |
+| validate_content_types | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\validators\base.py | 492-596 |
+| validate_file_against_xsd | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\validators\base.py | 598-634 |
+| validate_against_xsd | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\validators\base.py | 636-683 |
+| _get_schema_path | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\validators\base.py | 685-701 |
+| _clean_ignorable_namespaces | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\validators\base.py | 703-721 |
+| _remove_ignorable_elements | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\validators\base.py | 723-740 |
+| _preprocess_for_mc_ignorable | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\validators\base.py | 742-748 |
+| _validate_single_file_xsd | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\validators\base.py | 750-785 |
+| _get_original_file_errors | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\validators\base.py | 787-812 |
+| _remove_template_tags_from_text_nodes | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\validators\base.py | 814-843 |
+| process_text_content | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\validators\base.py | 821-831 |
 
 ## Execution Flows
 
@@ -63,4 +63,4 @@ Community of 22 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\validators\base.py` (1 edge(s))
+- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\validators\base.py` (1 edge(s))

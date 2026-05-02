@@ -4,31 +4,31 @@ Complete guide for using Mega-Skills with [OpenCode.ai]([https://opencode.ai).](
 
 ## Installation
 
-Add superpowers to the `plugin` array in your `opencode.json` (global or project-level):
+Add mega-skills to the `plugin` array in your `opencode.json` (global or project-level):
 
 ```json
 {
-  "plugin": ["superpowers@git+[https://github.com/artgaurav16420-oss/Mega-Skills.git]([https://github.com/artgaurav16420-oss/Mega-Skills.git)]([https://github.com/artgaurav16420-oss/Mega-Skills.git))]([https://github.com/artgaurav16420-oss/Mega-Skills.git)))]([https://github.com/artgaurav16420-oss/Mega-Skills.git))))]([https://github.com/artgaurav16420-oss/Mega-Skills.git)))))]([https://github.com/artgaurav16420-oss/Mega-Skills.git))))))]([https://github.com/artgaurav16420-oss/Mega-Skills.git)))))))](https://github.com/artgaurav16420-oss/Mega-Skills.git))))))))"]
+  "plugin": ["mega-skills@git+[https://github.com/artgaurav16420-oss/Mega-Skills.git]([https://github.com/artgaurav16420-oss/Mega-Skills.git)]([https://github.com/artgaurav16420-oss/Mega-Skills.git))]([https://github.com/artgaurav16420-oss/Mega-Skills.git)))]([https://github.com/artgaurav16420-oss/Mega-Skills.git))))]([https://github.com/artgaurav16420-oss/Mega-Skills.git)))))]([https://github.com/artgaurav16420-oss/Mega-Skills.git))))))]([https://github.com/artgaurav16420-oss/Mega-Skills.git)))))))](https://github.com/artgaurav16420-oss/Mega-Skills.git))))))))"]
 }
 ```
 
 Restart OpenCode. The plugin auto-installs via Bun and registers all skills automatically.
 
-Verify by asking: "Tell me about your superpowers"
+Verify by asking: "Tell me about your mega-skills"
 
 ### Migrating from the old symlink-based install
 
-If you previously installed superpowers using `git clone` and symlinks, remove the old setup:
+If you previously installed mega-skills using `git clone` and symlinks, remove the old setup:
 
 ```bash
 ## Remove old symlinks
-rm -f ~/.config/opencode/plugins/superpowers.js
-rm -rf ~/.config/opencode/skills/superpowers
+rm -f ~/.config/opencode/plugins/mega-skills.js
+rm -rf ~/.config/opencode/skills/mega-skills
 
 ## Optionally remove the cloned repo
-rm -rf ~/.config/opencode/superpowers
+rm -rf ~/.config/opencode/mega-skills
 
-## Remove skills.paths from opencode.json if you added one for superpowers
+## Remove skills.paths from opencode.json if you added one for mega-skills
 ```
 
 Then follow the installation steps above.
@@ -46,7 +46,7 @@ use skill tool to list skills
 ### Loading a Skill
 
 ```text
-use skill tool to load superpowers/brainstorming
+use skill tool to load mega-skills/brainstorming
 ```
 
 ### Personal Skills
@@ -84,7 +84,7 @@ To pin a specific version, use a branch or tag:
 
 ```json
 {
-  "plugin": ["superpowers@git+[https://github.com/artgaurav16420-oss/Mega-Skills.git#v5.0.3]([https://github.com/artgaurav16420-oss/Mega-Skills.git#v5.0.3)]([https://github.com/artgaurav16420-oss/Mega-Skills.git#v5.0.3))]([https://github.com/artgaurav16420-oss/Mega-Skills.git#v5.0.3)))]([https://github.com/artgaurav16420-oss/Mega-Skills.git#v5.0.3))))]([https://github.com/artgaurav16420-oss/Mega-Skills.git#v5.0.3)))))]([https://github.com/artgaurav16420-oss/Mega-Skills.git#v5.0.3))))))]([https://github.com/artgaurav16420-oss/Mega-Skills.git#v5.0.3)))))))](https://github.com/artgaurav16420-oss/Mega-Skills.git#v5.0.3))))))))"]
+  "plugin": ["mega-skills@git+[https://github.com/artgaurav16420-oss/Mega-Skills.git#v5.0.3]([https://github.com/artgaurav16420-oss/Mega-Skills.git#v5.0.3)]([https://github.com/artgaurav16420-oss/Mega-Skills.git#v5.0.3))]([https://github.com/artgaurav16420-oss/Mega-Skills.git#v5.0.3)))]([https://github.com/artgaurav16420-oss/Mega-Skills.git#v5.0.3))))]([https://github.com/artgaurav16420-oss/Mega-Skills.git#v5.0.3)))))]([https://github.com/artgaurav16420-oss/Mega-Skills.git#v5.0.3))))))]([https://github.com/artgaurav16420-oss/Mega-Skills.git#v5.0.3)))))))](https://github.com/artgaurav16420-oss/Mega-Skills.git#v5.0.3))))))))"]
 }
 ```
 
@@ -92,8 +92,8 @@ To pin a specific version, use a branch or tag:
 
 The plugin does two things:
 
-1. **Injects bootstrap context** via the `experimental.chat.system.transform` hook, adding superpowers awareness to every conversation.
-1. **Registers the skills directory** via the `config` hook, so OpenCode discovers all superpowers skills without symlinks or manual config.
+1. **Injects bootstrap context** via the `experimental.chat.system.transform` hook, adding mega-skills awareness to every conversation.
+1. **Registers the skills directory** via the `config` hook, so OpenCode discovers all mega-skills skills without symlinks or manual config.
 
 ### Tool Mapping
 
@@ -108,7 +108,7 @@ Skills written for Claude Code are automatically adapted for OpenCode:
 
 ### Plugin not loading
 
-1. Check OpenCode logs: `opencode run --print-logs "hello" 2>&1 | grep -i superpowers`
+1. Check OpenCode logs: `opencode run --print-logs "hello" 2>&1 | grep -i mega-skills`
 1. Verify the plugin line in your `opencode.json` is correct
 1. Make sure you're running a recent version of OpenCode
 

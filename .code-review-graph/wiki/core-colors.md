@@ -12,8 +12,8 @@ Community of 2 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| blend_colors | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\slack-gif-creator\core\color_palettes.py | 199-219 |
-| create_gradient_colors | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\slack-gif-creator\core\color_palettes.py | 222-240 |
+| blend_colors | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\color_palettes.py | 199-219 |
+| create_gradient_colors | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\color_palettes.py | 222-240 |
 
 ## Execution Flows
 
@@ -29,4 +29,4 @@ Community of 2 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\slack-gif-creator\core\color_palettes.py` (2 edge(s))
+- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\color_palettes.py` (2 edge(s))

@@ -12,8 +12,8 @@ Community of 2 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| create_screen_shake_offset | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\slack-gif-creator\core\visual_effects.py | 455-471 |
-| apply_screen_shake | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\slack-gif-creator\core\visual_effects.py | 474-494 |
+| create_screen_shake_offset | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\visual_effects.py | 455-471 |
+| apply_screen_shake | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\visual_effects.py | 474-494 |
 
 ## Execution Flows
 
@@ -30,4 +30,4 @@ Community of 2 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\slack-gif-creator\core\visual_effects.py` (2 edge(s))
+- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\visual_effects.py` (2 edge(s))

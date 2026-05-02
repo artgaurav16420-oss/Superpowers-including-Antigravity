@@ -12,12 +12,12 @@ Community of 6 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| accept_changes | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\accept_changes.py | 36-88 |
-| _setup_libreoffice_macro | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\accept_changes.py | 91-118 |
-| get_soffice_env | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\soffice.py | 24-32 |
-| run_soffice | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\soffice.py | 35-37 |
-| _needs_shim | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\soffice.py | 44-50 |
-| _ensure_shim | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\soffice.py | 53-65 |
+| accept_changes | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\accept_changes.py | 36-88 |
+| _setup_libreoffice_macro | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\accept_changes.py | 91-118 |
+| get_soffice_env | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\soffice.py | 24-32 |
+| run_soffice | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\soffice.py | 35-37 |
+| _needs_shim | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\soffice.py | 44-50 |
+| _ensure_shim | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\soffice.py | 53-65 |
 
 ## Execution Flows
 
@@ -46,5 +46,5 @@ Community of 6 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\office\soffice.py` (4 edge(s))
-- `C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\docx\scripts\accept_changes.py` (2 edge(s))
+- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\office\soffice.py` (4 edge(s))
+- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\docx\scripts\accept_changes.py` (2 edge(s))

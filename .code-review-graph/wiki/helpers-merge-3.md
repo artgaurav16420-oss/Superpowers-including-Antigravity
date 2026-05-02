@@ -12,22 +12,22 @@ Community of 16 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| merge_runs | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\office\helpers\merge_runs.py | 16-39 |
-| _find_elements | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\office\helpers\merge_runs.py | 44-56 |
-| traverse | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\office\helpers\merge_runs.py | 47-53 |
-| _get_child | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\office\helpers\merge_runs.py | 59-65 |
-| _get_children | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\office\helpers\merge_runs.py | 68-75 |
-| _is_adjacent | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\office\helpers\merge_runs.py | 78-88 |
-| _remove_elements | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\office\helpers\merge_runs.py | 93-96 |
-| _strip_run_rsid_attrs | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\office\helpers\merge_runs.py | 99-103 |
-| _merge_runs_in | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\office\helpers\merge_runs.py | 108-125 |
-| _first_child_run | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\office\helpers\merge_runs.py | 128-132 |
-| _next_element_sibling | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\office\helpers\merge_runs.py | 135-141 |
-| _next_sibling_run | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\office\helpers\merge_runs.py | 144-151 |
-| _is_run | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\office\helpers\merge_runs.py | 154-156 |
-| _can_merge | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\office\helpers\merge_runs.py | 159-167 |
-| _merge_run_content | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\office\helpers\merge_runs.py | 170-175 |
-| _consolidate_text | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\office\helpers\merge_runs.py | 178-199 |
+| merge_runs | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\office\helpers\merge_runs.py | 16-39 |
+| _find_elements | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\office\helpers\merge_runs.py | 44-56 |
+| traverse | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\office\helpers\merge_runs.py | 47-53 |
+| _get_child | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\office\helpers\merge_runs.py | 59-65 |
+| _get_children | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\office\helpers\merge_runs.py | 68-75 |
+| _is_adjacent | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\office\helpers\merge_runs.py | 78-88 |
+| _remove_elements | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\office\helpers\merge_runs.py | 93-96 |
+| _strip_run_rsid_attrs | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\office\helpers\merge_runs.py | 99-103 |
+| _merge_runs_in | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\office\helpers\merge_runs.py | 108-125 |
+| _first_child_run | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\office\helpers\merge_runs.py | 128-132 |
+| _next_element_sibling | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\office\helpers\merge_runs.py | 135-141 |
+| _next_sibling_run | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\office\helpers\merge_runs.py | 144-151 |
+| _is_run | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\office\helpers\merge_runs.py | 154-156 |
+| _can_merge | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\office\helpers\merge_runs.py | 159-167 |
+| _merge_run_content | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\office\helpers\merge_runs.py | 170-175 |
+| _consolidate_text | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\office\helpers\merge_runs.py | 178-199 |
 
 ## Execution Flows
 
@@ -55,4 +55,4 @@ Community of 16 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\xlsx\scripts\office\helpers\merge_runs.py` (16 edge(s))
+- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\xlsx\scripts\office\helpers\merge_runs.py` (16 edge(s))

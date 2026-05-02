@@ -12,14 +12,14 @@ Community of 8 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| simplify_redlines | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\office\helpers\simplify_redlines.py | 22-44 |
-| _merge_tracked_changes_in | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\office\helpers\simplify_redlines.py | 47-72 |
-| _is_element | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\office\helpers\simplify_redlines.py | 75-77 |
-| _get_author | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\office\helpers\simplify_redlines.py | 80-86 |
-| _can_merge_tracked | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\office\helpers\simplify_redlines.py | 89-101 |
-| _merge_tracked_content | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\office\helpers\simplify_redlines.py | 104-108 |
-| _find_elements | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\office\helpers\simplify_redlines.py | 111-123 |
-| traverse | Function | C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\office\helpers\simplify_redlines.py | 114-120 |
+| simplify_redlines | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\office\helpers\simplify_redlines.py | 22-44 |
+| _merge_tracked_changes_in | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\office\helpers\simplify_redlines.py | 47-72 |
+| _is_element | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\office\helpers\simplify_redlines.py | 75-77 |
+| _get_author | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\office\helpers\simplify_redlines.py | 80-86 |
+| _can_merge_tracked | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\office\helpers\simplify_redlines.py | 89-101 |
+| _merge_tracked_content | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\office\helpers\simplify_redlines.py | 104-108 |
+| _find_elements | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\office\helpers\simplify_redlines.py | 111-123 |
+| traverse | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\office\helpers\simplify_redlines.py | 114-120 |
 
 ## Execution Flows
 
@@ -47,4 +47,4 @@ Community of 8 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Superpowers\skills\pptx\scripts\office\helpers\simplify_redlines.py` (8 edge(s))
+- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pptx\scripts\office\helpers\simplify_redlines.py` (8 edge(s))
