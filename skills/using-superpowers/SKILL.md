@@ -33,6 +33,8 @@ If CLAUDE.md, GEMINI.md, or AGENTS.md says "don't use TDD" and a skill says "alw
 
 **In Gemini CLI:** Skills activate via the `activate_skill` tool. Gemini loads skill metadata at session start and activates the full content on demand.
 
+**In Antigravity:** Skills are folders in the workspace or app data containing a `SKILL.md`. Access them via the `view_file` tool. Follow all instructions exactly.
+
 **In other environments:** Check your platform's documentation for how skills are loaded.
 
 ## Platform Adaptation
