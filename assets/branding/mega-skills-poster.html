@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mega-Skills: Agentic Grid Poster</title>
+    <title>Mega-Skills: Agentic Grid Poster (Vertical)</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,7 +55,15 @@
         .button.secondary { background: var(--anthropic-blue); }
         .button.tertiary { background: var(--anthropic-green); }
         .canvas-area { flex: 1; display: flex; align-items: center; justify-content: center; min-width: 0; }
-        #canvas-container { width: 100%; max-width: 1200px; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(20, 20, 19, 0.1); background: #141413; }
+        #canvas-container { 
+            width: 100%; 
+            max-width: 600px; 
+            aspect-ratio: 1 / 2;
+            border-radius: 12px; 
+            overflow: hidden; 
+            box-shadow: 0 20px 40px rgba(20, 20, 19, 0.1); 
+            background: #141413; 
+        }
         #canvas-container canvas { display: block; width: 100% !important; height: auto !important; }
     </style>
 </head>
@@ -63,7 +71,7 @@
     <div class="container">
         <div class="sidebar">
             <h1>Agentic Grid</h1>
-            <div class="subtitle">Official Mega-Skills "Beast Mode" Poster (2:1 Ratio)</div>
+            <div class="subtitle">Official Mega-Skills "Beast Mode" Poster (1:2 Ratio)</div>
 
             <div class="control-section">
                 <h3>Seed</h3>
@@ -128,8 +136,8 @@
         let defaultParams = {...params};
 
         function setup() {
-            // 2:1 Ratio
-            let canvas = createCanvas(2000, 1000);
+            // 1:2 Ratio (Portrait)
+            let canvas = createCanvas(1000, 2000);
             canvas.parent('canvas-container');
             noLoop();
             initializeSystem();
@@ -175,7 +183,7 @@
         }
 
         function drawFlowLines() {
-            let count = floor(width * params.density * 0.1);
+            let count = floor(height * params.density * 0.1);
             for (let i = 0; i < count; i++) {
                 let startX = floor(random(width) / 50) * 50;
                 let startY = floor(random(height) / 50) * 50;
@@ -186,17 +194,20 @@
                 beginShape();
                 let curX = startX;
                 let curY = startY;
-                for (let j = 0; j < 10; j++) {
+                for (let j = 0; j < 15; j++) {
                     vertex(curX, curY);
                     if (random() > 0.5) curX += 50 * (random() > 0.5 ? 1 : -1);
                     else curY += 50 * (random() > 0.5 ? 1 : -1);
+                    
+                    curX = constrain(curX, 0, width);
+                    curY = constrain(curY, 0, height);
                 }
                 endShape();
                 
                 if (i % 20 === 0) {
                     fill(params.colors.gold);
                     noStroke();
-                    circle(startX, startY, 4);
+                    circle(startX, startY, 6);
                 }
             }
         }
@@ -206,37 +217,42 @@
             noStroke();
             textFont('Poppins');
             
-            // Main Title
-            textSize(120);
+            push();
+            translate(width/2, height/2);
+            
+            // Vertical Stack Branding
+            textSize(80);
             textStyle(BOLD);
             textAlign(CENTER, CENTER);
-            text("MEGA-SKILLS", width/2, height/2 - 40);
+            text("MEGA", 0, -120);
+            text("SKILLS", 0, -40);
             
-            // Subtitle
-            textSize(40);
+            textSize(28);
             textStyle(NORMAL);
             fill(params.colors.gold);
-            text("THE OS FOR AI AGENTS", width/2, height/2 + 80);
+            text("THE OS FOR AI AGENTS", 0, 40);
             
-            // Metrics
+            pop();
+            
+            // Metadata
             textAlign(LEFT, BOTTOM);
             textSize(18);
             fill(params.colors.light + '88');
-            text("VERSION: 5.0.7-MEGA", 100, height - 100);
-            text("RATIO: 1:2 H:L (2000x1000)", 100, height - 70);
+            text("VERSION: 5.0.7-MEGA", 80, height - 120);
+            text("RATIO: 1:2 H:L (1000x2000)", 80, height - 90);
             
             textAlign(RIGHT, BOTTOM);
-            text("64+ HIGH-FIDELITY SKILLS", width - 100, height - 100);
-            text("AGENTIC ENGINEERING METHODOLOGY", width - 100, height - 70);
+            text("65+ ELITE SKILLS", width - 80, height - 120);
+            text("AGENTIC OS", width - 80, height - 90);
             
             // Corner Accents
             stroke(params.colors.gold);
-            strokeWeight(2);
-            line(50, 50, 150, 50);
-            line(50, 50, 50, 150);
+            strokeWeight(3);
+            line(40, 40, 120, 40);
+            line(40, 40, 40, 120);
             
-            line(width - 50, height - 50, width - 150, height - 50);
-            line(width - 50, height - 50, width - 50, height - 150);
+            line(width - 40, height - 40, width - 120, height - 40);
+            line(width - 40, height - 40, width - 40, height - 120);
         }
 
         function updateParam(name, val) {
