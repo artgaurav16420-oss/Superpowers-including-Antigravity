@@ -85,7 +85,7 @@ A real integration loads the `using-mega-skills` bootstrap at session start. The
 
 A working integration auto-triggers the `brainstorming` skill before any code is written. Paste the complete transcript in the PR.
 
-#### These are not real integrations and will be closed
+### These are not real integrations and will be closed
 
 - Manually copying skill files into the harness
 - Wrapping with `npx skills` or similar at-runtime shims

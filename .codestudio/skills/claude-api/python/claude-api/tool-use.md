@@ -22,7 +22,7 @@ def get_weather(location: str, unit: str = "celsius") -> str:
         location: City and state, e.g., San Francisco, CA.
         unit: Temperature unit, either "celsius" or "fahrenheit".
     """
-    # Your implementation here
+## Your implementation here
     return f"72°F and sunny in {location}"
 
 ## The tool runner handles the agentic loop automatically
@@ -40,7 +40,7 @@ for message in runner:
 
 For async usage, use `@beta_async_tool` with `async def` functions.
 
-#### Key benefits of the tool runner
+### Key benefits of the tool runner
 
 - No manual loop — the SDK handles calling tools and feeding results back
 - Type-safe tool inputs via decorators
@@ -70,7 +70,7 @@ async with stdio_client(StdioServerParameters(command="mcp-server")) as (read, w
         await mcp_client.initialize()
 
         tools_result = await mcp_client.list_tools()
-        # tool_runner is sync — returns the runner, not a coroutine
+## tool_runner is sync — returns the runner, not a coroutine
         runner = client.beta.messages.tool_runner(
             model="claude-opus-4-7",
             max_tokens=16000,
@@ -83,7 +83,7 @@ async with stdio_client(StdioServerParameters(command="mcp-server")) as (read, w
 
 For sync usage, use `mcp_tool` instead of `async_mcp_tool`.
 
-### MCP Prompts
+## MCP Prompts
 
 ```python
 from anthropic.lib.tools.mcp import mcp_message
@@ -148,11 +148,11 @@ while True:
         messages=messages
     )
 
-    # If Claude is done (no more tool calls), break
+## If Claude is done (no more tool calls), break
     if response.stop_reason == "end_turn":
         break
 
-    # Server-side tool hit iteration limit; re-send to continue
+## Server-side tool hit iteration limit; re-send to continue
     if response.stop_reason == "pause_turn":
         messages = [
             {"role": "user", "content": user_input},
@@ -160,13 +160,13 @@ while True:
         ]
         continue
 
-    # Extract tool use blocks from the response
+## Extract tool use blocks from the response
     tool_use_blocks = [b for b in response.content if b.type == "tool_use"]
 
-    # Append assistant's response (including tool_use blocks)
+## Append assistant's response (including tool_use blocks)
     messages.append({"role": "assistant", "content": response.content})
 
-    # Execute each tool and collect results
+## Execute each tool and collect results
     tool_results = []
     for tool in tool_use_blocks:
         result = execute_tool(tool.name, tool.input)  # Your implementation
@@ -176,7 +176,7 @@ while True:
             "content": result
         })
 
-    # Append tool results as a user message
+## Append tool results as a user message
     messages.append({"role": "user", "content": tool_results})
 
 ## Final response text
@@ -349,7 +349,7 @@ for block in response.content:
                 if file_ref.type == "bash_code_execution_output":
                     metadata = client.beta.files.retrieve_metadata(file_ref.file_id)
                     file_content = client.beta.files.download(file_ref.file_id)
-                    # Use basename to prevent path traversal; validate result
+## Use basename to prevent path traversal; validate result
                     safe_name = os.path.basename(metadata.filename)
                     if not safe_name or safe_name in (".", ".."):
                         print(f"Skipping invalid filename: {metadata.filename}")
@@ -359,7 +359,7 @@ for block in response.content:
                     print(f"Saved: {output_path}")
 ```
 
-### Container Reuse
+## Container Reuse
 
 ```python
 ## First request: set up environment

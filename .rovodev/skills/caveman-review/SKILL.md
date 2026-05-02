@@ -15,7 +15,7 @@ Write code review comments terse and actionable. One line per finding. Location,
 
 **Format:** `L<line>: <problem>. <fix>.` — or `<file>:L<line>: ...` when reviewing multi-file diffs.
 
-#### Severity prefix (optional, when mixed)
+### Severity prefix (optional, when mixed)
 
 - `🔴 bug:` — broken behavior, will cause incident
 

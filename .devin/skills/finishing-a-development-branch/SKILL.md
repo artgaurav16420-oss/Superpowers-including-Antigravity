@@ -24,7 +24,7 @@ Guide completion of development work by presenting clear options and handling ch
 npm test / cargo test / pytest / go test ./...
 ```
 
-#### If tests fail
+### If tests fail
 
 ```text
 Tests failing (<N> failures). Must fix before completing:
@@ -79,7 +79,7 @@ git branch -d <feature-branch>
 
 Then: Cleanup worktree (Step 5)
 
-#### Option 2: Push and Create PR
+### Option 2: Push and Create PR
 
 ```bash
 ## Push branch
@@ -96,7 +96,7 @@ EOF
 
 Then: Cleanup worktree (Step 5)
 
-#### Option 3: Keep As-Is
+### Option 3: Keep As-Is
 
 Report: "Keeping branch <name>. Worktree preserved at <path>."
 
@@ -146,7 +146,7 @@ git worktree remove <worktree-path>
 ## Quick Reference
 
 | Option | Merge | Push | Keep Worktree | Cleanup Branch |
-|:::::::::::::::::::---:::::::::::::::::::-----|:::::::::::::::::::---:::::::::::::::::::----|:::::::::::::::::::---:::::::::::::::::::---|:::::::::::::::::::---:::::::::::::::::::---:::::::::::::::::::---:::::::::::::::::::---:::::::::::::::::::---|:::::::::::::::::::---:::::::::::::::::::---:::::::::::::::::::---:::::::::::::::::::---:::::::::::::::::::----|
+|:::::::::::::::::::::---:::::::::::::::::::::-----|:::::::::::::::::::::---:::::::::::::::::::::----|:::::::::::::::::::::---:::::::::::::::::::::---|:::::::::::::::::::::---:::::::::::::::::::::---:::::::::::::::::::::---:::::::::::::::::::::---:::::::::::::::::::::---|:::::::::::::::::::::---:::::::::::::::::::::---:::::::::::::::::::::---:::::::::::::::::::::---:::::::::::::::::::::----|
 | 1. Merge locally | ✓ | - | - | ✓ |
 | 2. Create PR | - | ✓ | ✓ | - |
 | 3. Keep as-is | - | - | ✓ | - |
@@ -154,7 +154,7 @@ git worktree remove <worktree-path>
 
 ## Common Mistakes
 
-#### Skipping test verification
+### Skipping test verification
 
 - **Problem:** Merge broken code, create failing PR
 
@@ -180,7 +180,7 @@ git worktree remove <worktree-path>
 
 ## Red Flags
 
-#### Never
+### Never
 
 - Proceed with failing tests
 
@@ -202,7 +202,7 @@ git worktree remove <worktree-path>
 
 ## Integration
 
-#### Called by
+### Called by
 
 - **subagent-driven-development** (Step 7) - After all tasks complete
 

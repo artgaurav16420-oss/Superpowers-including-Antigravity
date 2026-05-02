@@ -70,7 +70,7 @@ with client.messages.stream(
         print(text, end="", flush=True)
 
     response = stream.get_final_message()
-    # Continue with tool execution if response.stop_reason == "tool_use"
+## Continue with tool execution if response.stop_reason == "tool_use"
 ```
 
 ---
@@ -86,7 +86,7 @@ with client.messages.stream(
     for text in stream.text_stream:
         print(text, end="", flush=True)
 
-    # Get full message after streaming
+## Get full message after streaming
     final_message = stream.get_final_message()
     print(f"\n\nTokens used: {final_message.usage.output_tokens}")
 ```
@@ -145,7 +145,7 @@ except anthropic.APIStatusError as e:
 ## Stream Event Types
 
 | Event Type            | Description                 | When it fires                     |
-| :---:---:---:---:---:---:--- | :---:---:---:---:---:---:---:---:--- | :---:---:---:---:---:---:---:---:---:---:--- |
+| :::---:::---:::---:::---:::---:::---:::--- | :::---:::---:::---:::---:::---:::---:::---:::---:::--- | :::---:::---:::---:::---:::---:::---:::---:::---:::---:::---:::--- |
 | `message_start`       | Contains message metadata   | Once at the beginning             |
 | `content_block_start` | New content block beginning | When a text/tool_use block starts |
 | `content_block_delta` | Incremental content update  | For each token/chunk              |

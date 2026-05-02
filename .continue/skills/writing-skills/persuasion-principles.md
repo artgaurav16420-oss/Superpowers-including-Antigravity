@@ -152,7 +152,7 @@ LLMs respond to the same persuasion principles as humans. Understanding this psy
 ## Principle Combinations by Skill Type
 
 | Skill Type | Use | Avoid |
-|:---:---:---:---|:-----|:---:----|
+|:::---:::---:::---:::---|:::-----|:::---:::----|
 | Discipline-enforcing | Authority + Commitment + Social Proof | Liking, Reciprocity |
 | Guidance/technique | Moderate Authority + Unity | Heavy authority |
 | Collaborative | Unity + Commitment | Authority, Liking |
@@ -160,7 +160,7 @@ LLMs respond to the same persuasion principles as humans. Understanding this psy
 
 ## Why This Works: The Psychology
 
-#### Bright-line rules reduce rationalization
+### Bright-line rules reduce rationalization
 
 - "YOU MUST" removes decision fatigue
 - Absolute language eliminates "is this an exception?" questions
@@ -181,7 +181,7 @@ LLMs respond to the same persuasion principles as humans. Understanding this psy
 
 ## Ethical Use
 
-#### Legitimate
+### Legitimate
 
 - Ensuring critical practices are followed
 - Creating effective documentation

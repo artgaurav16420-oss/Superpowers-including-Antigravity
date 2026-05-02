@@ -9,7 +9,7 @@ This skill provides a structured workflow for guiding users through collaborativ
 
 ## When to Offer This Workflow
 
-#### Trigger conditions
+### Trigger conditions
 
 - User mentions writing documentation: "write a doc", "draft a proposal", "create a spec", "write up"
 
@@ -133,7 +133,7 @@ If user wants to add more, let them. When ready, proceed to Stage 2.
 
 **Goal:** Build the document section by section through brainstorming, curation, and iterative refinement.
 
-#### Instructions to user
+### Instructions to user
 
 Explain that the document will be built section by section. For each section:
 
@@ -297,7 +297,7 @@ Ask if ready to move to Reader Testing, or if they want to refine anything else.
 
 **Goal:** Test the document with a fresh Claude (no context bleed) to verify it works for readers.
 
-#### Instructions to user
+### Instructions to user
 
 Explain that testing will now occur to see if the document actually works for readers. This catches blind spots - things that make sense to the authors but might confuse others.
 
@@ -407,7 +407,7 @@ Announce the doc has passed Reader Claude testing. Before completion:
 
 Ask if they want one more review, or if the work is done.
 
-#### If user wants final review, provide it. Otherwise
+### If user wants final review, provide it. Otherwise
 
 Announce document completion. Provide a few final tips:
 
@@ -419,7 +419,7 @@ Announce document completion. Provide a few final tips:
 
 ## Tips for Effective Guidance
 
-#### Tone
+### Tone
 
 - Be direct and procedural
 

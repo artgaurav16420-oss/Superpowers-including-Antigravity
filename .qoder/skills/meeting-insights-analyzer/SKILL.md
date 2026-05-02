@@ -145,7 +145,7 @@ When a user requests meeting analysis:
    For each pattern found, include:
 
    ```markdown
-   ### [Pattern Name]
+### [Pattern Name]
    **Finding**: [One-sentence summary of the pattern]
    **Frequency**: [X times across Y meetings]
    **Examples**:
@@ -166,39 +166,39 @@ When a user requests meeting analysis:
    After analyzing all patterns, provide:
 
    ```markdown
-   # Meeting Insights Summary
+## Meeting Insights Summary
    **Analysis Period**: [Date range]
    **Meetings Analyzed**: [X meetings]
    **Total Duration**: [X hours]
-   ## Key Patterns Identified
-   ### 1. [Primary Pattern]
+## Key Patterns Identified
+### 1. [Primary Pattern]
 
    - **Observed**: [What you saw]
    - **Impact**: [Why it matters]
    - **Recommendation**: [How to improve]
 
-   ### 2. [Second Pattern]
+### 2. [Second Pattern]
    [Same structure]
-   ## Communication Strengths
+## Communication Strengths
 
    1. [Strength 1 with example]
    1. [Strength 2 with example]
    1. [Strength 3 with example]
 
-   ## Growth Opportunities
+## Growth Opportunities
 
    1. **[Area 1]**: [Specific, actionable advice]
    1. **[Area 2]**: [Specific, actionable advice]
    1. **[Area 3]**: [Specific, actionable advice]
 
-   ## Speaking Statistics
+## Speaking Statistics
 
    - Average speaking time: [X% of meeting]
    - Questions asked: [X per meeting average]
    - Filler words: [X per minute]
    - Interruptions: [X given / Y received per meeting]
 
-   ## Next Steps
+## Next Steps
    [3-5 concrete actions to improve communication]
    ```
 

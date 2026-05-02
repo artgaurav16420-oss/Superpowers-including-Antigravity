@@ -8,15 +8,15 @@ Task tool (general-purpose):
   prompt: |
     You are implementing Task N: [task name]
 
-    ## Task Description
+## Task Description
 
     [FULL TEXT of task from plan - paste it here, don't make subagent read file]
 
-    ## Context
+## Context
 
     [Scene-setting: where this fits, dependencies, architectural context]
 
-    ## Before You Begin
+## Before You Begin
 
     If you have questions about:
     - The requirements or acceptance criteria
@@ -26,7 +26,7 @@ Task tool (general-purpose):
 
     **Ask them now.** Raise any concerns before starting work.
 
-    ## Your Job
+## Your Job
 
     Once you're clear on requirements:
     1. Implement exactly what the task specifies
@@ -41,7 +41,7 @@ Task tool (general-purpose):
     **While you work:** If you encounter something unexpected or unclear, **ask questions**.
     It's always OK to pause and clarify. Don't guess or make assumptions.
 
-    ## Code Organization
+## Code Organization
 
     You reason best about code you can hold in context at once, and your edits are more
     reliable when files are focused. Keep this in mind:
@@ -54,7 +54,7 @@ Task tool (general-purpose):
     - In existing codebases, follow established patterns. Improve code you're touching
       the way a good developer would, but don't restructure things outside your task.
 
-    ## When You're in Over Your Head
+## When You're in Over Your Head
 
     It is always OK to stop and say "this is too hard for me." Bad work is worse than
     no work. You will not be penalized for escalating.
@@ -71,7 +71,7 @@ Task tool (general-purpose):
     The controller can provide more context, re-dispatch with a more capable model,
     or break the task into smaller pieces.
 
-    ## Before Reporting Back: Self-Review
+## Before Reporting Back: Self-Review
 
     Review your work with fresh eyes. Ask yourself:
 
@@ -97,7 +97,7 @@ Task tool (general-purpose):
 
     If you find issues during self-review, fix them now before reporting.
 
-    ## Report Format
+## Report Format
 
     When done, report:
     - **Status:** DONE | DONE_WITH_CONCERNS | BLOCKED | NEEDS_CONTEXT

@@ -429,7 +429,7 @@ Evaluation files use XML format with `<qa_pair>` elements:
 
 The evaluation script (`scripts/evaluation.py`) supports three transport types:
 
-#### Important
+### Important
 
 - **stdio transport**: The evaluation script automatically launches and manages the MCP server process for you. Do not run the server manually.
 - **sse/http transports**: You must start the MCP server separately before running the evaluation. The script connects to the already-running server at the specified URL.
@@ -465,7 +465,7 @@ For SSE-based MCP servers (you must start the server first):
 ```bash
 python scripts/evaluation.py \
   -t sse \
-  -u [https://example.com/mcp](https://example.com/mcp) \
+  -u [https://example.com/mcp]([https://example.com/mcp)]([https://example.com/mcp))](https://example.com/mcp))) \
   -H "Authorization: Bearer token123" \
   -H "X-Custom-Header: value" \
   evaluation.xml
@@ -478,7 +478,7 @@ For HTTP-based MCP servers (you must start the server first):
 ```bash
 python scripts/evaluation.py \
   -t http \
-  -u [https://example.com/mcp](https://example.com/mcp) \
+  -u [https://example.com/mcp]([https://example.com/mcp)]([https://example.com/mcp))](https://example.com/mcp))) \
   -H "Authorization: Bearer token123" \
   evaluation.xml
 ```

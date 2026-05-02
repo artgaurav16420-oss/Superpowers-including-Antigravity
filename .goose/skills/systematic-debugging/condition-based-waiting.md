@@ -21,7 +21,7 @@ digraph when_to_use {
 }
 ```
 
-#### Use when
+### Use when
 
 - Tests have arbitrary delays (`setTimeout`, `sleep`, `time.sleep()`)
 - Tests are flaky (pass sometimes, fail under load)
@@ -50,7 +50,7 @@ expect(result).toBeDefined();
 ## Quick Patterns
 
 | Scenario | Pattern |
-|:---:---:----|:---:---:---|
+|:::---:::---:::----|:::---:::---:::---|
 | Wait for event | `waitFor(() => events.find(e => e.type === 'DONE'))` |
 | Wait for state | `waitFor(() => machine.state === 'ready')` |
 | Wait for count | `waitFor(() => items.length >= 5)` |
@@ -104,7 +104,7 @@ await new Promise(r => setTimeout(r, 200));   // Then: wait for timed behavior
 // 200ms = 2 ticks at 100ms intervals - documented and justified
 ```
 
-#### Requirements
+### Requirements
 
 1. First wait for triggering condition
 1. Based on known timing (not guessing)

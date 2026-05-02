@@ -15,10 +15,10 @@ Both follow the iterative loop pattern used by implementation reviews.
 
 **Location:** `skills/brainstorming/spec-document-reviewer-prompt.md`
 
-#### What it checks for
+### What it checks for
 
 | Category | What to Look For |
-|:---:---:----|:---:---:---:---:---:---|
+|:::---:::---:::----|:::---:::---:::---:::---:::---:::---|
 | Completeness | TODOs, placeholders, "TBD", incomplete sections |
 | Coverage | Missing error handling, edge cases, integration points |
 | Consistency | Internal contradictions, conflicting requirements |
@@ -49,10 +49,10 @@ Both follow the iterative loop pattern used by implementation reviews.
 
 **Location:** `skills/writing-plans/plan-document-reviewer-prompt.md`
 
-#### What it checks for
+### What it checks for
 
 | Category | What to Look For |
-|:---:---:----|:---:---:---:---:---:---|
+|:::---:::---:::----|:::---:::---:::---:::---:::---:::---|
 | Completeness | TODOs, placeholders, incomplete tasks |
 | Spec Alignment | Plan covers spec requirements, no scope creep |
 | Task Decomposition | Tasks atomic, clear boundaries |
@@ -86,7 +86,7 @@ The reviewer reads both and compares requirements coverage.
 brainstorming -> spec -> SPEC REVIEW LOOP -> writing-plans -> plan -> PLAN REVIEW LOOP -> implementation
 ```
 
-#### Spec Review Loop
+### Spec Review Loop
 
 1. Spec complete
 1. Dispatch reviewer
@@ -114,7 +114,7 @@ Tasks and steps use checkbox syntax:
 
 ## Error Handling
 
-#### Review loop termination
+### Review loop termination
 
 - No hard iteration limit - loops continue until reviewer approves
 - If loop exceeds 5 iterations, the controller should surface this to the human for guidance
@@ -134,7 +134,7 @@ Tasks and steps use checkbox syntax:
 
 ## Files to Change
 
-#### New files
+### New files
 
 - `skills/brainstorming/spec-document-reviewer-prompt.md`
 - `skills/writing-plans/plan-document-reviewer-prompt.md`

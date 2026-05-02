@@ -74,7 +74,7 @@ digraph brainstorming {
 
 ## The Process
 
-#### Understanding the idea
+### Understanding the idea
 
 - Check out the current project state first (files, docs, recent commits)
 
@@ -130,7 +130,7 @@ digraph brainstorming {
 
 ## After the Design
 
-#### Documentation
+### Documentation
 
 - Write the validated design (spec) to `docs/mega-skills/specs/YYYY-MM-DD-<topic>-design.md`
 

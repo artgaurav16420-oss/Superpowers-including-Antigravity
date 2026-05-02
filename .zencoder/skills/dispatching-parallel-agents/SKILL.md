@@ -32,7 +32,7 @@ digraph when_to_use {
 }
 ```
 
-#### Use when
+### Use when
 
 - 3+ test files failing with different root causes
 
@@ -149,7 +149,7 @@ Return: Summary of what you found and what you fixed.
 
 **Scenario:** 6 test failures across 3 files after major refactoring
 
-#### Failures
+### Failures
 
 - agent-tool-abort.test.ts: 3 failures (timing issues)
 

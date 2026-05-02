@@ -95,13 +95,13 @@ When a user requests file organization help:
    Review the target directory:
 
    ```bash
-   # Get overview of current structure
+## Get overview of current structure
    ls -la [target_directory]
-   # Check file types and sizes
+## Check file types and sizes
    find [target_directory] -type f -exec file {} \; | head -20
-   # Identify largest files
+## Identify largest files
    du -sh [target_directory]/* | sort -rh | head -20
-   # Count file types
+## Count file types
    find [target_directory] -type f | sed 's/.*\.//' | sort | uniq -c | sort -rn
    ```
 
@@ -146,11 +146,11 @@ When a user requests file organization help:
    When requested, search for duplicates:
 
    ```bash
-   # Find exact duplicates by hash
+## Find exact duplicates by hash
    find [directory] -type f -exec md5 {} \; | sort | uniq -d
-   # Find files with same name
+## Find files with same name
    find [directory] -type f -printf '%f\n' | sort | uniq -d
-   # Find similar-sized files
+## Find similar-sized files
    find [directory] -type f -printf '%s %p\n' | sort -n
    ```
 
@@ -166,15 +166,15 @@ When a user requests file organization help:
    Present a clear plan before making changes:
 
    ```markdown
-   # Organization Plan for [Directory]
-   ## Current State
+## Organization Plan for [Directory]
+## Current State
 
    - X files across Y folders
    - [Size] total
    - File types: [breakdown]
    - Issues: [list problems]
 
-   ## Proposed Structure
+## Proposed Structure
    ```
 
    [Directory]/
@@ -191,7 +191,7 @@ When a user requests file organization help:
        └── Archive/
 
    ```text
-   ## Changes I'll Make
+## Changes I'll Make
 
    1. **Create new folders**: [list]
    1. **Move files**:
@@ -201,7 +201,7 @@ When a user requests file organization help:
    1. **Rename files**: [any renaming patterns]
    1. **Delete**: [duplicates or trash files]
 
-   ## Files Needing Your Decision
+## Files Needing Your Decision
 
    - [List any files you're unsure about]
 
@@ -213,12 +213,12 @@ When a user requests file organization help:
    After approval, organize systematically:
 
    ```bash
-   # Create folder structure
+## Create folder structure
    mkdir -p "path/to/new/folders"
-   # Move files with clear logging
+## Move files with clear logging
    mv "old/path/file.pdf" "new/path/file.pdf"
-   # Rename files with consistent patterns
-   # Example: "YYYY-MM-DD - Description.ext"
+## Rename files with consistent patterns
+## Example: "YYYY-MM-DD - Description.ext"
    ```
 
    **Important Rules**:
@@ -234,17 +234,17 @@ When a user requests file organization help:
    After organizing:
 
    ```markdown
-   # Organization Complete! ✨
-   ## What Changed
+## Organization Complete! ✨
+## What Changed
 
    - Created [X] new folders
    - Organized [Y] files
    - Freed [Z] GB by removing duplicates
    - Archived [W] old files
 
-   ## New Structure
+## New Structure
    [Show the new folder tree]
-   ## Maintenance Tips
+## Maintenance Tips
    To keep this organized:
 
    1. **Weekly**: Sort new downloads
@@ -252,18 +252,18 @@ When a user requests file organization help:
    1. **Quarterly**: Check for new duplicates
    1. **Yearly**: Archive old files
 
-   ## Quick Commands for You
+## Quick Commands for You
    ```
 
-   # Find files modified this week
+## Find files modified this week
 
    find . -type f -mtime -7
 
-   # Sort downloads by type
+## Sort downloads by type
 
    [custom command for their setup]
 
-   # Find duplicates
+## Find duplicates
 
    [custom command]
 

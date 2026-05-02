@@ -8,7 +8,7 @@ Tests must verify real behavior, not mock behavior. Mocks are a means to isolate
 
 **Core principle:** Test what the code does, not what the mocks do.
 
-#### Following strict TDD prevents these anti-patterns
+### Following strict TDD prevents these anti-patterns
 
 ## The Iron Laws
 
@@ -20,7 +20,7 @@ Tests must verify real behavior, not mock behavior. Mocks are a means to isolate
 
 ## Anti-Pattern 1: Testing Mock Behavior
 
-#### The violation
+### The violation
 
 ```typescript
 // ❌ BAD: Testing that the mock exists
@@ -65,7 +65,7 @@ BEFORE asserting on any mock element:
 
 ## Anti-Pattern 2: Test-Only Methods in Production
 
-#### The violation
+### The violation
 
 ```typescript
 // ❌ BAD: destroy() only used in tests
@@ -123,7 +123,7 @@ BEFORE adding any method to production class:
 
 ## Anti-Pattern 3: Mocking Without Understanding
 
-#### The violation
+### The violation
 
 ```typescript
 // ❌ BAD: Mock breaks test logic
@@ -185,7 +185,7 @@ BEFORE mocking any method:
 
 ## Anti-Pattern 4: Incomplete Mocks
 
-#### The violation
+### The violation
 
 ```typescript
 // ❌ BAD: Partial mock - only fields you think you need
@@ -239,7 +239,7 @@ BEFORE creating mock responses:
 
 ## Anti-Pattern 5: Integration Tests as Afterthought
 
-#### The violation
+### The violation
 
 ```text
 ✅ Implementation complete
@@ -265,7 +265,7 @@ TDD cycle:
 
 ## When Mocks Become Too Complex
 
-#### Warning signs
+### Warning signs
 
 - Mock setup longer than test logic
 - Mocking everything to make test pass
@@ -278,7 +278,7 @@ TDD cycle:
 
 ## TDD Prevents These Anti-Patterns
 
-#### Why TDD helps
+### Why TDD helps
 
 1. **Write test first** → Forces you to think about what you're actually testing
 1. **Watch it fail** → Confirms test tests real behavior, not mocks
@@ -290,7 +290,7 @@ TDD cycle:
 ## Quick Reference
 
 | Anti-Pattern | Fix |
-|:---:---:---:-----|:-----|
+|:::---:::---:::---:::-----|:::-----|
 | Assert on mock elements | Test real component or unmock it |
 | Test-only methods in production | Move to test utilities |
 | Mock without understanding | Understand dependencies first, mock minimally |
@@ -309,7 +309,7 @@ TDD cycle:
 
 ## The Bottom Line
 
-#### Mocks are tools to isolate, not things to test
+### Mocks are tools to isolate, not things to test
 
 If TDD reveals you're testing mock behavior, you've gone wrong.
 

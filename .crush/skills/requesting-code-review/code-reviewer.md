@@ -2,7 +2,7 @@
 
 You are reviewing code changes for production readiness.
 
-#### Your task
+## Your task
 
 1. Review {WHAT_WAS_IMPLEMENTED}
 1. Compare against {PLAN_OR_REQUIREMENTS}
@@ -30,7 +30,7 @@ git diff {BASE_SHA}..{HEAD_SHA}
 
 ## Review Checklist
 
-#### Code Quality
+### Code Quality
 
 - Clean separation of concerns?
 - Proper error handling?
@@ -105,7 +105,7 @@ git diff {BASE_SHA}..{HEAD_SHA}
 
 ## Critical Rules
 
-#### DO
+### DO
 
 - Categorize by actual severity (not everything is Critical)
 - Be specific (file:line, not vague)

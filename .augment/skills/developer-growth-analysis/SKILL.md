@@ -120,31 +120,31 @@ When a user requests analysis of their developer growth or coding patterns from 
    Create a comprehensive report with this structure:
 
    ```markdown
-   # Your Developer Growth Report
+## Your Developer Growth Report
    **Report Period**: [Yesterday / Today / [Custom Date Range]]
    **Last Updated**: [Current Date and Time]
-   ## Work Summary
+## Work Summary
    [2-3 paragraphs summarizing what the user worked on, projects touched, technologies used, and overall focus areas]
    Example:
    "Over the past 24 hours, you focused primarily on backend development with three distinct projects. Your work involved TypeScript, React, and deployment infrastructure. You tackled a mix of feature implementation, debugging, and architectural decisions, with a particular focus on API design and database optimization."
-   ## Improvement Areas (Prioritized)
-   ### 1. [Area Name]
+## Improvement Areas (Prioritized)
+### 1. [Area Name]
    **Why This Matters**: [Explanation of why this skill is important for the user's work]
    **What I Observed**: [Specific evidence from chat history showing this gap]
    **Recommendation**: [Concrete step(s) to improve in this area]
    **Time to Skill Up**: [Brief estimate of effort required]
    ---
    [Repeat for 2-4 additional areas]
-   ## Strengths Observed
+## Strengths Observed
    [2-3 bullet points highlighting things you're doing well - things to continue doing]
-   ## Action Items
+## Action Items
    Priority order:
 
    1. [Action item derived from highest priority improvement area]
    1. [Action item from next area]
    1. [Action item from next area]
 
-   ## Learning Resources
+## Learning Resources
    [Will be populated in next step]
    ```
 
@@ -167,8 +167,8 @@ When a user requests analysis of their developer growth or coding patterns from 
    Add this section to the report:
 
    ```markdown
-   ## Curated Learning Resources
-   ### For: [Improvement Area]
+## Curated Learning Resources
+### For: [Improvement Area]
 
    1. **[Article Title]** - [Date]
 

@@ -7,7 +7,7 @@ description: Use when creating new skills, editing existing skills, or verifying
 
 ## Overview
 
-#### Writing skills IS Test-Driven Development applied to process documentation
+### Writing skills IS Test-Driven Development applied to process documentation
 
 #### Personal skills live in agent-specific directories (`~/.claude/skills` for Claude Code, `~/.agents/skills/` for Codex, `C:\Users\agaur\.gemini\antigravity\skills` for Antigravity)
 
@@ -30,7 +30,7 @@ A **skill** is a reference guide for proven techniques, patterns, or tools. Skil
 ## TDD Mapping for Skills
 
 | TDD Concept | Skill Creation |
-|:::::::::::::::::::---:::::::::::::::::::---:::::::::::::::::::---:::::::::::::::::::----|:::::::::::::::::::---:::::::::::::::::::---:::::::::::::::::::---:::::::::::::::::::---:::::::::::::::::::----|
+|:::::::::::::::::::::---:::::::::::::::::::::---:::::::::::::::::::::---:::::::::::::::::::::----|:::::::::::::::::::::---:::::::::::::::::::::---:::::::::::::::::::::---:::::::::::::::::::::---:::::::::::::::::::::----|
 | **Test case** | Pressure scenario with subagent |
 | **Production code** | Skill document (SKILL.md) |
 | **Test fails (RED)** | Agent violates rule without skill (baseline) |
@@ -46,7 +46,7 @@ The entire skill creation process follows RED-GREEN-REFACTOR.
 
 ## When to Create a Skill
 
-#### Create when
+### Create when
 
 - Technique wasn't intuitively obvious to you
 
@@ -91,7 +91,7 @@ skills/
 
 **Flat namespace** - all skills in one searchable namespace
 
-#### Separate files for
+### Separate files for
 
 1. **Heavy reference** (100+ lines) - API docs, comprehensive syntax
 
@@ -107,7 +107,7 @@ skills/
 
 ## SKILL.md Structure
 
-#### Frontmatter (YAML)
+### Frontmatter (YAML)
 
 - Two required fields: `name` and `description` (see [agentskills.io/specification](https://agentskills.io/specification) for all supported fields)
 
@@ -178,7 +178,7 @@ description: Use when executing implementation plans with independent tasks in t
 description: Use when implementing any feature or bugfix, before writing implementation code
 ```
 
-#### Content
+### Content
 
 - Use concrete triggers, symptoms, and situations that signal this skill applies
 
@@ -248,7 +248,7 @@ search-conversations supports --text, --both, --after DATE, --before DATE, --lim
 search-conversations supports multiple modes and filters. Run --help for details.
 ```
 
-#### Use cross-references
+### Use cross-references
 
 ```markdown
 ## ❌ BAD: Repeat workflow details
@@ -258,7 +258,7 @@ When searching, dispatch subagent with template...
 Always use subagents (50-100x context savings). REQUIRED: Use [other-skill-name] for workflow.
 ```
 
-#### Compress examples
+### Compress examples
 
 ```markdown
 ## ❌ BAD: Verbose example (42 words)
@@ -271,7 +271,7 @@ You: Searching...
 [Dispatch subagent → synthesis]
 ```
 
-#### Eliminate redundancy
+### Eliminate redundancy
 
 - Don't repeat what's in cross-referenced skills
 
@@ -287,7 +287,7 @@ wc -w skills/path/SKILL.md
 ## Other frequently-loaded: aim for <200 total
 ```
 
-#### Name by what you DO or core insight
+### Name by what you DO or core insight
 
 - ✅ `condition-based-waiting` > `async-test-helpers`
 
@@ -333,7 +333,7 @@ digraph when_flowchart {
 }
 ```
 
-#### Use flowcharts ONLY for
+### Use flowcharts ONLY for
 
 - Non-obvious decision points
 
@@ -362,7 +362,7 @@ See @graphviz-conventions.dot for graphviz style rules.
 
 ## Code Examples
 
-#### One excellent example beats many mediocre ones
+### One excellent example beats many mediocre ones
 
 Choose most relevant language:
 
@@ -438,7 +438,7 @@ This applies to NEW skills AND EDITS to existing skills.
 Write skill before testing? Delete it. Start over.
 Edit skill without testing? Same violation.
 
-#### No exceptions
+### No exceptions
 
 - Not for "simple additions"
 
@@ -519,7 +519,7 @@ Different skill types need different test approaches:
 ## Common Rationalizations for Skipping Testing
 
 | Excuse | Reality |
-|:::::::::::::::::::---:::::::::::::::::::-----|:::::::::::::::::::---:::::::::::::::::::---:::::::::::::::::::---|
+|:::::::::::::::::::::---:::::::::::::::::::::-----|:::::::::::::::::::::---:::::::::::::::::::::---:::::::::::::::::::::---|
 | "Skill is obviously clear" | Clear to you ≠ clear to other agents. Test it. |
 | "It's just a reference" | References can have gaps, unclear sections. Test retrieval. |
 | "Testing is overkill" | Untested skills have issues. Always. 15 min testing saves hours. |
@@ -529,7 +529,7 @@ Different skill types need different test approaches:
 | "Academic review is enough" | Reading ≠ using. Test application scenarios. |
 | "No time to test" | Deploying untested skill wastes more time fixing it later. |
 
-#### All of these mean: Test before deploying. No exceptions
+### All of these mean: Test before deploying. No exceptions
 
 ## Bulletproofing Skills Against Rationalization
 
@@ -578,7 +578,7 @@ Capture rationalizations from baseline testing (see Testing section below). Ever
 
 ```markdown
 | Excuse | Reality |
-|:::::::::::::::::::---:::::::::::::::::::-----|:::::::::::::::::::---:::::::::::::::::::---:::::::::::::::::::---|
+|:::::::::::::::::::::---:::::::::::::::::::::-----|:::::::::::::::::::::---:::::::::::::::::::::---:::::::::::::::::::::---|
 | "Too simple to test" | Simple code breaks. Test takes 30 seconds. |
 | "I'll test after" | Tests passing immediately prove nothing. |
 | "Tests after achieve same goals" | Tests-after = "what does this do?" Tests-first = "what should this do?" |
@@ -670,7 +670,7 @@ helper1, helper2, step3, pattern4
 
 ## STOP: Before Moving to Next Skill
 
-#### After writing ANY skill, you MUST STOP and complete the deployment process
+### After writing ANY skill, you MUST STOP and complete the deployment process
 
 #### Do NOT
 
@@ -686,7 +686,7 @@ Deploying untested skills = deploying untested code. It's a violation of quality
 
 ## Skill Creation Checklist (TDD Adapted)
 
-#### IMPORTANT: Use TodoWrite to create todos for EACH checklist item below
+### IMPORTANT: Use TodoWrite to create todos for EACH checklist item below
 
 #### RED Phase - Write Failing Test
 
@@ -766,7 +766,7 @@ How future Claude finds your skill:
 
 ## The Bottom Line
 
-#### Creating skills IS TDD for process documentation
+### Creating skills IS TDD for process documentation
 
 Same Iron Law: No skill without failing test first.
 Same cycle: RED (baseline) → GREEN (write skill) → REFACTOR (close loopholes).

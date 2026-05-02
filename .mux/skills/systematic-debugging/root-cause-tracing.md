@@ -23,7 +23,7 @@ digraph when_to_use {
 }
 ```
 
-#### Use when
+### Use when
 
 - Error happens deep in execution (not at entry point)
 - Stack trace shows long call chain
@@ -93,7 +93,7 @@ async function gitInit(directory: string) {
 
 **Critical:** Use `console.error()` in tests (not logger - may not show)
 
-#### Run and capture
+### Run and capture
 
 ```bash
 npm test 2>&1 | grep 'DEBUG git init'
@@ -121,7 +121,7 @@ Runs tests one-by-one, stops at first polluter. See script for usage.
 
 **Symptom:** `.git` created in `packages/core/` (source code)
 
-#### Trace chain
+### Trace chain
 
 1. `git init` runs in `process.cwd()` ← empty cwd parameter
 1. WorktreeManager called with empty projectDir

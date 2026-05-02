@@ -25,7 +25,7 @@ WHEN receiving code review feedback:
 
 ## Forbidden Responses
 
-#### NEVER
+### NEVER
 
 - "You're absolutely right!" (explicit CLAUDE.md violation)
 
@@ -52,7 +52,7 @@ IF any item is unclear:
 WHY: Items may be related. Partial understanding = wrong implementation.
 ```
 
-#### Example
+### Example
 
 ```text
 your human partner: "Fix 1-6"
@@ -132,7 +132,7 @@ Push back when:
 
 - Conflicts with your human partner's architectural decisions
 
-#### How to push back
+### How to push back
 
 - Use technical reasoning, not defensiveness
 
@@ -180,7 +180,7 @@ State the correction factually and move on.
 ## Common Mistakes
 
 | Mistake | Fix |
-|:::::::::::::::::::---:::::::::::::::::::---:::::::::::::::::::---|:::::::::::::::::::-----|
+|:::::::::::::::::::::---:::::::::::::::::::::---:::::::::::::::::::::---|:::::::::::::::::::::-----|
 | Performative agreement | State requirement or just act |
 | Blind implementation | Verify against codebase first |
 | Batch without testing | One at a time, test each |
@@ -191,7 +191,7 @@ State the correction factually and move on.
 
 ## Real Examples
 
-#### Performative Agreement (Bad)
+### Performative Agreement (Bad)
 
 ```text
 Reviewer: "Remove legacy code"
@@ -226,7 +226,7 @@ When replying to inline review comments on GitHub, reply in the comment thread (
 
 ## The Bottom Line
 
-#### External feedback = suggestions to evaluate, not orders to follow
+### External feedback = suggestions to evaluate, not orders to follow
 
 Verify. Question. Then implement.
 

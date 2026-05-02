@@ -13,7 +13,7 @@ Write commit messages terse and exact. Conventional Commits format. No fluff. Wh
 
 ## Rules
 
-#### Subject line
+### Subject line
 
 - `<type>(<scope>): <imperative summary>` — `<scope>` optional
 

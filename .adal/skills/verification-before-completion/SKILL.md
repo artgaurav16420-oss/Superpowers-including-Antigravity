@@ -11,7 +11,7 @@ Claiming work is complete without verification is dishonesty, not efficiency.
 
 **Core principle:** Evidence before claims, always.
 
-#### Violating the letter of this rule is violating the spirit of this rule
+### Violating the letter of this rule is violating the spirit of this rule
 
 ## The Iron Law
 
@@ -38,7 +38,7 @@ Skip any step = lying, not verifying
 ## Common Failures
 
 | Claim | Requires | Not Sufficient |
-|:::::::::::::::::::---:::::::::::::::::::----|:::::::::::::::::::---:::::::::::::::::::---:::::::::::::::::::----|:::::::::::::::::::---:::::::::::::::::::---:::::::::::::::::::---:::::::::::::::::::---:::::::::::::::::::----|
+|:::::::::::::::::::::---:::::::::::::::::::::----|:::::::::::::::::::::---:::::::::::::::::::::---:::::::::::::::::::::----|:::::::::::::::::::::---:::::::::::::::::::::---:::::::::::::::::::::---:::::::::::::::::::::---:::::::::::::::::::::----|
 | Tests pass | Test command output: 0 failures | Previous run, "should pass" |
 | Linter clean | Linter output: 0 errors | Partial check, extrapolation |
 | Build succeeds | Build command: exit 0 | Linter passing, logs look good |
@@ -68,7 +68,7 @@ Skip any step = lying, not verifying
 ## Rationalization Prevention
 
 | Excuse | Reality |
-|:::::::::::::::::::---:::::::::::::::::::-----|:::::::::::::::::::---:::::::::::::::::::---:::::::::::::::::::---|
+|:::::::::::::::::::::---:::::::::::::::::::::-----|:::::::::::::::::::::---:::::::::::::::::::::---:::::::::::::::::::::---|
 | "Should work now" | RUN the verification |
 | "I'm confident" | Confidence ≠ evidence |
 | "Just this once" | No exceptions |
@@ -80,7 +80,7 @@ Skip any step = lying, not verifying
 
 ## Key Patterns
 
-#### Tests
+### Tests
 
 ```text
 ✅ [Run test command] [See: 34/34 pass] "All tests pass"
@@ -131,7 +131,7 @@ From 24 failure memories:
 
 ## When To Apply
 
-#### ALWAYS before
+### ALWAYS before
 
 - ANY variation of success/completion claims
 
@@ -157,7 +157,7 @@ From 24 failure memories:
 
 ## The Bottom Line
 
-#### No shortcuts for verification
+### No shortcuts for verification
 
 Run the command. Read the output. THEN claim the result.
 

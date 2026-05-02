@@ -101,7 +101,7 @@ When you find a bug:
 
 Bug: Empty `projectDir` caused `git init` in source code
 
-#### Data flow
+### Data flow
 
 1. Test setup → empty string
 1. `Project.create(name, '')`

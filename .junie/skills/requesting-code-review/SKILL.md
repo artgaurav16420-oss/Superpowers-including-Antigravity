@@ -11,7 +11,7 @@ Dispatch code-reviewer subagent to catch issues before they cascade. The reviewe
 
 ## When to Request Review
 
-#### Mandatory
+### Mandatory
 
 - After each task in subagent-driven development
 
@@ -29,7 +29,7 @@ Dispatch code-reviewer subagent to catch issues before they cascade. The reviewe
 
 ## How to Request
 
-#### 1. Get git SHAs
+### 1. Get git SHAs
 
 ```bash
 BASE_SHA=$(git rev-parse HEAD~1)  # or origin/main
@@ -87,7 +87,7 @@ You: [Fix progress indicators]
 
 ## Integration with Workflows
 
-#### Subagent-Driven Development
+### Subagent-Driven Development
 
 - Review after EACH task
 
@@ -109,7 +109,7 @@ You: [Fix progress indicators]
 
 ## Red Flags
 
-#### Never
+### Never
 
 - Skip review because "it's simple"
 

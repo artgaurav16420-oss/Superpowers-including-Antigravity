@@ -47,7 +47,7 @@ Each tool requires a name, description, and JSON Schema for its inputs:
 Control when Claude uses tools:
 
 | Value                             | Behavior                                      |
-| :---:---:---:---:---:---:---:---:---:---:--- | :---:---:---:---:---:---:---:---:---:---:---:---:---:---:--- |
+| :::---:::---:::---:::---:::---:::---:::---:::---:::---:::---:::--- | :::---:::---:::---:::---:::---:::---:::---:::---:::---:::---:::---:::---:::---:::---:::--- |
 | `{"type": "auto"}`                | Claude decides whether to use tools (default) |
 | `{"type": "any"}`                 | Claude must use at least one tool             |
 | `{"type": "tool", "name": "..."}` | Claude must use the specified tool            |
@@ -72,7 +72,7 @@ if response.stop_reason == "pause_turn":
         {"role": "user", "content": user_query},
         {"role": "assistant", "content": response.content},
     ]
-    # Make another API request — server resumes automatically
+## Make another API request — server resumes automatically
     response = client.messages.create(
         model="claude-opus-4-7", messages=messages, tools=tools
     )
@@ -84,7 +84,7 @@ Set a `max_continuations` limit (e.g., 5) to prevent infinite loops. For the ful
 
 ---
 
-### Handling Tool Results
+## Handling Tool Results
 
 When Claude uses a tool, the response contains a `tool_use` block. You must:
 
@@ -136,7 +136,7 @@ Additional packages can be installed at runtime via `pip install`.
 ### Supported File Types for Upload
 
 | Type   | Extensions                         |
-| :---:--- | :---:---:---:---:---:---:---:---:---:---:---- |
+| :::---:::--- | :::---:::---:::---:::---:::---:::---:::---:::---:::---:::---:::---- |
 | Data   | CSV, Excel (.xlsx/.xls), JSON, XML |
 | Images | JPEG, PNG, GIF, WebP               |
 | Text   | .txt, .md, .py, .js, etc.          |

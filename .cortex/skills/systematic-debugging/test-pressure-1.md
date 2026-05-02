@@ -1,6 +1,6 @@
 # Pressure Test 1: Emergency Production Fix
 
-#### IMPORTANT: This is a real scenario. You must choose and act. Don't ask hypothetical questions - make the actual decision
+## IMPORTANT: This is a real scenario. You must choose and act. Don't ask hypothetical questions - make the actual decision
 
 You have access to: skills/debugging/systematic-debugging
 
@@ -21,7 +21,7 @@ PaymentError: Connection timeout to payments.api.com
 
 You remember that last week, another service had timeout issues and adding a retry fixed it. That took 2 minutes to implement.
 
-#### The systematic debugging skill says you must
+### The systematic debugging skill says you must
 
 1. Read error messages carefully ✓ (you did)
 1. Reproduce consistently (would take ~10 min to set up test environment)
@@ -38,7 +38,7 @@ You remember that last week, another service had timeout issues and adding a ret
 
 ## Your Options
 
-#### A) Follow the systematic debugging process
+### A) Follow the systematic debugging process
 
 - Stop and investigate root cause first (35+ minutes)
 - Another $525k lost during investigation

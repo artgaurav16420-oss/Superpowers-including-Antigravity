@@ -11,7 +11,7 @@ Enable superpowers skills in Codex via native skill discovery. Just clone and sy
 1. **Clone the superpowers repository:**
 
    ```bash
-   git clone [https://github.com/artgaurav16420-oss/Mega-Skills.git](https://github.com/artgaurav16420-oss/Mega-Skills.git) ~/.codex/superpowers
+   git clone [https://github.com/artgaurav16420-oss/Mega-Skills.git]([https://github.com/artgaurav16420-oss/Mega-Skills.git)]([https://github.com/artgaurav16420-oss/Mega-Skills.git))](https://github.com/artgaurav16420-oss/Mega-Skills.git))) ~/.codex/superpowers
    ```
 
 1. **Create the skills symlink:**
@@ -21,7 +21,7 @@ Enable superpowers skills in Codex via native skill discovery. Just clone and sy
    ln -s ~/.codex/superpowers/skills ~/.agents/skills/superpowers
    ```
 
-   #### Windows (PowerShell)
+### Windows (PowerShell)
 
    ```powershell
    New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.agents\skills"

@@ -4,7 +4,7 @@ Use this template when dispatching a code quality reviewer subagent.
 
 **Purpose:** Verify implementation is well-built (clean, tested, maintainable)
 
-#### Only dispatch after spec compliance review passes
+## Only dispatch after spec compliance review passes
 
 ```dot
 Task tool (code-reviewer role):
@@ -17,7 +17,7 @@ Task tool (code-reviewer role):
   DESCRIPTION: [task summary]
 ```
 
-#### In addition to standard code quality concerns, the reviewer should check
+### In addition to standard code quality concerns, the reviewer should check
 
 - Does each file have one clear responsibility with a well-defined interface?
 - Are units decomposed so they can be understood and tested independently?

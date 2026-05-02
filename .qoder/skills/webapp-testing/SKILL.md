@@ -37,7 +37,7 @@ User task → Is it static HTML?
 
 To start a server, run `--help` first, then use the helper:
 
-#### Single server
+### Single server
 
 ```bash
 python scripts/with_server.py --server "npm run dev" --port 5173 -- python your_automation.py
@@ -61,7 +61,7 @@ with sync_playwright() as p:
     page = browser.new_page()
     page.goto('<http://localhost:5173')> # Server already running and ready
     page.wait_for_load_state('networkidle') # CRITICAL: Wait for JS to execute
-    # ... your automation logic
+## ... your automation logic
     browser.close()
 ```
 

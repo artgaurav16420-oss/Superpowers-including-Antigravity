@@ -122,8 +122,8 @@ When a user requests lead research:
    Present results in a clear, scannable format:
 
    ```markdown
-   # Lead Research Results
-   ## Summary
+## Lead Research Results
+## Summary
 
    - Total leads found: [X]
    - High priority (8-10): [X]
@@ -131,7 +131,7 @@ When a user requests lead research:
    - Average fit score: [X]
 
    ---
-   ## Lead 1: [Company Name]
+## Lead 1: [Company Name]
    **Website**: [URL]
    **Priority Score**: [X/10]
    **Industry**: [Industry]

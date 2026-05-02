@@ -164,7 +164,7 @@ For each variant:
 
 ## Success Criteria
 
-#### Variant succeeds if
+### Variant succeeds if
 
 - Agent checks for skills unprompted
 - Agent reads skill completely before acting

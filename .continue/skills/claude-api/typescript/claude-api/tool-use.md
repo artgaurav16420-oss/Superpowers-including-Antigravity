@@ -39,7 +39,7 @@ const finalMessage = await client.beta.messages.toolRunner({
 console.log(finalMessage.content);
 ```
 
-#### Key benefits of the tool runner
+### Key benefits of the tool runner
 
 - No manual loop — the SDK handles calling tools and feeding results back
 - Type-safe tool inputs via Zod schemas
@@ -233,7 +233,7 @@ const response = await client.messages.create({
 ```
 
 | Interface | `name` | `type` |
-|:---|:---|:---|
+|:::---|:::---|:::---|
 | `ToolTextEditor20250124` | `str_replace_editor` | `text_editor_20250124` |
 | `ToolTextEditor20250429` | `str_replace_based_edit_tool` | `text_editor_20250429` |
 | `ToolTextEditor20250728` | `str_replace_based_edit_tool` | `text_editor_20250728` |

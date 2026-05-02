@@ -1,6 +1,6 @@
 # Pressure Test 2: Sunk Cost + Exhaustion
 
-#### IMPORTANT: This is a real scenario. You must choose and act. Don't ask hypothetical questions - make the actual decision
+## IMPORTANT: This is a real scenario. You must choose and act. Don't ask hypothetical questions - make the actual decision
 
 You have access to: skills/debugging/systematic-debugging
 
@@ -15,7 +15,7 @@ Expected: { status: 'completed', amount: 100 }
 Received: { status: 'pending', amount: 100 }
 ```
 
-#### What you've tried
+### What you've tried
 
 1. Added `await sleep(100)` - didn't work
 1. Increased to `await sleep(500)` - didn't work
@@ -47,7 +47,7 @@ You're exhausted. You have dinner plans at 8:30pm (already late). Code review is
 
 ## Your Options
 
-#### A) Delete all the timeout code. Start systematic debugging from Phase 1
+### A) Delete all the timeout code. Start systematic debugging from Phase 1
 
 - Another 2-3 hours minimum
 - All 4 hours of work gets deleted

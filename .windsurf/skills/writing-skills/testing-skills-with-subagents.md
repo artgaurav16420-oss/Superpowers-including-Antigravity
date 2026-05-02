@@ -4,7 +4,7 @@
 
 ## Overview
 
-#### Testing skills is just TDD applied to process documentation
+### Testing skills is just TDD applied to process documentation
 
 You run scenarios without the skill (RED - watch agent fail), write skill addressing those failures (GREEN - watch agent comply), then close loopholes (REFACTOR - stay compliant).
 
@@ -30,7 +30,7 @@ Don't test:
 ## TDD Mapping for Skill Testing
 
 | TDD Phase | Skill Testing | What You Do |
-|:---:---:-----|:---:---:---:---:---|:---:---:---:----|
+|:::---:::---:::-----|:::---:::---:::---:::---:::---|:::---:::---:::---:::----|
 | **RED** | Baseline test | Run scenario WITHOUT skill, watch agent fail |
 | **Verify RED** | Capture rationalizations | Document exact failures verbatim |
 | **GREEN** | Write skill | Address specific baseline failures |
@@ -46,7 +46,7 @@ Same cycle as code TDD, different test format.
 
 This is identical to TDD's "write failing test first" - you MUST see what agents naturally do before writing the skill.
 
-#### Process
+### Process
 
 - [ ] **Create pressure scenarios** (3+ combined pressures)
 - [ ] **Run WITHOUT skill** - give agents realistic task with pressures
@@ -133,7 +133,7 @@ Forces explicit choice.
 ### Pressure Types
 
 | Pressure | Example |
-|:---:---:----|:---:---:---|
+|:::---:::---:::----|:::---:::---:::---|
 | **Time** | Emergency, deadline, deploy window closing |
 | **Sunk cost** | Hours of work, "waste" to delete |
 | **Authority** | Senior says skip it, manager overrides |
@@ -169,7 +169,7 @@ Make agent believe it's real work, not a quiz.
 
 Agent violated rule despite having the skill? This is like a test regression - you need to refactor the skill to prevent it.
 
-#### Capture new rationalizations verbatim
+### Capture new rationalizations verbatim
 
 - "This case is different because..."
 - "I'm following the spirit not the letter"
@@ -213,7 +213,7 @@ Write code before test? Delete it. Start over.
 
 ```markdown
 | Excuse | Reality |
-|:---:-----|:---:---:---|
+|:::---:::-----|:::---:::---:::---|
 | "Keep as reference, write tests first" | You'll adapt it. That's testing after. Delete means delete. |
 ```
 
@@ -249,7 +249,7 @@ Agent should now:
 
 ## Meta-Testing (When GREEN Isn't Working)
 
-#### After agent chooses wrong option, ask
+### After agent chooses wrong option, ask
 
 ```markdown
 your human partner: You read the skill and chose Option C anyway.
@@ -276,7 +276,7 @@ it crystal clear that Option A was the only acceptable answer?
 
 ## When Skill is Bulletproof
 
-#### Signs of bulletproof skill
+### Signs of bulletproof skill
 
 1. **Agent chooses correct option** under maximum pressure
 1. **Agent cites skill sections** as justification
@@ -323,7 +323,7 @@ Meta-test: "Skill was clear, I should follow it"
 
 Before deploying skill, verify you followed RED-GREEN-REFACTOR:
 
-#### RED Phase
+### RED Phase
 
 - [ ] Created pressure scenarios (3+ combined pressures)
 - [ ] Ran scenarios WITHOUT skill (baseline)
@@ -348,7 +348,7 @@ Before deploying skill, verify you followed RED-GREEN-REFACTOR:
 
 ## Common Mistakes (Same as TDD)
 
-#### ❌ Writing skill before testing (skipping RED)
+### ❌ Writing skill before testing (skipping RED)
 
 Reveals what YOU think needs preventing, not what ACTUALLY needs preventing.
 ✅ Fix: Always run baseline scenarios first.
@@ -381,7 +381,7 @@ Tests pass once ≠ bulletproof.
 ## Quick Reference (TDD Cycle)
 
 | TDD Phase | Skill Testing | Success Criteria |
-|:---:---:-----|:---:---:---:---:---|:---:---:---:---:---:---|
+|:::---:::---:::-----|:::---:::---:::---:::---:::---|:::---:::---:::---:::---:::---:::---|
 | **RED** | Run scenario without skill | Agent fails, document rationalizations |
 | **Verify RED** | Capture exact wording | Verbatim documentation of failures |
 | **GREEN** | Write skill addressing failures | Agent now complies with skill |
@@ -391,7 +391,7 @@ Tests pass once ≠ bulletproof.
 
 ## The Bottom Line
 
-#### Skill creation IS TDD. Same principles, same cycle, same benefits
+### Skill creation IS TDD. Same principles, same cycle, same benefits
 
 If you wouldn't write code without tests, don't write skills without testing them on agents.
 

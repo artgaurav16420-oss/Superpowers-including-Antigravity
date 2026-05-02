@@ -14,17 +14,17 @@ Task tool (general-purpose):
 
     **Spec to review:** [SPEC_FILE_PATH]
 
-    ## What to Check
+## What to Check
 
     | Category | What to Look For |
-    |:---:---:----|:---:---:---:---:---:---|
+    |:::---:::---:::----|:::---:::---:::---:::---:::---:::---|
     | Completeness | TODOs, placeholders, "TBD", incomplete sections |
     | Consistency | Internal contradictions, conflicting requirements |
     | Clarity | Requirements ambiguous enough to cause someone to build the wrong thing |
     | Scope | Focused enough for a single plan — not covering multiple independent subsystems |
     | YAGNI | Unrequested features, over-engineering |
 
-    ## Calibration
+## Calibration
 
     **Only flag issues that would cause real problems during implementation planning.**
     A missing section, a contradiction, or a requirement so ambiguous it could be
@@ -33,9 +33,9 @@ Task tool (general-purpose):
 
     Approve unless there are serious gaps that would lead to a flawed plan.
 
-    ## Output Format
+## Output Format
 
-    ## Spec Review
+## Spec Review
 
     **Status:** Approved | Issues Found
 

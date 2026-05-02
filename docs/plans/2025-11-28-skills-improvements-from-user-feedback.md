@@ -12,7 +12,7 @@ Two Claude instances provided detailed feedback from actual development sessions
 
 **Critical insight:** These are problem reports, not just solution proposals. The problems are real; the solutions need careful evaluation.
 
-#### Key themes
+### Key themes
 
 1. **Verification gaps** - We verify operations succeed but not that they achieve intended outcomes
 1. **Process hygiene** - Background processes accumulate and interfere across subagents
@@ -222,7 +222,7 @@ Operation succeeds because *some* valid config exists, but it's not the config y
 ### Examples
 
 | Change | Insufficient | Required |
-|:---:-----|:---:---:---:----|:---:---:----|
+|:::---:::-----|:::---:::---:::---:::----|:::---:::---:::----|
 | Switch LLM provider | Status 200 | Response contains expected model name |
 | Enable feature flag | No errors | Feature behavior actually active |
 | Change environment | Deploy succeeds | Logs/vars reference new environment |
@@ -331,7 +331,7 @@ Read that task carefully from [plan-file].
 
 ## Context Approaches
 
-#### Full Plan (default)
+### Full Plan (default)
 
 Use when tasks are complex or have dependencies:
 
@@ -465,7 +465,7 @@ Explicit instruction prevents "file not found" issues.
 
 ## Anti-Pattern 6: Mocks Derived from Implementation
 
-#### The violation
+### The violation
 
 ```typescript
 // Code (BUGGY) calls cleanup()

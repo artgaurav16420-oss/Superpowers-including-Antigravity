@@ -112,45 +112,45 @@ When a user requests writing assistance:
    Help structure the content:
 
    ```markdown
-   # Article Outline: [Title]
-   ## Hook
+## Article Outline: [Title]
+## Hook
 
    - [Opening line/story/statistic]
    - [Why reader should care]
 
-   ## Introduction
+## Introduction
 
    - Context and background
    - Problem statement
    - What this article covers
 
-   ## Main Sections
-   ### Section 1: [Title]
+## Main Sections
+### Section 1: [Title]
 
    - Key point A
    - Key point B
    - Example/evidence
    - [Research needed: specific topic]
 
-   ### Section 2: [Title]
+### Section 2: [Title]
 
    - Key point C
    - Key point D
    - Data/citation needed
 
-   ### Section 3: [Title]
+### Section 3: [Title]
 
    - Key point E
    - Counter-arguments
    - Resolution
 
-   ## Conclusion
+## Conclusion
 
    - Summary of main points
    - Call to action
    - Final thought
 
-   ## Research To-Do
+## Research To-Do
 
    - [ ] Find data on [topic]
    - [ ] Get examples of [concept]
@@ -177,7 +177,7 @@ When a user requests writing assistance:
    Example output:
 
    ```markdown
-   ## Research: AI Impact on Productivity
+## Research: AI Impact on Productivity
    Key Findings:
 
    1. **Productivity Gains**: Studies show 40% time savings for
@@ -235,41 +235,41 @@ When a user requests writing assistance:
    As user writes each section, review for:
 
    ```markdown
-   # Feedback: [Section Name]
-   ## What Works Well ✓
+## Feedback: [Section Name]
+## What Works Well ✓
 
    - [Strength 1]
    - [Strength 2]
    - [Strength 3]
 
-   ## Suggestions for Improvement
-   ### Clarity
+## Suggestions for Improvement
+### Clarity
 
    - [Specific issue] → [Suggested fix]
    - [Complex sentence] → [Simpler alternative]
 
-   ### Flow
+### Flow
 
    - [Transition issue] → [Better connection]
    - [Paragraph order] → [Suggested reordering]
 
-   ### Evidence
+### Evidence
 
    - [Claim needing support] → [Add citation or example]
    - [Generic statement] → [Make more specific]
 
-   ### Style
+### Style
 
    - [Tone inconsistency] → [Match your voice better]
    - [Word choice] → [Stronger alternative]
 
-   ## Specific Line Edits
+## Specific Line Edits
    Original:
    > [Exact quote from draft]
    Suggested:
    > [Improved version]
    Why: [Explanation]
-   ## Questions to Consider
+## Questions to Consider
 
    - [Thought-provoking question 1]
    - [Thought-provoking question 2]
@@ -320,7 +320,7 @@ When a user requests writing assistance:
    Maintain a running citations list:
 
    ```markdown
-   ## References
+## References
 
    1. Author. (Year). "Title". Publication.
    1. Author. (Year). "Title". Publication.
@@ -333,8 +333,8 @@ When a user requests writing assistance:
    When draft is complete, provide comprehensive feedback:
 
    ```markdown
-   # Full Draft Review
-   ## Overall Assessment
+## Full Draft Review
+## Overall Assessment
    **Strengths**:
 
    - [Major strength 1]
@@ -342,38 +342,38 @@ When a user requests writing assistance:
    - [Major strength 3]
 
    **Impact**: [Overall effectiveness assessment]
-   ## Structure & Flow
+## Structure & Flow
 
    - [Comments on organization]
    - [Transition quality]
    - [Pacing assessment]
 
-   ## Content Quality
+## Content Quality
 
    - [Argument strength]
    - [Evidence sufficiency]
    - [Example effectiveness]
 
-   ## Technical Quality
+## Technical Quality
 
    - Grammar and mechanics: [assessment]
    - Consistency: [assessment]
    - Citations: [completeness check]
 
-   ## Readability
+## Readability
 
    - Clarity score: [evaluation]
    - Sentence variety: [evaluation]
    - Paragraph length: [evaluation]
 
-   ## Final Polish Suggestions
+## Final Polish Suggestions
 
    1. **Introduction**: [Specific improvements]
    1. **Body**: [Specific improvements]
    1. **Conclusion**: [Specific improvements]
    1. **Title**: [Options if needed]
 
-   ## Pre-Publish Checklist
+## Pre-Publish Checklist
 
    - [ ] All claims sourced
    - [ ] Citations formatted

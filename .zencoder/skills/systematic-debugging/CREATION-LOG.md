@@ -11,7 +11,7 @@ Extracted debugging framework from `/Users/jesse/.claude/CLAUDE.md`:
 
 ## Extraction Decisions
 
-#### What to include
+### What to include
 
 - Complete 4-phase framework with all rules
 - Anti-shortcuts ("NEVER fix symptom", "STOP and re-analyze")

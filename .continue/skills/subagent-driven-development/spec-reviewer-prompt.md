@@ -10,15 +10,15 @@ Task tool (general-purpose):
   prompt: |
     You are reviewing whether an implementation matches its specification.
 
-    ## What Was Requested
+## What Was Requested
 
     [FULL TEXT of task requirements]
 
-    ## What Implementer Claims They Built
+## What Implementer Claims They Built
 
     [From implementer's report]
 
-    ## CRITICAL: Do Not Trust the Report
+## CRITICAL: Do Not Trust the Report
 
     The implementer finished suspiciously quickly. Their report may be incomplete,
     inaccurate, or optimistic. You MUST verify everything independently.
@@ -34,7 +34,7 @@ Task tool (general-purpose):
     - Check for missing pieces they claimed to implement
     - Look for extra features they didn't mention
 
-    ## Your Job
+## Your Job
 
     Read the implementation code and verify:
 

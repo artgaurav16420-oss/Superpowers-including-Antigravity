@@ -134,7 +134,7 @@ c.line(100, height - 140, 400, height - 140)
 c.save()
 ```
 
-#### Create PDF with Multiple Pages
+### Create PDF with Multiple Pages
 
 ```python
 from reportlab.lib.pagesizes import letter
@@ -157,7 +157,7 @@ story.append(Paragraph("Content for page 2", styles['Normal']))
 doc.build(story)
 ```
 
-#### Subscripts and Superscripts
+### Subscripts and Superscripts
 
 **IMPORTANT**: Never use Unicode subscript/superscript characters (₀₁₂₃₄₅₆₇₈₉, ⁰¹²³⁴⁵⁶⁷⁸⁹) in ReportLab PDFs. The built-in fonts do not include these glyphs, causing them to render as solid black boxes.
 
@@ -273,7 +273,7 @@ with open("encrypted.pdf", "wb") as output:
 ## Quick Reference
 
 | Task | Best Tool | Command/Code |
-|:::::::::::::::::::---:::::::::::::::::::---|:::::::::::::::::::---:::::::::::::::::::---:::::::::::::::::::-----|:::::::::::::::::::---:::::::::::::::::::---:::::::::::::::::::---:::::::::::::::::::-----|
+|:::::::::::::::::::::---:::::::::::::::::::::---|:::::::::::::::::::::---:::::::::::::::::::::---:::::::::::::::::::::-----|:::::::::::::::::::::---:::::::::::::::::::::---:::::::::::::::::::::---:::::::::::::::::::::-----|
 | Merge PDFs | pypdf | `writer.add_page(page)` |
 
 | Split PDFs | pypdf | One page per file |

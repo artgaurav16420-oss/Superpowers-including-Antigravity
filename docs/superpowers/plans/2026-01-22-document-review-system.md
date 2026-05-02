@@ -42,34 +42,34 @@ Task tool (general-purpose):
 
     **Spec to review:** [SPEC_FILE_PATH]
 
-    ## What to Check
+## What to Check
 
     | Category | What to Look For |
-    |:---:---:----|:---:---:---:---:---:---|
+    |:::---:::---:::----|:::---:::---:::---:::---:::---:::---|
     | Completeness | TODOs, placeholders, "TBD", incomplete sections |
     | Coverage | Missing error handling, edge cases, integration points |
     | Consistency | Internal contradictions, conflicting requirements |
     | Clarity | Ambiguous requirements |
     | YAGNI | Unrequested features, over-engineering |
 
-    ## CRITICAL
+## CRITICAL
 
     Look especially hard for:
     - Any TODO markers or placeholder text
     - Sections saying "to be defined later" or "will spec when X is done"
     - Sections noticeably less detailed than others
 
-    ## Output Format
+## Output Format
 
-    ## Spec Review
+## Spec Review
 
     **Status:** ✅ Approved | ❌ Issues Found
 
-    #### Issues (if any)
+### Issues (if any)
 
     - [Section X]: [specific issue] - [why it matters]
 
-    #### Recommendations (advisory)
+#### Recommendations (advisory)
 
     - [suggestions that don't block approval]
 
@@ -167,17 +167,17 @@ Task tool (general-purpose):
     **Plan chunk to review:** [PLAN_FILE_PATH] - Chunk N only
     **Spec for reference:** [SPEC_FILE_PATH]
 
-    ## What to Check
+## What to Check
 
     | Category | What to Look For |
-    |:---:---:----|:---:---:---:---:---:---|
+    |:::---:::---:::----|:::---:::---:::---:::---:::---:::---|
     | Completeness | TODOs, placeholders, incomplete tasks, missing steps |
     | Spec Alignment | Chunk covers relevant spec requirements, no scope creep |
     | Task Decomposition | Tasks atomic, clear boundaries, steps actionable |
     | Task Syntax | Checkbox syntax (`- [ ]`) on tasks and steps |
     | Chunk Size | Each chunk under 1000 lines |
 
-    ## CRITICAL
+## CRITICAL
 
     Look especially hard for:
     - Any TODO markers or placeholder text
@@ -185,17 +185,17 @@ Task tool (general-purpose):
     - Incomplete task definitions
     - Missing verification steps or expected outputs
 
-    ## Output Format
+## Output Format
 
-    ## Plan Review - Chunk N
+## Plan Review - Chunk N
 
     **Status:** ✅ Approved | ❌ Issues Found
 
-    #### Issues (if any)
+### Issues (if any)
 
     - [Task X, Step Y]: [specific issue] - [why it matters]
 
-    #### Recommendations (advisory)
+#### Recommendations (advisory)
 
     - [suggestions that don't block approval]
 

@@ -280,7 +280,7 @@ The HTML artifact contains everything: p5.js (from CDN), the algorithm, paramete
 
 ## INTERACTIVE ARTIFACT CREATION
 
-#### REMINDER: `templates/viewer.html` should have already been read (see STEP 0). Use that file as the starting point
+### REMINDER: `templates/viewer.html` should have already been read (see STEP 0). Use that file as the starting point
 
 To allow exploration of the generative art, create a single, self-contained HTML artifact. Ensure this artifact works immediately in claude.ai or any browser - no setup required. Embed everything inline.
 

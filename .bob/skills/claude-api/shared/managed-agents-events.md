@@ -7,7 +7,7 @@
 Send events to a session via `POST /v1/sessions/{id}/events`.
 
 | Event Type                | When to Send                                        |
-| :---:---:---:---:---:---:---:---- | :---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:---:--- |
+| :::---:::---:::---:::---:::---:::---:::---:::---- | :::---:::---:::---:::---:::---:::---:::---:::---:::---:::---:::---:::---:::---:::---:::---:::---:::--- |
 | `user.message`            | Send a user message |
 | `user.interrupt`          | Interrupt the agent while it's running |
 | `user.tool_confirmation`  | Approve/deny a tool call (when `always_ask` policy) |
@@ -31,7 +31,7 @@ All received events carry `id`, `type`, and `processed_at` (ISO 8601; `null` if 
 Event types use dot notation, grouped by namespace:
 
 | Event Type | Description |
-| :--- | :--- |
+| :::--- | :::--- |
 | `agent.message` | Agent text output |
 | `agent.thinking` | Extended thinking blocks |
 | `agent.tool_use` | Agent used a built-in tool (`agent_toolset_20260401`) |
@@ -82,15 +82,15 @@ const response = await streamEvents(sessionId);
 
 ```python
 def connect_with_consolidation(client, session_id):
-    # 1. Open the SSE stream first
+## 1. Open the SSE stream first
     stream = client.beta.sessions.events.stream(session_id=session_id)
 
-    # 2. Fetch history to cover any gap
+## 2. Fetch history to cover any gap
     history = client.beta.sessions.events.list(
         session_id=session_id,
     )
 
-    # 3. Yield history first, then stream — dedupe by event.id
+## 3. Yield history first, then stream — dedupe by event.id
     seen = set()
     for ev in history.data:
         seen.add(ev.id)
@@ -101,7 +101,7 @@ def connect_with_consolidation(client, session_id):
             yield ev
 ```
 
-### Message queuing
+## Message queuing
 
 **You don't have to wait for a response before sending the next message.** User events are queued server-side and processed in order. This is useful for chat bridges where the user sends rapid follow-ups:
 

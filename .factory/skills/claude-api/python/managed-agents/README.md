@@ -94,7 +94,7 @@ session = client.beta.sessions.create(
     resources=[
         {
             "type": "github_repository",
-            "url": "[https://github.com/owner/repo",](https://github.com/owner/repo",)
+            "url": "[https://github.com/owner/repo",]([https://github.com/owner/repo",)]([https://github.com/owner/repo",))](https://github.com/owner/repo",)))
             "mount_path": "/workspace/repo",
             "authorization_token": os.environ["GITHUB_TOKEN"],
             "branch": "main",
@@ -149,10 +149,10 @@ with client.beta.sessions.stream(
                 if block.type == "text":
                     print(block.text, end="", flush=True)
         elif event.type == "agent.custom_tool_use":
-            # Custom tool invocation — session is now idle
+## Custom tool invocation — session is now idle
             print(f"\nCustom tool call: {event.tool_name}")
             print(f"Input: {json.dumps(event.input)}")
-            # Send result back (see below)
+## Send result back (see below)
         elif event.type == "session.status_idle":
             print("\n--- Agent idle ---")
         elif event.type == "session.status_terminated":
@@ -201,7 +201,7 @@ import json
 def run_custom_tool(tool_name: str, tool_input: dict) -> str:
     """Execute a custom tool and return the result."""
     if tool_name == "run_tests":
-        # Your tool implementation here
+## Your tool implementation here
         return "All tests passed."
     return f"Unknown tool: {tool_name}"
 
@@ -227,7 +227,7 @@ def run_session(client, session_id: str):
         if not tool_calls:
             break
 
-        # Process custom tool calls
+## Process custom tool calls
         results = []
         for call in tool_calls:
             result = run_custom_tool(call.tool_name, call.input)
@@ -275,7 +275,7 @@ files = client.beta.files.list(
 )
 for f in files.data:
     print(f.filename, f.size_bytes)
-    # Download each file and save to disk
+## Download each file and save to disk
     file_content = client.beta.files.download(f.id)
     file_content.write_to_file(f.filename)
 ```
@@ -311,7 +311,7 @@ agent = client.beta.agents.create(
     name="MCP Agent",
     model="claude-opus-4-7",
     mcp_servers=[
-        {"type": "url", "name": "my-tools", "url": "[https://my-mcp-server.example.com/sse"},](https://my-mcp-server.example.com/sse"},)
+        {"type": "url", "name": "my-tools", "url": "[https://my-mcp-server.example.com/sse"},]([https://my-mcp-server.example.com/sse"},)]([https://my-mcp-server.example.com/sse"},))](https://my-mcp-server.example.com/sse"},)))
     ],
     tools=[
         {"type": "agent_toolset_20260401", "default_config": {"enabled": True}},

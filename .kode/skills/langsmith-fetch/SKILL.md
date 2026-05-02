@@ -158,7 +158,7 @@ langsmith-fetch traces "$SESSION_DIR/traces" --last-n-minutes 30 --limit 50 --in
 langsmith-fetch threads "$SESSION_DIR/threads" --limit 20
 ```
 
-#### Report
+### Report
 
 ```text
 ✅ Session exported successfully!
@@ -188,7 +188,7 @@ langsmith-fetch traces --last-n-minutes 30 --limit 50 --format json > recent-tra
 grep -i "error\|failed\|exception" recent-traces.json
 ```
 
-#### Analyze and report
+### Analyze and report
 
 1. 📊 Total errors found
 

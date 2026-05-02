@@ -29,7 +29,7 @@ mcp = FastMCP("service_mcp")
 ```python
 @mcp.tool(name="tool_name", annotations={...})
 async def tool_function(params: InputModel) -> str:
-    # Implementation
+## Implementation
     pass
 ```
 
@@ -42,7 +42,7 @@ The official MCP Python SDK provides FastMCP, a high-level framework for buildin
 - Pydantic model integration for input validation
 - Decorator-based tool registration with `@mcp.tool`
 
-#### For complete SDK documentation, use WebFetch to load
+### For complete SDK documentation, use WebFetch to load
 
 `https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/main/README.md`
 
@@ -118,7 +118,7 @@ async def service_tool_name(params: ServiceToolInput) -> str:
     Returns:
         str: JSON-formatted response containing operation results
     '''
-    # Implementation here
+## Implementation here
     pass
 ```
 
@@ -193,10 +193,10 @@ class ListInput(BaseModel):
     offset: Optional[int] = Field(default=0, description="Number of results to skip for pagination", ge=0)
 
 async def list_items(params: ListInput) -> str:
-    # Make API request with pagination
+## Make API request with pagination
     data = await api_request(limit=params.limit, offset=params.offset)
 
-    # Return pagination info
+## Return pagination info
     response = {
         "total": data["total"],
         "count": len(data["items"]),
@@ -219,9 +219,9 @@ CHARACTER_LIMIT = 25000  # Maximum response size in characters
 async def search_tool(params: SearchInput) -> str:
     result = generate_response(data)
 
-    # Check character limit and truncate if needed
+## Check character limit and truncate if needed
     if len(result) > CHARACTER_LIMIT:
-        # Truncate data and add notice
+## Truncate data and add notice
         truncated_data = data[:max(1, len(data) // 2)]
         response["data"] = truncated_data
         response["truncated"] = True
@@ -380,7 +380,7 @@ from mcp.server.fastmcp import FastMCP
 mcp = FastMCP("example_mcp")
 
 ## Constants
-API_BASE_URL = "[https://api.example.com/v1"](https://api.example.com/v1")
+API_BASE_URL = "[https://api.example.com/v1"]([https://api.example.com/v1")]([https://api.example.com/v1"))](https://api.example.com/v1")))
 CHARACTER_LIMIT = 25000  # Maximum response size in characters
 
 ## Enums
@@ -453,7 +453,7 @@ async def example_search_users(params: UserSearchInput) -> str:
     [Full docstring as shown above]
     '''
     try:
-        # Make API request using validated parameters
+## Make API request using validated parameters
         data = await _make_api_request(
             "users/search",
             params={
@@ -469,7 +469,7 @@ async def example_search_users(params: UserSearchInput) -> str:
         if not users:
             return f"No users found matching '{params.query}'"
 
-        # Format response based on requested format
+## Format response based on requested format
         if params.response_format == ResponseFormat.MARKDOWN:
             lines = [f"# User Search Results: '{params.query}'", ""]
             lines.append(f"Found {total} users (showing {len(users)})")
@@ -485,7 +485,7 @@ async def example_search_users(params: UserSearchInput) -> str:
             return "\n".join(lines)
 
         else:
-            # Machine-readable JSON format
+## Machine-readable JSON format
             import json
             response = {
                 "total": total,
@@ -519,17 +519,17 @@ mcp = FastMCP("example_mcp")
 async def advanced_search(query: str, ctx: Context) -> str:
     '''Advanced tool with context access for logging and progress.'''
 
-    # Report progress for long operations
+## Report progress for long operations
     await ctx.report_progress(0.25, "Starting search...")
 
-    # Log information for debugging
+## Log information for debugging
     await ctx.log_info("Processing query", {"query": query, "timestamp": datetime.now()})
 
-    # Perform search
+## Perform search
     results = await search_api(query)
     await ctx.report_progress(0.75, "Formatting results...")
 
-    # Access server configuration
+## Access server configuration
     server_name = ctx.fastmcp.name
 
     return format_results(results)
@@ -538,17 +538,17 @@ async def advanced_search(query: str, ctx: Context) -> str:
 async def interactive_tool(resource_id: str, ctx: Context) -> str:
     '''Tool that can request additional input from users.'''
 
-    # Request sensitive information when needed
+## Request sensitive information when needed
     api_key = await ctx.elicit(
         prompt="Please provide your API key:",
         input_type="password"
     )
 
-    # Use the provided key
+## Use the provided key
     return await api_call(resource_id, api_key)
 ```
 
-#### Context capabilities
+## Context capabilities
 
 - `ctx.report_progress(progress, message)` - Report progress for long operations
 - `ctx.log_info(message, data)` / `ctx.log_error()` / `ctx.log_debug()` - Logging
@@ -629,14 +629,14 @@ from contextlib import asynccontextmanager
 @asynccontextmanager
 async def app_lifespan():
     '''Manage resources that live for the server's lifetime.'''
-    # Initialize connections, load config, etc
+## Initialize connections, load config, etc
     db = await connect_to_database()
     config = load_configuration()
 
-    # Make available to all tools
+## Make available to all tools
     yield {"db": db, "config": config}
 
-    # Cleanup on shutdown
+## Cleanup on shutdown
     await db.close()
 
 mcp = FastMCP("example_mcp", lifespan=app_lifespan)
@@ -649,7 +649,7 @@ async def query_data(query: str, ctx: Context) -> str:
     return format_results(results)
 ```
 
-### Multiple Transport Options
+## Multiple Transport Options
 
 FastMCP supports different transport mechanisms:
 
@@ -667,7 +667,7 @@ if __name__ == "__main__":
     mcp.run(transport="sse", port=8000)
 ```
 
-#### Transport selection
+### Transport selection
 
 - **Stdio**: Command-line tools, subprocess integration
 - **HTTP**: Web services, remote access, multiple clients

@@ -36,7 +36,7 @@ The server watches a directory for HTML files and serves the newest one to the b
 ## Start server with persistence (mockups saved to project)
 scripts/start-server.sh --project-dir /path/to/project
 
-## Returns: {"type":"server-started","port":52341,"url":"[http://localhost:52341",](http://localhost:52341",)
+## Returns: {"type":"server-started","port":52341,"url":"[http://localhost:52341",]([http://localhost:52341",)]([http://localhost:52341",))](http://localhost:52341",)))
 ##           "screen_dir":"/path/to/project/.mega-skills/brainstorm/12345-1706000000/content",
 ##           "state_dir":"/path/to/project/.mega-skills/brainstorm/12345-1706000000/state"}
 ```
@@ -47,7 +47,7 @@ Save `screen_dir` and `state_dir` from the response. Tell user to open the URL.
 
 **Note:** Pass the project root as `--project-dir` so mockups persist in `.mega-skills/brainstorm/` and survive server restarts. Without it, files go to `/tmp` and get cleaned up. Remind the user to add `.mega-skills/` to `.gitignore` if it's not already there.
 
-#### Launching the server by platform
+### Launching the server by platform
 
 #### Claude Code (macOS / Linux)
 
@@ -56,7 +56,7 @@ Save `screen_dir` and `state_dir` from the response. Tell user to open the URL.
 scripts/start-server.sh --project-dir /path/to/project
 ```
 
-#### Claude Code (Windows)
+### Claude Code (Windows)
 
 ```bash
 ## Windows auto-detects and uses foreground mode, which blocks the tool call
@@ -67,7 +67,7 @@ scripts/start-server.sh --project-dir /path/to/project
 
 When calling this via the Bash tool, set `run_in_background: true`. Then read `$STATE_DIR/server-info` on the next turn to get the URL and port.
 
-#### Codex
+### Codex
 
 ```bash
 ## Codex reaps background processes. The script auto-detects CODEX_CI and
@@ -75,7 +75,7 @@ When calling this via the Bash tool, set `run_in_background: true`. Then read `$
 scripts/start-server.sh --project-dir /path/to/project
 ```
 
-#### Gemini CLI
+### Gemini CLI
 
 ```bash
 ## Use --foreground and set is_background: true on your shell tool call
@@ -134,7 +134,7 @@ Use `--url-host` to control what hostname is printed in the returned URL JSON.
 
 Write just the content that goes inside the page. The server wraps it in the frame template automatically (header, theme CSS, selection indicator, and all interactive infrastructure).
 
-#### Minimal example
+### Minimal example
 
 ```html
 <h2>Which layout works better?</h2>

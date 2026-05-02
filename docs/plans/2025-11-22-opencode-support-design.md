@@ -96,7 +96,7 @@ ${content}`;
 }
 ```
 
-#### Tool 2: `find_skills`
+### Tool 2: `find_skills`
 
 Lists all available skills with metadata.
 

@@ -12,7 +12,7 @@ A toolkit for creating animated GIFs optimized for Slack. Provides validators fo
 
 Slack has specific requirements for GIFs based on their use:
 
-#### Message GIFs
+### Message GIFs
 
 - Max size: ~2MB
 
@@ -58,7 +58,7 @@ This skill provides three types of tools:
 
 1. **Helper Utilities** - Optional functions for common needs (text, colors, effects)
 
-#### Complete creative freedom is available in how these tools are applied
+### Complete creative freedom is available in how these tools are applied
 
 ## Core Validators
 
@@ -68,7 +68,7 @@ To ensure a GIF meets Slack's constraints, use these validators:
 from core.gif_builder import GIFBuilder
 ## After creating your GIF, check if it meets requirements
 builder = GIFBuilder(width=128, height=128, fps=10)
-## ... add your frames however you want 
+## ... add your frames however you want
 ## Save and check size
 info = builder.save('emoji.gif', num_colors=48, optimize_for_emoji=True)
 ## The save method automatically warns if file exceeds limits
@@ -330,10 +330,10 @@ from core.easing import interpolate, calculate_arc_motion
 for i in range(num_frames):
     t = i / (num_frames - 1)
     x = interpolate(start_x, end_x, t, easing='ease_out')
-    # Or: x, y = calculate_arc_motion(start, end, height, t)
+## Or: x, y = calculate_arc_motion(start, end, height, t)
 ```
 
-### Kaleidoscope Effect
+## Kaleidoscope Effect
 
 ```python
 from templates.kaleidoscope import apply_kaleidoscope, create_kaleidoscope_animation
@@ -352,16 +352,16 @@ mirrored = apply_simple_mirror(frame, mode='quad')  # 4-way mirror
 ## modes: 'horizontal', 'vertical', 'quad', 'radial'
 ```
 
-#### To compose primitives freely, follow these patterns
+### To compose primitives freely, follow these patterns
 
 ```python
 ## Example: Bounce + shake for impact
 for i in range(num_frames):
     frame = create_blank_frame(480, 480, bg_color)
-    # Bounce motion
+## Bounce motion
     t_bounce = i / (num_frames - 1)
     y = interpolate(start_y, ground_y, t_bounce, 'bounce_out')
-    # Add shake on impact (when y reaches ground)
+## Add shake on impact (when y reaches ground)
     if y >= ground_y - 5:
         shake_x = math.sin(i * 2) * 10
         x = center_x + shake_x
@@ -493,7 +493,7 @@ draw_emoji_enhanced(frame, '🎉', position=(200, 200), size=80, shadow=True)
 
 When your GIF is too large:
 
-#### For Message GIFs (>2MB)
+### For Message GIFs (>2MB)
 
 1. Reduce frames (lower FPS or shorter duration)
 
@@ -523,7 +523,7 @@ When your GIF is too large:
 builder = GIFBuilder(128, 128, 10)
 for i in range(12):
     frame = Image.new('RGB', (128, 128), (240, 248, 255))
-    # Pulsing scale
+## Pulsing scale
     scale = 1.0 + math.sin(i * 0.5) * 0.15
     size = int(60 * scale)
     draw_emoji_enhanced(frame, '😱', position=(64-size//2, 64-size//2),
@@ -549,11 +549,11 @@ for i in range(15):
 ## Phase 2: Impact + flash
 for i in range(8):
     frame = create_gradient_background(480, 480, (240, 248, 255), (200, 230, 255))
-    # Flash on first frames
+## Flash on first frames
     if i < 3:
         frame = create_impact_flash(frame, (240, 350), radius=120, intensity=0.6)
     draw_emoji_enhanced(frame, '⚽', position=(220, 350), size=80)
-    # Text appears
+## Text appears
     if i > 2:
         draw_text_with_outline(frame, "GOAL!", position=(240, 150),
                               font_size=60, text_color=(255, 68, 68),
@@ -562,7 +562,7 @@ for i in range(8):
 builder.save('goal.gif', num_colors=128)
 ```
 
-### Combining Primitives (Move + Shake)
+## Combining Primitives (Move + Shake)
 
 ```python
 from templates.shake import create_shake_animation
@@ -578,15 +578,15 @@ builder = GIFBuilder(480, 480, 20)
 for i in range(40):
     t = i / 39
     if i < 20:
-        # Before trigger - use blank frame with moving object
+## Before trigger - use blank frame with moving object
         frame = create_blank_frame(480, 480, (255, 255, 255))
         x = interpolate(50, 300, t * 2, 'linear')
         draw_emoji_enhanced(frame, '🚗', position=(int(x), 300), size=60)
         draw_emoji_enhanced(frame, '😰', position=(350, 200), size=70)
     else:
-        # After trigger - use shake frame
+## After trigger - use shake frame
         frame = shake_frames[i - 20]
-        # Add the car in final position
+## Add the car in final position
         draw_emoji_enhanced(frame, '🚗', position=(300, 300), size=60)
     builder.add_frame(frame)
 builder.save('scare.gif')
@@ -606,7 +606,7 @@ This toolkit provides building blocks, not rigid recipes. To work with a GIF req
 
 1. **Iterate if needed** - Reduce frames/colors if over size limits
 
-#### The goal is creative freedom within Slack's technical constraints
+### The goal is creative freedom within Slack's technical constraints
 
 ## Dependencies
 

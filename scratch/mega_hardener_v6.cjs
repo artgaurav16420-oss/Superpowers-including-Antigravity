@@ -167,6 +167,30 @@ function fixMarkdown(filePath) {
         return line;
     }).join('\n');
 
+    // MD001: Heading increment remediation
+    let lastLevel = 0;
+    result = result.split('\n').map(line => {
+        // De-indent headings (MD026/MD001 benefit)
+        let processedLine = line;
+        if (line.trim().startsWith('#')) {
+            processedLine = line.trim();
+        }
+        
+        const headingMatch = processedLine.match(/^(#+)\s/);
+        if (headingMatch) {
+            let level = headingMatch[1].length;
+            if (level > lastLevel + 1 && lastLevel !== 0) {
+                level = lastLevel + 1;
+                const newHeading = '#'.repeat(level) + processedLine.substring(headingMatch[1].length);
+                lastLevel = level;
+                return newHeading;
+            }
+            lastLevel = level;
+            return processedLine;
+        }
+        return line;
+    }).join('\n');
+
     // MD025: Multiple H1s
     let h1Found = false;
     result = result.split('\n').map(line => {

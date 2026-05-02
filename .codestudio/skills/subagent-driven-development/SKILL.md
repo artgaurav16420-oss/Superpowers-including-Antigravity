@@ -30,7 +30,7 @@ digraph when_to_use {
 }
 ```
 
-#### vs. Executing Plans (parallel session)
+### vs. Executing Plans (parallel session)
 
 - Same session (no context switch)
 
@@ -94,7 +94,7 @@ Use the least powerful model that can handle each role to conserve cost and incr
 
 **Architecture, design, and review tasks**: use the most capable available model.
 
-#### Task complexity signals
+### Task complexity signals
 
 - Touches 1-2 files with a complete spec → cheap model
 
@@ -188,7 +188,7 @@ Done!
 
 ## Advantages
 
-#### vs. Manual execution
+### vs. Manual execution
 
 - Subagents follow TDD naturally
 
@@ -240,7 +240,7 @@ Done!
 
 ## Red Flags
 
-#### Never
+### Never
 
 - Start implementation on main/master branch without explicit user consent
 
@@ -292,7 +292,7 @@ Done!
 
 ## Integration
 
-#### Required workflow skills
+### Required workflow skills
 
 - **mega-skills:using-git-worktrees** - REQUIRED: Set up isolated workspace before starting
 

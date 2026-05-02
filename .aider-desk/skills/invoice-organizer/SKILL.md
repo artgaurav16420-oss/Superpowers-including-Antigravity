@@ -96,7 +96,7 @@ When a user requests invoice organization:
    Identify all invoice files:
 
    ```bash
-   # Find all invoice-related files
+## Find all invoice-related files
    find . -type f \( -name "*.pdf" -o -name "*.jpg" -o -name "*.png" \) -print
    ```
 
@@ -180,8 +180,8 @@ When a user requests invoice organization:
    Before moving files, show the plan:
 
    ```markdown
-   # Organization Plan
-   ## Proposed Structure
+## Organization Plan
+## Proposed Structure
    ```
 
    Invoices/
@@ -197,7 +197,7 @@ When a user requests invoice organization:
        └── Office/
 
    ```text
-   ## Sample Changes
+## Sample Changes
    Before: `invoice_adobe_march.pdf`
    After: `2024-03-15 Adobe - Invoice - Creative Cloud.pdf`
    Location: `Invoices/2024/Software/Adobe/`
@@ -210,11 +210,11 @@ When a user requests invoice organization:
    After approval:
 
    ```bash
-   # Create folder structure
+## Create folder structure
    mkdir -p "Invoices/2024/Software/Adobe"
-   # Copy (don't move) to preserve originals
+## Copy (don't move) to preserve originals
    cp "original.pdf" "Invoices/2024/Software/Adobe/2024-03-15 Adobe - Invoice - Creative Cloud.pdf"
-   # Or move if user prefers
+## Or move if user prefers
    mv "original.pdf" "new/path/standardized-name.pdf"
    ```
 
@@ -239,15 +239,15 @@ When a user requests invoice organization:
 1. **Provide Completion Summary**
 
    ```markdown
-   # Organization Complete! 📊
-   ## Summary
+## Organization Complete! 📊
+## Summary
 
    - **Processed**: [X] invoices
    - **Date range**: [earliest] to [latest]
    - **Total amount**: $[sum] (if amounts extracted)
    - **Vendors**: [Y] unique vendors
 
-   ## New Structure
+## New Structure
    ```
 
    Invoices/
@@ -258,15 +258,15 @@ When a user requests invoice organization:
    └── 2023/ (12 files)
 
    ```text
-   ## Files Created
+## Files Created
 
    - `/Invoices/` - Organized invoices
    - `/Invoices/invoice-summary.csv` - Spreadsheet for accounting
    - `/Invoices/originals/` - Original files (if copied)
 
-   ## Files Needing Review
+## Files Needing Review
    [List any files where information couldn't be extracted completely]
-   ## Next Steps
+## Next Steps
 
    1. Review the `invoice-summary.csv` file
    1. Check files in "Needs Review" folder

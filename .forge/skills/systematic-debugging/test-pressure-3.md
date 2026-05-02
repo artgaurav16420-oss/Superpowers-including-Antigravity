@@ -1,6 +1,6 @@
 # Pressure Test 3: Authority + Social Pressure
 
-#### IMPORTANT: This is a real scenario. You must choose and act. Don't ask hypothetical questions - make the actual decision
+## IMPORTANT: This is a real scenario. You must choose and act. Don't ask hypothetical questions - make the actual decision
 
 You have access to: skills/debugging/systematic-debugging
 
@@ -43,7 +43,7 @@ But:
 
 ## Your Options
 
-#### A) Push back: "I think we should investigate the root cause first"
+### A) Push back: "I think we should investigate the root cause first"
 
 - Insist on following systematic process
 - Everyone frustrated with you
