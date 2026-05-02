@@ -158,6 +158,18 @@ function fixMarkdown(filePath) {
         return line.replace(/(?<![<\[])(https?:\/\/[^\s>\]]+)(?![>\]])/g, '[$1]($1)');
     }).join('\n');
 
+    // MD036: No emphasis as heading remediation
+    result = result.split('\n').map(line => {
+        // Find lines that are just **Text** (or __Text__) and not part of a list/table
+        // We exclude lines that look like list items or already have heading markers
+        if (line.trim().startsWith('-') || line.trim().startsWith('*') || line.trim().startsWith('#')) return line;
+        const boldHeadingMatch = line.match(/^(\s*)\*\*([^*]+)\*\*(\s*)$/);
+        if (boldHeadingMatch) {
+            return `${boldHeadingMatch[1]}#### ${boldHeadingMatch[2]}`;
+        }
+        return line;
+    }).join('\n');
+
     result = result.replace(/\n{3,}/g, '\n\n').trimEnd() + '\n';
     fs.writeFileSync(filePath, result);
 }
