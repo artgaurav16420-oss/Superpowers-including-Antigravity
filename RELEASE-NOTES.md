@@ -887,7 +887,7 @@ We now use Anthropic's first-party skills system!
 
 Mega-Skills v2.0 makes skills more accessible, maintainable, and community-driven through a major architectural shift.
 
-The headline change is **skills repository separation**: all skills, scripts, and documentation have moved from the plugin into a dedicated repository ([obra/superpowers-skills]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).)]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).))](https://github.com/artgaurav16420-oss/Mega-Skills-skills)).))) This transforms superpowers from a monolithic plugin into a lightweight shim that manages a local clone of the skills repository. Skills auto-update on session start. Users fork and contribute improvements via standard git workflows. The skills library versions independently from the plugin.
+The headline change is **skills repository separation**: all skills, scripts, and documentation have moved from the plugin into a dedicated repository ([obra/superpowers-skills]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).)]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)).)))](https://github.com/artgaurav16420-oss/Mega-Skills-skills)).)))) This transforms superpowers from a monolithic plugin into a lightweight shim that manages a local clone of the skills repository. Skills auto-update on session start. Users fork and contribute improvements via standard git workflows. The skills library versions independently from the plugin.
 
 Beyond infrastructure, this release adds nine new skills focused on problem-solving, research, and architecture. We rewrote the core **using-skills** documentation with imperative tone and clearer structure, making it easier for Claude to understand when and how to use skills. **find-skills** now outputs paths you can paste directly into the Read tool, eliminating friction in the skills discovery workflow.
 
@@ -897,7 +897,7 @@ Users experience seamless operation: the plugin handles cloning, forking, and up
 
 ### Skills Repository Separation
 
-**The biggest change:** Skills no longer live in the plugin. They've been moved to a separate repository at [obra/superpowers-skills]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).)]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).))](https://github.com/artgaurav16420-oss/Mega-Skills-skills).)))
+**The biggest change:** Skills no longer live in the plugin. They've been moved to a separate repository at [obra/superpowers-skills]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).)]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills).)))](https://github.com/artgaurav16420-oss/Mega-Skills-skills).))))
 
 #### What this means for you
 
@@ -1108,7 +1108,7 @@ The plugin handles everything automatically.
 
 ### For Contributors
 
-- Skills repository is now at [https://github.com/artgaurav16420-oss/Mega-Skills-skills]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)]([https://github.com/artgaurav16420-oss/Mega-Skills-skills))](https://github.com/artgaurav16420-oss/Mega-Skills-skills)))
+- Skills repository is now at [https://github.com/artgaurav16420-oss/Mega-Skills-skills]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)]([https://github.com/artgaurav16420-oss/Mega-Skills-skills))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)))](https://github.com/artgaurav16420-oss/Mega-Skills-skills))))
 - Fork → Branch → PR workflow
 - See skills/meta/writing-skills/SKILL.md for TDD approach to documentation
 
@@ -1124,6 +1124,6 @@ None at this time.
 
 ---
 
-**Full Changelog:** [https://github.com/artgaurav16420-oss/Mega-Skills/compare/dd013f6...main]([https://github.com/artgaurav16420-oss/Mega-Skills/compare/dd013f6...main)]([https://github.com/artgaurav16420-oss/Mega-Skills/compare/dd013f6...main))](https://github.com/artgaurav16420-oss/Mega-Skills/compare/dd013f6...main)))
-**Skills Repository:** [https://github.com/artgaurav16420-oss/Mega-Skills-skills]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)]([https://github.com/artgaurav16420-oss/Mega-Skills-skills))](https://github.com/artgaurav16420-oss/Mega-Skills-skills)))
-**Issues:** [https://github.com/artgaurav16420-oss/Mega-Skills/issues]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))](https://github.com/artgaurav16420-oss/Mega-Skills/issues)))
+**Full Changelog:** [https://github.com/artgaurav16420-oss/Mega-Skills/compare/dd013f6...main]([https://github.com/artgaurav16420-oss/Mega-Skills/compare/dd013f6...main)]([https://github.com/artgaurav16420-oss/Mega-Skills/compare/dd013f6...main))]([https://github.com/artgaurav16420-oss/Mega-Skills/compare/dd013f6...main)))](https://github.com/artgaurav16420-oss/Mega-Skills/compare/dd013f6...main))))
+**Skills Repository:** [https://github.com/artgaurav16420-oss/Mega-Skills-skills]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)]([https://github.com/artgaurav16420-oss/Mega-Skills-skills))]([https://github.com/artgaurav16420-oss/Mega-Skills-skills)))](https://github.com/artgaurav16420-oss/Mega-Skills-skills))))
+**Issues:** [https://github.com/artgaurav16420-oss/Mega-Skills/issues]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)))](https://github.com/artgaurav16420-oss/Mega-Skills/issues))))

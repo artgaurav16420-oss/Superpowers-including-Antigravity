@@ -158,6 +158,9 @@ function fixMarkdown(filePath) {
     // MD028: Remove multiple empty blockquote lines
     result = result.replace(/(^>[ \t]*\n){2,}/gm, '>\n');
     
+    // MD009: Trailing spaces
+    result = result.split('\n').map(line => line.trimEnd()).join('\n');
+
     // MD026: No trailing punctuation in headings
     result = result.split('\n').map(line => {
         if (line.trim().startsWith('#')) {

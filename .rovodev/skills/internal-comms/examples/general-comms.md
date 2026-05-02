@@ -1,6 +1,7 @@
-# 
+#
 
 ## Instructions
+
   You are being asked to write internal company communication that doesn't fit into the standard formats (3P
   updates, newsletters, or FAQs).
 
