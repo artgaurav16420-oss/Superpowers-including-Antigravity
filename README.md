@@ -53,7 +53,7 @@ gemini extensions install https://github.com/artgaurav16420-oss/Mega-Skills
 Tell OpenCode:
 
 ```bash
-Fetch and follow instructions from https://raw.githubusercontent.com/artgaurav16420-oss/Superpowers-including-Antigravity/refs/heads/main/.opencode/INSTALL.md
+Fetch and follow instructions from https://raw.githubusercontent.com/artgaurav16420-oss/Mega-Skills/refs/heads/main/.opencode/INSTALL.md
 ```
 
 ### GitHub Copilot CLI
@@ -64,13 +64,15 @@ copilot plugin install mega-superpowers@https://github.com/artgaurav16420-oss/Me
 
 ## The Basic Workflow
 
-1. **brainstorming** - Activates before writing code. Refines rough ideas through questions, explores alternatives, presents design in sections for validation. Saves design document.
-2. **using-git-worktrees** - Activates after design approval. Creates isolated workspace on new branch, runs project setup, verifies clean test baseline.
-3. **writing-plans** - Activates with approved design. Breaks work into bite-sized tasks (2-5 minutes each). Every task has exact file paths, complete code, verification steps.
-4. **subagent-driven-development** or **executing-plans** - Activates with plan. Dispatches fresh subagent per task with two-stage review (spec compliance, then code quality), or executes in batches with human checkpoints.
-5. **test-driven-development** - Activates during implementation. Enforces RED-GREEN-REFACTOR: write failing test, watch it fail, write minimal code, watch it pass, commit. Deletes code written before tests.
-6. **requesting-code-review** - Activates between tasks. Reviews against plan, reports issues by severity. Critical issues block progress.
-7. **finishing-a-development-branch** - Activates when tasks complete. Verifies tests, presents options (merge/PR/keep/discard), cleans up worktree.
+1. **brainstorming** - Activates before writing code. Refines rough ideas through questions, explores alternatives, presents design for validation.
+2. **sequential-thinking** - Activates for complex logic. Forces a multi-step reasoning loop to explore hypotheses and edge cases before acting.
+3. **using-git-worktrees** - Activates after design approval. Creates isolated workspace on new branch, runs setup, verifies clean test baseline.
+4. **writing-plans** - Activates with approved design. Breaks work into bite-sized tasks. Every task has file paths, complete code, and verification steps.
+5. **memory-management** - Continuous activation. Persists critical decisions, task state, and discovery results to prevent context loss.
+6. **subagent-driven-development** - Dispatches fresh subagents per task with two-stage review (spec compliance, then code quality).
+7. **test-driven-development** - Enforces RED-GREEN-REFACTOR: write failing test, watch it fail, write minimal code, watch it pass, commit.
+8. **requesting-code-review** - Reviews against plan, reports issues by severity. Critical issues block progress.
+9. **finishing-a-development-branch** - Verifies tests, presents merge options, and cleans up the worktree.
 
 **The agent checks for relevant skills before any task.** Mandatory workflows, not suggestions.
 
