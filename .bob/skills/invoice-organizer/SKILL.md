@@ -115,11 +115,11 @@ When a user requests invoice organization:
 
 1. Use text extraction to read invoice content
 1. Look for common patterns:
-  1. "Invoice Date:", "Date:", "Issued:"
-  1. "Invoice #:", "Invoice Number:"
-  1. Company name (usually at top)
-  1. "Amount Due:", "Total:", "Amount:"
-  1. "Description:", "Service:", "Product:"
+   1. "Invoice Date:", "Date:", "Issued:"
+   1. "Invoice #:", "Invoice Number:"
+   1. Company name (usually at top)
+   1. "Amount Due:", "Total:", "Amount:"
+   1. "Description:", "Service:", "Product:"
 
    **From image receipts**:
 

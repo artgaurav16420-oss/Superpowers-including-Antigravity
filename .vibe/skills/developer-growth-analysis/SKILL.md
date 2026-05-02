@@ -93,10 +93,10 @@ When a user requests analysis of their developer growth or coding patterns from 
 1. **Technologies Used**: What languages, frameworks, and tools appear in the conversations?
 1. **Problem Types**: What categories of problems are being solved? (e.g., performance optimization, debugging, feature implementation, refactoring, setup/configuration)
 1. **Challenges Encountered**: What problems did the user struggle with? Look for:
-  1. Repeated questions about similar topics
-  1. Problems that took multiple attempts to solve
-  1. Questions indicating knowledge gaps
-  1. Complex architectural decisions
+   1. Repeated questions about similar topics
+   1. Problems that took multiple attempts to solve
+   1. Questions indicating knowledge gaps
+   1. Complex architectural decisions
 1. **Approach Patterns**: How does the user solve problems? (e.g., methodical, exploratory, experimental)
 
 1. **Identify Improvement Areas**
@@ -154,15 +154,15 @@ When a user requests analysis of their developer growth or coding patterns from 
 
 1. For each improvement area, construct a search query targeting high-quality resources
 1. Search HackerNews using RUBE_SEARCH_TOOLS with queries like:
-  1. "Learn [Technology/Pattern] best practices"
-  1. "[Technology] advanced patterns and techniques"
-  1. "Debugging [specific problem type] in [language]"
+   1. "Learn [Technology/Pattern] best practices"
+   1. "[Technology] advanced patterns and techniques"
+   1. "Debugging [specific problem type] in [language]"
 1. Prioritize posts with high engagement (comments, upvotes)
 1. For each area, include 2-3 most relevant articles with:
-  1. Article title
-  1. Publication date
-  1. Brief description of why it's relevant
-  1. Link to the article
+   1. Article title
+   1. Publication date
+   1. Brief description of why it's relevant
+   1. Link to the article
 
    Add this section to the report:
 
@@ -198,10 +198,10 @@ When a user requests analysis of their developer growth or coding patterns from 
 1. Check if Slack connection is active via RUBE_SEARCH_TOOLS
 1. If not connected, use RUBE_MANAGE_CONNECTIONS to initiate Slack auth
 1. Use RUBE_MULTI_EXECUTE_TOOL to send the report as a formatted message:
-  1. Send the report title and period as the first message
-  1. Break the report into logical sections (Summary, Improvements, Strengths, Actions, Resources)
-  1. Format each section as a well-structured Slack message with proper markdown
-  1. Include clickable links for the learning resources
+   1. Send the report title and period as the first message
+   1. Break the report into logical sections (Summary, Improvements, Strengths, Actions, Resources)
+   1. Format each section as a well-structured Slack message with proper markdown
+   1. Include clickable links for the learning resources
 1. Confirm delivery in the CLI output
 
    This ensures the user has the report in a place they check regularly and can reference it throughout the week.

@@ -98,11 +98,11 @@ When a user requests lead research:
 1. **Prioritize and Score**
 1. Create a fit score (1-10) for each lead
 1. Consider factors like:
-  1. Alignment with ICP
-  1. Signals of immediate need
-  1. Budget availability
-  1. Competitive landscape
-  1. Timing indicators
+   1. Alignment with ICP
+   1. Signals of immediate need
+   1. Budget availability
+   1. Competitive landscape
+   1. Timing indicators
 
 1. **Provide Actionable Output**
 

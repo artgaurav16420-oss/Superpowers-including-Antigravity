@@ -120,9 +120,10 @@ function fixMarkdown(filePath) {
             let indent = listMatch[1];
             const listContent = listMatch[3];
             
-            // Force flat list structure for top level unless clearly nested
-            if (indent.length > 0 && indent.length < 4) indent = ''; 
-            else if (indent.length >= 4) indent = '  ';
+            // Normalize indent: 0 for top, 3 for level 1 child, 6 for level 2
+            if (indent.length === 0) indent = ''; 
+            else if (indent.length < 5) indent = '   ';
+            else indent = '      ';
 
             if (newLines.length > 0 && newLines[newLines.length - 1].trim() !== '' && !newLines[newLines.length - 1].trim().match(/^([-*+]|\d+\.)\s+/)) {
                 newLines.push('');

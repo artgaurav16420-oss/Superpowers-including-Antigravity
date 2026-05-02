@@ -285,11 +285,11 @@ When a user requests file organization help:
 
 1. Proposes structure:
 1. Downloads/
-  1. Work/
-  1. Personal/
-  1. Installers/ (DMG, PKG files)
-  1. Archive/
-  1. ToSort/ (things needing decisions)
+   1. Work/
+   1. Personal/
+   1. Installers/ (DMG, PKG files)
+   1. Archive/
+   1. ToSort/ (things needing decisions)
 
 1. Asks for confirmation
 

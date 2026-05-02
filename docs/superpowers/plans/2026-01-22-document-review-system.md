@@ -45,7 +45,7 @@ Task tool (general-purpose):
 ## What to Check
 
     | Category | What to Look For |
-    |:::::::::::---:::::::::::---:::::::::::----|:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---|
+    |::::::::::::---::::::::::::---::::::::::::----|::::::::::::---::::::::::::---::::::::::::---::::::::::::---::::::::::::---::::::::::::---|
     | Completeness | TODOs, placeholders, "TBD", incomplete sections |
     | Coverage | Missing error handling, edge cases, integration points |
     | Consistency | Internal contradictions, conflicting requirements |
@@ -56,9 +56,9 @@ Task tool (general-purpose):
 
     Look especially hard for:
 
-  1. Any TODO markers or placeholder text
-  1. Sections saying "to be defined later" or "will spec when X is done"
-  1. Sections noticeably less detailed than others
+   1. Any TODO markers or placeholder text
+   1. Sections saying "to be defined later" or "will spec when X is done"
+   1. Sections noticeably less detailed than others
 
 ## Output Format
 
@@ -68,11 +68,11 @@ Task tool (general-purpose):
 
 ### Issues (if any)
 
-  1. [Section X]: [specific issue] - [why it matters]
+   1. [Section X]: [specific issue] - [why it matters]
 
 #### Recommendations (advisory)
 
-  1. [suggestions that don't block approval]
+   1. [suggestions that don't block approval]
 
 ```text
 
@@ -171,7 +171,7 @@ Task tool (general-purpose):
 ## What to Check (2)
 
     | Category | What to Look For |
-    |:::::::::::---:::::::::::---:::::::::::----|:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---:::::::::::---|
+    |::::::::::::---::::::::::::---::::::::::::----|::::::::::::---::::::::::::---::::::::::::---::::::::::::---::::::::::::---::::::::::::---|
     | Completeness | TODOs, placeholders, incomplete tasks, missing steps |
     | Spec Alignment | Chunk covers relevant spec requirements, no scope creep |
     | Task Decomposition | Tasks atomic, clear boundaries, steps actionable |
@@ -182,10 +182,10 @@ Task tool (general-purpose):
 
     Look especially hard for:
 
-  1. Any TODO markers or placeholder text
-  1. Steps that say "similar to X" without actual content
-  1. Incomplete task definitions
-  1. Missing verification steps or expected outputs
+   1. Any TODO markers or placeholder text
+   1. Steps that say "similar to X" without actual content
+   1. Incomplete task definitions
+   1. Missing verification steps or expected outputs
 
 ## Output Format (2)
 
@@ -195,11 +195,11 @@ Task tool (general-purpose):
 
 ### Issues (if any) (2)
 
-  1. [Task X, Step Y]: [specific issue] - [why it matters]
+   1. [Task X, Step Y]: [specific issue] - [why it matters]
 
 #### Recommendations (advisory) (2)
 
-  1. [suggestions that don't block approval]
+   1. [suggestions that don't block approval]
 
 ```text
 

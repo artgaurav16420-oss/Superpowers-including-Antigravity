@@ -83,38 +83,38 @@ Create 10 human-readable questions requiring ONLY READ-ONLY, INDEPENDENT, NON-DE
 1. **Questions should stress-test tool return values**
 1. May elicit tools returning large JSON objects or lists, overwhelming the LLM
 1. Should require understanding multiple modalities of data:
-  1. IDs and names
-  1. Timestamps and datetimes (months, days, years, seconds)
-  1. File IDs, names, extensions, and mimetypes
-  1. URLs, GIDs, etc.
+   1. IDs and names
+   1. Timestamps and datetimes (months, days, years, seconds)
+   1. File IDs, names, extensions, and mimetypes
+   1. URLs, GIDs, etc.
 1. Should probe the tool's ability to return all useful forms of data
 
 1. **Questions should MOSTLY reflect real human use cases**
 1. The kinds of information retrieval tasks that HUMANS assisted by an LLM would care about
 
 1. **Questions may require dozens of tool calls**
-  1. This challenges LLMs with limited context
-  1. Encourages MCP server tools to reduce information returned
+   1. This challenges LLMs with limited context
+   1. Encourages MCP server tools to reduce information returned
 
 1. **Include ambiguous questions**
-  1. May be ambiguous OR require difficult decisions on which tools to call
-  1. Force the LLM to potentially make mistakes or misinterpret
-  1. Ensure that despite AMBIGUITY, there is STILL A SINGLE VERIFIABLE ANSWER
+   1. May be ambiguous OR require difficult decisions on which tools to call
+   1. Force the LLM to potentially make mistakes or misinterpret
+   1. Ensure that despite AMBIGUITY, there is STILL A SINGLE VERIFIABLE ANSWER
 
 ### Stability
 
 1. **Questions must be designed so the answer DOES NOT CHANGE**
-  1. Do not ask questions that rely on "current state" which is dynamic
-  1. For example, do not count:
-  1. Number of reactions to a post
-  1. Number of replies to a thread
-  1. Number of members in a channel
+   1. Do not ask questions that rely on "current state" which is dynamic
+   1. For example, do not count:
+   1. Number of reactions to a post
+   1. Number of replies to a thread
+   1. Number of members in a channel
 
 1. **DO NOT let the MCP server RESTRICT the kinds of questions you create**
-  1. Create challenging and complex questions
-  1. Some may not be solvable with the available MCP server tools
-  1. Questions may require specific output formats (datetime vs. epoch time, JSON vs. MARKDOWN)
-  1. Questions may require dozens of tool calls to complete
+   1. Create challenging and complex questions
+   1. Some may not be solvable with the available MCP server tools
+   1. Questions may require specific output formats (datetime vs. epoch time, JSON vs. MARKDOWN)
+   1. Questions may require dozens of tool calls to complete
 
 ## Answer Guidelines
 
@@ -124,16 +124,16 @@ Create 10 human-readable questions requiring ONLY READ-ONLY, INDEPENDENT, NON-DE
 1. If the answer can be re-written in many formats, clearly specify the output format in the QUESTION
 1. Examples: "Use YYYY/MM/DD.", "Respond True or False.", "Answer A, B, C, or D and nothing else."
 1. Answer should be a single VERIFIABLE value such as:
-  1. User ID, user name, display name, first name, last name
-  1. Channel ID, channel name
-  1. Message ID, string
-  1. URL, title
-  1. Numerical quantity
-  1. Timestamp, datetime
-  1. Boolean (for True/False questions)
-  1. Email address, phone number
-  1. File ID, file name, file extension
-  1. Multiple choice answer
+   1. User ID, user name, display name, first name, last name
+   1. Channel ID, channel name
+   1. Message ID, string
+   1. URL, title
+   1. Numerical quantity
+   1. Timestamp, datetime
+   1. Boolean (for True/False questions)
+   1. Email address, phone number
+   1. File ID, file name, file extension
+   1. Multiple choice answer
 1. Answers must not require special formatting or complex, structured output
 1. Answer will be verified using DIRECT STRING COMPARISON
 

@@ -174,13 +174,13 @@ This applies to ALL calculations - totals, percentages, ratios, differences, etc
 
 1. Fix the identified errors and recalculate again
 1. Common errors to fix:
-  1. `#REF!`: Invalid cell references
+   1. `#REF!`: Invalid cell references
 
-  1. `#DIV/0!`: Division by zero
+   1. `#DIV/0!`: Division by zero
 
-  1. `#VALUE!`: Wrong data type in formula
+   1. `#VALUE!`: Wrong data type in formula
 
-  1. `#NAME?`: Unrecognized formula name
+   1. `#NAME?`: Unrecognized formula name
 
 ### Creating new Excel files
 
