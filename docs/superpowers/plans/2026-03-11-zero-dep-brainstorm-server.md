@@ -373,7 +373,7 @@ function startServer() {
   server.listen(PORT, HOST, () => {
     const info = JSON.stringify({
       type: 'server-started', port: Number(PORT), host: HOST,
-      url_host: URL_HOST, url: '[http://']([http://')]([http://'))]([http://')))](http://')))) + URL_HOST + ':' + PORT,
+      url_host: URL_HOST, url: '[http://']([http://')]([http://'))]([http://')))]([http://'))))](http://'))))) + URL_HOST + ':' + PORT,
       screen_dir: SCREEN_DIR
     });
     console.log(info);
@@ -459,7 +459,7 @@ BRAINSTORM_DIR=/tmp/brainstorm-smoke BRAINSTORM_PORT=9876 node server.js
 
 Expected: `server-started` JSON printed with port 9876
 
-- [ ] **Step 2: Open browser to [http://localhost:9876**]([http://localhost:9876**)]([http://localhost:9876**))]([http://localhost:9876**)))](http://localhost:9876**))))
+- [ ] **Step 2: Open browser to [http://localhost:9876**]([http://localhost:9876**)]([http://localhost:9876**))]([http://localhost:9876**)))]([http://localhost:9876**))))](http://localhost:9876**)))))
 
 Expected: Waiting page with "Waiting for Claude to push a screen..."
 

@@ -161,6 +161,10 @@ function fixMarkdown(filePath) {
     // MD009: Trailing spaces
     result = result.split('\n').map(line => line.trimEnd()).join('\n');
 
+    // MD033: Inline HTML remediation (specific to details/summary)
+    result = result.replace(/<details>\s*<summary>(.*?)<\/summary>/gs, '> **$1**\n>');
+    result = result.replace(/<\/details>/g, '');
+
     // MD026: No trailing punctuation in headings
     result = result.split('\n').map(line => {
         if (line.trim().startsWith('#')) {
