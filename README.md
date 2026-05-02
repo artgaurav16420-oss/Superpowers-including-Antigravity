@@ -76,7 +76,7 @@ copilot plugin install mega-superpowers@https://github.com/artgaurav16420-oss/Me
 
 ## Complete Skills Index
 
-The full library contains 59 composable skills, ordered by utility:
+The full library contains 62 composable skills, ordered by utility:
 
 ### 🛠️ Core Methodology (The Superpowers)
 
@@ -84,6 +84,8 @@ The full library contains 59 composable skills, ordered by utility:
 - **writing-plans** - Detailed implementation planning and task breakdown
 - **brainstorming** - Socratic design and spec refinement
 - **subagent-driven-development** - Autonomous task completion via subagents
+- **sequential-thinking** - Deep reasoning loop for complex problem solving
+- **memory-management** - State persistence and context optimization
 - **systematic-debugging** - 4-phase root cause analysis and fixing
 - **using-git-worktrees** - Isolated development environments
 - **verification-before-completion** - Final fix validation
@@ -92,8 +94,6 @@ The full library contains 59 composable skills, ordered by utility:
 
 ### 🏗️ Advanced Developer Tools
 
-- **sequential-thinking** - Deep reasoning loop for complex problem solving
-- **memory-management** - State persistence and context optimization
 - **browser-automation** - Web interaction and UI verification
 - **mcp-builder** - Model Context Protocol server creation assistant
 - **claude-api** - Anthropic SDK and prompt optimization
