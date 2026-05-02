@@ -71,7 +71,7 @@ function fixMarkdown(filePath) {
                 newLines.push(`${prefix}\`\`\`${tag || 'text'}`);
                 inFence = true;
             } else {
-                newLines.push(line);
+                newLines.push(`${prefix}\`\`\``);
                 if (i + 1 < lines.length && lines[i + 1].trim() !== '') {
                     newLines.push(isBlockquoteLine ? '>' : '');
                 }
@@ -145,8 +145,12 @@ function fixMarkdown(filePath) {
         newLines.push(line);
     }
 
+    // Post-processing on result string
     let result = newLines.join('\n');
 
+    // MD028: Remove multiple empty blockquote lines
+    result = result.replace(/(^>[ \t]*\n){2,}/gm, '>\n');
+    
     // MD026: No trailing punctuation in headings
     result = result.split('\n').map(line => {
         if (line.trim().startsWith('#')) {

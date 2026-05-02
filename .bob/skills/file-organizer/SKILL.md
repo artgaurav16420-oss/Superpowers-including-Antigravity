@@ -253,7 +253,7 @@ When a user requests file organization help:
    1. **Yearly**: Archive old files
 
    ## Quick Commands for You
-   ```bash
+   ```
 
    # Find files modified this week
 
