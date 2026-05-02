@@ -48,13 +48,6 @@ To update:
 gemini extensions update mega-superpowers
 ```
 
-### Claude Code (Official / Marketplace)
-
-For the core Superpowers experience on Claude Code:
-
-```bash
-/plugin install superpowers@claude-plugins-official
-```
 
 ## The Basic Workflow
 
