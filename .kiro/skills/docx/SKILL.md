@@ -13,7 +13,7 @@ A .docx file is a ZIP archive containing XML files.
 ## Quick Reference
 
 | Task | Approach |
-|::::::::::::::::::::::::::---::::::::::::::::::::::::::---|::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::----|
+|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::----|
 | Read/analyze content | `pandoc` or unpack for raw XML |
 
 | Create new document | Use `docx-js` - see Creating New Documents below |
@@ -102,7 +102,7 @@ sections: [{
 #### Common page sizes (DXA units, 1440 DXA = 1 inch)
 
 | Paper | Width | Height | Content Width (1" margins) |
-|::::::::::::::::::::::::::---::::::::::::::::::::::::::----|::::::::::::::::::::::::::---::::::::::::::::::::::::::----|::::::::::::::::::::::::::---::::::::::::::::::::::::::-----|::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---|
+|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::----|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::----|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::-----|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---|
 | US Letter | 12,240 | 15,840 | 9,360 |
 | A4 (default) | 11,906 | 16,838 | 9,026 |
 
@@ -216,15 +216,15 @@ columnWidths: [7000, 2360]  // Must sum to table width
 
 #### Width rules
 
-- **Always use `WidthType.DXA`** — never `WidthType.PERCENTAGE` (incompatible with Google Docs)
+1. **Always use `WidthType.DXA`** — never `WidthType.PERCENTAGE` (incompatible with Google Docs)
 
-- Table width must equal the sum of `columnWidths`
+1. Table width must equal the sum of `columnWidths`
 
-- Cell `width` must match corresponding `columnWidth`
+1. Cell `width` must match corresponding `columnWidth`
 
-- Cell `margins` are internal padding - they reduce content area, not add to cell width
+1. Cell `margins` are internal padding - they reduce content area, not add to cell width
 
-- For full-width tables: use content width (page width minus left and right margins)
+1. For full-width tables: use content width (page width minus left and right margins)
 
 ### Images
 
@@ -379,35 +379,35 @@ sections: [{
 
 ### Critical Rules for docx-js
 
-- **Set page size explicitly** - docx-js defaults to A4; use US Letter (12240 x 15840 DXA) for US documents
+1. **Set page size explicitly** - docx-js defaults to A4; use US Letter (12240 x 15840 DXA) for US documents
 
-- **Landscape: pass portrait dimensions** - docx-js swaps width/height internally; pass short edge as `width`, long edge as `height`, and set `orientation: PageOrientation.LANDSCAPE`
+1. **Landscape: pass portrait dimensions** - docx-js swaps width/height internally; pass short edge as `width`, long edge as `height`, and set `orientation: PageOrientation.LANDSCAPE`
 
-- **Never use `\n`** - use separate Paragraph elements
+1. **Never use `\n`** - use separate Paragraph elements
 
-- **Never use unicode bullets** - use `LevelFormat.BULLET` with numbering config
+1. **Never use unicode bullets** - use `LevelFormat.BULLET` with numbering config
 
-- **PageBreak must be in Paragraph** - standalone creates invalid XML
+1. **PageBreak must be in Paragraph** - standalone creates invalid XML
 
-- **ImageRun requires `type`** - always specify png/jpg/etc
+1. **ImageRun requires `type`** - always specify png/jpg/etc
 
-- **Always set table `width` with DXA** - never use `WidthType.PERCENTAGE` (breaks in Google Docs)
+1. **Always set table `width` with DXA** - never use `WidthType.PERCENTAGE` (breaks in Google Docs)
 
-- **Tables need dual widths** - `columnWidths` array AND cell `width`, both must match
+1. **Tables need dual widths** - `columnWidths` array AND cell `width`, both must match
 
-- **Table width = sum of columnWidths** - for DXA, ensure they add up exactly
+1. **Table width = sum of columnWidths** - for DXA, ensure they add up exactly
 
-- **Always add cell margins** - use `margins: { top: 80, bottom: 80, left: 120, right: 120 }` for readable padding
+1. **Always add cell margins** - use `margins: { top: 80, bottom: 80, left: 120, right: 120 }` for readable padding
 
-- **Use `ShadingType.CLEAR`** - never SOLID for table shading
+1. **Use `ShadingType.CLEAR`** - never SOLID for table shading
 
-- **Never use tables as dividers/rules** - cells have minimum height and render as empty boxes (including in headers/footers); use `border: { bottom: { style: BorderStyle.SINGLE, size: 6, color: "2E75B6", space: 1 } }` on a Paragraph instead. For two-column footers, use tab stops (see Tab Stops section), not tables
+1. **Never use tables as dividers/rules** - cells have minimum height and render as empty boxes (including in headers/footers); use `border: { bottom: { style: BorderStyle.SINGLE, size: 6, color: "2E75B6", space: 1 } }` on a Paragraph instead. For two-column footers, use tab stops (see Tab Stops section), not tables
 
-- **TOC requires HeadingLevel only** - no custom styles on heading paragraphs
+1. **TOC requires HeadingLevel only** - no custom styles on heading paragraphs
 
-- **Override built-in styles** - use exact IDs: "Heading1", "Heading2", etc.
+1. **Override built-in styles** - use exact IDs: "Heading1", "Heading2", etc.
 
-- **Include `outlineLevel`** - required for TOC (0 for H1, 1 for H2, etc.)
+1. **Include `outlineLevel`** - required for TOC (0 for H1, 1 for H2, etc.)
 
 ---
 
@@ -439,7 +439,7 @@ Edit files in `unpacked/word/`. See XML Reference below for patterns.
 ```
 
 | Entity | Character |
-|::::::::::::::::::::::::::---::::::::::::::::::::::::::-----|::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::-----|
+|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::-----|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::-----|
 | `&#x2018;` | ‘ (left single) |
 
 | `&#x2019;` | ’ (right single / apostrophe) |
@@ -468,19 +468,19 @@ Validates with auto-repair, condenses XML, and creates DOCX. Use `--validate fal
 
 #### Auto-repair will fix
 
-- `durableId` >= 0x7FFFFFFF (regenerates valid ID)
+1. `durableId` >= 0x7FFFFFFF (regenerates valid ID)
 
-- Missing `xml:space="preserve"` on `<w:t>` with whitespace
+1. Missing `xml:space="preserve"` on `<w:t>` with whitespace
 
 #### Auto-repair won't fix
 
-- Malformed XML, invalid element nesting, missing relationships, schema violations
+1. Malformed XML, invalid element nesting, missing relationships, schema violations
 
 ### Common Pitfalls
 
-- **Replace entire `<w:r>` elements**: When adding tracked changes, replace the whole `<w:r>...</w:r>` block with `<w:del>...<w:ins>...` as siblings. Don't inject tracked change tags inside a run.
+1. **Replace entire `<w:r>` elements**: When adding tracked changes, replace the whole `<w:r>...</w:r>` block with `<w:del>...<w:ins>...` as siblings. Don't inject tracked change tags inside a run.
 
-- **Preserve `<w:rPr>` formatting**: Copy the original run's `<w:rPr>` block into your tracked change runs to maintain bold, font size, etc.
+1. **Preserve `<w:rPr>` formatting**: Copy the original run's `<w:rPr>` block into your tracked change runs to maintain bold, font size, etc.
 
 ---
 
@@ -488,11 +488,11 @@ Validates with auto-repair, condenses XML, and creates DOCX. Use `--validate fal
 
 ### Schema Compliance
 
-- **Element order in `<w:pPr>`**: `<w:pStyle>`, `<w:numPr>`, `<w:spacing>`, `<w:ind>`, `<w:jc>`, `<w:rPr>` last
+1. **Element order in `<w:pPr>`**: `<w:pStyle>`, `<w:numPr>`, `<w:spacing>`, `<w:ind>`, `<w:jc>`, `<w:rPr>` last
 
-- **Whitespace**: Add `xml:space="preserve"` to `<w:t>` with leading/trailing spaces
+1. **Whitespace**: Add `xml:space="preserve"` to `<w:t>` with leading/trailing spaces
 
-- **RSIDs**: Must be 8-digit hex (e.g., `00AB1234`)
+1. **RSIDs**: Must be 8-digit hex (e.g., `00AB1234`)
 
 ### Tracked Changes
 
@@ -629,10 +629,10 @@ After running `comment.py` (see Step 2), add markers to document.xml. For replie
 
 ## Dependencies
 
-- **pandoc**: Text extraction
+1. **pandoc**: Text extraction
 
-- **docx**: `npm install -g docx` (new documents)
+1. **docx**: `npm install -g docx` (new documents)
 
-- **LibreOffice**: PDF conversion (auto-configured for sandboxed environments via `scripts/office/soffice.py`)
+1. **LibreOffice**: PDF conversion (auto-configured for sandboxed environments via `scripts/office/soffice.py`)
 
-- **Poppler**: `pdftoppm` for images
+1. **Poppler**: `pdftoppm` for images

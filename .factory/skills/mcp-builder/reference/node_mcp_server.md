@@ -39,24 +39,24 @@ server.registerTool("tool_name", {...config}, async (params) => {
 ## MCP TypeScript SDK
 
 The official MCP TypeScript SDK provides:
-- `McpServer` class for server initialization
-- `registerTool` method for tool registration
-- Zod schema integration for runtime input validation
-- Type-safe tool handler implementations
+1. `McpServer` class for server initialization
+1. `registerTool` method for tool registration
+1. Zod schema integration for runtime input validation
+1. Type-safe tool handler implementations
 
 See the MCP SDK documentation in the references for complete details.
 
 ## Server Naming Convention
 
 Node/TypeScript MCP servers must follow this naming pattern:
-- **Format**: `{service}-mcp-server` (lowercase with hyphens)
-- **Examples**: `github-mcp-server`, `jira-mcp-server`, `stripe-mcp-server`
+1. **Format**: `{service}-mcp-server` (lowercase with hyphens)
+1. **Examples**: `github-mcp-server`, `jira-mcp-server`, `stripe-mcp-server`
 
 The name should be:
-- General (not tied to specific features)
-- Descriptive of the service/API being integrated
-- Easy to infer from the task description
-- Without version numbers or dates
+1. General (not tied to specific features)
+1. Descriptive of the service/API being integrated
+1. Easy to infer from the task description
+1. Without version numbers or dates
 
 ## Project Structure
 
@@ -84,18 +84,18 @@ Create the following structure for Node/TypeScript MCP servers:
 Use snake_case for tool names (e.g., "search_users", "create_project", "get_channel_info") with clear, action-oriented names.
 
 **Avoid Naming Conflicts**: Include the service context to prevent overlaps:
-- Use "slack_send_message" instead of just "send_message"
-- Use "github_create_issue" instead of just "create_issue"
-- Use "asana_list_tasks" instead of just "list_tasks"
+1. Use "slack_send_message" instead of just "send_message"
+1. Use "github_create_issue" instead of just "create_issue"
+1. Use "asana_list_tasks" instead of just "list_tasks"
 
 ### Tool Structure
 
 Tools are registered using the `registerTool` method with the following requirements:
-- Use Zod schemas for runtime input validation and type safety
-- The `description` field must be explicitly provided - JSDoc comments are NOT automatically extracted
-- Explicitly provide `title`, `description`, `inputSchema`, and `annotations`
-- The `inputSchema` must be a Zod schema object (not a JSON schema)
-- Type all parameters and return values explicitly
+1. Use Zod schemas for runtime input validation and type safety
+1. The `description` field must be explicitly provided - JSDoc comments are NOT automatically extracted
+1. Explicitly provide `title`, `description`, `inputSchema`, and `annotations`
+1. The `inputSchema` must be a Zod schema object (not a JSON schema)
+1. Type all parameters and return values explicitly
 
 ```typescript
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
@@ -336,16 +336,16 @@ const inputSchema = z.object({
 ```
 
 **Markdown format**:
-- Use headers, lists, and formatting for clarity
-- Convert timestamps to human-readable format
-- Show display names with IDs in parentheses
-- Omit verbose metadata
-- Group related information logically
+1. Use headers, lists, and formatting for clarity
+1. Convert timestamps to human-readable format
+1. Show display names with IDs in parentheses
+1. Omit verbose metadata
+1. Group related information logically
 
 **JSON format**:
-- Return complete, structured data suitable for programmatic processing
-- Include all available fields and metadata
-- Use consistent field names and types
+1. Return complete, structured data suitable for programmatic processing
+1. Include all available fields and metadata
+1. Use consistent field names and types
 
 ## Pagination Implementation
 
@@ -776,10 +776,10 @@ server.registerResourceList(async () => {
 
 #### When to use Resources vs Tools
 
-- **Resources**: For data access with simple URI-based parameters
-- **Tools**: For complex operations requiring validation and business logic
-- **Resources**: When data is relatively static or template-based
-- **Tools**: When operations have side effects or complex workflows
+1. **Resources**: For data access with simple URI-based parameters
+1. **Tools**: For complex operations requiring validation and business logic
+1. **Resources**: When data is relatively static or template-based
+1. **Tools**: When operations have side effects or complex workflows
 
 ### Multiple Transport Options
 
@@ -803,9 +803,9 @@ await server.connect(sseTransport);
 
 #### Transport selection guide
 
-- **Stdio**: Command-line tools, subprocess integration, local development
-- **HTTP**: Web services, remote access, multiple simultaneous clients
-- **SSE**: Real-time updates, server-push notifications, web dashboards
+1. **Stdio**: Command-line tools, subprocess integration, local development
+1. **HTTP**: Web services, remote access, multiple simultaneous clients
+1. **SSE**: Real-time updates, server-push notifications, web dashboards
 
 ### Notification Support
 
@@ -834,17 +834,17 @@ Use notifications sparingly - only when server capabilities genuinely change.
 Your implementation MUST prioritize composability and code reuse:
 
 1. **Extract Common Functionality**:
-   - Create reusable helper functions for operations used across multiple tools
-   - Build shared API clients for HTTP requests instead of duplicating code
-   - Centralize error handling logic in utility functions
-   - Extract business logic into dedicated functions that can be composed
-   - Extract shared markdown or JSON field selection & formatting functionality
+   1. Create reusable helper functions for operations used across multiple tools
+   1. Build shared API clients for HTTP requests instead of duplicating code
+   1. Centralize error handling logic in utility functions
+   1. Extract business logic into dedicated functions that can be composed
+   1. Extract shared markdown or JSON field selection & formatting functionality
 
 1. **Avoid Duplication**:
-   - NEVER copy-paste similar code between tools
-   - If you find yourself writing similar logic twice, extract it into a function
-   - Common operations like pagination, filtering, field selection, and formatting should be shared
-   - Authentication/authorization logic should be centralized
+   1. NEVER copy-paste similar code between tools
+   1. If you find yourself writing similar logic twice, extract it into a function
+   1. Common operations like pagination, filtering, field selection, and formatting should be shared
+   1. Authentication/authorization logic should be centralized
 
 ## Building and Running
 
@@ -869,60 +869,60 @@ Before finalizing your Node/TypeScript MCP server implementation, ensure:
 
 ### Strategic Design
 
-- [ ] Tools enable complete workflows, not just API endpoint wrappers
-- [ ] Tool names reflect natural task subdivisions
-- [ ] Response formats optimize for agent context efficiency
-- [ ] Human-readable identifiers used where appropriate
-- [ ] Error messages guide agents toward correct usage
+1. [ ] Tools enable complete workflows, not just API endpoint wrappers
+1. [ ] Tool names reflect natural task subdivisions
+1. [ ] Response formats optimize for agent context efficiency
+1. [ ] Human-readable identifiers used where appropriate
+1. [ ] Error messages guide agents toward correct usage
 
 ### Implementation Quality
 
-- [ ] FOCUSED IMPLEMENTATION: Most important and valuable tools implemented
-- [ ] All tools registered using `registerTool` with complete configuration
-- [ ] All tools include `title`, `description`, `inputSchema`, and `annotations`
-- [ ] Annotations correctly set (readOnlyHint, destructiveHint, idempotentHint, openWorldHint)
-- [ ] All tools use Zod schemas for runtime input validation with `.strict()` enforcement
-- [ ] All Zod schemas have proper constraints and descriptive error messages
-- [ ] All tools have comprehensive descriptions with explicit input/output types
-- [ ] Descriptions include return value examples and complete schema documentation
-- [ ] Error messages are clear, actionable, and educational
+1. [ ] FOCUSED IMPLEMENTATION: Most important and valuable tools implemented
+1. [ ] All tools registered using `registerTool` with complete configuration
+1. [ ] All tools include `title`, `description`, `inputSchema`, and `annotations`
+1. [ ] Annotations correctly set (readOnlyHint, destructiveHint, idempotentHint, openWorldHint)
+1. [ ] All tools use Zod schemas for runtime input validation with `.strict()` enforcement
+1. [ ] All Zod schemas have proper constraints and descriptive error messages
+1. [ ] All tools have comprehensive descriptions with explicit input/output types
+1. [ ] Descriptions include return value examples and complete schema documentation
+1. [ ] Error messages are clear, actionable, and educational
 
 ### TypeScript Quality
 
-- [ ] TypeScript interfaces are defined for all data structures
-- [ ] Strict TypeScript is enabled in tsconfig.json
-- [ ] No use of `any` type - use `unknown` or proper types instead
-- [ ] All async functions have explicit Promise<T> return types
-- [ ] Error handling uses proper type guards (e.g., `axios.isAxiosError`, `z.ZodError`)
+1. [ ] TypeScript interfaces are defined for all data structures
+1. [ ] Strict TypeScript is enabled in tsconfig.json
+1. [ ] No use of `any` type - use `unknown` or proper types instead
+1. [ ] All async functions have explicit Promise<T> return types
+1. [ ] Error handling uses proper type guards (e.g., `axios.isAxiosError`, `z.ZodError`)
 
 ### Advanced Features (where applicable)
 
-- [ ] Resources registered for appropriate data endpoints
-- [ ] Appropriate transport configured (stdio, HTTP, SSE)
-- [ ] Notifications implemented for dynamic server capabilities
-- [ ] Type-safe with SDK interfaces
+1. [ ] Resources registered for appropriate data endpoints
+1. [ ] Appropriate transport configured (stdio, HTTP, SSE)
+1. [ ] Notifications implemented for dynamic server capabilities
+1. [ ] Type-safe with SDK interfaces
 
 ### Project Configuration
 
-- [ ] Package.json includes all necessary dependencies
-- [ ] Build script produces working JavaScript in dist/ directory
-- [ ] Main entry point is properly configured as dist/index.js
-- [ ] Server name follows format: `{service}-mcp-server`
-- [ ] tsconfig.json properly configured with strict mode
+1. [ ] Package.json includes all necessary dependencies
+1. [ ] Build script produces working JavaScript in dist/ directory
+1. [ ] Main entry point is properly configured as dist/index.js
+1. [ ] Server name follows format: `{service}-mcp-server`
+1. [ ] tsconfig.json properly configured with strict mode
 
 ### Code Quality
 
-- [ ] Pagination is properly implemented where applicable
-- [ ] Large responses check CHARACTER_LIMIT constant and truncate with clear messages
-- [ ] Filtering options are provided for potentially large result sets
-- [ ] All network operations handle timeouts and connection errors gracefully
-- [ ] Common functionality is extracted into reusable functions
-- [ ] Return types are consistent across similar operations
+1. [ ] Pagination is properly implemented where applicable
+1. [ ] Large responses check CHARACTER_LIMIT constant and truncate with clear messages
+1. [ ] Filtering options are provided for potentially large result sets
+1. [ ] All network operations handle timeouts and connection errors gracefully
+1. [ ] Common functionality is extracted into reusable functions
+1. [ ] Return types are consistent across similar operations
 
 ### Testing and Build
 
-- [ ] `npm run build` completes successfully without errors
-- [ ] dist/index.js created and executable
-- [ ] Server runs: `node dist/index.js --help`
-- [ ] All imports resolve correctly
-- [ ] Sample tool calls work as expected
+1. [ ] `npm run build` completes successfully without errors
+1. [ ] dist/index.js created and executable
+1. [ ] Server runs: `node dist/index.js --help`
+1. [ ] All imports resolve correctly
+1. [ ] Sample tool calls work as expected

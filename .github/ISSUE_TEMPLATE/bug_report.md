@@ -12,12 +12,12 @@ hook alone has been reported 29 times. If your issue already exists,
 add a comment or reaction to the existing one instead.
 -->
 
-- [ ] I searched existing issues and this is not a duplicate
+1. [ ] I searched existing issues and this is not a duplicate
 
 ## Environment
 
 | Field | Value |
-|::::::::---::::::::----|::::::::---::::::::----|
+|:::::::::---:::::::::----|:::::::::---:::::::::----|
 | Mega-Skills version | |
 | Harness (Claude Code, Cursor, etc.) | |
 | Harness version | |
@@ -33,7 +33,7 @@ add a comment or reaction to the existing one instead.
      If the problem persists without Mega-Skills, file the issue with
      your platform instead. -->
 
-- [ ] I confirmed this issue does not occur without Mega-Skills installed
+1. [ ] I confirmed this issue does not occur without Mega-Skills installed
 
 ## What happened
 

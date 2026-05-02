@@ -11,11 +11,11 @@ This skill provides a structured workflow for guiding users through collaborativ
 
 ### Trigger conditions
 
-- User mentions writing documentation: "write a doc", "draft a proposal", "create a spec", "write up"
+1. User mentions writing documentation: "write a doc", "draft a proposal", "create a spec", "write up"
 
-- User mentions specific doc types: "PRD", "design doc", "decision doc", "RFC"
+1. User mentions specific doc types: "PRD", "design doc", "decision doc", "RFC"
 
-- User seems to be starting a substantial writing task
+1. User seems to be starting a substantial writing task
 
 #### Initial offer
 
@@ -53,45 +53,45 @@ Inform them they can answer in shorthand or dump information however works best 
 
 #### If user provides a template or mentions a doc type
 
-- Ask if they have a template document to share
+1. Ask if they have a template document to share
 
-- If they provide a link to a shared document, use the appropriate integration to fetch it
+1. If they provide a link to a shared document, use the appropriate integration to fetch it
 
-- If they provide a file, read it
+1. If they provide a file, read it
 
 #### If user mentions editing an existing shared document
 
-- Use the appropriate integration to read the current state
+1. Use the appropriate integration to read the current state
 
-- Check for images without alt-text
+1. Check for images without alt-text
 
-- If images exist without alt-text, explain that when others use Claude to understand the doc, Claude won't be able to see them. Ask if they want alt-text generated. If so, request they paste each image into chat for descriptive alt-text generation.
+1. If images exist without alt-text, explain that when others use Claude to understand the doc, Claude won't be able to see them. Ask if they want alt-text generated. If so, request they paste each image into chat for descriptive alt-text generation.
 
 ### Info Dumping
 
 Once initial questions are answered, encourage the user to dump all the context they have. Request information such as:
 
-- Background on the project/problem
+1. Background on the project/problem
 
-- Related team discussions or shared documents
+1. Related team discussions or shared documents
 
-- Why alternative solutions aren't being used
+1. Why alternative solutions aren't being used
 
-- Organizational context (team dynamics, past incidents, politics)
+1. Organizational context (team dynamics, past incidents, politics)
 
-- Timeline pressures or constraints
+1. Timeline pressures or constraints
 
-- Technical architecture or dependencies
+1. Technical architecture or dependencies
 
-- Stakeholder concerns
+1. Stakeholder concerns
 
 Advise them not to worry about organizing it - just get it all out. Offer multiple ways to provide context:
 
-- Info dump stream-of-consciousness
+1. Info dump stream-of-consciousness
 
-- Point to team channels or threads to read
+1. Point to team channels or threads to read
 
-- Link to shared documents
+1. Link to shared documents
 
 **If integrations are available** (e.g., Slack, Teams, Google Drive, SharePoint, or other MCP servers), mention that these can be used to pull in context directly.
 
@@ -101,15 +101,15 @@ Inform them clarifying questions will be asked once they've done their initial d
 
 #### During context gathering
 
-- If user mentions team channels or shared documents:
-  - If integrations available: Inform them the content will be read now, then use the appropriate integration
-  - If integrations not available: Explain lack of access. Suggest they enable connectors in Claude settings, or paste the relevant content directly.
+1. If user mentions team channels or shared documents:
+  1. If integrations available: Inform them the content will be read now, then use the appropriate integration
+  1. If integrations not available: Explain lack of access. Suggest they enable connectors in Claude settings, or paste the relevant content directly.
 
-- If user mentions entities/projects that are unknown:
-  - Ask if connected tools should be searched to learn more
-  - Wait for user confirmation before searching
+1. If user mentions entities/projects that are unknown:
+  1. Ask if connected tools should be searched to learn more
+  1. Wait for user confirmation before searching
 
-- As user provides context, track what's being learned and what's still unclear
+1. As user provides context, track what's being learned and what's still unclear
 
 #### Asking clarifying questions
 
@@ -199,9 +199,9 @@ Inform them they can answer in shorthand or just indicate what's important to co
 
 For the [SECTION NAME] section, brainstorm [5-20] things that might be included, depending on the section's complexity. Look for:
 
-- Context shared that might have been forgotten
+1. Context shared that might have been forgotten
 
-- Angles or considerations not yet mentioned
+1. Angles or considerations not yet mentioned
 
 Generate 5-20 numbered options based on section complexity. At the end, offer to brainstorm more if they want additional options.
 
@@ -211,13 +211,13 @@ Ask which points should be kept, removed, or combined. Request brief justificati
 
 Provide examples:
 
-- "Keep 1,4,7,9"
+1. "Keep 1,4,7,9"
 
-- "Remove 3 (duplicates 1)"
+1. "Remove 3 (duplicates 1)"
 
-- "Remove 6 (audience already knows this)"
+1. "Remove 6 (audience already knows this)"
 
-- "Combine 11 and 12"
+1. "Combine 11 and 12"
 
 **If user gives freeform feedback** (e.g., "looks good" or "I like most of it but...") instead of numbered selections, extract their preferences and proceed. Parse what they want kept/removed/changed and apply it.
 
@@ -251,13 +251,13 @@ Provide a note: Instead of editing the doc directly, ask them to indicate what t
 
 As user provides feedback:
 
-- Use `str_replace` to make edits (never reprint the whole doc)
+1. Use `str_replace` to make edits (never reprint the whole doc)
 
-- **If using artifacts:** Provide link to artifact after each edit
+1. **If using artifacts:** Provide link to artifact after each edit
 
-- **If using files:** Just confirm edits are complete
+1. **If using files:** Just confirm edits are complete
 
-- If user edits doc directly and asks to read it: mentally note the changes they made and keep them in mind for future sections (this shows their preferences)
+1. If user edits doc directly and asks to read it: mentally note the changes they made and keep them in mind for future sections (this shows their preferences)
 
 **Continue iterating** until user is satisfied with the section.
 
@@ -273,13 +273,13 @@ When section is done, confirm [SECTION NAME] is complete. Ask if ready to move t
 
 As approaching completion (80%+ of sections done), announce intention to re-read the entire document and check for:
 
-- Flow and consistency across sections
+1. Flow and consistency across sections
 
-- Redundancy or contradictions
+1. Redundancy or contradictions
 
-- Anything that feels like "slop" or generic filler
+1. Anything that feels like "slop" or generic filler
 
-- Whether every sentence carries weight
+1. Whether every sentence carries weight
 
 Read entire document and provide feedback.
 
@@ -364,11 +364,11 @@ Provide testing instructions:
 
 For each question, instruct Reader Claude to provide:
 
-- The answer
+1. The answer
 
-- Whether anything was ambiguous or unclear
+1. Whether anything was ambiguous or unclear
 
-- What knowledge/context the doc assumes is already known
+1. What knowledge/context the doc assumes is already known
 
 Check if Reader Claude gives correct answers or misinterprets anything.
 
@@ -376,11 +376,11 @@ Check if Reader Claude gives correct answers or misinterprets anything.
 
 Also ask Reader Claude:
 
-- "What in this doc might be ambiguous or unclear to readers?"
+1. "What in this doc might be ambiguous or unclear to readers?"
 
-- "What knowledge or context does this doc assume readers already have?"
+1. "What knowledge or context does this doc assume readers already have?"
 
-- "Are there any internal contradictions or inconsistencies?"
+1. "Are there any internal contradictions or inconsistencies?"
 
 ### Step 4: Iterate Based on Results
 
@@ -411,50 +411,50 @@ Ask if they want one more review, or if the work is done.
 
 Announce document completion. Provide a few final tips:
 
-- Consider linking this conversation in an appendix so readers can see how the doc was developed
+1. Consider linking this conversation in an appendix so readers can see how the doc was developed
 
-- Use appendices to provide depth without bloating the main doc
+1. Use appendices to provide depth without bloating the main doc
 
-- Update the doc as feedback is received from real readers
+1. Update the doc as feedback is received from real readers
 
 ## Tips for Effective Guidance
 
 ### Tone
 
-- Be direct and procedural
+1. Be direct and procedural
 
-- Explain rationale briefly when it affects user behavior
+1. Explain rationale briefly when it affects user behavior
 
-- Don't try to "sell" the approach - just execute it
+1. Don't try to "sell" the approach - just execute it
 
 #### Handling Deviations
 
-- If user wants to skip a stage: Ask if they want to skip this and write freeform
+1. If user wants to skip a stage: Ask if they want to skip this and write freeform
 
-- If user seems frustrated: Acknowledge this is taking longer than expected. Suggest ways to move faster
+1. If user seems frustrated: Acknowledge this is taking longer than expected. Suggest ways to move faster
 
-- Always give user agency to adjust the process
+1. Always give user agency to adjust the process
 
 #### Context Management
 
-- Throughout, if context is missing on something mentioned, proactively ask
+1. Throughout, if context is missing on something mentioned, proactively ask
 
-- Don't let gaps accumulate - address them as they come up
+1. Don't let gaps accumulate - address them as they come up
 
 #### Artifact Management
 
-- Use `create_file` for drafting full sections
+1. Use `create_file` for drafting full sections
 
-- Use `str_replace` for all edits
+1. Use `str_replace` for all edits
 
-- Provide artifact link after every change
+1. Provide artifact link after every change
 
-- Never use artifacts for brainstorming lists - that's just conversation
+1. Never use artifacts for brainstorming lists - that's just conversation
 
 #### Quality over Speed
 
-- Don't rush through stages
+1. Don't rush through stages
 
-- Each iteration should make meaningful improvements
+1. Each iteration should make meaningful improvements
 
-- The goal is a document that actually works for readers
+1. The goal is a document that actually works for readers

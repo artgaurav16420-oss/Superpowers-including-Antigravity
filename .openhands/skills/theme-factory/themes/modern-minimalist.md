@@ -4,15 +4,15 @@ A clean and contemporary theme with a sophisticated grayscale palette for maximu
 
 ## Color Palette
 
-- **Charcoal**: `#36454f` - Primary dark color
-- **Slate Gray**: `#708090` - Medium gray for accents
-- **Light Gray**: `#d3d3d3` - Backgrounds and dividers
-- **White**: `#ffffff` - Text and clean backgrounds
+1. **Charcoal**: `#36454f` - Primary dark color
+1. **Slate Gray**: `#708090` - Medium gray for accents
+1. **Light Gray**: `#d3d3d3` - Backgrounds and dividers
+1. **White**: `#ffffff` - Text and clean backgrounds
 
 ## Typography
 
-- **Headers**: DejaVu Sans Bold
-- **Body Text**: DejaVu Sans
+1. **Headers**: DejaVu Sans Bold
+1. **Body Text**: DejaVu Sans
 
 ## Best Used For
 

@@ -4,15 +4,15 @@ A soft and sophisticated theme with dusty, muted tones perfect for elegant prese
 
 ## Color Palette
 
-- **Dusty Rose**: `#d4a5a5` - Soft primary color
-- **Clay**: `#b87d6d` - Earthy accent
-- **Sand**: `#e8d5c4` - Warm neutral backgrounds
-- **Deep Burgundy**: `#5d2e46` - Rich dark contrast
+1. **Dusty Rose**: `#d4a5a5` - Soft primary color
+1. **Clay**: `#b87d6d` - Earthy accent
+1. **Sand**: `#e8d5c4` - Warm neutral backgrounds
+1. **Deep Burgundy**: `#5d2e46` - Rich dark contrast
 
 ## Typography
 
-- **Headers**: FreeSans Bold
-- **Body Text**: FreeSans
+1. **Headers**: FreeSans Bold
+1. **Body Text**: FreeSans
 
 ## Best Used For
 

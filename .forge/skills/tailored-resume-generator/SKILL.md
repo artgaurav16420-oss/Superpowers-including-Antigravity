@@ -7,17 +7,17 @@ description: Analyzes job descriptions and generates tailored resumes that highl
 
 ## When to Use This Skill
 
-- Applying for a specific job position
+1. Applying for a specific job position
 
-- Customizing your resume for different industries or roles
+1. Customizing your resume for different industries or roles
 
-- Highlighting relevant experience for career transitions
+1. Highlighting relevant experience for career transitions
 
-- Optimizing your resume for ATS (Applicant Tracking Systems)
+1. Optimizing your resume for ATS (Applicant Tracking Systems)
 
-- Creating multiple resume versions for different job applications
+1. Creating multiple resume versions for different job applications
 
-- Emphasizing specific skills mentioned in job postings
+1. Emphasizing specific skills mentioned in job postings
 
 ## What This Skill Does
 
@@ -140,13 +140,13 @@ State University | Graduated 2018
 
 ### Additional Recommendations
 
-- Consider adding any specific healthcare projects or certifications
+1. Consider adding any specific healthcare projects or certifications
 
-- Quantify more achievements with metrics when possible
+1. Quantify more achievements with metrics when possible
 
-- If you have experience with R or advanced statistical methods, add them
+1. If you have experience with R or advanced statistical methods, add them
 
-- Consider mentioning any familiarity with healthcare regulations (HIPAA, etc.)
+1. Consider mentioning any familiarity with healthcare regulations (HIPAA, etc.)
 
 ---
 
@@ -158,149 +158,149 @@ When a user requests resume tailoring:
 
 **Job Description Analysis**:
 
-- Request the full job description if not provided
+1. Request the full job description if not provided
 
-- Ask for the company name and job title
+1. Ask for the company name and job title
 
 **Candidate Background**:
 
-- If user provides existing resume, use it as the foundation
+1. If user provides existing resume, use it as the foundation
 
-- If not, request:
-  - Work history (job titles, companies, dates, responsibilities)
-  - Education background
-  - Key skills and technical proficiencies
-  - Notable achievements and metrics
-  - Certifications or awards
-  - Any other relevant information
+1. If not, request:
+  1. Work history (job titles, companies, dates, responsibilities)
+  1. Education background
+  1. Key skills and technical proficiencies
+  1. Notable achievements and metrics
+  1. Certifications or awards
+  1. Any other relevant information
 
 ### 2. Analyze Job Requirements
 
 Extract and prioritize:
 
-- **Must-have qualifications**: Years of experience, required skills, education
+1. **Must-have qualifications**: Years of experience, required skills, education
 
-- **Key skills**: Technical tools, methodologies, competencies
+1. **Key skills**: Technical tools, methodologies, competencies
 
-- **Soft skills**: Communication, leadership, teamwork
+1. **Soft skills**: Communication, leadership, teamwork
 
-- **Industry knowledge**: Domain-specific experience
+1. **Industry knowledge**: Domain-specific experience
 
-- **Keywords**: Repeated terms, phrases, and buzzwords for ATS optimization
+1. **Keywords**: Repeated terms, phrases, and buzzwords for ATS optimization
 
-- **Company values**: Cultural fit indicators from job description
+1. **Company values**: Cultural fit indicators from job description
 
 Create a mental map of:
 
-- Priority 1: Critical requirements (deal-breakers)
+1. Priority 1: Critical requirements (deal-breakers)
 
-- Priority 2: Important qualifications (strongly desired)
+1. Priority 2: Important qualifications (strongly desired)
 
-- Priority 3: Nice-to-have skills (bonus points)
+1. Priority 3: Nice-to-have skills (bonus points)
 
 ### 3. Map Candidate Experience to Requirements
 
 For each job requirement:
 
-- Identify matching experience from candidate's background
+1. Identify matching experience from candidate's background
 
-- Find transferable skills if no direct match
+1. Find transferable skills if no direct match
 
-- Note gaps that need to be addressed or de-emphasized
+1. Note gaps that need to be addressed or de-emphasized
 
-- Identify unique strengths to highlight
+1. Identify unique strengths to highlight
 
 ### 4. Structure the Tailored Resume
 
 **Professional Summary** (3-4 lines):
 
-- Lead with years of experience in the target role/field
+1. Lead with years of experience in the target role/field
 
-- Include top 3-4 required skills from job description
+1. Include top 3-4 required skills from job description
 
-- Mention industry experience if relevant
+1. Mention industry experience if relevant
 
-- Highlight unique value proposition
+1. Highlight unique value proposition
 
 **Technical/Core Skills Section**:
 
-- Group skills by category matching job requirements
+1. Group skills by category matching job requirements
 
-- List required tools and technologies first
+1. List required tools and technologies first
 
-- Use exact terminology from job description
+1. Use exact terminology from job description
 
-- Only include skills you can substantiate with experience
+1. Only include skills you can substantiate with experience
 
 **Professional Experience**:
 
-- For each role, emphasize responsibilities and achievements aligned with job requirements
+1. For each role, emphasize responsibilities and achievements aligned with job requirements
 
-- Use action verbs: Led, Developed, Implemented, Optimized, Managed, Created, Analyzed
+1. Use action verbs: Led, Developed, Implemented, Optimized, Managed, Created, Analyzed
 
-- **Quantify achievements**: Include numbers, percentages, timeframes, scale
+1. **Quantify achievements**: Include numbers, percentages, timeframes, scale
 
-- Reorder bullet points to prioritize most relevant experience
+1. Reorder bullet points to prioritize most relevant experience
 
-- Use keywords naturally from job description
+1. Use keywords naturally from job description
 
-- Format: **[Action Verb] + [What] + [How/Why] + [Result/Impact]**
+1. Format: **[Action Verb] + [What] + [How/Why] + [Result/Impact]**
 
 **Education**:
 
-- List degrees, certifications relevant to position
+1. List degrees, certifications relevant to position
 
-- Include relevant coursework if early career
+1. Include relevant coursework if early career
 
-- Add certifications that match job requirements
+1. Add certifications that match job requirements
 
 **Optional Sections** (if applicable):
 
-- Certifications & Licenses
+1. Certifications & Licenses
 
-- Publications or Speaking Engagements
+1. Publications or Speaking Engagements
 
-- Awards & Recognition
+1. Awards & Recognition
 
-- Volunteer Work (if relevant to role)
+1. Volunteer Work (if relevant to role)
 
-- Projects (especially for technical roles)
+1. Projects (especially for technical roles)
 
 ### 5. Optimize for ATS (Applicant Tracking Systems)
 
-- Use standard section headings (Professional Experience, Education, Skills)
+1. Use standard section headings (Professional Experience, Education, Skills)
 
-- Incorporate exact keywords from job description naturally
+1. Incorporate exact keywords from job description naturally
 
-- Avoid tables, graphics, headers/footers, or complex formatting
+1. Avoid tables, graphics, headers/footers, or complex formatting
 
-- Use standard fonts and bullet points
+1. Use standard fonts and bullet points
 
-- Include both acronyms and full terms (e.g., "SQL (Structured Query Language)")
+1. Include both acronyms and full terms (e.g., "SQL (Structured Query Language)")
 
-- Match job title terminology where truthful
+1. Match job title terminology where truthful
 
 ### 6. Format and Present
 
 **Format Options**:
 
-- **Markdown**: Clean, readable, easy to copy
+1. **Markdown**: Clean, readable, easy to copy
 
-- **Plain Text**: ATS-optimized, safe for all systems
+1. **Plain Text**: ATS-optimized, safe for all systems
 
-- **Tips for Word/PDF**: Provide formatting guidance
+1. **Tips for Word/PDF**: Provide formatting guidance
 
 **Resume Structure Guidelines**:
 
-- Keep to 1 page for <10 years experience, 2 pages for 10+ years
+1. Keep to 1 page for <10 years experience, 2 pages for 10+ years
 
-- Use consistent formatting and spacing
+1. Use consistent formatting and spacing
 
-- Ensure contact information is prominent
+1. Ensure contact information is prominent
 
-- Use reverse chronological order (most recent first)
+1. Use reverse chronological order (most recent first)
 
-- Maintain clean, scannable layout with white space
+1. Maintain clean, scannable layout with white space
 
 ### 7. Provide Strategic Recommendations
 
@@ -308,141 +308,141 @@ After presenting the tailored resume, offer:
 
 **Strengths Analysis**:
 
-- What makes this candidate competitive
+1. What makes this candidate competitive
 
-- Unique qualifications to emphasize in cover letter or interview
+1. Unique qualifications to emphasize in cover letter or interview
 
 **Gap Analysis**:
 
-- Requirements not fully met
+1. Requirements not fully met
 
-- Suggestions for addressing gaps (courses, projects, reframing experience)
+1. Suggestions for addressing gaps (courses, projects, reframing experience)
 
 **Interview Preparation Tips**:
 
-- Key talking points aligned with resume
+1. Key talking points aligned with resume
 
-- Stories to prepare based on job requirements
+1. Stories to prepare based on job requirements
 
-- Questions to ask that demonstrate fit
+1. Questions to ask that demonstrate fit
 
 **Cover Letter Hooks**:
 
-- Suggest 2-3 opening lines for cover letter
+1. Suggest 2-3 opening lines for cover letter
 
-- Key achievements to expand upon
+1. Key achievements to expand upon
 
 ### 8. Iterate and Refine
 
 Ask if user wants to:
 
-- Adjust emphasis or tone
+1. Adjust emphasis or tone
 
-- Add or remove sections
+1. Add or remove sections
 
-- Generate alternative versions for different roles
+1. Generate alternative versions for different roles
 
-- Create format variations (traditional vs. modern)
+1. Create format variations (traditional vs. modern)
 
-- Develop role-specific versions (if applying to multiple similar positions)
+1. Develop role-specific versions (if applying to multiple similar positions)
 
 ### 9. Best Practices to Follow
 
 **Do**:
 
-- Be truthful and accurate - never fabricate experience
+1. Be truthful and accurate - never fabricate experience
 
-- Use industry-standard terminology
+1. Use industry-standard terminology
 
-- Quantify achievements with specific metrics
+1. Quantify achievements with specific metrics
 
-- Tailor each resume to specific job
+1. Tailor each resume to specific job
 
-- Proofread for grammar and consistency
+1. Proofread for grammar and consistency
 
-- Keep language concise and impactful
+1. Keep language concise and impactful
 
 **Don't**:
 
-- Include personal information (age, marital status, photo unless requested)
+1. Include personal information (age, marital status, photo unless requested)
 
-- Use first-person pronouns (I, me, my)
+1. Use first-person pronouns (I, me, my)
 
-- Include references ("available upon request" is outdated)
+1. Include references ("available upon request" is outdated)
 
-- List every job if career is 20+ years (focus on relevant, recent experience)
+1. List every job if career is 20+ years (focus on relevant, recent experience)
 
-- Use generic templates without customization
+1. Use generic templates without customization
 
-- Exceed 2 pages unless very senior role
+1. Exceed 2 pages unless very senior role
 
 ### 10. Special Considerations
 
 **Career Changers**:
 
-- Use functional or hybrid resume format
+1. Use functional or hybrid resume format
 
-- Emphasize transferable skills
+1. Emphasize transferable skills
 
-- Create compelling narrative in summary
+1. Create compelling narrative in summary
 
-- Focus on relevant projects and coursework
+1. Focus on relevant projects and coursework
 
 **Recent Graduates**:
 
-- Lead with education
+1. Lead with education
 
-- Include relevant coursework, projects, internships
+1. Include relevant coursework, projects, internships
 
-- Emphasize leadership in student organizations
+1. Emphasize leadership in student organizations
 
-- Include GPA if 3.5+
+1. Include GPA if 3.5+
 
 **Senior Executives**:
 
-- Lead with executive summary
+1. Lead with executive summary
 
-- Focus on leadership and strategic impact
+1. Focus on leadership and strategic impact
 
-- Include board memberships, speaking engagements
+1. Include board memberships, speaking engagements
 
-- Emphasize revenue growth, team building, vision
+1. Emphasize revenue growth, team building, vision
 
 **Technical Roles**:
 
-- Include technical skills section prominently
+1. Include technical skills section prominently
 
-- List programming languages, frameworks, tools
+1. List programming languages, frameworks, tools
 
-- Include GitHub, portfolio, or project links
+1. Include GitHub, portfolio, or project links
 
-- Mention methodologies (Agile, Scrum, etc.)
+1. Mention methodologies (Agile, Scrum, etc.)
 
 **Creative Roles**:
 
-- Include link to portfolio
+1. Include link to portfolio
 
-- Highlight creative achievements and campaigns
+1. Highlight creative achievements and campaigns
 
-- Mention tools and software proficiencies
+1. Mention tools and software proficiencies
 
-- Consider more creative formatting (while maintaining ATS compatibility)
+1. Consider more creative formatting (while maintaining ATS compatibility)
 
 ---
 
 ## Tips for Best Results
 
-- **Be specific**: Provide complete job descriptions and detailed background information
+1. **Be specific**: Provide complete job descriptions and detailed background information
 
-- **Share metrics**: Include numbers, percentages, and quantifiable achievements when describing your experience
+1. **Share metrics**: Include numbers, percentages, and quantifiable achievements when describing your experience
 
-- **Indicate format preference**: Let the skill know if you need ATS-optimized, creative, or traditional format
+1. **Indicate format preference**: Let the skill know if you need ATS-optimized, creative, or traditional format
 
-- **Mention constraints**: Share any specific requirements (page limits, sections to include/exclude)
+1. **Mention constraints**: Share any specific requirements (page limits, sections to include/exclude)
 
-- **Iterate**: Don't hesitate to ask for revisions or alternative approaches
+1. **Iterate**: Don't hesitate to ask for revisions or alternative approaches
 
-- **Multiple applications**: Generate separate tailored versions for different roles
+1. **Multiple applications**: Generate separate tailored versions for different roles
 
 ## Privacy Note
 

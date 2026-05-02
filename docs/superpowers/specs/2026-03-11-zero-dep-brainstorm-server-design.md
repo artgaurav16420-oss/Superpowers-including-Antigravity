@@ -10,8 +10,8 @@ Vendoring node_modules into the git repo creates a supply chain risk: frozen dep
 
 A single `server.js` file (~250-300 lines) using `http`, `crypto`, `fs`, and `path`. The file serves two roles:
 
-- **When run directly** (`node server.js`): starts the HTTP/WebSocket server
-- **When required** (`require('./server.js')`): exports WebSocket protocol functions for unit testing
+1. **When run directly** (`node server.js`): starts the HTTP/WebSocket server
+1. **When required** (`require('./server.js')`): exports WebSocket protocol functions for unit testing
 
 ### WebSocket Protocol
 
@@ -20,9 +20,9 @@ Implements RFC 6455 for text frames only:
 **Handshake:** Compute `Sec-WebSocket-Accept` from client's `Sec-WebSocket-Key` using SHA-1 + the RFC 6455 magic GUID. Return 101 Switching Protocols.
 
 **Frame decoding (client to server):** Handle three masked length encodings:
-- Small: payload < 126 bytes
-- Medium: 126-65535 bytes (16-bit extended)
-- Large: > 65535 bytes (64-bit extended)
+1. Small: payload < 126 bytes
+1. Medium: 126-65535 bytes (16-bit extended)
+1. Large: > 65535 bytes (64-bit extended)
 
 XOR-unmask payload using 4-byte mask key. Return `{ opcode, payload, bytesConsumed }` or `null` for incomplete buffers. Reject unmasked frames.
 
@@ -48,10 +48,10 @@ WebSocket upgrade handled via the `'upgrade'` event on the HTTP server, separate
 
 Environment variables (all optional):
 
-- `BRAINSTORM_PORT` — port to bind (default: random high port 49152-65535)
-- `BRAINSTORM_HOST` — interface to bind (default: `127.0.0.1`)
-- `BRAINSTORM_URL_HOST` — hostname for the URL in startup JSON (default: `localhost` when host is `127.0.0.1`, otherwise same as host)
-- `BRAINSTORM_DIR` — screen directory path (default: `/tmp/brainstorm`)
+1. `BRAINSTORM_PORT` — port to bind (default: random high port 49152-65535)
+1. `BRAINSTORM_HOST` — interface to bind (default: `127.0.0.1`)
+1. `BRAINSTORM_URL_HOST` — hostname for the URL in startup JSON (default: `localhost` when host is `127.0.0.1`, otherwise same as host)
+1. `BRAINSTORM_DIR` — screen directory path (default: `/tmp/brainstorm`)
 
 ### Startup Sequence
 
@@ -74,42 +74,42 @@ When a TEXT frame arrives from a client:
 
 `fs.watch(SCREEN_DIR)` replaces chokidar. On HTML file events:
 
-- On new file (`rename` event for a file that exists): delete `.events` file if present (`unlinkSync`), log `screen-added` to stdout as JSON
-- On file change (`change` event): log `screen-updated` to stdout as JSON (do NOT clear `.events`)
-- Both events: send `{ type: 'reload' }` to all connected WebSocket clients
+1. On new file (`rename` event for a file that exists): delete `.events` file if present (`unlinkSync`), log `screen-added` to stdout as JSON
+1. On file change (`change` event): log `screen-updated` to stdout as JSON (do NOT clear `.events`)
+1. Both events: send `{ type: 'reload' }` to all connected WebSocket clients
 
 Debounce per-filename with ~100ms timeout to prevent duplicate events (common on macOS and Linux).
 
 ### Error Handling
 
-- Malformed JSON from WebSocket clients: log to stderr, continue
-- Unhandled opcodes: close with status 1003
-- Client disconnects: remove from broadcast set
-- `fs.watch` errors: log to stderr, continue
-- No graceful shutdown logic — shell scripts handle process lifecycle via SIGTERM
+1. Malformed JSON from WebSocket clients: log to stderr, continue
+1. Unhandled opcodes: close with status 1003
+1. Client disconnects: remove from broadcast set
+1. `fs.watch` errors: log to stderr, continue
+1. No graceful shutdown logic — shell scripts handle process lifecycle via SIGTERM
 
 ## What Changes
 
 | Before | After |
-|::::::::---|::::::::---|
+|:::::::::---|:::::::::---|
 | `index.js` + `package.json` + `package-lock.json` + 714 `node_modules` files | `server.js` (single file) |
 | express, ws, chokidar dependencies | none |
 | No static file serving | `/files/*` serves from screen directory |
 
 ## What Stays the Same
 
-- `helper.js` — no changes
-- `frame-template.html` — no changes
-- `start-server.sh` — one-line update: `index.js` to `server.js`
-- `stop-server.sh` — no changes
-- `visual-companion.md` — no changes
-- All existing server behavior and external contract
+1. `helper.js` — no changes
+1. `frame-template.html` — no changes
+1. `start-server.sh` — one-line update: `index.js` to `server.js`
+1. `stop-server.sh` — no changes
+1. `visual-companion.md` — no changes
+1. All existing server behavior and external contract
 
 ## Platform Compatibility
 
-- `server.js` uses only cross-platform Node built-ins
-- `fs.watch` is reliable for single flat directories on macOS, Linux, and Windows
-- Shell scripts require bash (Git Bash on Windows, which is required for Claude Code)
+1. `server.js` uses only cross-platform Node built-ins
+1. `fs.watch` is reliable for single flat directories on macOS, Linux, and Windows
+1. Shell scripts require bash (Git Bash on Windows, which is required for Claude Code)
 
 ## Testing
 

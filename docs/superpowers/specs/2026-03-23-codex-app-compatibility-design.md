@@ -15,7 +15,7 @@ The Codex CLI (open source terminal tool) does NOT have this conflict — it has
 Tested in the Codex App on 2026-03-23:
 
 | Operation | workspace-write sandbox | Full access sandbox |
-|::::::::---|::::::::---|::::::::---|
+|:::::::::---|:::::::::---|:::::::::---|
 | `git add` | Works | Works |
 | `git commit` | Works | Works |
 | `git checkout -b` | **Blocked** (can't write `.git/refs/heads/`) | Works |
@@ -24,10 +24,10 @@ Tested in the Codex App on 2026-03-23:
 | `git status/diff/log` | Works | Works |
 
 Additional findings:
-- `spawn_agent` subagents **share** the parent thread's filesystem (confirmed via marker file test)
-- "Create branch" button appears in the App header regardless of which branch the worktree was started from
-- The App's native finishing flow: Create branch → Commit modal → Commit and push / Commit and create PR
-- `network_access = true` config is silently broken on macOS (issue #10390)
+1. `spawn_agent` subagents **share** the parent thread's filesystem (confirmed via marker file test)
+1. "Create branch" button appears in the App header regardless of which branch the worktree was started from
+1. The App's native finishing flow: Create branch → Commit modal → Commit and push / Commit and create PR
+1. `network_access = true` config is silently broken on macOS (issue #10390)
 
 ## Design: Read-Only Environment Detection
 
@@ -41,19 +41,19 @@ BRANCH=$(git branch --show-current)
 
 Two signals derived:
 
-- **IN_LINKED_WORKTREE:** `GIT_DIR != GIT_COMMON` — the agent is in a worktree created by something else (Codex App, Claude Code Agent tool, previous skill run, or the user)
-- **ON_DETACHED_HEAD:** `BRANCH` is empty — no named branch exists
+1. **IN_LINKED_WORKTREE:** `GIT_DIR != GIT_COMMON` — the agent is in a worktree created by something else (Codex App, Claude Code Agent tool, previous skill run, or the user)
+1. **ON_DETACHED_HEAD:** `BRANCH` is empty — no named branch exists
 
 Why `git-dir != git-common-dir` instead of checking `show-toplevel`:
-- In a normal repo, both resolve to the same `.git` directory
-- In a linked worktree, `git-dir` is `.git/worktrees/<name>` while `git-common-dir` is `.git`
-- In a submodule, both are equal — avoiding a false positive that `show-toplevel` would produce
-- Resolving via `cd && pwd -P` handles the relative-path problem (`git-common-dir` returns `.git` relative in normal repos but absolute in worktrees) and symlinks (macOS `/tmp` → `/private/tmp`)
+1. In a normal repo, both resolve to the same `.git` directory
+1. In a linked worktree, `git-dir` is `.git/worktrees/<name>` while `git-common-dir` is `.git`
+1. In a submodule, both are equal — avoiding a false positive that `show-toplevel` would produce
+1. Resolving via `cd && pwd -P` handles the relative-path problem (`git-common-dir` returns `.git` relative in normal repos but absolute in worktrees) and symlinks (macOS `/tmp` → `/private/tmp`)
 
 ### Decision Matrix
 
 | Linked Worktree? | Detached HEAD? | Environment | Action |
-|::::::::---|::::::::---|::::::::---|::::::::---|
+|:::::::::---|:::::::::---|:::::::::---|:::::::::---|
 | No | No | Claude Code / Codex CLI / normal git | Full skill behavior (unchanged) |
 | Yes | Yes | Codex App worktree (workspace-write) | Skip worktree creation; handoff payload at finish |
 | Yes | No | Codex App (Full access) or manual worktree | Skip worktree creation; full finishing flow |
@@ -71,8 +71,8 @@ Run the detection commands. If `GIT_DIR != GIT_COMMON`, skip worktree creation e
 1. Skip to "Run Project Setup" subsection under Creation Steps — `npm install` etc. is idempotent, worth running for safety
 1. Then "Verify Clean Baseline" — run tests
 1. Report with branch state:
-   - On a branch: "Already in an isolated workspace at `<path>` on branch `<name>`. Tests passing. Ready to implement."
-   - Detached HEAD: "Already in an isolated workspace at `<path>` (detached HEAD, externally managed). Tests passing. Note: branch creation needed at finish time. Ready to implement."
+   1. On a branch: "Already in an isolated workspace at `<path>` on branch `<name>`. Tests passing. Ready to implement."
+   1. Detached HEAD: "Already in an isolated workspace at `<path>` (detached HEAD, externally managed). Tests passing. Note: branch creation needed at finish time. Ready to implement."
 
 If `GIT_DIR == GIT_COMMON`, proceed with the full worktree creation flow (unchanged).
 
@@ -92,8 +92,8 @@ After reporting in Step 0, STOP. Do not continue to Directory Selection or Creat
 
 Run the detection commands. Three paths:
 
-- **Path A** skips Steps 2 and 3 entirely (no base branch or options needed).
-- **Paths B and C** proceed through Step 2 (Determine Base Branch) and Step 3 (Present Options) as normal.
+1. **Path A** skips Steps 2 and 3 entirely (no base branch or options needed).
+1. **Paths B and C** proceed through Step 2 (Determine Base Branch) and Step 3 (Present Options) as normal.
 
 **Path A — Externally managed worktree + detached HEAD** (`GIT_DIR != GIT_COMMON` AND `BRANCH` empty):
 
@@ -198,18 +198,18 @@ names, commit messages, and PR descriptions for the user to copy.
 
 ## What Does NOT Change
 
-- `implementer-prompt.md`, `spec-reviewer-prompt.md`, `code-quality-reviewer-prompt.md` — subagent prompts untouched
-- `executing-plans/SKILL.md` — only the 1-line Integration description changes (same as `subagent-driven-development`); all runtime behavior is unchanged
-- `dispatching-parallel-agents/SKILL.md` — no worktree or finishing operations
-- `.codex/INSTALL.md` — installation process unchanged
-- The 4-option finishing menu — preserved exactly for Claude Code and Codex CLI
-- The full worktree creation flow — preserved exactly for non-worktree environments
-- Subagent dispatch/review/iterate loop — unchanged (filesystem sharing confirmed)
+1. `implementer-prompt.md`, `spec-reviewer-prompt.md`, `code-quality-reviewer-prompt.md` — subagent prompts untouched
+1. `executing-plans/SKILL.md` — only the 1-line Integration description changes (same as `subagent-driven-development`); all runtime behavior is unchanged
+1. `dispatching-parallel-agents/SKILL.md` — no worktree or finishing operations
+1. `.codex/INSTALL.md` — installation process unchanged
+1. The 4-option finishing menu — preserved exactly for Claude Code and Codex CLI
+1. The full worktree creation flow — preserved exactly for non-worktree environments
+1. Subagent dispatch/review/iterate loop — unchanged (filesystem sharing confirmed)
 
 ## Scope Summary
 
 | File | Change |
-|::::::::---|::::::::---|
+|:::::::::---|:::::::::---|
 | `skills/using-git-worktrees/SKILL.md` | +12 lines (Step 0) |
 | `skills/finishing-a-development-branch/SKILL.md` | +20 lines (Step 1.5 + cleanup guard) |
 | `skills/subagent-driven-development/SKILL.md` | 1 line edit |
@@ -242,6 +242,6 @@ If a third skill needs the same detection pattern, extract it into a shared `ref
 
 ### Regression
 
-- Existing Claude Code skill-triggering tests still pass
-- Existing subagent-driven-development integration tests still pass
-- Normal Claude Code session: full worktree creation + 4-option finishing still works
+1. Existing Claude Code skill-triggering tests still pass
+1. Existing subagent-driven-development integration tests still pass
+1. Normal Claude Code session: full worktree creation + 4-option finishing still works

@@ -9,21 +9,21 @@ This skill acts as your writing partner, helping you research, outline, draft, a
 
 ## When to Use This Skill
 
-- Writing blog posts, articles, or newsletters
+1. Writing blog posts, articles, or newsletters
 
-- Creating educational content or tutorials
+1. Creating educational content or tutorials
 
-- Drafting thought leadership pieces
+1. Drafting thought leadership pieces
 
-- Researching and writing case studies
+1. Researching and writing case studies
 
-- Producing technical documentation with sources
+1. Producing technical documentation with sources
 
-- Writing with proper citations and references
+1. Writing with proper citations and references
 
-- Improving hooks and introductions
+1. Improving hooks and introductions
 
-- Getting section-by-section feedback while writing
+1. Getting section-by-section feedback while writing
 
 ## What This Skill Does
 
@@ -100,12 +100,12 @@ When a user requests writing assistance:
 
    Ask clarifying questions:
 
-   - What's the topic and main argument?
-   - Who's the target audience?
-   - What's the desired length/format?
-   - What's your goal? (educate, persuade, entertain, explain)
-   - Any existing research or sources to include?
-   - What's your writing style? (formal, conversational, technical)
+   1. What's the topic and main argument?
+   1. Who's the target audience?
+   1. What's the desired length/format?
+   1. What's your goal? (educate, persuade, entertain, explain)
+   1. Any existing research or sources to include?
+   1. What's your writing style? (formal, conversational, technical)
 
 1. **Collaborative Outlining**
 
@@ -160,19 +160,19 @@ When a user requests writing assistance:
 
    **Iterate on outline**:
 
-   - Adjust based on feedback
-   - Ensure logical flow
-   - Identify research gaps
-   - Mark sections for deep dives
+   1. Adjust based on feedback
+   1. Ensure logical flow
+   1. Identify research gaps
+   1. Mark sections for deep dives
 
 1. **Conduct Research**
 
    When user requests research on a topic:
 
-   - Search for relevant information
-   - Find credible sources
-   - Extract key facts, quotes, and data
-   - Add citations in requested format
+   1. Search for relevant information
+   1. Find credible sources
+   1. Extract key facts, quotes, and data
+   1. Add citations in requested format
 
    Example output:
 
@@ -205,9 +205,9 @@ When a user requests writing assistance:
 
    **Current Hook Analysis**:
 
-   - What works: [positive elements]
-   - What could be stronger: [areas for improvement]
-   - Emotional impact: [current vs. potential]
+   1. What works: [positive elements]
+   1. What could be stronger: [areas for improvement]
+   1. Emotional impact: [current vs. potential]
 
    **Suggested Alternatives**:
 
@@ -225,10 +225,10 @@ When a user requests writing assistance:
 
    **Questions to hook**:
 
-   - Does it create curiosity?
-   - Does it promise value?
-   - Is it specific enough?
-   - Does it match the audience?
+   1. Does it create curiosity?
+   1. Does it promise value?
+   1. Is it specific enough?
+   1. Does it match the audience?
 
 1. **Provide Section-by-Section Feedback**
 
@@ -281,17 +281,17 @@ When a user requests writing assistance:
 
    Important principles:
 
-   - **Learn their style**: Read existing writing samples
-   - **Suggest, don't replace**: Offer options, not directives
-   - **Match tone**: Formal, casual, technical, friendly
-   - **Respect choices**: If they prefer their version, support it
-   - **Enhance, don't override**: Make their writing better, not different
+   1. **Learn their style**: Read existing writing samples
+   1. **Suggest, don't replace**: Offer options, not directives
+   1. **Match tone**: Formal, casual, technical, friendly
+   1. **Respect choices**: If they prefer their version, support it
+   1. **Enhance, don't override**: Make their writing better, not different
 
    Ask periodically:
 
-   - "Does this sound like you?"
-   - "Is this the right tone?"
-   - "Should I be more/less [formal/casual/technical]?"
+   1. "Does this sound like you?"
+   1. "Is this the right tone?"
+   1. "Should I be more/less [formal/casual/technical]?"
 
 1. **Citation Management**
 
@@ -575,46 +575,46 @@ Recommended structure for writing projects:
 
 ### For Research
 
-- Verify sources before citing
+1. Verify sources before citing
 
-- Use recent data when possible
+1. Use recent data when possible
 
-- Balance different perspectives
+1. Balance different perspectives
 
-- Link to original sources
+1. Link to original sources
 
 ### For Feedback
 
-- Be specific about what you want: "Is this too technical?"
+1. Be specific about what you want: "Is this too technical?"
 
-- Share your concerns: "I'm worried this section drags"
+1. Share your concerns: "I'm worried this section drags"
 
-- Ask questions: "Does this flow logically?"
+1. Ask questions: "Does this flow logically?"
 
-- Request alternatives: "What's another way to explain this?"
+1. Request alternatives: "What's another way to explain this?"
 
 ### For Voice
 
-- Share examples of your writing
+1. Share examples of your writing
 
-- Specify tone preferences
+1. Specify tone preferences
 
-- Point out good matches: "That sounds like me!"
+1. Point out good matches: "That sounds like me!"
 
-- Flag mismatches: "Too formal for my style"
+1. Flag mismatches: "Too formal for my style"
 
 ## Related Use Cases
 
-- Creating social media posts from articles
+1. Creating social media posts from articles
 
-- Adapting content for different audiences
+1. Adapting content for different audiences
 
-- Writing email newsletters
+1. Writing email newsletters
 
-- Drafting technical documentation
+1. Drafting technical documentation
 
-- Creating presentation content
+1. Creating presentation content
 
-- Writing case studies
+1. Writing case studies
 
-- Developing course outlines
+1. Developing course outlines

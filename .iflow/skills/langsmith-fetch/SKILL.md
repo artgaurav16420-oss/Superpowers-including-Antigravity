@@ -11,17 +11,17 @@ Debug LangChain and LangGraph agents by fetching execution traces directly from 
 
 Automatically activate when user mentions:
 
-- 🐛 "Debug my agent" or "What went wrong?"
+1. 🐛 "Debug my agent" or "What went wrong?"
 
-- 🔍 "Show me recent traces" or "What happened?"
+1. 🔍 "Show me recent traces" or "What happened?"
 
-- ❌ "Check for errors" or "Why did it fail?"
+1. ❌ "Check for errors" or "Why did it fail?"
 
-- 💾 "Analyze memory operations" or "Check LTM"
+1. 💾 "Analyze memory operations" or "Check LTM"
 
-- 📊 "Review agent performance" or "Check token usage"
+1. 📊 "Review agent performance" or "Check token usage"
 
-- 🔧 "What tools were called?" or "Show execution flow"
+1. 🔧 "What tools were called?" or "Show execution flow"
 
 ## Prerequisites
 
@@ -245,17 +245,17 @@ Error Breakdown:
    ```
 
 1. **If NO traces found:**
-   - Tracing might be disabled
-   - Check: `LANGCHAIN_TRACING_V2=true` in environment
+   1. Tracing might be disabled
+   1. Check: `LANGCHAIN_TRACING_V2=true` in environment
 
-   - Check: `LANGCHAIN_API_KEY` is set
+   1. Check: `LANGCHAIN_API_KEY` is set
 
-   - Verify agent actually ran
+   1. Verify agent actually ran
 
 1. **If traces found:**
-   - Review for errors
-   - Check execution time (hanging?)
-   - Verify tool calls completed
+   1. Review for errors
+   1. Check execution time (hanging?)
+   1. Verify tool calls completed
 
 ---
 
@@ -290,10 +290,10 @@ Error Breakdown:
    ```
 
 1. Check:
-   - Were memory tools called?
-   - Did recall return results?
-   - Were memories actually stored?
-   - Are retrieved memories being used?
+   1. Were memory tools called?
+   1. Did recall return results?
+   1. Were memories actually stored?
+   1. Are retrieved memories being used?
 
 ---
 
@@ -310,11 +310,11 @@ Error Breakdown:
    ```
 
 1. Analyze:
-   - Execution time per trace
-   - Tool call latencies
-   - Token usage (context size)
-   - Number of iterations
-   - Slowest operations
+   1. Execution time per trace
+   1. Tool call latencies
+   1. Token usage (context size)
+   1. Number of iterations
+   1. Slowest operations
 
 1. Identify bottlenecks and suggest optimizations
 
@@ -494,31 +494,31 @@ langsmith-fetch traces --limit 10 --include-metadata
 
 ## Resources
 
-- **LangSmith Fetch CLI:** <https://github.com/langchain-ai/langsmith-fetch>
+1. **LangSmith Fetch CLI:** <https://github.com/langchain-ai/langsmith-fetch>
 
-- **LangSmith Studio:** <https://smith.langchain.com/>
+1. **LangSmith Studio:** <https://smith.langchain.com/>
 
-- **LangChain Docs:** <https://docs.langchain.com/>
+1. **LangChain Docs:** <https://docs.langchain.com/>
 
-- **This Skill Repo:** <https://github.com/OthmanAdi/langsmith-fetch-skill>
+1. **This Skill Repo:** <https://github.com/OthmanAdi/langsmith-fetch-skill>
 
 ---
 
 ## Notes for Claude
 
-- Always check if `langsmith-fetch` is installed before running commands
+1. Always check if `langsmith-fetch` is installed before running commands
 
-- Verify environment variables are set
+1. Verify environment variables are set
 
-- Use `--format pretty` for human-readable output
+1. Use `--format pretty` for human-readable output
 
-- Use `--format json` when you need to parse and analyze data
+1. Use `--format json` when you need to parse and analyze data
 
-- When exporting sessions, create organized folder structures
+1. When exporting sessions, create organized folder structures
 
-- Always provide clear analysis and actionable insights
+1. Always provide clear analysis and actionable insights
 
-- If commands fail, help troubleshoot configuration issues
+1. If commands fail, help troubleshoot configuration issues
 
 ---
 

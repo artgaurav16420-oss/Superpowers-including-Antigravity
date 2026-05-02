@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-- [OpenCode.ai]([https://opencode.ai)]([https://opencode.ai))]([https://opencode.ai)))]([https://opencode.ai))))]([https://opencode.ai)))))]([https://opencode.ai))))))]([https://opencode.ai)))))))]([https://opencode.ai))))))))](https://opencode.ai))))))))) installed
+1. [OpenCode.ai]([https://opencode.ai)]([https://opencode.ai))]([https://opencode.ai)))]([https://opencode.ai))))]([https://opencode.ai)))))]([https://opencode.ai))))))]([https://opencode.ai)))))))]([https://opencode.ai))))))))]([https://opencode.ai)))))))))](https://opencode.ai)))))))))) installed
 
 ## Installation
 
@@ -71,12 +71,12 @@ To pin a specific version:
 
 When skills reference Claude Code tools:
 
-- `TodoWrite` → `todowrite`
-- `Task` with subagents → `@mention` syntax
-- `Skill` tool → OpenCode's native `skill` tool
-- File operations → your native tools
+1. `TodoWrite` → `todowrite`
+1. `Task` with subagents → `@mention` syntax
+1. `Skill` tool → OpenCode's native `skill` tool
+1. File operations → your native tools
 
 ## Getting Help
 
-- Report issues: [Mega-Skills Issues]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)))))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))))))))](https://github.com/artgaurav16420-oss/Mega-Skills/issues)))))))))
-- Full documentation: [Mega-Skills README]([https://github.com/artgaurav16420-oss/Mega-Skills/blob/main/README.md)]([https://github.com/artgaurav16420-oss/Mega-Skills/blob/main/README.md))]([https://github.com/artgaurav16420-oss/Mega-Skills/blob/main/README.md)))]([https://github.com/artgaurav16420-oss/Mega-Skills/blob/main/README.md))))]([https://github.com/artgaurav16420-oss/Mega-Skills/blob/main/README.md)))))]([https://github.com/artgaurav16420-oss/Mega-Skills/blob/main/README.md))))))]([https://github.com/artgaurav16420-oss/Mega-Skills/blob/main/README.md)))))))]([https://github.com/artgaurav16420-oss/Mega-Skills/blob/main/README.md))))))))](https://github.com/artgaurav16420-oss/Mega-Skills/blob/main/README.md)))))))))
+1. Report issues: [Mega-Skills Issues]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)))))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)))))))))](https://github.com/artgaurav16420-oss/Mega-Skills/issues))))))))))
+1. Full documentation: [Mega-Skills README]([https://github.com/artgaurav16420-oss/Mega-Skills/blob/main/README.md)]([https://github.com/artgaurav16420-oss/Mega-Skills/blob/main/README.md))]([https://github.com/artgaurav16420-oss/Mega-Skills/blob/main/README.md)))]([https://github.com/artgaurav16420-oss/Mega-Skills/blob/main/README.md))))]([https://github.com/artgaurav16420-oss/Mega-Skills/blob/main/README.md)))))]([https://github.com/artgaurav16420-oss/Mega-Skills/blob/main/README.md))))))]([https://github.com/artgaurav16420-oss/Mega-Skills/blob/main/README.md)))))))]([https://github.com/artgaurav16420-oss/Mega-Skills/blob/main/README.md))))))))]([https://github.com/artgaurav16420-oss/Mega-Skills/blob/main/README.md)))))))))](https://github.com/artgaurav16420-oss/Mega-Skills/blob/main/README.md))))))))))

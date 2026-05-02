@@ -9,19 +9,19 @@ This skill extracts your competitors' ads from ad libraries and analyzes what's 
 
 ## When to Use This Skill
 
-- Researching competitor ad strategies
+1. Researching competitor ad strategies
 
-- Finding inspiration for your own ads
+1. Finding inspiration for your own ads
 
-- Understanding market positioning
+1. Understanding market positioning
 
-- Identifying successful ad patterns
+1. Identifying successful ad patterns
 
-- Analyzing messaging that works
+1. Analyzing messaging that works
 
-- Discovering new use cases or pain points
+1. Discovering new use cases or pain points
 
-- Planning ad campaigns with proven concepts
+1. Planning ad campaigns with proven concepts
 
 ## What This Skill Does
 
@@ -164,43 +164,43 @@ Based on ad variations:
 
 ### Messaging Analysis
 
-- What problems they emphasize
+1. What problems they emphasize
 
-- How they position against competition
+1. How they position against competition
 
-- Value propositions that resonate
+1. Value propositions that resonate
 
-- Target audience segments
+1. Target audience segments
 
 ### Creative Patterns
 
-- Visual styles that work
+1. Visual styles that work
 
-- Video vs. static image performance
+1. Video vs. static image performance
 
-- Color schemes and branding
+1. Color schemes and branding
 
-- Layout patterns
+1. Layout patterns
 
 ### Copy Formulas
 
-- Headline structures
+1. Headline structures
 
-- Call-to-action patterns
+1. Call-to-action patterns
 
-- Length and tone
+1. Length and tone
 
-- Emotional triggers
+1. Emotional triggers
 
 ### Campaign Strategy
 
-- Seasonal campaigns
+1. Seasonal campaigns
 
-- Product launch approaches
+1. Product launch approaches
 
-- Feature announcement tactics
+1. Feature announcement tactics
 
-- Retargeting patterns
+1. Retargeting patterns
 
 ## Best Practices
 
@@ -310,26 +310,26 @@ Which gets more engagement? (if data available)
 
 ## Output Formats
 
-- **Screenshots**: All ads saved as images
+1. **Screenshots**: All ads saved as images
 
-- **Analysis Report**: Markdown summary of insights
+1. **Analysis Report**: Markdown summary of insights
 
-- **Spreadsheet**: CSV with ad copy, CTAs, themes
+1. **Spreadsheet**: CSV with ad copy, CTAs, themes
 
-- **Presentation**: Visual deck of top performers
+1. **Presentation**: Visual deck of top performers
 
-- **Pattern Library**: Categorized by approach
+1. **Pattern Library**: Categorized by approach
 
 ## Related Use Cases
 
-- Writing better ad copy for your campaigns
+1. Writing better ad copy for your campaigns
 
-- Understanding market positioning
+1. Understanding market positioning
 
-- Finding content gaps in your messaging
+1. Finding content gaps in your messaging
 
-- Discovering new use cases for your product
+1. Discovering new use cases for your product
 
-- Planning product marketing strategy
+1. Planning product marketing strategy
 
-- Inspiring social media content
+1. Inspiring social media content

@@ -9,47 +9,47 @@ This skill transforms chaotic folders of invoices, receipts, and financial docum
 
 ## When to Use This Skill
 
-- Preparing for tax season and need organized records
+1. Preparing for tax season and need organized records
 
-- Managing business expenses across multiple vendors
+1. Managing business expenses across multiple vendors
 
-- Organizing receipts from a messy folder or email downloads
+1. Organizing receipts from a messy folder or email downloads
 
-- Setting up automated invoice filing for ongoing bookkeeping
+1. Setting up automated invoice filing for ongoing bookkeeping
 
-- Archiving financial records by year or category
+1. Archiving financial records by year or category
 
-- Reconciling expenses for reimbursement
+1. Reconciling expenses for reimbursement
 
-- Preparing documentation for accountants
+1. Preparing documentation for accountants
 
 ## What This Skill Does
 
 1. **Reads Invoice Content**: Extracts information from PDFs, images, and documents:
-   - Vendor/company name
-   - Invoice number
-   - Date
-   - Amount
-   - Product or service description
-   - Payment method
+   1. Vendor/company name
+   1. Invoice number
+   1. Date
+   1. Amount
+   1. Product or service description
+   1. Payment method
 
 1. **Renames Files Consistently**: Creates standardized filenames:
-   - Format: `YYYY-MM-DD Vendor - Invoice - ProductOrService.pdf`
+   1. Format: `YYYY-MM-DD Vendor - Invoice - ProductOrService.pdf`
 
-   - Examples: `2024-03-15 Adobe - Invoice - Creative Cloud.pdf`
+   1. Examples: `2024-03-15 Adobe - Invoice - Creative Cloud.pdf`
 
 1. **Organizes by Category**: Sorts into logical folders:
-   - By vendor
-   - By expense category (software, office, travel, etc.)
-   - By time period (year, quarter, month)
-   - By tax category (deductible, personal, etc.)
+   1. By vendor
+   1. By expense category (software, office, travel, etc.)
+   1. By time period (year, quarter, month)
+   1. By tax category (deductible, personal, etc.)
 
 1. **Handles Multiple Formats**: Works with:
-   - PDF invoices
-   - Scanned receipts (JPG, PNG)
-   - Email attachments
-   - Screenshots
-   - Bank statements
+   1. PDF invoices
+   1. Scanned receipts (JPG, PNG)
+   1. Email attachments
+   1. Screenshots
+   1. Bank statements
 
 1. **Maintains Originals**: Preserves original files while organizing copies
 
@@ -102,10 +102,10 @@ When a user requests invoice organization:
 
    Report findings:
 
-   - Total number of files
-   - File types
-   - Date range (if discernible from names)
-   - Current organization (or lack thereof)
+   1. Total number of files
+   1. File types
+   1. Date range (if discernible from names)
+   1. Current organization (or lack thereof)
 
 1. **Extract Information from Each File**
 
@@ -113,26 +113,26 @@ When a user requests invoice organization:
 
    **From PDF invoices**:
 
-   - Use text extraction to read invoice content
-   - Look for common patterns:
-     - "Invoice Date:", "Date:", "Issued:"
-     - "Invoice #:", "Invoice Number:"
-     - Company name (usually at top)
-     - "Amount Due:", "Total:", "Amount:"
-     - "Description:", "Service:", "Product:"
+   1. Use text extraction to read invoice content
+   1. Look for common patterns:
+     1. "Invoice Date:", "Date:", "Issued:"
+     1. "Invoice #:", "Invoice Number:"
+     1. Company name (usually at top)
+     1. "Amount Due:", "Total:", "Amount:"
+     1. "Description:", "Service:", "Product:"
 
    **From image receipts**:
 
-   - Read visible text from images
-   - Identify vendor name (often at top)
-   - Look for date (common formats)
-   - Find total amount
+   1. Read visible text from images
+   1. Identify vendor name (often at top)
+   1. Look for date (common formats)
+   1. Find total amount
 
    **Fallback for unclear files**:
 
-   - Use filename clues
-   - Check file creation/modification date
-   - Flag for manual review if critical info missing
+   1. Use filename clues
+   1. Check file creation/modification date
+   1. Flag for manual review if critical info missing
 
 1. **Determine Organization Strategy**
 
@@ -161,19 +161,19 @@ When a user requests invoice organization:
 
    Examples:
 
-   - `2024-03-15 Adobe - Invoice - Creative Cloud.pdf`
+   1. `2024-03-15 Adobe - Invoice - Creative Cloud.pdf`
 
-   - `2024-01-10 Amazon - Receipt - Office Supplies.pdf`
+   1. `2024-01-10 Amazon - Receipt - Office Supplies.pdf`
 
-   - `2023-12-01 Stripe - Invoice - Monthly Payment Processing.pdf`
+   1. `2023-12-01 Stripe - Invoice - Monthly Payment Processing.pdf`
 
    **Filename Best Practices**:
 
-   - Remove special characters except hyphens
-   - Capitalize vendor names properly
-   - Keep descriptions concise but meaningful
-   - Use consistent date format (YYYY-MM-DD) for sorting
-   - Preserve original file extension
+   1. Remove special characters except hyphens
+   1. Capitalize vendor names properly
+   1. Keep descriptions concise but meaningful
+   1. Use consistent date format (YYYY-MM-DD) for sorting
+   1. Preserve original file extension
 
 1. **Execute Organization**
 
@@ -231,10 +231,10 @@ When a user requests invoice organization:
 
    This CSV is useful for:
 
-   - Importing into accounting software
-   - Sharing with accountants
-   - Expense tracking and reporting
-   - Tax preparation
+   1. Importing into accounting software
+   1. Sharing with accountants
+   1. Expense tracking and reporting
+   1. Tax preparation
 
 1. **Provide Completion Summary**
 
@@ -287,10 +287,10 @@ When a user requests invoice organization:
 1. Scans folder: finds 147 PDFs and images
 
 1. Reads each invoice to extract:
-   - Date
-   - Vendor name
-   - Invoice number
-   - Product/service description
+   1. Date
+   1. Vendor name
+   1. Invoice number
+   1. Product/service description
 
 1. Renames all files: `YYYY-MM-DD Vendor - Invoice - Product.pdf`
 
@@ -444,52 +444,52 @@ This creates a persistent solution that organizes invoices as they arrive.
 
 If date/vendor can't be extracted:
 
-- Flag file for manual review
+1. Flag file for manual review
 
-- Use file modification date as fallback
+1. Use file modification date as fallback
 
-- Create "Needs-Review/" folder
+1. Create "Needs-Review/" folder
 
 ### Duplicate Invoices
 
 If same invoice appears multiple times:
 
-- Compare file hashes
+1. Compare file hashes
 
-- Keep highest quality version
+1. Keep highest quality version
 
-- Note duplicates in summary
+1. Note duplicates in summary
 
 ### Multi-Page Invoices
 
 For invoices split across files:
 
-- Merge PDFs if needed
+1. Merge PDFs if needed
 
-- Use consistent naming for parts
+1. Use consistent naming for parts
 
-- Note in CSV if invoice is split
+1. Note in CSV if invoice is split
 
 ### Non-Standard Formats
 
 For unusual receipt formats:
 
-- Extract what's possible
+1. Extract what's possible
 
-- Standardize what you can
+1. Standardize what you can
 
-- Flag for review if critical info missing
+1. Flag for review if critical info missing
 
 ## Related Use Cases
 
-- Creating expense reports for reimbursement
+1. Creating expense reports for reimbursement
 
-- Organizing bank statements
+1. Organizing bank statements
 
-- Managing vendor contracts
+1. Managing vendor contracts
 
-- Archiving old financial records
+1. Archiving old financial records
 
-- Preparing for audits
+1. Preparing for audits
 
-- Tracking subscription costs over time
+1. Tracking subscription costs over time

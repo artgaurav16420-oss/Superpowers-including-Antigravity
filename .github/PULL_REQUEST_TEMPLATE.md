@@ -1,4 +1,4 @@
-#
+# 
 
 <!--
 BEFORE SUBMITTING: Read every word of this template. PRs that leave
@@ -24,10 +24,10 @@ of human involvement will be closed without review.
 <!-- Mega-Skills core contains general-purpose skills and infrastructure
      that benefit all users. Ask yourself:
 
-     - Would this be useful to someone working on a completely different
+     1. Would this be useful to someone working on a completely different
        kind of project than yours?
-     - Is this project-specific, team-specific, or tool-specific?
-     - Does this integrate or promote a third-party service?
+     1. Is this project-specific, team-specific, or tool-specific?
+     1. Does this integrate or promote a third-party service?
 
      If your change is a new skill for a specific domain, workflow tool,
      or third-party integration, it belongs in its own plugin — not here.
@@ -46,8 +46,8 @@ of human involvement will be closed without review.
 
 ## Existing PRs
 
-- [ ] I have reviewed all open AND closed PRs for duplicates or prior art
-- Related PRs: <!-- #number, #number, or "none found" -->
+1. [ ] I have reviewed all open AND closed PRs for duplicates or prior art
+1. Related PRs: <!-- #number, #number, or "none found" -->
 
 <!-- If a related closed PR exists, explain what's different about your
      approach and why it should succeed where the other didn't. -->
@@ -55,7 +55,7 @@ of human involvement will be closed without review.
 ## Environment tested
 
 | Harness (e.g. Claude Code, Cursor) | Harness version | Model | Model version/ID |
-|::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::----|::::::::---::::::::---::::::::---::::::::---::::::::-----|::::::::---::::::::----|::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---|
+|:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::----|:::::::::---:::::::::---:::::::::---:::::::::---:::::::::-----|:::::::::---:::::::::----|:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---|
 |                                     |                 |       |                  |
 
 ## New harness support (required if this PR adds a new harness)
@@ -79,10 +79,10 @@ of human involvement will be closed without review.
 
      These are NOT real integrations and PRs that ship them will be closed:
 
-     - Manually copying skill files into the harness
-     - Wrapping with `npx skills` or similar at-runtime shims
-     - Anything that requires the user to opt in to skills per-session
-     - Anything where brainstorming does not auto-trigger on the test above
+     1. Manually copying skill files into the harness
+     1. Wrapping with `npx skills` or similar at-runtime shims
+     1. Anything that requires the user to opt in to skills per-session
+     1. Anything where brainstorming does not auto-trigger on the test above
 
      If you are not sure whether your integration loads the bootstrap at
      session start, it does not.
@@ -97,20 +97,20 @@ paste the complete transcript here
 
 ## Evaluation
 
-- What was the initial prompt you (or your human partner) used to start
+1. What was the initial prompt you (or your human partner) used to start
   the session that led to this change?
-- How many eval sessions did you run AFTER making the change?
-- How did outcomes change compared to before the change?
+1. How many eval sessions did you run AFTER making the change?
+1. How did outcomes change compared to before the change?
 
 <!-- "It works" is not evaluation. Describe the before/after difference
      you observed across multiple sessions. -->
 
 ## Rigor
 
-- [ ] If this is a skills change: I used `mega-skills:writing-skills` and
+1. [ ] If this is a skills change: I used `mega-skills:writing-skills` and
       completed adversarial pressure testing (paste results below)
-- [ ] This change was tested adversarially, not just on the happy path
-- [ ] I did not modify carefully-tuned content (Red Flags table,
+1. [ ] This change was tested adversarially, not just on the happy path
+1. [ ] I did not modify carefully-tuned content (Red Flags table,
       rationalizations, "human partner" language) without extensive evals
       showing the change is an improvement
 
@@ -119,16 +119,16 @@ paste the complete transcript here
 
 ## Human review
 
-- [ ] A human has reviewed the COMPLETE proposed diff before submission
+1. [ ] A human has reviewed the COMPLETE proposed diff before submission
 
 <!--
 STOP. If the checkbox above is not checked, do not submit this PR.
 
 PRs will be closed without review if they:
-- Show no evidence of human involvement
-- Contain multiple unrelated changes
-- Promote or integrate third-party services or tools
-- Submit project-specific or personal configuration as core changes
-- Leave required sections blank or use placeholder text
-- Modify behavior-shaping content without eval evidence
+1. Show no evidence of human involvement
+1. Contain multiple unrelated changes
+1. Promote or integrate third-party services or tools
+1. Submit project-specific or personal configuration as core changes
+1. Leave required sections blank or use placeholder text
+1. Modify behavior-shaping content without eval evidence
 -->

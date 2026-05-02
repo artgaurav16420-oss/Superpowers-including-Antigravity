@@ -14,32 +14,32 @@ OpenCode.ai is a coding agent similar to Claude Code and Codex. Previous attempt
 
 ### Key Differences Between Platforms
 
-- **Claude Code**: Native Anthropic plugin system + file-based skills
-- **Codex**: No plugin system → bootstrap markdown + CLI script
-- **OpenCode**: JavaScript/TypeScript plugins with event hooks and custom tools API
+1. **Claude Code**: Native Anthropic plugin system + file-based skills
+1. **Codex**: No plugin system → bootstrap markdown + CLI script
+1. **OpenCode**: JavaScript/TypeScript plugins with event hooks and custom tools API
 
 ### OpenCode's Agent System
 
-- **Primary agents**: Build (default, full access) and Plan (restricted, read-only)
-- **Subagents**: General (research, searching, multi-step tasks)
-- **Invocation**: Automatic dispatch by primary agents OR manual `@mention` syntax
-- **Configuration**: Custom agents in `opencode.json` or `~/.config/opencode/agent/`
+1. **Primary agents**: Build (default, full access) and Plan (restricted, read-only)
+1. **Subagents**: General (research, searching, multi-step tasks)
+1. **Invocation**: Automatic dispatch by primary agents OR manual `@mention` syntax
+1. **Configuration**: Custom agents in `opencode.json` or `~/.config/opencode/agent/`
 
 ## Architecture
 
 ### High-Level Structure
 
 1. **Shared Core Module** (`lib/skills-core.js`)
-   - Common skill discovery and parsing logic
-   - Used by both Codex and OpenCode implementations
+   1. Common skill discovery and parsing logic
+   1. Used by both Codex and OpenCode implementations
 
 1. **Platform-Specific Wrappers**
-   - Codex: CLI script (`.codex/superpowers-codex`)
-   - OpenCode: Plugin module (`.opencode/plugin/superpowers.js`)
+   1. Codex: CLI script (`.codex/superpowers-codex`)
+   1. OpenCode: Plugin module (`.opencode/plugin/superpowers.js`)
 
 1. **Skill Directories**
-   - Core: `~/.config/opencode/superpowers/skills/` (or installed location)
-   - Personal: `~/.config/opencode/skills/` (shadows core skills)
+   1. Core: `~/.config/opencode/superpowers/skills/` (or installed location)
+   1. Personal: `~/.config/opencode/skills/` (shadows core skills)
 
 ### Code Reuse Strategy
 
@@ -121,12 +121,12 @@ Lists all available skills with metadata.
 When a new session starts (`session.started` event):
 
 1. **Inject using-mega-skills content**
-   - Full content of the using-mega-skills skill
-   - Establishes mandatory workflows
+   1. Full content of the using-mega-skills skill
+   1. Establishes mandatory workflows
 
 1. **Run find_skills automatically**
-   - Display full list of available skills upfront
-   - Include skill directories for each
+   1. Display full list of available skills upfront
+   1. Include skill directories for each
 
 1. **Inject tool mapping instructions**
 
@@ -145,8 +145,8 @@ When a new session starts (`session.started` event):
    ```
 
 1. **Check for updates** (non-blocking)
-   - Quick git fetch with timeout
-   - Notify if updates available
+   1. Quick git fetch with timeout
+   1. Notify if updates available
 
 ### Plugin Structure
 
@@ -218,39 +218,39 @@ superpowers/
 ### Phase 1: Refactor Shared Core
 
 1. Create `lib/skills-core.js`
-   - Extract frontmatter parsing from `.codex/superpowers-codex`
-   - Extract skill discovery logic
-   - Extract path resolution (with shadowing)
-   - Update to use only `name` and `description` (no `when_to_use`)
+   1. Extract frontmatter parsing from `.codex/superpowers-codex`
+   1. Extract skill discovery logic
+   1. Extract path resolution (with shadowing)
+   1. Update to use only `name` and `description` (no `when_to_use`)
 
 1. Update `.codex/superpowers-codex` to use shared core
-   - Import from `../lib/skills-core.js`
-   - Remove duplicated code
-   - Keep CLI wrapper logic
+   1. Import from `../lib/skills-core.js`
+   1. Remove duplicated code
+   1. Keep CLI wrapper logic
 
 1. Test Codex implementation still works
-   - Verify bootstrap command
-   - Verify use-skill command
-   - Verify find-skills command
+   1. Verify bootstrap command
+   1. Verify use-skill command
+   1. Verify find-skills command
 
 ### Phase 2: Build OpenCode Plugin
 
 1. Create `.opencode/plugin/superpowers.js`
-   - Import shared core from `../../lib/skills-core.js`
-   - Implement plugin function
-   - Define custom tools (use_skill, find_skills)
-   - Implement session.started hook
+   1. Import shared core from `../../lib/skills-core.js`
+   1. Implement plugin function
+   1. Define custom tools (use_skill, find_skills)
+   1. Implement session.started hook
 
 1. Create `.opencode/INSTALL.md`
-   - Installation instructions
-   - Directory setup
-   - Configuration guidance
+   1. Installation instructions
+   1. Directory setup
+   1. Configuration guidance
 
 1. Test OpenCode implementation
-   - Verify session startup bootstrap
-   - Verify use_skill tool works
-   - Verify find_skills tool works
-   - Verify skill directories are accessible
+   1. Verify session startup bootstrap
+   1. Verify use_skill tool works
+   1. Verify find_skills tool works
+   1. Verify skill directories are accessible
 
 ### Phase 3: Documentation & Polish
 
@@ -262,34 +262,34 @@ superpowers/
 ## Next Steps
 
 1. **Create isolated workspace** (using git worktrees)
-   - Branch: `feature/opencode-support`
+   1. Branch: `feature/opencode-support`
 
 1. **Follow TDD where applicable**
-   - Test shared core functions
-   - Test skill discovery and parsing
-   - Integration tests for both platforms
+   1. Test shared core functions
+   1. Test skill discovery and parsing
+   1. Integration tests for both platforms
 
 1. **Incremental implementation**
-   - Phase 1: Refactor shared core + update Codex
-   - Verify Codex still works before moving on
-   - Phase 2: Build OpenCode plugin
-   - Phase 3: Documentation and polish
+   1. Phase 1: Refactor shared core + update Codex
+   1. Verify Codex still works before moving on
+   1. Phase 2: Build OpenCode plugin
+   1. Phase 3: Documentation and polish
 
 1. **Testing strategy**
-   - Manual testing with real OpenCode installation
-   - Verify skill loading, directories, scripts work
-   - Test both Codex and OpenCode side-by-side
-   - Verify tool mappings work correctly
+   1. Manual testing with real OpenCode installation
+   1. Verify skill loading, directories, scripts work
+   1. Test both Codex and OpenCode side-by-side
+   1. Verify tool mappings work correctly
 
 1. **PR and merge**
-   - Create PR with complete implementation
-   - Test in clean environment
-   - Merge to main
+   1. Create PR with complete implementation
+   1. Test in clean environment
+   1. Merge to main
 
 ## Benefits
 
-- **Code reuse**: Single source of truth for skill discovery/parsing
-- **Maintainability**: Bug fixes apply to both platforms
-- **Extensibility**: Easy to add future platforms (Cursor, Windsurf, etc.)
-- **Native integration**: Uses OpenCode's plugin system properly
-- **Consistency**: Same skill experience across all platforms
+1. **Code reuse**: Single source of truth for skill discovery/parsing
+1. **Maintainability**: Bug fixes apply to both platforms
+1. **Extensibility**: Easy to add future platforms (Cursor, Windsurf, etc.)
+1. **Native integration**: Uses OpenCode's plugin system properly
+1. **Consistency**: Same skill experience across all platforms

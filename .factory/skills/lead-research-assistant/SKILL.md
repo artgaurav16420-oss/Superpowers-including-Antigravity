@@ -9,26 +9,26 @@ This skill helps you identify and qualify potential leads for your business by a
 
 ## When to Use This Skill
 
-- Finding potential customers or clients for your product/service
+1. Finding potential customers or clients for your product/service
 
-- Building a list of companies to reach out to for partnerships
+1. Building a list of companies to reach out to for partnerships
 
-- Identifying target accounts for sales outreach
+1. Identifying target accounts for sales outreach
 
-- Researching companies that match your ideal customer profile
+1. Researching companies that match your ideal customer profile
 
-- Preparing for business development activities
+1. Preparing for business development activities
 
 ## What This Skill Does
 
 1. **Understands Your Business**: Analyzes your product/service, value proposition, and target market
 
 1. **Identifies Target Companies**: Finds companies that match your ideal customer profile based on:
-   - Industry and sector
-   - Company size and location
-   - Technology stack and tools they use
-   - Growth stage and funding
-   - Pain points your product solves
+   1. Industry and sector
+   1. Company size and location
+   1. Technology stack and tools they use
+   1. Growth stage and funding
+   1. Pain points your product solves
 
 1. **Prioritizes Leads**: Ranks companies based on fit score and relevance
 
@@ -76,46 +76,46 @@ Find me 20 qualified leads with contact strategies for each.
 When a user requests lead research:
 
 1. **Understand the Product/Service**
-   - If in a code directory, analyze the codebase to understand the product
-   - Ask clarifying questions about the value proposition
-   - Identify key features and benefits
-   - Understand what problems it solves
+   1. If in a code directory, analyze the codebase to understand the product
+   1. Ask clarifying questions about the value proposition
+   1. Identify key features and benefits
+   1. Understand what problems it solves
 
 1. **Define Ideal Customer Profile**
-   - Determine target industries and sectors
-   - Identify company size ranges
-   - Consider geographic preferences
-   - Understand relevant pain points
-   - Note any technology requirements
+   1. Determine target industries and sectors
+   1. Identify company size ranges
+   1. Consider geographic preferences
+   1. Understand relevant pain points
+   1. Note any technology requirements
 
 1. **Research and Identify Leads**
-   - Search for companies matching the criteria
-   - Look for signals of need (job postings, tech stack, recent news)
-   - Consider growth indicators (funding, expansion, hiring)
-   - Identify companies with complementary products/services
-   - Check for budget indicators
+   1. Search for companies matching the criteria
+   1. Look for signals of need (job postings, tech stack, recent news)
+   1. Consider growth indicators (funding, expansion, hiring)
+   1. Identify companies with complementary products/services
+   1. Check for budget indicators
 
 1. **Prioritize and Score**
-   - Create a fit score (1-10) for each lead
-   - Consider factors like:
-     - Alignment with ICP
-     - Signals of immediate need
-     - Budget availability
-     - Competitive landscape
-     - Timing indicators
+   1. Create a fit score (1-10) for each lead
+   1. Consider factors like:
+     1. Alignment with ICP
+     1. Signals of immediate need
+     1. Budget availability
+     1. Competitive landscape
+     1. Timing indicators
 
 1. **Provide Actionable Output**
 
    For each lead, provide:
 
-   - **Company Name** and website
-   - **Why They're a Good Fit**: Specific reasons based on their business
-   - **Priority Score**: 1-10 with explanation
-   - **Decision Maker**: Role/title to target (e.g., "VP of Engineering")
-   - **Contact Strategy**: Personalized approach suggestions
-   - **Value Proposition**: How your product solves their specific problem
-   - **Conversation Starters**: Specific points to mention in outreach
-   - **LinkedIn URL**: If available, for easy connection
+   1. **Company Name** and website
+   1. **Why They're a Good Fit**: Specific reasons based on their business
+   1. **Priority Score**: 1-10 with explanation
+   1. **Decision Maker**: Role/title to target (e.g., "VP of Engineering")
+   1. **Contact Strategy**: Personalized approach suggestions
+   1. **Value Proposition**: How your product solves their specific problem
+   1. **Conversation Starters**: Specific points to mention in outreach
+   1. **LinkedIn URL**: If available, for easy connection
 
 1. **Format the Output**
 
@@ -154,10 +154,10 @@ When a user requests lead research:
    ```
 
 1. **Offer Next Steps**
-   - Suggest saving results to a CSV for CRM import
-   - Offer to draft personalized outreach messages
-   - Recommend prioritization based on timing
-   - Suggest follow-up research for top leads
+   1. Suggest saving results to a CSV for CRM import
+   1. Offer to draft personalized outreach messages
+   1. Recommend prioritization based on timing
+   1. Suggest follow-up research for top leads
 
 ## Examples
 
@@ -167,15 +167,15 @@ When a user requests lead research:
 
 **Output**: Creates a prioritized list of companies that:
 
-- Use AI coding assistants (Copilot, Cursor, etc.)
+1. Use AI coding assistants (Copilot, Cursor, etc.)
 
-- Handle sensitive data (fintech, healthcare, legal)
+1. Handle sensitive data (fintech, healthcare, legal)
 
-- Have evidence in their GitHub repos of using coding agents
+1. Have evidence in their GitHub repos of using coding agents
 
-- May have accidentally exposed sensitive data in code
+1. May have accidentally exposed sensitive data in code
 
-- Includes LinkedIn URLs of relevant decision-makers
+1. Includes LinkedIn URLs of relevant decision-makers
 
 ### Example 2: Local Business
 
@@ -183,36 +183,36 @@ When a user requests lead research:
 
 **Output**: Identifies companies that:
 
-- Recently posted remote job listings
+1. Recently posted remote job listings
 
-- Announced remote-first policies
+1. Announced remote-first policies
 
-- Are hiring distributed teams
+1. Are hiring distributed teams
 
-- Show signs of remote work challenges
+1. Show signs of remote work challenges
 
-- Provides personalized outreach strategies for each
+1. Provides personalized outreach strategies for each
 
 ## Tips for Best Results
 
-- **Be specific** about your product and its unique value
+1. **Be specific** about your product and its unique value
 
-- **Run from your codebase** if applicable for automatic context
+1. **Run from your codebase** if applicable for automatic context
 
-- **Provide context** about your ideal customer profile
+1. **Provide context** about your ideal customer profile
 
-- **Specify constraints** like industry, location, or company size
+1. **Specify constraints** like industry, location, or company size
 
-- **Request follow-up** research on promising leads for deeper insights
+1. **Request follow-up** research on promising leads for deeper insights
 
 ## Related Use Cases
 
-- Drafting personalized outreach emails after identifying leads
+1. Drafting personalized outreach emails after identifying leads
 
-- Building a CRM-ready CSV of qualified prospects
+1. Building a CRM-ready CSV of qualified prospects
 
-- Researching specific companies in detail
+1. Researching specific companies in detail
 
-- Analyzing competitor customer bases
+1. Analyzing competitor customer bases
 
-- Identifying partnership opportunities
+1. Identifying partnership opportunities

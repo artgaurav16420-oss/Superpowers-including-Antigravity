@@ -146,37 +146,37 @@ Start here: `skills/using-skills`
 For each variant:
 
 1. **Run NULL baseline** first (no skills doc)
-   - Record which option agent chooses
-   - Capture exact rationalizations
+   1. Record which option agent chooses
+   1. Capture exact rationalizations
 
 1. **Run variant** with same scenario
-   - Does agent check for skills?
-   - Does agent use skills if found?
-   - Capture rationalizations if violated
+   1. Does agent check for skills?
+   1. Does agent use skills if found?
+   1. Capture rationalizations if violated
 
 1. **Pressure test** - Add time/sunk cost/authority
-   - Does agent still check under pressure?
-   - Document when compliance breaks down
+   1. Does agent still check under pressure?
+   1. Document when compliance breaks down
 
 1. **Meta-test** - Ask agent how to improve doc
-   - "You had the doc but didn't check. Why?"
-   - "How could doc be clearer?"
+   1. "You had the doc but didn't check. Why?"
+   1. "How could doc be clearer?"
 
 ## Success Criteria
 
 ### Variant succeeds if
 
-- Agent checks for skills unprompted
-- Agent reads skill completely before acting
-- Agent follows skill guidance under pressure
-- Agent can't rationalize away compliance
+1. Agent checks for skills unprompted
+1. Agent reads skill completely before acting
+1. Agent follows skill guidance under pressure
+1. Agent can't rationalize away compliance
 
 #### Variant fails if
 
-- Agent skips checking even without pressure
-- Agent "adapts the concept" without reading
-- Agent rationalizes away under pressure
-- Agent treats skill as reference not requirement
+1. Agent skips checking even without pressure
+1. Agent "adapts the concept" without reading
+1. Agent rationalizes away under pressure
+1. Agent treats skill as reference not requirement
 
 ## Expected Results
 

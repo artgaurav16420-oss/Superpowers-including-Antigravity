@@ -23,17 +23,17 @@ This downloads the video in best available quality as MP4 to `/mnt/user-data/out
 
 Use `-q` or `--quality` to specify video quality:
 
-- `best` (default): Highest quality available
+1. `best` (default): Highest quality available
 
-- `1080p`: Full HD
+1. `1080p`: Full HD
 
-- `720p`: HD
+1. `720p`: HD
 
-- `480p`: Standard definition
+1. `480p`: Standard definition
 
-- `360p`: Lower quality
+1. `360p`: Lower quality
 
-- `worst`: Lowest quality available
+1. `worst`: Lowest quality available
 
 Example:
 
@@ -45,11 +45,11 @@ python scripts/download_video.py "URL" -q 720p
 
 Use `-f` or `--format` to specify output format (video downloads only):
 
-- `mp4` (default): Most compatible
+1. `mp4` (default): Most compatible
 
-- `webm`: Modern format
+1. `webm`: Modern format
 
-- `mkv`: Matroska container
+1. `mkv`: Matroska container
 
 Example:
 
@@ -97,24 +97,24 @@ python scripts/download_video.py "<https://www.youtube.com/watch?v=dQw4w9WgXcQ">
 
 The skill uses `yt-dlp`, a robust YouTube downloader that:
 
-- Automatically installs itself if not present
+1. Automatically installs itself if not present
 
-- Fetches video information before downloading
+1. Fetches video information before downloading
 
-- Selects the best available streams matching your criteria
+1. Selects the best available streams matching your criteria
 
-- Merges video and audio streams when needed
+1. Merges video and audio streams when needed
 
-- Supports a wide range of YouTube video formats
+1. Supports a wide range of YouTube video formats
 
 ## Important Notes
 
-- Downloads are saved to `/mnt/user-data/outputs/` by default
+1. Downloads are saved to `/mnt/user-data/outputs/` by default
 
-- Video filename is automatically generated from the video title
+1. Video filename is automatically generated from the video title
 
-- The script handles installation of yt-dlp automatically
+1. The script handles installation of yt-dlp automatically
 
-- Only single videos are downloaded (playlists are skipped by default)
+1. Only single videos are downloaded (playlists are skipped by default)
 
-- Higher quality videos may take longer to download and use more disk space
+1. Higher quality videos may take longer to download and use more disk space

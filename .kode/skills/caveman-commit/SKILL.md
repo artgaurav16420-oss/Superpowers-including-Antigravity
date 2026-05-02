@@ -15,49 +15,49 @@ Write commit messages terse and exact. Conventional Commits format. No fluff. Wh
 
 ### Subject line
 
-- `<type>(<scope>): <imperative summary>` — `<scope>` optional
+1. `<type>(<scope>): <imperative summary>` — `<scope>` optional
 
-- Types: `feat`, `fix`, `refactor`, `perf`, `docs`, `test`, `chore`, `build`, `ci`, `style`, `revert`
+1. Types: `feat`, `fix`, `refactor`, `perf`, `docs`, `test`, `chore`, `build`, `ci`, `style`, `revert`
 
-- Imperative mood: "add", "fix", "remove" — not "added", "adds", "adding"
+1. Imperative mood: "add", "fix", "remove" — not "added", "adds", "adding"
 
-- ≤50 chars when possible, hard cap 72
+1. ≤50 chars when possible, hard cap 72
 
-- No trailing period
+1. No trailing period
 
-- Match project convention for capitalization after the colon
+1. Match project convention for capitalization after the colon
 
 #### Body (only if needed)
 
-- Skip entirely when subject is self-explanatory
+1. Skip entirely when subject is self-explanatory
 
-- Add body only for: non-obvious *why*, breaking changes, migration notes, linked issues
+1. Add body only for: non-obvious *why*, breaking changes, migration notes, linked issues
 
-- Wrap at 72 chars
+1. Wrap at 72 chars
 
-- Bullets `-` not `*`
+1. Bullets `-` not `*`
 
-- Reference issues/PRs at end: `Closes #42`, `Refs #17`
+1. Reference issues/PRs at end: `Closes #42`, `Refs #17`
 
 #### What NEVER goes in
 
-- "This commit does X", "I", "we", "now", "currently" — the diff says what
+1. "This commit does X", "I", "we", "now", "currently" — the diff says what
 
-- "As requested by..." — use Co-authored-by trailer
+1. "As requested by..." — use Co-authored-by trailer
 
-- "Generated with Claude Code" or any AI attribution
+1. "Generated with Claude Code" or any AI attribution
 
-- Emoji (unless project convention requires)
+1. Emoji (unless project convention requires)
 
-- Restating the file name when scope already says it
+1. Restating the file name when scope already says it
 
 ## Examples
 
 Diff: new endpoint for user profile with body explaining the why
 
-- ❌ "feat: add a new endpoint to get user profile information from the database"
+1. ❌ "feat: add a new endpoint to get user profile information from the database"
 
-- ✅
+1. ✅
 
   ```text
   feat(api): add GET /users/:id/profile
@@ -68,7 +68,7 @@ Diff: new endpoint for user profile with body explaining the why
 
 Diff: breaking API change
 
-- ✅
+1. ✅
 
   ```text
   feat(api)!: rename /v1/orders to /v1/checkout

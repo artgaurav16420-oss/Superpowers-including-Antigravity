@@ -11,7 +11,7 @@ BEFORE FILING: Search existing issues — your IDE may already be
 requested or discussed.
 -->
 
-- [ ] I searched existing issues for this IDE/platform
+1. [ ] I searched existing issues for this IDE/platform
 
 ## Which IDE or platform
 

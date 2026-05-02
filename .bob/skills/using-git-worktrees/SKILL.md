@@ -141,7 +141,7 @@ Ready to implement <feature-name>
 ## Quick Reference
 
 | Situation | Action |
-|::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::-----|::::::::::::::::::::::::::---::::::::::::::::::::::::::-----|
+|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::-----|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::-----|
 | `.worktrees/` exists | Use it (verify ignored) |
 
 | `worktrees/` exists | Use it (verify ignored) |
@@ -157,27 +157,27 @@ Ready to implement <feature-name>
 
 ### Skipping ignore verification
 
-- **Problem:** Worktree contents get tracked, pollute git status
+1. **Problem:** Worktree contents get tracked, pollute git status
 
-- **Fix:** Always use `git check-ignore` before creating project-local worktree
+1. **Fix:** Always use `git check-ignore` before creating project-local worktree
 
 ### Assuming directory location
 
-- **Problem:** Creates inconsistency, violates project conventions
+1. **Problem:** Creates inconsistency, violates project conventions
 
-- **Fix:** Follow priority: existing > CLAUDE.md > ask
+1. **Fix:** Follow priority: existing > CLAUDE.md > ask
 
 ### Proceeding with failing tests
 
-- **Problem:** Can't distinguish new bugs from pre-existing issues
+1. **Problem:** Can't distinguish new bugs from pre-existing issues
 
-- **Fix:** Report failures, get explicit permission to proceed
+1. **Fix:** Report failures, get explicit permission to proceed
 
 ### Hardcoding setup commands
 
-- **Problem:** Breaks on projects using different tools
+1. **Problem:** Breaks on projects using different tools
 
-- **Fix:** Auto-detect from project files (package.json, etc.)
+1. **Fix:** Auto-detect from project files (package.json, etc.)
 
 ## Example Workflow
 
@@ -197,38 +197,38 @@ Ready to implement auth feature
 
 ### Never
 
-- Create worktree without verifying it's ignored (project-local)
+1. Create worktree without verifying it's ignored (project-local)
 
-- Skip baseline test verification
+1. Skip baseline test verification
 
-- Proceed with failing tests without asking
+1. Proceed with failing tests without asking
 
-- Assume directory location when ambiguous
+1. Assume directory location when ambiguous
 
-- Skip CLAUDE.md check
+1. Skip CLAUDE.md check
 
 #### Always
 
-- Follow directory priority: existing > CLAUDE.md > ask
+1. Follow directory priority: existing > CLAUDE.md > ask
 
-- Verify directory is ignored for project-local
+1. Verify directory is ignored for project-local
 
-- Auto-detect and run project setup
+1. Auto-detect and run project setup
 
-- Verify clean test baseline
+1. Verify clean test baseline
 
 ## Integration
 
 ### Called by
 
-- **brainstorming** (Phase 4) - REQUIRED when design is approved and implementation follows
+1. **brainstorming** (Phase 4) - REQUIRED when design is approved and implementation follows
 
-- **subagent-driven-development** - REQUIRED before executing any tasks
+1. **subagent-driven-development** - REQUIRED before executing any tasks
 
-- **executing-plans** - REQUIRED before executing any tasks
+1. **executing-plans** - REQUIRED before executing any tasks
 
-- Any skill needing isolated workspace
+1. Any skill needing isolated workspace
 
 #### Pairs with
 
-- **finishing-a-development-branch** - REQUIRED for cleanup after work complete
+1. **finishing-a-development-branch** - REQUIRED for cleanup after work complete

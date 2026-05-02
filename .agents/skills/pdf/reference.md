@@ -551,25 +551,25 @@ with open("cropped.pdf", "wb") as output:
 
 ### 1. For Large PDFs
 
-- Use streaming approaches instead of loading entire PDF in memory
-- Use `qpdf --split-pages` for splitting large files
-- Process pages individually with pypdfium2
+1. Use streaming approaches instead of loading entire PDF in memory
+1. Use `qpdf --split-pages` for splitting large files
+1. Process pages individually with pypdfium2
 
 ### 2. For Text Extraction
 
-- `pdftotext -bbox-layout` is fastest for plain text extraction
-- Use pdfplumber for structured data and tables
-- Avoid `pypdf.extract_text()` for very large documents
+1. `pdftotext -bbox-layout` is fastest for plain text extraction
+1. Use pdfplumber for structured data and tables
+1. Avoid `pypdf.extract_text()` for very large documents
 
 ### 3. For Image Extraction
 
-- `pdfimages` is much faster than rendering pages
-- Use low resolution for previews, high resolution for final output
+1. `pdfimages` is much faster than rendering pages
+1. Use low resolution for previews, high resolution for final output
 
 ### 4. For Form Filling
 
-- pdf-lib maintains form structure better than most alternatives
-- Pre-validate form fields before processing
+1. pdf-lib maintains form structure better than most alternatives
+1. Pre-validate form fields before processing
 
 ### 5. Memory Management
 
@@ -632,11 +632,11 @@ def extract_text_with_ocr(pdf_path):
 
 ## License Information
 
-- **pypdf**: BSD License
-- **pdfplumber**: MIT License
-- **pypdfium2**: Apache/BSD License
-- **reportlab**: BSD License
-- **poppler-utils**: GPL-2 License
-- **qpdf**: Apache License
-- **pdf-lib**: MIT License
-- **pdfjs-dist**: Apache License
+1. **pypdf**: BSD License
+1. **pdfplumber**: MIT License
+1. **pypdfium2**: Apache/BSD License
+1. **reportlab**: BSD License
+1. **poppler-utils**: GPL-2 License
+1. **qpdf**: Apache License
+1. **pdf-lib**: MIT License
+1. **pdfjs-dist**: Apache License

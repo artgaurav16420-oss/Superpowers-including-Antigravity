@@ -15,7 +15,7 @@
 ## File Structure
 
 | File | Responsibility | Action |
-|::::::::---|::::::::---|::::::::---|
+|:::::::::---|:::::::::---|:::::::::---|
 | `skills/using-git-worktrees/SKILL.md` | Worktree creation + isolation | Add Step 0 detection + sandbox fallback |
 | `skills/finishing-a-development-branch/SKILL.md` | Branch finishing workflow | Add Step 1.5 detection + cleanup guard |
 | `skills/subagent-driven-development/SKILL.md` | Plan execution with subagents | Update Integration description |
@@ -28,13 +28,13 @@
 
 #### Files
 
-- Modify: `skills/using-git-worktrees/SKILL.md:14-15` (insert after Overview, before Directory Selection Process)
+1. Modify: `skills/using-git-worktrees/SKILL.md:14-15` (insert after Overview, before Directory Selection Process)
 
-- [ ] **Step 1: Read the current skill file**
+1. [ ] **Step 1: Read the current skill file**
 
 Read `skills/using-git-worktrees/SKILL.md` in full. Identify the exact insertion point: after the "Announce at start" line (line 14) and before "## Directory Selection Process" (line 16).
 
-- [ ] **Step 2: Insert Step 0 section**
+1. [ ] **Step 2: Insert Step 0 section**
 
 Insert the following between the Overview section and "## Directory Selection Process":
 
@@ -66,14 +66,14 @@ After reporting, STOP. Do not continue to Directory Selection or Creation Steps.
 **Sandbox fallback:** If you proceed to Creation Steps but `git worktree add -b` fails with a permission error (e.g., "Operation not permitted"), treat this as a late-detected restricted environment. Fall back to the behavior above — run setup and baseline tests in the current directory, report accordingly, and STOP.
 ```
 
-- [ ] **Step 3: Verify the insertion**
+1. [ ] **Step 3: Verify the insertion**
 
 Read the file again. Confirm:
-- Step 0 appears between Overview and Directory Selection Process
-- The rest of the file (Directory Selection, Safety Verification, Creation Steps, etc.) is unchanged
-- No duplicate sections or broken markdown
+1. Step 0 appears between Overview and Directory Selection Process
+1. The rest of the file (Directory Selection, Safety Verification, Creation Steps, etc.) is unchanged
+1. No duplicate sections or broken markdown
 
-- [ ] **Step 4: Commit**
+1. [ ] **Step 4: Commit**
 
 ```bash
 git add skills/using-git-worktrees/SKILL.md
@@ -89,9 +89,9 @@ sandbox fallback for permission errors on git worktree add."
 
 #### Files (2)
 
-- Modify: `skills/using-git-worktrees/SKILL.md:211-215` (Integration > Called by)
+1. Modify: `skills/using-git-worktrees/SKILL.md:211-215` (Integration > Called by)
 
-- [ ] **Step 1: Update the three "Called by" entries**
+1. [ ] **Step 1: Update the three "Called by" entries**
 
 Change lines 212-214 from:
 
@@ -109,11 +109,11 @@ To:
 - **executing-plans** - REQUIRED: Ensures isolated workspace (creates one or verifies existing)
 ```
 
-- [ ] **Step 2: Verify the Integration section**
+1. [ ] **Step 2: Verify the Integration section**
 
 Read the Integration section. Confirm all three entries are updated, "Pairs with" is unchanged.
 
-- [ ] **Step 3: Commit**
+1. [ ] **Step 3: Commit**
 
 ```bash
 git add skills/using-git-worktrees/SKILL.md
@@ -128,13 +128,13 @@ Clarify that skill ensures a workspace exists, not that it always creates one."
 
 #### Files (3)
 
-- Modify: `skills/finishing-a-development-branch/SKILL.md:38` (insert after Step 1, before Step 2)
+1. Modify: `skills/finishing-a-development-branch/SKILL.md:38` (insert after Step 1, before Step 2)
 
-- [ ] **Step 1: Read the current skill file**
+1. [ ] **Step 1: Read the current skill file**
 
 Read `skills/finishing-a-development-branch/SKILL.md` in full. Identify the insertion point: after "**If tests pass:** Continue to Step 2." (line 38) and before "### Step 2: Determine Base Branch" (line 40).
 
-- [ ] **Step 2: Insert Step 1.5 section**
+1. [ ] **Step 2: Insert Step 1.5 section**
 
 Insert the following between Step 1 and Step 2:
 
@@ -167,8 +167,8 @@ I cannot create branches, push, or open PRs from here.
 they may be lost when this workspace is cleaned up.
 
 If your host application provides these controls:
-- "Create branch" — to name a branch, then commit/push/PR
-- "Hand off to local" — to move changes to your local checkout
+1. "Create branch" — to name a branch, then commit/push/PR
+1. "Hand off to local" — to move changes to your local checkout
 
 Suggested branch name: <ticket-id/short-description>
 Suggested commit message: <summary-of-work>
@@ -188,15 +188,15 @@ Proceed to Step 2 and present the 4-option menu as normal.
 Proceed to Step 2 and present the 4-option menu as normal.
 ```
 
-- [ ] **Step 3: Verify the insertion**
+1. [ ] **Step 3: Verify the insertion**
 
 Read the file again. Confirm:
-- Step 1.5 appears between Step 1 and Step 2
-- Steps 2-5 are unchanged
-- Path A handoff includes commit SHA and data loss warning
-- Paths B and C proceed to Step 2 normally
+1. Step 1.5 appears between Step 1 and Step 2
+1. Steps 2-5 are unchanged
+1. Path A handoff includes commit SHA and data loss warning
+1. Paths B and C proceed to Step 2 normally
 
-- [ ] **Step 4: Commit**
+1. [ ] **Step 4: Commit**
 
 ```bash
 git add skills/finishing-a-development-branch/SKILL.md
@@ -212,9 +212,9 @@ payload instead of 4-option menu. Includes commit SHA and data loss warning."
 
 #### Files (4)
 
-- Modify: `skills/finishing-a-development-branch/SKILL.md` (Step 5: Cleanup Worktree — find by section heading, line numbers will have shifted after Task 3)
+1. Modify: `skills/finishing-a-development-branch/SKILL.md` (Step 5: Cleanup Worktree — find by section heading, line numbers will have shifted after Task 3)
 
-- [ ] **Step 1: Read the current Step 5 section**
+1. [ ] **Step 1: Read the current Step 5 section**
 
 Find the "### Step 5: Cleanup Worktree" section in `skills/finishing-a-development-branch/SKILL.md` (line numbers will have shifted after Task 3's insertion). The current Step 5 is:
 
@@ -240,7 +240,7 @@ git worktree remove <worktree-path>
 **For Option 3:** Keep worktree.
 ```
 
-- [ ] **Step 2: Add the cleanup guard before existing logic**
+1. [ ] **Step 2: Add the cleanup guard before existing logic**
 
 Replace the Step 5 section with:
 
@@ -279,14 +279,14 @@ git worktree remove <worktree-path>
 
 Note: the original text said "For Options 1, 2, 4" but the Quick Reference table and Common Mistakes section say "Options 1 & 4 only." This edit aligns Step 5 with those sections.
 
-- [ ] **Step 3: Verify the replacement**
+1. [ ] **Step 3: Verify the replacement**
 
 Read Step 5. Confirm:
-- Cleanup guard (re-detection) appears first
-- Existing removal logic preserved for non-externally-managed worktrees
-- "Options 1 and 4" (not "1, 2, 4") matches Quick Reference and Common Mistakes
+1. Cleanup guard (re-detection) appears first
+1. Existing removal logic preserved for non-externally-managed worktrees
+1. "Options 1 and 4" (not "1, 2, 4") matches Quick Reference and Common Mistakes
 
-- [ ] **Step 4: Commit**
+1. [ ] **Step 4: Commit**
 
 ```bash
 git add skills/finishing-a-development-branch/SKILL.md
@@ -303,10 +303,10 @@ Options 1 and 4 only, matching Quick Reference and Common Mistakes."
 
 #### Files (5)
 
-- Modify: `skills/subagent-driven-development/SKILL.md:268`
-- Modify: `skills/executing-plans/SKILL.md:68`
+1. Modify: `skills/subagent-driven-development/SKILL.md:268`
+1. Modify: `skills/executing-plans/SKILL.md:68`
 
-- [ ] **Step 1: Update `subagent-driven-development`**
+1. [ ] **Step 1: Update `subagent-driven-development`**
 
 Change line 268 from:
 
@@ -320,7 +320,7 @@ To:
 - **mega-skills:using-git-worktrees** - REQUIRED: Ensures isolated workspace (creates one or verifies existing)
 ```
 
-- [ ] **Step 2: Update `executing-plans`**
+1. [ ] **Step 2: Update `executing-plans`**
 
 Change line 68 from:
 
@@ -334,11 +334,11 @@ To:
 - **mega-skills:using-git-worktrees** - REQUIRED: Ensures isolated workspace (creates one or verifies existing)
 ```
 
-- [ ] **Step 3: Verify both files**
+1. [ ] **Step 3: Verify both files**
 
 Read line 268 of `skills/subagent-driven-development/SKILL.md` and line 68 of `skills/executing-plans/SKILL.md`. Confirm both say "Ensures isolated workspace (creates one or verifies existing)".
 
-- [ ] **Step 4: Commit**
+1. [ ] **Step 4: Commit**
 
 ```bash
 git add skills/subagent-driven-development/SKILL.md skills/executing-plans/SKILL.md
@@ -354,13 +354,13 @@ always creating one."
 
 #### Files (6)
 
-- Modify: `skills/using-mega-skills/references/codex-tools.md:25` (append at end)
+1. Modify: `skills/using-mega-skills/references/codex-tools.md:25` (append at end)
 
-- [ ] **Step 1: Read the current file**
+1. [ ] **Step 1: Read the current file**
 
 Read `skills/using-mega-skills/references/codex-tools.md` in full. Confirm it ends at line 25-26 after the multi_agent section.
 
-- [ ] **Step 2: Append two new sections**
+1. [ ] **Step 2: Append two new sections**
 
 Add at the end of the file:
 
@@ -398,14 +398,14 @@ The agent can still run tests, stage files, and output suggested branch
 names, commit messages, and PR descriptions for the user to copy.
 ```
 
-- [ ] **Step 3: Verify the additions**
+1. [ ] **Step 3: Verify the additions**
 
 Read the full file. Confirm:
-- Two new sections appear after the existing content
-- Bash code block renders correctly (not escaped)
-- Cross-references to Step 0 and Step 1.5 are present
+1. Two new sections appear after the existing content
+1. Bash code block renders correctly (not escaped)
+1. Cross-references to Step 0 and Step 1.5 are present
 
-- [ ] **Step 4: Commit**
+1. [ ] **Step 4: Commit**
 
 ```bash
 git add skills/using-mega-skills/references/codex-tools.md
@@ -421,15 +421,15 @@ App's native finishing flow for skills that need to adapt."
 
 #### Files (7)
 
-- Create: `tests/codex-app-compat/test-environment-detection.sh`
+1. Create: `tests/codex-app-compat/test-environment-detection.sh`
 
-- [ ] **Step 1: Create test directory**
+1. [ ] **Step 1: Create test directory**
 
 ```bash
 mkdir -p tests/codex-app-compat
 ```
 
-- [ ] **Step 2: Write the detection test script**
+1. [ ] **Step 2: Write the detection test script**
 
 Create `tests/codex-app-compat/test-environment-detection.sh`:
 
@@ -530,7 +530,7 @@ if [ "$FAIL" -gt 0 ]; then
 fi
 ```
 
-- [ ] **Step 3: Make it executable and run it**
+1. [ ] **Step 3: Make it executable and run it**
 
 ```bash
 chmod +x tests/codex-app-compat/test-environment-detection.sh
@@ -539,7 +539,7 @@ chmod +x tests/codex-app-compat/test-environment-detection.sh
 
 Expected output: 6 passed, 0 failed.
 
-- [ ] **Step 4: Commit**
+1. [ ] **Step 4: Commit**
 
 ```bash
 git add tests/codex-app-compat/test-environment-detection.sh
@@ -555,9 +555,9 @@ worktree, detached HEAD, and cleanup guard scenarios."
 
 #### Files (8)
 
-- Read: all 5 modified skill files
+1. Read: all 5 modified skill files
 
-- [ ] **Step 1: Run the automated detection tests**
+1. [ ] **Step 1: Run the automated detection tests**
 
 ```bash
 ./tests/codex-app-compat/test-environment-detection.sh
@@ -565,16 +565,16 @@ worktree, detached HEAD, and cleanup guard scenarios."
 
 Expected: 6 passed, 0 failed.
 
-- [ ] **Step 2: Read each modified file and verify changes**
+1. [ ] **Step 2: Read each modified file and verify changes**
 
 Read each file end-to-end:
-- `skills/using-git-worktrees/SKILL.md` — Step 0 present, rest unchanged
-- `skills/finishing-a-development-branch/SKILL.md` — Step 1.5 present, cleanup guard present, rest unchanged
-- `skills/subagent-driven-development/SKILL.md` — line 268 updated
-- `skills/executing-plans/SKILL.md` — line 68 updated
-- `skills/using-mega-skills/references/codex-tools.md` — two new sections at end
+1. `skills/using-git-worktrees/SKILL.md` — Step 0 present, rest unchanged
+1. `skills/finishing-a-development-branch/SKILL.md` — Step 1.5 present, cleanup guard present, rest unchanged
+1. `skills/subagent-driven-development/SKILL.md` — line 268 updated
+1. `skills/executing-plans/SKILL.md` — line 68 updated
+1. `skills/using-mega-skills/references/codex-tools.md` — two new sections at end
 
-- [ ] **Step 3: Verify no unintended changes**
+1. [ ] **Step 3: Verify no unintended changes**
 
 ```bash
 git diff --stat HEAD~7
@@ -582,7 +582,7 @@ git diff --stat HEAD~7
 
 Should show exactly 6 files changed (5 skill files + 1 test file). No other files modified.
 
-- [ ] **Step 4: Run existing test suite**
+1. [ ] **Step 4: Run existing test suite**
 
 If test runner exists:
 

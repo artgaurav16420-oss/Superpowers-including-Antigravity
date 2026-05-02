@@ -37,19 +37,19 @@ cd <project-name>
 
 This creates a fully configured project with:
 
-- ✅ React + TypeScript (via Vite)
+1. ✅ React + TypeScript (via Vite)
 
-- ✅ Tailwind CSS 3.4.1 with shadcn/ui theming system
+1. ✅ Tailwind CSS 3.4.1 with shadcn/ui theming system
 
-- ✅ Path aliases (`@/`) configured
+1. ✅ Path aliases (`@/`) configured
 
-- ✅ 40+ shadcn/ui components pre-installed
+1. ✅ 40+ shadcn/ui components pre-installed
 
-- ✅ All Radix UI dependencies included
+1. ✅ All Radix UI dependencies included
 
-- ✅ Parcel configured for bundling (via .parcelrc)
+1. ✅ Parcel configured for bundling (via .parcelrc)
 
-- ✅ Node 18+ compatibility (auto-detects and pins Vite version)
+1. ✅ Node 18+ compatibility (auto-detects and pins Vite version)
 
 ### Step 2: Develop Your Artifact
 
@@ -69,13 +69,13 @@ This creates `bundle.html` - a self-contained artifact with all JavaScript, CSS,
 
 **What the script does**:
 
-- Installs bundling dependencies (parcel, @parcel/config-default, parcel-resolver-tspaths, html-inline)
+1. Installs bundling dependencies (parcel, @parcel/config-default, parcel-resolver-tspaths, html-inline)
 
-- Creates `.parcelrc` config with path alias support
+1. Creates `.parcelrc` config with path alias support
 
-- Builds with Parcel (no source maps)
+1. Builds with Parcel (no source maps)
 
-- Inlines all assets into single HTML using html-inline
+1. Inlines all assets into single HTML using html-inline
 
 ### Step 4: Share Artifact with User
 
@@ -89,4 +89,4 @@ To test/visualize the artifact, use available tools (including other Skills or b
 
 ## Reference
 
-- **shadcn/ui components**: <https://ui.shadcn.com/docs/components>
+1. **shadcn/ui components**: <https://ui.shadcn.com/docs/components>

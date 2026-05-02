@@ -146,7 +146,7 @@ git worktree remove <worktree-path>
 ## Quick Reference
 
 | Option | Merge | Push | Keep Worktree | Cleanup Branch |
-|::::::::::::::::::::::::::---::::::::::::::::::::::::::-----|::::::::::::::::::::::::::---::::::::::::::::::::::::::----|::::::::::::::::::::::::::---::::::::::::::::::::::::::---|::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---|::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::----|
+|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::-----|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::----|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::----|
 | 1. Merge locally | ✓ | - | - | ✓ |
 | 2. Create PR | - | ✓ | ✓ | - |
 | 3. Keep as-is | - | - | ✓ | - |
@@ -156,58 +156,58 @@ git worktree remove <worktree-path>
 
 ### Skipping test verification
 
-- **Problem:** Merge broken code, create failing PR
+1. **Problem:** Merge broken code, create failing PR
 
-- **Fix:** Always verify tests before offering options
+1. **Fix:** Always verify tests before offering options
 
 #### Open-ended questions
 
-- **Problem:** "What should I do next?" → ambiguous
+1. **Problem:** "What should I do next?" → ambiguous
 
-- **Fix:** Present exactly 4 structured options
+1. **Fix:** Present exactly 4 structured options
 
 #### Automatic worktree cleanup
 
-- **Problem:** Remove worktree when might need it (Option 2, 3)
+1. **Problem:** Remove worktree when might need it (Option 2, 3)
 
-- **Fix:** Only cleanup for Options 1 and 4
+1. **Fix:** Only cleanup for Options 1 and 4
 
 #### No confirmation for discard
 
-- **Problem:** Accidentally delete work
+1. **Problem:** Accidentally delete work
 
-- **Fix:** Require typed "discard" confirmation
+1. **Fix:** Require typed "discard" confirmation
 
 ## Red Flags
 
 ### Never
 
-- Proceed with failing tests
+1. Proceed with failing tests
 
-- Merge without verifying tests on result
+1. Merge without verifying tests on result
 
-- Delete work without confirmation
+1. Delete work without confirmation
 
-- Force-push without explicit request
+1. Force-push without explicit request
 
 #### Always
 
-- Verify tests before offering options
+1. Verify tests before offering options
 
-- Present exactly 4 options
+1. Present exactly 4 options
 
-- Get typed confirmation for Option 4
+1. Get typed confirmation for Option 4
 
-- Clean up worktree for Options 1 & 4 only
+1. Clean up worktree for Options 1 & 4 only
 
 ## Integration
 
 ### Called by
 
-- **subagent-driven-development** (Step 7) - After all tasks complete
+1. **subagent-driven-development** (Step 7) - After all tasks complete
 
-- **executing-plans** (Step 5) - After all batches complete
+1. **executing-plans** (Step 5) - After all batches complete
 
 #### Pairs with
 
-- **using-git-worktrees** - Cleans up worktree created by that skill
+1. **using-git-worktrees** - Cleans up worktree created by that skill

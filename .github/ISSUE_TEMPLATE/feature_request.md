@@ -12,7 +12,7 @@ requested before — some were implemented differently, some are in
 progress, and some were intentionally declined.
 -->
 
-- [ ] I searched existing issues and this has not been proposed before
+1. [ ] I searched existing issues and this has not been proposed before
 
 ## What problem does this solve
 

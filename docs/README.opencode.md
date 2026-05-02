@@ -1,6 +1,6 @@
 # Mega-Skills for OpenCode
 
-Complete guide for using Mega-Skills with [OpenCode.ai]([https://opencode.ai).]([https://opencode.ai).)]([https://opencode.ai).))]([https://opencode.ai).)))]([https://opencode.ai).))))]([https://opencode.ai).)))))]([https://opencode.ai).))))))]([https://opencode.ai).)))))))](https://opencode.ai).))))))))
+Complete guide for using Mega-Skills with [OpenCode.ai]([https://opencode.ai).]([https://opencode.ai).)]([https://opencode.ai).))]([https://opencode.ai).)))]([https://opencode.ai).))))]([https://opencode.ai).)))))]([https://opencode.ai).))))))]([https://opencode.ai).)))))))]([https://opencode.ai).))))))))](https://opencode.ai).)))))))))
 
 ## Installation
 
@@ -99,10 +99,10 @@ The plugin does two things:
 
 Skills written for Claude Code are automatically adapted for OpenCode:
 
-- `TodoWrite` → `todowrite`
-- `Task` with subagents → OpenCode's `@mention` system
-- `Skill` tool → OpenCode's native `skill` tool
-- File operations → Native OpenCode tools
+1. `TodoWrite` → `todowrite`
+1. `Task` with subagents → OpenCode's `@mention` system
+1. `Skill` tool → OpenCode's native `skill` tool
+1. File operations → Native OpenCode tools
 
 ## Troubleshooting
 
@@ -125,6 +125,6 @@ Skills written for Claude Code are automatically adapted for OpenCode:
 
 ## Getting Help
 
-- Report issues: [https://github.com/artgaurav16420-oss/Mega-Skills/issues]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)))))))](https://github.com/artgaurav16420-oss/Mega-Skills/issues))))))))
-- Main documentation: [https://github.com/artgaurav16420-oss/Mega-Skills]([https://github.com/artgaurav16420-oss/Mega-Skills)]([https://github.com/artgaurav16420-oss/Mega-Skills))]([https://github.com/artgaurav16420-oss/Mega-Skills)))]([https://github.com/artgaurav16420-oss/Mega-Skills))))]([https://github.com/artgaurav16420-oss/Mega-Skills)))))]([https://github.com/artgaurav16420-oss/Mega-Skills))))))]([https://github.com/artgaurav16420-oss/Mega-Skills)))))))](https://github.com/artgaurav16420-oss/Mega-Skills))))))))
-- OpenCode docs: [https://opencode.ai/docs/]([https://opencode.ai/docs/)]([https://opencode.ai/docs/))]([https://opencode.ai/docs/)))]([https://opencode.ai/docs/))))]([https://opencode.ai/docs/)))))]([https://opencode.ai/docs/))))))]([https://opencode.ai/docs/)))))))](https://opencode.ai/docs/))))))))
+1. Report issues: [https://github.com/artgaurav16420-oss/Mega-Skills/issues]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)))))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))))))))](https://github.com/artgaurav16420-oss/Mega-Skills/issues)))))))))
+1. Main documentation: [https://github.com/artgaurav16420-oss/Mega-Skills]([https://github.com/artgaurav16420-oss/Mega-Skills)]([https://github.com/artgaurav16420-oss/Mega-Skills))]([https://github.com/artgaurav16420-oss/Mega-Skills)))]([https://github.com/artgaurav16420-oss/Mega-Skills))))]([https://github.com/artgaurav16420-oss/Mega-Skills)))))]([https://github.com/artgaurav16420-oss/Mega-Skills))))))]([https://github.com/artgaurav16420-oss/Mega-Skills)))))))]([https://github.com/artgaurav16420-oss/Mega-Skills))))))))](https://github.com/artgaurav16420-oss/Mega-Skills)))))))))
+1. OpenCode docs: [https://opencode.ai/docs/]([https://opencode.ai/docs/)]([https://opencode.ai/docs/))]([https://opencode.ai/docs/)))]([https://opencode.ai/docs/))))]([https://opencode.ai/docs/)))))]([https://opencode.ai/docs/))))))]([https://opencode.ai/docs/)))))))]([https://opencode.ai/docs/))))))))](https://opencode.ai/docs/)))))))))

@@ -6,11 +6,11 @@ The Files API uploads files for use in Messages API requests. Reference files vi
 
 ## Key Facts
 
-- Maximum file size: 500 MB
-- Total storage: 100 GB per organization
-- Files persist until deleted
-- File operations (upload, list, delete) are free; content used in messages is billed as input tokens
-- Not available on Amazon Bedrock or Google Vertex AI
+1. Maximum file size: 500 MB
+1. Total storage: 100 GB per organization
+1. Files persist until deleted
+1. File operations (upload, list, delete) are free; content used in messages is billed as input tokens
+1. Not available on Amazon Bedrock or Google Vertex AI
 
 ---
 

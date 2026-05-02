@@ -41,23 +41,23 @@ For each task:
 
 After all tasks complete and verified:
 
-- Announce: "I'm using the finishing-a-development-branch skill to complete this work."
+1. Announce: "I'm using the finishing-a-development-branch skill to complete this work."
 
-- **REQUIRED SUB-SKILL:** Use mega-skills:finishing-a-development-branch
+1. **REQUIRED SUB-SKILL:** Use mega-skills:finishing-a-development-branch
 
-- Follow that skill to verify tests, present options, execute choice
+1. Follow that skill to verify tests, present options, execute choice
 
 ## When to Stop and Ask for Help
 
 ### STOP executing immediately when
 
-- Hit a blocker (missing dependency, test fails, instruction unclear)
+1. Hit a blocker (missing dependency, test fails, instruction unclear)
 
-- Plan has critical gaps preventing starting
+1. Plan has critical gaps preventing starting
 
-- You don't understand an instruction
+1. You don't understand an instruction
 
-- Verification fails repeatedly
+1. Verification fails repeatedly
 
 #### Ask for clarification rather than guessing
 
@@ -65,32 +65,32 @@ After all tasks complete and verified:
 
 ### Return to Review (Step 1) when
 
-- Partner updates the plan based on your feedback
+1. Partner updates the plan based on your feedback
 
-- Fundamental approach needs rethinking
+1. Fundamental approach needs rethinking
 
 **Don't force through blockers** - stop and ask.
 
 ## Remember
 
-- Review plan critically first
+1. Review plan critically first
 
-- Follow plan steps exactly
+1. Follow plan steps exactly
 
-- Don't skip verifications
+1. Don't skip verifications
 
-- Reference skills when plan says to
+1. Reference skills when plan says to
 
-- Stop when blocked, don't guess
+1. Stop when blocked, don't guess
 
-- Never start implementation on main/master branch without explicit user consent
+1. Never start implementation on main/master branch without explicit user consent
 
 ## Integration
 
 ### Required workflow skills
 
-- **mega-skills:using-git-worktrees** - REQUIRED: Set up isolated workspace before starting
+1. **mega-skills:using-git-worktrees** - REQUIRED: Set up isolated workspace before starting
 
-- **mega-skills:writing-plans** - Creates the plan this skill executes
+1. **mega-skills:writing-plans** - Creates the plan this skill executes
 
-- **mega-skills:finishing-a-development-branch** - Complete development after all tasks
+1. **mega-skills:finishing-a-development-branch** - Complete development after all tasks

@@ -45,48 +45,48 @@ Before reading code examples, determine which language the user is working in:
 
 1. **Look at project files** to infer the language:
 
-   - `*.py`, `requirements.txt`, `pyproject.toml`, `setup.py`, `Pipfile` → **Python** — read from `python/`
+   1. `*.py`, `requirements.txt`, `pyproject.toml`, `setup.py`, `Pipfile` → **Python** — read from `python/`
 
-   - `*.ts`, `*.tsx`, `package.json`, `tsconfig.json` → **TypeScript** — read from `typescript/`
+   1. `*.ts`, `*.tsx`, `package.json`, `tsconfig.json` → **TypeScript** — read from `typescript/`
 
-   - `*.js`, `*.jsx` (no `.ts` files present) → **TypeScript** — JS uses the same SDK, read from `typescript/`
+   1. `*.js`, `*.jsx` (no `.ts` files present) → **TypeScript** — JS uses the same SDK, read from `typescript/`
 
-   - `*.java`, `pom.xml`, `build.gradle` → **Java** — read from `java/`
+   1. `*.java`, `pom.xml`, `build.gradle` → **Java** — read from `java/`
 
-   - `*.kt`, `*.kts`, `build.gradle.kts` → **Java** — Kotlin uses the Java SDK, read from `java/`
+   1. `*.kt`, `*.kts`, `build.gradle.kts` → **Java** — Kotlin uses the Java SDK, read from `java/`
 
-   - `*.scala`, `build.sbt` → **Java** — Scala uses the Java SDK, read from `java/`
+   1. `*.scala`, `build.sbt` → **Java** — Scala uses the Java SDK, read from `java/`
 
-   - `*.go`, `go.mod` → **Go** — read from `go/`
+   1. `*.go`, `go.mod` → **Go** — read from `go/`
 
-   - `*.rb`, `Gemfile` → **Ruby** — read from `ruby/`
+   1. `*.rb`, `Gemfile` → **Ruby** — read from `ruby/`
 
-   - `*.cs`, `*.csproj` → **C#** — read from `csharp/`
+   1. `*.cs`, `*.csproj` → **C#** — read from `csharp/`
 
-   - `*.php`, `composer.json` → **PHP** — read from `php/`
+   1. `*.php`, `composer.json` → **PHP** — read from `php/`
 
 1. **If multiple languages detected** (e.g., both Python and TypeScript files):
 
-   - Check which language the user's current file or question relates to
-   - If still ambiguous, ask: "I detected both Python and TypeScript files. Which language are you using for the Claude API integration?"
+   1. Check which language the user's current file or question relates to
+   1. If still ambiguous, ask: "I detected both Python and TypeScript files. Which language are you using for the Claude API integration?"
 
 1. **If language can't be inferred** (empty project, no source files, or unsupported language):
 
-   - Use AskUserQuestion with options: Python, TypeScript, Java, Go, Ruby, cURL/raw HTTP, C#, PHP
-   - If AskUserQuestion is unavailable, default to Python examples and note: "Showing Python examples. Let me know if you need a different language."
+   1. Use AskUserQuestion with options: Python, TypeScript, Java, Go, Ruby, cURL/raw HTTP, C#, PHP
+   1. If AskUserQuestion is unavailable, default to Python examples and note: "Showing Python examples. Let me know if you need a different language."
 
 1. **If unsupported language detected** (Rust, Swift, C++, Elixir, etc.):
 
-   - Suggest cURL/raw HTTP examples from `curl/` and note that community SDKs may exist
+   1. Suggest cURL/raw HTTP examples from `curl/` and note that community SDKs may exist
 
-   - Offer to show Python or TypeScript examples as reference implementations
+   1. Offer to show Python or TypeScript examples as reference implementations
 
 1. **If user needs cURL/raw HTTP examples**, read from `curl/`.
 
 ### Language-Specific Feature Support
 
 | Language   | Tool Runner | Managed Agents | Notes                                 |
-| ::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---- | ::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::----- | ::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::----- | ::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---- |
+| :::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---- | :::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::----- | :::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::----- | :::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---- |
 | Python     | Yes (beta)  | Yes (beta)     | Full support — `@beta_tool` decorator |
 
 | TypeScript | Yes (beta)  | Yes (beta)     | Full support — `betaZodTool` + Zod    |
@@ -111,7 +111,7 @@ Before reading code examples, determine which language the user is working in:
 > **Start simple.** Default to the simplest tier that meets your needs. Single API calls and workflows handle most use cases — only reach for agents when the task genuinely requires open-ended, model-driven exploration.
 
 | Use Case                                        | Tier            | Recommended Surface       | Why                                                          |
-| ::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::----- | ::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::--- | ::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---- | ::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::--- |
+| :::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::----- | :::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::--- | :::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---- | :::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::--- |
 | Classification, summarization, extraction, Q&A  | Single LLM call | **Claude API**            | One request, one response                                    |
 | Batch processing or embeddings                  | Single LLM call | **Claude API**            | Specialized endpoints                                        |
 | Multi-step pipelines with code-controlled logic | Workflow        | **Claude API + tool use** | You orchestrate the loop                                     |
@@ -150,13 +150,13 @@ What does your application need?
 
 Before choosing the agent tier, check all four criteria:
 
-- **Complexity** — Is the task multi-step and hard to fully specify in advance? (e.g., "turn this design doc into a PR" vs. "extract the title from this PDF")
+1. **Complexity** — Is the task multi-step and hard to fully specify in advance? (e.g., "turn this design doc into a PR" vs. "extract the title from this PDF")
 
-- **Value** — Does the outcome justify higher cost and latency?
+1. **Value** — Does the outcome justify higher cost and latency?
 
-- **Viability** — Is Claude capable at this task type?
+1. **Viability** — Is Claude capable at this task type?
 
-- **Cost of error** — Can errors be caught and recovered from? (tests, review, rollback)
+1. **Cost of error** — Can errors be caught and recovered from? (tests, review, rollback)
 
 If the answer is "no" to any of these, stay at a simpler tier (single call or workflow).
 
@@ -179,7 +179,7 @@ Everything goes through `POST /v1/messages`. Tools and output constraints are fe
 ## Current Models (cached: 2026-04-15)
 
 | Model             | Model ID            | Context        | Input $/1M | Output $/1M |
-| ::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::----- | ::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---- | ::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::----- | ::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---- | ::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::----- |
+| :::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::----- | :::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---- | :::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::----- | :::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---- | :::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::----- |
 | Claude Opus 4.7   | `claude-opus-4-7`   | 1M             | $5.00      | $25.00      |
 
 | Claude Opus 4.6   | `claude-opus-4-6`   | 1M             | $5.00      | $25.00      |
@@ -251,7 +251,7 @@ For placement patterns, architectural guidance, and the silent-invalidator audit
 **Subcommands** — invoke directly with `/claude-api <subcommand>`:
 
 | Subcommand | Action |
-|::::::::::::::::::::::::::---|::::::::::::::::::::::::::---|
+|:::::::::::::::::::::::::::---|:::::::::::::::::::::::::::---|
 | `managed-agents-onboard` | Walk the user through setting up a Managed Agent from scratch. **Read `shared/managed-agents-onboarding.md` immediately** and follow its interview script: mental model → know-or-explore branch → template config → session setup → emit code. Do not summarize — run the interview. |
 
 **Reading guide:** Start with `shared/managed-agents-overview.md`, then the topical `shared/managed-agents-*.md` files (core, environments, tools, events, memory, client-patterns, onboarding, api-reference). For Python, TypeScript, Go, Ruby, PHP, and Java, read `{lang}/managed-agents/README.md` for code examples. For cURL, read `curl/managed-agents.md`. **Agents are persistent — create once, reference by ID.** Store the agent ID returned by `agents.create` and pass it to every subsequent `sessions.create`; do not call `agents.create` in the request path. The Anthropic CLI is one convenient way to create agents and environments from version-controlled YAML (URL in `shared/live-sources.md`). If a binding you need isn't shown in the language README, WebFetch the relevant entry from `shared/live-sources.md` rather than guess. C# does not currently have Managed Agents support; use raw HTTP from `curl/managed-agents.md` as a reference.
@@ -344,36 +344,36 @@ Read the **language-specific Claude API folder** (`{language}/claude-api/`):
 
 Use WebFetch to get the latest documentation when:
 
-- User asks for "latest" or "current" information
+1. User asks for "latest" or "current" information
 
-- Cached data seems incorrect
+1. Cached data seems incorrect
 
-- User asks about features not covered here
+1. User asks about features not covered here
 
 Live documentation URLs are in `shared/live-sources.md`.
 
 ## Common Pitfalls
 
-- Don't truncate inputs when passing files or content to the API. If the content is too long to fit in the context window, notify the user and discuss options (chunking, summarization, etc.) rather than silently truncating.
+1. Don't truncate inputs when passing files or content to the API. If the content is too long to fit in the context window, notify the user and discuss options (chunking, summarization, etc.) rather than silently truncating.
 
-- **Opus 4.7 thinking:** Adaptive only. `thinking: {type: "enabled", budget_tokens: N}` returns 400 on Opus 4.7 — `budget_tokens` is fully removed there (along with `temperature`, `top_p`, `top_k`). Use `thinking: {type: "adaptive"}`.
+1. **Opus 4.7 thinking:** Adaptive only. `thinking: {type: "enabled", budget_tokens: N}` returns 400 on Opus 4.7 — `budget_tokens` is fully removed there (along with `temperature`, `top_p`, `top_k`). Use `thinking: {type: "adaptive"}`.
 
-- **Opus 4.6 / Sonnet 4.6 thinking:** Use `thinking: {type: "adaptive"}` — do NOT use `budget_tokens` for new 4.6 code (deprecated on both Opus 4.6 and Sonnet 4.6; for gradual migration of existing code, see the transitional escape hatch in `shared/model-migration.md` — note this carve-out does not apply to Opus 4.7). For older models, `budget_tokens` must be less than `max_tokens` (minimum 1024). This will throw an error if you get it wrong.
+1. **Opus 4.6 / Sonnet 4.6 thinking:** Use `thinking: {type: "adaptive"}` — do NOT use `budget_tokens` for new 4.6 code (deprecated on both Opus 4.6 and Sonnet 4.6; for gradual migration of existing code, see the transitional escape hatch in `shared/model-migration.md` — note this carve-out does not apply to Opus 4.7). For older models, `budget_tokens` must be less than `max_tokens` (minimum 1024). This will throw an error if you get it wrong.
 
-- **4.6/4.7 family prefill removed:** Assistant message prefills (last-assistant-turn prefills) return a 400 error on Opus 4.6, Opus 4.7, and Sonnet 4.6. Use structured outputs (`output_config.format`) or system prompt instructions to control response format instead.
+1. **4.6/4.7 family prefill removed:** Assistant message prefills (last-assistant-turn prefills) return a 400 error on Opus 4.6, Opus 4.7, and Sonnet 4.6. Use structured outputs (`output_config.format`) or system prompt instructions to control response format instead.
 
-- **Confirm migration scope before editing:** When a user asks to migrate code to a newer Claude model without naming a specific file, directory, or file list, **ask which scope to apply first** — the entire working directory, a specific subdirectory, or a specific set of files. Do not start editing until the user confirms. Imperative phrasings like "migrate my codebase", "move my project to X", "upgrade to Sonnet 4.6", or bare "migrate to Opus 4.7" are **still ambiguous** — they tell you what to do but not where, so ask. Proceed without asking only when the prompt names an exact file, a specific directory, or an explicit file list ("migrate `app.py`", "migrate everything under `services/`", "update `a.py` and `b.py`"). See `shared/model-migration.md` Step 0.
+1. **Confirm migration scope before editing:** When a user asks to migrate code to a newer Claude model without naming a specific file, directory, or file list, **ask which scope to apply first** — the entire working directory, a specific subdirectory, or a specific set of files. Do not start editing until the user confirms. Imperative phrasings like "migrate my codebase", "move my project to X", "upgrade to Sonnet 4.6", or bare "migrate to Opus 4.7" are **still ambiguous** — they tell you what to do but not where, so ask. Proceed without asking only when the prompt names an exact file, a specific directory, or an explicit file list ("migrate `app.py`", "migrate everything under `services/`", "update `a.py` and `b.py`"). See `shared/model-migration.md` Step 0.
 
-- **`max_tokens` defaults:** Don't lowball `max_tokens` — hitting the cap truncates output mid-thought and requires a retry. For non-streaming requests, default to `~16000` (keeps responses under SDK HTTP timeouts). For streaming requests, default to `~64000` (timeouts aren't a concern, so give the model room). Only go lower when you have a hard reason: classification (`~256`), cost caps, or deliberately short outputs.
+1. **`max_tokens` defaults:** Don't lowball `max_tokens` — hitting the cap truncates output mid-thought and requires a retry. For non-streaming requests, default to `~16000` (keeps responses under SDK HTTP timeouts). For streaming requests, default to `~64000` (timeouts aren't a concern, so give the model room). Only go lower when you have a hard reason: classification (`~256`), cost caps, or deliberately short outputs.
 
-- **128K output tokens:** Opus 4.6 and Opus 4.7 support up to 128K `max_tokens`, but the SDKs require streaming for values that large to avoid HTTP timeouts. Use `.stream()` with `.get_final_message()` / `.finalMessage()`.
+1. **128K output tokens:** Opus 4.6 and Opus 4.7 support up to 128K `max_tokens`, but the SDKs require streaming for values that large to avoid HTTP timeouts. Use `.stream()` with `.get_final_message()` / `.finalMessage()`.
 
-- **Tool call JSON parsing (4.6/4.7 family):** Opus 4.6, Opus 4.7, and Sonnet 4.6 may produce different JSON string escaping in tool call `input` fields (e.g., Unicode or forward-slash escaping). Always parse tool inputs with `json.loads()` / `JSON.parse()` — never do raw string matching on the serialized input.
+1. **Tool call JSON parsing (4.6/4.7 family):** Opus 4.6, Opus 4.7, and Sonnet 4.6 may produce different JSON string escaping in tool call `input` fields (e.g., Unicode or forward-slash escaping). Always parse tool inputs with `json.loads()` / `JSON.parse()` — never do raw string matching on the serialized input.
 
-- **Structured outputs (all models):** Use `output_config: {format: {...}}` instead of the deprecated `output_format` parameter on `messages.create()`. This is a general API change, not 4.6-specific.
+1. **Structured outputs (all models):** Use `output_config: {format: {...}}` instead of the deprecated `output_format` parameter on `messages.create()`. This is a general API change, not 4.6-specific.
 
-- **Don't reimplement SDK functionality:** The SDK provides high-level helpers — use them instead of building from scratch. Specifically: use `stream.finalMessage()` instead of wrapping `.on()` events in `new Promise()`; use typed exception classes (`Anthropic.RateLimitError`, etc.) instead of string-matching error messages; use SDK types (`Anthropic.MessageParam`, `Anthropic.Tool`, `Anthropic.Message`, etc.) instead of redefining equivalent interfaces.
+1. **Don't reimplement SDK functionality:** The SDK provides high-level helpers — use them instead of building from scratch. Specifically: use `stream.finalMessage()` instead of wrapping `.on()` events in `new Promise()`; use typed exception classes (`Anthropic.RateLimitError`, etc.) instead of string-matching error messages; use SDK types (`Anthropic.MessageParam`, `Anthropic.Tool`, `Anthropic.Message`, etc.) instead of redefining equivalent interfaces.
 
-- **Don't define custom types for SDK data structures:** The SDK exports types for all API objects. Use `Anthropic.MessageParam` for messages, `Anthropic.Tool` for tool definitions, `Anthropic.ToolUseBlock` / `Anthropic.ToolResultBlockParam` for tool results, `Anthropic.Message` for responses. Defining your own `interface ChatMessage { role: string; content: unknown }` duplicates what the SDK already provides and loses type safety.
+1. **Don't define custom types for SDK data structures:** The SDK exports types for all API objects. Use `Anthropic.MessageParam` for messages, `Anthropic.Tool` for tool definitions, `Anthropic.ToolUseBlock` / `Anthropic.ToolResultBlockParam` for tool results, `Anthropic.Message` for responses. Defining your own `interface ChatMessage { role: string; content: unknown }` duplicates what the SDK already provides and loses type safety.
 
-- **Report and document output:** For tasks that produce reports, documents, or visualizations, the code execution sandbox has `python-docx`, `python-pptx`, `matplotlib`, `pillow`, and `pypdf` pre-installed. Claude can generate formatted files (DOCX, PDF, charts) and return them via the Files API — consider this for "report" or "document" type requests instead of plain stdout text.
+1. **Report and document output:** For tasks that produce reports, documents, or visualizations, the code execution sandbox has `python-docx`, `python-pptx`, `matplotlib`, `pillow`, and `pypdf` pre-installed. Claude can generate formatted files (DOCX, PDF, charts) and return them via the Files API — consider this for "report" or "document" type requests instead of plain stdout text.

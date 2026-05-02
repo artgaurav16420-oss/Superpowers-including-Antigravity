@@ -161,11 +161,11 @@ for _, block := range message.Content {
 
 #### Key features of the Go tool runner
 
-- Automatic schema generation from Go structs via `jsonschema` tags
-- `RunToCompletion()` for simple one-shot usage
-- `All()` iterator for processing each message in the conversation
-- `NextMessage()` for step-by-step iteration
-- Streaming variant via `NewToolRunnerStreaming()` with `AllStreaming()`
+1. Automatic schema generation from Go structs via `jsonschema` tags
+1. `RunToCompletion()` for simple one-shot usage
+1. `All()` iterator for processing each message in the conversation
+1. `NextMessage()` for step-by-step iteration
+1. Streaming variant via `NewToolRunnerStreaming()` with `AllStreaming()`
 
 ### Manual Loop
 
@@ -260,7 +260,7 @@ func main() {
 #### Key API surface
 
 | Symbol | Purpose |
-|::::::::---|::::::::---|
+|:::::::::---|:::::::::---|
 | `resp.ToParam()` | Convert `Message` response → `MessageParam` for history |
 | `block.AsAny().(type)` | Type-switch on `ContentBlockUnion` variants |
 | `variant.JSON.Input.Raw()` | Raw JSON string of tool input (for `json.Unmarshal`) |

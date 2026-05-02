@@ -29,11 +29,11 @@ Two Claude instances provided detailed feedback from actual development sessions
 
 #### What happened
 
-- Subagent tested "OpenAI integration"
-- Set `OPENAI_API_KEY` env var
-- Got status 200 responses
-- Reported "OpenAI integration working"
-- **BUT** response contained `"model": "claude-sonnet-4-20250514"` - was actually using Anthropic
+1. Subagent tested "OpenAI integration"
+1. Set `OPENAI_API_KEY` env var
+1. Got status 200 responses
+1. Reported "OpenAI integration working"
+1. **BUT** response contained `"model": "claude-sonnet-4-20250514"` - was actually using Anthropic
 
 #### Root cause
 
@@ -43,9 +43,9 @@ Two Claude instances provided detailed feedback from actual development sessions
 
 #### Example failure pattern
 
-- Switch LLM provider → verify status 200 but don't check model name
-- Enable feature flag → verify no errors but don't check feature is active
-- Change environment → verify deployment succeeds but don't check environment vars
+1. Switch LLM provider → verify status 200 but don't check model name
+1. Enable feature flag → verify no errors but don't check feature is active
+1. Change environment → verify deployment succeeds but don't check environment vars
 
 ---
 
@@ -53,12 +53,12 @@ Two Claude instances provided detailed feedback from actual development sessions
 
 #### What happened (2)
 
-- Multiple subagents dispatched during session
-- Each started background server processes
-- Processes accumulated (4+ servers running)
-- Stale processes still bound to ports
-- Later E2E test hit stale server with wrong config
-- Confusing/incorrect test results
+1. Multiple subagents dispatched during session
+1. Each started background server processes
+1. Processes accumulated (4+ servers running)
+1. Stale processes still bound to ports
+1. Later E2E test hit stale server with wrong config
+1. Confusing/incorrect test results
 
 #### Root cause (2)
 
@@ -72,9 +72,9 @@ Subagents are stateless - don't know about previous subagents' processes. No cle
 
 #### What happened (3)
 
-- Standard approach: give subagent full plan file to read
-- Experiment: give only task + pattern + file + verify command
-- Result: Faster, more focused, single-attempt completion more common
+1. Standard approach: give subagent full plan file to read
+1. Experiment: give only task + pattern + file + verify command
+1. Result: Faster, more focused, single-attempt completion more common
 
 #### Root cause (3)
 
@@ -103,10 +103,10 @@ in its metadata should result in the container running with `--privileged` flag.
 
 #### What happened (4)
 
-- Added self-reflection prompt: "Look at your work with fresh eyes - what could be better?"
-- Implementer for Task 5 identified failing test was due to implementation bug, not test bug
-- Traced to line 99: `strings.Join(metadata.Entrypoint, " ")` creating invalid Docker syntax
-- Without self-reflection, would have just reported "test fails" without root cause
+1. Added self-reflection prompt: "Look at your work with fresh eyes - what could be better?"
+1. Implementer for Task 5 identified failing test was due to implementation bug, not test bug
+1. Traced to line 99: `strings.Join(metadata.Entrypoint, " ")` creating invalid Docker syntax
+1. Without self-reflection, would have just reported "test fails" without root cause
 
 #### Root cause (4)
 
@@ -137,8 +137,8 @@ vi.mock('web-adapter', () => ({
 }));
 ```
 
-- Tests passed
-- Runtime crashed: "adapter.cleanup is not a function"
+1. Tests passed
+1. Runtime crashed: "adapter.cleanup is not a function"
 
 #### Root cause (5)
 
@@ -156,10 +156,10 @@ The skill covers testing mock behavior and mocking without understanding, but no
 
 #### What happened (6)
 
-- Code reviewer subagent dispatched
-- Couldn't find test file: "The file doesn't appear to exist in the repository"
-- File actually exists
-- Reviewer didn't know to explicitly read it first
+1. Code reviewer subagent dispatched
+1. Couldn't find test file: "The file doesn't appear to exist in the repository"
+1. File actually exists
+1. Reviewer didn't know to explicitly read it first
 
 #### Root cause (6)
 
@@ -173,10 +173,10 @@ Reviewer prompts don't include explicit file reading instructions.
 
 #### What happened (7)
 
-- Implementer identifies bug during self-reflection
-- Implementer knows the fix
-- Current workflow: report → I dispatch fixer → fixer fixes → I verify
-- Extra round-trip adds latency without adding value
+1. Implementer identifies bug during self-reflection
+1. Implementer knows the fix
+1. Current workflow: report → I dispatch fixer → fixer fixes → I verify
+1. Extra round-trip adds latency without adding value
 
 #### Root cause (7)
 
@@ -190,9 +190,9 @@ Rigid separation between implementer and fixer roles when implementer has alread
 
 #### What happened (8)
 
-- `testing-anti-patterns` skill exists
-- Neither human nor subagents read it before writing tests
-- Would have prevented some issues (though not all - see Problem 5)
+1. `testing-anti-patterns` skill exists
+1. Neither human nor subagents read it before writing tests
+1. Would have prevented some issues (though not all - see Problem 5)
 
 #### Root cause (8)
 
@@ -222,7 +222,7 @@ Operation succeeds because *some* valid config exists, but it's not the config y
 ### Examples
 
 | Change | Insufficient | Required |
-|::::::::---::::::::-----|::::::::---::::::::---::::::::---::::::::----|::::::::---::::::::---::::::::----|
+|:::::::::---:::::::::-----|:::::::::---:::::::::---:::::::::---:::::::::----|:::::::::---:::::::::---:::::::::----|
 | Switch LLM provider | Status 200 | Response contains expected model name |
 | Enable feature flag | No errors | Feature behavior actually active |
 | Change environment | Deploy succeeds | Logs/vars reference new environment |
@@ -236,17 +236,17 @@ BEFORE claiming configuration change works:
 
 1. IDENTIFY: What should be DIFFERENT after this change?
 1. LOCATE: Where is that difference observable?
-   - Response field (model name, user ID)
-   - Log line (environment, provider)
-   - Behavior (feature active/inactive)
+   1. Response field (model name, user ID)
+   1. Log line (environment, provider)
+   1. Behavior (feature active/inactive)
 1. RUN: Command that shows the observable difference
 1. VERIFY: Output contains expected difference
 1. ONLY THEN: Claim configuration change works
 
 Red flags:
-  - "Request succeeded" without checking content
-  - Checking status code but not response body
-  - Verifying no errors but not positive confirmation
+  1. "Request succeeded" without checking content
+  1. Checking status code but not response body
+  1. Verifying no errors but not positive confirmation
 
 ```text
 
@@ -301,10 +301,10 @@ After tests:
 
 ### Why This Matters
 
-- Stale processes serve requests with wrong config
-- Port conflicts cause silent failures
-- Process accumulation slows system
-- Confusing test results (hitting wrong server)
+1. Stale processes serve requests with wrong config
+1. Port conflicts cause silent failures
+1. Process accumulation slows system
+1. Confusing test results (hitting wrong server)
 
 ```text
 
@@ -356,15 +356,15 @@ Verification: [exact command to run]
 
 #### Use lean context when
 
-- Task follows existing pattern (add similar test, implement similar feature)
-- Task is self-contained (doesn't need context from other tasks)
-- Pattern reference is sufficient (e.g., "follow TestE2E_FeatureOptionValidation")
+1. Task follows existing pattern (add similar test, implement similar feature)
+1. Task is self-contained (doesn't need context from other tasks)
+1. Pattern reference is sufficient (e.g., "follow TestE2E_FeatureOptionValidation")
 
 #### Use full plan when
 
-- Task has dependencies on other tasks
-- Requires understanding of overall architecture
-- Complex logic that needs context
+1. Task has dependencies on other tasks
+1. Requires understanding of overall architecture
+1. Complex logic that needs context
 
 ```text
 
@@ -402,19 +402,19 @@ When done, BEFORE reporting back:
 Take a step back and review your work with fresh eyes.
 
 Ask yourself:
-- Does this actually solve the task as specified?
-- Are there edge cases I didn't consider?
-- Did I follow the pattern correctly?
-- If tests are failing, what's the ROOT CAUSE (implementation bug vs test bug)?
-- What could be better about this implementation?
+1. Does this actually solve the task as specified?
+1. Are there edge cases I didn't consider?
+1. Did I follow the pattern correctly?
+1. If tests are failing, what's the ROOT CAUSE (implementation bug vs test bug)?
+1. What could be better about this implementation?
 
 If you identify issues during this reflection, fix them now.
 
 Then report:
-- What you implemented
-- Self-reflection findings (if any)
-- Test results
-- Files changed
+1. What you implemented
+1. Self-reflection findings (if any)
+1. Test results
+1. Files changed
 
 ```text
 
@@ -444,9 +444,9 @@ BEFORE analyzing, read these files:
 Use Read tool to load each file.
 
 If you cannot find a file:
-- Check exact path from diff
-- Try alternate locations
-- Report: "Cannot locate [path] - please verify file exists"
+1. Check exact path from diff
+1. Try alternate locations
+1. Report: "Cannot locate [path] - please verify file exists"
 
 DO NOT proceed with review until you've read the actual code.
 
@@ -484,10 +484,10 @@ interface PlatformAdapter {
 
 #### Why this is wrong
 
-- Mock encodes the bug into the test
-- TypeScript can't catch inline mocks with wrong method names
-- Test passes because both code and mock are wrong
-- Runtime crashes when real object is used
+1. Mock encodes the bug into the test
+1. TypeScript can't catch inline mocks with wrong method names
+1. Test passes because both code and mock are wrong
+1. Runtime crashes when real object is used
 
 #### The fix
 
@@ -557,9 +557,9 @@ BEFORE writing any tests:
    Use Skill tool: mega-skills:testing-anti-patterns
 
 1. Apply gate functions from that skill when:
-   - Writing mocks
-   - Adding methods to production classes
-   - Mocking dependencies
+   1. Writing mocks
+   1. Adding methods to production classes
+   1. Mocking dependencies
 
 This is NOT optional. Tests that violate anti-patterns will be rejected in review.
 
@@ -598,9 +598,9 @@ ELSE:
   Report: "Implementation complete"
 
 Include in report:
-- Self-reflection findings
-- Whether fixes were applied
-- Final verification results
+1. Self-reflection findings
+1. Whether fixes were applied
+1. Final verification results
 
 ```text
 

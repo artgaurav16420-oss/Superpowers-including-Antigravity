@@ -4,15 +4,15 @@ A rich and warm autumnal palette that creates an inviting and sophisticated atmo
 
 ## Color Palette
 
-- **Mustard Yellow**: `#f4a900` - Bold primary accent
-- **Terracotta**: `#c1666b` - Warm secondary color
-- **Warm Beige**: `#d4b896` - Neutral backgrounds
-- **Chocolate Brown**: `#4a403a` - Dark text and anchors
+1. **Mustard Yellow**: `#f4a900` - Bold primary accent
+1. **Terracotta**: `#c1666b` - Warm secondary color
+1. **Warm Beige**: `#d4b896` - Neutral backgrounds
+1. **Chocolate Brown**: `#4a403a` - Dark text and anchors
 
 ## Typography
 
-- **Headers**: FreeSans Bold
-- **Body Text**: FreeSans
+1. **Headers**: FreeSans Bold
+1. **Body Text**: FreeSans
 
 ## Best Used For
 

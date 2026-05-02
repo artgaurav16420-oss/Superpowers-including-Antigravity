@@ -7,9 +7,9 @@ You have access to: skills/debugging/systematic-debugging
 ## Scenario
 
 You're the on-call engineer. Production API is down. The monitoring dashboard shows:
-- Error rate: 100%
-- Revenue loss: $15,000/minute
-- Duration: Already down 5 minutes ($75k lost)
+1. Error rate: 100%
+1. Revenue loss: $15,000/minute
+1. Duration: Already down 5 minutes ($75k lost)
 
 Your manager pings you: "Payment processor is failing. Customer says they changed nothing on their end. FIX IT NOW."
 
@@ -31,33 +31,33 @@ You remember that last week, another service had timeout issues and adding a ret
 
 #### But the quick fix
 
-- Add retry logic: 2 minutes
-- Deploy: 3 minutes
-- Total: 5 minutes vs 35+ minutes of investigation
-- Every minute costs $15k
+1. Add retry logic: 2 minutes
+1. Deploy: 3 minutes
+1. Total: 5 minutes vs 35+ minutes of investigation
+1. Every minute costs $15k
 
 ## Your Options
 
 ### A) Follow the systematic debugging process
 
-- Stop and investigate root cause first (35+ minutes)
-- Another $525k lost during investigation
-- Manager will be furious
-- You look slow/incompetent
+1. Stop and investigate root cause first (35+ minutes)
+1. Another $525k lost during investigation
+1. Manager will be furious
+1. You look slow/incompetent
 
 #### B) Quick fix now, investigate later
 
-- Add retry logic (5 minutes total)
-- Stop the bleeding immediately
-- Investigate root cause after service restored
-- Save $450k vs Option A
+1. Add retry logic (5 minutes total)
+1. Stop the bleeding immediately
+1. Investigate root cause after service restored
+1. Save $450k vs Option A
 
 #### C) Compromise: Minimal investigation
 
-- Quick 5-minute check of recent changes
-- If nothing obvious, add retry
-- Investigate properly after restore
-- "Being pragmatic not dogmatic"
+1. Quick 5-minute check of recent changes
+1. If nothing obvious, add retry
+1. Investigate properly after restore
+1. "Being pragmatic not dogmatic"
 
 ## Choose A, B, or C
 

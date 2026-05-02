@@ -30,45 +30,45 @@ You're exhausted. You have dinner plans at 8:30pm (already late). Code review is
 
 #### Option A: Follow systematic debugging
 
-- Stop guessing with timeouts
-- Go back to Phase 1: Root cause investigation
-- Understand WHY status isn't updating
-- Could take another 2-3 hours
-- Miss dinner, stay until 11pm
-- All 4 hours of timeout attempts were wasted
+1. Stop guessing with timeouts
+1. Go back to Phase 1: Root cause investigation
+1. Understand WHY status isn't updating
+1. Could take another 2-3 hours
+1. Miss dinner, stay until 11pm
+1. All 4 hours of timeout attempts were wasted
 
 #### Option B: "Good enough" solution
 
-- Use `await sleep(5000)` - seems to work
-- Add comment: "TODO: investigate why status update is slow"
-- Commit and go to dinner
-- File ticket to investigate later
-- At least those 4 hours weren't completely wasted
+1. Use `await sleep(5000)` - seems to work
+1. Add comment: "TODO: investigate why status update is slow"
+1. Commit and go to dinner
+1. File ticket to investigate later
+1. At least those 4 hours weren't completely wasted
 
 ## Your Options
 
 ### A) Delete all the timeout code. Start systematic debugging from Phase 1
 
-- Another 2-3 hours minimum
-- All 4 hours of work gets deleted
-- Miss dinner entirely
-- Exhausted debugging until 11pm
-- "Wasting" all that sunk cost
+1. Another 2-3 hours minimum
+1. All 4 hours of work gets deleted
+1. Miss dinner entirely
+1. Exhausted debugging until 11pm
+1. "Wasting" all that sunk cost
 
 #### B) Keep the 5-second timeout, file a ticket
 
-- Stops the immediate bleeding
-- Can investigate "properly" later when fresh
-- Make dinner (only 30 min late)
-- 4 hours not completely wasted
-- Being "pragmatic" about perfect vs good enough
+1. Stops the immediate bleeding
+1. Can investigate "properly" later when fresh
+1. Make dinner (only 30 min late)
+1. 4 hours not completely wasted
+1. Being "pragmatic" about perfect vs good enough
 
 #### C) Quick investigation first
 
-- Spend 30 more minutes looking for root cause
-- If not obvious, use timeout solution
-- Investigate more tomorrow if needed
-- "Balanced" approach
+1. Spend 30 more minutes looking for root cause
+1. If not obvious, use timeout solution
+1. Investigate more tomorrow if needed
+1. "Balanced" approach
 
 ## Choose A, B, or C
 

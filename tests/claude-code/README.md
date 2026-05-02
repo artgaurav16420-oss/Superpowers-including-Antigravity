@@ -8,8 +8,8 @@ This test suite verifies that skills are loaded correctly and Claude follows the
 
 ## Requirements
 
-- Claude Code CLI installed and in PATH (`claude --version` should work)
-- Local mega-skills plugin installed (see main README for installation)
+1. Claude Code CLI installed and in PATH (`claude --version` should work)
+1. Local mega-skills plugin installed (see main README for installation)
 
 ## Running Tests
 
@@ -48,13 +48,13 @@ This test suite verifies that skills are loaded correctly and Claude follows the
 ### test-helpers.sh
 
 Common functions for skills testing:
-- `run_claude "prompt" [timeout]` - Run Claude with prompt
-- `assert_contains output pattern name` - Verify pattern exists
-- `assert_not_contains output pattern name` - Verify pattern absent
-- `assert_count output pattern count name` - Verify exact count
-- `assert_order output pattern_a pattern_b name` - Verify order
-- `create_test_project` - Create temp test directory
-- `create_test_plan project_dir` - Create sample plan file
+1. `run_claude "prompt" [timeout]` - Run Claude with prompt
+1. `assert_contains output pattern name` - Verify pattern exists
+1. `assert_not_contains output pattern name` - Verify pattern absent
+1. `assert_count output pattern count name` - Verify exact count
+1. `assert_order output pattern_a pattern_b name` - Verify order
+1. `create_test_project` - Create temp test directory
+1. `create_test_plan project_dir` - Create sample plan file
 
 ### Test Files
 
@@ -91,38 +91,38 @@ echo "=== All tests passed ==="
 #### test-subagent-driven-development.sh
 
 Tests skill content and requirements (~2 minutes):
-- Skill loading and accessibility
-- Workflow ordering (spec compliance before code quality)
-- Self-review requirements documented
-- Plan reading efficiency documented
-- Spec compliance reviewer skepticism documented
-- Review loops documented
-- Task context provision documented
+1. Skill loading and accessibility
+1. Workflow ordering (spec compliance before code quality)
+1. Self-review requirements documented
+1. Plan reading efficiency documented
+1. Spec compliance reviewer skepticism documented
+1. Review loops documented
+1. Task context provision documented
 
 ### Integration Tests (use --integration flag)
 
 #### test-subagent-driven-development-integration.sh
 
 Full workflow execution test (~10-30 minutes):
-- Creates real test project with Node.js setup
-- Creates implementation plan with 2 tasks
-- Executes plan using subagent-driven-development
-- Verifies actual behaviors:
-  - Plan read once at start (not per task)
-  - Full task text provided in subagent prompts
-  - Subagents perform self-review before reporting
-  - Spec compliance review happens before code quality
-  - Spec reviewer reads code independently
-  - Working implementation is produced
-  - Tests pass
-  - Proper git commits created
+1. Creates real test project with Node.js setup
+1. Creates implementation plan with 2 tasks
+1. Executes plan using subagent-driven-development
+1. Verifies actual behaviors:
+  1. Plan read once at start (not per task)
+  1. Full task text provided in subagent prompts
+  1. Subagents perform self-review before reporting
+  1. Spec compliance review happens before code quality
+  1. Spec reviewer reads code independently
+  1. Working implementation is produced
+  1. Tests pass
+  1. Proper git commits created
 
 #### What it tests
 
-- The workflow actually works end-to-end
-- Our improvements are actually applied
-- Subagents follow the skill correctly
-- Final code is functional and tested
+1. The workflow actually works end-to-end
+1. Our improvements are actually applied
+1. Subagents follow the skill correctly
+1. Final code is functional and tested
 
 ## Adding New Tests
 
@@ -134,10 +134,10 @@ Full workflow execution test (~10-30 minutes):
 
 ## Timeout Considerations
 
-- Default timeout: 5 minutes per test
-- Claude Code may take time to respond
-- Adjust with `--timeout` if needed
-- Tests should be focused to avoid long runs
+1. Default timeout: 5 minutes per test
+1. Claude Code may take time to respond
+1. Adjust with `--timeout` if needed
+1. Tests should be focused to avoid long runs
 
 ## Debugging Failed Tests
 
@@ -162,8 +162,8 @@ To run in CI:
 
 ## Notes
 
-- Tests verify skill *instructions*, not full execution
-- Full workflow tests would be very slow
-- Focus on verifying key skill requirements
-- Tests should be deterministic
-- Avoid testing implementation details
+1. Tests verify skill *instructions*, not full execution
+1. Full workflow tests would be very slow
+1. Focus on verifying key skill requirements
+1. Tests should be deterministic
+1. Avoid testing implementation details

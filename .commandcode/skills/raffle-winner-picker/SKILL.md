@@ -9,17 +9,17 @@ This skill randomly selects winners from lists, spreadsheets, or Google Sheets f
 
 ## When to Use This Skill
 
-- Running social media giveaways
+1. Running social media giveaways
 
-- Picking raffle winners at events
+1. Picking raffle winners at events
 
-- Randomly selecting participants for surveys or tests
+1. Randomly selecting participants for surveys or tests
 
-- Choosing winners from contest submissions
+1. Choosing winners from contest submissions
 
-- Fair distribution of limited spots or resources
+1. Fair distribution of limited spots or resources
 
-- Random team assignments
+1. Random team assignments
 
 ## What This Skill Does
 
@@ -97,13 +97,13 @@ Would you like to:
 
 ### Fair Selection
 
-- Uses secure random number generation
+1. Uses secure random number generation
 
-- No bias or patterns
+1. No bias or patterns
 
-- Transparent process
+1. Transparent process
 
-- Repeatable with seed (for verification)
+1. Repeatable with seed (for verification)
 
 ### Exclusions
 
@@ -159,15 +159,15 @@ Pick 1 winner and 3 runner-ups from the list
 
 ## Tips
 
-- **Document the process**: Save the timestamp and method
+1. **Document the process**: Save the timestamp and method
 
-- **Public announcement**: Share selection details for transparency
+1. **Public announcement**: Share selection details for transparency
 
-- **Check eligibility**: Verify winner meets contest rules
+1. **Check eligibility**: Verify winner meets contest rules
 
-- **Have backups**: Pick runner-ups in case winner is ineligible
+1. **Have backups**: Pick runner-ups in case winner is ineligible
 
-- **Export results**: Save winner list for records
+1. **Export results**: Save winner list for records
 
 ## Privacy & Fairness
 
@@ -179,14 +179,14 @@ Pick 1 winner and 3 runner-ups from the list
 
 ## Common Use Cases
 
-- Newsletter subscriber giveaways
+1. Newsletter subscriber giveaways
 
-- Product launch raffles
+1. Product launch raffles
 
-- Conference ticket drawings
+1. Conference ticket drawings
 
-- Beta tester selection
+1. Beta tester selection
 
-- Focus group participant selection
+1. Focus group participant selection
 
-- Random prize distribution at events
+1. Random prize distribution at events

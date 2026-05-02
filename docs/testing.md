@@ -33,9 +33,9 @@ cd tests/claude-code
 
 ### Requirements
 
-- Must run from the **superpowers plugin directory** (not from temp directories)
-- Claude Code must be installed and available as `claude` command
-- Local dev marketplace must be enabled: `"superpowers@superpowers-dev": true` in `~/.claude/settings.json`
+1. Must run from the **superpowers plugin directory** (not from temp directories)
+1. Claude Code must be installed and available as `claude` command
+1. Local dev marketplace must be enabled: `"superpowers@superpowers-dev": true` in `~/.claude/settings.json`
 
 ## Integration Test: subagent-driven-development
 
@@ -55,12 +55,12 @@ The integration test verifies the `subagent-driven-development` skill correctly:
 1. **Setup**: Creates a temporary Node.js project with a minimal implementation plan
 1. **Execution**: Runs Claude Code in headless mode with the skill
 1. **Verification**: Parses the session transcript (`.jsonl` file) to verify:
-   - Skill tool was invoked
-   - Subagents were dispatched (Task tool)
-   - TodoWrite was used for tracking
-   - Implementation files were created
-   - Tests pass
-   - Git commits show proper workflow
+   1. Skill tool was invoked
+   1. Subagents were dispatched (Task tool)
+   1. TodoWrite was used for tracking
+   1. Implementation files were created
+   1. Tests pass
+   1. Git commits show proper workflow
 1. **Token Analysis**: Shows token usage breakdown by subagent
 
 ### Test Output
@@ -158,22 +158,22 @@ ls -lt "$SESSION_DIR"/*.jsonl | head -5
 
 ### What It Shows
 
-- **Main session usage**: Token usage by the coordinator (you or main Claude instance)
-- **Per-subagent breakdown**: Each Task invocation with:
-  - Agent ID
-  - Description (extracted from prompt)
-  - Message count
-  - Input/output tokens
-  - Cache usage
-  - Estimated cost
-- **Totals**: Overall token usage and cost estimate
+1. **Main session usage**: Token usage by the coordinator (you or main Claude instance)
+1. **Per-subagent breakdown**: Each Task invocation with:
+  1. Agent ID
+  1. Description (extracted from prompt)
+  1. Message count
+  1. Input/output tokens
+  1. Cache usage
+  1. Estimated cost
+1. **Totals**: Overall token usage and cost estimate
 
 ### Understanding the Output
 
-- **High cache reads**: Good - means prompt caching is working
-- **High input tokens on main**: Expected - coordinator has full context
-- **Similar costs per subagent**: Expected - each gets similar task complexity
-- **Cost per task**: Typical range is $0.05-$0.15 per subagent depending on task
+1. **High cache reads**: Good - means prompt caching is working
+1. **High input tokens on main**: Expected - coordinator has full context
+1. **Similar costs per subagent**: Expected - each gets similar task complexity
+1. **Cost per task**: Typical range is $0.05-$0.15 per subagent depending on task
 
 ## Troubleshooting
 

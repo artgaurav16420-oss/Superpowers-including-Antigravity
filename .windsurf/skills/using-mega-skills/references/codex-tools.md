@@ -3,7 +3,7 @@
 Skills use Claude Code tool names. When you encounter these in a skill, use your platform equivalent:
 
 | Skill references | Codex equivalent |
-| :::::::::--- | :::::::::--- |
+| ::::::::::--- | ::::::::::--- |
 | `Task` tool (dispatch subagent) | `spawn_agent` (see [Named agent dispatch](#named-agent-dispatch)) |
 | Multiple `Task` calls (parallel) | Multiple `spawn_agent` calls |
 | Task returns result | `wait` |
@@ -39,7 +39,7 @@ When a skill says to dispatch a named agent type:
 1. Spawn a `worker` agent with the filled content as the `message`
 
 | Skill instruction | Codex equivalent |
-| :::::::::--- | :::::::::--- |
+| ::::::::::--- | ::::::::::--- |
 | `Task tool (mega-skills:code-reviewer)` | `spawn_agent(agent_type="worker", message=...)` with `code-reviewer.md` content |
 | `Task tool (general-purpose)` with inline prompt | `spawn_agent(message=...)` with the same prompt |
 
@@ -59,9 +59,9 @@ Execute this now. Output ONLY the structured response following the format
 specified in the instructions above.
 ```
 
-- Use task-delegation framing ("Your task is...") rather than persona framing ("You are...")
-- Wrap instructions in XML tags — the model treats tagged blocks as authoritative
-- End with an explicit execution directive to prevent summarization of the instructions
+1. Use task-delegation framing ("Your task is...") rather than persona framing ("You are...")
+1. Wrap instructions in XML tags — the model treats tagged blocks as authoritative
+1. End with an explicit execution directive to prevent summarization of the instructions
 
 ### When this workaround can be removed
 
@@ -81,8 +81,8 @@ GIT_COMMON=$(cd "$(git rev-parse --git-common-dir)" 2>/dev/null && pwd -P)
 BRANCH=$(git branch --show-current)
 ```
 
-- `GIT_DIR != GIT_COMMON` → already in a linked worktree (skip creation)
-- `BRANCH` empty → detached HEAD (cannot branch/push/PR from sandbox)
+1. `GIT_DIR != GIT_COMMON` → already in a linked worktree (skip creation)
+1. `BRANCH` empty → detached HEAD (cannot branch/push/PR from sandbox)
 
 See `using-git-worktrees` Step 0 and `finishing-a-development-branch`
 Step 1 for how each skill uses these signals.
@@ -93,8 +93,8 @@ When the sandbox blocks branch/push operations (detached HEAD in an
 externally managed worktree), the agent commits all work and informs
 the user to use the App's native controls:
 
-- **"Create branch"** — names the branch, then commit/push/PR via App UI
-- **"Hand off to local"** — transfers work to the user's local checkout
+1. **"Create branch"** — names the branch, then commit/push/PR via App UI
+1. **"Hand off to local"** — transfers work to the user's local checkout
 
 The agent can still run tests, stage files, and output suggested branch
 names, commit messages, and PR descriptions for the user to copy.

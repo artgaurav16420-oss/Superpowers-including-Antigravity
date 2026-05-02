@@ -19,10 +19,10 @@ pres.writeFile({ fileName: "Presentation.pptx" });
 ## Layout Dimensions
 
 Slide dimensions (coordinates in inches):
-- `LAYOUT_16x9`: 10" × 5.625" (default)
-- `LAYOUT_16x10`: 10" × 6.25"
-- `LAYOUT_4x3`: 10" × 7.5"
-- `LAYOUT_WIDE`: 13.3" × 7.5"
+1. `LAYOUT_16x9`: 10" × 5.625" (default)
+1. `LAYOUT_16x10`: 10" × 6.25"
+1. `LAYOUT_4x3`: 10" × 7.5"
+1. `LAYOUT_WIDE`: 13.3" × 7.5"
 
 ---
 
@@ -120,7 +120,7 @@ slide.addShape(pres.shapes.RECTANGLE, {
 Shadow options:
 
 | Property | Type | Range | Notes |
-|::::::::---::::::::---::::::::----|::::::::---::::::::---|::::::::---::::::::----|::::::::---::::::::----|
+|:::::::::---:::::::::---:::::::::----|:::::::::---:::::::::---|:::::::::---:::::::::----|:::::::::---:::::::::----|
 | `type` | string | `"outer"`, `"inner"` | |
 | `color` | string | 6-char hex (e.g. `"000000"`) | No `#` prefix, no 8-char hex — see Common Pitfalls |
 | `blur` | number | 0-100 pt | |
@@ -190,8 +190,8 @@ slide.addImage({ path: "image.png", x: centerX, y: 1.2, w: calcWidth, h: maxHeig
 
 ### Supported Formats
 
-- **Standard**: PNG, JPG, GIF (animated GIFs work in Microsoft 365)
-- **SVG**: Works in modern PowerPoint/Microsoft 365
+1. **Standard**: PNG, JPG, GIF (animated GIFs work in Microsoft 365)
+1. **SVG**: Works in modern PowerPoint/Microsoft 365
 
 ---
 
@@ -238,10 +238,10 @@ slide.addImage({
 Install: `npm install -g react-icons react react-dom sharp`
 
 Popular icon sets in react-icons:
-- `react-icons/fa` - Font Awesome
-- `react-icons/md` - Material Design
-- `react-icons/hi` - Heroicons
-- `react-icons/bi` - Bootstrap Icons
+1. `react-icons/fa` - Font Awesome
+1. `react-icons/md` - Material Design
+1. `react-icons/hi` - Heroicons
+1. `react-icons/bi` - Bootstrap Icons
 
 ---
 
@@ -340,11 +340,11 @@ slide.addChart(pres.charts.BAR, chartData, {
 
 #### Key styling options
 
-- `chartColors: [...]` - hex colors for series/segments
-- `chartArea: { fill, border, roundedCorners }` - chart background
-- `catGridLine/valGridLine: { color, style, size }` - grid lines (`style: "none"` to hide)
-- `lineSmooth: true` - curved lines (line charts)
-- `legendPos: "r"` - legend position: "b", "t", "l", "r", "tr"
+1. `chartColors: [...]` - hex colors for series/segments
+1. `chartArea: { fill, border, roundedCorners }` - chart background
+1. `catGridLine/valGridLine: { color, style, size }` - grid lines (`style: "none"` to hide)
+1. `lineSmooth: true` - curved lines (line charts)
+1. `legendPos: "r"` - legend position: "b", "t", "l", "r", "tr"
 
 ---
 
@@ -418,8 +418,8 @@ titleSlide.addText("My Title", { placeholder: "title" });
 
 ## Quick Reference
 
-- **Shapes**: RECTANGLE, OVAL, LINE, ROUNDED_RECTANGLE
-- **Charts**: BAR, LINE, PIE, DOUGHNUT, SCATTER, BUBBLE, RADAR
-- **Layouts**: LAYOUT_16x9 (10"×5.625"), LAYOUT_16x10, LAYOUT_4x3, LAYOUT_WIDE
-- **Alignment**: "left", "center", "right"
-- **Chart data labels**: "outEnd", "inEnd", "center"
+1. **Shapes**: RECTANGLE, OVAL, LINE, ROUNDED_RECTANGLE
+1. **Charts**: BAR, LINE, PIE, DOUGHNUT, SCATTER, BUBBLE, RADAR
+1. **Layouts**: LAYOUT_16x9 (10"×5.625"), LAYOUT_16x10, LAYOUT_4x3, LAYOUT_WIDE
+1. **Alignment**: "left", "center", "right"
+1. **Chart data labels**: "outEnd", "inEnd", "center"

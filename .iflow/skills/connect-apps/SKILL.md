@@ -23,11 +23,11 @@ Connect Claude to 1000+ apps. Actually send emails, create issues, post messages
 
 This will:
 
-- Ask for your free API key (get one at [platform.composio.dev](<https://platform.composio.dev/?utm_source=Github&utm_content=AwesomeSkills))>
+1. Ask for your free API key (get one at [platform.composio.dev](<https://platform.composio.dev/?utm_source=Github&utm_content=AwesomeSkills))>
 
-- Configure Claude's connection to 1000+ apps
+1. Configure Claude's connection to 1000+ apps
 
-- Take about 60 seconds
+1. Take about 60 seconds
 
 ### Step 3: Try It
 
@@ -42,7 +42,7 @@ If it works, you're connected!
 ## What You Can Do
 
 | Ask Claude to... | What happens |
-|::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---|::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::-----|
+|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::-----|
 | "Send email to sarah@acme.com about the launch" | Actually sends the email |
 | "Create GitHub issue: fix login bug" | Creates the issue |
 | "Post to Slack #general: deploy complete" | Posts the message |
@@ -70,11 +70,11 @@ If it works, you're connected!
 
 ## Troubleshooting
 
-- **"Plugin not found"** → Make sure you ran `/plugin install composio-toolrouter`
+1. **"Plugin not found"** → Make sure you ran `/plugin install composio-toolrouter`
 
-- **"Need to authorize"** → Click the OAuth link Claude provides, then say "done"
+1. **"Need to authorize"** → Click the OAuth link Claude provides, then say "done"
 
-- **Action failed** → Check you have permissions in the target app
+1. **Action failed** → Check you have permissions in the target app
 
 ---
 

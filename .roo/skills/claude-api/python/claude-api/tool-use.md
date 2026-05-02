@@ -42,10 +42,10 @@ For async usage, use `@beta_async_tool` with `async def` functions.
 
 ### Key benefits of the tool runner
 
-- No manual loop — the SDK handles calling tools and feeding results back
-- Type-safe tool inputs via decorators
-- Tool schemas are generated automatically from function signatures
-- Iteration stops automatically when Claude has no more tool calls
+1. No manual loop — the SDK handles calling tools and feeding results back
+1. Type-safe tool inputs via decorators
+1. Tool schemas are generated automatically from function signatures
+1. Iteration stops automatically when Claude has no more tool calls
 
 ---
 
@@ -454,7 +454,7 @@ for message in runner:
 
 For full implementation examples, use WebFetch:
 
-- `https://github.com/anthropics/anthropic-sdk-python/blob/main/examples/memory/basic.py`
+1. `https://github.com/anthropics/anthropic-sdk-python/blob/main/examples/memory/basic.py`
 
 ---
 

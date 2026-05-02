@@ -20,9 +20,9 @@ This chunk adds the spec document reviewer to the brainstorming skill.
 
 #### Files
 
-- Create: `skills/brainstorming/spec-document-reviewer-prompt.md`
+1. Create: `skills/brainstorming/spec-document-reviewer-prompt.md`
 
-- [ ] **Step 1:** Create the reviewer prompt template file
+1. [ ] **Step 1:** Create the reviewer prompt template file
 
 ```markdown
 ## Spec Document Reviewer Prompt Template
@@ -45,7 +45,7 @@ Task tool (general-purpose):
 ## What to Check
 
     | Category | What to Look For |
-    |::::::::---::::::::---::::::::----|::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---|
+    |:::::::::---:::::::::---:::::::::----|:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---|
     | Completeness | TODOs, placeholders, "TBD", incomplete sections |
     | Coverage | Missing error handling, edge cases, integration points |
     | Consistency | Internal contradictions, conflicting requirements |
@@ -55,9 +55,9 @@ Task tool (general-purpose):
 ## CRITICAL
 
     Look especially hard for:
-    - Any TODO markers or placeholder text
-    - Sections saying "to be defined later" or "will spec when X is done"
-    - Sections noticeably less detailed than others
+    1. Any TODO markers or placeholder text
+    1. Sections saying "to be defined later" or "will spec when X is done"
+    1. Sections noticeably less detailed than others
 
 ## Output Format
 
@@ -67,23 +67,23 @@ Task tool (general-purpose):
 
 ### Issues (if any)
 
-    - [Section X]: [specific issue] - [why it matters]
+    1. [Section X]: [specific issue] - [why it matters]
 
 #### Recommendations (advisory)
 
-    - [suggestions that don't block approval]
+    1. [suggestions that don't block approval]
 
 ```text
 
 **Reviewer returns:** Status, Issues (if any), Recommendations
 ```
 
-- [ ] **Step 2:** Verify the file was created correctly
+1. [ ] **Step 2:** Verify the file was created correctly
 
 Run: `cat skills/brainstorming/spec-document-reviewer-prompt.md | head -20`
 Expected: Shows the header and purpose section
 
-- [ ] **Step 3:** Commit
+1. [ ] **Step 3:** Commit
 
 ```bash
 git add skills/brainstorming/spec-document-reviewer-prompt.md
@@ -96,13 +96,13 @@ git commit -m "feat: add spec document reviewer prompt template"
 
 #### Files (2)
 
-- Modify: `skills/brainstorming/SKILL.md`
+1. Modify: `skills/brainstorming/SKILL.md`
 
-- [ ] **Step 1:** Read the current brainstorming skill
+1. [ ] **Step 1:** Read the current brainstorming skill
 
 Run: `cat skills/brainstorming/SKILL.md`
 
-- [ ] **Step 2:** Add the review loop section after "After the Design"
+1. [ ] **Step 2:** Add the review loop section after "After the Design"
 
 Find the "After the Design" section and add a new "Spec Review Loop" section after documentation but before implementation:
 
@@ -122,12 +122,12 @@ After writing the spec document:
 - Reviewers are advisory - explain disagreements if you believe feedback is incorrect
 ```
 
-- [ ] **Step 3:** Verify the changes
+1. [ ] **Step 3:** Verify the changes
 
 Run: `grep -A 15 "Spec Review Loop" skills/brainstorming/SKILL.md`
 Expected: Shows the new review loop section
 
-- [ ] **Step 4:** Commit
+1. [ ] **Step 4:** Commit
 
 ```bash
 git add skills/brainstorming/SKILL.md
@@ -144,9 +144,9 @@ This chunk adds the plan document reviewer to the writing-plans skill.
 
 #### Files (3)
 
-- Create: `skills/writing-plans/plan-document-reviewer-prompt.md`
+1. Create: `skills/writing-plans/plan-document-reviewer-prompt.md`
 
-- [ ] **Step 1:** Create the reviewer prompt template file
+1. [ ] **Step 1:** Create the reviewer prompt template file
 
 ```markdown
 ## Plan Document Reviewer Prompt Template
@@ -170,7 +170,7 @@ Task tool (general-purpose):
 ## What to Check (2)
 
     | Category | What to Look For |
-    |::::::::---::::::::---::::::::----|::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---|
+    |:::::::::---:::::::::---:::::::::----|:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---|
     | Completeness | TODOs, placeholders, incomplete tasks, missing steps |
     | Spec Alignment | Chunk covers relevant spec requirements, no scope creep |
     | Task Decomposition | Tasks atomic, clear boundaries, steps actionable |
@@ -180,10 +180,10 @@ Task tool (general-purpose):
 ## CRITICAL (2)
 
     Look especially hard for:
-    - Any TODO markers or placeholder text
-    - Steps that say "similar to X" without actual content
-    - Incomplete task definitions
-    - Missing verification steps or expected outputs
+    1. Any TODO markers or placeholder text
+    1. Steps that say "similar to X" without actual content
+    1. Incomplete task definitions
+    1. Missing verification steps or expected outputs
 
 ## Output Format (2)
 
@@ -193,23 +193,23 @@ Task tool (general-purpose):
 
 ### Issues (if any) (2)
 
-    - [Task X, Step Y]: [specific issue] - [why it matters]
+    1. [Task X, Step Y]: [specific issue] - [why it matters]
 
 #### Recommendations (advisory) (2)
 
-    - [suggestions that don't block approval]
+    1. [suggestions that don't block approval]
 
 ```text
 
 **Reviewer returns:** Status, Issues (if any), Recommendations
 ```
 
-- [ ] **Step 2:** Verify the file was created
+1. [ ] **Step 2:** Verify the file was created
 
 Run: `cat skills/writing-plans/plan-document-reviewer-prompt.md | head -20`
 Expected: Shows the header and purpose section
 
-- [ ] **Step 3:** Commit
+1. [ ] **Step 3:** Commit
 
 ```bash
 git add skills/writing-plans/plan-document-reviewer-prompt.md
@@ -222,13 +222,13 @@ git commit -m "feat: add plan document reviewer prompt template"
 
 #### Files (4)
 
-- Modify: `skills/writing-plans/SKILL.md`
+1. Modify: `skills/writing-plans/SKILL.md`
 
-- [ ] **Step 1:** Read current skill file
+1. [ ] **Step 1:** Read current skill file
 
 Run: `cat skills/writing-plans/SKILL.md`
 
-- [ ] **Step 2:** Add chunk-by-chunk review section
+1. [ ] **Step 2:** Add chunk-by-chunk review section
 
 Add before the "Execution Handoff" section:
 
@@ -248,7 +248,7 @@ After completing each chunk of the plan:
 **Chunk boundaries:** Use `## Chunk N: <name>` headings to delimit chunks. Each chunk should be ≤1000 lines and logically self-contained.
 ```
 
-- [ ] **Step 3:** Update task syntax examples to use checkboxes
+1. [ ] **Step 3:** Update task syntax examples to use checkboxes
 
 Change the Task Structure section to show checkbox syntax:
 
@@ -260,17 +260,17 @@ Change the Task Structure section to show checkbox syntax:
   ...
 ```
 
-- [ ] **Step 4:** Verify the review loop section was added
+1. [ ] **Step 4:** Verify the review loop section was added
 
 Run: `grep -A 15 "Plan Review Loop" skills/writing-plans/SKILL.md`
 Expected: Shows the new review loop section
 
-- [ ] **Step 5:** Verify the task syntax examples were updated
+1. [ ] **Step 5:** Verify the task syntax examples were updated
 
 Run: `grep -A 5 "Task N:" skills/writing-plans/SKILL.md`
 Expected: Shows checkbox syntax `### Task N:`
 
-- [ ] **Step 6:** Commit
+1. [ ] **Step 6:** Commit
 
 ```bash
 git add skills/writing-plans/SKILL.md
@@ -287,13 +287,13 @@ This chunk updates the plan document header template to reference the new checkb
 
 #### Files (5)
 
-- Modify: `skills/writing-plans/SKILL.md`
+1. Modify: `skills/writing-plans/SKILL.md`
 
-- [ ] **Step 1:** Read current plan header template
+1. [ ] **Step 1:** Read current plan header template
 
 Run: `grep -A 20 "Plan Document Header" skills/writing-plans/SKILL.md`
 
-- [ ] **Step 2:** Update the header template to reference checkbox syntax
+1. [ ] **Step 2:** Update the header template to reference checkbox syntax
 
 The plan header should note that tasks and steps use checkbox syntax. Update the header comment:
 
@@ -301,12 +301,12 @@ The plan header should note that tasks and steps use checkbox syntax. Update the
 > **For agentic workers:** REQUIRED: Use mega-skills:subagent-driven-development (if subagents available) or mega-skills:executing-plans to implement this plan. Tasks and steps use checkbox (`- [ ]`) syntax for tracking.
 ```
 
-- [ ] **Step 3:** Verify the change
+1. [ ] **Step 3:** Verify the change
 
 Run: `grep -A 5 "For agentic workers:" skills/writing-plans/SKILL.md`
 Expected: Shows updated header with checkbox syntax mention
 
-- [ ] **Step 4:** Commit
+1. [ ] **Step 4:** Commit
 
 ```bash
 git add skills/writing-plans/SKILL.md

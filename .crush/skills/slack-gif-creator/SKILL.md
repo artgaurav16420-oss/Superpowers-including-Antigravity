@@ -14,39 +14,39 @@ Slack has specific requirements for GIFs based on their use:
 
 ### Message GIFs
 
-- Max size: ~2MB
+1. Max size: ~2MB
 
-- Optimal dimensions: 480x480
+1. Optimal dimensions: 480x480
 
-- Typical FPS: 15-20
+1. Typical FPS: 15-20
 
-- Color limit: 128-256
+1. Color limit: 128-256
 
-- Duration: 2-5s
+1. Duration: 2-5s
 
 #### Emoji GIFs
 
-- Max size: 64KB (strict limit)
+1. Max size: 64KB (strict limit)
 
-- Optimal dimensions: 128x128
+1. Optimal dimensions: 128x128
 
-- Typical FPS: 10-12
+1. Typical FPS: 10-12
 
-- Color limit: 32-48
+1. Color limit: 32-48
 
-- Duration: 1-2s
+1. Duration: 1-2s
 
 **Emoji GIFs are challenging** - the 64KB limit is strict. Strategies that help:
 
-- Limit to 10-15 frames total
+1. Limit to 10-15 frames total
 
-- Use 32-48 colors maximum
+1. Use 32-48 colors maximum
 
-- Keep designs simple
+1. Keep designs simple
 
-- Avoid gradients
+1. Avoid gradients
 
-- Validate file size frequently
+1. Validate file size frequently
 
 ## Toolkit Structure
 
@@ -392,13 +392,13 @@ builder.save('output.gif',
 
 Key features:
 
-- Automatic color quantization
+1. Automatic color quantization
 
-- Duplicate frame removal
+1. Duplicate frame removal
 
-- Size warnings for Slack limits
+1. Size warnings for Slack limits
 
-- Emoji mode (aggressive optimization)
+1. Emoji mode (aggressive optimization)
 
 ### Text Rendering
 

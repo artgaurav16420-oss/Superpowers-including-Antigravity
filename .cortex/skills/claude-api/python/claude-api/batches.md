@@ -4,11 +4,11 @@ The Batches API (`POST /v1/messages/batches`) processes Messages API requests as
 
 ## Key Facts
 
-- Up to 100,000 requests or 256 MB per batch
-- Most batches complete within 1 hour; maximum 24 hours
-- Results available for 29 days after creation
-- 50% cost reduction on all token usage
-- All Messages API features supported (vision, tools, caching, etc.)
+1. Up to 100,000 requests or 256 MB per batch
+1. Most batches complete within 1 hour; maximum 24 hours
+1. Results available for 29 days after creation
+1. 50% cost reduction on all token usage
+1. All Messages API features supported (vision, tools, caching, etc.)
 
 ---
 

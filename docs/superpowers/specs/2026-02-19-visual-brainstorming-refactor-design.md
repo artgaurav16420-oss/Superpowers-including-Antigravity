@@ -45,11 +45,11 @@ Example contents after a user explores options:
 {"type":"click","choice":"b","text":"Option B - Hybrid Approach","timestamp":1706000115}
 ```
 
-- Append-only within a screen. Each user event is appended as a new line.
-- The file is cleared (deleted) when chokidar detects a new HTML file (new screen pushed), preventing stale events from carrying over.
-- If the file doesn't exist when Claude reads it, no browser interaction occurred — Claude uses only the terminal text.
-- The file contains only user events (`click`, etc.) — not server lifecycle events (`server-started`, `screen-added`). This keeps it small and focused.
-- Claude can read the full stream to understand the user's exploration pattern, or just look at the last `choice` event for the final selection.
+1. Append-only within a screen. Each user event is appended as a new line.
+1. The file is cleared (deleted) when chokidar detects a new HTML file (new screen pushed), preventing stale events from carrying over.
+1. If the file doesn't exist when Claude reads it, no browser interaction occurred — Claude uses only the terminal text.
+1. The file contains only user events (`click`, etc.) — not server lifecycle events (`server-started`, `screen-added`). This keeps it small and focused.
+1. Claude can read the full stream to understand the user's exploration pattern, or just look at the last `choice` event for the final selection.
 
 ## Changes by File
 
@@ -71,74 +71,74 @@ The current regex anchors on `<div class="feedback-footer">`, which is being rem
 
 #### Remove
 
-- The `feedback-footer` div (textarea, Send button, label, `.feedback-row`)
-- Associated CSS (`.feedback-footer`, `.feedback-footer label`, `.feedback-row`, textarea and button styles within it)
+1. The `feedback-footer` div (textarea, Send button, label, `.feedback-row`)
+1. Associated CSS (`.feedback-footer`, `.feedback-footer label`, `.feedback-row`, textarea and button styles within it)
 
 #### Add
 
-- `<!-- CONTENT -->` placeholder inside `#claude-content`, replacing the default text
-- A selection indicator bar where the footer was, with two states:
-  - Default: "Click an option above, then return to the terminal"
-  - After selection: "Option B selected — return to terminal to continue"
-- CSS for the indicator bar (subtle, similar visual weight to the existing header)
+1. `<!-- CONTENT -->` placeholder inside `#claude-content`, replacing the default text
+1. A selection indicator bar where the footer was, with two states:
+  1. Default: "Click an option above, then return to the terminal"
+  1. After selection: "Option B selected — return to terminal to continue"
+1. CSS for the indicator bar (subtle, similar visual weight to the existing header)
 
 #### Keep unchanged
 
-- Header bar with "Brainstorm Companion" title and connection status
-- `.main` wrapper and `#claude-content` container
-- All component CSS (`.options`, `.cards`, `.mockup`, `.split`, `.pros-cons`, placeholders, mock elements)
-- Dark/light theme variables and media query
+1. Header bar with "Brainstorm Companion" title and connection status
+1. `.main` wrapper and `#claude-content` container
+1. All component CSS (`.options`, `.cards`, `.mockup`, `.split`, `.pros-cons`, placeholders, mock elements)
+1. Dark/light theme variables and media query
 
 ### `helper.js` (client-side script)
 
 #### Remove (2)
 
-- `sendToClaude()` function and the "Sent to Claude" page takeover
-- `window.send()` function (was tied to the removed Send button)
-- Form submission handler — no purpose without the feedback textarea, adds log noise
-- Input change handler — same reason
-- `pageshow` event listener (was added to fix textarea persistence — no textarea anymore)
+1. `sendToClaude()` function and the "Sent to Claude" page takeover
+1. `window.send()` function (was tied to the removed Send button)
+1. Form submission handler — no purpose without the feedback textarea, adds log noise
+1. Input change handler — same reason
+1. `pageshow` event listener (was added to fix textarea persistence — no textarea anymore)
 
 #### Keep
 
-- WebSocket connection, reconnect logic, event queue
-- Reload handler (`window.location.reload()` on server push)
-- `window.toggleSelect()` for selection highlighting
-- `window.selectedChoice` tracking
-- `window.brainstorm.send()` and `window.brainstorm.choice()` — these are distinct from the removed `window.send()`. They call `sendEvent` which logs to the server via WebSocket. Useful for custom full-document pages.
+1. WebSocket connection, reconnect logic, event queue
+1. Reload handler (`window.location.reload()` on server push)
+1. `window.toggleSelect()` for selection highlighting
+1. `window.selectedChoice` tracking
+1. `window.brainstorm.send()` and `window.brainstorm.choice()` — these are distinct from the removed `window.send()`. They call `sendEvent` which logs to the server via WebSocket. Useful for custom full-document pages.
 
 #### Narrow
 
-- Click handler: capture only `[data-choice]` clicks, not all buttons/links. The broad capture was needed when the browser was a feedback channel; now it's just for selection tracking.
+1. Click handler: capture only `[data-choice]` clicks, not all buttons/links. The broad capture was needed when the browser was a feedback channel; now it's just for selection tracking.
 
 #### Add (2)
 
-- On `data-choice` click, update the selection indicator bar text to show which option was selected.
+1. On `data-choice` click, update the selection indicator bar text to show which option was selected.
 
 #### Remove from `window.brainstorm` API
 
-- `brainstorm.sendToClaude` — no longer exists
+1. `brainstorm.sendToClaude` — no longer exists
 
 ### `visual-companion.md` (skill instructions)
 
 **Rewrite "The Loop" section** to the non-blocking flow described above. Remove all references to:
-- `wait-for-feedback.sh`
-- `TaskOutput` blocking
-- Timeout/retry logic (600s timeout, 30-minute cap)
-- "User Feedback Format" section describing `send-to-claude` JSON
+1. `wait-for-feedback.sh`
+1. `TaskOutput` blocking
+1. Timeout/retry logic (600s timeout, 30-minute cap)
+1. "User Feedback Format" section describing `send-to-claude` JSON
 
 #### Replace with
 
-- The new loop (write HTML → end turn → user responds in terminal → read `.events` → iterate)
-- `.events` file format documentation
-- Guidance that the terminal message is the primary feedback; `.events` provides the full browser interaction stream for additional context
+1. The new loop (write HTML → end turn → user responds in terminal → read `.events` → iterate)
+1. `.events` file format documentation
+1. Guidance that the terminal message is the primary feedback; `.events` provides the full browser interaction stream for additional context
 
 #### Keep (2)
 
-- Server startup/shutdown instructions
-- Content fragment vs full document guidance
-- CSS class reference and available components
-- Design tips (scale fidelity to the question, 2-4 options per screen, etc.)
+1. Server startup/shutdown instructions
+1. Content fragment vs full document guidance
+1. CSS class reference and available components
+1. Design tips (scale fidelity to the question, 2-4 options per screen, etc.)
 
 ### `wait-for-feedback.sh`
 
@@ -147,9 +147,9 @@ The current regex anchors on `<div class="feedback-footer">`, which is being rem
 ### `tests/brainstorm-server/server.test.js`
 
 Tests that need updating:
-- Test asserting `feedback-footer` presence in fragment responses — update to assert the selection indicator bar or `<!-- CONTENT -->` replacement
-- Test asserting `helper.js` contains `send` — update to reflect narrowed API
-- Test asserting `sendToClaude` CSS variable usage — remove (function no longer exists)
+1. Test asserting `feedback-footer` presence in fragment responses — update to assert the selection indicator bar or `<!-- CONTENT -->` replacement
+1. Test asserting `helper.js` contains `send` — update to reflect narrowed API
+1. Test asserting `sendToClaude` CSS variable usage — remove (function no longer exists)
 
 ## Platform Compatibility
 
@@ -159,14 +159,14 @@ The skill instructions (`visual-companion.md`) are the platform-adaptive layer. 
 
 ## What This Enables
 
-- **TUI always responsive** during visual brainstorming
-- **Mixed input** — click in browser + type in terminal, naturally merged
-- **Graceful degradation** — browser down or user doesn't open it? Terminal still works
-- **Simpler architecture** — no background tasks, no polling scripts, no timeout management
-- **Cross-platform** — same server code works on Claude Code, Codex, and any future platform
+1. **TUI always responsive** during visual brainstorming
+1. **Mixed input** — click in browser + type in terminal, naturally merged
+1. **Graceful degradation** — browser down or user doesn't open it? Terminal still works
+1. **Simpler architecture** — no background tasks, no polling scripts, no timeout management
+1. **Cross-platform** — same server code works on Claude Code, Codex, and any future platform
 
 ## What This Drops
 
-- **Pure-browser feedback workflow** — user must return to the terminal to continue. The selection indicator bar guides them, but it's one extra step compared to the old click-Send-and-wait flow.
-- **Inline text feedback from browser** — the textarea is gone. All text feedback goes through the terminal. This is intentional — the terminal is a better text input channel than a small textarea in a frame.
-- **Immediate response on browser Send** — the old system had Claude respond the moment the user clicked Send. Now there's a gap while the user switches to the terminal. In practice this is seconds, and the user gets to add context in their terminal message.
+1. **Pure-browser feedback workflow** — user must return to the terminal to continue. The selection indicator bar guides them, but it's one extra step compared to the old click-Send-and-wait flow.
+1. **Inline text feedback from browser** — the textarea is gone. All text feedback goes through the terminal. This is intentional — the terminal is a better text input channel than a small textarea in a frame.
+1. **Immediate response on browser Send** — the old system had Claude respond the moment the user clicked Send. Now there's a gap while the user switches to the terminal. In practice this is seconds, and the user gets to add context in their terminal message.

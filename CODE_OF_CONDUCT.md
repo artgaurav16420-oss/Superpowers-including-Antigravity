@@ -17,23 +17,23 @@ diverse, inclusive, and healthy community.
 Examples of behavior that contributes to a positive environment for our
 community include:
 
-* Demonstrating empathy and kindness toward other people
-* Being respectful of differing opinions, viewpoints, and experiences
-* Giving and gracefully accepting constructive feedback
-* Accepting responsibility and apologizing to those affected by our mistakes,
+1. Demonstrating empathy and kindness toward other people
+1. Being respectful of differing opinions, viewpoints, and experiences
+1. Giving and gracefully accepting constructive feedback
+1. Accepting responsibility and apologizing to those affected by our mistakes,
   and learning from the experience
-* Focusing on what is best not just for us as individuals, but for the
+1. Focusing on what is best not just for us as individuals, but for the
   overall community
 
 Examples of unacceptable behavior include:
 
-* The use of sexualized language or imagery, and sexual attention or
+1. The use of sexualized language or imagery, and sexual attention or
   advances of any kind
-* Trolling, insulting or derogatory comments, and personal or political attacks
-* Public or private harassment
-* Publishing others' private information, such as a physical or email
+1. Trolling, insulting or derogatory comments, and personal or political attacks
+1. Public or private harassment
+1. Publishing others' private information, such as a physical or email
   address, without their explicit permission
-* Other conduct which could reasonably be considered inappropriate in a
+1. Other conduct which could reasonably be considered inappropriate in a
   professional setting
 
 ## Enforcement Responsibilities
@@ -116,13 +116,13 @@ the community.
 
 This Code of Conduct is adapted from the [Contributor Covenant][homepage],
 version 2.0, available at
-[https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.]([https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.)]([https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.))]([https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.)))]([https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.))))]([https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.)))))]([https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.))))))]([https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.)))))))](https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.))))))))
+[https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.]([https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.)]([https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.))]([https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.)))]([https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.))))]([https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.)))))]([https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.))))))]([https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.)))))))]([https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.))))))))](https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.)))))))))
 
 Community Impact Guidelines were inspired by [Mozilla's code of conduct
-enforcement ladder]([https://github.com/mozilla/diversity).]([https://github.com/mozilla/diversity).)]([https://github.com/mozilla/diversity).))]([https://github.com/mozilla/diversity).)))]([https://github.com/mozilla/diversity).))))]([https://github.com/mozilla/diversity).)))))]([https://github.com/mozilla/diversity).))))))]([https://github.com/mozilla/diversity).)))))))](https://github.com/mozilla/diversity).))))))))
+enforcement ladder]([https://github.com/mozilla/diversity).]([https://github.com/mozilla/diversity).)]([https://github.com/mozilla/diversity).))]([https://github.com/mozilla/diversity).)))]([https://github.com/mozilla/diversity).))))]([https://github.com/mozilla/diversity).)))))]([https://github.com/mozilla/diversity).))))))]([https://github.com/mozilla/diversity).)))))))]([https://github.com/mozilla/diversity).))))))))](https://github.com/mozilla/diversity).)))))))))
 
-[homepage]: [https://www.contributor-covenant.org]([https://www.contributor-covenant.org)]([https://www.contributor-covenant.org))]([https://www.contributor-covenant.org)))]([https://www.contributor-covenant.org))))]([https://www.contributor-covenant.org)))))]([https://www.contributor-covenant.org))))))]([https://www.contributor-covenant.org)))))))](https://www.contributor-covenant.org))))))))
+[homepage]: [https://www.contributor-covenant.org]([https://www.contributor-covenant.org)]([https://www.contributor-covenant.org))]([https://www.contributor-covenant.org)))]([https://www.contributor-covenant.org))))]([https://www.contributor-covenant.org)))))]([https://www.contributor-covenant.org))))))]([https://www.contributor-covenant.org)))))))]([https://www.contributor-covenant.org))))))))](https://www.contributor-covenant.org)))))))))
 
 For answers to common questions about this code of conduct, see the FAQ at
-[https://www.contributor-covenant.org/faq.]([https://www.contributor-covenant.org/faq.)]([https://www.contributor-covenant.org/faq.))]([https://www.contributor-covenant.org/faq.)))]([https://www.contributor-covenant.org/faq.))))]([https://www.contributor-covenant.org/faq.)))))]([https://www.contributor-covenant.org/faq.))))))]([https://www.contributor-covenant.org/faq.)))))))](https://www.contributor-covenant.org/faq.)))))))) Translations are available at
-[https://www.contributor-covenant.org/translations.]([https://www.contributor-covenant.org/translations.)]([https://www.contributor-covenant.org/translations.))]([https://www.contributor-covenant.org/translations.)))]([https://www.contributor-covenant.org/translations.))))]([https://www.contributor-covenant.org/translations.)))))]([https://www.contributor-covenant.org/translations.))))))]([https://www.contributor-covenant.org/translations.)))))))](https://www.contributor-covenant.org/translations.))))))))
+[https://www.contributor-covenant.org/faq.]([https://www.contributor-covenant.org/faq.)]([https://www.contributor-covenant.org/faq.))]([https://www.contributor-covenant.org/faq.)))]([https://www.contributor-covenant.org/faq.))))]([https://www.contributor-covenant.org/faq.)))))]([https://www.contributor-covenant.org/faq.))))))]([https://www.contributor-covenant.org/faq.)))))))]([https://www.contributor-covenant.org/faq.))))))))](https://www.contributor-covenant.org/faq.))))))))) Translations are available at
+[https://www.contributor-covenant.org/translations.]([https://www.contributor-covenant.org/translations.)]([https://www.contributor-covenant.org/translations.))]([https://www.contributor-covenant.org/translations.)))]([https://www.contributor-covenant.org/translations.))))]([https://www.contributor-covenant.org/translations.)))))]([https://www.contributor-covenant.org/translations.))))))]([https://www.contributor-covenant.org/translations.)))))))]([https://www.contributor-covenant.org/translations.))))))))](https://www.contributor-covenant.org/translations.)))))))))

@@ -4,21 +4,21 @@ Activate this skill when dealing with complex, multi-layered problems that requi
 
 ## Red Flags
 
-- Jumping to code before understanding the data flow
+1. Jumping to code before understanding the data flow
 
-- Making assumptions about system behavior without evidence
+1. Making assumptions about system behavior without evidence
 
-- Feeling "stuck" on a logic puzzle
+1. Feeling "stuck" on a logic puzzle
 
-- Complex architectural decisions
+1. Complex architectural decisions
 
 ## Rationalizations
 
-- "I'll just try this and see if it works" (Guessing is not reasoning)
+1. "I'll just try this and see if it works" (Guessing is not reasoning)
 
-- "The solution is obvious" (Usually indicates missed edge cases)
+1. "The solution is obvious" (Usually indicates missed edge cases)
 
-- "I don't need to write this out" (Externalizing thoughts improves accuracy)
+1. "I don't need to write this out" (Externalizing thoughts improves accuracy)
 
 ## The Process
 
@@ -30,37 +30,37 @@ Before taking any action, announce: "Starting Sequential Thinking process to ana
 
 For every thought, specify:
 
-- **Thought**: The actual reasoning (hypotheses, deductions, calculations).
+1. **Thought**: The actual reasoning (hypotheses, deductions, calculations).
 
-- **Thought Number**: Track your progress (1, 2, 3...).
+1. **Thought Number**: Track your progress (1, 2, 3...).
 
-- **Total Thoughts (Estimated)**: How many steps you think this will take.
+1. **Total Thoughts (Estimated)**: How many steps you think this will take.
 
-- **Is Revision**: True if this step corrects or updates a previous thought.
+1. **Is Revision**: True if this step corrects or updates a previous thought.
 
-- **Is Branching**: True if you are exploring an alternative path.
+1. **Is Branching**: True if you are exploring an alternative path.
 
 ### 3. Deliberate Reasoning Steps
 
-- **Define the Goal**: What is the success criteria?
+1. **Define the Goal**: What is the success criteria?
 
-- **Analyze Constraints**: What are the boundaries?
+1. **Analyze Constraints**: What are the boundaries?
 
-- **Generate Hypotheses**: What could be the cause/solution?
+1. **Generate Hypotheses**: What could be the cause/solution?
 
-- **Evaluate Options**: Pros and cons of each path.
+1. **Evaluate Options**: Pros and cons of each path.
 
-- **Synthesize**: Combine findings into a coherent plan.
+1. **Synthesize**: Combine findings into a coherent plan.
 
 ### 4. Self-Correction (The Feedback Loop)
 
 If you realize a previous thought was incorrect:
 
-- Mark the current thought as a **Revision**.
+1. Mark the current thought as a **Revision**.
 
-- Reference the thought number you are correcting.
+1. Reference the thought number you are correcting.
 
-- Explain why the previous logic failed.
+1. Explain why the previous logic failed.
 
 ### 5. Final Answer
 
@@ -68,10 +68,10 @@ Only provide the final answer or take the primary action once you have reached a
 
 ## Success Criteria
 
-- The logic path is unbroken and documented.
+1. The logic path is unbroken and documented.
 
-- All reasonable alternatives were considered (Branching).
+1. All reasonable alternatives were considered (Branching).
 
-- Errors in reasoning were caught and corrected (Revision).
+1. Errors in reasoning were caught and corrected (Revision).
 
-- The final solution is derived directly from the preceding steps.
+1. The final solution is derived directly from the preceding steps.

@@ -30,7 +30,7 @@ A **skill** is a reference guide for proven techniques, patterns, or tools. Skil
 ## TDD Mapping for Skills
 
 | TDD Concept | Skill Creation |
-|::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::----|::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::----|
+|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::----|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::----|
 | **Test case** | Pressure scenario with subagent |
 | **Production code** | Skill document (SKILL.md) |
 | **Test fails (RED)** | Agent violates rule without skill (baseline) |
@@ -48,23 +48,23 @@ The entire skill creation process follows RED-GREEN-REFACTOR.
 
 ### Create when
 
-- Technique wasn't intuitively obvious to you
+1. Technique wasn't intuitively obvious to you
 
-- You'd reference this again across projects
+1. You'd reference this again across projects
 
-- Pattern applies broadly (not project-specific)
+1. Pattern applies broadly (not project-specific)
 
-- Others would benefit
+1. Others would benefit
 
 #### Don't create for
 
-- One-off solutions
+1. One-off solutions
 
-- Standard practices well-documented elsewhere
+1. Standard practices well-documented elsewhere
 
-- Project-specific conventions (put in CLAUDE.md)
+1. Project-specific conventions (put in CLAUDE.md)
 
-- Mechanical constraints (if it's enforceable with regex/validation, automate it—save documentation for judgment calls)
+1. Mechanical constraints (if it's enforceable with regex/validation, automate it—save documentation for judgment calls)
 
 ## Skill Types
 
@@ -99,28 +99,28 @@ skills/
 
 #### Keep inline
 
-- Principles and concepts
+1. Principles and concepts
 
-- Code patterns (< 50 lines)
+1. Code patterns (< 50 lines)
 
-- Everything else
+1. Everything else
 
 ## SKILL.md Structure
 
 ### Frontmatter (YAML)
 
-- Two required fields: `name` and `description` (see [agentskills.io/specification](https://agentskills.io/specification) for all supported fields)
+1. Two required fields: `name` and `description` (see [agentskills.io/specification](https://agentskills.io/specification) for all supported fields)
 
-- Max 1024 characters total
+1. Max 1024 characters total
 
-- `name`: Use letters, numbers, and hyphens only (no parentheses, special chars)
+1. `name`: Use letters, numbers, and hyphens only (no parentheses, special chars)
 
-- `description`: Third-person, describes ONLY when to use (NOT what it does)
+1. `description`: Third-person, describes ONLY when to use (NOT what it does)
 
-  - Start with "Use when..." to focus on triggering conditions
-  - Include specific symptoms, situations, and contexts
-  - **NEVER summarize the skill's process or workflow** (see CSO section for why)
-  - Keep under 500 characters if possible
+  1. Start with "Use when..." to focus on triggering conditions
+  1. Include specific symptoms, situations, and contexts
+  1. **NEVER summarize the skill's process or workflow** (see CSO section for why)
+  1. Keep under 500 characters if possible
 
 ```markdown
 ---
@@ -180,17 +180,17 @@ description: Use when implementing any feature or bugfix, before writing impleme
 
 ### Content
 
-- Use concrete triggers, symptoms, and situations that signal this skill applies
+1. Use concrete triggers, symptoms, and situations that signal this skill applies
 
-- Describe the *problem* (race conditions, inconsistent behavior) not *language-specific symptoms* (setTimeout, sleep)
+1. Describe the *problem* (race conditions, inconsistent behavior) not *language-specific symptoms* (setTimeout, sleep)
 
-- Keep triggers technology-agnostic unless the skill itself is technology-specific
+1. Keep triggers technology-agnostic unless the skill itself is technology-specific
 
-- If skill is technology-specific, make that explicit in the trigger
+1. If skill is technology-specific, make that explicit in the trigger
 
-- Write in third person (injected into system prompt)
+1. Write in third person (injected into system prompt)
 
-- **NEVER summarize the skill's process or workflow**
+1. **NEVER summarize the skill's process or workflow**
 
 ```yaml
 ## ❌ BAD: Too abstract, vague, doesn't include when to use
@@ -209,21 +209,21 @@ description: Use when using React Router and handling authentication redirects
 
 Use words Claude would search for:
 
-- Error messages: "Hook timed out", "ENOTEMPTY", "race condition"
+1. Error messages: "Hook timed out", "ENOTEMPTY", "race condition"
 
-- Symptoms: "flaky", "hanging", "zombie", "pollution"
+1. Symptoms: "flaky", "hanging", "zombie", "pollution"
 
-- Synonyms: "timeout/hang/freeze", "cleanup/teardown/afterEach"
+1. Synonyms: "timeout/hang/freeze", "cleanup/teardown/afterEach"
 
-- Tools: Actual commands, library names, file types
+1. Tools: Actual commands, library names, file types
 
 ### 3. Descriptive Naming
 
 #### Use active voice, verb-first
 
-- ✅ `creating-skills` not `skill-creation`
+1. ✅ `creating-skills` not `skill-creation`
 
-- ✅ `condition-based-waiting` not `async-test-helpers`
+1. ✅ `condition-based-waiting` not `async-test-helpers`
 
 ### 4. Token Efficiency (Critical)
 
@@ -231,11 +231,11 @@ Use words Claude would search for:
 
 #### Target word counts
 
-- getting-started workflows: <150 words each
+1. getting-started workflows: <150 words each
 
-- Frequently-loaded skills: <200 words total
+1. Frequently-loaded skills: <200 words total
 
-- Other skills: <500 words (still be concise)
+1. Other skills: <500 words (still be concise)
 
 #### Techniques
 
@@ -273,11 +273,11 @@ You: Searching...
 
 ### Eliminate redundancy
 
-- Don't repeat what's in cross-referenced skills
+1. Don't repeat what's in cross-referenced skills
 
-- Don't explain what's obvious from command
+1. Don't explain what's obvious from command
 
-- Don't include multiple examples of same pattern
+1. Don't include multiple examples of same pattern
 
 #### Verification
 
@@ -289,19 +289,19 @@ wc -w skills/path/SKILL.md
 
 ### Name by what you DO or core insight
 
-- ✅ `condition-based-waiting` > `async-test-helpers`
+1. ✅ `condition-based-waiting` > `async-test-helpers`
 
-- ✅ `using-skills` not `skill-usage`
+1. ✅ `using-skills` not `skill-usage`
 
-- ✅ `flatten-with-flags` > `data-structure-refactoring`
+1. ✅ `flatten-with-flags` > `data-structure-refactoring`
 
-- ✅ `root-cause-tracing` > `debugging-techniques`
+1. ✅ `root-cause-tracing` > `debugging-techniques`
 
 #### Gerunds (-ing) work well for processes
 
-- `creating-skills`, `testing-skills`, `debugging-with-logs`
+1. `creating-skills`, `testing-skills`, `debugging-with-logs`
 
-- Active, describes the action you're taking
+1. Active, describes the action you're taking
 
 ### 4. Cross-Referencing Other Skills
 
@@ -309,13 +309,13 @@ wc -w skills/path/SKILL.md
 
 Use skill name only, with explicit requirement markers:
 
-- ✅ Good: `**REQUIRED SUB-SKILL:** Use mega-skills:test-driven-development`
+1. ✅ Good: `**REQUIRED SUB-SKILL:** Use mega-skills:test-driven-development`
 
-- ✅ Good: `**REQUIRED BACKGROUND:** You MUST understand mega-skills:systematic-debugging`
+1. ✅ Good: `**REQUIRED BACKGROUND:** You MUST understand mega-skills:systematic-debugging`
 
-- ❌ Bad: `See skills/testing/test-driven-development` (unclear if required)
+1. ❌ Bad: `See skills/testing/test-driven-development` (unclear if required)
 
-- ❌ Bad: `@skills/testing/test-driven-development/SKILL.md` (force-loads, burns context)
+1. ❌ Bad: `@skills/testing/test-driven-development/SKILL.md` (force-loads, burns context)
 
 **Why no @ links:** `@` syntax force-loads files immediately, consuming 200k+ context before you need them.
 
@@ -335,21 +335,21 @@ digraph when_flowchart {
 
 ### Use flowcharts ONLY for
 
-- Non-obvious decision points
+1. Non-obvious decision points
 
-- Process loops where you might stop too early
+1. Process loops where you might stop too early
 
-- "When to use A vs B" decisions
+1. "When to use A vs B" decisions
 
 #### Never use flowcharts for
 
-- Reference material → Tables, lists
+1. Reference material → Tables, lists
 
-- Code examples → Markdown blocks
+1. Code examples → Markdown blocks
 
-- Linear instructions → Numbered lists
+1. Linear instructions → Numbered lists
 
-- Labels without semantic meaning (step1, helper2)
+1. Labels without semantic meaning (step1, helper2)
 
 See @graphviz-conventions.dot for graphviz style rules.
 
@@ -366,31 +366,31 @@ See @graphviz-conventions.dot for graphviz style rules.
 
 Choose most relevant language:
 
-- Testing techniques → TypeScript/JavaScript
+1. Testing techniques → TypeScript/JavaScript
 
-- System debugging → Shell/Python
+1. System debugging → Shell/Python
 
-- Data processing → Python
+1. Data processing → Python
 
 #### Good example
 
-- Complete and runnable
+1. Complete and runnable
 
-- Well-commented explaining WHY
+1. Well-commented explaining WHY
 
-- From real scenario
+1. From real scenario
 
-- Shows pattern clearly
+1. Shows pattern clearly
 
-- Ready to adapt (not generic template)
+1. Ready to adapt (not generic template)
 
 #### Don't
 
-- Implement in 5+ languages
+1. Implement in 5+ languages
 
-- Create fill-in-the-blank templates
+1. Create fill-in-the-blank templates
 
-- Write contrived examples
+1. Write contrived examples
 
 You're good at porting - one great example is enough.
 
@@ -440,17 +440,17 @@ Edit skill without testing? Same violation.
 
 ### No exceptions
 
-- Not for "simple additions"
+1. Not for "simple additions"
 
-- Not for "just adding a section"
+1. Not for "just adding a section"
 
-- Not for "documentation updates"
+1. Not for "documentation updates"
 
-- Don't keep untested changes as "reference"
+1. Don't keep untested changes as "reference"
 
-- Don't "adapt" while running tests
+1. Don't "adapt" while running tests
 
-- Delete means delete
+1. Delete means delete
 
 **REQUIRED BACKGROUND:** The mega-skills:test-driven-development skill explains why this matters. Same principles apply to documentation.
 
@@ -464,13 +464,13 @@ Different skill types need different test approaches:
 
 #### Test with
 
-- Academic questions: Do they understand the rules?
+1. Academic questions: Do they understand the rules?
 
-- Pressure scenarios: Do they comply under stress?
+1. Pressure scenarios: Do they comply under stress?
 
-- Multiple pressures combined: time + sunk cost + exhaustion
+1. Multiple pressures combined: time + sunk cost + exhaustion
 
-- Identify rationalizations and add explicit counters
+1. Identify rationalizations and add explicit counters
 
 **Success criteria:** Agent follows rule under maximum pressure
 
@@ -480,11 +480,11 @@ Different skill types need different test approaches:
 
 #### Test with (2)
 
-- Application scenarios: Can they apply the technique correctly?
+1. Application scenarios: Can they apply the technique correctly?
 
-- Variation scenarios: Do they handle edge cases?
+1. Variation scenarios: Do they handle edge cases?
 
-- Missing information tests: Do instructions have gaps?
+1. Missing information tests: Do instructions have gaps?
 
 **Success criteria:** Agent successfully applies technique to new scenario
 
@@ -494,11 +494,11 @@ Different skill types need different test approaches:
 
 #### Test with (3)
 
-- Recognition scenarios: Do they recognize when pattern applies?
+1. Recognition scenarios: Do they recognize when pattern applies?
 
-- Application scenarios: Can they use the mental model?
+1. Application scenarios: Can they use the mental model?
 
-- Counter-examples: Do they know when NOT to apply?
+1. Counter-examples: Do they know when NOT to apply?
 
 **Success criteria:** Agent correctly identifies when/how to apply pattern
 
@@ -508,18 +508,18 @@ Different skill types need different test approaches:
 
 #### Test with (4)
 
-- Retrieval scenarios: Can they find the right information?
+1. Retrieval scenarios: Can they find the right information?
 
-- Application scenarios: Can they use what they found correctly?
+1. Application scenarios: Can they use what they found correctly?
 
-- Gap testing: Are common use cases covered?
+1. Gap testing: Are common use cases covered?
 
 **Success criteria:** Agent finds and correctly applies reference information
 
 ## Common Rationalizations for Skipping Testing
 
 | Excuse | Reality |
-|::::::::::::::::::::::::::---::::::::::::::::::::::::::-----|::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---|
+|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::-----|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---|
 | "Skill is obviously clear" | Clear to you ≠ clear to other agents. Test it. |
 | "It's just a reference" | References can have gaps, unclear sections. Test retrieval. |
 | "Testing is overkill" | Untested skills have issues. Always. 15 min testing saves hours. |
@@ -578,7 +578,7 @@ Capture rationalizations from baseline testing (see Testing section below). Ever
 
 ```markdown
 | Excuse | Reality |
-|::::::::::::::::::::::::::---::::::::::::::::::::::::::-----|::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---|
+|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::-----|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---|
 | "Too simple to test" | Simple code breaks. Test takes 30 seconds. |
 | "I'll test after" | Tests passing immediately prove nothing. |
 | "Tests after achieve same goals" | Tests-after = "what does this do?" Tests-first = "what should this do?" |
@@ -614,11 +614,11 @@ Follow the TDD cycle:
 
 Run pressure scenario with subagent WITHOUT the skill. Document exact behavior:
 
-- What choices did they make?
+1. What choices did they make?
 
-- What rationalizations did they use (verbatim)?
+1. What rationalizations did they use (verbatim)?
 
-- Which pressures triggered violations?
+1. Which pressures triggered violations?
 
 This is "watch the test fail" - you must see what agents naturally do before writing the skill.
 
@@ -634,13 +634,13 @@ Agent found new rationalization? Add explicit counter. Re-test until bulletproof
 
 **Testing methodology:** See @testing-skills-with-subagents.md for the complete testing methodology:
 
-- How to write pressure scenarios
+1. How to write pressure scenarios
 
-- Pressure types (time, sunk cost, authority, exhaustion)
+1. Pressure types (time, sunk cost, authority, exhaustion)
 
-- Plugging holes systematically
+1. Plugging holes systematically
 
-- Meta-testing techniques
+1. Meta-testing techniques
 
 ## Anti-Patterns
 
@@ -674,11 +674,11 @@ helper1, helper2, step3, pattern4
 
 #### Do NOT
 
-- Create multiple skills in batch without testing each
+1. Create multiple skills in batch without testing each
 
-- Move to next skill before current one is verified
+1. Move to next skill before current one is verified
 
-- Skip testing because "batching is more efficient"
+1. Skip testing because "batching is more efficient"
 
 #### The deployment checklist below is MANDATORY for EACH skill
 
@@ -690,63 +690,63 @@ Deploying untested skills = deploying untested code. It's a violation of quality
 
 #### RED Phase - Write Failing Test
 
-- [ ] Create pressure scenarios (3+ combined pressures for discipline skills)
+1. [ ] Create pressure scenarios (3+ combined pressures for discipline skills)
 
-- [ ] Run scenarios WITHOUT skill - document baseline behavior verbatim
+1. [ ] Run scenarios WITHOUT skill - document baseline behavior verbatim
 
-- [ ] Identify patterns in rationalizations/failures
+1. [ ] Identify patterns in rationalizations/failures
 
 #### GREEN Phase - Write Minimal Skill
 
-- [ ] Name uses only letters, numbers, hyphens (no parentheses/special chars)
+1. [ ] Name uses only letters, numbers, hyphens (no parentheses/special chars)
 
-- [ ] YAML frontmatter with required `name` and `description` fields (max 1024 chars; see [spec](https://agentskills.io/specification))
+1. [ ] YAML frontmatter with required `name` and `description` fields (max 1024 chars; see [spec](https://agentskills.io/specification))
 
-- [ ] Description starts with "Use when..." and includes specific triggers/symptoms
+1. [ ] Description starts with "Use when..." and includes specific triggers/symptoms
 
-- [ ] Description written in third person
+1. [ ] Description written in third person
 
-- [ ] Keywords throughout for search (errors, symptoms, tools)
+1. [ ] Keywords throughout for search (errors, symptoms, tools)
 
-- [ ] Clear overview with core principle
+1. [ ] Clear overview with core principle
 
-- [ ] Address specific baseline failures identified in RED
+1. [ ] Address specific baseline failures identified in RED
 
-- [ ] Code inline OR link to separate file
+1. [ ] Code inline OR link to separate file
 
-- [ ] One excellent example (not multi-language)
+1. [ ] One excellent example (not multi-language)
 
-- [ ] Run scenarios WITH skill - verify agents now comply
+1. [ ] Run scenarios WITH skill - verify agents now comply
 
 #### REFACTOR Phase - Close Loopholes
 
-- [ ] Identify NEW rationalizations from testing
+1. [ ] Identify NEW rationalizations from testing
 
-- [ ] Add explicit counters (if discipline skill)
+1. [ ] Add explicit counters (if discipline skill)
 
-- [ ] Build rationalization table from all test iterations
+1. [ ] Build rationalization table from all test iterations
 
-- [ ] Create red flags list
+1. [ ] Create red flags list
 
-- [ ] Re-test until bulletproof
+1. [ ] Re-test until bulletproof
 
 #### Quality Checks
 
-- [ ] Small flowchart only if decision non-obvious
+1. [ ] Small flowchart only if decision non-obvious
 
-- [ ] Quick reference table
+1. [ ] Quick reference table
 
-- [ ] Common mistakes section
+1. [ ] Common mistakes section
 
-- [ ] No narrative storytelling
+1. [ ] No narrative storytelling
 
-- [ ] Supporting files only for tools or heavy reference
+1. [ ] Supporting files only for tools or heavy reference
 
 #### Deployment
 
-- [ ] Commit skill to git and push to your fork (if configured)
+1. [ ] Commit skill to git and push to your fork (if configured)
 
-- [ ] Consider contributing back via PR (if broadly useful)
+1. [ ] Consider contributing back via PR (if broadly useful)
 
 ## Discovery Workflow
 

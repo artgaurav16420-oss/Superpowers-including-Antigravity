@@ -12,11 +12,11 @@ This skill provides a curated collection of professional font and color themes t
 
 To apply consistent, professional styling to presentation slide decks, use this skill. Each theme includes:
 
-- A cohesive color palette with hex codes
+1. A cohesive color palette with hex codes
 
-- Complementary font pairings for headers and body text
+1. Complementary font pairings for headers and body text
 
-- A distinct visual identity suitable for different contexts and audiences
+1. A distinct visual identity suitable for different contexts and audiences
 
 ## Usage Instructions
 
@@ -58,11 +58,11 @@ The following 10 themes are available, each showcased in `theme-showcase.pdf`:
 
 Each theme is defined in the `themes/` directory with complete specifications including:
 
-- Cohesive color palette with hex codes
+1. Cohesive color palette with hex codes
 
-- Complementary font pairings for headers and body text
+1. Complementary font pairings for headers and body text
 
-- Distinct visual identity suitable for different contexts and audiences
+1. Distinct visual identity suitable for different contexts and audiences
 
 ## Application Process
 

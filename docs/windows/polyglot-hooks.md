@@ -5,8 +5,8 @@ Claude Code plugins need hooks that work on Windows, macOS, and Linux. This docu
 ## The Problem
 
 Claude Code runs hook commands through the system's default shell:
-- **Windows**: CMD.exe
-- **macOS/Linux**: bash or sh
+1. **Windows**: CMD.exe
+1. **macOS/Linux**: bash or sh
 
 This creates several challenges:
 
@@ -37,8 +37,8 @@ CMDBLOCK
 1. `: << 'CMDBLOCK'` - CMD sees `:` as a label (like `:label`) and ignores `<< 'CMDBLOCK'`
 1. `@echo off` - Suppresses command echoing
 1. The bash.exe command runs with:
-   - `-l` (login shell) to get proper PATH with Unix utilities
-   - `cygpath -u` converts Windows path to Unix format (`C:\foo` → `/c/foo`)
+   1. `-l` (login shell) to get proper PATH with Unix utilities
+   1. `cygpath -u` converts Windows path to Unix format (`C:\foo` → `/c/foo`)
 1. `exit /b` - Exits the batch script, stopping CMD here
 1. Everything after `CMDBLOCK` is never reached by CMD
 
@@ -84,14 +84,14 @@ Note: The path must be quoted because `${CLAUDE_PLUGIN_ROOT}` may contain spaces
 
 ### Windows
 
-- **Git for Windows** must be installed (provides `bash.exe` and `cygpath`)
-- Default installation path: `C:\Program Files\Git\bin\bash.exe`
-- If Git is installed elsewhere, the wrapper needs modification
+1. **Git for Windows** must be installed (provides `bash.exe` and `cygpath`)
+1. Default installation path: `C:\Program Files\Git\bin\bash.exe`
+1. If Git is installed elsewhere, the wrapper needs modification
 
 ### Unix (macOS/Linux)
 
-- Standard bash or sh shell
-- The `.cmd` file must have execute permission (`chmod +x`)
+1. Standard bash or sh shell
+1. The `.cmd` file must have execute permission (`chmod +x`)
 
 ## Writing Cross-Platform Hook Scripts
 
@@ -99,15 +99,15 @@ Your actual hook logic goes in the `.sh` file. To ensure it works on Windows (vi
 
 ### Do
 
-- Use pure bash builtins when possible
-- Use `$(command)` instead of backticks
-- Quote all variable expansions: `"$VAR"`
-- Use `printf` or here-docs for output
+1. Use pure bash builtins when possible
+1. Use `$(command)` instead of backticks
+1. Quote all variable expansions: `"$VAR"`
+1. Use `printf` or here-docs for output
 
 ### Avoid
 
-- External commands that may not be in PATH (sed, awk, grep)
-- If you must use them, they're available in Git Bash but ensure PATH is set up (use `bash -l`)
+1. External commands that may not be in PATH (sed, awk, grep)
+1. If you must use them, they're available in Git Bash but ensure PATH is set up (use `bash -l`)
 
 ### Example: JSON Escaping Without sed/awk
 
@@ -221,6 +221,6 @@ cmd /c "C:\path\to\plugin\hooks\session-start.cmd"
 
 ## Related Issues
 
-- [anthropics/claude-code#9758]([https://github.com/anthropics/claude-code/issues/9758)]([https://github.com/anthropics/claude-code/issues/9758))]([https://github.com/anthropics/claude-code/issues/9758)))]([https://github.com/anthropics/claude-code/issues/9758))))]([https://github.com/anthropics/claude-code/issues/9758)))))]([https://github.com/anthropics/claude-code/issues/9758))))))]([https://github.com/anthropics/claude-code/issues/9758)))))))]([https://github.com/anthropics/claude-code/issues/9758))))))))](https://github.com/anthropics/claude-code/issues/9758))))))))) - .sh scripts open in editor on Windows
-- [anthropics/claude-code#3417]([https://github.com/anthropics/claude-code/issues/3417)]([https://github.com/anthropics/claude-code/issues/3417))]([https://github.com/anthropics/claude-code/issues/3417)))]([https://github.com/anthropics/claude-code/issues/3417))))]([https://github.com/anthropics/claude-code/issues/3417)))))]([https://github.com/anthropics/claude-code/issues/3417))))))]([https://github.com/anthropics/claude-code/issues/3417)))))))]([https://github.com/anthropics/claude-code/issues/3417))))))))](https://github.com/anthropics/claude-code/issues/3417))))))))) - Hooks don't work on Windows
-- [anthropics/claude-code#6023]([https://github.com/anthropics/claude-code/issues/6023)]([https://github.com/anthropics/claude-code/issues/6023))]([https://github.com/anthropics/claude-code/issues/6023)))]([https://github.com/anthropics/claude-code/issues/6023))))]([https://github.com/anthropics/claude-code/issues/6023)))))]([https://github.com/anthropics/claude-code/issues/6023))))))]([https://github.com/anthropics/claude-code/issues/6023)))))))]([https://github.com/anthropics/claude-code/issues/6023))))))))](https://github.com/anthropics/claude-code/issues/6023))))))))) - CLAUDE_PROJECT_DIR not found
+1. [anthropics/claude-code#9758]([https://github.com/anthropics/claude-code/issues/9758)]([https://github.com/anthropics/claude-code/issues/9758))]([https://github.com/anthropics/claude-code/issues/9758)))]([https://github.com/anthropics/claude-code/issues/9758))))]([https://github.com/anthropics/claude-code/issues/9758)))))]([https://github.com/anthropics/claude-code/issues/9758))))))]([https://github.com/anthropics/claude-code/issues/9758)))))))]([https://github.com/anthropics/claude-code/issues/9758))))))))]([https://github.com/anthropics/claude-code/issues/9758)))))))))](https://github.com/anthropics/claude-code/issues/9758)))))))))) - .sh scripts open in editor on Windows
+1. [anthropics/claude-code#3417]([https://github.com/anthropics/claude-code/issues/3417)]([https://github.com/anthropics/claude-code/issues/3417))]([https://github.com/anthropics/claude-code/issues/3417)))]([https://github.com/anthropics/claude-code/issues/3417))))]([https://github.com/anthropics/claude-code/issues/3417)))))]([https://github.com/anthropics/claude-code/issues/3417))))))]([https://github.com/anthropics/claude-code/issues/3417)))))))]([https://github.com/anthropics/claude-code/issues/3417))))))))]([https://github.com/anthropics/claude-code/issues/3417)))))))))](https://github.com/anthropics/claude-code/issues/3417)))))))))) - Hooks don't work on Windows
+1. [anthropics/claude-code#6023]([https://github.com/anthropics/claude-code/issues/6023)]([https://github.com/anthropics/claude-code/issues/6023))]([https://github.com/anthropics/claude-code/issues/6023)))]([https://github.com/anthropics/claude-code/issues/6023))))]([https://github.com/anthropics/claude-code/issues/6023)))))]([https://github.com/anthropics/claude-code/issues/6023))))))]([https://github.com/anthropics/claude-code/issues/6023)))))))]([https://github.com/anthropics/claude-code/issues/6023))))))))]([https://github.com/anthropics/claude-code/issues/6023)))))))))](https://github.com/anthropics/claude-code/issues/6023)))))))))) - CLAUDE_PROJECT_DIR not found

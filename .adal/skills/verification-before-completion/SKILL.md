@@ -38,7 +38,7 @@ Skip any step = lying, not verifying
 ## Common Failures
 
 | Claim | Requires | Not Sufficient |
-|::::::::::::::::::::::::::---::::::::::::::::::::::::::----|::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::----|::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::----|
+|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::----|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::----|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::----|
 | Tests pass | Test command output: 0 failures | Previous run, "should pass" |
 | Linter clean | Linter output: 0 errors | Partial check, extrapolation |
 | Build succeeds | Build command: exit 0 | Linter passing, logs look good |
@@ -49,26 +49,26 @@ Skip any step = lying, not verifying
 
 ## Red Flags - STOP
 
-- Using "should", "probably", "seems to"
+1. Using "should", "probably", "seems to"
 
-- Expressing satisfaction before verification ("Great!", "Perfect!", "Done!", etc.)
+1. Expressing satisfaction before verification ("Great!", "Perfect!", "Done!", etc.)
 
-- About to commit/push/PR without verification
+1. About to commit/push/PR without verification
 
-- Trusting agent success reports
+1. Trusting agent success reports
 
-- Relying on partial verification
+1. Relying on partial verification
 
-- Thinking "just this once"
+1. Thinking "just this once"
 
-- Tired and wanting work over
+1. Tired and wanting work over
 
-- **ANY wording implying success without having run verification**
+1. **ANY wording implying success without having run verification**
 
 ## Rationalization Prevention
 
 | Excuse | Reality |
-|::::::::::::::::::::::::::---::::::::::::::::::::::::::-----|::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---|
+|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::-----|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---|
 | "Should work now" | RUN the verification |
 | "I'm confident" | Confidence ≠ evidence |
 | "Just this once" | No exceptions |
@@ -119,41 +119,41 @@ Skip any step = lying, not verifying
 
 From 24 failure memories:
 
-- your human partner said "I don't believe you" - trust broken
+1. your human partner said "I don't believe you" - trust broken
 
-- Undefined functions shipped - would crash
+1. Undefined functions shipped - would crash
 
-- Missing requirements shipped - incomplete features
+1. Missing requirements shipped - incomplete features
 
-- Time wasted on false completion → redirect → rework
+1. Time wasted on false completion → redirect → rework
 
-- Violates: "Honesty is a core value. If you lie, you'll be replaced."
+1. Violates: "Honesty is a core value. If you lie, you'll be replaced."
 
 ## When To Apply
 
 ### ALWAYS before
 
-- ANY variation of success/completion claims
+1. ANY variation of success/completion claims
 
-- ANY expression of satisfaction
+1. ANY expression of satisfaction
 
-- ANY positive statement about work state
+1. ANY positive statement about work state
 
-- Committing, PR creation, task completion
+1. Committing, PR creation, task completion
 
-- Moving to next task
+1. Moving to next task
 
-- Delegating to agents
+1. Delegating to agents
 
 #### Rule applies to
 
-- Exact phrases
+1. Exact phrases
 
-- Paraphrases and synonyms
+1. Paraphrases and synonyms
 
-- Implications of success
+1. Implications of success
 
-- ANY communication suggesting completion/correctness
+1. ANY communication suggesting completion/correctness
 
 ## The Bottom Line
 

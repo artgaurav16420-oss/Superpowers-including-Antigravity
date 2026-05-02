@@ -11,18 +11,18 @@ Connect Claude to any app. Stop generating text about what you could do - actual
 
 Use this skill when you need Claude to:
 
-- **Send that email** instead of drafting it
+1. **Send that email** instead of drafting it
 
-- **Create that issue** instead of describing it
+1. **Create that issue** instead of describing it
 
-- **Post that message** instead of suggesting it
+1. **Post that message** instead of suggesting it
 
-- **Update that database** instead of explaining how
+1. **Update that database** instead of explaining how
 
 ## What Changes
 
 | Without Connect | With Connect |
-|::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::-----|::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::-----|
+|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::-----|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::-----|
 | "Here's a draft email..." | Sends the email |
 | "You should create an issue..." | Creates the issue |
 | "Post this to Slack..." | Posts it |
@@ -32,21 +32,21 @@ Use this skill when you need Claude to:
 
 **1000+ integrations** including:
 
-- **Email:** Gmail, Outlook, SendGrid
+1. **Email:** Gmail, Outlook, SendGrid
 
-- **Chat:** Slack, Discord, Teams, Telegram
+1. **Chat:** Slack, Discord, Teams, Telegram
 
-- **Dev:** GitHub, GitLab, Jira, Linear
+1. **Dev:** GitHub, GitLab, Jira, Linear
 
-- **Docs:** Notion, Google Docs, Confluence
+1. **Docs:** Notion, Google Docs, Confluence
 
-- **Data:** Sheets, Airtable, PostgreSQL
+1. **Data:** Sheets, Airtable, PostgreSQL
 
-- **CRM:** HubSpot, Salesforce, Pipedrive
+1. **CRM:** HubSpot, Salesforce, Pipedrive
 
-- **Storage:** Drive, Dropbox, S3
+1. **Storage:** Drive, Dropbox, S3
 
-- **Social:** Twitter, LinkedIn, Reddit
+1. **Social:** Twitter, LinkedIn, Reddit
 
 ## Setup
 
@@ -145,7 +145,7 @@ Connection persists after that.
 ## Framework Support
 
 | Framework | Install |
-|::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::-----|::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---|
+|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::-----|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---|
 | Claude Agent SDK | `pip install composio claude-agent-sdk` |
 
 | OpenAI Agents | `pip install composio openai-agents` |
@@ -158,11 +158,11 @@ Connection persists after that.
 
 ## Troubleshooting
 
-- **Auth required** → Click link, authorize, say "connected"
+1. **Auth required** → Click link, authorize, say "connected"
 
-- **Action failed** → Check permissions in target app
+1. **Action failed** → Check permissions in target app
 
-- **Tool not found** → Be specific: "Slack #general" not "send message"
+1. **Tool not found** → Be specific: "Slack #general" not "send message"
 
 ---
 

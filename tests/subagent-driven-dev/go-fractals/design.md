@@ -28,9 +28,9 @@ fractals sierpinski --help
 Generates a Sierpinski triangle using recursive subdivision.
 
 Flags:
-- `--size` (default: 32) - Width of the triangle base in characters
-- `--depth` (default: 5) - Recursion depth
-- `--char` (default: '*') - Character to use for filled points
+1. `--size` (default: 32) - Width of the triangle base in characters
+1. `--depth` (default: 5) - Recursion depth
+1. `--char` (default: '*') - Character to use for filled points
 
 Output: Triangle printed to stdout, one line per row.
 
@@ -39,10 +39,10 @@ Output: Triangle printed to stdout, one line per row.
 Renders the Mandelbrot set as ASCII art. Maps iteration count to characters.
 
 Flags:
-- `--width` (default: 80) - Output width in characters
-- `--height` (default: 24) - Output height in characters
-- `--iterations` (default: 100) - Maximum iterations for escape calculation
-- `--char` (default: gradient) - Single character, or omit for gradient " .:-=+*#%@"
+1. `--width` (default: 80) - Output width in characters
+1. `--height` (default: 24) - Output height in characters
+1. `--iterations` (default: 100) - Maximum iterations for escape calculation
+1. `--char` (default: gradient) - Single character, or omit for gradient " .:-=+*#%@"
 
 Output: Rectangle printed to stdout.
 
@@ -67,8 +67,8 @@ internal/
 
 ## Dependencies
 
-- Go 1.21+
-- `github.com/spf13/cobra` for CLI
+1. Go 1.21+
+1. `github.com/spf13/cobra` for CLI
 
 ## Acceptance Criteria
 

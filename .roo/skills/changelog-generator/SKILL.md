@@ -9,19 +9,19 @@ This skill transforms technical git commits into polished, user-friendly changel
 
 ## When to Use This Skill
 
-- Preparing release notes for a new version
+1. Preparing release notes for a new version
 
-- Creating weekly or monthly product update summaries
+1. Creating weekly or monthly product update summaries
 
-- Documenting changes for customers
+1. Documenting changes for customers
 
-- Writing changelog entries for app store submissions
+1. Writing changelog entries for app store submissions
 
-- Generating update notifications
+1. Generating update notifications
 
-- Creating internal release documentation
+1. Creating internal release documentation
 
-- Maintaining a public changelog/product updates page
+1. Maintaining a public changelog/product updates page
 
 ## What This Skill Does
 
@@ -94,22 +94,22 @@ guidelines from CHANGELOG_STYLE.md
 
 ## Tips
 
-- Run from your git repository root
+1. Run from your git repository root
 
-- Specify date ranges for focused changelogs
+1. Specify date ranges for focused changelogs
 
-- Use your CHANGELOG_STYLE.md for consistent formatting
+1. Use your CHANGELOG_STYLE.md for consistent formatting
 
-- Review and adjust the generated changelog before publishing
+1. Review and adjust the generated changelog before publishing
 
-- Save output directly to CHANGELOG.md
+1. Save output directly to CHANGELOG.md
 
 ## Related Use Cases
 
-- Creating GitHub release notes
+1. Creating GitHub release notes
 
-- Writing app store update descriptions
+1. Writing app store update descriptions
 
-- Generating email updates for users
+1. Generating email updates for users
 
-- Creating social media announcement posts
+1. Creating social media announcement posts

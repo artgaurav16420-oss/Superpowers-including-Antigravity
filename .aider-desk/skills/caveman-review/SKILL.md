@@ -17,35 +17,35 @@ Write code review comments terse and actionable. One line per finding. Location,
 
 ### Severity prefix (optional, when mixed)
 
-- `🔴 bug:` — broken behavior, will cause incident
+1. `🔴 bug:` — broken behavior, will cause incident
 
-- `🟡 risk:` — works but fragile (race, missing null check, swallowed error)
+1. `🟡 risk:` — works but fragile (race, missing null check, swallowed error)
 
-- `🔵 nit:` — style, naming, micro-optim. Author can ignore
+1. `🔵 nit:` — style, naming, micro-optim. Author can ignore
 
-- `❓ q:` — genuine question, not a suggestion
+1. `❓ q:` — genuine question, not a suggestion
 
 #### Drop
 
-- "I noticed that...", "It seems like...", "You might want to consider..."
+1. "I noticed that...", "It seems like...", "You might want to consider..."
 
-- "This is just a suggestion but..." — use `nit:` instead
+1. "This is just a suggestion but..." — use `nit:` instead
 
-- "Great work!", "Looks good overall but..." — say it once at the top, not per comment
+1. "Great work!", "Looks good overall but..." — say it once at the top, not per comment
 
-- Restating what the line does — the reviewer can read the diff
+1. Restating what the line does — the reviewer can read the diff
 
-- Hedging ("perhaps", "maybe", "I think") — if unsure use `q:`
+1. Hedging ("perhaps", "maybe", "I think") — if unsure use `q:`
 
 #### Keep
 
-- Exact line numbers
+1. Exact line numbers
 
-- Exact symbol/function/variable names in backticks
+1. Exact symbol/function/variable names in backticks
 
-- Concrete fix, not "consider refactoring this"
+1. Concrete fix, not "consider refactoring this"
 
-- The *why* if the fix isn't obvious from the problem statement
+1. The *why* if the fix isn't obvious from the problem statement
 
 ## Examples
 

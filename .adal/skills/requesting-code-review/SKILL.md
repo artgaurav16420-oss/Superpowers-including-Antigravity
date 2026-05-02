@@ -13,19 +13,19 @@ Dispatch code-reviewer subagent to catch issues before they cascade. The reviewe
 
 ### Mandatory
 
-- After each task in subagent-driven development
+1. After each task in subagent-driven development
 
-- After completing major feature
+1. After completing major feature
 
-- Before merge to main
+1. Before merge to main
 
 #### Optional but valuable
 
-- When stuck (fresh perspective)
+1. When stuck (fresh perspective)
 
-- Before refactoring (baseline check)
+1. Before refactoring (baseline check)
 
-- After fixing complex bug
+1. After fixing complex bug
 
 ## How to Request
 
@@ -42,25 +42,25 @@ Use Task tool with code-reviewer role, fill template at `code-reviewer.md`
 
 #### Placeholders
 
-- `{WHAT_WAS_IMPLEMENTED}` - What you just built
+1. `{WHAT_WAS_IMPLEMENTED}` - What you just built
 
-- `{PLAN_OR_REQUIREMENTS}` - What it should do
+1. `{PLAN_OR_REQUIREMENTS}` - What it should do
 
-- `{BASE_SHA}` - Starting commit
+1. `{BASE_SHA}` - Starting commit
 
-- `{HEAD_SHA}` - Ending commit
+1. `{HEAD_SHA}` - Ending commit
 
-- `{DESCRIPTION}` - Brief summary
+1. `{DESCRIPTION}` - Brief summary
 
 #### 3. Act on feedback
 
-- Fix Critical issues immediately
+1. Fix Critical issues immediately
 
-- Fix Important issues before proceeding
+1. Fix Important issues before proceeding
 
-- Note Minor issues for later
+1. Note Minor issues for later
 
-- Push back if reviewer is wrong (with reasoning)
+1. Push back if reviewer is wrong (with reasoning)
 
 ## Example
 
@@ -89,42 +89,42 @@ You: [Fix progress indicators]
 
 ### Subagent-Driven Development
 
-- Review after EACH task
+1. Review after EACH task
 
-- Catch issues before they compound
+1. Catch issues before they compound
 
-- Fix before moving to next task
+1. Fix before moving to next task
 
 #### Executing Plans
 
-- Review after each batch (3 tasks)
+1. Review after each batch (3 tasks)
 
-- Get feedback, apply, continue
+1. Get feedback, apply, continue
 
 #### Ad-Hoc Development
 
-- Review before merge
+1. Review before merge
 
-- Review when stuck
+1. Review when stuck
 
 ## Red Flags
 
 ### Never
 
-- Skip review because "it's simple"
+1. Skip review because "it's simple"
 
-- Ignore Critical issues
+1. Ignore Critical issues
 
-- Proceed with unfixed Important issues
+1. Proceed with unfixed Important issues
 
-- Argue with valid technical feedback
+1. Argue with valid technical feedback
 
 #### If reviewer wrong
 
-- Push back with technical reasoning
+1. Push back with technical reasoning
 
-- Show code/tests that prove it works
+1. Show code/tests that prove it works
 
-- Request clarification
+1. Request clarification
 
 See template at: requesting-code-review/code-reviewer.md

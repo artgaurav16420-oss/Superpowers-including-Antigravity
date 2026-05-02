@@ -10,19 +10,19 @@ license: Proprietary. LICENSE.txt has complete terms
 
 ### Professional Font
 
-- Use a consistent, professional font (e.g., Arial, Times New Roman) for all deliverables unless otherwise instructed by the user
+1. Use a consistent, professional font (e.g., Arial, Times New Roman) for all deliverables unless otherwise instructed by the user
 
 ### Zero Formula Errors
 
-- Every Excel model MUST be delivered with ZERO formula errors (#REF!, #DIV/0!, #VALUE!, #N/A, #NAME?)
+1. Every Excel model MUST be delivered with ZERO formula errors (#REF!, #DIV/0!, #VALUE!, #N/A, #NAME?)
 
 ### Preserve Existing Templates (when updating templates)
 
-- Study and EXACTLY match existing format, style, and conventions when modifying files
+1. Study and EXACTLY match existing format, style, and conventions when modifying files
 
-- Never impose standardized formatting on files with established patterns
+1. Never impose standardized formatting on files with established patterns
 
-- Existing template conventions ALWAYS override these guidelines
+1. Existing template conventions ALWAYS override these guidelines
 
 ## Financial models
 
@@ -32,63 +32,63 @@ Unless otherwise stated by the user or existing template
 
 #### Industry-Standard Color Conventions
 
-- **Blue text (RGB: 0,0,255)**: Hardcoded inputs, and numbers users will change for scenarios
+1. **Blue text (RGB: 0,0,255)**: Hardcoded inputs, and numbers users will change for scenarios
 
-- **Black text (RGB: 0,0,0)**: ALL formulas and calculations
+1. **Black text (RGB: 0,0,0)**: ALL formulas and calculations
 
-- **Green text (RGB: 0,128,0)**: Links pulling from other worksheets within same workbook
+1. **Green text (RGB: 0,128,0)**: Links pulling from other worksheets within same workbook
 
-- **Red text (RGB: 255,0,0)**: External links to other files
+1. **Red text (RGB: 255,0,0)**: External links to other files
 
-- **Yellow background (RGB: 255,255,0)**: Key assumptions needing attention or cells that need to be updated
+1. **Yellow background (RGB: 255,255,0)**: Key assumptions needing attention or cells that need to be updated
 
 ### Number Formatting Standards
 
 #### Required Format Rules
 
-- **Years**: Format as text strings (e.g., "2024" not "2,024")
+1. **Years**: Format as text strings (e.g., "2024" not "2,024")
 
-- **Currency**: Use $#,##0 format; ALWAYS specify units in headers ("Revenue ($mm)")
+1. **Currency**: Use $#,##0 format; ALWAYS specify units in headers ("Revenue ($mm)")
 
-- **Zeros**: Use number formatting to make all zeros "-", including percentages (e.g., "$#,##0;($#,##0);-")
+1. **Zeros**: Use number formatting to make all zeros "-", including percentages (e.g., "$#,##0;($#,##0);-")
 
-- **Percentages**: Default to 0.0% format (one decimal)
+1. **Percentages**: Default to 0.0% format (one decimal)
 
-- **Multiples**: Format as 0.0x for valuation multiples (EV/EBITDA, P/E)
+1. **Multiples**: Format as 0.0x for valuation multiples (EV/EBITDA, P/E)
 
-- **Negative numbers**: Use parentheses (123) not minus -123
+1. **Negative numbers**: Use parentheses (123) not minus -123
 
 ### Formula Construction Rules
 
 #### Assumptions Placement
 
-- Place ALL assumptions (growth rates, margins, multiples, etc.) in separate assumption cells
+1. Place ALL assumptions (growth rates, margins, multiples, etc.) in separate assumption cells
 
-- Use cell references instead of hardcoded values in formulas
+1. Use cell references instead of hardcoded values in formulas
 
-- Example: Use =B5*(1+$B$6) instead of =B5*1.05
+1. Example: Use =B5*(1+$B$6) instead of =B5*1.05
 
 #### Formula Error Prevention
 
-- Verify all cell references are correct
+1. Verify all cell references are correct
 
-- Check for off-by-one errors in ranges
+1. Check for off-by-one errors in ranges
 
-- Ensure consistent formulas across all projection periods
+1. Ensure consistent formulas across all projection periods
 
-- Test with edge cases (zero values, negative numbers)
+1. Test with edge cases (zero values, negative numbers)
 
-- Verify no unintended circular references
+1. Verify no unintended circular references
 
 #### Documentation Requirements for Hardcodes
 
-- Comment or in cells beside (if end of table). Format: "Source: [System/Document], [Date], [Specific Reference], [URL if applicable]"
+1. Comment or in cells beside (if end of table). Format: "Source: [System/Document], [Date], [Specific Reference], [URL if applicable]"
 
-- Examples:
-  - "Source: Company 10-K, FY2024, Page 45, Revenue Note, [SEC EDGAR URL]"
-  - "Source: Company 10-Q, Q2 2025, Exhibit 99.1, [SEC EDGAR URL]"
-  - "Source: Bloomberg Terminal, 8/15/2025, AAPL US Equity"
-  - "Source: FactSet, 8/20/2025, Consensus Estimates Screen"
+1. Examples:
+  1. "Source: Company 10-K, FY2024, Page 45, Revenue Note, [SEC EDGAR URL]"
+  1. "Source: Company 10-Q, Q2 2025, Exhibit 99.1, [SEC EDGAR URL]"
+  1. "Source: Bloomberg Terminal, 8/15/2025, AAPL US Equity"
+  1. "Source: FactSet, 8/20/2025, Consensus Estimates Screen"
 
 ## XLSX creation, editing, and analysis
 
@@ -169,18 +169,18 @@ This applies to ALL calculations - totals, percentages, ratios, differences, etc
    ```
 
 1. **Verify and fix any errors**:
-   - The script returns JSON with error details
-   - If `status` is `errors_found`, check `error_summary` for specific error types and locations
+   1. The script returns JSON with error details
+   1. If `status` is `errors_found`, check `error_summary` for specific error types and locations
 
-   - Fix the identified errors and recalculate again
-   - Common errors to fix:
-     - `#REF!`: Invalid cell references
+   1. Fix the identified errors and recalculate again
+   1. Common errors to fix:
+     1. `#REF!`: Invalid cell references
 
-     - `#DIV/0!`: Division by zero
+     1. `#DIV/0!`: Division by zero
 
-     - `#VALUE!`: Wrong data type in formula
+     1. `#VALUE!`: Wrong data type in formula
 
-     - `#NAME?`: Unrecognized formula name
+     1. `#NAME?`: Unrecognized formula name
 
 ### Creating new Excel files
 
@@ -243,15 +243,15 @@ python scripts/recalc.py output.xlsx 30
 
 The script:
 
-- Automatically sets up LibreOffice macro on first run
+1. Automatically sets up LibreOffice macro on first run
 
-- Recalculates all formulas in all sheets
+1. Recalculates all formulas in all sheets
 
-- Scans ALL cells for Excel errors (#REF!, #DIV/0!, etc.)
+1. Scans ALL cells for Excel errors (#REF!, #DIV/0!, etc.)
 
-- Returns JSON with detailed error locations and counts
+1. Returns JSON with detailed error locations and counts
 
-- Works on both Linux and macOS
+1. Works on both Linux and macOS
 
 ## Formula Verification Checklist
 
@@ -259,33 +259,33 @@ Quick checks to ensure formulas work correctly:
 
 ### Essential Verification
 
-- [ ] **Test 2-3 sample references**: Verify they pull correct values before building full model
+1. [ ] **Test 2-3 sample references**: Verify they pull correct values before building full model
 
-- [ ] **Column mapping**: Confirm Excel columns match (e.g., column 64 = BL, not BK)
+1. [ ] **Column mapping**: Confirm Excel columns match (e.g., column 64 = BL, not BK)
 
-- [ ] **Row offset**: Remember Excel rows are 1-indexed (DataFrame row 5 = Excel row 6)
+1. [ ] **Row offset**: Remember Excel rows are 1-indexed (DataFrame row 5 = Excel row 6)
 
 ### Common Pitfalls
 
-- [ ] **NaN handling**: Check for null values with `pd.notna()`
+1. [ ] **NaN handling**: Check for null values with `pd.notna()`
 
-- [ ] **Far-right columns**: FY data often in columns 50+
+1. [ ] **Far-right columns**: FY data often in columns 50+
 
-- [ ] **Multiple matches**: Search all occurrences, not just first
+1. [ ] **Multiple matches**: Search all occurrences, not just first
 
-- [ ] **Division by zero**: Check denominators before using `/` in formulas (#DIV/0!)
+1. [ ] **Division by zero**: Check denominators before using `/` in formulas (#DIV/0!)
 
-- [ ] **Wrong references**: Verify all cell references point to intended cells (#REF!)
+1. [ ] **Wrong references**: Verify all cell references point to intended cells (#REF!)
 
-- [ ] **Cross-sheet references**: Use correct format (Sheet1!A1) for linking sheets
+1. [ ] **Cross-sheet references**: Use correct format (Sheet1!A1) for linking sheets
 
 ### Formula Testing Strategy
 
-- [ ] **Start small**: Test formulas on 2-3 cells before applying broadly
+1. [ ] **Start small**: Test formulas on 2-3 cells before applying broadly
 
-- [ ] **Verify dependencies**: Check all cells referenced in formulas exist
+1. [ ] **Verify dependencies**: Check all cells referenced in formulas exist
 
-- [ ] **Test edge cases**: Include zero, negative, and very large values
+1. [ ] **Test edge cases**: Include zero, negative, and very large values
 
 ### Interpreting scripts/recalc.py Output
 
@@ -309,44 +309,44 @@ The script returns JSON with error details:
 
 ### Library Selection
 
-- **pandas**: Best for data analysis, bulk operations, and simple data export
+1. **pandas**: Best for data analysis, bulk operations, and simple data export
 
-- **openpyxl**: Best for complex formatting, formulas, and Excel-specific features
+1. **openpyxl**: Best for complex formatting, formulas, and Excel-specific features
 
 ### Working with openpyxl
 
-- Cell indices are 1-based (row=1, column=1 refers to cell A1)
+1. Cell indices are 1-based (row=1, column=1 refers to cell A1)
 
-- Use `data_only=True` to read calculated values: `load_workbook('file.xlsx', data_only=True)`
+1. Use `data_only=True` to read calculated values: `load_workbook('file.xlsx', data_only=True)`
 
-- **Warning**: If opened with `data_only=True` and saved, formulas are replaced with values and permanently lost
+1. **Warning**: If opened with `data_only=True` and saved, formulas are replaced with values and permanently lost
 
-- For large files: Use `read_only=True` for reading or `write_only=True` for writing
+1. For large files: Use `read_only=True` for reading or `write_only=True` for writing
 
-- Formulas are preserved but not evaluated - use scripts/recalc.py to update values
+1. Formulas are preserved but not evaluated - use scripts/recalc.py to update values
 
 ### Working with pandas
 
-- Specify data types to avoid inference issues: `pd.read_excel('file.xlsx', dtype={'id': str})`
+1. Specify data types to avoid inference issues: `pd.read_excel('file.xlsx', dtype={'id': str})`
 
-- For large files, read specific columns: `pd.read_excel('file.xlsx', usecols=['A', 'C', 'E'])`
+1. For large files, read specific columns: `pd.read_excel('file.xlsx', usecols=['A', 'C', 'E'])`
 
-- Handle dates properly: `pd.read_excel('file.xlsx', parse_dates=['date_column'])`
+1. Handle dates properly: `pd.read_excel('file.xlsx', parse_dates=['date_column'])`
 
 ## Code Style Guidelines
 
 **IMPORTANT**: When generating Python code for Excel operations:
 
-- Write minimal, concise Python code without unnecessary comments
+1. Write minimal, concise Python code without unnecessary comments
 
-- Avoid verbose variable names and redundant operations
+1. Avoid verbose variable names and redundant operations
 
-- Avoid unnecessary print statements
+1. Avoid unnecessary print statements
 
 **For Excel files themselves**:
 
-- Add comments to cells with complex formulas or important assumptions
+1. Add comments to cells with complex formulas or important assumptions
 
-- Document data sources for hardcoded values
+1. Document data sources for hardcoded values
 
-- Include notes for key calculations and model sections
+1. Include notes for key calculations and model sections

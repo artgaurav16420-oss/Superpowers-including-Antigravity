@@ -9,17 +9,17 @@ This skill helps you find the perfect domain name for your project by generating
 
 ## When to Use This Skill
 
-- Starting a new project or company
+1. Starting a new project or company
 
-- Launching a product or service
+1. Launching a product or service
 
-- Creating a personal brand or portfolio site
+1. Creating a personal brand or portfolio site
 
-- Rebranding an existing project
+1. Rebranding an existing project
 
-- Registering a domain for a side project
+1. Registering a domain for a side project
 
-- Finding available alternatives when your first choice is taken
+1. Finding available alternatives when your first choice is taken
 
 ## What This Skill Does
 
@@ -121,23 +121,23 @@ Next steps:
 
 ### TLD Guide
 
-- **.com**: Universal, trusted, great for businesses
+1. **.com**: Universal, trusted, great for businesses
 
-- **.io**: Tech startups, developer tools
+1. **.io**: Tech startups, developer tools
 
-- **.dev**: Developer-focused products
+1. **.dev**: Developer-focused products
 
-- **.ai**: AI/ML products
+1. **.ai**: AI/ML products
 
-- **.app**: Mobile or web applications
+1. **.app**: Mobile or web applications
 
-- **.co**: Alternative to .com
+1. **.co**: Alternative to .com
 
-- **.xyz**: Modern, creative projects
+1. **.xyz**: Modern, creative projects
 
-- **.design**: Creative/design agencies
+1. **.design**: Creative/design agencies
 
-- **.tech**: Technology companies
+1. **.tech**: Technology companies
 
 ## Advanced Features
 
@@ -225,22 +225,22 @@ management tools, then suggest similar available ones
 
 When suggesting domains, I'll note:
 
-- Standard domains: ~$10-15/year
+1. Standard domains: ~$10-15/year
 
-- Premium TLDs (.io, .ai): ~$30-50/year
+1. Premium TLDs (.io, .ai): ~$30-50/year
 
-- Taken domains: Market price if listed
+1. Taken domains: Market price if listed
 
-- Premium domains: $hundreds to $thousands
+1. Premium domains: $hundreds to $thousands
 
 ## Related Tools
 
 After picking a domain:
 
-- Check logo design options
+1. Check logo design options
 
-- Verify social media handles
+1. Verify social media handles
 
-- Research trademark availability
+1. Research trademark availability
 
-- Plan brand identity colors/fonts
+1. Plan brand identity colors/fonts

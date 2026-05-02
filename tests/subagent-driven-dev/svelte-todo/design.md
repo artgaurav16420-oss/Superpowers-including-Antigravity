@@ -6,13 +6,13 @@ A simple todo list application built with Svelte. Supports creating, completing,
 
 ## Features
 
-- Add new todos
-- Mark todos as complete/incomplete
-- Delete todos
-- Filter by: All / Active / Completed
-- Clear all completed todos
-- Persist to localStorage
-- Show count of remaining items
+1. Add new todos
+1. Mark todos as complete/incomplete
+1. Delete todos
+1. Filter by: All / Active / Completed
+1. Clear all completed todos
+1. Persist to localStorage
+1. Show count of remaining items
 
 ## User Interface
 

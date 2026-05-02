@@ -52,41 +52,41 @@ skill-name/
 
 Executable code (Python/Bash/etc.) for tasks that require deterministic reliability or are repeatedly rewritten.
 
-- **When to include**: When the same code is being rewritten repeatedly or deterministic reliability is needed
+1. **When to include**: When the same code is being rewritten repeatedly or deterministic reliability is needed
 
-- **Example**: `scripts/rotate_pdf.py` for PDF rotation tasks
+1. **Example**: `scripts/rotate_pdf.py` for PDF rotation tasks
 
-- **Benefits**: Token efficient, deterministic, may be executed without loading into context
+1. **Benefits**: Token efficient, deterministic, may be executed without loading into context
 
-- **Note**: Scripts may still need to be read by Claude for patching or environment-specific adjustments
+1. **Note**: Scripts may still need to be read by Claude for patching or environment-specific adjustments
 
 ##### References (`references/`)
 
 Documentation and reference material intended to be loaded as needed into context to inform Claude's process and thinking.
 
-- **When to include**: For documentation that Claude should reference while working
+1. **When to include**: For documentation that Claude should reference while working
 
-- **Examples**: `references/finance.md` for financial schemas, `references/mnda.md` for company NDA template, `references/policies.md` for company policies, `references/api_docs.md` for API specifications
+1. **Examples**: `references/finance.md` for financial schemas, `references/mnda.md` for company NDA template, `references/policies.md` for company policies, `references/api_docs.md` for API specifications
 
-- **Use cases**: Database schemas, API documentation, domain knowledge, company policies, detailed workflow guides
+1. **Use cases**: Database schemas, API documentation, domain knowledge, company policies, detailed workflow guides
 
-- **Benefits**: Keeps SKILL.md lean, loaded only when Claude determines it's needed
+1. **Benefits**: Keeps SKILL.md lean, loaded only when Claude determines it's needed
 
-- **Best practice**: If files are large (>10k words), include grep search patterns in SKILL.md
+1. **Best practice**: If files are large (>10k words), include grep search patterns in SKILL.md
 
-- **Avoid duplication**: Information should live in either SKILL.md or references files, not both. Prefer references files for detailed information unless it's truly core to the skill—this keeps SKILL.md lean while making information discoverable without hogging the context window. Keep only essential procedural instructions and workflow guidance in SKILL.md; move detailed reference material, schemas, and examples to references files.
+1. **Avoid duplication**: Information should live in either SKILL.md or references files, not both. Prefer references files for detailed information unless it's truly core to the skill—this keeps SKILL.md lean while making information discoverable without hogging the context window. Keep only essential procedural instructions and workflow guidance in SKILL.md; move detailed reference material, schemas, and examples to references files.
 
 ##### Assets (`assets/`)
 
 Files not intended to be loaded into context, but rather used within the output Claude produces.
 
-- **When to include**: When the skill needs files that will be used in the final output
+1. **When to include**: When the skill needs files that will be used in the final output
 
-- **Examples**: `assets/logo.png` for brand assets, `assets/slides.pptx` for PowerPoint templates, `assets/frontend-template/` for HTML/React boilerplate, `assets/font.ttf` for typography
+1. **Examples**: `assets/logo.png` for brand assets, `assets/slides.pptx` for PowerPoint templates, `assets/frontend-template/` for HTML/React boilerplate, `assets/font.ttf` for typography
 
-- **Use cases**: Templates, images, icons, boilerplate code, fonts, sample documents that get copied or modified
+1. **Use cases**: Templates, images, icons, boilerplate code, fonts, sample documents that get copied or modified
 
-- **Benefits**: Separates output resources from documentation, enables Claude to use files without loading them into context
+1. **Benefits**: Separates output resources from documentation, enables Claude to use files without loading them into context
 
 ### Progressive Disclosure Design Principle
 
@@ -112,13 +112,13 @@ To create an effective skill, clearly understand concrete examples of how the sk
 
 For example, when building an image-editor skill, relevant questions include:
 
-- "What functionality should the image-editor skill support? Editing, rotating, anything else?"
+1. "What functionality should the image-editor skill support? Editing, rotating, anything else?"
 
-- "Can you give some examples of how this skill would be used?"
+1. "Can you give some examples of how this skill would be used?"
 
-- "I can imagine users asking for things like 'Remove the red-eye from this image' or 'Rotate this image'. Are there other ways you imagine this skill being used?"
+1. "I can imagine users asking for things like 'Remove the red-eye from this image' or 'Rotate this image'. Are there other ways you imagine this skill being used?"
 
-- "What would a user say that should trigger this skill?"
+1. "What would a user say that should trigger this skill?"
 
 To avoid overwhelming users, avoid asking too many questions in a single message. Start with the most important questions and follow up as needed for better effectiveness.
 
@@ -168,13 +168,13 @@ scripts/init_skill.py <skill-name> --path <output-directory>
 
 The script:
 
-- Creates the skill directory at the specified path
+1. Creates the skill directory at the specified path
 
-- Generates a SKILL.md template with proper frontmatter and TODO placeholders
+1. Generates a SKILL.md template with proper frontmatter and TODO placeholders
 
-- Creates example resource directories: `scripts/`, `references/`, and `assets/`
+1. Creates example resource directories: `scripts/`, `references/`, and `assets/`
 
-- Adds example files in each directory that can be customized or deleted
+1. Adds example files in each directory that can be customized or deleted
 
 After initialization, customize or remove the generated SKILL.md and example files as needed.
 
@@ -217,10 +217,10 @@ scripts/package_skill.py <path/to/skill-folder> ./dist
 The packaging script will:
 
 1. **Validate** the skill automatically, checking:
-   - YAML frontmatter format and required fields
-   - Skill naming conventions and directory structure
-   - Description completeness and quality
-   - File organization and resource references
+   1. YAML frontmatter format and required fields
+   1. Skill naming conventions and directory structure
+   1. Description completeness and quality
+   1. File organization and resource references
 
 1. **Package** the skill if validation passes, creating a zip file named after the skill (e.g., `my-skill.zip`) that includes all files and maintains the proper directory structure for distribution.
 

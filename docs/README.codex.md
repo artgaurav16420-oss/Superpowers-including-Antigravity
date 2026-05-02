@@ -14,8 +14,8 @@ Fetch and follow instructions from [https://raw.githubusercontent.com/obra/super
 
 ### Prerequisites
 
-- OpenAI Codex CLI
-- Git
+1. OpenAI Codex CLI
+1. Git
 
 ### Steps
 
@@ -63,9 +63,9 @@ The `using-mega-skills` skill is discovered automatically and enforces skill usa
 ## Usage
 
 Skills are discovered automatically. Codex activates them when:
-- You mention a skill by name (e.g., "use brainstorming")
-- The task matches a skill's description
-- The `using-mega-skills` skill directs Codex to use one
+1. You mention a skill by name (e.g., "use brainstorming")
+1. The task matches a skill's description
+1. The `using-mega-skills` skill directs Codex to use one
 
 ### Personal Skills
 
@@ -126,5 +126,5 @@ Junctions normally work without special permissions. If creation fails, try runn
 
 ## Getting Help
 
-- Report issues: [https://github.com/artgaurav16420-oss/Mega-Skills/issues]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)))))))](https://github.com/artgaurav16420-oss/Mega-Skills/issues))))))))
-- Main documentation: [https://github.com/artgaurav16420-oss/Mega-Skills]([https://github.com/artgaurav16420-oss/Mega-Skills)]([https://github.com/artgaurav16420-oss/Mega-Skills))]([https://github.com/artgaurav16420-oss/Mega-Skills)))]([https://github.com/artgaurav16420-oss/Mega-Skills))))]([https://github.com/artgaurav16420-oss/Mega-Skills)))))]([https://github.com/artgaurav16420-oss/Mega-Skills))))))]([https://github.com/artgaurav16420-oss/Mega-Skills)))))))](https://github.com/artgaurav16420-oss/Mega-Skills))))))))
+1. Report issues: [https://github.com/artgaurav16420-oss/Mega-Skills/issues]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues)))))))]([https://github.com/artgaurav16420-oss/Mega-Skills/issues))))))))](https://github.com/artgaurav16420-oss/Mega-Skills/issues)))))))))
+1. Main documentation: [https://github.com/artgaurav16420-oss/Mega-Skills]([https://github.com/artgaurav16420-oss/Mega-Skills)]([https://github.com/artgaurav16420-oss/Mega-Skills))]([https://github.com/artgaurav16420-oss/Mega-Skills)))]([https://github.com/artgaurav16420-oss/Mega-Skills))))]([https://github.com/artgaurav16420-oss/Mega-Skills)))))]([https://github.com/artgaurav16420-oss/Mega-Skills))))))]([https://github.com/artgaurav16420-oss/Mega-Skills)))))))]([https://github.com/artgaurav16420-oss/Mega-Skills))))))))](https://github.com/artgaurav16420-oss/Mega-Skills)))))))))

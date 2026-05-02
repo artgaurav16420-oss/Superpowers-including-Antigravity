@@ -9,19 +9,19 @@ This skill acts as your personal organization assistant, helping you maintain a 
 
 ## When to Use This Skill
 
-- Your Downloads folder is a chaotic mess
+1. Your Downloads folder is a chaotic mess
 
-- You can't find files because they're scattered everywhere
+1. You can't find files because they're scattered everywhere
 
-- You have duplicate files taking up space
+1. You have duplicate files taking up space
 
-- Your folder structure doesn't make sense anymore
+1. Your folder structure doesn't make sense anymore
 
-- You want to establish better organization habits
+1. You want to establish better organization habits
 
-- You're starting a new project and need a good structure
+1. You're starting a new project and need a good structure
 
-- You're cleaning up before archiving old projects
+1. You're cleaning up before archiving old projects
 
 ## What This Skill Does
 
@@ -85,10 +85,10 @@ When a user requests file organization help:
 
    Ask clarifying questions:
 
-   - Which directory needs organization? (Downloads, Documents, entire home folder?)
-   - What's the main problem? (Can't find things, duplicates, too messy, no structure?)
-   - Any files or folders to avoid? (Current projects, sensitive data?)
-   - How aggressively to organize? (Conservative vs. comprehensive cleanup)
+   1. Which directory needs organization? (Downloads, Documents, entire home folder?)
+   1. What's the main problem? (Can't find things, duplicates, too messy, no structure?)
+   1. Any files or folders to avoid? (Current projects, sensitive data?)
+   1. How aggressively to organize? (Conservative vs. comprehensive cleanup)
 
 1. **Analyze Current State**
 
@@ -107,11 +107,11 @@ When a user requests file organization help:
 
    Summarize findings:
 
-   - Total files and folders
-   - File type breakdown
-   - Size distribution
-   - Date ranges
-   - Obvious organization issues
+   1. Total files and folders
+   1. File type breakdown
+   1. Size distribution
+   1. Date ranges
+   1. Obvious organization issues
 
 1. **Identify Organization Patterns**
 
@@ -119,27 +119,27 @@ When a user requests file organization help:
 
    **By Type**:
 
-   - Documents (PDFs, DOCX, TXT)
-   - Images (JPG, PNG, SVG)
-   - Videos (MP4, MOV)
-   - Archives (ZIP, TAR, DMG)
-   - Code/Projects (directories with code)
-   - Spreadsheets (XLSX, CSV)
-   - Presentations (PPTX, KEY)
+   1. Documents (PDFs, DOCX, TXT)
+   1. Images (JPG, PNG, SVG)
+   1. Videos (MP4, MOV)
+   1. Archives (ZIP, TAR, DMG)
+   1. Code/Projects (directories with code)
+   1. Spreadsheets (XLSX, CSV)
+   1. Presentations (PPTX, KEY)
 
    **By Purpose**:
 
-   - Work vs. Personal
-   - Active vs. Archive
-   - Project-specific
-   - Reference materials
-   - Temporary/scratch files
+   1. Work vs. Personal
+   1. Active vs. Archive
+   1. Project-specific
+   1. Reference materials
+   1. Temporary/scratch files
 
    **By Date**:
 
-   - Current year/month
-   - Previous years
-   - Very old (archive candidates)
+   1. Current year/month
+   1. Previous years
+   1. Very old (archive candidates)
 
 1. **Find Duplicates**
 
@@ -156,10 +156,10 @@ When a user requests file organization help:
 
    For each set of duplicates:
 
-   - Show all file paths
-   - Display sizes and modification dates
-   - Recommend which to keep (usually newest or best-named)
-   - **Important**: Always ask for confirmation before deleting
+   1. Show all file paths
+   1. Display sizes and modification dates
+   1. Recommend which to keep (usually newest or best-named)
+   1. **Important**: Always ask for confirmation before deleting
 
 1. **Propose Organization Plan**
 
@@ -223,11 +223,11 @@ When a user requests file organization help:
 
    **Important Rules**:
 
-   - Always confirm before deleting anything
-   - Log all moves for potential undo
-   - Preserve original modification dates
-   - Handle filename conflicts gracefully
-   - Stop and ask if you encounter unexpected situations
+   1. Always confirm before deleting anything
+   1. Log all moves for potential undo
+   1. Preserve original modification dates
+   1. Handle filename conflicts gracefully
+   1. Stop and ask if you encounter unexpected situations
 
 1. **Provide Summary and Maintenance Tips**
 
@@ -284,12 +284,12 @@ When a user requests file organization help:
 1. Finds patterns: work docs, personal photos, installers, random PDFs
 
 1. Proposes structure:
-   - Downloads/
-     - Work/
-     - Personal/
-     - Installers/ (DMG, PKG files)
-     - Archive/
-     - ToSort/ (things needing decisions)
+   1. Downloads/
+     1. Work/
+     1. Personal/
+     1. Installers/ (DMG, PKG files)
+     1. Archive/
+     1. ToSort/ (things needing decisions)
 
 1. Asks for confirmation
 
@@ -433,42 +433,42 @@ Documents folder.
 
 ### Folder Naming
 
-- Use clear, descriptive names
+1. Use clear, descriptive names
 
-- Avoid spaces (use hyphens or underscores)
+1. Avoid spaces (use hyphens or underscores)
 
-- Be specific: "client-proposals" not "docs"
+1. Be specific: "client-proposals" not "docs"
 
-- Use prefixes for ordering: "01-current", "02-archive"
+1. Use prefixes for ordering: "01-current", "02-archive"
 
 ### File Naming
 
-- Include dates: "2024-10-17-meeting-notes.md"
+1. Include dates: "2024-10-17-meeting-notes.md"
 
-- Be descriptive: "q3-financial-report.xlsx"
+1. Be descriptive: "q3-financial-report.xlsx"
 
-- Avoid version numbers in names (use version control instead)
+1. Avoid version numbers in names (use version control instead)
 
-- Remove download artifacts: "document-final-v2 (1).pdf" → "document.pdf"
+1. Remove download artifacts: "document-final-v2 (1).pdf" → "document.pdf"
 
 ### When to Archive
 
-- Projects not touched in 6+ months
+1. Projects not touched in 6+ months
 
-- Completed work that might be referenced later
+1. Completed work that might be referenced later
 
-- Old versions after migration to new systems
+1. Old versions after migration to new systems
 
-- Files you're hesitant to delete (archive first)
+1. Files you're hesitant to delete (archive first)
 
 ## Related Use Cases
 
-- Setting up organization for a new computer
+1. Setting up organization for a new computer
 
-- Preparing files for backup/archiving
+1. Preparing files for backup/archiving
 
-- Cleaning up before storage cleanup
+1. Cleaning up before storage cleanup
 
-- Organizing shared team folders
+1. Organizing shared team folders
 
-- Structuring new project directories
+1. Structuring new project directories

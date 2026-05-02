@@ -4,15 +4,15 @@ A professional and calming maritime theme that evokes the serenity of deep ocean
 
 ## Color Palette
 
-- **Deep Navy**: `#1a2332` - Primary background color
-- **Teal**: `#2d8b8b` - Accent color for highlights and emphasis
-- **Seafoam**: `#a8dadc` - Secondary accent for lighter elements
-- **Cream**: `#f1faee` - Text and light backgrounds
+1. **Deep Navy**: `#1a2332` - Primary background color
+1. **Teal**: `#2d8b8b` - Accent color for highlights and emphasis
+1. **Seafoam**: `#a8dadc` - Secondary accent for lighter elements
+1. **Cream**: `#f1faee` - Text and light backgrounds
 
 ## Typography
 
-- **Headers**: DejaVu Sans Bold
-- **Body Text**: DejaVu Sans
+1. **Headers**: DejaVu Sans Bold
+1. **Body Text**: DejaVu Sans
 
 ## Best Used For
 

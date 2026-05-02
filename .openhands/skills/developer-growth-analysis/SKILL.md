@@ -11,17 +11,17 @@ This skill provides personalized feedback on your recent coding work by analyzin
 
 Use this skill when you want to:
 
-- Understand your development patterns and habits from recent work
+1. Understand your development patterns and habits from recent work
 
-- Identify specific technical gaps or recurring challenges
+1. Identify specific technical gaps or recurring challenges
 
-- Discover which topics would benefit from deeper study
+1. Discover which topics would benefit from deeper study
 
-- Get curated learning resources tailored to your actual work patterns
+1. Get curated learning resources tailored to your actual work patterns
 
-- Track improvement areas across your recent projects
+1. Track improvement areas across your recent projects
 
-- Find high-quality articles that directly address the skills you're developing
+1. Find high-quality articles that directly address the skills you're developing
 
 This skill is ideal for developers who want structured feedback on their growth without waiting for code reviews, and who prefer data-driven insights from their own work history.
 
@@ -57,15 +57,15 @@ Analyze my work from today and suggest areas for improvement
 
 The skill will generate a formatted report with:
 
-- Overview of your recent work
+1. Overview of your recent work
 
-- Key improvement areas identified
+1. Key improvement areas identified
 
-- Specific recommendations for each area
+1. Specific recommendations for each area
 
-- Curated learning resources from HackerNews
+1. Curated learning resources from HackerNews
 
-- Action items you can focus on
+1. Action items you can focus on
 
 ## Instructions
 
@@ -75,13 +75,13 @@ When a user requests analysis of their developer growth or coding patterns from 
 
    Read the chat history from `~/.claude/history.jsonl`. This file is a JSONL format where each line contains:
 
-   - `display`: The user's message/request
+   1. `display`: The user's message/request
 
-   - `project`: The project being worked on
+   1. `project`: The project being worked on
 
-   - `timestamp`: Unix timestamp (in milliseconds)
+   1. `timestamp`: Unix timestamp (in milliseconds)
 
-   - `pastedContents`: Any code or content pasted
+   1. `pastedContents`: Any code or content pasted
 
    Filter for entries from the past 24-48 hours based on the current timestamp.
 
@@ -89,31 +89,31 @@ When a user requests analysis of their developer growth or coding patterns from 
 
    Extract and analyze the following from the filtered chats:
 
-   - **Projects and Domains**: What types of projects was the user working on? (e.g., backend, frontend, DevOps, data, etc.)
-   - **Technologies Used**: What languages, frameworks, and tools appear in the conversations?
-   - **Problem Types**: What categories of problems are being solved? (e.g., performance optimization, debugging, feature implementation, refactoring, setup/configuration)
-   - **Challenges Encountered**: What problems did the user struggle with? Look for:
-     - Repeated questions about similar topics
-     - Problems that took multiple attempts to solve
-     - Questions indicating knowledge gaps
-     - Complex architectural decisions
-   - **Approach Patterns**: How does the user solve problems? (e.g., methodical, exploratory, experimental)
+   1. **Projects and Domains**: What types of projects was the user working on? (e.g., backend, frontend, DevOps, data, etc.)
+   1. **Technologies Used**: What languages, frameworks, and tools appear in the conversations?
+   1. **Problem Types**: What categories of problems are being solved? (e.g., performance optimization, debugging, feature implementation, refactoring, setup/configuration)
+   1. **Challenges Encountered**: What problems did the user struggle with? Look for:
+     1. Repeated questions about similar topics
+     1. Problems that took multiple attempts to solve
+     1. Questions indicating knowledge gaps
+     1. Complex architectural decisions
+   1. **Approach Patterns**: How does the user solve problems? (e.g., methodical, exploratory, experimental)
 
 1. **Identify Improvement Areas**
 
    Based on the analysis, identify 3-5 specific areas where the user could improve. These should be:
 
-   - **Specific** (not vague like "improve coding skills")
-   - **Evidence-based** (grounded in actual chat history)
-   - **Actionable** (practical improvements that can be made)
-   - **Prioritized** (most impactful first)
+   1. **Specific** (not vague like "improve coding skills")
+   1. **Evidence-based** (grounded in actual chat history)
+   1. **Actionable** (practical improvements that can be made)
+   1. **Prioritized** (most impactful first)
 
    Examples of good improvement areas:
 
-   - "Advanced TypeScript patterns (generics, utility types, type guards) - you struggled with type safety in [specific project]"
-   - "Error handling and validation - I noticed you patched several bugs related to missing null checks"
-   - "Async/await patterns - your recent work shows some race conditions and timing issues"
-   - "Database query optimization - you rewrote the same query multiple times"
+   1. "Advanced TypeScript patterns (generics, utility types, type guards) - you struggled with type safety in [specific project]"
+   1. "Error handling and validation - I noticed you patched several bugs related to missing null checks"
+   1. "Async/await patterns - your recent work shows some race conditions and timing issues"
+   1. "Database query optimization - you rewrote the same query multiple times"
 
 1. **Generate Report**
 
@@ -152,17 +152,17 @@ When a user requests analysis of their developer growth or coding patterns from 
 
    Use Rube MCP to search HackerNews for articles related to each improvement area:
 
-   - For each improvement area, construct a search query targeting high-quality resources
-   - Search HackerNews using RUBE_SEARCH_TOOLS with queries like:
-     - "Learn [Technology/Pattern] best practices"
-     - "[Technology] advanced patterns and techniques"
-     - "Debugging [specific problem type] in [language]"
-   - Prioritize posts with high engagement (comments, upvotes)
-   - For each area, include 2-3 most relevant articles with:
-     - Article title
-     - Publication date
-     - Brief description of why it's relevant
-     - Link to the article
+   1. For each improvement area, construct a search query targeting high-quality resources
+   1. Search HackerNews using RUBE_SEARCH_TOOLS with queries like:
+     1. "Learn [Technology/Pattern] best practices"
+     1. "[Technology] advanced patterns and techniques"
+     1. "Debugging [specific problem type] in [language]"
+   1. Prioritize posts with high engagement (comments, upvotes)
+   1. For each area, include 2-3 most relevant articles with:
+     1. Article title
+     1. Publication date
+     1. Brief description of why it's relevant
+     1. Link to the article
 
    Add this section to the report:
 
@@ -186,23 +186,23 @@ When a user requests analysis of their developer growth or coding patterns from 
 
    Deliver the report in a clean, readable format that the user can:
 
-   - Quickly scan for key takeaways
-   - Use for focused learning planning
-   - Reference over the next week as they work on improvements
-   - Share with mentors if they want external feedback
+   1. Quickly scan for key takeaways
+   1. Use for focused learning planning
+   1. Reference over the next week as they work on improvements
+   1. Share with mentors if they want external feedback
 
 1. **Send Report to Slack DMs**
 
    Use Rube MCP to send the complete report to the user's own Slack DMs:
 
-   - Check if Slack connection is active via RUBE_SEARCH_TOOLS
-   - If not connected, use RUBE_MANAGE_CONNECTIONS to initiate Slack auth
-   - Use RUBE_MULTI_EXECUTE_TOOL to send the report as a formatted message:
-     - Send the report title and period as the first message
-     - Break the report into logical sections (Summary, Improvements, Strengths, Actions, Resources)
-     - Format each section as a well-structured Slack message with proper markdown
-     - Include clickable links for the learning resources
-   - Confirm delivery in the CLI output
+   1. Check if Slack connection is active via RUBE_SEARCH_TOOLS
+   1. If not connected, use RUBE_MANAGE_CONNECTIONS to initiate Slack auth
+   1. Use RUBE_MULTI_EXECUTE_TOOL to send the report as a formatted message:
+     1. Send the report title and period as the first message
+     1. Break the report into logical sections (Summary, Improvements, Strengths, Actions, Resources)
+     1. Format each section as a well-structured Slack message with proper markdown
+     1. Include clickable links for the learning resources
+   1. Confirm delivery in the CLI output
 
    This ensures the user has the report in a place they check regularly and can reference it throughout the week.
 
@@ -275,28 +275,28 @@ Priority order:
 
 ## Tips and Best Practices
 
-- Run this analysis once a week to track your improvement trajectory over time
+1. Run this analysis once a week to track your improvement trajectory over time
 
-- Pick one improvement area at a time and focus on it for a few days before moving to the next
+1. Pick one improvement area at a time and focus on it for a few days before moving to the next
 
-- Use the learning resources as a study guide; work through the recommended materials and practice applying the patterns
+1. Use the learning resources as a study guide; work through the recommended materials and practice applying the patterns
 
-- Revisit this report after focusing on an area for a week to see how your work patterns change
+1. Revisit this report after focusing on an area for a week to see how your work patterns change
 
-- The learning resources are intentionally curated for your actual work, not generic topics, so they'll be highly relevant to what you're building
+1. The learning resources are intentionally curated for your actual work, not generic topics, so they'll be highly relevant to what you're building
 
 ## How Accuracy and Quality Are Maintained
 
 This skill:
 
-- Analyzes your actual work patterns from timestamped chat history
+1. Analyzes your actual work patterns from timestamped chat history
 
-- Generates evidence-based recommendations grounded in real projects
+1. Generates evidence-based recommendations grounded in real projects
 
-- Curates learning resources that directly address your identified gaps
+1. Curates learning resources that directly address your identified gaps
 
-- Focuses on actionable improvements, not vague feedback
+1. Focuses on actionable improvements, not vague feedback
 
-- Provides specific time estimates based on complexity
+1. Provides specific time estimates based on complexity
 
-- Prioritizes areas that will have the most impact on your development velocity
+1. Prioritizes areas that will have the most impact on your development velocity

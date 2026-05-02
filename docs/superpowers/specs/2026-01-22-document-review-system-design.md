@@ -18,7 +18,7 @@ Both follow the iterative loop pattern used by implementation reviews.
 ### What it checks for
 
 | Category | What to Look For |
-|::::::::---::::::::---::::::::----|::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---|
+|:::::::::---:::::::::---:::::::::----|:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---|
 | Completeness | TODOs, placeholders, "TBD", incomplete sections |
 | Coverage | Missing error handling, edge cases, integration points |
 | Consistency | Internal contradictions, conflicting requirements |
@@ -52,7 +52,7 @@ Both follow the iterative loop pattern used by implementation reviews.
 ### What it checks for (2)
 
 | Category | What to Look For |
-|::::::::---::::::::---::::::::----|::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---|
+|:::::::::---:::::::::---:::::::::----|:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---|
 | Completeness | TODOs, placeholders, incomplete tasks |
 | Spec Alignment | Plan covers spec requirements, no scope creep |
 | Task Decomposition | Tasks atomic, clear boundaries |
@@ -116,30 +116,30 @@ Tasks and steps use checkbox syntax:
 
 ### Review loop termination
 
-- No hard iteration limit - loops continue until reviewer approves
-- If loop exceeds 5 iterations, the controller should surface this to the human for guidance
-- The human can choose to: continue iterating, approve with known issues, or abort
+1. No hard iteration limit - loops continue until reviewer approves
+1. If loop exceeds 5 iterations, the controller should surface this to the human for guidance
+1. The human can choose to: continue iterating, approve with known issues, or abort
 
 #### Disagreement handling
 
-- Reviewers are advisory - they flag issues but don't block
-- If the agent believes reviewer feedback is incorrect, it should explain why in its fix
-- If disagreement persists after 3 iterations on the same issue, surface to human
+1. Reviewers are advisory - they flag issues but don't block
+1. If the agent believes reviewer feedback is incorrect, it should explain why in its fix
+1. If disagreement persists after 3 iterations on the same issue, surface to human
 
 #### Malformed reviewer output
 
-- Controller should validate reviewer output has required fields (Status, Issues if applicable)
-- If malformed, re-dispatch reviewer with a note about expected format
-- After 2 malformed responses, surface to human
+1. Controller should validate reviewer output has required fields (Status, Issues if applicable)
+1. If malformed, re-dispatch reviewer with a note about expected format
+1. After 2 malformed responses, surface to human
 
 ## Files to Change
 
 ### New files
 
-- `skills/brainstorming/spec-document-reviewer-prompt.md`
-- `skills/writing-plans/plan-document-reviewer-prompt.md`
+1. `skills/brainstorming/spec-document-reviewer-prompt.md`
+1. `skills/writing-plans/plan-document-reviewer-prompt.md`
 
 #### Modified files
 
-- `skills/brainstorming/SKILL.md` - add review loop after spec written
-- `skills/writing-plans/SKILL.md` - add chunk-by-chunk review loop, update task syntax examples
+1. `skills/brainstorming/SKILL.md` - add review loop after spec written
+1. `skills/writing-plans/SKILL.md` - add chunk-by-chunk review loop, update task syntax examples

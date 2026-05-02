@@ -5,24 +5,24 @@ Reference example of extracting, structuring, and bulletproofing a critical skil
 ## Source Material
 
 Extracted debugging framework from `/Users/jesse/.claude/CLAUDE.md`:
-- 4-phase systematic process (Investigation → Pattern Analysis → Hypothesis → Implementation)
-- Core mandate: ALWAYS find root cause, NEVER fix symptoms
-- Rules designed to resist time pressure and rationalization
+1. 4-phase systematic process (Investigation → Pattern Analysis → Hypothesis → Implementation)
+1. Core mandate: ALWAYS find root cause, NEVER fix symptoms
+1. Rules designed to resist time pressure and rationalization
 
 ## Extraction Decisions
 
 ### What to include
 
-- Complete 4-phase framework with all rules
-- Anti-shortcuts ("NEVER fix symptom", "STOP and re-analyze")
-- Pressure-resistant language ("even if faster", "even if I seem in a hurry")
-- Concrete steps for each phase
+1. Complete 4-phase framework with all rules
+1. Anti-shortcuts ("NEVER fix symptom", "STOP and re-analyze")
+1. Pressure-resistant language ("even if faster", "even if I seem in a hurry")
+1. Concrete steps for each phase
 
 #### What to leave out
 
-- Project-specific context
-- Repetitive variations of same rule
-- Narrative explanations (condensed to principles)
+1. Project-specific context
+1. Repetitive variations of same rule
+1. Narrative explanations (condensed to principles)
 
 ## Structure Following skill-creation/SKILL.md
 
@@ -39,23 +39,23 @@ Framework designed to resist rationalization under pressure:
 
 ### Language Choices
 
-- "ALWAYS" / "NEVER" (not "should" / "try to")
-- "even if faster" / "even if I seem in a hurry"
-- "STOP and re-analyze" (explicit pause)
-- "Don't skip past" (catches the actual behavior)
+1. "ALWAYS" / "NEVER" (not "should" / "try to")
+1. "even if faster" / "even if I seem in a hurry"
+1. "STOP and re-analyze" (explicit pause)
+1. "Don't skip past" (catches the actual behavior)
 
 ### Structural Defenses
 
-- **Phase 1 required** - Can't skip to implementation
-- **Single hypothesis rule** - Forces thinking, prevents shotgun fixes
-- **Explicit failure mode** - "IF your first fix doesn't work" with mandatory action
-- **Anti-patterns section** - Shows exactly what shortcuts look like
+1. **Phase 1 required** - Can't skip to implementation
+1. **Single hypothesis rule** - Forces thinking, prevents shotgun fixes
+1. **Explicit failure mode** - "IF your first fix doesn't work" with mandatory action
+1. **Anti-patterns section** - Shows exactly what shortcuts look like
 
 ### Redundancy
 
-- Root cause mandate in overview + when_to_use + Phase 1 + implementation rules
-- "NEVER fix symptom" appears 4 times in different contexts
-- Each phase has explicit "don't skip" guidance
+1. Root cause mandate in overview + when_to_use + Phase 1 + implementation rules
+1. "NEVER fix symptom" appears 4 times in different contexts
+1. Each phase has explicit "don't skip" guidance
 
 ## Testing Approach
 
@@ -63,23 +63,23 @@ Created 4 validation tests following skills/meta/testing-skills-with-subagents:
 
 ### Test 1: Academic Context (No Pressure)
 
-- Simple bug, no time pressure
-- **Result:** Perfect compliance, complete investigation
+1. Simple bug, no time pressure
+1. **Result:** Perfect compliance, complete investigation
 
 ### Test 2: Time Pressure + Obvious Quick Fix
 
-- User "in a hurry", symptom fix looks easy
-- **Result:** Resisted shortcut, followed full process, found real root cause
+1. User "in a hurry", symptom fix looks easy
+1. **Result:** Resisted shortcut, followed full process, found real root cause
 
 ### Test 3: Complex System + Uncertainty
 
-- Multi-layer failure, unclear if can find root cause
-- **Result:** Systematic investigation, traced through all layers, found source
+1. Multi-layer failure, unclear if can find root cause
+1. **Result:** Systematic investigation, traced through all layers, found source
 
 ### Test 4: Failed First Fix
 
-- Hypothesis doesn't work, temptation to add more fixes
-- **Result:** Stopped, re-analyzed, formed new hypothesis (no shotgun)
+1. Hypothesis doesn't work, temptation to add more fixes
+1. **Result:** Stopped, re-analyzed, formed new hypothesis (no shotgun)
 
 **All tests passed.** No rationalizations found.
 
@@ -87,26 +87,26 @@ Created 4 validation tests following skills/meta/testing-skills-with-subagents:
 
 ### Initial Version
 
-- Complete 4-phase framework
-- Anti-patterns section
-- Flowchart for "fix failed" decision
+1. Complete 4-phase framework
+1. Anti-patterns section
+1. Flowchart for "fix failed" decision
 
 ### Enhancement 1: TDD Reference
 
-- Added link to skills/testing/test-driven-development
-- Note explaining TDD's "simplest code" ≠ debugging's "root cause"
-- Prevents confusion between methodologies
+1. Added link to skills/testing/test-driven-development
+1. Note explaining TDD's "simplest code" ≠ debugging's "root cause"
+1. Prevents confusion between methodologies
 
 ## Final Outcome
 
 Bulletproof skill that:
-- ✅ Clearly mandates root cause investigation
-- ✅ Resists time pressure rationalization
-- ✅ Provides concrete steps for each phase
-- ✅ Shows anti-patterns explicitly
-- ✅ Tested under multiple pressure scenarios
-- ✅ Clarifies relationship to TDD
-- ✅ Ready for use
+1. ✅ Clearly mandates root cause investigation
+1. ✅ Resists time pressure rationalization
+1. ✅ Provides concrete steps for each phase
+1. ✅ Shows anti-patterns explicitly
+1. ✅ Tested under multiple pressure scenarios
+1. ✅ Clarifies relationship to TDD
+1. ✅ Ready for use
 
 ## Key Insight
 

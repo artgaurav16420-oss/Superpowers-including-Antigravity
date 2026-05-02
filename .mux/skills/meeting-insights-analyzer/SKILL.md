@@ -9,39 +9,39 @@ This skill transforms your meeting transcripts into actionable insights about yo
 
 ## When to Use This Skill
 
-- Analyzing your communication patterns across multiple meetings
+1. Analyzing your communication patterns across multiple meetings
 
-- Getting feedback on your leadership and facilitation style
+1. Getting feedback on your leadership and facilitation style
 
-- Identifying when you avoid difficult conversations
+1. Identifying when you avoid difficult conversations
 
-- Understanding your speaking habits and filler words
+1. Understanding your speaking habits and filler words
 
-- Tracking improvement in communication skills over time
+1. Tracking improvement in communication skills over time
 
-- Preparing for performance reviews with concrete examples
+1. Preparing for performance reviews with concrete examples
 
-- Coaching team members on their communication style
+1. Coaching team members on their communication style
 
 ## What This Skill Does
 
 1. **Pattern Recognition**: Identifies recurring behaviors across meetings like:
-   - Conflict avoidance or indirect communication
-   - Speaking ratios and turn-taking
-   - Question-asking vs. statement-making patterns
-   - Active listening indicators
-   - Decision-making approaches
+   1. Conflict avoidance or indirect communication
+   1. Speaking ratios and turn-taking
+   1. Question-asking vs. statement-making patterns
+   1. Active listening indicators
+   1. Decision-making approaches
 
 1. **Communication Analysis**: Evaluates communication effectiveness:
-   - Clarity and directness
-   - Use of filler words and hedging language
-   - Tone and sentiment patterns
-   - Meeting control and facilitation
+   1. Clarity and directness
+   1. Use of filler words and hedging language
+   1. Tone and sentiment patterns
+   1. Meeting control and facilitation
 
 1. **Actionable Feedback**: Provides specific, timestamped examples with:
-   - What happened
-   - Why it matters
-   - How to improve
+   1. What happened
+   1. Why it matters
+   1. How to improve
 
 1. **Trend Tracking**: Compares patterns over time when analyzing multiple meetings
 
@@ -85,20 +85,20 @@ Analyze all transcripts in this folder and:
 When a user requests meeting analysis:
 
 1. **Discover Available Data**
-   - Scan the folder for transcript files (.txt, .md, .vtt, .srt, .docx)
-   - Check if files contain speaker labels and timestamps
-   - Confirm the date range of meetings
-   - Identify the user's name/identifier in transcripts
+   1. Scan the folder for transcript files (.txt, .md, .vtt, .srt, .docx)
+   1. Check if files contain speaker labels and timestamps
+   1. Confirm the date range of meetings
+   1. Identify the user's name/identifier in transcripts
 
 1. **Clarify Analysis Goals**
 
    If not specified, ask what they want to learn:
 
-   - Specific behaviors (conflict avoidance, interruptions, filler words)
-   - Communication effectiveness (clarity, directness, listening)
-   - Meeting facilitation skills
-   - Speaking patterns and ratios
-   - Growth areas for improvement
+   1. Specific behaviors (conflict avoidance, interruptions, filler words)
+   1. Communication effectiveness (clarity, directness, listening)
+   1. Meeting facilitation skills
+   1. Speaking patterns and ratios
+   1. Growth areas for improvement
 
 1. **Analyze Patterns**
 
@@ -106,39 +106,39 @@ When a user requests meeting analysis:
 
    **Conflict Avoidance**:
 
-   - Look for hedging language ("maybe", "kind of", "I think")
-   - Indirect phrasing instead of direct requests
-   - Changing subject when tension arises
-   - Agreeing without commitment ("yeah, but...")
-   - Not addressing obvious problems
+   1. Look for hedging language ("maybe", "kind of", "I think")
+   1. Indirect phrasing instead of direct requests
+   1. Changing subject when tension arises
+   1. Agreeing without commitment ("yeah, but...")
+   1. Not addressing obvious problems
 
    **Speaking Ratios**:
 
-   - Calculate percentage of meeting spent speaking
-   - Count interruptions (by and of the user)
-   - Measure average speaking turn length
-   - Track question vs. statement ratios
+   1. Calculate percentage of meeting spent speaking
+   1. Count interruptions (by and of the user)
+   1. Measure average speaking turn length
+   1. Track question vs. statement ratios
 
    **Filler Words**:
 
-   - Count "um", "uh", "like", "you know", "actually", etc.
-   - Note frequency per minute or per speaking turn
-   - Identify situations where they increase (nervous, uncertain)
+   1. Count "um", "uh", "like", "you know", "actually", etc.
+   1. Note frequency per minute or per speaking turn
+   1. Identify situations where they increase (nervous, uncertain)
 
    **Active Listening**:
 
-   - Questions that reference others' previous points
-   - Paraphrasing or summarizing others' ideas
-   - Building on others' contributions
-   - Asking clarifying questions
+   1. Questions that reference others' previous points
+   1. Paraphrasing or summarizing others' ideas
+   1. Building on others' contributions
+   1. Asking clarifying questions
 
    **Leadership & Facilitation**:
 
-   - Decision-making approach (directive vs. collaborative)
-   - How disagreements are handled
-   - Inclusion of quieter participants
-   - Time management and agenda control
-   - Follow-up and action item clarity
+   1. Decision-making approach (directive vs. collaborative)
+   1. How disagreements are handled
+   1. Inclusion of quieter participants
+   1. Time management and agenda control
+   1. Follow-up and action item clarity
 
 1. **Provide Specific Examples**
 
@@ -203,11 +203,11 @@ When a user requests meeting analysis:
    ```
 
 1. **Offer Follow-Up Options**
-   - Track these same metrics in future meetings
-   - Deep dive into specific meetings or patterns
-   - Compare to industry benchmarks
-   - Create a personal communication development plan
-   - Generate a summary for performance reviews
+   1. Track these same metrics in future meetings
+   1. Deep dive into specific meetings or patterns
+   1. Compare to industry benchmarks
+   1. Create a personal communication development plan
+   1. Generate a summary for performance reviews
 
 ## Examples
 
@@ -251,15 +251,15 @@ today."
 
 **Output**: Provides insights on:
 
-- How much you speak vs. team members (60% vs. 40%)
+1. How much you speak vs. team members (60% vs. 40%)
 
-- Whether you ask questions or make statements (3:1 ratio)
+1. Whether you ask questions or make statements (3:1 ratio)
 
-- How you handle disagreements (tendency to resolve too quickly)
+1. How you handle disagreements (tendency to resolve too quickly)
 
-- Who speaks least and whether you draw them in
+1. Who speaks least and whether you draw them in
 
-- Examples of good and missed facilitation moments
+1. Examples of good and missed facilitation moments
 
 ### Example 3: Personal Development Tracking
 
@@ -267,15 +267,15 @@ today."
 
 **Output**: Creates a comparative analysis showing:
 
-- Decrease in interruptions (8 per meeting → 3 per meeting)
+1. Decrease in interruptions (8 per meeting → 3 per meeting)
 
-- Increase in clarifying questions (2 → 7 per meeting)
+1. Increase in clarifying questions (2 → 7 per meeting)
 
-- Improvement in building on others' ideas
+1. Improvement in building on others' ideas
 
-- Specific examples showing the difference
+1. Specific examples showing the difference
 
-- Remaining areas for growth
+1. Remaining areas for growth
 
 ## Setup Tips
 
@@ -283,35 +283,35 @@ today."
 
 **From Granola** (free with Lenny's newsletter subscription):
 
-- Granola auto-transcribes your meetings
+1. Granola auto-transcribes your meetings
 
-- Export transcripts to a folder: [Instructions on how]
+1. Export transcripts to a folder: [Instructions on how]
 
-- Point Claude Code to that folder
+1. Point Claude Code to that folder
 
 **From Zoom**:
 
-- Enable cloud recording with transcription
+1. Enable cloud recording with transcription
 
-- Download VTT or SRT files after meetings
+1. Download VTT or SRT files after meetings
 
-- Store in a dedicated folder
+1. Store in a dedicated folder
 
 **From Google Meet**:
 
-- Use Google Docs auto-transcription
+1. Use Google Docs auto-transcription
 
-- Save transcript docs to a folder
+1. Save transcript docs to a folder
 
-- Download as .txt files or give Claude Code access
+1. Download as .txt files or give Claude Code access
 
 **From Fireflies.ai, Otter.ai, etc.**:
 
-- Export transcripts in bulk
+1. Export transcripts in bulk
 
-- Store in a local folder
+1. Store in a local folder
 
-- Run analysis on the folder
+1. Run analysis on the folder
 
 ### Best Practices
 
@@ -327,34 +327,34 @@ today."
 
 ## Common Analysis Requests
 
-- "When do I avoid difficult conversations?"
+1. "When do I avoid difficult conversations?"
 
-- "How often do I interrupt others?"
+1. "How often do I interrupt others?"
 
-- "What's my speaking vs. listening ratio?"
+1. "What's my speaking vs. listening ratio?"
 
-- "Do I ask good questions?"
+1. "Do I ask good questions?"
 
-- "How do I handle disagreement?"
+1. "How do I handle disagreement?"
 
-- "Am I inclusive of all voices?"
+1. "Am I inclusive of all voices?"
 
-- "Do I use too many filler words?"
+1. "Do I use too many filler words?"
 
-- "How clear are my action items?"
+1. "How clear are my action items?"
 
-- "Do I stay on agenda or get sidetracked?"
+1. "Do I stay on agenda or get sidetracked?"
 
-- "How has my communication changed over time?"
+1. "How has my communication changed over time?"
 
 ## Related Use Cases
 
-- Creating a personal development plan from insights
+1. Creating a personal development plan from insights
 
-- Preparing performance review materials with examples
+1. Preparing performance review materials with examples
 
-- Coaching direct reports on their communication
+1. Coaching direct reports on their communication
 
-- Analyzing customer calls for sales or support patterns
+1. Analyzing customer calls for sales or support patterns
 
-- Studying negotiation tactics and outcomes
+1. Studying negotiation tactics and outcomes

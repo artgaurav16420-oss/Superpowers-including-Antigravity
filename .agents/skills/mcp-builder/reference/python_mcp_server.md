@@ -38,9 +38,9 @@ async def tool_function(params: InputModel) -> str:
 ## MCP Python SDK and FastMCP
 
 The official MCP Python SDK provides FastMCP, a high-level framework for building MCP servers. It provides:
-- Automatic description and inputSchema generation from function signatures and docstrings
-- Pydantic model integration for input validation
-- Decorator-based tool registration with `@mcp.tool`
+1. Automatic description and inputSchema generation from function signatures and docstrings
+1. Pydantic model integration for input validation
+1. Decorator-based tool registration with `@mcp.tool`
 
 ### For complete SDK documentation, use WebFetch to load
 
@@ -49,14 +49,14 @@ The official MCP Python SDK provides FastMCP, a high-level framework for buildin
 ## Server Naming Convention
 
 Python MCP servers must follow this naming pattern:
-- **Format**: `{service}_mcp` (lowercase with underscores)
-- **Examples**: `github_mcp`, `jira_mcp`, `stripe_mcp`
+1. **Format**: `{service}_mcp` (lowercase with underscores)
+1. **Examples**: `github_mcp`, `jira_mcp`, `stripe_mcp`
 
 The name should be:
-- General (not tied to specific features)
-- Descriptive of the service/API being integrated
-- Easy to infer from the task description
-- Without version numbers or dates
+1. General (not tied to specific features)
+1. Descriptive of the service/API being integrated
+1. Easy to infer from the task description
+1. Without version numbers or dates
 
 ## Tool Implementation
 
@@ -65,9 +65,9 @@ The name should be:
 Use snake_case for tool names (e.g., "search_users", "create_project", "get_channel_info") with clear, action-oriented names.
 
 **Avoid Naming Conflicts**: Include the service context to prevent overlaps:
-- Use "slack_send_message" instead of just "send_message"
-- Use "github_create_issue" instead of just "create_issue"
-- Use "asana_list_tasks" instead of just "list_tasks"
+1. Use "slack_send_message" instead of just "send_message"
+1. Use "github_create_issue" instead of just "create_issue"
+1. Use "asana_list_tasks" instead of just "list_tasks"
 
 ### Tool Structure with FastMCP
 
@@ -124,11 +124,11 @@ async def service_tool_name(params: ServiceToolInput) -> str:
 
 ## Pydantic v2 Key Features
 
-- Use `model_config` instead of nested `Config` class
-- Use `field_validator` instead of deprecated `validator`
-- Use `model_dump()` instead of deprecated `dict()`
-- Validators require `@classmethod` decorator
-- Type hints are required for validator methods
+1. Use `model_config` instead of nested `Config` class
+1. Use `field_validator` instead of deprecated `validator`
+1. Use `model_dump()` instead of deprecated `dict()`
+1. Validators require `@classmethod` decorator
+1. Type hints are required for validator methods
 
 ```python
 from pydantic import BaseModel, Field, field_validator, ConfigDict
@@ -172,16 +172,16 @@ class UserSearchInput(BaseModel):
 ```
 
 **Markdown format**:
-- Use headers, lists, and formatting for clarity
-- Convert timestamps to human-readable format (e.g., "2024-01-15 10:30:00 UTC" instead of epoch)
-- Show display names with IDs in parentheses (e.g., "@john.doe (U123456)")
-- Omit verbose metadata (e.g., show only one profile image URL, not all sizes)
-- Group related information logically
+1. Use headers, lists, and formatting for clarity
+1. Convert timestamps to human-readable format (e.g., "2024-01-15 10:30:00 UTC" instead of epoch)
+1. Show display names with IDs in parentheses (e.g., "@john.doe (U123456)")
+1. Omit verbose metadata (e.g., show only one profile image URL, not all sizes)
+1. Group related information logically
 
 **JSON format**:
-- Return complete, structured data suitable for programmatic processing
-- Include all available fields and metadata
-- Use consistent field names and types
+1. Return complete, structured data suitable for programmatic processing
+1. Include all available fields and metadata
+1. Use consistent field names and types
 
 ## Pagination Implementation
 
@@ -550,11 +550,11 @@ async def interactive_tool(resource_id: str, ctx: Context) -> str:
 
 ## Context capabilities
 
-- `ctx.report_progress(progress, message)` - Report progress for long operations
-- `ctx.log_info(message, data)` / `ctx.log_error()` / `ctx.log_debug()` - Logging
-- `ctx.elicit(prompt, input_type)` - Request input from users
-- `ctx.fastmcp.name` - Access server configuration
-- `ctx.read_resource(uri)` - Read MCP resources
+1. `ctx.report_progress(progress, message)` - Report progress for long operations
+1. `ctx.log_info(message, data)` / `ctx.log_error()` / `ctx.log_debug()` - Logging
+1. `ctx.elicit(prompt, input_type)` - Request input from users
+1. `ctx.fastmcp.name` - Access server configuration
+1. `ctx.read_resource(uri)` - Read MCP resources
 
 ### Resource Registration
 
@@ -581,8 +581,8 @@ async def get_setting(key: str, ctx: Context) -> str:
 
 #### When to use Resources vs Tools
 
-- **Resources**: For data access with simple parameters (URI templates)
-- **Tools**: For complex operations with validation and business logic
+1. **Resources**: For data access with simple parameters (URI templates)
+1. **Tools**: For complex operations with validation and business logic
 
 ### Structured Output Types
 
@@ -669,9 +669,9 @@ if __name__ == "__main__":
 
 ### Transport selection
 
-- **Stdio**: Command-line tools, subprocess integration
-- **HTTP**: Web services, remote access, multiple clients
-- **SSE**: Real-time updates, push notifications
+1. **Stdio**: Command-line tools, subprocess integration
+1. **HTTP**: Web services, remote access, multiple clients
+1. **SSE**: Real-time updates, push notifications
 
 ---
 
@@ -682,17 +682,17 @@ if __name__ == "__main__":
 Your implementation MUST prioritize composability and code reuse:
 
 1. **Extract Common Functionality**:
-   - Create reusable helper functions for operations used across multiple tools
-   - Build shared API clients for HTTP requests instead of duplicating code
-   - Centralize error handling logic in utility functions
-   - Extract business logic into dedicated functions that can be composed
-   - Extract shared markdown or JSON field selection & formatting functionality
+   1. Create reusable helper functions for operations used across multiple tools
+   1. Build shared API clients for HTTP requests instead of duplicating code
+   1. Centralize error handling logic in utility functions
+   1. Extract business logic into dedicated functions that can be composed
+   1. Extract shared markdown or JSON field selection & formatting functionality
 
 1. **Avoid Duplication**:
-   - NEVER copy-paste similar code between tools
-   - If you find yourself writing similar logic twice, extract it into a function
-   - Common operations like pagination, filtering, field selection, and formatting should be shared
-   - Authentication/authorization logic should be centralized
+   1. NEVER copy-paste similar code between tools
+   1. If you find yourself writing similar logic twice, extract it into a function
+   1. Common operations like pagination, filtering, field selection, and formatting should be shared
+   1. Authentication/authorization logic should be centralized
 
 ### Python-Specific Best Practices
 
@@ -710,56 +710,56 @@ Before finalizing your Python MCP server implementation, ensure:
 
 ### Strategic Design
 
-- [ ] Tools enable complete workflows, not just API endpoint wrappers
-- [ ] Tool names reflect natural task subdivisions
-- [ ] Response formats optimize for agent context efficiency
-- [ ] Human-readable identifiers used where appropriate
-- [ ] Error messages guide agents toward correct usage
+1. [ ] Tools enable complete workflows, not just API endpoint wrappers
+1. [ ] Tool names reflect natural task subdivisions
+1. [ ] Response formats optimize for agent context efficiency
+1. [ ] Human-readable identifiers used where appropriate
+1. [ ] Error messages guide agents toward correct usage
 
 ### Implementation Quality
 
-- [ ] FOCUSED IMPLEMENTATION: Most important and valuable tools implemented
-- [ ] All tools have descriptive names and documentation
-- [ ] Return types are consistent across similar operations
-- [ ] Error handling is implemented for all external calls
-- [ ] Server name follows format: `{service}_mcp`
-- [ ] All network operations use async/await
-- [ ] Common functionality is extracted into reusable functions
-- [ ] Error messages are clear, actionable, and educational
-- [ ] Outputs are properly validated and formatted
+1. [ ] FOCUSED IMPLEMENTATION: Most important and valuable tools implemented
+1. [ ] All tools have descriptive names and documentation
+1. [ ] Return types are consistent across similar operations
+1. [ ] Error handling is implemented for all external calls
+1. [ ] Server name follows format: `{service}_mcp`
+1. [ ] All network operations use async/await
+1. [ ] Common functionality is extracted into reusable functions
+1. [ ] Error messages are clear, actionable, and educational
+1. [ ] Outputs are properly validated and formatted
 
 ### Tool Configuration
 
-- [ ] All tools implement 'name' and 'annotations' in the decorator
-- [ ] Annotations correctly set (readOnlyHint, destructiveHint, idempotentHint, openWorldHint)
-- [ ] All tools use Pydantic BaseModel for input validation with Field() definitions
-- [ ] All Pydantic Fields have explicit types and descriptions with constraints
-- [ ] All tools have comprehensive docstrings with explicit input/output types
-- [ ] Docstrings include complete schema structure for dict/JSON returns
-- [ ] Pydantic models handle input validation (no manual validation needed)
+1. [ ] All tools implement 'name' and 'annotations' in the decorator
+1. [ ] Annotations correctly set (readOnlyHint, destructiveHint, idempotentHint, openWorldHint)
+1. [ ] All tools use Pydantic BaseModel for input validation with Field() definitions
+1. [ ] All Pydantic Fields have explicit types and descriptions with constraints
+1. [ ] All tools have comprehensive docstrings with explicit input/output types
+1. [ ] Docstrings include complete schema structure for dict/JSON returns
+1. [ ] Pydantic models handle input validation (no manual validation needed)
 
 ### Advanced Features (where applicable)
 
-- [ ] Context injection used for logging, progress, or elicitation
-- [ ] Resources registered for appropriate data endpoints
-- [ ] Lifespan management implemented for persistent connections
-- [ ] Structured output types used (TypedDict, Pydantic models)
-- [ ] Appropriate transport configured (stdio, HTTP, SSE)
+1. [ ] Context injection used for logging, progress, or elicitation
+1. [ ] Resources registered for appropriate data endpoints
+1. [ ] Lifespan management implemented for persistent connections
+1. [ ] Structured output types used (TypedDict, Pydantic models)
+1. [ ] Appropriate transport configured (stdio, HTTP, SSE)
 
 ### Code Quality
 
-- [ ] File includes proper imports including Pydantic imports
-- [ ] Pagination is properly implemented where applicable
-- [ ] Large responses check CHARACTER_LIMIT and truncate with clear messages
-- [ ] Filtering options are provided for potentially large result sets
-- [ ] All async functions are properly defined with `async def`
-- [ ] HTTP client usage follows async patterns with proper context managers
-- [ ] Type hints are used throughout the code
-- [ ] Constants are defined at module level in UPPER_CASE
+1. [ ] File includes proper imports including Pydantic imports
+1. [ ] Pagination is properly implemented where applicable
+1. [ ] Large responses check CHARACTER_LIMIT and truncate with clear messages
+1. [ ] Filtering options are provided for potentially large result sets
+1. [ ] All async functions are properly defined with `async def`
+1. [ ] HTTP client usage follows async patterns with proper context managers
+1. [ ] Type hints are used throughout the code
+1. [ ] Constants are defined at module level in UPPER_CASE
 
 ### Testing
 
-- [ ] Server runs successfully: `python your_server.py --help`
-- [ ] All imports resolve correctly
-- [ ] Sample tool calls work as expected
-- [ ] Error scenarios handled gracefully
+1. [ ] Server runs successfully: `python your_server.py --help`
+1. [ ] All imports resolve correctly
+1. [ ] Sample tool calls work as expected
+1. [ ] Error scenarios handled gracefully

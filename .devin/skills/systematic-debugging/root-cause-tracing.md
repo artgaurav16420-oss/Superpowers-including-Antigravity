@@ -25,10 +25,10 @@ digraph when_to_use {
 
 ### Use when
 
-- Error happens deep in execution (not at entry point)
-- Stack trace shows long call chain
-- Unclear where invalid data originated
-- Need to find which test/code triggers the problem
+1. Error happens deep in execution (not at entry point)
+1. Stack trace shows long call chain
+1. Unclear where invalid data originated
+1. Need to find which test/code triggers the problem
 
 ## The Tracing Process
 
@@ -59,9 +59,9 @@ WorktreeManager.createSessionWorktree(projectDir, sessionId)
 
 #### What value was passed
 
-- `projectDir = ''` (empty string!)
-- Empty string as `cwd` resolves to `process.cwd()`
-- That's the source code directory!
+1. `projectDir = ''` (empty string!)
+1. Empty string as `cwd` resolves to `process.cwd()`
+1. That's the source code directory!
 
 ### 5. Find Original Trigger
 
@@ -101,9 +101,9 @@ npm test 2>&1 | grep 'DEBUG git init'
 
 #### Analyze stack traces
 
-- Look for test file names
-- Find the line number triggering the call
-- Identify the pattern (same test? same parameter?)
+1. Look for test file names
+1. Find the line number triggering the call
+1. Identify the pattern (same test? same parameter?)
 
 ## Finding Which Test Causes Pollution
 
@@ -135,10 +135,10 @@ Runs tests one-by-one, stops at first polluter. See script for usage.
 
 #### Also added defense-in-depth
 
-- Layer 1: Project.create() validates directory
-- Layer 2: WorkspaceManager validates not empty
-- Layer 3: NODE_ENV guard refuses git init outside tmpdir
-- Layer 4: Stack trace logging before git init
+1. Layer 1: Project.create() validates directory
+1. Layer 2: WorkspaceManager validates not empty
+1. Layer 3: NODE_ENV guard refuses git init outside tmpdir
+1. Layer 4: Stack trace logging before git init
 
 ## Key Principle
 
@@ -176,7 +176,7 @@ digraph principle {
 ## Real-World Impact
 
 From debugging session (2025-10-03):
-- Found root cause through 5-level trace
-- Fixed at source (getter validation)
-- Added 4 layers of defense
-- 1847 tests passed, zero pollution
+1. Found root cause through 5-level trace
+1. Fixed at source (getter validation)
+1. Added 4 layers of defense
+1. 1847 tests passed, zero pollution

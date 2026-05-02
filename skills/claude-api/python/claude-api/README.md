@@ -268,8 +268,8 @@ response2 = conversation.send("What's my name?")  # Claude remembers "Alice"
 
 ### Rules
 
-- Messages must alternate between `user` and `assistant`
-- First message must be `user`
+1. Messages must alternate between `user` and `assistant`
+1. First message must be `user`
 
 ---
 
@@ -314,7 +314,7 @@ print(chat("Now add rate limiting and error handling"))
 The `stop_reason` field in the response indicates why the model stopped generating:
 
 | Value | Meaning |
-|::::::::---::::::::----|::::::::---::::::::---::::::::---|
+|:::::::::---:::::::::----|:::::::::---:::::::::---:::::::::---|
 | `end_turn` | Claude finished its response naturally |
 | `max_tokens` | Hit the `max_tokens` limit — increase it or use streaming |
 | `stop_sequence` | Hit a custom stop sequence |

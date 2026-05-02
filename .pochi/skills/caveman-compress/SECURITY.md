@@ -12,11 +12,11 @@
 
 ### What the skill does NOT do
 
-- Does not execute user file content as code
-- Does not make network requests except to Anthropic's API (via SDK or CLI)
-- Does not access files outside the path the user provides
-- Does not use shell=True or string interpolation in subprocess calls
-- Does not collect or transmit any data beyond the file being compressed
+1. Does not execute user file content as code
+1. Does not make network requests except to Anthropic's API (via SDK or CLI)
+1. Does not access files outside the path the user provides
+1. Does not use shell=True or string interpolation in subprocess calls
+1. Does not collect or transmit any data beyond the file being compressed
 
 ### Auth behavior
 

@@ -1,4 +1,4 @@
-#
+# 
 
 ## Instructions
 
@@ -12,8 +12,8 @@
   1. Confirm any specific formatting requirements
 
   Use these general principles:
-  - Be clear and concise
-  - Use active voice
-  - Put the most important information first
-  - Include relevant links and references
-  - Match the company's communication style
+  1. Be clear and concise
+  1. Use active voice
+  1. Put the most important information first
+  1. Include relevant links and references
+  1. Match the company's communication style

@@ -34,21 +34,21 @@ digraph when_to_use {
 
 ### Use when
 
-- 3+ test files failing with different root causes
+1. 3+ test files failing with different root causes
 
-- Multiple subsystems broken independently
+1. Multiple subsystems broken independently
 
-- Each problem can be understood without context from others
+1. Each problem can be understood without context from others
 
-- No shared state between investigations
+1. No shared state between investigations
 
 #### Don't use when
 
-- Failures are related (fix one might fix others)
+1. Failures are related (fix one might fix others)
 
-- Need to understand full system state
+1. Need to understand full system state
 
-- Agents would interfere with each other
+1. Agents would interfere with each other
 
 ## The Pattern
 
@@ -56,11 +56,11 @@ digraph when_to_use {
 
 Group failures by what's broken:
 
-- File A tests: Tool approval flow
+1. File A tests: Tool approval flow
 
-- File B tests: Batch completion behavior
+1. File B tests: Batch completion behavior
 
-- File C tests: Abort functionality
+1. File C tests: Abort functionality
 
 Each domain is independent - fixing tool approval doesn't affect abort tests.
 
@@ -68,13 +68,13 @@ Each domain is independent - fixing tool approval doesn't affect abort tests.
 
 Each agent gets:
 
-- **Specific scope:** One test file or subsystem
+1. **Specific scope:** One test file or subsystem
 
-- **Clear goal:** Make these tests pass
+1. **Clear goal:** Make these tests pass
 
-- **Constraints:** Don't change other code
+1. **Constraints:** Don't change other code
 
-- **Expected output:** Summary of what you found and fixed
+1. **Expected output:** Summary of what you found and fixed
 
 ### 3. Dispatch in Parallel
 
@@ -90,13 +90,13 @@ Task("Fix tool-approval-race-conditions.test.ts failures")
 
 When agents return:
 
-- Read each summary
+1. Read each summary
 
-- Verify fixes don't conflict
+1. Verify fixes don't conflict
 
-- Run full test suite
+1. Run full test suite
 
-- Integrate all changes
+1. Integrate all changes
 
 ## Agent Prompt Structure
 
@@ -151,11 +151,11 @@ Return: Summary of what you found and what you fixed.
 
 ### Failures
 
-- agent-tool-abort.test.ts: 3 failures (timing issues)
+1. agent-tool-abort.test.ts: 3 failures (timing issues)
 
-- batch-completion-behavior.test.ts: 2 failures (tools not executing)
+1. batch-completion-behavior.test.ts: 2 failures (tools not executing)
 
-- tool-approval-race-conditions.test.ts: 1 failure (execution count = 0)
+1. tool-approval-race-conditions.test.ts: 1 failure (execution count = 0)
 
 **Decision:** Independent domains - abort logic separate from batch completion separate from race conditions
 
@@ -169,11 +169,11 @@ Agent 3 → Fix tool-approval-race-conditions.test.ts
 
 #### Results
 
-- Agent 1: Replaced timeouts with event-based waiting
+1. Agent 1: Replaced timeouts with event-based waiting
 
-- Agent 2: Fixed event structure bug (threadId in wrong place)
+1. Agent 2: Fixed event structure bug (threadId in wrong place)
 
-- Agent 3: Added wait for async tool execution to complete
+1. Agent 3: Added wait for async tool execution to complete
 
 **Integration:** All fixes independent, no conflicts, full suite green
 
@@ -205,12 +205,12 @@ After agents return:
 
 From debugging session (2025-10-03):
 
-- 6 failures across 3 files
+1. 6 failures across 3 files
 
-- 3 agents dispatched in parallel
+1. 3 agents dispatched in parallel
 
-- All investigations completed concurrently
+1. All investigations completed concurrently
 
-- All fixes integrated successfully
+1. All fixes integrated successfully
 
-- Zero conflicts between agent changes
+1. Zero conflicts between agent changes

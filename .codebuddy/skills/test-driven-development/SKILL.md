@@ -17,21 +17,21 @@ Write the test first. Watch it fail. Write minimal code to pass.
 
 ### Always
 
-- New features
+1. New features
 
-- Bug fixes
+1. Bug fixes
 
-- Refactoring
+1. Refactoring
 
-- Behavior changes
+1. Behavior changes
 
 #### Exceptions (ask your human partner)
 
-- Throwaway prototypes
+1. Throwaway prototypes
 
-- Generated code
+1. Generated code
 
-- Configuration files
+1. Configuration files
 
 Thinking "skip TDD just this once"? Stop. That's rationalization.
 
@@ -45,13 +45,13 @@ Write code before the test? Delete it. Start over.
 
 ### No exceptions
 
-- Don't keep it as "reference"
+1. Don't keep it as "reference"
 
-- Don't "adapt" it while writing tests
+1. Don't "adapt" it while writing tests
 
-- Don't look at it
+1. Don't look at it
 
-- Delete means delete
+1. Delete means delete
 
 Implement fresh from tests. Period.
 
@@ -119,11 +119,11 @@ Vague name, tests mock not code
 
 #### Requirements
 
-- One behavior
+1. One behavior
 
-- Clear name
+1. Clear name
 
-- Real code (no mocks unless unavoidable)
+1. Real code (no mocks unless unavoidable)
 
 ### Verify RED - Watch It Fail
 
@@ -135,11 +135,11 @@ npm test path/to/test.test.ts
 
 Confirm:
 
-- Test fails (not errors)
+1. Test fails (not errors)
 
-- Failure message is expected
+1. Failure message is expected
 
-- Fails because feature missing (not typos)
+1. Fails because feature missing (not typos)
 
 **Test passes?** You're testing existing behavior. Fix test.
 
@@ -197,11 +197,11 @@ npm test path/to/test.test.ts
 
 Confirm:
 
-- Test passes
+1. Test passes
 
-- Other tests still pass
+1. Other tests still pass
 
-- Output pristine (no errors, warnings)
+1. Output pristine (no errors, warnings)
 
 **Test fails?** Fix code, not test.
 
@@ -211,11 +211,11 @@ Confirm:
 
 After green only:
 
-- Remove duplication
+1. Remove duplication
 
-- Improve names
+1. Improve names
 
-- Extract helpers
+1. Extract helpers
 
 Keep tests green. Don't add behavior.
 
@@ -226,7 +226,7 @@ Next failing test for next feature.
 ## Good Tests
 
 | Quality | Good | Bad |
-|::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---|::::::::::::::::::::::::::---::::::::::::::::::::::::::---|::::::::::::::::::::::::::-----|
+|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---|:::::::::::::::::::::::::::-----|
 | **Minimal** | One thing. "and" in name? Split it. | `test('validates email and domain and whitespace')` |
 
 | **Clear** | Name describes behavior | `test('test1')` |
@@ -239,13 +239,13 @@ Next failing test for next feature.
 
 Tests written after code pass immediately. Passing immediately proves nothing:
 
-- Might test wrong thing
+1. Might test wrong thing
 
-- Might test implementation, not behavior
+1. Might test implementation, not behavior
 
-- Might miss edge cases you forgot
+1. Might miss edge cases you forgot
 
-- You never saw it catch the bug
+1. You never saw it catch the bug
 
 Test-first forces you to see the test fail, proving it actually tests something.
 
@@ -253,13 +253,13 @@ Test-first forces you to see the test fail, proving it actually tests something.
 
 Manual testing is ad-hoc. You think you tested everything but:
 
-- No record of what you tested
+1. No record of what you tested
 
-- Can't re-run when code changes
+1. Can't re-run when code changes
 
-- Easy to forget cases under pressure
+1. Easy to forget cases under pressure
 
-- "It worked when I tried it" ≠ comprehensive
+1. "It worked when I tried it" ≠ comprehensive
 
 Automated tests are systematic. They run the same way every time.
 
@@ -267,9 +267,9 @@ Automated tests are systematic. They run the same way every time.
 
 Sunk cost fallacy. The time is already gone. Your choice now:
 
-- Delete and rewrite with TDD (X more hours, high confidence)
+1. Delete and rewrite with TDD (X more hours, high confidence)
 
-- Keep it and add tests after (30 min, low confidence, likely bugs)
+1. Keep it and add tests after (30 min, low confidence, likely bugs)
 
 The "waste" is keeping code you can't trust. Working code without real tests is technical debt.
 
@@ -277,13 +277,13 @@ The "waste" is keeping code you can't trust. Working code without real tests is 
 
 TDD IS pragmatic:
 
-- Finds bugs before commit (faster than debugging after)
+1. Finds bugs before commit (faster than debugging after)
 
-- Prevents regressions (tests catch breaks immediately)
+1. Prevents regressions (tests catch breaks immediately)
 
-- Documents behavior (tests show how to use code)
+1. Documents behavior (tests show how to use code)
 
-- Enables refactoring (change freely, tests catch breaks)
+1. Enables refactoring (change freely, tests catch breaks)
 
 "Pragmatic" shortcuts = debugging in production = slower.
 
@@ -300,7 +300,7 @@ Tests-first force edge case discovery before implementing. Tests-after verify yo
 ## Common Rationalizations
 
 | Excuse | Reality |
-|::::::::::::::::::::::::::---::::::::::::::::::::::::::-----|::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---|
+|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::-----|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---|
 | "Too simple to test" | Simple code breaks. Test takes 30 seconds. |
 | "I'll test after" | Tests passing immediately prove nothing. |
 | "Tests after achieve same goals" | Tests-after = "what does this do?" Tests-first = "what should this do?" |
@@ -315,31 +315,31 @@ Tests-first force edge case discovery before implementing. Tests-after verify yo
 
 ## Red Flags - STOP and Start Over
 
-- Code before test
+1. Code before test
 
-- Test after implementation
+1. Test after implementation
 
-- Test passes immediately
+1. Test passes immediately
 
-- Can't explain why test failed
+1. Can't explain why test failed
 
-- Tests added "later"
+1. Tests added "later"
 
-- Rationalizing "just this once"
+1. Rationalizing "just this once"
 
-- "I already manually tested it"
+1. "I already manually tested it"
 
-- "Tests after achieve the same purpose"
+1. "Tests after achieve the same purpose"
 
-- "It's about spirit not ritual"
+1. "It's about spirit not ritual"
 
-- "Keep as reference" or "adapt existing code"
+1. "Keep as reference" or "adapt existing code"
 
-- "Already spent X hours, deleting is wasteful"
+1. "Already spent X hours, deleting is wasteful"
 
-- "TDD is dogmatic, I'm being pragmatic"
+1. "TDD is dogmatic, I'm being pragmatic"
 
-- "This is different because..."
+1. "This is different because..."
 
 ### All of these mean: Delete code. Start over with TDD
 
@@ -389,28 +389,28 @@ Extract validation for multiple fields if needed.
 
 Before marking work complete:
 
-- [ ] Every new function/method has a test
+1. [ ] Every new function/method has a test
 
-- [ ] Watched each test fail before implementing
+1. [ ] Watched each test fail before implementing
 
-- [ ] Each test failed for expected reason (feature missing, not typo)
+1. [ ] Each test failed for expected reason (feature missing, not typo)
 
-- [ ] Wrote minimal code to pass each test
+1. [ ] Wrote minimal code to pass each test
 
-- [ ] All tests pass
+1. [ ] All tests pass
 
-- [ ] Output pristine (no errors, warnings)
+1. [ ] Output pristine (no errors, warnings)
 
-- [ ] Tests use real code (mocks only if unavoidable)
+1. [ ] Tests use real code (mocks only if unavoidable)
 
-- [ ] Edge cases and errors covered
+1. [ ] Edge cases and errors covered
 
 Can't check all boxes? You skipped TDD. Start over.
 
 ## When Stuck
 
 | Problem | Solution |
-|::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---|::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::----|
+|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::----|
 | Don't know how to test | Write wished-for API. Write assertion first. Ask your human partner. |
 | Test too complicated | Design too complicated. Simplify interface. |
 | Must mock everything | Code too coupled. Use dependency injection. |
@@ -426,11 +426,11 @@ Never fix bugs without a test.
 
 When adding mocks or test utilities, read @testing-anti-patterns.md to avoid common pitfalls:
 
-- Testing mock behavior instead of real behavior
+1. Testing mock behavior instead of real behavior
 
-- Adding test-only methods to production classes
+1. Adding test-only methods to production classes
 
-- Mocking without understanding dependencies
+1. Mocking without understanding dependencies
 
 ## Final Rule
 

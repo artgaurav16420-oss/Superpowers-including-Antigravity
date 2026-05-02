@@ -34,11 +34,11 @@ Each tool requires a name, description, and JSON Schema for its inputs:
 
 #### Best practices for tool definitions
 
-- Use clear, descriptive names (e.g., `get_weather`, `search_database`, `send_email`)
-- Write detailed descriptions — Claude uses these to decide when to use the tool
-- Include descriptions for each property
-- Use `enum` for parameters with a fixed set of values
-- Mark truly required parameters in `required`; make others optional with defaults
+1. Use clear, descriptive names (e.g., `get_weather`, `search_database`, `send_email`)
+1. Write detailed descriptions — Claude uses these to decide when to use the tool
+1. Include descriptions for each property
+1. Use `enum` for parameters with a fixed set of values
+1. Mark truly required parameters in `required`; make others optional with defaults
 
 ---
 
@@ -47,7 +47,7 @@ Each tool requires a name, description, and JSON Schema for its inputs:
 Control when Claude uses tools:
 
 | Value                             | Behavior                                      |
-| ::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::--- | ::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::--- |
+| :::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::--- | :::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::--- |
 | `{"type": "auto"}`                | Claude decides whether to use tools (default) |
 | `{"type": "any"}`                 | Claude must use at least one tool             |
 | `{"type": "tool", "name": "..."}` | Claude must use the specified tool            |
@@ -104,11 +104,11 @@ The code execution tool lets Claude run code in a secure, sandboxed container. U
 
 ### Key Facts
 
-- Runs in an isolated container (1 CPU, 5 GiB RAM, 5 GiB disk)
-- No internet access (fully sandboxed)
-- Python 3.11 with data science libraries pre-installed
-- Containers persist for 30 days and can be reused across requests
-- Free when used with web search/web fetch tools; otherwise $0.05/hour after 1,550 free hours/month per organization
+1. Runs in an isolated container (1 CPU, 5 GiB RAM, 5 GiB disk)
+1. No internet access (fully sandboxed)
+1. Python 3.11 with data science libraries pre-installed
+1. Containers persist for 30 days and can be reused across requests
+1. Free when used with web search/web fetch tools; otherwise $0.05/hour after 1,550 free hours/month per organization
 
 ### Tool Definition
 
@@ -125,18 +125,18 @@ Claude automatically gains access to `bash_code_execution` (run shell commands) 
 
 ### Pre-installed Python Libraries
 
-- **Data science**: pandas, numpy, scipy, scikit-learn, statsmodels
-- **Visualization**: matplotlib, seaborn
-- **File processing**: openpyxl, xlsxwriter, pillow, pypdf, pdfplumber, python-docx, python-pptx
-- **Math**: sympy, mpmath
-- **Utilities**: tqdm, python-dateutil, pytz, sqlite3
+1. **Data science**: pandas, numpy, scipy, scikit-learn, statsmodels
+1. **Visualization**: matplotlib, seaborn
+1. **File processing**: openpyxl, xlsxwriter, pillow, pypdf, pdfplumber, python-docx, python-pptx
+1. **Math**: sympy, mpmath
+1. **Utilities**: tqdm, python-dateutil, pytz, sqlite3
 
 Additional packages can be installed at runtime via `pip install`.
 
 ### Supported File Types for Upload
 
 | Type   | Extensions                         |
-| ::::::::---::::::::--- | ::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---- |
+| :::::::::---:::::::::--- | :::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---- |
 | Data   | CSV, Excel (.xlsx/.xls), JSON, XML |
 | Images | JPEG, PNG, GIF, WebP               |
 | Text   | .txt, .md, .py, .js, etc.          |
@@ -149,10 +149,10 @@ Reuse containers across requests to maintain state (files, installed packages, v
 
 The response contains interleaved text and tool result blocks:
 
-- `text` — Claude's explanation
-- `server_tool_use` — What Claude is doing
-- `bash_code_execution_tool_result` — Code execution output (check `return_code` for success/failure)
-- `text_editor_code_execution_tool_result` — File operation results
+1. `text` — Claude's explanation
+1. `server_tool_use` — What Claude is doing
+1. `bash_code_execution_tool_result` — Code execution output (check `return_code` for success/failure)
+1. `text_editor_code_execution_tool_result` — File operation results
 
 > **Security:** Always sanitize filenames with `os.path.basename()` / `path.basename()` before writing downloaded files to disk to prevent path traversal attacks. Write files to a dedicated output directory.
 
@@ -198,7 +198,7 @@ Programmatic tool calling lets Claude compose those calls into a script. The scr
 
 For full documentation, use WebFetch:
 
-- URL: `https://platform.claude.com/docs/en/agents-and-tools/tool-use/programmatic-tool-calling`
+1. URL: `https://platform.claude.com/docs/en/agents-and-tools/tool-use/programmatic-tool-calling`
 
 ---
 
@@ -208,7 +208,7 @@ The tool search tool lets Claude dynamically discover tools from large libraries
 
 For full documentation, use WebFetch:
 
-- URL: `https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-search-tool`
+1. URL: `https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-search-tool`
 
 ---
 
@@ -218,7 +218,7 @@ Skills package task-specific instructions that Claude loads only when relevant. 
 
 For full documentation, use WebFetch:
 
-- URL: `https://platform.claude.com/docs/en/agents-and-tools/skills`
+1. URL: `https://platform.claude.com/docs/en/agents-and-tools/skills`
 
 ---
 
@@ -228,7 +228,7 @@ You can provide sample tool calls directly in your tool definitions to demonstra
 
 For full documentation, use WebFetch:
 
-- URL: `https://platform.claude.com/docs/en/agents-and-tools/tool-use/implement-tool-use`
+1. URL: `https://platform.claude.com/docs/en/agents-and-tools/tool-use/implement-tool-use`
 
 ---
 
@@ -238,7 +238,7 @@ Computer use lets Claude interact with a desktop environment (screenshots, mouse
 
 For full documentation, use WebFetch:
 
-- URL: `https://platform.claude.com/docs/en/agents-and-tools/computer-use/overview`
+1. URL: `https://platform.claude.com/docs/en/agents-and-tools/computer-use/overview`
 
 ---
 
@@ -248,7 +248,7 @@ Context editing clears stale tool results and thinking blocks from the transcrip
 
 For full documentation, use WebFetch:
 
-- URL: `https://platform.claude.com/docs/en/build-with-claude/context-editing`
+1. URL: `https://platform.claude.com/docs/en/build-with-claude/context-editing`
 
 ---
 
@@ -258,16 +258,16 @@ The memory tool enables Claude to store and retrieve information across conversa
 
 ### Key Facts (2)
 
-- Client-side tool — you control storage via your implementation
-- Supports commands: `view`, `create`, `str_replace`, `insert`, `delete`, `rename`
-- Operates on files in a `/memories` directory
-- The Python, TypeScript, and Java SDKs provide helper classes/functions for implementing the memory backend
+1. Client-side tool — you control storage via your implementation
+1. Supports commands: `view`, `create`, `str_replace`, `insert`, `delete`, `rename`
+1. Operates on files in a `/memories` directory
+1. The Python, TypeScript, and Java SDKs provide helper classes/functions for implementing the memory backend
 
 > **Security:** Never store API keys, passwords, tokens, or other secrets in memory files. Be cautious with personally identifiable information (PII) — check data privacy regulations (GDPR, CCPA) before persisting user data. The reference implementations have no built-in access control; in multi-user systems, implement per-user memory directories and authentication in your tool handlers.
 
 For full implementation examples, use WebFetch:
 
-- Docs: `https://platform.claude.com/docs/en/agents-and-tools/tool-use/memory-tool.md`
+1. Docs: `https://platform.claude.com/docs/en/agents-and-tools/tool-use/memory-tool.md`
 
 ---
 
@@ -277,8 +277,8 @@ Structured outputs constrain Claude's responses to follow a specific JSON schema
 
 Two features are available:
 
-- **JSON outputs** (`output_config.format`): Control Claude's response format
-- **Strict tool use** (`strict: true`): Guarantee valid tool parameter schemas
+1. **JSON outputs** (`output_config.format`): Control Claude's response format
+1. **Strict tool use** (`strict: true`): Guarantee valid tool parameter schemas
 
 **Supported models:** Claude Opus 4.7, Claude Sonnet 4.6, and Claude Haiku 4.5. Legacy models (Claude Opus 4.5, Claude Opus 4.1) also support structured outputs.
 
@@ -288,28 +288,28 @@ Two features are available:
 
 #### Supported
 
-- Basic types: object, array, string, integer, number, boolean, null
-- `enum`, `const`, `anyOf`, `allOf`, `$ref`/`$def`
-- String formats: `date-time`, `time`, `date`, `duration`, `email`, `hostname`, `uri`, `ipv4`, `ipv6`, `uuid`
-- `additionalProperties: false` (required for all objects)
+1. Basic types: object, array, string, integer, number, boolean, null
+1. `enum`, `const`, `anyOf`, `allOf`, `$ref`/`$def`
+1. String formats: `date-time`, `time`, `date`, `duration`, `email`, `hostname`, `uri`, `ipv4`, `ipv6`, `uuid`
+1. `additionalProperties: false` (required for all objects)
 
 #### Not supported
 
-- Recursive schemas
-- Numerical constraints (`minimum`, `maximum`, `multipleOf`)
-- String constraints (`minLength`, `maxLength`)
-- Complex array constraints
-- `additionalProperties` set to anything other than `false`
+1. Recursive schemas
+1. Numerical constraints (`minimum`, `maximum`, `multipleOf`)
+1. String constraints (`minLength`, `maxLength`)
+1. Complex array constraints
+1. `additionalProperties` set to anything other than `false`
 
 The Python and TypeScript SDKs automatically handle unsupported constraints by removing them from the schema sent to the API and validating them client-side.
 
 ### Important Notes
 
-- **First request latency**: New schemas incur a one-time compilation cost. Subsequent requests with the same schema use a 24-hour cache.
-- **Refusals**: If Claude refuses for safety reasons (`stop_reason: "refusal"`), the output may not match your schema.
-- **Token limits**: If `stop_reason: "max_tokens"`, output may be incomplete. Increase `max_tokens`.
-- **Incompatible with**: Citations (returns 400 error), message prefilling.
-- **Works with**: Batches API, streaming, token counting, extended thinking.
+1. **First request latency**: New schemas incur a one-time compilation cost. Subsequent requests with the same schema use a 24-hour cache.
+1. **Refusals**: If Claude refuses for safety reasons (`stop_reason: "refusal"`), the output may not match your schema.
+1. **Token limits**: If `stop_reason: "max_tokens"`, output may be incomplete. Increase `max_tokens`.
+1. **Incompatible with**: Citations (returns 400 error), message prefilling.
+1. **Works with**: Batches API, streaming, token counting, extended thinking.
 
 ---
 
@@ -324,4 +324,4 @@ The Python and TypeScript SDKs automatically handle unsupported constraints by r
 
 For detailed tool use documentation, use WebFetch:
 
-- URL: `https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview`
+1. URL: `https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview`

@@ -26,51 +26,51 @@ Before diving into implementation, understand how to design tools for AI agents 
 
 #### Build for Workflows, Not Just API Endpoints
 
-- Don't simply wrap existing API endpoints - build thoughtful, high-impact workflow tools
+1. Don't simply wrap existing API endpoints - build thoughtful, high-impact workflow tools
 
-- Consolidate related operations (e.g., `schedule_event` that both checks availability and creates event)
+1. Consolidate related operations (e.g., `schedule_event` that both checks availability and creates event)
 
-- Focus on tools that enable complete tasks, not just individual API calls
+1. Focus on tools that enable complete tasks, not just individual API calls
 
-- Consider what workflows agents actually need to accomplish
+1. Consider what workflows agents actually need to accomplish
 
 #### Optimize for Limited Context
 
-- Agents have constrained context windows - make every token count
+1. Agents have constrained context windows - make every token count
 
-- Return high-signal information, not exhaustive data dumps
+1. Return high-signal information, not exhaustive data dumps
 
-- Provide "concise" vs "detailed" response format options
+1. Provide "concise" vs "detailed" response format options
 
-- Default to human-readable identifiers over technical codes (names over IDs)
+1. Default to human-readable identifiers over technical codes (names over IDs)
 
-- Consider the agent's context budget as a scarce resource
+1. Consider the agent's context budget as a scarce resource
 
 #### Design Actionable Error Messages
 
-- Error messages should guide agents toward correct usage patterns
+1. Error messages should guide agents toward correct usage patterns
 
-- Suggest specific next steps: "Try using filter='active_only' to reduce results"
+1. Suggest specific next steps: "Try using filter='active_only' to reduce results"
 
-- Make errors educational, not just diagnostic
+1. Make errors educational, not just diagnostic
 
-- Help agents learn proper tool usage through clear feedback
+1. Help agents learn proper tool usage through clear feedback
 
 #### Follow Natural Task Subdivisions
 
-- Tool names should reflect how humans think about tasks
+1. Tool names should reflect how humans think about tasks
 
-- Group related tools with consistent prefixes for discoverability
+1. Group related tools with consistent prefixes for discoverability
 
-- Design tools around natural workflows, not just API structure
+1. Design tools around natural workflows, not just API structure
 
 #### Use Evaluation-Driven Development
 
-- Create realistic evaluation scenarios early
+1. Create realistic evaluation scenarios early
 
-- Let agent feedback drive tool improvements
+1. Let agent feedback drive tool improvements
 
-- Prototype quickly and iterate based on actual agent performance
+1. Prototype quickly and iterate based on actual agent performance
 
 #### 1.3 Study MCP Protocol Documentation
 
@@ -84,35 +84,35 @@ This comprehensive document contains the complete MCP specification and guidelin
 
 #### Load and read the following reference files
 
-- **MCP Best Practices**: [📋 View Best Practices](./reference/mcp_best_practices.md) - Core guidelines for all MCP servers
+1. **MCP Best Practices**: [📋 View Best Practices](./reference/mcp_best_practices.md) - Core guidelines for all MCP servers
 
 #### For Python implementations, also load
 
-- **Python SDK Documentation**: Use WebFetch to load `https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/main/README.md`
+1. **Python SDK Documentation**: Use WebFetch to load `https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/main/README.md`
 
-- [🐍 Python Implementation Guide](./reference/python_mcp_server.md) - Python-specific best practices and examples
+1. [🐍 Python Implementation Guide](./reference/python_mcp_server.md) - Python-specific best practices and examples
 
 #### For Node/TypeScript implementations, also load
 
-- **TypeScript SDK Documentation**: Use WebFetch to load `https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/main/README.md`
+1. **TypeScript SDK Documentation**: Use WebFetch to load `https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/main/README.md`
 
-- [⚡ TypeScript Implementation Guide](./reference/node_mcp_server.md) - Node/TypeScript-specific best practices and examples
+1. [⚡ TypeScript Implementation Guide](./reference/node_mcp_server.md) - Node/TypeScript-specific best practices and examples
 
 #### 1.5 Exhaustively Study API Documentation
 
 To integrate a service, read through **ALL** available API documentation:
 
-- Official API reference documentation
+1. Official API reference documentation
 
-- Authentication and authorization requirements
+1. Authentication and authorization requirements
 
-- Rate limiting and pagination patterns
+1. Rate limiting and pagination patterns
 
-- Error responses and status codes
+1. Error responses and status codes
 
-- Available endpoints and their parameters
+1. Available endpoints and their parameters
 
-- Data models and schemas
+1. Data models and schemas
 
 #### To gather comprehensive information, use web search and the WebFetch tool as needed
 
@@ -122,41 +122,41 @@ Based on your research, create a detailed plan that includes:
 
 #### Tool Selection
 
-- List the most valuable endpoints/operations to implement
+1. List the most valuable endpoints/operations to implement
 
-- Prioritize tools that enable the most common and important use cases
+1. Prioritize tools that enable the most common and important use cases
 
-- Consider which tools work together to enable complex workflows
+1. Consider which tools work together to enable complex workflows
 
 #### Shared Utilities and Helpers
 
-- Identify common API request patterns
+1. Identify common API request patterns
 
-- Plan pagination helpers
+1. Plan pagination helpers
 
-- Design filtering and formatting utilities
+1. Design filtering and formatting utilities
 
-- Plan error handling strategies
+1. Plan error handling strategies
 
 #### Input/Output Design
 
-- Define input validation models (Pydantic for Python, Zod for TypeScript)
+1. Define input validation models (Pydantic for Python, Zod for TypeScript)
 
-- Design consistent response formats (e.g., JSON or Markdown), and configurable levels of detail (e.g., Detailed or Concise)
+1. Design consistent response formats (e.g., JSON or Markdown), and configurable levels of detail (e.g., Detailed or Concise)
 
-- Plan for large-scale usage (thousands of users/resources)
+1. Plan for large-scale usage (thousands of users/resources)
 
-- Implement character limits and truncation strategies (e.g., 25,000 tokens)
+1. Implement character limits and truncation strategies (e.g., 25,000 tokens)
 
 #### Error Handling Strategy
 
-- Plan graceful failure modes
+1. Plan graceful failure modes
 
-- Design clear, actionable, LLM-friendly, natural language error messages which prompt further action
+1. Design clear, actionable, LLM-friendly, natural language error messages which prompt further action
 
-- Consider rate limiting and timeout scenarios
+1. Consider rate limiting and timeout scenarios
 
-- Handle authentication and authorization errors
+1. Handle authentication and authorization errors
 
 ---
 
@@ -168,35 +168,35 @@ Now that you have a comprehensive plan, begin implementation following language-
 
 #### For Python
 
-- Create a single `.py` file or organize into modules if complex (see [🐍 Python Guide](./reference/python_mcp_server.md))
+1. Create a single `.py` file or organize into modules if complex (see [🐍 Python Guide](./reference/python_mcp_server.md))
 
-- Use the MCP Python SDK for tool registration
+1. Use the MCP Python SDK for tool registration
 
-- Define Pydantic models for input validation
+1. Define Pydantic models for input validation
 
 #### For Node/TypeScript
 
-- Create proper project structure (see [⚡ TypeScript Guide](./reference/node_mcp_server.md))
+1. Create proper project structure (see [⚡ TypeScript Guide](./reference/node_mcp_server.md))
 
-- Set up `package.json` and `tsconfig.json`
+1. Set up `package.json` and `tsconfig.json`
 
-- Use MCP TypeScript SDK
+1. Use MCP TypeScript SDK
 
-- Define Zod schemas for input validation
+1. Define Zod schemas for input validation
 
 #### 2.2 Implement Core Infrastructure First
 
 #### To begin implementation, create shared utilities before implementing tools
 
-- API request helper functions
+1. API request helper functions
 
-- Error handling utilities
+1. Error handling utilities
 
-- Response formatting functions (JSON and Markdown)
+1. Response formatting functions (JSON and Markdown)
 
-- Pagination helpers
+1. Pagination helpers
 
-- Authentication/token management
+1. Authentication/token management
 
 #### 2.3 Implement Tools Systematically
 
@@ -204,51 +204,51 @@ For each tool in the plan:
 
 #### Define Input Schema
 
-- Use Pydantic (Python) or Zod (TypeScript) for validation
+1. Use Pydantic (Python) or Zod (TypeScript) for validation
 
-- Include proper constraints (min/max length, regex patterns, min/max values, ranges)
+1. Include proper constraints (min/max length, regex patterns, min/max values, ranges)
 
-- Provide clear, descriptive field descriptions
+1. Provide clear, descriptive field descriptions
 
-- Include diverse examples in field descriptions
+1. Include diverse examples in field descriptions
 
 #### Write Comprehensive Docstrings/Descriptions
 
-- One-line summary of what the tool does
+1. One-line summary of what the tool does
 
-- Detailed explanation of purpose and functionality
+1. Detailed explanation of purpose and functionality
 
-- Explicit parameter types with examples
+1. Explicit parameter types with examples
 
-- Complete return type schema
+1. Complete return type schema
 
-- Usage examples (when to use, when not to use)
+1. Usage examples (when to use, when not to use)
 
-- Error handling documentation, which outlines how to proceed given specific errors
+1. Error handling documentation, which outlines how to proceed given specific errors
 
 #### Implement Tool Logic
 
-- Use shared utilities to avoid code duplication
+1. Use shared utilities to avoid code duplication
 
-- Follow async/await patterns for all I/O
+1. Follow async/await patterns for all I/O
 
-- Implement proper error handling
+1. Implement proper error handling
 
-- Support multiple response formats (JSON and Markdown)
+1. Support multiple response formats (JSON and Markdown)
 
-- Respect pagination parameters
+1. Respect pagination parameters
 
-- Check character limits and truncate appropriately
+1. Check character limits and truncate appropriately
 
 #### Add Tool Annotations
 
-- `readOnlyHint`: true (for read-only operations)
+1. `readOnlyHint`: true (for read-only operations)
 
-- `destructiveHint`: false (for non-destructive operations)
+1. `destructiveHint`: false (for non-destructive operations)
 
-- `idempotentHint`: true (if repeated calls have same effect)
+1. `idempotentHint`: true (if repeated calls have same effect)
 
-- `openWorldHint`: true (if interacting with external systems)
+1. `openWorldHint`: true (if interacting with external systems)
 
 #### 2.4 Follow Language-Specific Best Practices
 
@@ -256,31 +256,31 @@ For each tool in the plan:
 
 #### For Python: Load [🐍 Python Implementation Guide](./reference/python_mcp_server.md) and ensure the following
 
-- Using MCP Python SDK with proper tool registration
+1. Using MCP Python SDK with proper tool registration
 
-- Pydantic v2 models with `model_config`
+1. Pydantic v2 models with `model_config`
 
-- Type hints throughout
+1. Type hints throughout
 
-- Async/await for all I/O operations
+1. Async/await for all I/O operations
 
-- Proper imports organization
+1. Proper imports organization
 
-- Module-level constants (CHARACTER_LIMIT, API_BASE_URL)
+1. Module-level constants (CHARACTER_LIMIT, API_BASE_URL)
 
 #### For Node/TypeScript: Load [⚡ TypeScript Implementation Guide](./reference/node_mcp_server.md) and ensure the following
 
-- Using `server.registerTool` properly
+1. Using `server.registerTool` properly
 
-- Zod schemas with `.strict()`
+1. Zod schemas with `.strict()`
 
-- TypeScript strict mode enabled
+1. TypeScript strict mode enabled
 
-- No `any` types - use proper types
+1. No `any` types - use proper types
 
-- Explicit Promise<T> return types
+1. Explicit Promise<T> return types
 
-- Build process configured (`npm run build`)
+1. Build process configured (`npm run build`)
 
 ---
 
@@ -292,17 +292,17 @@ After initial implementation:
 
 To ensure quality, review the code for:
 
-- **DRY Principle**: No duplicated code between tools
+1. **DRY Principle**: No duplicated code between tools
 
-- **Composability**: Shared logic extracted into functions
+1. **Composability**: Shared logic extracted into functions
 
-- **Consistency**: Similar operations return similar formats
+1. **Consistency**: Similar operations return similar formats
 
-- **Error Handling**: All external calls have error handling
+1. **Error Handling**: All external calls have error handling
 
-- **Type Safety**: Full type coverage (Python type hints, TypeScript types)
+1. **Type Safety**: Full type coverage (Python type hints, TypeScript types)
 
-- **Documentation**: Every tool has comprehensive docstrings/descriptions
+1. **Documentation**: Every tool has comprehensive docstrings/descriptions
 
 #### 3.2 Test and Build
 
@@ -310,39 +310,39 @@ To ensure quality, review the code for:
 
 #### Safe ways to test the server
 
-- Use the evaluation harness (see Phase 4) - recommended approach
+1. Use the evaluation harness (see Phase 4) - recommended approach
 
-- Run the server in tmux to keep it outside your main process
+1. Run the server in tmux to keep it outside your main process
 
-- Use a timeout when testing: `timeout 5s python server.py`
+1. Use a timeout when testing: `timeout 5s python server.py`
 
 #### For Python (2)
 
-- Verify Python syntax: `python -m py_compile your_server.py`
+1. Verify Python syntax: `python -m py_compile your_server.py`
 
-- Check imports work correctly by reviewing the file
+1. Check imports work correctly by reviewing the file
 
-- To manually test: Run server in tmux, then test with evaluation harness in main process
+1. To manually test: Run server in tmux, then test with evaluation harness in main process
 
-- Or use the evaluation harness directly (it manages the server for stdio transport)
+1. Or use the evaluation harness directly (it manages the server for stdio transport)
 
 #### For Node/TypeScript (2)
 
-- Run `npm run build` and ensure it completes without errors
+1. Run `npm run build` and ensure it completes without errors
 
-- Verify dist/index.js is created
+1. Verify dist/index.js is created
 
-- To manually test: Run server in tmux, then test with evaluation harness in main process
+1. To manually test: Run server in tmux, then test with evaluation harness in main process
 
-- Or use the evaluation harness directly (it manages the server for stdio transport)
+1. Or use the evaluation harness directly (it manages the server for stdio transport)
 
 #### 3.3 Use Quality Checklist
 
 To verify implementation quality, load the appropriate checklist from the language-specific guide:
 
-- Python: see "Quality Checklist" in [🐍 Python Guide](./reference/python_mcp_server.md)
+1. Python: see "Quality Checklist" in [🐍 Python Guide](./reference/python_mcp_server.md)
 
-- Node/TypeScript: see "Quality Checklist" in [⚡ TypeScript Guide](./reference/node_mcp_server.md)
+1. Node/TypeScript: see "Quality Checklist" in [⚡ TypeScript Guide](./reference/node_mcp_server.md)
 
 ---
 
@@ -372,17 +372,17 @@ To create effective evaluations, follow the process outlined in the evaluation g
 
 Each question must be:
 
-- **Independent**: Not dependent on other questions
+1. **Independent**: Not dependent on other questions
 
-- **Read-only**: Only non-destructive operations required
+1. **Read-only**: Only non-destructive operations required
 
-- **Complex**: Requiring multiple tool calls and deep exploration
+1. **Complex**: Requiring multiple tool calls and deep exploration
 
-- **Realistic**: Based on real use cases humans would care about
+1. **Realistic**: Based on real use cases humans would care about
 
-- **Verifiable**: Single, clear answer that can be verified by string comparison
+1. **Verifiable**: Single, clear answer that can be verified by string comparison
 
-- **Stable**: Answer won't change over time
+1. **Stable**: Answer won't change over time
 
 #### 4.4 Output Format
 
@@ -408,45 +408,45 @@ Load these resources as needed during development:
 
 ### Core MCP Documentation (Load First)
 
-- **MCP Protocol**: Fetch from `https://modelcontextprotocol.io/llms-full.txt` - Complete MCP specification
+1. **MCP Protocol**: Fetch from `https://modelcontextprotocol.io/llms-full.txt` - Complete MCP specification
 
-- [📋 MCP Best Practices](./reference/mcp_best_practices.md) - Universal MCP guidelines including:
-  - Server and tool naming conventions
-  - Response format guidelines (JSON vs Markdown)
-  - Pagination best practices
-  - Character limits and truncation strategies
-  - Tool development guidelines
-  - Security and error handling standards
+1. [📋 MCP Best Practices](./reference/mcp_best_practices.md) - Universal MCP guidelines including:
+  1. Server and tool naming conventions
+  1. Response format guidelines (JSON vs Markdown)
+  1. Pagination best practices
+  1. Character limits and truncation strategies
+  1. Tool development guidelines
+  1. Security and error handling standards
 
 ### SDK Documentation (Load During Phase 1/2)
 
-- **Python SDK**: Fetch from `https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/main/README.md`
+1. **Python SDK**: Fetch from `https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/main/README.md`
 
-- **TypeScript SDK**: Fetch from `https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/main/README.md`
+1. **TypeScript SDK**: Fetch from `https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/main/README.md`
 
 ### Language-Specific Implementation Guides (Load During Phase 2)
 
-- [🐍 Python Implementation Guide](./reference/python_mcp_server.md) - Complete Python/FastMCP guide with:
-  - Server initialization patterns
-  - Pydantic model examples
-  - Tool registration with `@mcp.tool`
+1. [🐍 Python Implementation Guide](./reference/python_mcp_server.md) - Complete Python/FastMCP guide with:
+  1. Server initialization patterns
+  1. Pydantic model examples
+  1. Tool registration with `@mcp.tool`
 
-  - Complete working examples
-  - Quality checklist
+  1. Complete working examples
+  1. Quality checklist
 
-- [⚡ TypeScript Implementation Guide](./reference/node_mcp_server.md) - Complete TypeScript guide with:
-  - Project structure
-  - Zod schema patterns
-  - Tool registration with `server.registerTool`
+1. [⚡ TypeScript Implementation Guide](./reference/node_mcp_server.md) - Complete TypeScript guide with:
+  1. Project structure
+  1. Zod schema patterns
+  1. Tool registration with `server.registerTool`
 
-  - Complete working examples
-  - Quality checklist
+  1. Complete working examples
+  1. Quality checklist
 
 ### Evaluation Guide (Load During Phase 4)
 
-- [✅ Evaluation Guide](./reference/evaluation.md) - Complete evaluation creation guide with:
-  - Question creation guidelines
-  - Answer verification strategies
-  - XML format specifications
-  - Example questions and answers
-  - Running an evaluation with the provided scripts
+1. [✅ Evaluation Guide](./reference/evaluation.md) - Complete evaluation creation guide with:
+  1. Question creation guidelines
+  1. Answer verification strategies
+  1. XML format specifications
+  1. Example questions and answers
+  1. Running an evaluation with the provided scripts

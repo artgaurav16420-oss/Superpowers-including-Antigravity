@@ -32,39 +32,39 @@ git diff {BASE_SHA}..{HEAD_SHA}
 
 ### Code Quality
 
-- Clean separation of concerns?
-- Proper error handling?
-- Type safety (if applicable)?
-- DRY principle followed?
-- Edge cases handled?
+1. Clean separation of concerns?
+1. Proper error handling?
+1. Type safety (if applicable)?
+1. DRY principle followed?
+1. Edge cases handled?
 
 #### Architecture
 
-- Sound design decisions?
-- Scalability considerations?
-- Performance implications?
-- Security concerns?
+1. Sound design decisions?
+1. Scalability considerations?
+1. Performance implications?
+1. Security concerns?
 
 #### Testing
 
-- Tests actually test logic (not mocks)?
-- Edge cases covered?
-- Integration tests where needed?
-- All tests passing?
+1. Tests actually test logic (not mocks)?
+1. Edge cases covered?
+1. Integration tests where needed?
+1. All tests passing?
 
 #### Requirements
 
-- All plan requirements met?
-- Implementation matches spec?
-- No scope creep?
-- Breaking changes documented?
+1. All plan requirements met?
+1. Implementation matches spec?
+1. No scope creep?
+1. Breaking changes documented?
 
 #### Production Readiness
 
-- Migration strategy (if schema changes)?
-- Backward compatibility considered?
-- Documentation complete?
-- No obvious bugs?
+1. Migration strategy (if schema changes)?
+1. Backward compatibility considered?
+1. Documentation complete?
+1. No obvious bugs?
 
 ## Output Format
 
@@ -88,10 +88,10 @@ git diff {BASE_SHA}..{HEAD_SHA}
 
 #### For each issue
 
-- File:line reference
-- What's wrong
-- Why it matters
-- How to fix (if not obvious)
+1. File:line reference
+1. What's wrong
+1. Why it matters
+1. How to fix (if not obvious)
 
 ### Recommendations
 
@@ -107,19 +107,19 @@ git diff {BASE_SHA}..{HEAD_SHA}
 
 ### DO
 
-- Categorize by actual severity (not everything is Critical)
-- Be specific (file:line, not vague)
-- Explain WHY issues matter
-- Acknowledge strengths
-- Give clear verdict
+1. Categorize by actual severity (not everything is Critical)
+1. Be specific (file:line, not vague)
+1. Explain WHY issues matter
+1. Acknowledge strengths
+1. Give clear verdict
 
 #### DON'T
 
-- Say "looks good" without checking
-- Mark nitpicks as Critical
-- Give feedback on code you didn't review
-- Be vague ("improve error handling")
-- Avoid giving a clear verdict
+1. Say "looks good" without checking
+1. Mark nitpicks as Critical
+1. Give feedback on code you didn't review
+1. Be vague ("improve error handling")
+1. Avoid giving a clear verdict
 
 ## Example Output
 

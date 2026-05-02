@@ -16,8 +16,8 @@
 
 #### Files
 
-- Create: `lib/skills-core.js`
-- Reference: `.codex/superpowers-codex` (lines 40-74)
+1. Create: `lib/skills-core.js`
+1. Reference: `.codex/superpowers-codex` (lines 40-74)
 
 #### Step 1: Create lib/skills-core.js with extractFrontmatter function
 
@@ -99,8 +99,8 @@ git commit -m "feat: create shared skills core module with frontmatter parser"
 
 #### Files (2)
 
-- Modify: `lib/skills-core.js`
-- Reference: `.codex/superpowers-codex` (lines 97-136)
+1. Modify: `lib/skills-core.js`
+1. Reference: `.codex/superpowers-codex` (lines 97-136)
 
 #### Step 1: Add findSkillsInDir function to skills-core.js
 
@@ -182,8 +182,8 @@ git commit -m "feat: add skill discovery function to core module"
 
 #### Files (3)
 
-- Modify: `lib/skills-core.js`
-- Reference: `.codex/superpowers-codex` (lines 212-280)
+1. Modify: `lib/skills-core.js`
+1. Reference: `.codex/superpowers-codex` (lines 212-280)
 
 #### Step 1: Add resolveSkillPath function
 
@@ -262,8 +262,8 @@ git commit -m "feat: add skill path resolution with shadowing support"
 
 #### Files (4)
 
-- Modify: `lib/skills-core.js`
-- Reference: `.codex/superpowers-codex` (lines 16-38)
+1. Modify: `lib/skills-core.js`
+1. Reference: `.codex/superpowers-codex` (lines 16-38)
 
 #### Step 1: Add checkForUpdates function
 
@@ -338,7 +338,7 @@ git commit -m "feat: add git update checking to core module"
 
 #### Files (5)
 
-- Modify: `.codex/superpowers-codex` (add import at top)
+1. Modify: `.codex/superpowers-codex` (add import at top)
 
 #### Step 1: Add import statement
 
@@ -366,7 +366,7 @@ git commit -m "refactor: import shared skills core in codex"
 
 #### Files (6)
 
-- Modify: `.codex/superpowers-codex` (lines 40-74)
+1. Modify: `.codex/superpowers-codex` (lines 40-74)
 
 #### Step 1: Remove local extractFrontmatter function
 
@@ -396,7 +396,7 @@ git commit -m "refactor: use shared extractFrontmatter in codex"
 
 #### Files (7)
 
-- Modify: `.codex/superpowers-codex` (lines 97-136, approximately)
+1. Modify: `.codex/superpowers-codex` (lines 97-136, approximately)
 
 #### Step 1: Remove local findSkillsInDir function
 
@@ -424,7 +424,7 @@ git commit -m "refactor: use shared findSkillsInDir in codex"
 
 #### Files (8)
 
-- Modify: `.codex/superpowers-codex` (lines 16-38, approximately)
+1. Modify: `.codex/superpowers-codex` (lines 16-38, approximately)
 
 #### Step 1: Remove local checkForUpdates function
 
@@ -454,7 +454,7 @@ git commit -m "refactor: use shared checkForUpdates in codex"
 
 #### Files (9)
 
-- Create: `.opencode/plugin/superpowers.js`
+1. Create: `.opencode/plugin/superpowers.js`
 
 #### Step 1: Create directory
 
@@ -509,7 +509,7 @@ git commit -m "feat: create opencode plugin scaffold"
 
 #### Files (10)
 
-- Modify: `.opencode/plugin/superpowers.js`
+1. Modify: `.opencode/plugin/superpowers.js`
 
 #### Step 1: Add use_skill tool implementation
 
@@ -600,7 +600,7 @@ git commit -m "feat: implement use_skill tool for opencode"
 
 #### Files (11)
 
-- Modify: `.opencode/plugin/superpowers.js`
+1. Modify: `.opencode/plugin/superpowers.js`
 
 #### Step 1: Add find_skills tool to tools array
 
@@ -667,7 +667,7 @@ git commit -m "feat: implement find_skills tool for opencode"
 
 #### Files (12)
 
-- Modify: `.opencode/plugin/superpowers.js`
+1. Modify: `.opencode/plugin/superpowers.js`
 
 #### Step 1: Add session.started hook
 
@@ -773,7 +773,7 @@ git commit -m "feat: implement session.started hook for opencode"
 
 #### Files (13)
 
-- Create: `.opencode/INSTALL.md`
+1. Create: `.opencode/INSTALL.md`
 
 #### Step 1: Create installation guide
 
@@ -795,7 +795,7 @@ git commit -m "feat: implement session.started hook for opencode"
 ## Clone superpowers skills to OpenCode config directory
 
 mkdir -p ~/.config/opencode/superpowers
-git clone [https://github.com/artgaurav16420-oss/Mega-Skills.git]([https://github.com/artgaurav16420-oss/Mega-Skills.git)]([https://github.com/artgaurav16420-oss/Mega-Skills.git))]([https://github.com/artgaurav16420-oss/Mega-Skills.git)))]([https://github.com/artgaurav16420-oss/Mega-Skills.git))))]([https://github.com/artgaurav16420-oss/Mega-Skills.git)))))]([https://github.com/artgaurav16420-oss/Mega-Skills.git))))))]([https://github.com/artgaurav16420-oss/Mega-Skills.git)))))))](https://github.com/artgaurav16420-oss/Mega-Skills.git)))))))) ~/.config/opencode/superpowers
+git clone [https://github.com/artgaurav16420-oss/Mega-Skills.git]([https://github.com/artgaurav16420-oss/Mega-Skills.git)]([https://github.com/artgaurav16420-oss/Mega-Skills.git))]([https://github.com/artgaurav16420-oss/Mega-Skills.git)))]([https://github.com/artgaurav16420-oss/Mega-Skills.git))))]([https://github.com/artgaurav16420-oss/Mega-Skills.git)))))]([https://github.com/artgaurav16420-oss/Mega-Skills.git))))))]([https://github.com/artgaurav16420-oss/Mega-Skills.git)))))))]([https://github.com/artgaurav16420-oss/Mega-Skills.git))))))))](https://github.com/artgaurav16420-oss/Mega-Skills.git))))))))) ~/.config/opencode/superpowers
 
 ```text
 
@@ -931,7 +931,7 @@ git commit -m "docs: add opencode installation guide"
 
 #### Files (14)
 
-- Modify: `README.md`
+1. Modify: `README.md`
 
 #### Step 1: Add OpenCode section
 
@@ -969,7 +969,7 @@ git commit -m "docs: add opencode support to readme"
 
 #### Files (15)
 
-- Modify: `RELEASE-NOTES.md`
+1. Modify: `RELEASE-NOTES.md`
 
 #### Step 1: Add entry for OpenCode support
 
@@ -1016,7 +1016,7 @@ git commit -m "docs: add opencode support to release notes"
 
 #### Files (16)
 
-- Test: `.codex/superpowers-codex`
+1. Test: `.codex/superpowers-codex`
 
 #### Step 1: Test find-skills command
 
@@ -1043,7 +1043,7 @@ No commit needed - this is verification only.
 
 #### Files (17)
 
-- Check: All new files exist
+1. Check: All new files exist
 
 #### Step 1: Verify all files created
 
@@ -1079,7 +1079,7 @@ No commit needed - this is verification only.
 
 #### Files (18)
 
-- Check: `git status`
+1. Check: `git status`
 
 #### Step 1: Check git status
 
@@ -1094,11 +1094,11 @@ Expected: Shows all commits from this implementation
 #### Step 3: Create summary document
 
 Create a completion summary showing:
-- Total commits made
-- Files created: `lib/skills-core.js`, `.opencode/plugin/superpowers.js`, `.opencode/INSTALL.md`
-- Files modified: `.codex/superpowers-codex`, `README.md`, `RELEASE-NOTES.md`
-- Testing performed: Codex commands verified
-- Ready for: Testing with actual OpenCode installation
+1. Total commits made
+1. Files created: `lib/skills-core.js`, `.opencode/plugin/superpowers.js`, `.opencode/INSTALL.md`
+1. Files modified: `.codex/superpowers-codex`, `README.md`, `RELEASE-NOTES.md`
+1. Testing performed: Codex commands verified
+1. Ready for: Testing with actual OpenCode installation
 
 #### Step 4: Report completion
 
@@ -1123,11 +1123,11 @@ These steps require OpenCode to be installed and are not part of the automated i
 
 ## Success Criteria
 
-- [ ] `lib/skills-core.js` created with all core functions
-- [ ] `.codex/superpowers-codex` refactored to use shared core
-- [ ] Codex commands still work (find-skills, use-skill, bootstrap)
-- [ ] `.opencode/plugin/superpowers.js` created with tools and hooks
-- [ ] Installation guide created
-- [ ] README and RELEASE-NOTES updated
-- [ ] All changes committed
-- [ ] Working tree clean
+1. [ ] `lib/skills-core.js` created with all core functions
+1. [ ] `.codex/superpowers-codex` refactored to use shared core
+1. [ ] Codex commands still work (find-skills, use-skill, bootstrap)
+1. [ ] `.opencode/plugin/superpowers.js` created with tools and hooks
+1. [ ] Installation guide created
+1. [ ] README and RELEASE-NOTES updated
+1. [ ] All changes committed
+1. [ ] Working tree clean

@@ -14,16 +14,16 @@ Create the Svelte project with Vite.
 
 #### Do
 
-- Run `npm create vite@latest . -- --template svelte-ts`
-- Install dependencies with `npm install`
-- Verify dev server works
-- Clean up default Vite template content from App.svelte
+1. Run `npm create vite@latest . -- --template svelte-ts`
+1. Install dependencies with `npm install`
+1. Verify dev server works
+1. Clean up default Vite template content from App.svelte
 
 #### Verify
 
-- `npm run dev` starts server
-- App shows minimal "Svelte Todos" heading
-- `npm run build` succeeds
+1. `npm run dev` starts server
+1. App shows minimal "Svelte Todos" heading
+1. `npm run build` succeeds
 
 ---
 
@@ -33,15 +33,15 @@ Create the Svelte store for todo state management.
 
 #### Do (2)
 
-- Create `src/lib/store.ts`
-- Define `Todo` interface with id, text, completed
-- Create writable store with initial empty array
-- Export functions: `addTodo(text)`, `toggleTodo(id)`, `deleteTodo(id)`, `clearCompleted()`
-- Create `src/lib/store.test.ts` with tests for each function
+1. Create `src/lib/store.ts`
+1. Define `Todo` interface with id, text, completed
+1. Create writable store with initial empty array
+1. Export functions: `addTodo(text)`, `toggleTodo(id)`, `deleteTodo(id)`, `clearCompleted()`
+1. Create `src/lib/store.test.ts` with tests for each function
 
 #### Verify (2)
 
-- Tests pass: `npm run test` (install vitest if needed)
+1. Tests pass: `npm run test` (install vitest if needed)
 
 ---
 
@@ -51,16 +51,16 @@ Add persistence layer for todos.
 
 #### Do (3)
 
-- Create `src/lib/storage.ts`
-- Implement `loadTodos(): Todo[]` and `saveTodos(todos: Todo[])`
-- Handle JSON parse errors gracefully (return empty array)
-- Integrate with store: load on init, save on change
-- Add tests for load/save/error handling
+1. Create `src/lib/storage.ts`
+1. Implement `loadTodos(): Todo[]` and `saveTodos(todos: Todo[])`
+1. Handle JSON parse errors gracefully (return empty array)
+1. Integrate with store: load on init, save on change
+1. Add tests for load/save/error handling
 
 #### Verify (3)
 
-- Tests pass
-- Manual test: add todo, refresh page, todo persists
+1. Tests pass
+1. Manual test: add todo, refresh page, todo persists
 
 ---
 
@@ -70,17 +70,17 @@ Create the input component for adding todos.
 
 #### Do (4)
 
-- Create `src/lib/TodoInput.svelte`
-- Text input bound to local state
-- Add button calls `addTodo()` and clears input
-- Enter key also submits
-- Disable Add button when input is empty
-- Add component tests
+1. Create `src/lib/TodoInput.svelte`
+1. Text input bound to local state
+1. Add button calls `addTodo()` and clears input
+1. Enter key also submits
+1. Disable Add button when input is empty
+1. Add component tests
 
 #### Verify (4)
 
-- Tests pass
-- Component renders input and button
+1. Tests pass
+1. Component renders input and button
 
 ---
 
@@ -90,17 +90,17 @@ Create the single todo item component.
 
 #### Do (5)
 
-- Create `src/lib/TodoItem.svelte`
-- Props: `todo: Todo`
-- Checkbox toggles completion (calls `toggleTodo`)
-- Text with strikethrough when completed
-- Delete button (X) calls `deleteTodo`
-- Add component tests
+1. Create `src/lib/TodoItem.svelte`
+1. Props: `todo: Todo`
+1. Checkbox toggles completion (calls `toggleTodo`)
+1. Text with strikethrough when completed
+1. Delete button (X) calls `deleteTodo`
+1. Add component tests
 
 #### Verify (5)
 
-- Tests pass
-- Component renders checkbox, text, delete button
+1. Tests pass
+1. Component renders checkbox, text, delete button
 
 ---
 
@@ -110,16 +110,16 @@ Create the list container component.
 
 #### Do (6)
 
-- Create `src/lib/TodoList.svelte`
-- Props: `todos: Todo[]`
-- Renders TodoItem for each todo
-- Shows "No todos yet" when empty
-- Add component tests
+1. Create `src/lib/TodoList.svelte`
+1. Props: `todos: Todo[]`
+1. Renders TodoItem for each todo
+1. Shows "No todos yet" when empty
+1. Add component tests
 
 #### Verify (6)
 
-- Tests pass
-- Component renders list of TodoItems
+1. Tests pass
+1. Component renders list of TodoItems
 
 ---
 
@@ -129,18 +129,18 @@ Create the filter and status bar component.
 
 #### Do (7)
 
-- Create `src/lib/FilterBar.svelte`
-- Props: `todos: Todo[]`, `filter: Filter`, `onFilterChange: (f: Filter) => void`
-- Show count: "X items left" (incomplete count)
-- Three filter buttons: All, Active, Completed
-- Active filter is visually highlighted
-- "Clear completed" button (hidden when no completed todos)
-- Add component tests
+1. Create `src/lib/FilterBar.svelte`
+1. Props: `todos: Todo[]`, `filter: Filter`, `onFilterChange: (f: Filter) => void`
+1. Show count: "X items left" (incomplete count)
+1. Three filter buttons: All, Active, Completed
+1. Active filter is visually highlighted
+1. "Clear completed" button (hidden when no completed todos)
+1. Add component tests
 
 #### Verify (7)
 
-- Tests pass
-- Component renders count, filters, clear button
+1. Tests pass
+1. Component renders count, filters, clear button
 
 ---
 
@@ -150,18 +150,18 @@ Wire all components together in App.svelte.
 
 #### Do (8)
 
-- Import all components and store
-- Add filter state (default: 'all')
-- Compute filtered todos based on filter state
-- Render: heading, TodoInput, TodoList, FilterBar
-- Pass appropriate props to each component
+1. Import all components and store
+1. Add filter state (default: 'all')
+1. Compute filtered todos based on filter state
+1. Render: heading, TodoInput, TodoList, FilterBar
+1. Pass appropriate props to each component
 
 #### Verify (8)
 
-- App renders all components
-- Adding todos works
-- Toggling works
-- Deleting works
+1. App renders all components
+1. Adding todos works
+1. Toggling works
+1. Deleting works
 
 ---
 
@@ -171,17 +171,17 @@ Ensure filtering works end-to-end.
 
 #### Do (9)
 
-- Verify filter buttons change displayed todos
-- 'all' shows all todos
-- 'active' shows only incomplete todos
-- 'completed' shows only completed todos
-- Clear completed removes completed todos and resets filter if needed
-- Add integration tests
+1. Verify filter buttons change displayed todos
+1. 'all' shows all todos
+1. 'active' shows only incomplete todos
+1. 'completed' shows only completed todos
+1. Clear completed removes completed todos and resets filter if needed
+1. Add integration tests
 
 #### Verify (9)
 
-- Filter tests pass
-- Manual verification of all filter states
+1. Filter tests pass
+1. Manual verification of all filter states
 
 ---
 
@@ -191,17 +191,17 @@ Add CSS styling for usability.
 
 #### Do (10)
 
-- Style the app to match the design mockup
-- Completed todos have strikethrough and muted color
-- Active filter button is highlighted
-- Input has focus styles
-- Delete button appears on hover (or always on mobile)
-- Responsive layout
+1. Style the app to match the design mockup
+1. Completed todos have strikethrough and muted color
+1. Active filter button is highlighted
+1. Input has focus styles
+1. Delete button appears on hover (or always on mobile)
+1. Responsive layout
 
 #### Verify (10)
 
-- App is visually usable
-- Styles don't break functionality
+1. App is visually usable
+1. Styles don't break functionality
 
 ---
 
@@ -211,19 +211,19 @@ Add Playwright tests for full user flows.
 
 #### Do (11)
 
-- Install Playwright: `npm init playwright@latest`
-- Create `tests/todo.spec.ts`
-- Test flows:
-  - Add a todo
-  - Complete a todo
-  - Delete a todo
-  - Filter todos
-  - Clear completed
-  - Persistence (add, reload, verify)
+1. Install Playwright: `npm init playwright@latest`
+1. Create `tests/todo.spec.ts`
+1. Test flows:
+  1. Add a todo
+  1. Complete a todo
+  1. Delete a todo
+  1. Filter todos
+  1. Clear completed
+  1. Persistence (add, reload, verify)
 
 #### Verify (11)
 
-- `npx playwright test` passes
+1. `npx playwright test` passes
 
 ---
 
@@ -233,14 +233,14 @@ Document the project.
 
 #### Do (12)
 
-- Create `README.md` with:
-  - Project description
-  - Setup: `npm install`
-  - Development: `npm run dev`
-  - Testing: `npm test` and `npx playwright test`
-  - Build: `npm run build`
+1. Create `README.md` with:
+  1. Project description
+  1. Setup: `npm install`
+  1. Development: `npm run dev`
+  1. Testing: `npm test` and `npx playwright test`
+  1. Build: `npm run build`
 
 #### Verify (12)
 
-- README accurately describes the project
-- Instructions work
+1. README accurately describes the project
+1. Instructions work

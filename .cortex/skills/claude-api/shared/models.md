@@ -56,7 +56,7 @@ curl [https://api.anthropic.com/v1/models/claude-opus-4-7]([https://api.anthropi
 ## Current Models (recommended)
 
 | Friendly Name     | Alias (use this)    | Full ID                       | Context        | Max Output | Status |
-|::::::::---::::::::---::::::::---::::::::---::::::::---::::::::----|::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---|::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::----|::::::::---::::::::---::::::::---::::::::---::::::::----|::::::::---::::::::---::::::::---::::::::---|::::::::---::::::::-----|
+|:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::----|:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---|:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::----|:::::::::---:::::::::---:::::::::---:::::::::---:::::::::----|:::::::::---:::::::::---:::::::::---:::::::::---|:::::::::---:::::::::-----|
 | Claude Opus 4.7   | `claude-opus-4-7`   | —                             | 1M             | 128K       | Active |
 | Claude Opus 4.6   | `claude-opus-4-6`   | —                             | 1M             | 128K       | Active |
 | Claude Sonnet 4.6 | `claude-sonnet-4-6` | -                             | 1M             | 64K        | Active |
@@ -64,15 +64,15 @@ curl [https://api.anthropic.com/v1/models/claude-opus-4-7]([https://api.anthropi
 
 ### Model Descriptions
 
-- **Claude Opus 4.7** — The most capable Claude model to date — highly autonomous, strong on long-horizon agentic work, knowledge work, vision, and memory. Adaptive thinking only; sampling parameters and `budget_tokens` are removed. 1M context window at standard API pricing (no long-context premium) — see `shared/model-migration.md` → Migrating to Opus 4.7 for breaking changes.
-- **Claude Opus 4.6** — Previous-generation Opus. Supports adaptive thinking (recommended), 128K max output tokens (requires streaming for large outputs). 1M context window.
-- **Claude Sonnet 4.6** — Our best combination of speed and intelligence. Supports adaptive thinking (recommended). 1M context window. 64K max output tokens.
-- **Claude Haiku 4.5** — Fastest and most cost-effective model for simple tasks.
+1. **Claude Opus 4.7** — The most capable Claude model to date — highly autonomous, strong on long-horizon agentic work, knowledge work, vision, and memory. Adaptive thinking only; sampling parameters and `budget_tokens` are removed. 1M context window at standard API pricing (no long-context premium) — see `shared/model-migration.md` → Migrating to Opus 4.7 for breaking changes.
+1. **Claude Opus 4.6** — Previous-generation Opus. Supports adaptive thinking (recommended), 128K max output tokens (requires streaming for large outputs). 1M context window.
+1. **Claude Sonnet 4.6** — Our best combination of speed and intelligence. Supports adaptive thinking (recommended). 1M context window. 64K max output tokens.
+1. **Claude Haiku 4.5** — Fastest and most cost-effective model for simple tasks.
 
 ## Legacy Models (still active)
 
 | Friendly Name     | Alias (use this)    | Full ID                       | Status |
-|::::::::---::::::::---::::::::---::::::::---::::::::---::::::::----|::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---|::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::----|::::::::---::::::::-----|
+|:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::----|:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---|:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::----|:::::::::---:::::::::-----|
 | Claude Opus 4.5   | `claude-opus-4-5`   | `claude-opus-4-5-20251101`    | Active |
 | Claude Opus 4.1   | `claude-opus-4-1`   | `claude-opus-4-1-20250805`    | Active |
 | Claude Sonnet 4.5 | `claude-sonnet-4-5` | `claude-sonnet-4-5-20250929`  | Active |
@@ -82,13 +82,13 @@ curl [https://api.anthropic.com/v1/models/claude-opus-4-7]([https://api.anthropi
 ## Deprecated Models (retiring soon)
 
 | Friendly Name     | Alias (use this)    | Full ID                       | Status     | Retires      |
-|::::::::---::::::::---::::::::---::::::::---::::::::---::::::::----|::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---|::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::----|::::::::---::::::::---::::::::---::::::::---|::::::::---::::::::---::::::::---::::::::-----|
+|:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::----|:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---|:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::----|:::::::::---:::::::::---:::::::::---:::::::::---|:::::::::---:::::::::---:::::::::---:::::::::-----|
 | Claude Haiku 3    | —                   | `claude-3-haiku-20240307`     | Deprecated | Apr 19, 2026 |
 
 ## Retired Models (no longer available)
 
 | Friendly Name     | Full ID                       | Retired     |
-|::::::::---::::::::---::::::::---::::::::---::::::::---::::::::----|::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::----|::::::::---::::::::---::::::::---::::::::----|
+|:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::----|:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::----|:::::::::---:::::::::---:::::::::---:::::::::----|
 | Claude Sonnet 3.7 | `claude-3-7-sonnet-20250219`  | Feb 19, 2026 |
 | Claude Haiku 3.5  | `claude-3-5-haiku-20241022`   | Feb 19, 2026 |
 | Claude Opus 3     | `claude-3-opus-20240229`      | Jan 5, 2026 |
@@ -103,7 +103,7 @@ curl [https://api.anthropic.com/v1/models/claude-opus-4-7]([https://api.anthropi
 When a user asks for a model by name, use this table to find the correct model ID:
 
 | User says...                              | Use this model ID              |
-|::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::----|::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::-----|
+|:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::----|:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::-----|
 | "opus", "most powerful"                   | `claude-opus-4-7`              |
 | "opus 4.7"                                | `claude-opus-4-7`              |
 | "opus 4.6"                                | `claude-opus-4-6`              |

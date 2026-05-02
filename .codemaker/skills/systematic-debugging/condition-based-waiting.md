@@ -23,15 +23,15 @@ digraph when_to_use {
 
 ### Use when
 
-- Tests have arbitrary delays (`setTimeout`, `sleep`, `time.sleep()`)
-- Tests are flaky (pass sometimes, fail under load)
-- Tests timeout when run in parallel
-- Waiting for async operations to complete
+1. Tests have arbitrary delays (`setTimeout`, `sleep`, `time.sleep()`)
+1. Tests are flaky (pass sometimes, fail under load)
+1. Tests timeout when run in parallel
+1. Waiting for async operations to complete
 
 #### Don't use when
 
-- Testing actual timing behavior (debounce, throttle intervals)
-- Always document WHY if using arbitrary timeout
+1. Testing actual timing behavior (debounce, throttle intervals)
+1. Always document WHY if using arbitrary timeout
 
 ## Core Pattern
 
@@ -50,7 +50,7 @@ expect(result).toBeDefined();
 ## Quick Patterns
 
 | Scenario | Pattern |
-|::::::::---::::::::---::::::::----|::::::::---::::::::---::::::::---|
+|:::::::::---:::::::::---:::::::::----|:::::::::---:::::::::---:::::::::---|
 | Wait for event | `waitFor(() => events.find(e => e.type === 'DONE'))` |
 | Wait for state | `waitFor(() => machine.state === 'ready')` |
 | Wait for count | `waitFor(() => items.length >= 5)` |
@@ -113,7 +113,7 @@ await new Promise(r => setTimeout(r, 200));   // Then: wait for timed behavior
 ## Real-World Impact
 
 From debugging session (2025-10-03):
-- Fixed 15 flaky tests across 3 files
-- Pass rate: 60% → 100%
-- Execution time: 40% faster
-- No more race conditions
+1. Fixed 15 flaky tests across 3 files
+1. Pass rate: 60% → 100%
+1. Execution time: 40% faster
+1. No more race conditions

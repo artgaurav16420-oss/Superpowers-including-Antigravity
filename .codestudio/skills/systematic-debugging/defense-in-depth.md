@@ -12,10 +12,10 @@ Single validation: "We fixed the bug"
 Multiple layers: "We made the bug impossible"
 
 Different layers catch different cases:
-- Entry validation catches most bugs
-- Business logic catches edge cases
-- Environment guards prevent context-specific dangers
-- Debug logging helps when other layers fail
+1. Entry validation catches most bugs
+1. Business logic catches edge cases
+1. Environment guards prevent context-specific dangers
+1. Debug logging helps when other layers fail
 
 ## The Four Layers
 
@@ -110,19 +110,19 @@ Bug: Empty `projectDir` caused `git init` in source code
 
 #### Four layers added
 
-- Layer 1: `Project.create()` validates not empty/exists/writable
-- Layer 2: `WorkspaceManager` validates projectDir not empty
-- Layer 3: `WorktreeManager` refuses git init outside tmpdir in tests
-- Layer 4: Stack trace logging before git init
+1. Layer 1: `Project.create()` validates not empty/exists/writable
+1. Layer 2: `WorkspaceManager` validates projectDir not empty
+1. Layer 3: `WorktreeManager` refuses git init outside tmpdir in tests
+1. Layer 4: Stack trace logging before git init
 
 **Result:** All 1847 tests passed, bug impossible to reproduce
 
 ## Key Insight
 
 All four layers were necessary. During testing, each layer caught bugs the others missed:
-- Different code paths bypassed entry validation
-- Mocks bypassed business logic checks
-- Edge cases on different platforms needed environment guards
-- Debug logging identified structural misuse
+1. Different code paths bypassed entry validation
+1. Mocks bypassed business logic checks
+1. Edge cases on different platforms needed environment guards
+1. Debug logging identified structural misuse
 
 **Don't stop at one validation point.** Add checks at every layer.

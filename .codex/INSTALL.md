@@ -4,7 +4,7 @@ Enable superpowers skills in Codex via native skill discovery. Just clone and sy
 
 ## Prerequisites
 
-- Git
+1. Git
 
 ## Installation
 

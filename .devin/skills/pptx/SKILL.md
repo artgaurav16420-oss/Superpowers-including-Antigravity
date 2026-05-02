@@ -9,7 +9,7 @@ license: Proprietary. LICENSE.txt has complete terms
 ## Quick Reference
 
 | Task | Guide |
-|::::::::::::::::::::::::::---::::::::::::::::::::::::::---|::::::::::::::::::::::::::---::::::::::::::::::::::::::----|
+|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::----|
 | Read/analyze content | `python -m markitdown presentation.pptx` |
 
 | Edit or create from template | Read [editing.md](editing.md) |
@@ -54,20 +54,20 @@ Use when no template or reference presentation is available.
 
 ### Before Starting
 
-- **Pick a bold, content-informed color palette**: The palette should feel designed for THIS topic. If swapping your colors into a completely different presentation would still "work," you haven't made specific enough choices.
+1. **Pick a bold, content-informed color palette**: The palette should feel designed for THIS topic. If swapping your colors into a completely different presentation would still "work," you haven't made specific enough choices.
 
-- **Dominance over equality**: One color should dominate (60-70% visual weight), with 1-2 supporting tones and one sharp accent. Never give all colors equal weight.
+1. **Dominance over equality**: One color should dominate (60-70% visual weight), with 1-2 supporting tones and one sharp accent. Never give all colors equal weight.
 
-- **Dark/light contrast**: Dark backgrounds for title + conclusion slides, light for content ("sandwich" structure). Or commit to dark throughout for a premium feel.
+1. **Dark/light contrast**: Dark backgrounds for title + conclusion slides, light for content ("sandwich" structure). Or commit to dark throughout for a premium feel.
 
-- **Commit to a visual motif**: Pick ONE distinctive element and repeat it — rounded image frames, icons in colored circles, thick single-side borders. Carry it across every slide.
+1. **Commit to a visual motif**: Pick ONE distinctive element and repeat it — rounded image frames, icons in colored circles, thick single-side borders. Carry it across every slide.
 
 ### Color Palettes
 
 Choose colors that match your topic — don't default to generic blue. Use these palettes as inspiration:
 
 | Theme | Primary | Secondary | Accent |
-|::::::::::::::::::::::::::---::::::::::::::::::::::::::----|::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---|::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::-----|::::::::::::::::::::::::::---::::::::::::::::::::::::::-----|
+|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::----|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::-----|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::-----|
 | **Midnight Executive** | `1E2761` (navy) | `CADCFC` (ice blue) | `FFFFFF` (white) |
 
 | **Forest & Moss** | `2C5F2D` (forest) | `97BC62` (moss) | `F5F5F5` (cream) |
@@ -94,34 +94,34 @@ Choose colors that match your topic — don't default to generic blue. Use these
 
 #### Layout options
 
-- Two-column (text left, illustration on right)
+1. Two-column (text left, illustration on right)
 
-- Icon + text rows (icon in colored circle, bold header, description below)
+1. Icon + text rows (icon in colored circle, bold header, description below)
 
-- 2x2 or 2x3 grid (image on one side, grid of content blocks on other)
+1. 2x2 or 2x3 grid (image on one side, grid of content blocks on other)
 
-- Half-bleed image (full left or right side) with content overlay
+1. Half-bleed image (full left or right side) with content overlay
 
 #### Data display
 
-- Large stat callouts (big numbers 60-72pt with small labels below)
+1. Large stat callouts (big numbers 60-72pt with small labels below)
 
-- Comparison columns (before/after, pros/cons, side-by-side options)
+1. Comparison columns (before/after, pros/cons, side-by-side options)
 
-- Timeline or process flow (numbered steps, arrows)
+1. Timeline or process flow (numbered steps, arrows)
 
 #### Visual polish
 
-- Icons in small colored circles next to section headers
+1. Icons in small colored circles next to section headers
 
-- Italic accent text for key stats or taglines
+1. Italic accent text for key stats or taglines
 
 ### Typography
 
 **Choose an interesting font pairing** — don't default to Arial. Pick a header font with personality and pair it with a clean body font.
 
 | Header Font | Body Font |
-|::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::----|::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::-----|
+|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::----|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::-----|
 | Georgia | Calibri |
 | Arial Black | Arial |
 | Calibri | Calibri Light |
@@ -132,7 +132,7 @@ Choose colors that match your topic — don't default to generic blue. Use these
 | Consolas | Calibri |
 
 | Element | Size |
-|::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---|::::::::::::::::::::::::::---::::::::::::::::::::::::::---|
+|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---|
 | Slide title | 36-44pt bold |
 | Section header | 20-24pt bold |
 | Body text | 14-16pt |
@@ -140,33 +140,33 @@ Choose colors that match your topic — don't default to generic blue. Use these
 
 ### Spacing
 
-- 0.5" minimum margins
+1. 0.5" minimum margins
 
-- 0.3-0.5" between content blocks
+1. 0.3-0.5" between content blocks
 
-- Leave breathing room—don't fill every inch
+1. Leave breathing room—don't fill every inch
 
 ### Avoid (Common Mistakes)
 
-- **Don't repeat the same layout** — vary columns, cards, and callouts across slides
+1. **Don't repeat the same layout** — vary columns, cards, and callouts across slides
 
-- **Don't center body text** — left-align paragraphs and lists; center only titles
+1. **Don't center body text** — left-align paragraphs and lists; center only titles
 
-- **Don't skimp on size contrast** — titles need 36pt+ to stand out from 14-16pt body
+1. **Don't skimp on size contrast** — titles need 36pt+ to stand out from 14-16pt body
 
-- **Don't default to blue** — pick colors that reflect the specific topic
+1. **Don't default to blue** — pick colors that reflect the specific topic
 
-- **Don't mix spacing randomly** — choose 0.3" or 0.5" gaps and use consistently
+1. **Don't mix spacing randomly** — choose 0.3" or 0.5" gaps and use consistently
 
-- **Don't style one slide and leave the rest plain** — commit fully or keep it simple throughout
+1. **Don't style one slide and leave the rest plain** — commit fully or keep it simple throughout
 
-- **Don't create text-only slides** — add images, icons, charts, or visual elements; avoid plain title + bullets
+1. **Don't create text-only slides** — add images, icons, charts, or visual elements; avoid plain title + bullets
 
-- **Don't forget text box padding** — when aligning lines or shapes with text edges, set `margin: 0` on the text box or offset the shape to account for padding
+1. **Don't forget text box padding** — when aligning lines or shapes with text edges, set `margin: 0` on the text box or offset the shape to account for padding
 
-- **Don't use low-contrast elements** — icons AND text need strong contrast against the background; avoid light text on light backgrounds or dark text on dark backgrounds
+1. **Don't use low-contrast elements** — icons AND text need strong contrast against the background; avoid light text on light backgrounds or dark text on dark backgrounds
 
-- **NEVER use accent lines under titles** — these are a hallmark of AI-generated slides; use whitespace or background color instead
+1. **NEVER use accent lines under titles** — these are a hallmark of AI-generated slides; use whitespace or background color instead
 
 ---
 
@@ -257,12 +257,12 @@ pdftoppm -jpeg -r 150 -f N -l N output.pdf slide-fixed
 
 ## Dependencies
 
-- `pip install "markitdown[pptx]"` - text extraction
+1. `pip install "markitdown[pptx]"` - text extraction
 
-- `pip install Pillow` - thumbnail grids
+1. `pip install Pillow` - thumbnail grids
 
-- `npm install -g pptxgenjs` - creating from scratch
+1. `npm install -g pptxgenjs` - creating from scratch
 
-- LibreOffice (`soffice`) - PDF conversion (auto-configured for sandboxed environments via `scripts/office/soffice.py`)
+1. LibreOffice (`soffice`) - PDF conversion (auto-configured for sandboxed environments via `scripts/office/soffice.py`)
 
-- Poppler (`pdftoppm`) - PDF to images
+1. Poppler (`pdftoppm`) - PDF to images

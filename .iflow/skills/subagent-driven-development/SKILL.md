@@ -32,13 +32,13 @@ digraph when_to_use {
 
 ### vs. Executing Plans (parallel session)
 
-- Same session (no context switch)
+1. Same session (no context switch)
 
-- Fresh subagent per task (no context pollution)
+1. Fresh subagent per task (no context pollution)
 
-- Two-stage review after each task: spec compliance first, then code quality
+1. Two-stage review after each task: spec compliance first, then code quality
 
-- Faster iteration (no human-in-loop between tasks)
+1. Faster iteration (no human-in-loop between tasks)
 
 ## The Process
 
@@ -96,11 +96,11 @@ Use the least powerful model that can handle each role to conserve cost and incr
 
 ### Task complexity signals
 
-- Touches 1-2 files with a complete spec → cheap model
+1. Touches 1-2 files with a complete spec → cheap model
 
-- Touches multiple files with integration concerns → standard model
+1. Touches multiple files with integration concerns → standard model
 
-- Requires design judgment or broad codebase understanding → most capable model
+1. Requires design judgment or broad codebase understanding → most capable model
 
 ## Handling Implementer Status
 
@@ -126,11 +126,11 @@ Implementer subagents report one of four statuses. Handle each appropriately:
 
 ## Prompt Templates
 
-- `./implementer-prompt.md` - Dispatch implementer subagent
+1. `./implementer-prompt.md` - Dispatch implementer subagent
 
-- `./spec-reviewer-prompt.md` - Dispatch spec compliance reviewer subagent
+1. `./spec-reviewer-prompt.md` - Dispatch spec compliance reviewer subagent
 
-- `./code-quality-reviewer-prompt.md` - Dispatch code quality reviewer subagent
+1. `./code-quality-reviewer-prompt.md` - Dispatch code quality reviewer subagent
 
 ## Example Workflow
 
@@ -190,122 +190,122 @@ Done!
 
 ### vs. Manual execution
 
-- Subagents follow TDD naturally
+1. Subagents follow TDD naturally
 
-- Fresh context per task (no confusion)
+1. Fresh context per task (no confusion)
 
-- Parallel-safe (subagents don't interfere)
+1. Parallel-safe (subagents don't interfere)
 
-- Subagent can ask questions (before AND during work)
+1. Subagent can ask questions (before AND during work)
 
 #### vs. Executing Plans
 
-- Same session (no handoff)
+1. Same session (no handoff)
 
-- Continuous progress (no waiting)
+1. Continuous progress (no waiting)
 
-- Review checkpoints automatic
+1. Review checkpoints automatic
 
 #### Efficiency gains
 
-- No file reading overhead (controller provides full text)
+1. No file reading overhead (controller provides full text)
 
-- Controller curates exactly what context is needed
+1. Controller curates exactly what context is needed
 
-- Subagent gets complete information upfront
+1. Subagent gets complete information upfront
 
-- Questions surfaced before work begins (not after)
+1. Questions surfaced before work begins (not after)
 
 #### Quality gates
 
-- Self-review catches issues before handoff
+1. Self-review catches issues before handoff
 
-- Two-stage review: spec compliance, then code quality
+1. Two-stage review: spec compliance, then code quality
 
-- Review loops ensure fixes actually work
+1. Review loops ensure fixes actually work
 
-- Spec compliance prevents over/under-building
+1. Spec compliance prevents over/under-building
 
-- Code quality ensures implementation is well-built
+1. Code quality ensures implementation is well-built
 
 #### Cost
 
-- More subagent invocations (implementer + 2 reviewers per task)
+1. More subagent invocations (implementer + 2 reviewers per task)
 
-- Controller does more prep work (extracting all tasks upfront)
+1. Controller does more prep work (extracting all tasks upfront)
 
-- Review loops add iterations
+1. Review loops add iterations
 
-- But catches issues early (cheaper than debugging later)
+1. But catches issues early (cheaper than debugging later)
 
 ## Red Flags
 
 ### Never
 
-- Start implementation on main/master branch without explicit user consent
+1. Start implementation on main/master branch without explicit user consent
 
-- Skip reviews (spec compliance OR code quality)
+1. Skip reviews (spec compliance OR code quality)
 
-- Proceed with unfixed issues
+1. Proceed with unfixed issues
 
-- Dispatch multiple implementation subagents in parallel (conflicts)
+1. Dispatch multiple implementation subagents in parallel (conflicts)
 
-- Make subagent read plan file (provide full text instead)
+1. Make subagent read plan file (provide full text instead)
 
-- Skip scene-setting context (subagent needs to understand where task fits)
+1. Skip scene-setting context (subagent needs to understand where task fits)
 
-- Ignore subagent questions (answer before letting them proceed)
+1. Ignore subagent questions (answer before letting them proceed)
 
-- Accept "close enough" on spec compliance (spec reviewer found issues = not done)
+1. Accept "close enough" on spec compliance (spec reviewer found issues = not done)
 
-- Skip review loops (reviewer found issues = implementer fixes = review again)
+1. Skip review loops (reviewer found issues = implementer fixes = review again)
 
-- Let implementer self-review replace actual review (both are needed)
+1. Let implementer self-review replace actual review (both are needed)
 
-- **Start code quality review before spec compliance is ✅** (wrong order)
+1. **Start code quality review before spec compliance is ✅** (wrong order)
 
-- Move to next task while either review has open issues
+1. Move to next task while either review has open issues
 
 #### If subagent asks questions
 
-- Answer clearly and completely
+1. Answer clearly and completely
 
-- Provide additional context if needed
+1. Provide additional context if needed
 
-- Don't rush them into implementation
+1. Don't rush them into implementation
 
 #### If reviewer finds issues
 
-- Implementer (same subagent) fixes them
+1. Implementer (same subagent) fixes them
 
-- Reviewer reviews again
+1. Reviewer reviews again
 
-- Repeat until approved
+1. Repeat until approved
 
-- Don't skip the re-review
+1. Don't skip the re-review
 
 #### If subagent fails task
 
-- Dispatch fix subagent with specific instructions
+1. Dispatch fix subagent with specific instructions
 
-- Don't try to fix manually (context pollution)
+1. Don't try to fix manually (context pollution)
 
 ## Integration
 
 ### Required workflow skills
 
-- **mega-skills:using-git-worktrees** - REQUIRED: Set up isolated workspace before starting
+1. **mega-skills:using-git-worktrees** - REQUIRED: Set up isolated workspace before starting
 
-- **mega-skills:writing-plans** - Creates the plan this skill executes
+1. **mega-skills:writing-plans** - Creates the plan this skill executes
 
-- **mega-skills:requesting-code-review** - Code review template for reviewer subagents
+1. **mega-skills:requesting-code-review** - Code review template for reviewer subagents
 
-- **mega-skills:finishing-a-development-branch** - Complete development after all tasks
+1. **mega-skills:finishing-a-development-branch** - Complete development after all tasks
 
 #### Subagents should use
 
-- **mega-skills:test-driven-development** - Subagents follow TDD for each task
+1. **mega-skills:test-driven-development** - Subagents follow TDD for each task
 
 #### Alternative workflow
 
-- **mega-skills:executing-plans** - Use for parallel session instead of same-session execution
+1. **mega-skills:executing-plans** - Use for parallel session instead of same-session execution

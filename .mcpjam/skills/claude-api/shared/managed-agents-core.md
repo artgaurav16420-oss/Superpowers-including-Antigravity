@@ -5,7 +5,7 @@
 Managed Agents is built around four core concepts:
 
 | Concept | Endpoint | What it is |
-|::::::::---|::::::::---|::::::::---|
+|:::::::::---|:::::::::---|:::::::::---|
 | **Agent** | `/v1/agents` | A persisted, versioned object defining the agent's capabilities and persona: model, system prompt, tools, MCP servers, skills. **Must be created before starting a session.** See the Agents section below. |
 | **Session** | `/v1/sessions` | A stateful interaction with an agent. References a pre-created agent by ID + an environment + initial instructions. Produces an event stream. |
 | **Environment** | `/v1/environments` | A template defining the configuration for container provisioning. |
@@ -37,26 +37,26 @@ rescheduling → running ↔ idle → terminated
 ```
 
 | Status         | Description                                                        |
-| ::::::::---::::::::---::::::::---::::::::----- | ::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::--- |
+| :::::::::---:::::::::---:::::::::---:::::::::----- | :::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::--- |
 | `idle` | Agent has finished the current task, and is awaiting input. It's either waiting for input to continue working via a `user.message` or blocked awaiting a `user.custom_tool_result` or `user.tool_confirmation`. The `stop_reason` attached contains more information about why the Agent has stopped working. |
 | `running` | Session has starting running, and the Agent is actively doing work. |
 | `rescheduling` | Session is (re)scheduling after a retryable error has occurred, ready to be picked up by the orchestration system. |
 | `terminated` | Session has terminated, entering an irreversible and unusable state.  |
 
-- Events can be sent when the session is `running` or `idle`. Messages are queued and processed in order.
-- The agent transitions `idle → running` when it receives a new event, then back to `idle` when done.
-- Errors surface as `session.error` events in the stream, not as a status value.
+1. Events can be sent when the session is `running` or `idle`. Messages are queued and processed in order.
+1. The agent transitions `idle → running` when it receives a new event, then back to `idle` when done.
+1. Errors surface as `session.error` events in the stream, not as a status value.
 
 ### Built-in session features
 
-- **Context compaction** — if you approach max context, the API automatically condenses session history to keep the interaction going
-- **Prompt caching** — historical repeated tokens are cached, reducing processing time and cost
-- **Extended thinking** — on by default, returned as `agent.thinking` events
+1. **Context compaction** — if you approach max context, the API automatically condenses session history to keep the interaction going
+1. **Prompt caching** — historical repeated tokens are cached, reducing processing time and cost
+1. **Extended thinking** — on by default, returned as `agent.thinking` events
 
 ### Session operations
 
 | Operation | Notes |
-|::::::::---|::::::::---|
+|:::::::::---|:::::::::---|
 | List / fetch | Paginated list or single resource by ID |
 | Update | Only `title` is updatable |
 | Archive | Session becomes **read-only**. Not reversible. |
@@ -73,7 +73,7 @@ A session is a running agent instance inside an environment.
 Key fields returned by the API:
 
 | Field           | Type     | Description                                         |
-| ::::::::---::::::::---::::::::---::::::::---::::::::--- | ::::::::---::::::::----- | ::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::--- |
+| :::::::::---:::::::::---:::::::::---:::::::::---:::::::::--- | :::::::::---:::::::::----- | :::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::--- |
 | `type` | string | Always `"session"` |
 | `id` | string | Unique session ID |
 | `title` | string | Human-readable title |
@@ -115,7 +115,7 @@ const session = await client.beta.sessions.create(
 #### Session creation parameters
 
 | Field           | Type     | Required | Description                                    |
-| ::::::::---::::::::---::::::::---::::::::---::::::::--- | ::::::::---::::::::----- | ::::::::---::::::::----- | ::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---- |
+| :::::::::---:::::::::---:::::::::---:::::::::---:::::::::--- | :::::::::---:::::::::----- | :::::::::---:::::::::----- | :::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---- |
 | `agent`         | string or object | **Yes** | String shorthand `"agent_abc123"` (latest version) or `{type: "agent", id, version}` |
 | `environment_id`| string   | **Yes**  | Environment ID                                 |
 | `title`         | string   | No       | Human-readable name (appears in logs/dashboards) |
@@ -126,7 +126,7 @@ const session = await client.beta.sessions.create(
 **Agent configuration fields** (passed to `agents.create()`, not `sessions.create()`):
 
 | Field         | Type     | Required | Description                                    |
-| ::::::::---::::::::---::::::::---::::::::---- | ::::::::---::::::::----- | ::::::::---::::::::----- | ::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---- |
+| :::::::::---:::::::::---:::::::::---:::::::::---- | :::::::::---:::::::::----- | :::::::::---:::::::::----- | :::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---- |
 | `name`        | string   | **Yes**  | Human-readable name (1-256 chars)              |
 | `model`       | string or object | **Yes** | Claude model ID (bare string, or `{id, speed}` object). All Claude 4.5+ models supported. |
 | `system`      | string   | No       | System prompt — defines the agent's behavior (up to 100K chars) |
@@ -147,7 +147,7 @@ const session = await client.beta.sessions.create(
 The API is **flat** — `model`, `system`, `tools` etc. are top-level fields, not wrapped in an `agent:{}` sub-object.
 
 | Field              | Type     | Required | Description                                        |
-| ::::::::---::::::::---::::::::---::::::::---::::::::---::::::::--- | ::::::::---::::::::----- | ::::::::---::::::::----- | ::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::----- |
+| :::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::--- | :::::::::---:::::::::----- | :::::::::---:::::::::----- | :::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::----- |
 | `name`             | string   | Yes      | Human-readable name                                |
 | `model`            | string   | Yes      | Claude model ID                                    |
 | `system`           | string   | No       | System prompt                                      |
@@ -177,9 +177,9 @@ Each `POST /v1/agents/{id}` (update) creates a new immutable version (numeric ti
 
 #### Why version
 
-- **Reproducibility** — pin a session to a known-good config: `{type: "agent", id, version: 3}`
-- **Safe iteration** — update the agent without breaking sessions already running on the old version
-- **Rollback** — if a new system prompt regresses, pin new sessions back to the prior version while you debug
+1. **Reproducibility** — pin a session to a known-good config: `{type: "agent", id, version: 3}`
+1. **Safe iteration** — update the agent without breaking sessions already running on the old version
+1. **Rollback** — if a new system prompt regresses, pin new sessions back to the prior version while you debug
 
 **`version` is optional.** Omit it (or use the string shorthand `agent="agent_abc123"`) to get the latest version at session-creation time. Pass it explicitly (`{type: "agent", id, version: N}`) to pin for reproducibility.
 
@@ -190,7 +190,7 @@ Each `POST /v1/agents/{id}` (update) creates a new immutable version (numeric ti
 ### Agent Endpoints
 
 | Operation        | Method   | Path                                  |
-| ::::::::---::::::::---::::::::---::::::::---::::::::---- | ::::::::---::::::::----- | ::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---- |
+| :::::::::---:::::::::---:::::::::---:::::::::---:::::::::---- | :::::::::---:::::::::----- | :::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---- |
 | Create           | `POST`   | `/v1/agents`                          |
 | List             | `GET`    | `/v1/agents`                          |
 | Get              | `GET`    | `/v1/agents/{id}`                     |

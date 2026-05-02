@@ -9,7 +9,7 @@ Creating a session requires an `environment_id`. Environments are **reusable con
 ### Networking
 
 | Network Policy                  | Description                                                   |
-| ::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---- | ::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---- |
+| :::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---- | :::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---- |
 | `unrestricted`                  | Full egress (except legal blocklist)                          |
 | `package_managers_and_custom`   | Package managers + custom `allowed_hosts`                      |
 
@@ -41,7 +41,7 @@ const env = await client.beta.environments.create({
 ### Environment CRUD
 
 | Operation        | Method   | Path                                       | Notes |
-| ::::::::---::::::::---::::::::---::::::::---::::::::---- | ::::::::---::::::::----- | ::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::--- | ::::::::----- |
+| :::::::::---:::::::::---:::::::::---:::::::::---:::::::::---- | :::::::::---:::::::::----- | :::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::--- | :::::::::----- |
 | Create           | `POST`   | `/v1/environments`                         | |
 | List             | `GET`    | `/v1/environments`                         | Paginated (`limit`, `after_id`, `before_id`) |
 | Get              | `GET`    | `/v1/environments/{id}`                    | |
@@ -96,11 +96,11 @@ for await (const f of client.beta.files.list({
 
 #### Requirements
 
-- The `write` tool (or `bash`) must be enabled for the agent to create output files.
-- Session-scoped `files.list` / `files.download` captures outputs written to `/mnt/session/outputs/`.
-- The filter parameter is **`scope_id`** (REST query param `?scope_id=<session_id>`). The SDK's files resource auto-adds only the `files-api-2025-04-14` header, so pass `betas: ["managed-agents-2026-04-01"]` explicitly (or both headers on raw HTTP) — without it the API may reject `scope_id` as an unknown field. Requires `@anthropic-ai/sdk` ≥ 0.88.0 / `anthropic` (Python) ≥ 0.92.0 — older versions don't type `scope_id`. The `ant` CLI does **not** expose this flag yet; use the SDK or curl.
-- Pass the session ID returned by `sessions.create()` verbatim (e.g. `sesn_011CZx...`) — the API validates the prefix.
-- There's a brief indexing lag (~1–3s) between `session.status_idle` and output files appearing in `files.list`. Retry once or twice if empty.
+1. The `write` tool (or `bash`) must be enabled for the agent to create output files.
+1. Session-scoped `files.list` / `files.download` captures outputs written to `/mnt/session/outputs/`.
+1. The filter parameter is **`scope_id`** (REST query param `?scope_id=<session_id>`). The SDK's files resource auto-adds only the `files-api-2025-04-14` header, so pass `betas: ["managed-agents-2026-04-01"]` explicitly (or both headers on raw HTTP) — without it the API may reject `scope_id` as an unknown field. Requires `@anthropic-ai/sdk` ≥ 0.88.0 / `anthropic` (Python) ≥ 0.92.0 — older versions don't type `scope_id`. The `ant` CLI does **not** expose this flag yet; use the SDK or curl.
+1. Pass the session ID returned by `sessions.create()` verbatim (e.g. `sesn_011CZx...`) — the API validates the prefix.
+1. There's a brief indexing lag (~1–3s) between `session.status_idle` and output files appearing in `files.list`. Retry once or twice if empty.
 
 > **Fallback when `scope_id` filtering is unavailable** (older SDK, or endpoint returns an error): send a follow-up `user.message` asking the agent to `read` each file under `/mnt/session/outputs/` and return the contents. The agent streams the file bodies back as `agent.message` text. This works for text files only and costs output tokens — use it to unblock, not as the primary path.
 
@@ -115,7 +115,7 @@ Repositories are attached for the lifetime of the session — to change which re
 #### Fields
 
 | Field | Required | Notes |
-|::::::::---|::::::::---|::::::::---|
+|:::::::::---|:::::::::---|:::::::::---|
 | `type` | ✅ | `"github_repository"` |
 | `url` | ✅ | The GitHub repository URL |
 | `authorization_token` | ✅ | GitHub Personal Access Token with repository access. **Never echoed in API responses.** |
@@ -123,8 +123,8 @@ Repositories are attached for the lifetime of the session — to change which re
 | `checkout` | ❌ | `{type: "branch", name: "..."}` or `{type: "commit", sha: "..."}`. Defaults to the repo's default branch. |
 
 **Token permission levels** (fine-grained PATs):
-- `Contents: Read` — clone only
-- `Contents: Read and write` — push changes and create pull requests
+1. `Contents: Read` — clone only
+1. `Contents: Read and write` — push changes and create pull requests
 
 **How auth works:** `authorization_token` is never placed inside the container. `git pull` / `git push` and GitHub REST calls against the attached repository are routed through an Anthropic-side git proxy that injects the token after the request leaves the sandbox. Code running in the container — including anything the agent writes — cannot read or exfiltrate it.
 
@@ -203,7 +203,7 @@ session = client.beta.sessions.create(
 Upload and manage files for use as session resources, and download files the agent wrote to `/mnt/session/outputs/`.
 
 | Operation        | Method   | Path                                  | SDK |
-| ::::::::---::::::::---::::::::---::::::::---::::::::---- | ::::::::---::::::::----- | ::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---::::::::---- | ::::::::--- |
+| :::::::::---:::::::::---:::::::::---:::::::::---:::::::::---- | :::::::::---:::::::::----- | :::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---:::::::::---- | :::::::::--- |
 | Upload           | `POST`   | `/v1/files`                           | `client.beta.files.upload({ file })` |
 | List             | `GET`    | `/v1/files?scope_id=...`              | `client.beta.files.list({ scope_id, betas: ["managed-agents-2026-04-01"] })` |
 | Get Metadata     | `GET`    | `/v1/files/{id}`                      | `client.beta.files.retrieveMetadata(id)` |

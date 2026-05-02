@@ -87,10 +87,10 @@ A working integration auto-triggers the `brainstorming` skill before any code is
 
 ### These are not real integrations and will be closed
 
-- Manually copying skill files into the harness
-- Wrapping with `npx skills` or similar at-runtime shims
-- Anything that requires the user to opt in to skills per-session
-- Anything where `brainstorming` does not auto-trigger on the acceptance test above
+1. Manually copying skill files into the harness
+1. Wrapping with `npx skills` or similar at-runtime shims
+1. Anything that requires the user to opt in to skills per-session
+1. Anything where `brainstorming` does not auto-trigger on the acceptance test above
 
 If you are not sure whether your integration loads the bootstrap at session start, it does not.
 
@@ -98,10 +98,10 @@ If you are not sure whether your integration loads the bootstrap at session star
 
 Skills are not prose — they are code that shapes agent behavior. If you modify skill content:
 
-- Use `mega-skills:writing-skills` to develop and test changes
-- Run adversarial pressure testing across multiple sessions
-- Show before/after eval results in your PR
-- Do not modify carefully-tuned content (Red Flags tables, rationalization lists, "human partner" language) without evidence the change is an improvement
+1. Use `mega-skills:writing-skills` to develop and test changes
+1. Run adversarial pressure testing across multiple sessions
+1. Show before/after eval results in your PR
+1. Do not modify carefully-tuned content (Red Flags tables, rationalization lists, "human partner" language) without evidence the change is an improvement
 
 ## Understand the Project Before Contributing
 
@@ -109,7 +109,7 @@ Before proposing changes to skill design, workflow philosophy, or architecture, 
 
 ## General
 
-- Read `.github/PULL_REQUEST_TEMPLATE.md` before submitting
-- One problem per PR
-- Test on at least one harness and report results in the environment table
-- Describe the problem you solved, not just what you changed
+1. Read `.github/PULL_REQUEST_TEMPLATE.md` before submitting
+1. One problem per PR
+1. Test on at least one harness and report results in the environment table
+1. Describe the problem you solved, not just what you changed

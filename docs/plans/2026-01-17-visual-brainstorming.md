@@ -14,8 +14,8 @@
 
 ### Files
 
-- Create: `lib/brainstorm-server/index.js`
-- Create: `lib/brainstorm-server/package.json`
+1. Create: `lib/brainstorm-server/index.js`
+1. Create: `lib/brainstorm-server/package.json`
 
 #### Step 1: Create package.json
 
@@ -145,7 +145,7 @@ git commit -m "feat: add brainstorm server foundation"
 
 ### Files (2)
 
-- Create: `lib/brainstorm-server/helper.js`
+1. Create: `lib/brainstorm-server/helper.js`
 
 #### Step 1: Create helper.js with event auto-capture
 
@@ -267,8 +267,8 @@ git commit -m "feat: add browser helper library for event capture"
 
 ### Files (3)
 
-- Create: `tests/brainstorm-server/server.test.js`
-- Create: `tests/brainstorm-server/package.json`
+1. Create: `tests/brainstorm-server/server.test.js`
+1. Create: `tests/brainstorm-server/package.json`
 
 #### Step 1: Create test package.json
 
@@ -411,8 +411,8 @@ git commit -m "test: add brainstorm server integration tests"
 
 ### Files (4)
 
-- Modify: `skills/brainstorming/SKILL.md`
-- Create: `skills/brainstorming/visual-companion.md` (supporting doc)
+1. Modify: `skills/brainstorming/SKILL.md`
+1. Create: `skills/brainstorming/visual-companion.md` (supporting doc)
 
 #### Step 1: Create the supporting documentation
 
@@ -550,7 +550,7 @@ git commit -m "feat: add visual companion to brainstorming skill"
 
 ### Files (5)
 
-- Check if `.gitignore` needs node_modules exclusion for lib/brainstorm-server
+1. Check if `.gitignore` needs node_modules exclusion for lib/brainstorm-server
 
 #### Step 1: Check current gitignore
 

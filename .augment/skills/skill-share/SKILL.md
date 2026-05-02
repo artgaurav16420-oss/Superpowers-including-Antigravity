@@ -10,67 +10,67 @@ license: Complete terms in LICENSE.txt
 
 Use this skill when you need to:
 
-- **Create new Claude skills** with proper structure and metadata
+1. **Create new Claude skills** with proper structure and metadata
 
-- **Generate skill packages** ready for distribution
+1. **Generate skill packages** ready for distribution
 
-- **Automatically share created skills** on Slack channels for team visibility
+1. **Automatically share created skills** on Slack channels for team visibility
 
-- **Validate skill structure** before sharing
+1. **Validate skill structure** before sharing
 
-- **Package and distribute** skills to your team
+1. **Package and distribute** skills to your team
 
 Also use this skill when:
 
-- **User says he wants to create/share his skill**
+1. **User says he wants to create/share his skill**
 
 This skill is ideal for:
 
-- Creating skills as part of team workflows
+1. Creating skills as part of team workflows
 
-- Building internal tools that need skill creation + team notification
+1. Building internal tools that need skill creation + team notification
 
-- Automating the skill development pipeline
+1. Automating the skill development pipeline
 
-- Collaborative skill creation with team notifications
+1. Collaborative skill creation with team notifications
 
 ## Key Features
 
 ### 1. Skill Creation
 
-- Creates properly structured skill directories with SKILL.md
+1. Creates properly structured skill directories with SKILL.md
 
-- Generates standardized scripts/, references/, and assets/ directories
+1. Generates standardized scripts/, references/, and assets/ directories
 
-- Auto-generates YAML frontmatter with required metadata
+1. Auto-generates YAML frontmatter with required metadata
 
-- Enforces naming conventions (hyphen-case)
+1. Enforces naming conventions (hyphen-case)
 
 ### 2. Skill Validation
 
-- Validates SKILL.md format and required fields
+1. Validates SKILL.md format and required fields
 
-- Checks naming conventions
+1. Checks naming conventions
 
-- Ensures metadata completeness before packaging
+1. Ensures metadata completeness before packaging
 
 ### 3. Skill Packaging
 
-- Creates distributable zip files
+1. Creates distributable zip files
 
-- Includes all skill assets and documentation
+1. Includes all skill assets and documentation
 
-- Runs validation automatically before packaging
+1. Runs validation automatically before packaging
 
 ### 4. Slack Integration via Rube
 
-- Automatically sends created skill information to designated Slack channels
+1. Automatically sends created skill information to designated Slack channels
 
-- Shares skill metadata (name, description, link)
+1. Shares skill metadata (name, description, link)
 
-- Posts skill summary for team discovery
+1. Posts skill summary for team discovery
 
-- Provides direct links to skill files
+1. Provides direct links to skill files
 
 ## How It Works
 
@@ -99,18 +99,18 @@ When you ask Claude to create a skill called "pdf-analyzer":
 
 This skill leverages Rube for:
 
-- **SLACK_SEND_MESSAGE**: Posts skill information to team channels
+1. **SLACK_SEND_MESSAGE**: Posts skill information to team channels
 
-- **SLACK_POST_MESSAGE_WITH_BLOCKS**: Shares rich formatted skill metadata
+1. **SLACK_POST_MESSAGE_WITH_BLOCKS**: Shares rich formatted skill metadata
 
-- **SLACK_FIND_CHANNELS**: Discovers target channels for skill announcements
+1. **SLACK_FIND_CHANNELS**: Discovers target channels for skill announcements
 
 ## Requirements
 
-- Slack workspace connection via Rube
+1. Slack workspace connection via Rube
 
-- Write access to skill creation directory
+1. Write access to skill creation directory
 
-- Python 3.7+ for skill creation scripts
+1. Python 3.7+ for skill creation scripts
 
-- Target Slack channel for skill notifications
+1. Target Slack channel for skill notifications

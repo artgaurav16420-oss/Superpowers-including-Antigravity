@@ -4,60 +4,60 @@ Activate this skill when you need to interact with a live web interface to verif
 
 ## Red Flags
 
-- "I can't see the UI"
+1. "I can't see the UI"
 
-- "I'm not sure if the button is there"
+1. "I'm not sure if the button is there"
 
-- "I need to verify the layout"
+1. "I need to verify the layout"
 
-- Testing a local web app manually
+1. Testing a local web app manually
 
 ## The Process
 
 ### 1. Launch & Navigate
 
-- Use your browser tool to open the URL (local or remote).
+1. Use your browser tool to open the URL (local or remote).
 
-- Wait for the page to stabilize.
+1. Wait for the page to stabilize.
 
 ### 2. Inspect & Plan
 
-- Take a screenshot or read the DOM to understand the current state.
+1. Take a screenshot or read the DOM to understand the current state.
 
-- Identify the selectors for the elements you need to interact with.
+1. Identify the selectors for the elements you need to interact with.
 
 ### 3. Interact
 
 Perform atomic actions:
 
-- **Click**: Buttons, links, checkboxes.
+1. **Click**: Buttons, links, checkboxes.
 
-- **Type**: Input fields, text areas.
+1. **Type**: Input fields, text areas.
 
-- **Select**: Dropdowns, radio buttons.
+1. **Select**: Dropdowns, radio buttons.
 
-- **Scroll**: To find hidden content.
+1. **Scroll**: To find hidden content.
 
 ### 4. Verify
 
-- After every interaction, verify the expected state change (e.g., "Success" message, navigation to new page).
+1. After every interaction, verify the expected state change (e.g., "Success" message, navigation to new page).
 
-- Capture screenshots for your human partner to review.
+1. Capture screenshots for your human partner to review.
 
 ### 5. Debugging
 
 If an interaction fails:
 
-- Read the console logs.
+1. Read the console logs.
 
-- Check for element visibility/overlap.
+1. Check for element visibility/overlap.
 
-- Try alternative selectors (XPath vs CSS).
+1. Try alternative selectors (XPath vs CSS).
 
 ## Success Criteria
 
-- The end-to-end user flow is verified.
+1. The end-to-end user flow is verified.
 
-- Visual bugs are caught and documented.
+1. Visual bugs are caught and documented.
 
-- Complex data is extracted accurately from the UI.
+1. Complex data is extracted accurately from the UI.

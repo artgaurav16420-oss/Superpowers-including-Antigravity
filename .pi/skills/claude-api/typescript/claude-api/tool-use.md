@@ -41,10 +41,10 @@ console.log(finalMessage.content);
 
 ### Key benefits of the tool runner
 
-- No manual loop — the SDK handles calling tools and feeding results back
-- Type-safe tool inputs via Zod schemas
-- Tool schemas are generated automatically from Zod definitions
-- Iteration stops automatically when Claude has no more tool calls
+1. No manual loop — the SDK handles calling tools and feeding results back
+1. Type-safe tool inputs via Zod schemas
+1. Tool schemas are generated automatically from Zod definitions
+1. Iteration stops automatically when Claude has no more tool calls
 
 ---
 
@@ -233,7 +233,7 @@ const response = await client.messages.create({
 ```
 
 | Interface | `name` | `type` |
-|::::::::---|::::::::---|::::::::---|
+|:::::::::---|:::::::::---|:::::::::---|
 | `ToolTextEditor20250124` | `str_replace_editor` | `text_editor_20250124` |
 | `ToolTextEditor20250429` | `str_replace_based_edit_tool` | `text_editor_20250429` |
 | `ToolTextEditor20250728` | `str_replace_based_edit_tool` | `text_editor_20250728` |
@@ -448,7 +448,7 @@ for await (const message of runner) {
 
 For full implementation examples, use WebFetch:
 
-- `https://github.com/anthropics/anthropic-sdk-typescript/blob/main/examples/tools-helpers-memory.ts`
+1. `https://github.com/anthropics/anthropic-sdk-typescript/blob/main/examples/tools-helpers-memory.ts`
 
 ---
 

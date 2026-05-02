@@ -32,9 +32,9 @@ test('renders sidebar', () => {
 
 #### Why this is wrong
 
-- You're verifying the mock works, not that the component works
-- Test passes when mock is present, fails when it's not
-- Tells you nothing about real behavior
+1. You're verifying the mock works, not that the component works
+1. Test passes when mock is present, fails when it's not
+1. Tells you nothing about real behavior
 
 **your human partner's correction:** "Are we testing the behavior of a mock?"
 
@@ -82,10 +82,10 @@ afterEach(() => session.destroy());
 
 #### Why this is wrong (2)
 
-- Production class polluted with test-only code
-- Dangerous if accidentally called in production
-- Violates YAGNI and separation of concerns
-- Confuses object lifecycle with entity lifecycle
+1. Production class polluted with test-only code
+1. Dangerous if accidentally called in production
+1. Violates YAGNI and separation of concerns
+1. Confuses object lifecycle with entity lifecycle
 
 #### The fix (2)
 
@@ -140,9 +140,9 @@ test('detects duplicate server', () => {
 
 #### Why this is wrong (3)
 
-- Mocked method had side effect test depended on (writing config)
-- Over-mocking to "be safe" breaks actual behavior
-- Test passes for wrong reason or fails mysteriously
+1. Mocked method had side effect test depended on (writing config)
+1. Over-mocking to "be safe" breaks actual behavior
+1. Test passes for wrong reason or fails mysteriously
 
 #### The fix (3)
 
@@ -200,10 +200,10 @@ const mockResponse = {
 
 #### Why this is wrong (4)
 
-- **Partial mocks hide structural assumptions** - You only mocked fields you know about
-- **Downstream code may depend on fields you didn't include** - Silent failures
-- **Tests pass but integration fails** - Mock incomplete, real API complete
-- **False confidence** - Test proves nothing about real behavior
+1. **Partial mocks hide structural assumptions** - You only mocked fields you know about
+1. **Downstream code may depend on fields you didn't include** - Silent failures
+1. **Tests pass but integration fails** - Mock incomplete, real API complete
+1. **False confidence** - Test proves nothing about real behavior
 
 **The Iron Rule:** Mock the COMPLETE data structure as it exists in reality, not just fields your immediate test uses.
 
@@ -249,9 +249,9 @@ BEFORE creating mock responses:
 
 #### Why this is wrong (5)
 
-- Testing is part of implementation, not optional follow-up
-- TDD would have caught this
-- Can't claim complete without tests
+1. Testing is part of implementation, not optional follow-up
+1. TDD would have caught this
+1. Can't claim complete without tests
 
 #### The fix (5)
 
@@ -267,10 +267,10 @@ TDD cycle:
 
 ### Warning signs
 
-- Mock setup longer than test logic
-- Mocking everything to make test pass
-- Mocks missing methods real components have
-- Test breaks when mock changes
+1. Mock setup longer than test logic
+1. Mocking everything to make test pass
+1. Mocks missing methods real components have
+1. Test breaks when mock changes
 
 **your human partner's question:** "Do we need to be using a mock here?"
 
@@ -290,7 +290,7 @@ TDD cycle:
 ## Quick Reference
 
 | Anti-Pattern | Fix |
-|::::::::---::::::::---::::::::---::::::::-----|::::::::-----|
+|:::::::::---:::::::::---:::::::::---:::::::::-----|:::::::::-----|
 | Assert on mock elements | Test real component or unmock it |
 | Test-only methods in production | Move to test utilities |
 | Mock without understanding | Understand dependencies first, mock minimally |
@@ -300,12 +300,12 @@ TDD cycle:
 
 ## Red Flags
 
-- Assertion checks for `*-mock` test IDs
-- Methods only called in test files
-- Mock setup is >50% of test
-- Test fails when you remove mock
-- Can't explain why mock is needed
-- Mocking "just to be safe"
+1. Assertion checks for `*-mock` test IDs
+1. Methods only called in test files
+1. Mock setup is >50% of test
+1. Test fails when you remove mock
+1. Can't explain why mock is needed
+1. Mocking "just to be safe"
 
 ## The Bottom Line
 

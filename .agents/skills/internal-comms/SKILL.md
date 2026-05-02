@@ -10,19 +10,19 @@ license: Complete terms in LICENSE.txt
 
 To write internal communications, use this skill for:
 
-- 3P updates (Progress, Plans, Problems)
+1. 3P updates (Progress, Plans, Problems)
 
-- Company newsletters
+1. Company newsletters
 
-- FAQ responses
+1. FAQ responses
 
-- Status reports
+1. Status reports
 
-- Leadership updates
+1. Leadership updates
 
-- Project updates
+1. Project updates
 
-- Incident reports
+1. Incident reports
 
 ## How to use this skill
 
@@ -32,13 +32,13 @@ To write any internal communication:
 
 1. **Load the appropriate guideline file** from the `examples/` directory:
 
-    - `examples/3p-updates.md` - For Progress/Plans/Problems team updates
+    1. `examples/3p-updates.md` - For Progress/Plans/Problems team updates
 
-    - `examples/company-newsletter.md` - For company-wide newsletters
+    1. `examples/company-newsletter.md` - For company-wide newsletters
 
-    - `examples/faq-answers.md` - For answering frequently asked questions
+    1. `examples/faq-answers.md` - For answering frequently asked questions
 
-    - `examples/general-comms.md` - For anything else that doesn't explicitly match one of the above
+    1. `examples/general-comms.md` - For anything else that doesn't explicitly match one of the above
 
 1. **Follow the specific instructions** in that file for formatting, tone, and content gathering
 

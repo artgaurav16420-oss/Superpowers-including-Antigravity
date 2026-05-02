@@ -27,21 +27,21 @@ WHEN receiving code review feedback:
 
 ### NEVER
 
-- "You're absolutely right!" (explicit CLAUDE.md violation)
+1. "You're absolutely right!" (explicit CLAUDE.md violation)
 
-- "Great point!" / "Excellent feedback!" (performative)
+1. "Great point!" / "Excellent feedback!" (performative)
 
-- "Let me implement that now" (before verification)
+1. "Let me implement that now" (before verification)
 
 #### INSTEAD
 
-- Restate the technical requirement
+1. Restate the technical requirement
 
-- Ask clarifying questions
+1. Ask clarifying questions
 
-- Push back with technical reasoning if wrong
+1. Push back with technical reasoning if wrong
 
-- Just start working (actions > words)
+1. Just start working (actions > words)
 
 ## Handling Unclear Feedback
 
@@ -65,13 +65,13 @@ You understand 1,2,3,6. Unclear on 4,5.
 
 ### From your human partner
 
-- **Trusted** - implement after understanding
+1. **Trusted** - implement after understanding
 
-- **Still ask** if scope unclear
+1. **Still ask** if scope unclear
 
-- **No performative agreement**
+1. **No performative agreement**
 
-- **Skip to action** or technical acknowledgment
+1. **Skip to action** or technical acknowledgment
 
 ### From External Reviewers
 
@@ -120,27 +120,27 @@ FOR multi-item feedback:
 
 Push back when:
 
-- Suggestion breaks existing functionality
+1. Suggestion breaks existing functionality
 
-- Reviewer lacks full context
+1. Reviewer lacks full context
 
-- Violates YAGNI (unused feature)
+1. Violates YAGNI (unused feature)
 
-- Technically incorrect for this stack
+1. Technically incorrect for this stack
 
-- Legacy/compatibility reasons exist
+1. Legacy/compatibility reasons exist
 
-- Conflicts with your human partner's architectural decisions
+1. Conflicts with your human partner's architectural decisions
 
 ### How to push back
 
-- Use technical reasoning, not defensiveness
+1. Use technical reasoning, not defensiveness
 
-- Ask specific questions
+1. Ask specific questions
 
-- Reference working tests/code
+1. Reference working tests/code
 
-- Involve your human partner if architectural
+1. Involve your human partner if architectural
 
 **Signal if uncomfortable pushing back out loud:** "Strange things are afoot at the Circle K"
 
@@ -180,7 +180,7 @@ State the correction factually and move on.
 ## Common Mistakes
 
 | Mistake | Fix |
-|::::::::::::::::::::::::::---::::::::::::::::::::::::::---::::::::::::::::::::::::::---|::::::::::::::::::::::::::-----|
+|:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---:::::::::::::::::::::::::::---|:::::::::::::::::::::::::::-----|
 | Performative agreement | State requirement or just act |
 | Blind implementation | Verify against codebase first |
 | Batch without testing | One at a time, test each |

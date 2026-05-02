@@ -4,15 +4,15 @@ A bold and modern theme with high-contrast colors perfect for cutting-edge techn
 
 ## Color Palette
 
-- **Electric Blue**: `#0066ff` - Vibrant primary accent
-- **Neon Cyan**: `#00ffff` - Bright highlight color
-- **Dark Gray**: `#1e1e1e` - Deep backgrounds
-- **White**: `#ffffff` - Clean text and contrast
+1. **Electric Blue**: `#0066ff` - Vibrant primary accent
+1. **Neon Cyan**: `#00ffff` - Bright highlight color
+1. **Dark Gray**: `#1e1e1e` - Deep backgrounds
+1. **White**: `#ffffff` - Clean text and contrast
 
 ## Typography
 
-- **Headers**: DejaVu Sans Bold
-- **Body Text**: DejaVu Sans
+1. **Headers**: DejaVu Sans Bold
+1. **Body Text**: DejaVu Sans
 
 ## Best Used For
 

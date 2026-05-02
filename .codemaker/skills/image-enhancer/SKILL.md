@@ -9,17 +9,17 @@ This skill takes your images and screenshots and makes them look better—sharpe
 
 ## When to Use This Skill
 
-- Improving screenshot quality for blog posts or documentation
+1. Improving screenshot quality for blog posts or documentation
 
-- Enhancing images before sharing on social media
+1. Enhancing images before sharing on social media
 
-- Preparing images for presentations or reports
+1. Preparing images for presentations or reports
 
-- Upscaling low-resolution images
+1. Upscaling low-resolution images
 
-- Sharpening blurry photos
+1. Sharpening blurry photos
 
-- Cleaning up compressed images
+1. Cleaning up compressed images
 
 ## What This Skill Does
 
@@ -90,24 +90,24 @@ Original preserved as: screenshot-2024-original.png
 
 ## Tips
 
-- Always keeps original files as backup
+1. Always keeps original files as backup
 
-- Works best with screenshots and digital images
+1. Works best with screenshots and digital images
 
-- Can batch process entire folders
+1. Can batch process entire folders
 
-- Specify output format if needed (PNG for quality, JPG for smaller size)
+1. Specify output format if needed (PNG for quality, JPG for smaller size)
 
-- For social media, mention the platform for optimal sizing
+1. For social media, mention the platform for optimal sizing
 
 ## Common Use Cases
 
-- **Blog Posts**: Enhance screenshots before publishing
+1. **Blog Posts**: Enhance screenshots before publishing
 
-- **Documentation**: Make UI screenshots crystal clear
+1. **Documentation**: Make UI screenshots crystal clear
 
-- **Social Media**: Optimize images for Twitter, LinkedIn, Instagram
+1. **Social Media**: Optimize images for Twitter, LinkedIn, Instagram
 
-- **Presentations**: Upscale images for large screens
+1. **Presentations**: Upscale images for large screens
 
-- **Print Materials**: Increase resolution for physical media
+1. **Print Materials**: Increase resolution for physical media

@@ -20,25 +20,25 @@ First, undertake this task:
 
 To begin, create a VISUAL PHILOSOPHY (not layouts or templates) that will be interpreted through:
 
-- Form, space, color, composition
+1. Form, space, color, composition
 
-- Images, graphics, shapes, patterns
+1. Images, graphics, shapes, patterns
 
-- Minimal text as visual accent
+1. Minimal text as visual accent
 
 ### THE CRITICAL UNDERSTANDING
 
-- What is received: Some subtle input or instructions by the user that should be taken into account, but used as a foundation; it should not constrain creative freedom.
+1. What is received: Some subtle input or instructions by the user that should be taken into account, but used as a foundation; it should not constrain creative freedom.
 
-- What is created: A design philosophy/aesthetic movement.
+1. What is created: A design philosophy/aesthetic movement.
 
-- What happens next: Then, the same version receives the philosophy and EXPRESSES IT VISUALLY - creating artifacts that are 90% visual design, 10% essential text.
+1. What happens next: Then, the same version receives the philosophy and EXPRESSES IT VISUALLY - creating artifacts that are 90% visual design, 10% essential text.
 
 Consider this approach:
 
-- Write a manifesto for an art movement
+1. Write a manifesto for an art movement
 
-- The next phase involves making the artwork
+1. The next phase involves making the artwork
 
 The philosophy must emphasize: Visual expression. Spatial communication. Artistic interpretation. Minimal words.
 
@@ -50,23 +50,23 @@ The philosophy must emphasize: Visual expression. Spatial communication. Artisti
 
 To capture the VISUAL essence, express how the philosophy manifests through:
 
-- Space and form
+1. Space and form
 
-- Color and material
+1. Color and material
 
-- Scale and rhythm
+1. Scale and rhythm
 
-- Composition and balance
+1. Composition and balance
 
-- Visual hierarchy
+1. Visual hierarchy
 
 #### CRITICAL GUIDELINES
 
-- **Avoid redundancy**: Each design aspect should be mentioned once. Avoid repeating points about color theory, spatial relationships, or typographic principles unless adding new depth.
+1. **Avoid redundancy**: Each design aspect should be mentioned once. Avoid repeating points about color theory, spatial relationships, or typographic principles unless adding new depth.
 
-- **Emphasize craftsmanship REPEATEDLY**: The philosophy MUST stress multiple times that the final work should appear as though it took countless hours to create, was labored over with care, and comes from someone at the absolute top of their field. This framing is essential - repeat phrases like "meticulously crafted," "the product of deep expertise," "painstaking attention," "master-level execution."
+1. **Emphasize craftsmanship REPEATEDLY**: The philosophy MUST stress multiple times that the final work should appear as though it took countless hours to create, was labored over with care, and comes from someone at the absolute top of their field. This framing is essential - repeat phrases like "meticulously crafted," "the product of deep expertise," "painstaking attention," "master-level execution."
 
-- **Leave creative space**: Remain specific about the aesthetic direction, but concise enough that the next Claude has room to make interpretive choices also at a extremely high level of craftmanship.
+1. **Leave creative space**: Remain specific about the aesthetic direction, but concise enough that the next Claude has room to make interpretive choices also at a extremely high level of craftmanship.
 
 The philosophy must guide the next version to express ideas VISUALLY, not through text. Information lives in design, not paragraphs.
 
@@ -101,17 +101,17 @@ Visual expression: Grid-based precision, bold photography or stark graphics, dra
 
 ### ESSENTIAL PRINCIPLES
 
-- **VISUAL PHILOSOPHY**: Create an aesthetic worldview to be expressed through design
+1. **VISUAL PHILOSOPHY**: Create an aesthetic worldview to be expressed through design
 
-- **MINIMAL TEXT**: Always emphasize that text is sparse, essential-only, integrated as visual element - never lengthy
+1. **MINIMAL TEXT**: Always emphasize that text is sparse, essential-only, integrated as visual element - never lengthy
 
-- **SPATIAL EXPRESSION**: Ideas communicate through space, form, color, composition - not paragraphs
+1. **SPATIAL EXPRESSION**: Ideas communicate through space, form, color, composition - not paragraphs
 
-- **ARTISTIC FREEDOM**: The next Claude interprets the philosophy visually - provide creative room
+1. **ARTISTIC FREEDOM**: The next Claude interprets the philosophy visually - provide creative room
 
-- **PURE DESIGN**: This is about making ART OBJECTS, not documents with decoration
+1. **PURE DESIGN**: This is about making ART OBJECTS, not documents with decoration
 
-- **EXPERT CRAFTSMANSHIP**: Repeatedly emphasize the final work must look meticulously crafted, labored over with care, the product of countless hours by someone at the top of their field
+1. **EXPERT CRAFTSMANSHIP**: Repeatedly emphasize the final work must look meticulously crafted, labored over with care, the product of countless hours by someone at the top of their field
 
 **The design philosophy should be 4-6 paragraphs long.** Fill it with poetic design philosophy that brings together the core vision. Avoid repeating the same points. Keep the design philosophy generic without mentioning the intention of the art, as if it can be used wherever. Output the design philosophy as a .md file.
 

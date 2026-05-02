@@ -16,14 +16,14 @@
 
 ## File Map
 
-- **Create:** `skills/brainstorming/scripts/server.js` — the zero-dep replacement
-- **Modify:** `skills/brainstorming/scripts/start-server.sh:94,100` — change `index.js` to `server.js`
-- **Modify:** `.gitignore:6` — remove the `!skills/brainstorming/scripts/node_modules/` exception
-- **Delete:** `skills/brainstorming/scripts/index.js`
-- **Delete:** `skills/brainstorming/scripts/package.json`
-- **Delete:** `skills/brainstorming/scripts/package-lock.json`
-- **Delete:** `skills/brainstorming/scripts/node_modules/` (714 files)
-- **No changes:** `skills/brainstorming/scripts/helper.js`, `skills/brainstorming/scripts/frame-template.html`, `skills/brainstorming/scripts/stop-server.sh`
+1. **Create:** `skills/brainstorming/scripts/server.js` — the zero-dep replacement
+1. **Modify:** `skills/brainstorming/scripts/start-server.sh:94,100` — change `index.js` to `server.js`
+1. **Modify:** `.gitignore:6` — remove the `!skills/brainstorming/scripts/node_modules/` exception
+1. **Delete:** `skills/brainstorming/scripts/index.js`
+1. **Delete:** `skills/brainstorming/scripts/package.json`
+1. **Delete:** `skills/brainstorming/scripts/package-lock.json`
+1. **Delete:** `skills/brainstorming/scripts/node_modules/` (714 files)
+1. **No changes:** `skills/brainstorming/scripts/helper.js`, `skills/brainstorming/scripts/frame-template.html`, `skills/brainstorming/scripts/stop-server.sh`
 
 ---
 
@@ -33,10 +33,10 @@
 
 #### Files
 
-- Create: `skills/brainstorming/scripts/server.js`
-- Test: `tests/brainstorm-server/ws-protocol.test.js` (already exists)
+1. Create: `skills/brainstorming/scripts/server.js`
+1. Test: `tests/brainstorm-server/ws-protocol.test.js` (already exists)
 
-- [ ] **Step 1: Create server.js with OPCODES constant and computeAcceptKey**
+1. [ ] **Step 1: Create server.js with OPCODES constant and computeAcceptKey**
 
 ```js
 const crypto = require('crypto');
@@ -49,12 +49,12 @@ function computeAcceptKey(clientKey) {
 }
 ```
 
-- [ ] **Step 2: Implement encodeFrame**
+1. [ ] **Step 2: Implement encodeFrame**
 
 Server frames are never masked. Three length encodings:
-- payload < 126: 2-byte header (FIN+opcode, length)
-- 126-65535: 4-byte header (FIN+opcode, 126, 16-bit length)
-- &gt; 65535: 10-byte header (FIN+opcode, 127, 64-bit length)
+1. payload < 126: 2-byte header (FIN+opcode, length)
+1. 126-65535: 4-byte header (FIN+opcode, 126, 16-bit length)
+1. &gt; 65535: 10-byte header (FIN+opcode, 127, 64-bit length)
 
 ```js
 function encodeFrame(opcode, payload) {
@@ -82,7 +82,7 @@ function encodeFrame(opcode, payload) {
 }
 ```
 
-- [ ] **Step 3: Implement decodeFrame**
+1. [ ] **Step 3: Implement decodeFrame**
 
 Client frames are always masked. Returns `{ opcode, payload, bytesConsumed }` or `null` for incomplete. Throws on unmasked frames.
 
@@ -124,18 +124,18 @@ function decodeFrame(buffer) {
 }
 ```
 
-- [ ] **Step 4: Add module exports at the bottom of the file**
+1. [ ] **Step 4: Add module exports at the bottom of the file**
 
 ```js
 module.exports = { computeAcceptKey, encodeFrame, decodeFrame, OPCODES };
 ```
 
-- [ ] **Step 5: Run unit tests**
+1. [ ] **Step 5: Run unit tests**
 
 Run: `cd tests/brainstorm-server && node ws-protocol.test.js`
 Expected: All tests pass (handshake, encoding, decoding, boundaries, edge cases)
 
-- [ ] **Step 6: Commit**
+1. [ ] **Step 6: Commit**
 
 ```bash
 git add skills/brainstorming/scripts/server.js
@@ -150,10 +150,10 @@ git commit -m "Add WebSocket protocol layer for zero-dep brainstorm server"
 
 #### Files (2)
 
-- Modify: `skills/brainstorming/scripts/server.js`
-- Test: `tests/brainstorm-server/server.test.js` (already exists)
+1. Modify: `skills/brainstorming/scripts/server.js`
+1. Test: `tests/brainstorm-server/server.test.js` (already exists)
 
-- [ ] **Step 1: Add configuration and constants at top of server.js (after requires)**
+1. [ ] **Step 1: Add configuration and constants at top of server.js (after requires)**
 
 ```js
 const http = require('http');
@@ -172,7 +172,7 @@ const MIME_TYPES = {
 };
 ```
 
-- [ ] **Step 2: Add WAITING_PAGE, template loading at module scope, and helper functions**
+1. [ ] **Step 2: Add WAITING_PAGE, template loading at module scope, and helper functions**
 
 Load `frameTemplate` and `helperInjection` at module scope so they're accessible to `wrapInFrame` and `handleRequest`. They only read files from `__dirname` (the scripts directory), which is valid whether the module is required or run directly.
 
@@ -211,7 +211,7 @@ function getNewestScreen() {
 }
 ```
 
-- [ ] **Step 3: Add HTTP request handler**
+1. [ ] **Step 3: Add HTTP request handler**
 
 ```js
 function handleRequest(req, res) {
@@ -248,7 +248,7 @@ function handleRequest(req, res) {
 }
 ```
 
-- [ ] **Step 4: Add WebSocket connection handling**
+1. [ ] **Step 4: Add WebSocket connection handling**
 
 ```js
 const clients = new Set();
@@ -333,7 +333,7 @@ function broadcast(msg) {
 }
 ```
 
-- [ ] **Step 5: Add debounce timer map**
+1. [ ] **Step 5: Add debounce timer map**
 
 ```js
 const debounceTimers = new Map();
@@ -341,7 +341,7 @@ const debounceTimers = new Map();
 
 File watching logic is inlined in `startServer` (Step 6) to keep watcher lifecycle together with server lifecycle and include an `error` handler per spec.
 
-- [ ] **Step 6: Add startServer function and conditional main**
+1. [ ] **Step 6: Add startServer function and conditional main**
 
 `frameTemplate` and `helperInjection` are already at module scope (Step 2). `startServer` just creates the screen dir, starts the HTTP server, watcher, and logs startup info.
 
@@ -386,14 +386,14 @@ if (require.main === module) {
 }
 ```
 
-- [ ] **Step 7: Run integration tests**
+1. [ ] **Step 7: Run integration tests**
 
 The test directory already has a `package.json` with `ws` as a dependency. Install it if needed, then run tests.
 
 Run: `cd tests/brainstorm-server && npm install && node server.test.js`
 Expected: All tests pass
 
-- [ ] **Step 8: Commit**
+1. [ ] **Step 8: Commit**
 
 ```bash
 git add skills/brainstorming/scripts/server.js
@@ -408,14 +408,14 @@ git commit -m "Add HTTP server, WebSocket handling, and file watching to server.
 
 #### Files (3)
 
-- Modify: `skills/brainstorming/scripts/start-server.sh:94,100`
-- Modify: `.gitignore:6`
-- Delete: `skills/brainstorming/scripts/index.js`
-- Delete: `skills/brainstorming/scripts/package.json`
-- Delete: `skills/brainstorming/scripts/package-lock.json`
-- Delete: `skills/brainstorming/scripts/node_modules/` (entire directory)
+1. Modify: `skills/brainstorming/scripts/start-server.sh:94,100`
+1. Modify: `.gitignore:6`
+1. Delete: `skills/brainstorming/scripts/index.js`
+1. Delete: `skills/brainstorming/scripts/package.json`
+1. Delete: `skills/brainstorming/scripts/package-lock.json`
+1. Delete: `skills/brainstorming/scripts/node_modules/` (entire directory)
 
-- [ ] **Step 1: Update start-server.sh — change `index.js` to `server.js`**
+1. [ ] **Step 1: Update start-server.sh — change `index.js` to `server.js`**
 
 Two lines to change:
 
@@ -423,11 +423,11 @@ Line 94: `env BRAINSTORM_DIR="$SCREEN_DIR" BRAINSTORM_HOST="$BIND_HOST" BRAINSTO
 
 Line 100: `nohup env BRAINSTORM_DIR="$SCREEN_DIR" BRAINSTORM_HOST="$BIND_HOST" BRAINSTORM_URL_HOST="$URL_HOST" node server.js > "$LOG_FILE" 2>&1 &`
 
-- [ ] **Step 2: Remove the gitignore exception for node_modules**
+1. [ ] **Step 2: Remove the gitignore exception for node_modules**
 
 In `.gitignore`, delete line 6: `!skills/brainstorming/scripts/node_modules/`
 
-- [ ] **Step 3: Delete old files**
+1. [ ] **Step 3: Delete old files**
 
 ```bash
 git rm skills/brainstorming/scripts/index.js
@@ -436,12 +436,12 @@ git rm skills/brainstorming/scripts/package-lock.json
 git rm -r skills/brainstorming/scripts/node_modules/
 ```
 
-- [ ] **Step 4: Run both test suites**
+1. [ ] **Step 4: Run both test suites**
 
 Run: `cd tests/brainstorm-server && node ws-protocol.test.js && node server.test.js`
 Expected: All tests pass
 
-- [ ] **Step 5: Commit**
+1. [ ] **Step 5: Commit**
 
 ```bash
 git add skills/brainstorming/scripts/ .gitignore
@@ -450,7 +450,7 @@ git commit -m "Remove vendored node_modules, swap to zero-dep server.js"
 
 ### Task 4: Manual smoke test
 
-- [ ] **Step 1: Start the server manually**
+1. [ ] **Step 1: Start the server manually**
 
 ```bash
 cd skills/brainstorming/scripts
@@ -459,11 +459,11 @@ BRAINSTORM_DIR=/tmp/brainstorm-smoke BRAINSTORM_PORT=9876 node server.js
 
 Expected: `server-started` JSON printed with port 9876
 
-- [ ] **Step 2: Open browser to [http://localhost:9876**]([http://localhost:9876**)]([http://localhost:9876**))]([http://localhost:9876**)))]([http://localhost:9876**))))]([http://localhost:9876**)))))]([http://localhost:9876**))))))]([http://localhost:9876**)))))))](http://localhost:9876**))))))))
+1. [ ] **Step 2: Open browser to [http://localhost:9876**]([http://localhost:9876**)]([http://localhost:9876**))]([http://localhost:9876**)))]([http://localhost:9876**))))]([http://localhost:9876**)))))]([http://localhost:9876**))))))]([http://localhost:9876**)))))))]([http://localhost:9876**))))))))](http://localhost:9876**)))))))))
 
 Expected: Waiting page with "Waiting for Claude to push a screen..."
 
-- [ ] **Step 3: Write an HTML file to the screen directory**
+1. [ ] **Step 3: Write an HTML file to the screen directory**
 
 ```bash
 echo '<h2>Hello from smoke test</h2>' > /tmp/brainstorm-smoke/test.html
@@ -471,11 +471,11 @@ echo '<h2>Hello from smoke test</h2>' > /tmp/brainstorm-smoke/test.html
 
 Expected: Browser reloads and shows "Hello from smoke test" wrapped in frame template
 
-- [ ] **Step 4: Verify WebSocket works — check browser console**
+1. [ ] **Step 4: Verify WebSocket works — check browser console**
 
 Open browser dev tools. The WebSocket connection should show as connected (no errors in console). The frame template's status indicator should show "Connected".
 
-- [ ] **Step 5: Stop server with Ctrl-C, clean up**
+1. [ ] **Step 5: Stop server with Ctrl-C, clean up**
 
 ```bash
 rm -rf /tmp/brainstorm-smoke
