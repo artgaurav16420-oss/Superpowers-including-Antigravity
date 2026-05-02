@@ -155,7 +155,7 @@ function fixMarkdown(filePath) {
         // This regex wraps bare http/https URLs that aren't already in <> or []
         // We avoid wrapping if it's inside ` ` by checking for backticks (simple heuristic)
         if (line.includes('`')) return line; 
-        return line.replace(/(?<![<\[])(https?:\/\/[^\s>\]]+)(?![>\]])/g, '<$1>');
+        return line.replace(/(?<![<\[])(https?:\/\/[^\s>\]]+)(?![>\]])/g, '[$1]($1)');
     }).join('\n');
 
     result = result.replace(/\n{3,}/g, '\n\n').trimEnd() + '\n';
