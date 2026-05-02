@@ -27,7 +27,7 @@ If Mega Superpowers has helped you do stuff that makes money and you are so incl
 ### Antigravity (Native Support)
 
 ```bash
-antigravity extension install https://github.com/artgaurav16420-oss/Superpowers-including-Antigravity
+antigravity extension install https://github.com/artgaurav16420-oss/Mega-Skills
 ```
 
 To update:
@@ -39,13 +39,13 @@ antigravity extension update mega-superpowers
 ### Gemini CLI
 
 ```bash
-gemini extensions install https://github.com/artgaurav16420-oss/Superpowers-including-Antigravity
+gemini extensions install https://github.com/artgaurav16420-oss/Mega-Skills
 ```
 
 ### Claude Code
 
 ```bash
-/plugin install mega-superpowers@https://github.com/artgaurav16420-oss/Superpowers-including-Antigravity
+/plugin install mega-superpowers@https://github.com/artgaurav16420-oss/Mega-Skills
 ```
 
 ### OpenCode
@@ -59,7 +59,7 @@ Fetch and follow instructions from https://raw.githubusercontent.com/artgaurav16
 ### GitHub Copilot CLI
 
 ```bash
-copilot plugin install mega-superpowers@https://github.com/artgaurav16420-oss/Superpowers-including-Antigravity
+copilot plugin install mega-superpowers@https://github.com/artgaurav16420-oss/Mega-Skills
 ```
 
 ## The Basic Workflow
@@ -180,4 +180,4 @@ MIT License - see LICENSE file for details
 Mega Superpowers is maintained by [Gaurav](https://github.com/artgaurav16420-oss), based on the methodology by Jesse Vincent and the Prime Radiant team, augmented with libraries from Anthropic and Composio.
 
 - **Discord**: [Join us](https://discord.gg/35wsABTejz) for community support.
-- **Issues**: <https://github.com/artgaurav16420-oss/Superpowers-including-Antigravity/issues>
+- **Issues**: <https://github.com/artgaurav16420-oss/Mega-Skills/issues>
