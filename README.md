@@ -118,6 +118,12 @@ antigravity extension install https://github.com/artgaurav16420-oss/Superpowers-
 
 To update:
 
+**Antigravity:**
+```bash
+antigravity extension update superpowers-including-antigravity
+```
+
+**Gemini CLI:**
 ```bash
 gemini extensions update superpowers
 ```
