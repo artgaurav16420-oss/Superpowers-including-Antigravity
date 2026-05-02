@@ -37,7 +37,7 @@ Then follow the installation steps above.
 
 Use OpenCode's native `skill` tool:
 
-```
+```text
 use skill tool to list skills
 use skill tool to load mega-skills/brainstorming
 ```
@@ -70,6 +70,7 @@ To pin a specific version:
 ### Tool mapping
 
 When skills reference Claude Code tools:
+
 - `TodoWrite` → `todowrite`
 - `Task` with subagents → `@mention` syntax
 - `Skill` tool → OpenCode's native `skill` tool
@@ -77,5 +78,5 @@ When skills reference Claude Code tools:
 
 ## Getting Help
 
-- Report issues: https://github.com/artgaurav16420-oss/Mega-Skills/issues
-- Full documentation: https://github.com/artgaurav16420-oss/Mega-Skills/blob/main/README.md
+- Report issues: [Mega-Skills Issues](https://github.com/artgaurav16420-oss/Mega-Skills/issues)
+- Full documentation: [Mega-Skills README](https://github.com/artgaurav16420-oss/Mega-Skills/blob/main/README.md)
