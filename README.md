@@ -12,6 +12,28 @@
 
 ---
 
+## 🚀 Quick Start & Installation
+
+Mega-Skills is a zero-dependency plugin that works across the entire agentic ecosystem.
+
+### One-Command Setup
+The fastest way to initialize Mega-Skills in any project:
+```bash
+npx mega-skills sync
+```
+
+### Supported Platforms
+
+| Harness | Installation Command |
+| :--- | :--- |
+| **Antigravity** | `antigravity extension install https://github.com/artgaurav16420-oss/Mega-Skills` |
+| **Claude Code** | `/plugin install https://github.com/artgaurav16420-oss/Mega-Skills` |
+| **GitHub Copilot** | `copilot plugin install https://github.com/artgaurav16420-oss/Mega-Skills` |
+| **Gemini CLI** | `gemini extensions install https://github.com/artgaurav16420-oss/Mega-Skills` |
+| **Other / Generic** | `git clone https://github.com/artgaurav16420-oss/Mega-Skills` |
+
+---
+
 ## 💎 Why Mega-Skills
 
 Most AI agents fail because they lack a **methodology**. They guess, they hallucinate, and they ignore edge cases. **Mega-Skills** fixes this by injecting 63+ high-fidelity workflows directly into the agent's reasoning loop.
@@ -20,22 +42,6 @@ Most AI agents fail because they lack a **methodology**. They guess, they halluc
 2.  **⚡ Lightning Fast**: Structured with native Git symlinks to reduce repository size by **99%** (from ~22,000 files to <600).
 3.  **🛠️ Universal Compatibility**: Natively supports **Cursor, Windsurf, Claude Code, Aider, Devin,** and more.
 4.  **🏗️ Industrial Grade**: Includes system-level shims for running complex tools in restricted environments.
-
----
-
-## 🌟 Trending Skills Spotlight
-
-### 🦴 Caveman Mode (`caveman`)
-**The ultimate token-saver.** Forces agents to communicate in ultra-compressed language. Cuts token usage by ~75% while maintaining 100% precision.
-
-### 🛡️ Security Auditor (`security-auditor`)
-**Red-Team in your pocket.** Automatically performs static analysis to detect SQLi, XSS, and mobile-specific vulnerabilities.
-
-### 🧠 Paper-to-Code (`paper-to-code`)
-**Academic implementation on autopilot.** Extract math from arXiv PDFs and implement it into production-ready PyTorch/NumPy.
-
-### 📊 Excel Mastery (`xlsx`)
-**Industrial spreadsheet engineering.** Includes a full LibreOffice-powered recalculation engine to ensure formula integrity.
 
 ---
 
@@ -127,12 +133,13 @@ Mega-Skills isn't a collection of scripts; it's a **Development OS**.
 
 ---
 
-## 🚀 Installation
+## 🔒 Security & Reliability
 
-```bash
-# Initialize Mega-Skills in your current project
-npx mega-skills sync
-```
+Mega-Skills is built for professional use-cases:
+
+1.  **Socket Shims**: Includes a custom C-level `LD_PRELOAD` shim (`soffice.py`) to run LibreOffice in restricted Unix environments.
+2.  **Isolated Macros**: Uses dedicated StarBasic namespaces (`MegaSkillsRecalc`) to prevent conflict with your existing Office configurations.
+3.  **Dependency Checks**: Automatic pre-flight verification ensures your environment has `gcc`, `pandoc`, and `soffice` before attempting complex conversions.
 
 ---
 
