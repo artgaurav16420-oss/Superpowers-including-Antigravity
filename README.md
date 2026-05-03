@@ -25,6 +25,9 @@ npm install -g https://github.com/artgaurav16420-oss/Mega-Skills
 mega-skills sync
 ```
 
+> [!IMPORTANT]
+> `npm install -g ...` + `mega-skills sync` installs the CLI and syncs skills for generic/local workflows. For harness-native loading (for example **Antigravity**), you must also run that harness's extension install command from the Supported Platforms table below.
+
 ### System Health Check
 
 Ensure your environment is ready for "Beast Mode" skills:
