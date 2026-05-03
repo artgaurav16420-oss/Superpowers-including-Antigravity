@@ -18,10 +18,11 @@ Mega-Skills is a zero-dependency plugin that works across the entire agentic eco
 
 ### One-Command Setup
 
-Initialize Mega-Skills in any project instantly:
+Install Mega-Skills globally directly from GitHub:
 
 ```bash
-npx mega-skills sync
+npm install -g https://github.com/artgaurav16420-oss/Mega-Skills
+mega-skills sync
 ```
 
 ### System Health Check
@@ -29,7 +30,7 @@ npx mega-skills sync
 Ensure your environment is ready for "Beast Mode" skills:
 
 ```bash
-npx mega-skills doctor
+mega-skills doctor
 ```
 
 ### Supported Platforms
