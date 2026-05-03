@@ -33,4 +33,5 @@ description: "Persistent AI skill orchestration mode. Automatically selects and 
 ## Termination
 
 When deactivating:
+
 - Announce: `[Auto-Skills: Deactivating. Returning to manual mode.]`
