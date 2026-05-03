@@ -12,6 +12,7 @@ description: "Persistent AI skill orchestration mode. Automatically selects and 
 1. **ACTIVE EVERY RESPONSE**: This mode remains active for all subsequent tasks until explicitly stopped via `/stop-auto-skills`.
 2. **MANDATORY ORCHESTRATION**: For EVERY user request that involves a task (coding, research, design, etc.), you MUST find the most relevant skill before proceeding.
 3. **SELF-CORRECTION**: If you find yourself working without a skill, stop and trigger orchestration.
+4. **TOKEN EFFICIENCY**: Always activate the `mega-skills:caveman` skill alongside any orchestrated skill to minimize token usage during autonomous sessions.
 
 ## Execution Flow
 
