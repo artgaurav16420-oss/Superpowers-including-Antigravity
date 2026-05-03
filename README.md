@@ -70,10 +70,6 @@ Most AI agents fail because they lack a **methodology**. They guess, they halluc
 
 **Red-Team in your pocket.** Automatically performs static analysis to detect SQLi, XSS, and mobile-specific vulnerabilities before they ever hit a branch.
 
-### 🧠 Elite PPTX (`elite-pptx`)
-
-**Kimi-style slides on autopilot.** A multi-stage SVG-to-DrawingML pipeline that produces cinematic, natively editable PowerPoint slides with professional animations.
-
 ### 📊 Excel Mastery (`xlsx`)
 
 **Industrial spreadsheet engineering.** Includes a full LibreOffice-powered recalculation engine to ensure formula integrity.
@@ -89,7 +85,7 @@ Mega-Skills are designed to be **stacked**. Combine these skills to turn your ag
 | **The "Fortress"** | `security-auditor` + `test-driven-development` | Zero-vulnerability code with 100% test coverage. |
 | **The "Scientist"** | `paper-to-code` + `advanced-rag-optimizer` | Implement state-of-the-art research with perfect retrieval grounding. |
 | **The "Architect"** | `brainstorming` + `docs/graph-wiki` | Map out complex legacy codebases and design new systems with full context. |
-| **The "Executive"** | `brainstorming` + `writing-plans` + `elite-pptx` | Turn a vague idea into a professional roadmap and a board-ready slide deck. |
+| **The "Executive"** | `brainstorming` + `writing-plans` | Turn a vague idea into a professional roadmap and a production-ready codebase. |
 | **The "Ghost"** | `caveman` + `memory-management` + `sequential-thinking` | Run 100+ turn sessions with zero context drift and minimal token cost. |
 
 ---
@@ -120,7 +116,6 @@ All skills are high-fidelity, but some define the very nature of agentic enginee
 | Skill | Description | Value |
 | :--- | :--- | :--- |
 | `security-auditor` | Static analysis for SQLi, XSS, and Mobile threats | 9/10 |
-| `elite-pptx` | Cinematic, natively editable presentation generation | 9/10 |
 | `paper-to-code` | Mathematical implementation of academic research | 9/10 |
 | `advanced-rag-optimizer` | Production-grade RAG pipeline tuning | 9/10 |
 | `infrastructure-as-code` | Terraform and Cloud automation guardrails | 9/10 |
@@ -136,7 +131,7 @@ All skills are high-fidelity, but some define the very nature of agentic enginee
 | :--- | :--- | :--- |
 | `xlsx` | Formula-aware Excel recalculation engine | 8/10 |
 | `pdf` | Advanced PDF parsing, rotation, and form filling | 8/10 |
-| `docx` / `pptx` | Programmatic Office document generation | 8/10 |
+| `docx` | Programmatic Word document generation | 8/10 |
 | `connect` | Composio-powered integration with 1000+ apps | 8/10 |
 | `invoice-organizer` | Intelligent fiscal document management | 8/10 |
 | `file-organizer` | Heuristic-based file system restructuring | 8/10 |
