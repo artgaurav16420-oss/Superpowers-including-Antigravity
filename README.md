@@ -39,6 +39,8 @@ mega-skills doctor
 
 Mega-Skills features an **Autonomous Orchestrator** not found in any other agent library. It eliminates manual skill selection by using semantic embeddings to trigger the right workflow at the right time.
 
+Learn more in the dedicated skill spec: [`skills/auto-skills/SKILL.md`](skills/auto-skills/SKILL.md).
+
 #### ⚡ Persistent Auto Mode (Agent Mode)
 
 Activate session-wide autonomous orchestration. The agent will automatically select and follow the best skill for every subsequent task.
