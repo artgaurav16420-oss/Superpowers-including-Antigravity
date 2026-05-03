@@ -12,10 +12,10 @@ Community of 4 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| Entity | Class | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\algorithmic-art\templates\generator_template.js | 92-110 |
-| constructor | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\algorithmic-art\templates\generator_template.js | 93-96 |
-| update | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\algorithmic-art\templates\generator_template.js | 98-104 |
-| display | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\algorithmic-art\templates\generator_template.js | 106-109 |
+| Entity | Class | skills\algorithmic-art\templates\generator_template.js | 92-110 |
+| constructor | Function | skills\algorithmic-art\templates\generator_template.js | 93-96 |
+| update | Function | skills\algorithmic-art\templates\generator_template.js | 98-104 |
+| display | Function | skills\algorithmic-art\templates\generator_template.js | 106-109 |
 
 ## Execution Flows
 
@@ -25,4 +25,4 @@ No execution flows pass through this community.
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\algorithmic-art\templates\generator_template.js` (1 edge(s))
+- `skills\algorithmic-art\templates\generator_template.js` (1 edge(s))

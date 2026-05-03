@@ -12,9 +12,9 @@ Community of 3 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| transform_from_image_coords | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pdf\scripts\fill_pdf_form_with_annotations.py | 10-20 |
-| transform_from_pdf_coords | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pdf\scripts\fill_pdf_form_with_annotations.py | 23-30 |
-| fill_pdf_form | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pdf\scripts\fill_pdf_form_with_annotations.py | 33-96 |
+| transform_from_image_coords | Function | skills\pdf\scripts\fill_pdf_form_with_annotations.py | 10-20 |
+| transform_from_pdf_coords | Function | skills\pdf\scripts\fill_pdf_form_with_annotations.py | 23-30 |
+| fill_pdf_form | Function | skills\pdf\scripts\fill_pdf_form_with_annotations.py | 33-96 |
 
 ## Execution Flows
 
@@ -42,4 +42,4 @@ Community of 3 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pdf\scripts\fill_pdf_form_with_annotations.py` (3 edge(s))
+- `skills\pdf\scripts\fill_pdf_form_with_annotations.py` (3 edge(s))

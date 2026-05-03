@@ -12,11 +12,11 @@ Community of 5 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| check_slack_size | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\validators.py | 11-56 |
-| validate_dimensions | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\validators.py | 59-119 |
-| validate_gif | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\validators.py | 122-197 |
-| get_optimization_suggestions | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\validators.py | 200-237 |
-| is_slack_ready | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\validators.py | 241-264 |
+| check_slack_size | Function | skills\slack-gif-creator\core\validators.py | 11-56 |
+| validate_dimensions | Function | skills\slack-gif-creator\core\validators.py | 59-119 |
+| validate_gif | Function | skills\slack-gif-creator\core\validators.py | 122-197 |
+| get_optimization_suggestions | Function | skills\slack-gif-creator\core\validators.py | 200-237 |
+| is_slack_ready | Function | skills\slack-gif-creator\core\validators.py | 241-264 |
 
 ## Execution Flows
 
@@ -41,4 +41,4 @@ Community of 5 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\validators.py` (5 edge(s))
+- `skills\slack-gif-creator\core\validators.py` (5 edge(s))

@@ -12,8 +12,8 @@ Community of 2 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| extract_form_structure | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pdf\scripts\extract_form_structure.py | 20-88 |
-| main | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pdf\scripts\extract_form_structure.py | 91-111 |
+| extract_form_structure | Function | skills\pdf\scripts\extract_form_structure.py | 20-88 |
+| main | Function | skills\pdf\scripts\extract_form_structure.py | 91-111 |
 
 ## Execution Flows
 
@@ -41,4 +41,4 @@ Community of 2 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pdf\scripts\extract_form_structure.py` (2 edge(s))
+- `skills\pdf\scripts\extract_form_structure.py` (2 edge(s))

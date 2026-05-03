@@ -12,10 +12,10 @@ Community of 4 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| analyze_main_session | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\tests\claude-code\analyze-token-usage.py | 12-70 |
-| format_tokens | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\tests\claude-code\analyze-token-usage.py | 72-74 |
-| calculate_cost | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\tests\claude-code\analyze-token-usage.py | 76-81 |
-| main | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\tests\claude-code\analyze-token-usage.py | 83-165 |
+| analyze_main_session | Function | tests\claude-code\analyze-token-usage.py | 12-70 |
+| format_tokens | Function | tests\claude-code\analyze-token-usage.py | 72-74 |
+| calculate_cost | Function | tests\claude-code\analyze-token-usage.py | 76-81 |
+| main | Function | tests\claude-code\analyze-token-usage.py | 83-165 |
 
 ## Execution Flows
 
@@ -43,4 +43,4 @@ Community of 4 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\tests\claude-code\analyze-token-usage.py` (4 edge(s))
+- `tests\claude-code\analyze-token-usage.py` (4 edge(s))

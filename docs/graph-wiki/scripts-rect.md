@@ -12,9 +12,9 @@ Community of 3 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| RectAndField | Class | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pdf\scripts\check_bounding_boxes.py | 9-12 |
-| get_bounding_box_messages | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pdf\scripts\check_bounding_boxes.py | 15-56 |
-| rects_intersect | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pdf\scripts\check_bounding_boxes.py | 20-23 |
+| RectAndField | Class | skills\pdf\scripts\check_bounding_boxes.py | 9-12 |
+| get_bounding_box_messages | Function | skills\pdf\scripts\check_bounding_boxes.py | 15-56 |
+| rects_intersect | Function | skills\pdf\scripts\check_bounding_boxes.py | 20-23 |
 
 ## Execution Flows
 
@@ -33,4 +33,4 @@ Community of 3 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pdf\scripts\check_bounding_boxes.py` (3 edge(s))
+- `skills\pdf\scripts\check_bounding_boxes.py` (3 edge(s))

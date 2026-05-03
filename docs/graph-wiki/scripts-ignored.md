@@ -12,8 +12,8 @@ Community of 2 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| ignored_directory_has_tracked_descendants | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\scripts\sync-to-codex-plugin.sh | 99-103 |
-| append_git_ignored_directory_excludes | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\scripts\sync-to-codex-plugin.sh | 105-118 |
+| ignored_directory_has_tracked_descendants | Function | scripts\sync-to-codex-plugin.sh | 99-103 |
+| append_git_ignored_directory_excludes | Function | scripts\sync-to-codex-plugin.sh | 105-118 |
 
 ## Execution Flows
 
@@ -29,4 +29,4 @@ Community of 2 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\scripts\sync-to-codex-plugin.sh` (2 edge(s))
+- `scripts\sync-to-codex-plugin.sh` (2 edge(s))

@@ -12,16 +12,15 @@ Community of 5 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| die | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\scripts\sync-to-codex-plugin.sh | 162-162 |
-| overlay_destination_paths | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\scripts\sync-to-codex-plugin.sh | 227-244 |
-| copy_local_destination_overlay | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\scripts\sync-to-codex-plugin.sh | 246-259 |
-| prepare_preview_checkout | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\scripts\sync-to-codex-plugin.sh | 265-280 |
-| prepare_apply_checkout | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\scripts\sync-to-codex-plugin.sh | 282-287 |
+| die | Function | scripts\sync-to-codex-plugin.sh | 162-162 |
+| overlay_destination_paths | Function | scripts\sync-to-codex-plugin.sh | 227-244 |
+| copy_local_destination_overlay | Function | scripts\sync-to-codex-plugin.sh | 246-259 |
+| prepare_preview_checkout | Function | scripts\sync-to-codex-plugin.sh | 265-280 |
+| prepare_apply_checkout | Function | scripts\sync-to-codex-plugin.sh | 282-287 |
 
 ## Execution Flows
 
 - **prepare_preview_checkout** (criticality: 0.37, depth: 2)
-- **prepare_apply_checkout** (criticality: 0.28, depth: 1)
 
 ## Dependencies
 
@@ -39,4 +38,4 @@ Community of 5 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\scripts\sync-to-codex-plugin.sh` (5 edge(s))
+- `scripts\sync-to-codex-plugin.sh` (5 edge(s))

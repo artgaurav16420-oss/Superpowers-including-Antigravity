@@ -12,8 +12,8 @@ Community of 2 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| apply_kaleidoscope | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\templates\kaleidoscope.py | 18-83 |
-| create_kaleidoscope_animation | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\templates\kaleidoscope.py | 140-192 |
+| apply_kaleidoscope | Function | skills\slack-gif-creator\templates\kaleidoscope.py | 18-83 |
+| create_kaleidoscope_animation | Function | skills\slack-gif-creator\templates\kaleidoscope.py | 140-192 |
 
 ## Execution Flows
 
@@ -41,4 +41,4 @@ Community of 2 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\templates\kaleidoscope.py` (2 edge(s))
+- `skills\slack-gif-creator\templates\kaleidoscope.py` (2 edge(s))

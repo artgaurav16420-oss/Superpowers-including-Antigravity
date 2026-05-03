@@ -12,14 +12,14 @@ Community of 8 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| GIFBuilder | Class | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\gif_builder.py | 16-246 |
-| __init__ | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\gif_builder.py | 19-31 |
-| add_frame | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\gif_builder.py | 33-49 |
-| add_frames | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\gif_builder.py | 51-54 |
-| optimize_colors | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\gif_builder.py | 56-111 |
-| deduplicate_frames | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\gif_builder.py | 113-146 |
-| save | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\gif_builder.py | 148-242 |
-| clear | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\gif_builder.py | 244-246 |
+| GIFBuilder | Class | skills\slack-gif-creator\core\gif_builder.py | 16-246 |
+| __init__ | Function | skills\slack-gif-creator\core\gif_builder.py | 19-31 |
+| add_frame | Function | skills\slack-gif-creator\core\gif_builder.py | 33-49 |
+| add_frames | Function | skills\slack-gif-creator\core\gif_builder.py | 51-54 |
+| optimize_colors | Function | skills\slack-gif-creator\core\gif_builder.py | 56-111 |
+| deduplicate_frames | Function | skills\slack-gif-creator\core\gif_builder.py | 113-146 |
+| save | Function | skills\slack-gif-creator\core\gif_builder.py | 148-242 |
+| clear | Function | skills\slack-gif-creator\core\gif_builder.py | 244-246 |
 
 ## Execution Flows
 
@@ -48,4 +48,4 @@ Community of 8 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\slack-gif-creator\core\gif_builder.py` (1 edge(s))
+- `skills\slack-gif-creator\core\gif_builder.py` (1 edge(s))

@@ -12,14 +12,13 @@ Community of 3 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| initializeSeed | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\algorithmic-art\templates\generator_template.js | 43-47 |
-| setup | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\algorithmic-art\templates\generator_template.js | 53-68 |
-| regenerate | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\algorithmic-art\templates\generator_template.js | 171-176 |
+| initializeSeed | Function | skills\algorithmic-art\templates\generator_template.js | 43-47 |
+| setup | Function | skills\algorithmic-art\templates\generator_template.js | 53-68 |
+| regenerate | Function | skills\algorithmic-art\templates\generator_template.js | 171-176 |
 
 ## Execution Flows
 
 - **setup** (criticality: 0.28, depth: 1)
-- **regenerate** (criticality: 0.24, depth: 1)
 
 ## Dependencies
 
@@ -31,4 +30,4 @@ Community of 3 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\algorithmic-art\templates\generator_template.js` (3 edge(s))
+- `skills\algorithmic-art\templates\generator_template.js` (3 edge(s))

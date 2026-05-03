@@ -12,12 +12,12 @@ Community of 6 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| get_full_annotation_field_id | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pdf\scripts\extract_form_field_info.py | 9-16 |
-| make_field_dict | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pdf\scripts\extract_form_field_info.py | 19-44 |
-| get_field_info | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pdf\scripts\extract_form_field_info.py | 47-107 |
-| write_field_info | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pdf\scripts\extract_form_field_info.py | 110-115 |
-| fill_pdf_fields | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pdf\scripts\fill_fillable_fields.py | 11-52 |
-| validation_error_for_field_value | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pdf\scripts\fill_fillable_fields.py | 55-71 |
+| get_full_annotation_field_id | Function | skills\pdf\scripts\extract_form_field_info.py | 9-16 |
+| make_field_dict | Function | skills\pdf\scripts\extract_form_field_info.py | 19-44 |
+| get_field_info | Function | skills\pdf\scripts\extract_form_field_info.py | 47-107 |
+| write_field_info | Function | skills\pdf\scripts\extract_form_field_info.py | 110-115 |
+| fill_pdf_fields | Function | skills\pdf\scripts\fill_fillable_fields.py | 11-52 |
+| validation_error_for_field_value | Function | skills\pdf\scripts\fill_fillable_fields.py | 55-71 |
 
 ## Execution Flows
 
@@ -46,5 +46,5 @@ Community of 6 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pdf\scripts\extract_form_field_info.py` (4 edge(s))
-- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\pdf\scripts\fill_fillable_fields.py` (2 edge(s))
+- `skills\pdf\scripts\extract_form_field_info.py` (4 edge(s))
+- `skills\pdf\scripts\fill_fillable_fields.py` (2 edge(s))

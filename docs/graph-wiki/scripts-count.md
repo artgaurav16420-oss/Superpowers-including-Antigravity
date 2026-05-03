@@ -12,10 +12,10 @@ Community of 4 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| count_tokens | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\caveman-compress\scripts\benchmark.py | 19-22 |
-| benchmark_pair | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\caveman-compress\scripts\benchmark.py | 25-34 |
-| print_table | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\caveman-compress\scripts\benchmark.py | 37-41 |
-| main | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\caveman-compress\scripts\benchmark.py | 44-74 |
+| count_tokens | Function | skills\caveman-compress\scripts\benchmark.py | 19-22 |
+| benchmark_pair | Function | skills\caveman-compress\scripts\benchmark.py | 25-34 |
+| print_table | Function | skills\caveman-compress\scripts\benchmark.py | 37-41 |
+| main | Function | skills\caveman-compress\scripts\benchmark.py | 44-74 |
 
 ## Execution Flows
 
@@ -43,4 +43,4 @@ Community of 4 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\caveman-compress\scripts\benchmark.py` (4 edge(s))
+- `skills\caveman-compress\scripts\benchmark.py` (4 edge(s))

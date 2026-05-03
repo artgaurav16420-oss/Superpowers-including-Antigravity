@@ -12,10 +12,10 @@ Community of 4 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| check_yt_dlp | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\youtube-downloader\scripts\download_video.py | 13-19 |
-| get_video_info | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\youtube-downloader\scripts\download_video.py | 22-30 |
-| download_video | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\youtube-downloader\scripts\download_video.py | 33-100 |
-| main | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\youtube-downloader\scripts\download_video.py | 103-141 |
+| check_yt_dlp | Function | skills\youtube-downloader\scripts\download_video.py | 13-19 |
+| get_video_info | Function | skills\youtube-downloader\scripts\download_video.py | 22-30 |
+| download_video | Function | skills\youtube-downloader\scripts\download_video.py | 33-100 |
+| main | Function | skills\youtube-downloader\scripts\download_video.py | 103-141 |
 
 ## Execution Flows
 
@@ -39,4 +39,4 @@ Community of 4 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\youtube-downloader\scripts\download_video.py` (4 edge(s))
+- `skills\youtube-downloader\scripts\download_video.py` (4 edge(s))

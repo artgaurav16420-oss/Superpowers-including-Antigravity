@@ -12,8 +12,8 @@ Community of 2 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| print_usage | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\caveman-compress\scripts\cli.py | 28-29 |
-| main | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\caveman-compress\scripts\cli.py | 32-81 |
+| print_usage | Function | skills\caveman-compress\scripts\cli.py | 28-29 |
+| main | Function | skills\caveman-compress\scripts\cli.py | 32-81 |
 
 ## Execution Flows
 
@@ -37,4 +37,4 @@ Community of 2 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\caveman-compress\scripts\cli.py` (2 edge(s))
+- `skills\caveman-compress\scripts\cli.py` (2 edge(s))

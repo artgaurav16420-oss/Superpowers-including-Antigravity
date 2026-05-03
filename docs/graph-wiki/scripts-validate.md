@@ -12,24 +12,24 @@ Community of 18 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| ValidationResult | Class | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\caveman-compress\scripts\validate.py | 16-27 |
-| __init__ | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\caveman-compress\scripts\validate.py | 17-20 |
-| add_error | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\caveman-compress\scripts\validate.py | 22-24 |
-| add_warning | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\caveman-compress\scripts\validate.py | 26-27 |
-| read_file | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\caveman-compress\scripts\validate.py | 30-31 |
-| extract_headings | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\caveman-compress\scripts\validate.py | 37-38 |
-| extract_code_blocks | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\caveman-compress\scripts\validate.py | 41-82 |
-| extract_urls | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\caveman-compress\scripts\validate.py | 85-86 |
-| extract_paths | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\caveman-compress\scripts\validate.py | 89-90 |
-| count_bullets | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\caveman-compress\scripts\validate.py | 93-94 |
-| extract_inline_codes | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\caveman-compress\scripts\validate.py | 97-100 |
-| validate_headings | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\caveman-compress\scripts\validate.py | 106-114 |
-| validate_code_blocks | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\caveman-compress\scripts\validate.py | 117-122 |
-| validate_urls | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\caveman-compress\scripts\validate.py | 125-130 |
-| validate_paths | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\caveman-compress\scripts\validate.py | 133-138 |
-| validate_bullets | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\caveman-compress\scripts\validate.py | 141-151 |
-| validate_inline_codes | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\caveman-compress\scripts\validate.py | 154-167 |
-| validate | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\caveman-compress\scripts\validate.py | 173-186 |
+| ValidationResult | Class | skills\caveman-compress\scripts\validate.py | 16-27 |
+| __init__ | Function | skills\caveman-compress\scripts\validate.py | 17-20 |
+| add_error | Function | skills\caveman-compress\scripts\validate.py | 22-24 |
+| add_warning | Function | skills\caveman-compress\scripts\validate.py | 26-27 |
+| read_file | Function | skills\caveman-compress\scripts\validate.py | 30-31 |
+| extract_headings | Function | skills\caveman-compress\scripts\validate.py | 37-38 |
+| extract_code_blocks | Function | skills\caveman-compress\scripts\validate.py | 41-82 |
+| extract_urls | Function | skills\caveman-compress\scripts\validate.py | 85-86 |
+| extract_paths | Function | skills\caveman-compress\scripts\validate.py | 89-90 |
+| count_bullets | Function | skills\caveman-compress\scripts\validate.py | 93-94 |
+| extract_inline_codes | Function | skills\caveman-compress\scripts\validate.py | 97-100 |
+| validate_headings | Function | skills\caveman-compress\scripts\validate.py | 106-114 |
+| validate_code_blocks | Function | skills\caveman-compress\scripts\validate.py | 117-122 |
+| validate_urls | Function | skills\caveman-compress\scripts\validate.py | 125-130 |
+| validate_paths | Function | skills\caveman-compress\scripts\validate.py | 133-138 |
+| validate_bullets | Function | skills\caveman-compress\scripts\validate.py | 141-151 |
+| validate_inline_codes | Function | skills\caveman-compress\scripts\validate.py | 154-167 |
+| validate | Function | skills\caveman-compress\scripts\validate.py | 173-186 |
 
 ## Execution Flows
 
@@ -57,4 +57,4 @@ Community of 18 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\caveman-compress\scripts\validate.py` (15 edge(s))
+- `skills\caveman-compress\scripts\validate.py` (15 edge(s))

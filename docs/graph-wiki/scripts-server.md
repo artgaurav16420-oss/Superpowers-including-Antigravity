@@ -12,8 +12,8 @@ Community of 2 nodes
 
 | Name | Kind | File | Lines |
 |------|------|------|-------|
-| is_server_ready | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\webapp-testing\scripts\with_server.py | 23-32 |
-| main | Function | C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\webapp-testing\scripts\with_server.py | 35-102 |
+| is_server_ready | Function | skills\webapp-testing\scripts\with_server.py | 23-32 |
+| main | Function | skills\webapp-testing\scripts\with_server.py | 35-102 |
 
 ## Execution Flows
 
@@ -41,4 +41,4 @@ Community of 2 nodes
 
 ### Incoming
 
-- `C:\Users\agaur\OneDrive\Desktop\Mega-Skills\skills\webapp-testing\scripts\with_server.py` (2 edge(s))
+- `skills\webapp-testing\scripts\with_server.py` (2 edge(s))
