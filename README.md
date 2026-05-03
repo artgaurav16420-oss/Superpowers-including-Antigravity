@@ -33,6 +33,24 @@ Ensure your environment is ready for "Beast Mode" skills:
 mega-skills doctor
 ```
 
+### 🧠 Automatic Skill Selection
+
+Mega-Skills now includes a powerful **Skill Orchestrator** that automatically selects the best skill for your task.
+
+1.  **Index Your Skills:** First, create a semantic index of your skills. This only needs to be run once, or when you add new skills.
+    ```bash
+    npm run index-skills
+    ```
+
+2.  **Run the Orchestrator:** Use the `auto` command to find the best skill for any task.
+    ```bash
+    mega-skills auto "Your task description here"
+    ```
+    For example:
+    ```bash
+    mega-skills auto "create a new react component from scratch"
+    ```
+
 ### Supported Platforms
 
 | Harness | Installation Command |
