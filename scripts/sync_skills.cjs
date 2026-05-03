@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const os = require('os');
 const { execSync } = require('child_process');
 
 const rootDir = process.cwd();
@@ -140,6 +141,39 @@ Object.entries(harnessMap).forEach(([name, rootPath]) => {
         }
     }
 });
+
+// 3. Global Sync for Gemini CLI
+console.log('\n  Syncing global environments (Gemini CLI)...');
+try {
+    const homedir = os.homedir();
+    const globalGeminiExtDir = path.join(homedir, '.gemini', 'extensions', 'mega-skills');
+    const globalSymlinkPath = path.join(globalGeminiExtDir, 'skills');
+
+    if (!fs.existsSync(globalGeminiExtDir)) {
+        fs.mkdirSync(globalGeminiExtDir, { recursive: true });
+    }
+
+    if (fs.existsSync(globalSymlinkPath) || fs.lstatSync(globalSymlinkPath, { throwIfNoEntry: false })) {
+        fs.rmSync(globalSymlinkPath, { recursive: true, force: true });
+    }
+
+    try {
+        fs.symlinkSync(coreSkillsDir, globalSymlinkPath, 'dir');
+        console.log('  -> Global Gemini CLI skills linked.');
+    } catch (err) {
+        // Fallback for Windows
+        try {
+            const winTarget = coreSkillsDir.replace(/\//g, '\\');
+            const winPath = globalSymlinkPath.replace(/\//g, '\\');
+            execSync(`cmd /c mklink /J "${winPath}" "${winTarget}"`, { stdio: 'ignore' });
+            console.log('  -> Global Gemini CLI skills linked (Junction).');
+        } catch (e2) {
+            console.log('  -> Failed to link global Gemini CLI skills (Permissions error).');
+        }
+    }
+} catch (e) {
+    console.log('  -> Skipped global Gemini CLI sync (User profile not accessible).');
+}
 
 console.log('\n✅ Mega-Sync complete. Local environment is fully functional.');
 console.log('GitHub UI remains 100% clean. Zero redundancy detected.\n');
