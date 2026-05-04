@@ -1,9 +1,12 @@
 ---
 name: executing-plans
 description: Use when you have a written implementation plan to execute in a separate session with review checkpoints
+<<<<<<< HEAD
 dependencies: [test-driven-development]
 pipeline:
   next: finishing-a-development-branch
+=======
+>>>>>>> cf3afd4deb470591d7d09bfc39b370293549253a
 ---
 
 # Executing Plans

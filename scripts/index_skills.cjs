@@ -12,15 +12,27 @@ async function main() {
     console.log(`Found ${skillFiles.length} skill files.`);
 
     // 2. Create a function to parse the YAML frontmatter
+<<<<<<< HEAD
+=======
+    // Using simple regex to avoid adding a new dependency for YAML parsing.
+>>>>>>> cf3afd4deb470591d7d09bfc39b370293549253a
     function parseFrontmatter(content) {
         const match = content.match(/---([\s\S]*?)---/);
         if (!match) return {};
 
         const frontmatter = match[1];
         const nameMatch = frontmatter.match(/name:\s*(.*)/);
+<<<<<<< HEAD
         const descMatch = frontmatter.match(/description:\s*([\s\S]*?)(?=\n\w+:|$)/);
 
         const description = descMatch ? descMatch[1].replace(/\n\s*/g, ' ').trim() : 'No description.';
+=======
+        const descMatch = frontmatter.match(/description:\s*([\s\S]*?)(?=
+\w+:|$)/);
+
+        const description = descMatch ? descMatch[1].replace(/
+\s*/g, ' ').trim() : 'No description.';
+>>>>>>> cf3afd4deb470591d7d09bfc39b370293549253a
 
         return {
             name: nameMatch ? nameMatch[1].trim() : null,
@@ -42,11 +54,21 @@ async function main() {
     console.log(`Successfully parsed ${skills.length} skills.`);
 
     // 4. Generate embeddings
+<<<<<<< HEAD
     console.log('\nGenerating embeddings... This may take a few minutes on first run.');
     const extractor = await pipeline('feature-extraction', 'Xenova/all-MiniLM-L6-v2');
 
     const skillsWithEmbeddings = [];
     for (let i = 0; i << skills skills.length; i++) {
+=======
+    console.log('
+Generating embeddings... This may take a few minutes on first run.');
+    // The model will be downloaded automatically and cached for future use.
+    const extractor = await pipeline('feature-extraction', 'Xenova/all-MiniLM-L6-v2');
+
+    const skillsWithEmbeddings = [];
+    for (let i = 0; i < skills.length; i++) {
+>>>>>>> cf3afd4deb470591d7d09bfc39b370293549253a
         const skill = skills[i];
         console.log(`- Generating embedding for "${skill.name}" (${i + 1}/${skills.length})`);
         const { data: embedding } = await extractor(skill.description, {
@@ -66,7 +88,12 @@ async function main() {
     const indexPath = path.join(process.cwd(), 'skill_index.json');
     await writeFile(indexPath, JSON.stringify(skillsWithEmbeddings, null, 2));
 
+<<<<<<< HEAD
     console.log(`\n✅ Skill index created successfully!`);
+=======
+    console.log(`
+✅ Skill index created successfully!`);
+>>>>>>> cf3afd4deb470591d7d09bfc39b370293549253a
     console.log(`   - Location: ${indexPath}`);
     console.log(`   - Indexed ${skillsWithEmbeddings.length} skills.`);
 }

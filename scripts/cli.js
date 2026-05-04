@@ -108,8 +108,12 @@ async function main() {
         case '/auto-skill': {
             const prompt = args.slice(1).join(' ');
             if (!prompt) {
+<<<<<<< HEAD
                 console.error('❌ Missing prompt: The "auto" command requires a task description.');
                 console.log('Example: npx mega-skills auto "implement a login flow"');
+=======
+                console.error('Please provide a prompt for the "auto" command.');
+>>>>>>> cf3afd4deb470591d7d09bfc39b370293549253a
                 showHelp();
                 process.exit(1);
             }
@@ -143,6 +147,7 @@ async function main() {
             break;
         }
         case 'sync':
+<<<<<<< HEAD
         case 'init': {
             console.log('Initializing Mega-Skills environment...');
             runScript(scripts.sync);
@@ -152,6 +157,11 @@ async function main() {
             console.log('Try: npx mega-skills auto "create a new react component"');
             break;
         }
+=======
+        case 'init':
+            runScript(scripts.sync);
+            break;
+>>>>>>> cf3afd4deb470591d7d09bfc39b370293549253a
         case 'validate':
         case 'check':
             runScript(scripts.validate);
@@ -168,8 +178,12 @@ async function main() {
             showHelp();
             break;
         default:
+<<<<<<< HEAD
             console.error(`❌ Unknown command: "${command}"`);
             console.log('Check the list of available commands below:');
+=======
+            console.error(`Unknown command: ${command}`);
+>>>>>>> cf3afd4deb470591d7d09bfc39b370293549253a
             showHelp();
             process.exit(1);
     }

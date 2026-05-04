@@ -1,9 +1,12 @@
 ---
 name: writing-plans
 description: Use when you have a spec or requirements for a multi-step task, before touching code
+<<<<<<< HEAD
 dependencies: [brainstorming]
 pipeline:
   next: test-driven-development
+=======
+>>>>>>> cf3afd4deb470591d7d09bfc39b370293549253a
 ---
 
 # Writing Plans

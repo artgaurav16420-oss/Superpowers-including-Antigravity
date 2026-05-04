@@ -1,9 +1,12 @@
 ---
 name: brainstorming
 description: "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation."
+<<<<<<< HEAD
 dependencies: []
 pipeline:
   next: writing-plans
+=======
+>>>>>>> cf3afd4deb470591d7d09bfc39b370293549253a
 ---
 
 # Brainstorming Ideas Into Designs

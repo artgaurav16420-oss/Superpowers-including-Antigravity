@@ -1,9 +1,12 @@
 ---
 name: test-driven-development
 description: Use when implementing any feature or bugfix, before writing implementation code
+<<<<<<< HEAD
 dependencies: [writing-plans]
 pipeline:
   next: executing-plans
+=======
+>>>>>>> cf3afd4deb470591d7d09bfc39b370293549253a
 ---
 
 # Test-Driven Development (TDD)

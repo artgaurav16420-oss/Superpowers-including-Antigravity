@@ -65,12 +65,19 @@ mega-skills auto "Your task description here"
 
 #### 🛠️ Setup & Indexing
 
+<<<<<<< HEAD
 The orchestrator now features **Auto-Indexing**. If the semantic index is missing, it will be generated automatically on your first `auto` call. 
 
 To manually create or refresh the index:
 
 ```bash
 mega-skills index-skills
+=======
+Create the semantic index for the orchestrator (only needed once):
+
+```bash
+npm run index-skills
+>>>>>>> cf3afd4deb470591d7d09bfc39b370293549253a
 ```
 
 ### 🧪 Verify Installation

@@ -1,9 +1,12 @@
 ---
 name: finishing-a-development-branch
 description: Use when implementation is complete, all tests pass, and you need to decide how to integrate the work - guides completion of development work by presenting structured options for merge, PR, or cleanup
+<<<<<<< HEAD
 dependencies: [executing-plans]
 pipeline:
   next: null
+=======
+>>>>>>> cf3afd4deb470591d7d09bfc39b370293549253a
 ---
 
 # Finishing a Development Branch
