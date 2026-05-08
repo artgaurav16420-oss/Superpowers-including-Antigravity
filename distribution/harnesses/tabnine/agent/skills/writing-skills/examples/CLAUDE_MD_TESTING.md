@@ -100,7 +100,7 @@ Your personal library of proven techniques, patterns, and tools
 is at `~/.claude/skills/`.
 
 Browse categories: `ls ~/.claude/skills/`
-Search: `grep -r "keyword" ~/.claude/skills/ --include="SKILL.md"`
+Search: `rg "keyword" ~/.claude/skills/**/SKILL.md`
 
 Instructions: `skills/using-skills`
 </available_skills>
